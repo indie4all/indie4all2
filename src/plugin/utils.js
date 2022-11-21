@@ -261,6 +261,16 @@ indieauthor.utils.isIndieResource = function (url) {
     return indieauthor.utils.isUrlWithinDomains(url, ["https://indiemedia.upct.es", "http://indieopen.upct.es", "https://multimediarepository.blob.core.windows.net"]);
 }
 
+/**
+ * Returns whether data is a valid Base64 data url.
+ * @param {String} data Base64-encoded data url
+ * @returns true if valir, false otherwise
+ */
+indieauthor.utils.isValidBase64DataUrl = function(data) {
+    const pattern = /^data:([-\w.]+\/[-\w.+]+)?;base64\,([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$/;
+    return data.match(pattern);
+}
+
 indieauthor.utils.isOnlyOneWord = function (string) {
     if (!string) return false;
 
@@ -345,13 +355,16 @@ indieauthor.utils.getAllUrlParams = function (url) {
     return obj;
 }
 
-indieauthor.utils.encodeAsBase64DataURL = function(url) {
+indieauthor.utils.encodeBlobAsBase64DataURL = function(blob) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+    });
+}
+
+indieauthor.utils.encodeURLAsBase64DataURL = function(url) {
     return fetch(url)
-        .then(res => res.blob())
-        .then(blob => new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.onloadend = () => resolve(reader.result);
-            reader.onerror = reject;
-            reader.readAsDataURL(blob);
-        }));
+        .then(res => this.encodeBlobAsBase64DataURL(res.blob()))
 }

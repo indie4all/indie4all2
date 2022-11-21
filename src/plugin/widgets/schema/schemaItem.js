@@ -26,7 +26,6 @@ indieauthor.widgets.SchemaItem = {
         }
 
         if (!indieauthor.utils.isEmpty(modelValues.data)) {
-            templateValues.image = modelValues.data.image;
             templateValues.blob = modelValues.data.blob;
         }
 
@@ -34,7 +33,7 @@ indieauthor.widgets.SchemaItem = {
         <form id="f-{{instanceId}}">
           <div class="form-group">
             <label for="image">{{translate "widgets.SchemaItem.form.image.label"}}</label>
-            <input type="text" class="form-control" name="image" required placeholder="{{translate "widgets.SchemaItem.form.image.placeholder"}}" value="{{image}}" autocomplete="off" />
+            <input type="file" class="form-control" name="image" accept="image/png, image/jpeg" />
             <small class="form-text text-muted">{{translate "widgets.SchemaItem.form.image.help"}}</small>
             <input type="hidden" name="blob" value="{{blob}}" />
           </div>
@@ -43,12 +42,10 @@ indieauthor.widgets.SchemaItem = {
             <input type="text" class="form-control" name="alt" required autocomplete="off" placeholder="{{translate "common.alt.placeholder"}}" value="{{alt}}"/>
             <small class="form-text text-muted">{{translate "common.alt.help"}}</small>
           </div>
-          {{#if image}}
-          <div class="form-group">
+          <div class="form-group d-none">
             <p>{{translate "widgets.SchemaItem.form.prev"}}</p>
-            <img class="img-fluid" src="{{image}}"/>
+            <img class="img-fluid img-preview" src="{{blob}}"/>
           </div>
-          {{/if}}
         </form>`;
         var rendered = indieauthor.renderTemplate(inputTemplate, templateValues);
 
@@ -60,20 +57,34 @@ indieauthor.widgets.SchemaItem = {
     settingsClosed: function (modelObject) { },
     settingsOpened: function (modelObject) {
         const $form = $('#f-' + modelObject.id);
-        $form.find('input[name="image"]').on('change', function (e) {
-            $('input[name="blob"]').val('');
-            indieauthor.utils.encodeAsBase64DataURL(e.target.value).then(value => 
-                $('input[name="blob"]').val(value));
+        const $iImg = $form.find('input[name=image]');
+        const $iBlob = $form.find('input[name=blob]');
+        const $preview = $form.find('.img-preview');
+        const $sectionPreview = $preview.closest('.form-group');
+        $iImg.prop('required', !modelObject.data.blob);
+        $sectionPreview.toggleClass('d-none', !modelObject.data.blob);
+        $iImg.on('change', function (e) {
+            $iBlob.val('');
+            $iImg.prop('required', true);
+            $preview.attr('src', '');
+            $sectionPreview.toggleClass('d-none', true);
+            if (this.files[0]) {
+                indieauthor.utils.encodeBlobAsBase64DataURL(this.files[0]).then(value => {
+                    $iImg.prop('required', false);
+                    $iBlob.val(value);
+                    $preview.attr('src', value);
+                    $sectionPreview.toggleClass('d-none', false);
+                });
+            }
         });
     },
     preview: function (modelObject) {
         var element = document.querySelector('[data-id="' + modelObject.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = modelObject.data.image ? modelObject.data.image : indieauthor.strings.widgets.SchemaItem.prev;
+        element.innerHTML = modelObject.data.alt ? modelObject.data.alt : indieauthor.strings.widgets.SchemaItem.prev;
     },
     emptyData: function (options) {
         var object = {
             data: {
-                image: "",
                 blob: "",
                 alt: ""
             }
@@ -82,15 +93,14 @@ indieauthor.widgets.SchemaItem = {
         return object;
     },
     updateModelFromForm: function (modelObject, formJson) {
-        modelObject.data.image = formJson.image;
         modelObject.data.blob = formJson.blob;
         modelObject.data.alt = formJson.alt;
     },
     validateModel: function (widgetInstance) {
         var errors = [];
 
-        if (!indieauthor.utils.isIndieResource(widgetInstance.data.image))
-            errors.push("SchemaItem.image.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(widgetInstance.data.blob))
+            errors.push("common.imageblob.invalid");
 
         if (indieauthor.utils.isStringEmptyOrWhitespace(widgetInstance.data.alt))
             errors.push("common.alt.invalid")
@@ -106,7 +116,8 @@ indieauthor.widgets.SchemaItem = {
     validateForm: function (formData) {
         var errors = [];
 
-        if (!indieauthor.utils.isIndieResource(formData.image)) errors.push("SchemaItem.image.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(formData.blob)) 
+            errors.push("common.imageblob.invalid");
 
         if (indieauthor.utils.isStringEmptyOrWhitespace(formData.alt))
             errors.push("common.alt.invalid")

@@ -28,7 +28,6 @@ indieauthor.widgets.ImageAndText = {
     getInputs: function (modelValues) {
         var templateValues = {
             instanceId: modelValues.id,
-            image: modelValues.data.image,
             blob: modelValues.data.blob,
             instanceName: modelValues.params.name,
             help: modelValues.params.help,
@@ -56,7 +55,7 @@ indieauthor.widgets.ImageAndText = {
           </div>
           <div class="form-group">
             <label for="image">{{translate "widgets.ImageAndText.form.image.label"}}</label>
-            <input type="url" class="form-control" name="image" required placeholder="{{translate "widgets.ImageAndText.form.image.placeholder"}}" value="{{image}}" autocomplete="off" />
+            <input type="file" class="form-control" name="image" accept="image/png, image/jpeg" />
             <small class="form-text text-muted">{{translate "widgets.ImageAndText.form.image.help"}}</small>
             <input type="hidden" name="blob" value="{{blob}}" />
           </div>
@@ -65,12 +64,10 @@ indieauthor.widgets.ImageAndText = {
             <input type="text" class="form-control" name="alt" required autocomplete="off" placeholder="{{translate "common.alt.placeholder"}}" value="{{alt}}"/>
             <small class="form-text text-muted">{{translate "common.alt.help"}}</small>
           </div>
-          {{#if image}}
-          <div class="form-group">
+          <div class="form-group d-none">
             <p>{{translate "widgets.ImageAndText.form.preview"}}</p>
-            <img class="img-fluid" src="{{image}}"/>
+            <img class="img-fluid img-preview" src="{{blob}}"/>
           </div>
-          {{/if}}
           <div class="form-group">
             <label for="textblockText">{{translate "widgets.ImageAndText.form.text.label"}}</label>
             <textarea rows="10" class="form-control texteditor" name="textblockText" required></textarea>
@@ -87,12 +84,27 @@ indieauthor.widgets.ImageAndText = {
     settingsClosed: function (modelObject) { },
     settingsOpened: function (modelObject) {
         const $form = $('#f-' + modelObject.id);
+        const $iImg = $form.find('input[name=image]');
+        const $iBlob = $form.find('input[name=blob]');
+        const $preview = $form.find('.img-preview');
+        const $sectionPreview = $preview.closest('.form-group');
         const editorElement = $form.find('.texteditor');
-        indieauthor.widgetFunctions.initTextEditor(modelObject.data.text, editorElement);   
-        $form.find('input[name="image"]').on('change', function (e) {
-            $('input[name="blob"]').val('');
-            indieauthor.utils.encodeAsBase64DataURL(e.target.value).then(value => 
-                $('input[name="blob"]').val(value));
+        indieauthor.widgetFunctions.initTextEditor(modelObject.data.text, editorElement);
+        $iImg.prop('required', !modelObject.data.blob);
+        $sectionPreview.toggleClass('d-none', !modelObject.data.blob);
+        $iImg.on('change', function (e) {
+            $iBlob.val('');
+            $iImg.prop('required', true);
+            $preview.attr('src', '');
+            $sectionPreview.toggleClass('d-none', true);
+            if (this.files[0]) {
+                indieauthor.utils.encodeBlobAsBase64DataURL(this.files[0]).then(value => {
+                    $iImg.prop('required', false);
+                    $iBlob.val(value);
+                    $preview.attr('src', value);
+                    $sectionPreview.toggleClass('d-none', false);
+                });
+            }
         });
     },
     preview: function (modelObject) {
@@ -107,7 +119,6 @@ indieauthor.widgets.ImageAndText = {
             },
             data: {
                 text: "",
-                image: "",
                 blob: "",
                 layout: 0,
                 alt: ""
@@ -118,7 +129,6 @@ indieauthor.widgets.ImageAndText = {
     },
     updateModelFromForm: function (modelObject, formJson) {
         modelObject.data.text = indieauthor.widgetFunctions.clearAndSanitizeHtml(formJson.textblockText);
-        modelObject.data.image = formJson.image;
         modelObject.data.blob = formJson.blob;
         modelObject.params.name = formJson.instanceName;
         modelObject.params.help = formJson.help;
@@ -128,8 +138,10 @@ indieauthor.widgets.ImageAndText = {
         var errors = [];
 
         if (widgetInstance.data.text.length == 0) errors.push("ImageAndText.text.invalid");
-        if (indieauthor.widgetFunctions.isEmptyText(widgetInstance.data.text)) errors.push("ImageAndText.text.invalid");
-        if (!indieauthor.utils.isIndieResource(widgetInstance.data.image)) errors.push("ImageAndText.image.invalid");
+        if (indieauthor.widgetFunctions.isEmptyText(widgetInstance.data.text)) 
+            errors.push("ImageAndText.text.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(widgetInstance.data.blob)) 
+            errors.push("common.imageblob.invalid");
 
         if (!indieauthor.utils.hasNameInParams(widgetInstance))
             errors.push("common.name.invalid");
@@ -152,8 +164,10 @@ indieauthor.widgets.ImageAndText = {
         var errors = [];
 
         if (formData.textblockText.length == 0) errors.push("ImageAndText.text.invalid");
-        if (indieauthor.widgetFunctions.isEmptyText(formData.textblockText)) errors.push("TextBlock.text.invalid");
-        if (!indieauthor.utils.isIndieResource(formData.image)) errors.push("ImageAndText.image.invalid");
+        if (indieauthor.widgetFunctions.isEmptyText(formData.textblockText)) 
+            errors.push("TextBlock.text.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(formData.blob)) 
+            errors.push("common.imageblob.invalid");
 
         if (formData.instanceName.length == 0)
             errors.push("common.name.invalid");

@@ -22,11 +22,8 @@ indieauthor.widgets.ImageAndSoundItem = {
     getInputs: function (modelObject) {
         var templateValues = {
             instanceId: modelObject.id,
-            audio: modelObject.data.audio,
             text: modelObject.data.text,
-            image: modelObject.data.image,
             alt: modelObject.data.alt,
-            captions: modelObject.data.captions,
             blob: modelObject.data.blob,
             audioblob: modelObject.data.audioblob,
             captionsblob: modelObject.data.captionsblob
@@ -36,7 +33,7 @@ indieauthor.widgets.ImageAndSoundItem = {
         <form id="f-{{instanceId}}">
           <div class="form-group">
             <label>{{translate "widgets.ImageAndSoundItem.form.audio.label"}}</label>
-            <input type="url" class="form-control" name="audio" placeholder="{{translate "widgets.ImageAndSoundItem.form.audio.placeholder"}}" value="{{audio}}" autocomplete="off" required/> 
+            <input type="file" class="form-control" name="audio" accept="audio/3gpp, audio/3gpp2, audio/aac, audio/ogg, audio/opus, audio/mp4, audio/mpeg, audio/vnd.wav, audio/vorbis, audio/wave, audio/x-aiff" />
             <small class="form-text text-muted">{{translate "widgets.ImageAndSoundItem.form.audio.help"}}</small> 
             <input type="hidden" name="audioblob" value="{{audioblob}}" />
           </div>
@@ -47,7 +44,7 @@ indieauthor.widgets.ImageAndSoundItem = {
           </div>
           <div class="form-group">
             <label for="image">{{translate "widgets.ImageAndSoundItem.form.image.label"}}</label>
-            <input type="url" class="form-control" name="image" required autocomplete="off" placeholder="{{translate "widgets.ImageAndText.form.image.placeholder"}}" value="{{image}}"/>
+            <input type="file" class="form-control" name="image" accept="image/png, image/jpeg" />
             <small class="form-text text-muted">{{translate "widgets.ImageAndSoundItem.form.image.help"}}</small>
             <input type="hidden" name="blob" value="{{blob}}" />
           </div>
@@ -56,13 +53,13 @@ indieauthor.widgets.ImageAndSoundItem = {
             <input type="text" class="form-control" name="alt" required autocomplete="off" placeholder="{{translate "common.alt.placeholder"}}" value="{{alt}}"/>
             <small class="form-text text-muted">{{translate "common.alt.help"}}</small>
           </div>
-          {{#if image}}
-          <p>{{translate "widgets.ImageAndSoundItem.form.preview"}}</p>
-          <img class="img-fluid" src="{{image}}"/>
-          {{/if}}
+          <div class="form-group d-none">
+            <p>{{translate "widgets.ImageAndSoundItem.form.preview"}}</p>
+            <img class="img-fluid img-preview" src="{{blob}}"/>
+          </div>
           <div class="form-group">
             <label for="text">{{translate "common.captions.label"}}</label>
-            <input type="url" class="form-control" name="captions" placeholder="{{translate "common.captions.placeholder"}}" value="{{{captions}}}" autocomplete="off"></input>
+            <input type="file" class="form-control" name="captions" accept=".vtt" />
             <small class="form-text text-muted">{{translate "common.captions.help"}}</small>
             <input type="hidden" name="captionsblob" value="{{captionsblob}}" />
            </div>
@@ -77,22 +74,53 @@ indieauthor.widgets.ImageAndSoundItem = {
     settingsClosed: function (modelObject) { },
     settingsOpened: function (modelObject) {
         let $form = $('#f-' + modelObject.id);
-        $form.find('input[name="image"]').on('change', function (e) {
-            $('input[name="blob"]').val('');
-            indieauthor.utils.encodeAsBase64DataURL(e.target.value).then(value => 
-                $('input[name="blob"]').val(value));
+        const $iImg = $form.find('input[name=image]');
+        const $iAudio = $form.find('input[name=audio]');
+        const $iCaptions = $form.find('input[name=captions]')
+        const $iBlob = $form.find('input[name=blob]');
+        const $iAudioBlob = $form.find('input[name=audioblob]');
+        const $iCaptionsBlob = $form.find('input[name=captionsblob]');
+        const $preview = $form.find('.img-preview');
+        const $sectionPreview = $preview.closest('.form-group');
+        $iImg.prop('required', !modelObject.data.blob);
+        $iAudio.prop('required', !modelObject.data.audioblob);
+        $iCaptions.prop('required', !modelObject.data.captionsblob);
+        $sectionPreview.toggleClass('d-none', !modelObject.data.blob);
+        $iImg.on('change', function (e) {
+            $iBlob.val('');
+            $iImg.prop('required', true);
+            $preview.attr('src', '');
+            $sectionPreview.toggleClass('d-none', true);
+            if (this.files[0]) {
+                indieauthor.utils.encodeBlobAsBase64DataURL(this.files[0]).then(value => {
+                    $iImg.prop('required', false);
+                    $iBlob.val(value);
+                    $preview.attr('src', value);
+                    $sectionPreview.toggleClass('d-none', false);
+                });
+            }
         });
 
-        $form.find('input[name="audio"]').on('change', function (e) {
-            $('input[name="audioblob"]').val('');
-            indieauthor.utils.encodeAsBase64DataURL(e.target.value).then(value => 
-                $('input[name="audioblob"]').val(value));
+        $iAudio.on('change', function(e) {
+            $iAudioBlob.val('');
+            $iAudio.prop('required', true);
+            if (this.files[0]) {
+                indieauthor.utils.encodeBlobAsBase64DataURL(this.files[0]).then(value => {
+                    $iAudio.prop('required', false);
+                    $iAudioBlob.val(value);
+                });
+            }
         });
 
-        $form.find('input[name="captions"]').on('change', function (e) {
-            $('input[name="captionsblob"]').val('');
-            indieauthor.utils.encodeAsBase64DataURL(e.target.value).then(value => 
-                $('input[name="captionsblob"]').val(value));
+        $iCaptions.on('change', function(e) {
+            $iCaptionsBlob.val('');
+            $iCaptions.prop('required', true);
+            if (this.files[0]) {
+                indieauthor.utils.encodeBlobAsBase64DataURL(this.files[0]).then(value => {
+                    $iCaptions.prop('required', false);
+                    $iCaptionsBlob.val(value);
+                });
+            }
         });
     },
     preview: function (modelObject) {
@@ -102,11 +130,8 @@ indieauthor.widgets.ImageAndSoundItem = {
     emptyData: function (options) {
         return {
             data: {
-                audio: "",
-                image: "",
                 text: "",
                 alt: "",
-                captions: "",
                 blob: "",
                 audioblob: "",
                 captionsblob: ""
@@ -114,23 +139,21 @@ indieauthor.widgets.ImageAndSoundItem = {
         };
     },
     updateModelFromForm: function (modelObject, formJson) {
-        modelObject.data.audio = formJson.audio;
         modelObject.data.audioblob = formJson.audioblob;
         modelObject.data.captionsblob = formJson.captionsblob;
-        modelObject.data.image = formJson.image;
         modelObject.data.blob = formJson.blob;
         modelObject.data.text = formJson.text;
         modelObject.data.alt = formJson.alt;
-        modelObject.data.captions = formJson.captions;
     },
     validateModel: function (widgetInstance) {
         var errors = [];
 
-        if (!indieauthor.utils.isIndieResource(widgetInstance.data.audio)) errors.push("ImageAndSoundItem.audio.invalid");
-        if (!indieauthor.utils.isIndieResource(widgetInstance.data.image)) errors.push("ImageAndSoundItem.image.invalid");
-
-        if (!indieauthor.utils.isStringEmptyOrWhitespace(widgetInstance.data.captions) && !indieauthor.utils.isIndieResource(widgetInstance.data.captions))
-            errors.push("common.captions.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(widgetInstance.data.audioblob)) 
+            errors.push("common.audioblob.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(widgetInstance.data.blob)) 
+            errors.push("common.imageblob.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(widgetInstance.data.captionsblob))
+            errors.push("common.captionsblob.invalid");
 
         if (indieauthor.utils.isStringEmptyOrWhitespace(widgetInstance.data.alt))
             errors.push("common.alt.invalid")
@@ -146,12 +169,14 @@ indieauthor.widgets.ImageAndSoundItem = {
     validateForm: function (formData) {
         var errors = [];
 
-        if (!indieauthor.utils.isIndieResource(formData.audio)) errors.push("ImageAndSoundItem.audio.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(formData.audioblob)) 
+            errors.push("common.audioblob.invalid");
 
-        if (!indieauthor.utils.isIndieResource(formData.image)) errors.push("ImageAndSoundItem.image.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(formData.blob)) 
+            errors.push("common.imageblob.invalid");
 
-        if (!indieauthor.utils.isStringEmptyOrWhitespace(formData.captions) && !indieauthor.utils.isIndieResource(formData.captions))
-            errors.push("common.captions.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(formData.captionsblob))
+            errors.push("common.captionsblob.invalid");
 
         if (indieauthor.utils.isStringEmptyOrWhitespace(formData.alt))
             errors.push("common.alt.invalid")

@@ -28,7 +28,6 @@ indieauthor.widgets.Puzzle = {
     getInputs: function (modelValues) {
         var templateValues = {
             instanceId: modelValues.id,
-            image: modelValues.data.image,
             blob: modelValues.data.blob,
             pieces: modelValues.data.pieces,
             instanceName: modelValues.params.name,
@@ -55,7 +54,7 @@ indieauthor.widgets.Puzzle = {
                 </div>
                 <div class="form-group">
                     <label for="image">{{translate "widgets.Puzzle.form.image.label"}}</label>
-                    <input type="url" class="form-control" name="image" required autocomplete="off" placeholder="{{translate "widgets.Puzzle.form.image.placeholder"}}" value="{{image}}"/>
+                    <input type="file" class="form-control" name="image" accept="image/png, image/jpeg" />
                     <small class="form-text text-muted">{{translate "widgets.Puzzle.form.image.help"}}</small>
                     <input type="hidden" name="blob" value="{{blob}}" />
                 </div>
@@ -127,6 +126,9 @@ indieauthor.widgets.Puzzle = {
         
         let $form = $('#f-' + modelObject.id);
         let $piecesContainer = $form.find('.pieces');
+        const $iImg = $('input[name=image]');
+        const $iBlob = $('input[name=blob]');
+        $iImg.prop('required', !modelObject.data.blob);
         let rects = $.extend(true, [], modelObject.data.pieces);
         for (let chr of ['x', 'y', 'w', 'h'])
             rects.forEach(rect => rect[chr] = parseFloat(rect[chr]))
@@ -139,6 +141,16 @@ indieauthor.widgets.Puzzle = {
             $inputs.eq(3).val(rect.y);
             $inputs.eq(4).val(rect.w);
             $inputs.eq(5).val(rect.h);
+        }
+
+        const loadImageIntoCanvas = function(dataUrl) {
+            let tmpImage = new Image;
+            tmpImage.onload = function () {
+                $form.find('.pieces-wrapper').removeClass('d-none');
+                let img = this;
+                setTimeout(function () { canvasHandler.init(img, rects); }, 150);
+            }
+            tmpImage.src = dataUrl;
         }
 
         let canvasHandler = indieauthor.widgets.Puzzle.canvas.handler.apply(canvas, [this]);
@@ -182,20 +194,16 @@ indieauthor.widgets.Puzzle = {
             canvasHandler.refreshPieces(rects);
         });
         $form.on('change.puzzle', 'input[name="image"]', function (e) {
-            let tmpImage = new Image;
-            tmpImage.onload = function () {
-                $form.find('.pieces-wrapper').removeClass('d-none');
-                let img = this;
-                setTimeout(function () { canvasHandler.init(img, rects); }, 150);
-                
-            }
             $form.find('.pieces-wrapper').addClass('d-none');
-            if (indieauthor.utils.isIndieResource(e.target.value))
-                tmpImage.src = e.target.value;
-
-            indieauthor.utils.encodeAsBase64DataURL(e.target.value).then(value => 
-                $('input[name="blob"]').val(value));
-
+            $iBlob.val('');
+            $iImg.prop('required', true);
+            if (this.files[0]) {
+                indieauthor.utils.encodeBlobAsBase64DataURL(this.files[0]).then(value => {
+                    loadImageIntoCanvas(value);
+                    $iImg.prop('required', false);
+                    $iBlob.val(value);
+                });
+            }
         });
 
         $form.on('change.puzzle', 'input[name^="piece"]', function (e) {
@@ -212,7 +220,7 @@ indieauthor.widgets.Puzzle = {
             }
         });
 
-        modelObject.data.image && $form.find('input[name="image"]').trigger('change.puzzle');
+        modelObject.data.blob && loadImageIntoCanvas(modelObject.data.blob);
     },
     preview: function (modelObject) {
         let element = document.querySelector('[data-id="' + modelObject.id + '"]').querySelector('[data-prev]');
@@ -224,7 +232,6 @@ indieauthor.widgets.Puzzle = {
                 name: this.widgetConfig.label + "-" + indieauthor.utils.generate_uuid(),
             },
             data: {
-                image: "",
                 blob: "",
                 alt: "",
                 pieces: []
@@ -234,7 +241,6 @@ indieauthor.widgets.Puzzle = {
     updateModelFromForm: function (modelObject, formJson) {
         modelObject.params.name = formJson.instanceName;
         modelObject.params.help = formJson.help;
-        modelObject.data.image = formJson.image;
         modelObject.data.blob = formJson.blob;
         modelObject.data.alt = formJson.alt;
         modelObject.data.pieces = formJson.piece;
@@ -249,10 +255,10 @@ indieauthor.widgets.Puzzle = {
         
         if (indieauthor.utils.isStringEmptyOrWhitespace(widgetInstance.data.alt))
              errors.push("common.alt.invalid")
-
-        if (!indieauthor.utils.isIndieResource(widgetInstance.data.image))
-            errors.push("Puzzle.image.invalid");
         
+        if (!indieauthor.utils.isValidBase64DataUrl(widgetInstance.data.blob))
+            errors.push("common.imageblob.invalid");
+
         if (widgetInstance.data.pieces.length == 0)
             errors.push("Puzzle.piece.empty");
         
@@ -278,7 +284,7 @@ indieauthor.widgets.Puzzle = {
     validateForm: function (formData, instanceId) {
         let errors = [];
         indieauthor.utils.isStringEmptyOrWhitespace(formData.alt) && errors.push("common.alt.invalid");
-        !indieauthor.utils.isIndieResource(formData.image) && errors.push("Puzzle.image.invalid");
+        !indieauthor.utils.isValidBase64DataUrl(formData.blob) && errors.push("common.imageblob.invalid");
         formData.instanceName.length == 0 && errors.push("common.name.invalid");
         !indieauthor.model.isUniqueName(formData.instanceName, instanceId) && errors.push("common.name.notUniqueName");
         (!formData['piece'] || !Array.isArray(formData['piece']) || formData['piece'].length == 0) && errors.push("Puzzle.piece.empty");

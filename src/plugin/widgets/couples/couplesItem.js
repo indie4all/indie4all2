@@ -62,7 +62,7 @@ indieauthor.widgets.CouplesItem = {
             <div class="image {{#ifneq type "image"}} d-none {{/ifneq}}">
               <div class="form-group">
                 <label for="image">{{translate "widgets.CouplesItem.form.image.label"}}</label>
-                <input type="url" class="form-control img-input" name="couple[{{@index}}][image]" {{#ifeq type "image"}} required {{/ifeq}} placeholder="{{translate "widgets.CouplesItem.form.image.placeholder"}}" value="{{image}}" autocomplete="off"/>
+                <input type="file" class="form-control img-input" name="couple[{{@index}}][image]" accept="image/png, image/jpeg" />
                 <small class="form-text text-muted">{{translate "widgets.CouplesItem.form.image.help"}}</small>
                 <input type="hidden" class="blob-input" name="couple[{{@index}}][blob]" value="{{blob}}" />
               </div>
@@ -71,10 +71,10 @@ indieauthor.widgets.CouplesItem = {
                 <input type="text" class="form-control" name="couple[{{@index}}][alt]" {{#ifeq type "image"}} required {{/ifeq}} autocomplete="off" placeholder="{{translate "common.alt.placeholder"}}" value="{{alt}}"/>
                 <small class="form-text text-muted">{{translate "common.alt.help"}}</small>
               </div>
-              {{#if image}}
+              <div class="form-group d-none">
                 <p>{{translate "widgets.CouplesItem.form.preview"}}</p>
-                <img class="img-fluid" src="{{image}}"/>
-              {{/if}}
+                <img class="img-fluid img-preview" src="{{blob}}"/>
+              </div>
             </div>
           </fieldset>
           {{/each}}
@@ -93,6 +93,12 @@ indieauthor.widgets.CouplesItem = {
     settingsOpened: function (modelObject) {
         let $form = $('#f-' + modelObject.id);
         let $editors = $form.find('.texteditor');
+
+        $('.img-preview').each(function(idx) {
+          const $sectionPreview = $(this).closest('.form-group');
+          $sectionPreview.toggleClass('d-none', !modelObject.data.couples[idx].blob);
+        });
+        
         $editors.each(function (idx) {
             indieauthor.widgetFunctions.initTextEditor(modelObject.data.couples[idx].text, $(this));
         });
@@ -108,16 +114,28 @@ indieauthor.widgets.CouplesItem = {
         $form.on('change.couples', '.img-input', function(e) {
           const $ancestor = $(this).closest('.image');
           const $blob = $ancestor.find('.blob-input');
+          const $preview = $ancestor.find('.img-preview');
+          const $sectionPreview = $preview.closest('.form-group');
+          const $self = $(this);
+          $self.prop("required", true);
           $blob.val('');
-          indieauthor.utils.encodeAsBase64DataURL(e.target.value).then(value => 
-            $blob.val(value));
-          });
+          $preview.attr('src', '');
+          $sectionPreview.toggleClass('d-none', true);
+          if (this.files[0]) {
+              indieauthor.utils.encodeBlobAsBase64DataURL(this.files[0]).then(value => {
+                  $self.prop('required', false);
+                  $blob.val(value);
+                  $preview.attr('src', value);
+                  $sectionPreview.toggleClass('d-none', false);
+              });
+          }
+        });
     },
     preview: function (modelObject) {
         var element = document.querySelector('[data-id="' + modelObject.id + '"]').querySelector('[data-prev]');
         let couples = modelObject.data.couples.filter(couple => ["image", "text"].includes(couple.type));
         if (couples.length === 2) {
-            let html = couples.map(couple => couple.type === "image" ? `<div>${couple.image}</div>` : `<div>${couple.text}</div>`).join(' -> ');
+            let html = couples.map(couple => couple.type === "image" ? `<div>${couple.alt}</div>` : `<div>${couple.text}</div>`).join(' -> ');
             element.innerHTML = html
         }
         else
@@ -127,8 +145,8 @@ indieauthor.widgets.CouplesItem = {
         var object = {
             data: {
                 couples: [
-                    { type: "", image: "", text: "", alt: "", blob: "" },
-                    { type: "", image: "", text: "", alt: "", blob: ""}
+                    { type: "", text: "", alt: "", blob: "" },
+                    { type: "", text: "", alt: "", blob: ""}
                 ]
             }
         };
@@ -140,8 +158,6 @@ indieauthor.widgets.CouplesItem = {
         modelObject.data.couples[1].type = formJson.couple[1].type;
         modelObject.data.couples[0].text = formJson.couple[0].text;
         modelObject.data.couples[1].text = formJson.couple[1].text;
-        modelObject.data.couples[0].image = formJson.couple[0].image;
-        modelObject.data.couples[1].image = formJson.couple[1].image;
         modelObject.data.couples[0].blob = formJson.couple[0].blob;
         modelObject.data.couples[1].blob = formJson.couple[1].blob;
         modelObject.data.couples[0].alt = formJson.couple[0].alt;
@@ -157,8 +173,8 @@ indieauthor.widgets.CouplesItem = {
             if (couple.type === 'text' && indieauthor.utils.isStringEmptyOrWhitespace(couple.text))
                 errors.push("CouplesItem.text.invalid");
 
-            if (couple.type === 'image' && !indieauthor.utils.isIndieResource(couple.image))
-                errors.push("CouplesItem.image.invalid");
+            if (couple.type === 'image' && !indieauthor.utils.isValidBase64DataUrl(couple.blob))
+                errors.push("common.imageblob.invalid");
 
             if (couple.type === 'image' && indieauthor.utils.isStringEmptyOrWhitespace(couple.alt))
                 errors.push("common.alt.invalid")
@@ -181,8 +197,8 @@ indieauthor.widgets.CouplesItem = {
             if (couple.type === 'text' && indieauthor.utils.isStringEmptyOrWhitespace(couple.text))
                 errors.push("CouplesItem.text.invalid");
 
-            if (couple.type === 'image' && !indieauthor.utils.isIndieResource(couple.image))
-                errors.push("CouplesItem.image.invalid");
+            if (couple.type === 'image' && !indieauthor.utils.isValidBase64DataUrl(couple.blob))
+                errors.push("common.imageblob.invalid");
 
             if (couple.type === 'image' && indieauthor.utils.isStringEmptyOrWhitespace(couple.alt))
                 errors.push("common.alt.invalid")

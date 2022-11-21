@@ -35,7 +35,6 @@ indieauthor.widgets.Image = {
 
         if (!indieauthor.utils.isEmpty(modelValues.data)) {
             templateValues.text = modelValues.data.text;
-            templateValues.image = modelValues.data.image;
             templateValues.blob = modelValues.data.blob;
         }
 
@@ -58,7 +57,7 @@ indieauthor.widgets.Image = {
             </div>
             <div class="form-group">
                 <label for="image">{{translate "widgets.Image.form.image.label"}}</label>
-                <input type="url" class="form-control" name="image" required placeholder="{{translate "widgets.Image.form.image.placeholder"}}" value="{{image}}" autocomplete="off" />
+                <input type="file" class="form-control" name="image" accept="image/png, image/jpeg" />
                 <small class="form-text text-muted">{{translate "widgets.Image.form.image.help"}}</small>
                 <input type="hidden" name="blob" value="{{blob}}" />
             </div>
@@ -67,12 +66,10 @@ indieauthor.widgets.Image = {
                 <input type="text" class="form-control" name="alt" required autocomplete="off" placeholder="{{translate "common.alt.placeholder"}}" value="{{alt}}"/>
                 <small class="form-text text-muted">{{translate "common.alt.help"}}</small>
             </div> 
-            {{#if image}}
-            <div class="form-group">
+            <div class="form-group d-none">
                 <p>{{translate "widgets.Image.form.preview"}}</p>
-                <img class="img-fluid" src="{{image}}"/>
+                <img class="img-fluid img-preview" src="{{blob}}"/>
             </div>
-            {{/if}}
             <div class="form-group">
                 <label for="text">{{translate "widgets.Image.form.caption.label"}}</label>
                 <textarea class="form-control texteditor" name="text">{{text}}</textarea>
@@ -89,13 +86,29 @@ indieauthor.widgets.Image = {
     settingsClosed: function (modelObject) { },
     settingsOpened: function (modelObject) {
         const $form = $('#f-' + modelObject.id);
+        const $iImg = $form.find('input[name=image]');
+        const $iBlob = $form.find('input[name=blob]');
+        const $preview = $form.find('.img-preview');
+        const $sectionPreview = $preview.closest('.form-group');
+        $iImg.prop('required', !modelObject.data.blob);
+        $sectionPreview.toggleClass('d-none', !modelObject.data.blob);
+
         var editorElement = $form.find('.texteditor');
         indieauthor.widgetFunctions.initTextEditor(modelObject.data.text, editorElement);
 
-        $form.find('input[name="image"]').on('change', function (e) {
-            $('input[name="blob"]').val('');
-            indieauthor.utils.encodeAsBase64DataURL(e.target.value).then(value => 
-                $('input[name="blob"]').val(value));
+        $iImg.on('change', function (e) {
+            $iBlob.val('');
+            $iImg.prop('required', true);
+            $preview.attr('src', '');
+            $sectionPreview.toggleClass('d-none', true);
+            if (this.files[0]) {
+                indieauthor.utils.encodeBlobAsBase64DataURL(this.files[0]).then(value => {
+                    $iImg.prop('required', false);
+                    $iBlob.val(value);
+                    $preview.attr('src', value);
+                    $sectionPreview.toggleClass('d-none', false);
+                });
+            }
         });
     },
     preview: function (modelObject) {
@@ -120,7 +133,6 @@ indieauthor.widgets.Image = {
     },
     updateModelFromForm: function (modelObject, formJson) {
         modelObject.data.text =indieauthor.widgetFunctions.clearAndSanitizeHtml(formJson.text);
-        modelObject.data.image = formJson.image;
         modelObject.data.blob = formJson.blob;
         modelObject.params.name = formJson.instanceName;
         modelObject.params.help = formJson.help;
@@ -129,8 +141,8 @@ indieauthor.widgets.Image = {
     validateModel: function (widgetInstance) {
         var keys = [];
 
-        if (!indieauthor.utils.isIndieResource(widgetInstance.data.image))
-            keys.push("Image.image.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(widgetInstance.data.blob))
+            keys.push("common.imageblob.invalid");
 
         if (!widgetInstance.data.text || (widgetInstance.data.text.length == 0))
             keys.push("Image.text.invalid");
@@ -158,8 +170,8 @@ indieauthor.widgets.Image = {
     validateForm: function (formData, instanceId) {
         var keys = [];
 
-        if (!indieauthor.utils.isIndieResource(formData.image))
-            keys.push("Image.image.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(formData.blob))
+            keys.push("common.imageblob.invalid");
 
         if (formData.instanceName.length == 0)
             keys.push("common.name.invalid");

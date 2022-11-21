@@ -24,10 +24,8 @@ indieauthor.widgets.AudioTermItem = {
             instanceId: modelObject.id,
             term: modelObject.data.term,
             definition: modelObject.data.definition,
-            audio: modelObject.data.audio,
             audioblob: modelObject.data.audioblob,
-            captionsblob: modelObject.data.captionsblob,
-            captions: modelObject.data.captions
+            captionsblob: modelObject.data.captionsblob
         }
 
         var template = `
@@ -44,13 +42,13 @@ indieauthor.widgets.AudioTermItem = {
           </div>
           <div class="form-group">
             <label>{{translate "widgets.AudioTermItem.form.audio.label"}}</label>
-            <input type="url" class="form-control" name="audio" placeholder="{{translate "widgets.AudioTermItem.form.audio.placeholder"}}" value="{{audio}}" autocomplete="off" required/>
+            <input type="file" class="form-control" name="audio" accept="audio/3gpp, audio/3gpp2, audio/aac, audio/ogg, audio/opus, audio/mp4, audio/mpeg, audio/vnd.wav, audio/vorbis, audio/wave, audio/x-aiff" />
             <small class="form-text text-muted">{{translate "widgets.AudioTermItem.form.audio.help"}}</small>
             <input type="hidden" name="audioblob" value="{{audioblob}}"/>
           </div>
           <div class="form-group">
             <label for="text">{{translate "common.captions.label"}}</label>
-            <input type="url" class="form-control" name="captions" placeholder="{{translate "common.captions.placeholder"}}" value="{{{captions}}}" autocomplete="off"></input>
+            <input type="file" class="form-control" name="captions" accept=".vtt" />
             <small class="form-text text-muted">{{translate "common.captions.help"}}</small>
             <input type="hidden" name="captionsblob" value="{{captionsblob}}" />
           </div>
@@ -65,22 +63,39 @@ indieauthor.widgets.AudioTermItem = {
     settingsClosed: function (modelObject) { },
     settingsOpened: function (modelObject) {
         let $form = $('#f-' + modelObject.id);
-        $form.find('input[name="audio"]').on('change', function (e) {
-            $('input[name="audioblob"]').val('');
-            indieauthor.utils.encodeAsBase64DataURL(e.target.value).then(value => 
-                $('input[name="audioblob"]').val(value));
+        const $iAudio = $form.find('input[name=audio]');
+        const $iCaptions = $form.find('input[name=captions]')
+        const $iAudioBlob = $form.find('input[name=audioblob]');
+        const $iCaptionsBlob = $form.find('input[name=captionsblob]');
+        $iAudio.prop('required', !modelObject.data.audioblob);
+        $iCaptions.prop('required', !modelObject.data.captionsblob);
+
+        $iAudio.on('change', function(e) {
+            $iAudioBlob.val('');
+            $iAudio.prop('required', true);
+            if (this.files[0]) {
+                indieauthor.utils.encodeBlobAsBase64DataURL(this.files[0]).then(value => {
+                    $iAudio.prop('required', false);
+                    $iAudioBlob.val(value);
+                });
+            }
         });
 
-        $form.find('input[name="captions"]').on('change', function (e) {
-            $('input[name="captionsblob"]').val('');
-            indieauthor.utils.encodeAsBase64DataURL(e.target.value).then(value => 
-                $('input[name="captionsblob"]').val(value));
+        $iCaptions.on('change', function(e) {
+            $iCaptionsBlob.val('');
+            $iCaptions.prop('required', true);
+            if (this.files[0]) {
+                indieauthor.utils.encodeBlobAsBase64DataURL(this.files[0]).then(value => {
+                    $iCaptions.prop('required', false);
+                    $iCaptionsBlob.val(value);
+                });
+            }
         });
     },
     preview: function (modelObject) {
         var element = document.querySelector('[data-id="' + modelObject.id + '"]').querySelector('[data-prev]');
-        if (modelObject.data.term && modelObject.data.definition && modelObject.data.audio)
-            element.innerHTML = modelObject.data.term + " -> " + modelObject.data.definition + " | (" + modelObject.data.audio + ")";
+        if (modelObject.data.term && modelObject.data.definition)
+            element.innerHTML = modelObject.data.term + " -> " + modelObject.data.definition;
         else
             element.innerHTML = indieauthor.strings.widgets.AudioTermItem.prev;
     },
@@ -89,20 +104,16 @@ indieauthor.widgets.AudioTermItem = {
             data: {
                 term: "",
                 definition: "",
-                audio: "",
                 audioblob: "",
-                captionsblob: "",
-                captions: ""
+                captionsblob: ""
             }
         };
     },
     updateModelFromForm: function (modelObject, formJson) {
         modelObject.data.term = formJson.term;
         modelObject.data.definition = formJson.definition;
-        modelObject.data.audio = formJson.audio;
         modelObject.data.audioblob = formJson.audioblob;
         modelObject.data.captionsblob = formJson.captionsblob;
-        modelObject.data.captions = formJson.captions;
     },
     validateModel: function (widgetInstance) {
         var errors = [];
@@ -113,11 +124,11 @@ indieauthor.widgets.AudioTermItem = {
         if (widgetInstance.data.definition.length == 0)
             errors.push("AudioTermItem.definition.invalid");
 
-        if (!indieauthor.utils.isStringEmptyOrWhitespace(widgetInstance.data.captions) && !indieauthor.utils.isIndieResource(widgetInstance.data.captions))
-            errors.push("common.captions.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(widgetInstance.data.captionsblob))
+            errors.push("common.captionsblob.invalid");
 
-        if (!indieauthor.utils.isIndieResource(widgetInstance.data.audio))
-            errors.push("AudioTermItem.audio.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(widgetInstance.data.audioblob))
+            errors.push("common.audioblob.invalid");
 
         if (errors.length > 0) {
             return {
@@ -137,11 +148,11 @@ indieauthor.widgets.AudioTermItem = {
         if (formData.definition.length == 0)
             errors.push("AudioTermItem.definition.invalid");
 
-        if (!indieauthor.utils.isStringEmptyOrWhitespace(formData.captions) && !indieauthor.utils.isIndieResource(formData.captions))
-            errors.push("common.captions.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(formData.captionsblob))
+            errors.push("common.captionsblob.invalid");
 
-        if (!indieauthor.utils.isIndieResource(formData.audio))
-            errors.push("AudioTermItem.audio.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(formData.audioblob))
+            errors.push("common.audioblob.invalid");
 
         return errors;
     },

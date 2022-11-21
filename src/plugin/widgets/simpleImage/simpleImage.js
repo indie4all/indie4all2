@@ -28,7 +28,6 @@ indieauthor.widgets.SimpleImage = {
         var templateValues = {
             instanceId: modelObject.id,
             instanceName: modelObject.params.name,
-            image: modelObject.data.image,
             blob: modelObject.data.blob,
             alt: modelObject.data.alt,
             aspect: modelObject.params.aspect,
@@ -46,7 +45,7 @@ indieauthor.widgets.SimpleImage = {
                 </div>
                 <div class="form-group">
                     <label for="image">{{translate "widgets.SimpleImage.form.image.label"}}</label>
-                    <input type="url" class="form-control" name="image" required placeholder="{{translate "widgets.SimpleImage.form.image.placeholder"}}" value="{{image}}" autocomplete="off"/>
+                    <input type="file" class="form-control" name="image" accept="image/png, image/jpeg" />
                     <small class="form-text text-muted">{{translate "widgets.SimpleImage.form.image.help"}}</small>
                     <input type="hidden" name="blob" value="{{blob}}">
                 </div>
@@ -93,7 +92,7 @@ indieauthor.widgets.SimpleImage = {
                 </div>
                 <div class="form-group image-preview">
                     <p>{{translate "widgets.SimpleImage.form.preview"}}</p>
-                    <img class="img-fluid" src="{{image}}"/>
+                    <img class="img-fluid" src="{{blob}}"/>
                 </div>
             </form>`;
         var rendered = indieauthor.renderTemplate(inputTemplate, templateValues);
@@ -106,7 +105,7 @@ indieauthor.widgets.SimpleImage = {
     settingsClosed: function (modelObject) { },
     settingsOpened: function (modelObject) {
         let ratio = 1;
-        let imgUrlChanged = false;
+        let imgChanged = false;
         let $form = $('#f-' + modelObject.id);
         let $preview = $form.find('.image-preview');
         let $size = $form.find('.size');
@@ -116,9 +115,12 @@ indieauthor.widgets.SimpleImage = {
         let $imgWidth = $form.find('[name=width]');
         // Show size if ratio is equals to "Custom"
         let $aspect = $form.find('[name=aspect]');
+        const $iImg = $('input[name=image]');
+        const $iBlob = $('input[name=blob]');
         $size.toggle($aspect.val() === 'custom');
         $img.width($aspect.val() === 'custom' ? $imgWidth.val() : '');
-        $img.height($aspect.val() === 'custom' ? $imgHeight.val() : '');
+        $img.height($aspect.val() === 'custom' ? $imgHeight.val() : '');       
+        $iImg.prop('required', !modelObject.data.blob);
         $aspect.on('change', function () {
             let aspect = $(this).val();
             $size.toggle(aspect === 'custom');
@@ -156,28 +158,33 @@ indieauthor.widgets.SimpleImage = {
             $preview.show();
             ratio = this.naturalWidth / this.naturalHeight;
             // Set width and height only when the user changes the image
-            if (imgUrlChanged) {
-                imgUrlChanged = false;
+            if (imgChanged) {
+                imgChanged = false;
                 $(this).width('');
                 $(this).height('');
                 $imgHeight.val(this.naturalHeight);
                 $imgWidth.val(this.naturalWidth);
             }
         });
-        $form.find('input[name="image"]').on('change', function (e) {
-            imgUrlChanged = true;
+        $iImg.on('change', function (e) {
+            imgChanged = true;
             $preview.hide();
-            imgLoaded = false;
-            $img.attr('src', e.target.value);
-            $('input[name="blob"]').val('');
-            indieauthor.utils.encodeAsBase64DataURL(e.target.value).then(value => 
-                $('input[name="blob"]').val(value));
+            $img.attr('src', '');
+            $iImg.prop('required', true);
+            $iBlob.val('');
+            if (this.files[0]) {
+                indieauthor.utils.encodeBlobAsBase64DataURL(this.files[0]).then(value => {
+                    $img.attr('src', value);
+                    $iImg.prop('required', false);
+                    $iBlob.val(value);
+                });
+            }
         });
     },
     preview: function (modelObject) {
         var element = document.querySelector('[data-id="' + modelObject.id + '"]').querySelector('[data-prev]');
-        if (modelObject.params.name && modelObject.data.image)
-            element.innerHTML = modelObject.params.name + ": " + modelObject.data.image;
+        if (modelObject.params.name)
+            element.innerHTML = modelObject.params.name;
         else
             element.innerHTML = indieauthor.strings.widgets.SimpleImage.prev;
     },
@@ -189,7 +196,6 @@ indieauthor.widgets.SimpleImage = {
 				align: "left",
             },
             data: {
-                image: "",
                 blob: "",
                 alt: "",
                 width: 0,
@@ -200,8 +206,6 @@ indieauthor.widgets.SimpleImage = {
         return object;
     },
     updateModelFromForm: async function (modelObject, formJson) {
-        modelObject.data.image = formJson.image;
-        modelObject.data.blob = formJson.blob;
         modelObject.params.name = formJson.instanceName;
         modelObject.params.aspect = formJson.aspect;
 		modelObject.params.align = formJson.align;
@@ -213,8 +217,8 @@ indieauthor.widgets.SimpleImage = {
     validateModel: function (widgetInstance) {
         var keys = [];
 
-        if (!indieauthor.utils.isIndieResource(widgetInstance.data.image))
-            keys.push("SimpleImage.image.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(widgetInstance.data.blob))
+            keys.push("common.imageblob.invalid");
 
         if (!indieauthor.utils.hasNameInParams(widgetInstance))
             keys.push("common.name.invalid");
@@ -239,8 +243,8 @@ indieauthor.widgets.SimpleImage = {
     validateForm: function (formData, instanceId) {
         var keys = [];
 
-        if (!indieauthor.utils.isIndieResource(formData.image))
-            keys.push("SimpleImage.image.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(formData.blob))
+            keys.push("common.imageblob.invalid");
 
         if (formData.instanceName.length == 0)
             keys.push("common.name.invalid");

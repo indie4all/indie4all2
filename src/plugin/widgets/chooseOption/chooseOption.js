@@ -29,7 +29,6 @@ indieauthor.widgets.ChooseOption = {
         var templateValues = {
             instanceId: modelValues.id,
             text: modelValues.data.text,
-            image: modelValues.data.image,
             blob: modelValues.data.blob,
             options: modelValues.data.options,
             instanceName: modelValues.params.name,
@@ -63,7 +62,7 @@ indieauthor.widgets.ChooseOption = {
           </div>
           <div class="form-group">
             <label for="image">{{translate "widgets.ChooseOption.form.image.label"}}</label>
-            <input type="url" class="form-control" name="image" required autocomplete="off" placeholder="{{translate "widgets.ChooseOption.form.image.placeholder"}}" value="{{image}}"/>
+            <input type="file" class="form-control" name="image" accept="image/png, image/jpeg" />
             <small class="form-text text-muted">{{translate "widgets.ChooseOption.form.image.help"}}</small>
             <input type="hidden" name="blob" value="{{blob}}" />
           </div>
@@ -72,12 +71,10 @@ indieauthor.widgets.ChooseOption = {
             <input type="text" class="form-control" name="alt" required autocomplete="off" placeholder="{{translate "common.alt.placeholder"}}" value="{{alt}}"/>
             <small class="form-text text-muted">{{translate "common.alt.help"}}</small>
           </div>
-          {{#if image}}
-          <div class="form-group">
+          <div class="form-group d-none">
             <p>{{translate "widgets.ChooseOption.form.preview"}}</p>
-            <img class="img-fluid" src="{{image}}"/>
+            <img class="img-fluid img-preview" src="{{blob}}"/>
           </div>
-          {{/if}}
           <div class="form-group">
             <label>{{translate "widgets.ChooseOption.form.options.label"}}</label>
             {{#each options}}
@@ -103,10 +100,25 @@ indieauthor.widgets.ChooseOption = {
     settingsClosed: function (modelObject) { },
     settingsOpened: function (modelObject) {
         const $form = $('#f-' + modelObject.id);
-        $form.find('input[name="image"]').on('change', function (e) {
-            $('input[name="blob"]').val('');
-            indieauthor.utils.encodeAsBase64DataURL(e.target.value).then(value => 
-                $('input[name="blob"]').val(value));
+        const $iImg = $form.find('input[name=image]');
+        const $iBlob = $form.find('input[name=blob]');
+        const $preview = $form.find('.img-preview');
+        const $sectionPreview = $preview.closest('.form-group');
+        $iImg.prop('required', !modelObject.data.blob);
+        $sectionPreview.toggleClass('d-none', !modelObject.data.blob);
+
+        $iImg.on('change', function (e) {
+            $sectionPreview.toggleClass('d-none', true);
+            $iImg.prop('required', true);
+            $iBlob.val('');
+            if (this.files[0]) {
+                indieauthor.utils.encodeBlobAsBase64DataURL(this.files[0]).then(value => {
+                    $iImg.prop('required', false);
+                    $iBlob.val(value);
+                    $preview.attr('src', value);
+                    $sectionPreview.toggleClass('d-none', false);
+                });
+            }
         });
     },
     preview: function (modelObject) {
@@ -124,7 +136,6 @@ indieauthor.widgets.ChooseOption = {
             },
             data: {
                 text: "",
-                image: "",
                 blob: "",
                 alt: "",
                 options: [{
@@ -167,7 +178,6 @@ indieauthor.widgets.ChooseOption = {
         }
 
         modelObject.data.options = options;
-        modelObject.data.image = formData.image;
         modelObject.data.blob = formData.blob;
         modelObject.data.text = formData.text;
         modelObject.params.name = formData.instanceName;
@@ -181,8 +191,8 @@ indieauthor.widgets.ChooseOption = {
         if (widgetInstance.data.text.length == 0)
             errors.push("ChooseOption.text.invalid");
 
-        if (!indieauthor.utils.isIndieResource(widgetInstance.data.image))
-            errors.push("ChooseOption.image.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(widgetInstance.data.blob))
+            errors.push("common.imageblob.invalid");
 
         if (this.extensions.optionsWithoutCorrect(widgetInstance.data.options))
             errors.push("ChooseOption.options.noCorrect");
@@ -230,8 +240,8 @@ indieauthor.widgets.ChooseOption = {
         if (formData.text.length == 0)
             errors.push("ChooseOption.text.invalid");
 
-        if (!indieauthor.utils.isIndieResource(formData.image))
-            errors.push("ChooseOption.image.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(formData.blob))
+            errors.push("common.imageblob.invalid");
 
         if (this.extensions.optionsWithoutCorrect(options))
             errors.push("ChooseOption.options.noCorrect");

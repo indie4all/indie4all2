@@ -24,7 +24,6 @@ indieauthor.widgets.CorrectWordItem = {
             instanceId: modelObject.id,
             question: modelObject.data.question,
             word: modelObject.data.word,
-            image: modelObject.data.image,
             blob: modelObject.data.blob,
             alt: modelObject.data.alt
         }
@@ -43,7 +42,7 @@ indieauthor.widgets.CorrectWordItem = {
           </div>
           <div class="form-group">
             <label for="image">{{translate "widgets.CorrectWordItem.form.image.label"}}</label>
-            <input type="url" class="form-control" name="image" required autocomplete="off" placeholder="{{translate "widgets.CorrectWord.form.image.placeholder"}}" value="{{image}}"/>
+            <input type="file" class="form-control" name="image" accept="image/png, image/jpeg" />
             <small class="form-text text-muted">{{translate "widgets.CorrectWordItem.form.image.help"}}</small>
             <input type="hidden" name="blob" value="{{blob}}" />
           </div>
@@ -52,10 +51,10 @@ indieauthor.widgets.CorrectWordItem = {
             <input type="text" class="form-control" name="alt" required autocomplete="off" placeholder="{{translate "common.alt.placeholder"}}" value="{{alt}}"/>
             <small class="form-text text-muted">{{translate "common.alt.help"}}</small>
           </div>
-          {{#if image}}
-          <p>{{translate "widgets.CorrectWordItem.form.preview"}}</p>
-            <img class="img-fluid" src="{{image}}"/>
-          {{/if}}
+          <div class="form-group d-none">
+            <p>{{translate "widgets.CorrectWordItem.form.preview"}}</p>
+              <img class="img-fluid img-preview" src="{{blob}}"/>
+          </div>
         </form>`;
         var rendered = indieauthor.renderTemplate(template, templateValues);
 
@@ -67,10 +66,25 @@ indieauthor.widgets.CorrectWordItem = {
     settingsClosed: function (modelObject) { },
     settingsOpened: function (modelObject) {
         const $form = $('#f-' + modelObject.id);
-        $form.find('input[name="image"]').on('change', function (e) {
-            $('input[name="blob"]').val('');
-            indieauthor.utils.encodeAsBase64DataURL(e.target.value).then(value => 
-                $('input[name="blob"]').val(value));
+        const $iImg = $form.find('input[name=image]');
+        const $iBlob = $form.find('input[name=blob]');
+        const $preview = $form.find('.img-preview');
+        const $sectionPreview = $preview.closest('.form-group');
+        $iImg.prop('required', !modelObject.data.blob);
+        $sectionPreview.toggleClass('d-none', !modelObject.data.blob);
+        $iImg.on('change', function (e) {
+            $iBlob.val('');
+            $iImg.prop('required', true);
+            $preview.attr('src', '');
+            $sectionPreview.toggleClass('d-none', true);
+            if (this.files[0]) {
+                indieauthor.utils.encodeBlobAsBase64DataURL(this.files[0]).then(value => {
+                    $iImg.prop('required', false);
+                    $iBlob.val(value);
+                    $preview.attr('src', value);
+                    $sectionPreview.toggleClass('d-none', false);
+                });
+            }
         });
     },
     preview: function (modelObject) {
@@ -82,7 +96,6 @@ indieauthor.widgets.CorrectWordItem = {
             data: {
                 question: "",
                 word: "",
-                image: "",
                 blob: "",
                 alt: ""
             }
@@ -90,7 +103,6 @@ indieauthor.widgets.CorrectWordItem = {
     },
     updateModelFromForm: function (modelObject, formJson) {
         modelObject.data.question = formJson.question;
-        modelObject.data.image = formJson.image;
         modelObject.data.blob = formJson.blob;
         modelObject.data.word = formJson.word;
         modelObject.data.alt = formJson.alt;
@@ -98,7 +110,8 @@ indieauthor.widgets.CorrectWordItem = {
     validateModel: function (widgetInstance) {
         var errors = [];
 
-        if (!indieauthor.utils.isIndieResource(widgetInstance.data.image)) errors.push("CorrectWordItem.image.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(widgetInstance.data.blob)) 
+            errors.push("common.imageblob.invalid");
 
         if (indieauthor.utils.isStringEmptyOrWhitespace(widgetInstance.data.question))
             errors.push("CorrectWordItem.question.invalid");
@@ -120,8 +133,8 @@ indieauthor.widgets.CorrectWordItem = {
     validateForm: function (formData) {
         var errors = [];
 
-        if (!indieauthor.utils.isIndieResource(formData.image))
-            errors.push("CorrectWordItem.image.invalid");
+        if (!indieauthor.utils.isValidBase64DataUrl(formData.blob))
+            errors.push("common.imageblob.invalid");
 
         if (indieauthor.utils.isStringEmptyOrWhitespace(formData.question))
             errors.push("formData.question.invalid");

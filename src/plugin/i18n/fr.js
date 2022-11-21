@@ -415,6 +415,15 @@ indieauthor.strings = {
             },
             "descriptions": {
                 "invalid": "The URL set for descriptions is not valid. You must provide a valid indiemedia URL"
+            },
+            "audioblob": {
+                "invalid": "The content of the audio file is not correct. You need to select a valid file."
+            },
+            "captionsblob": {
+                "invalid": "The content of the subtitle file is not correct. You need to select a valid file."
+            },
+            "imageblob": {
+                "invalid": "The content of the image is not correct. You need to select a valid image."
             }
         },
         "section": {

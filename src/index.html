@@ -7,19 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="manifest" href="manifest.json">
     <!-- STYLES -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/overrides.css">
     <link rel="stylesheet" type="text/css" href="vendor/toastr/toastr.min.css">
     <link rel="stylesheet" type="text/css" href="vendor/trumbowyg/ui/trumbowyg.min.css">
 
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.4.0/css/select.dataTables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/keytable/2.7.0/css/keyTable.dataTables.min.css"/>
+	<link rel="stylesheet" type="text/css" href="vendor/datatables/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="vendor/datatables/select.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="vendor/datatables/buttons.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="vendor/datatables/dataTables.dateTime.min.css"/>
+    <link rel="stylesheet" type="text/css" href="vendor/datatables/keyTable.dataTables.min.css"/>
 	<link rel="stylesheet" type="text/css" href="vendor/katex/katex.min.css">
     <link rel="stylesheet" type="text/css" href="vendor/jquery/jquery-ui.min.css">
 
@@ -154,13 +152,13 @@
     <script src="vendor/dragula/dragula.min.js"></script>
 	
 	<!-- DATATABLES -->
-    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/select/1.4.0/js/dataTables.select.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
-	<script type="text/javascript" src="https://cdn.datatables.net/keytable/2.7.0/js/dataTables.keyTable.min.js"></script>
+    <script type="text/javascript" src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="vendor/datatables/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="vendor/datatables/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="vendor/datatables/dataTables.dateTime.min.js"></script>
+	<script type="text/javascript" src="vendor/datatables/dataTables.keyTable.min.js"></script>
 
-	<script type="text/javascript" src="/vendor/crypto-js/crypto-js.js"></script>
+	<script type="text/javascript" src="vendor/crypto-js/crypto-js.js"></script>
     <!-- EDITOR -->
     <script src="js/editor/editor.js"></script>
     <script src="js/editor/lang/es.js"></script>
@@ -197,7 +195,7 @@
                     });
                 }
                 reader.readAsText(this.files[0]);
-                
+
             });
 
 			// Change caret-down / caret-up icon

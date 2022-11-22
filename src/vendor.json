@@ -113,5 +113,17 @@
             "/trumbowyg.template.js"
         ],
         "distfolder": "/trumbowyg"
+    },
+    {
+        "name": "datatables",
+        "moduleFolder": "./modules/datatables",
+        "files": ["/*.**"],
+        "distfolder": "/datatables"
+    },
+    {
+        "name": "fontawesome",
+        "moduleFolder": "./modules/fontawesome",
+        "files": ["/**/*.**"],
+        "distfolder": "/fontawesome"
     }
 ]

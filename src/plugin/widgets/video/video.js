@@ -124,7 +124,7 @@ indieauthor.widgets.Video = {
     validateModel: function (widgetInstance) {
         var keys = [];
 
-        if (!indieauthor.utils.isYoutubeVideoURL(widgetInstance.data.videourl) && !indieauthor.utils.isIndieResource(widgetInstance.data.videourl))
+        if (!indieauthor.utils.isYoutubeVideoURL(widgetInstance.data.videourl))
             keys.push("Video.videourl.invalid");
 
         if (!indieauthor.utils.isStringEmptyOrWhitespace(widgetInstance.data.captions) && !indieauthor.utils.isIndieResource(widgetInstance.data.captions))
@@ -150,7 +150,7 @@ indieauthor.widgets.Video = {
     validateForm: function (formData, instanceId) {
         var keys = [];
 
-        if (!indieauthor.utils.isYoutubeVideoURL(formData.videourl) && !indieauthor.utils.isIndieResource(formData.videourl))
+        if (!indieauthor.utils.isYoutubeVideoURL(formData.videourl))
             keys.push("Video.videourl.invalid");
 
         if (!indieauthor.utils.isStringEmptyOrWhitespace(formData.captions) && !indieauthor.utils.isIndieResource(formData.captions))

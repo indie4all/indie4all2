@@ -268,7 +268,7 @@ indieauthor.utils.isIndieResource = function (url) {
  */
 indieauthor.utils.isValidBase64DataUrl = function(data) {
     const pattern = /^data:([-\w.]+\/[-\w.+]+)?;base64\,([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$/;
-    return data.match(pattern);
+    return typeof data === 'string' && data.match(pattern);
 }
 
 indieauthor.utils.isOnlyOneWord = function (string) {

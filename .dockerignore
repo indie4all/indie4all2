@@ -1,0 +1,13 @@
+.git
+dist
+modules
+node_modules
+preview
+spec
+src
+.dockerignore
+.gitignore
+Dockerfile
+gulpfile.js
+README.md
+npm-debug.log

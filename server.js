@@ -56,6 +56,8 @@ const generate = function(req, res, onGenerated) {
         return res.status(StatusCodes.NO_CONTENT).send();
     // Set unit mode to local
     model.mode = "Local";
+    // Disable analytics by default
+    model.analytics = "0";
     fs.writeFile(INPUT_MODEL, JSON.stringify(model), function(error) {
         if (error)
             return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send(error);
@@ -108,7 +110,7 @@ app.listen(8000, function() {
     logger.imp("---------------");
     logger.imp("Serving EDITOR on " + WEB);
     logger.imp("---------------");
-    logger.imp("Serving PREVIEWS on " + OUTPUT_FOLDER);
+    logger.imp("Serving PREVIEWS on " + OUTPUT_FOLDER + " folder ");
     logger.imp("---------------");
     logger.imp("Cleaning PREVIEWS every 10 minutes");
     cron.schedule('*/10 * * * *', cleanOldPreviews);

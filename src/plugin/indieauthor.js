@@ -650,14 +650,6 @@ indieauthor.openUnitSettings = function (mode = "download") {
             <small class="form-text text-muted" >{{translate "units.form.title.help"}}</small >
         </div>
         <div class="form-group">
-            <label for="unit-type">{{translate "units.form.type.label"}}</label>
-            <select id="unit-type" name="mode" class="form-control" required>
-                <option value="Open" {{#ifeq mode "Open"}} selected {{/ifeq}}>{{translate "units.form.type.open"}}</option>
-                <option value="Interoperability" {{#ifeq mode "Interoperability"}} selected {{/ifeq}}>{{translate "units.form.type.interoperability"}}</option>
-            </select>
-            <small class="form-text text-muted" >{{translate "units.form.type.help"}}</small>
-        </div>
-        <div class="form-group">
             <label for="unit-language">{{translate "units.form.language.label"}}</label>
             <select id="unit-language" name="language" class="form-control" required>
             {{#each languages}}
@@ -699,31 +691,6 @@ indieauthor.openUnitSettings = function (mode = "download") {
             <input type="text" id="unit-institution" name="institution" class="form-control" value="{{institution}}" placeholder="{{translate "units.form.institution.placeholder"}}" autocomplete="off" required/>
             <small class="form-text text-muted" >{{translate "units.form.institution.help"}}</small >
         </div>
-        <div class="form-group">
-            <label for="unit-resource">{{translate "units.form.resource.label"}}</label>
-            <input type="text" id="unit-resource" name="resourceId" class="form-control" value="{{resourceId}}" placeholder="{{translate "units.form.resource.placeholder"}}" autocomplete="off" required/>
-            <small class="form-text text-muted" >{{translate "units.form.resource.help"}}</small >
-        </div>
-        <fieldset class="form-group">
-            <div class="row">
-              <legend class="col-form-label col-12 pt-0">{{translate "units.form.analytics.label"}}</legend>
-              <div class="col-12">
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="analytics" id="analytics-yes" value="1" required {{#ifeq "1" analytics}} checked {{/ifeq}}>
-                  <label class="form-check-label" for="analytics-yes">
-                  {{translate "units.form.analytics.yes"}}
-                  </label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="analytics" id="analytics-no" value="0" required {{#ifeq "0" analytics}} checked {{/ifeq}}>
-                  <label class="form-check-label" for="analytics-no">
-                  {{translate "units.form.analytics.no"}}
-                  </label>
-                </div>
-                <small class="form-text text-muted" >{{translate "units.form.analytics.help"}}</small >
-              </div>
-            </div>
-        </fieldset>
         <input type="submit" class="hide" />
     </form>`;
 
@@ -742,12 +709,9 @@ indieauthor.openUnitSettings = function (mode = "download") {
         user: indieauthor.model.user ?? '',
         email: indieauthor.model.email ?? '',
         institution: indieauthor.model.institution ?? '',
-        resourceId: indieauthor.model.resourceId ?? '',
-        mode: indieauthor.model.mode ?? '',
         language: indieauthor.model.language ?? '',
         theme: indieauthor.model.theme ?? '',
-        license: indieauthor.model.license ?? '',
-        analytics: indieauthor.model.analytics ?? '0'
+        license: indieauthor.model.license ?? ''
     };
     document.getElementById('modal-settings-body').innerHTML = indieauthor.renderTemplate(inputs, data);
 
@@ -769,6 +733,13 @@ indieauthor.openUnitSettings = function (mode = "download") {
         const formData = indieauthor.utils.toJSON(form);
         // Overwrite indieauthor.model with the specified data
         const model = $.extend(indieauthor.model, formData);
+        // Generate a new resourceId if necessary
+        if (typeof model.resourceId !== "string")
+            model.resourceId = indieauthor.utils.generate_uuid();
+        // Remove unnecessary fields
+        delete model.VERSION_HISTORY;
+        delete model.currentErrors;
+
         if (mode === 'download')
             indieauthor.api.download(model);
         else if (mode === 'publish')

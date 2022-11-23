@@ -149,6 +149,9 @@ indieauthor.api.editorFunctions.loadModelIntoPlugin = function (model, onLoaded,
             indieauthor.model.theme = model.theme;
             indieauthor.model.license = model.license;
             indieauthor.model.analytics = model.analytics;
+            // TODO: migration from older versions
+            indieauthor.model.CURRENT_MODEL_VERSION = model.CURRENT_MODEL_VERSION;
+            indieauthor.model.currentErrors = [];
 
             for (var i = 0; i < indieauthor.model.sections.length; i++) {
                 var element = indieauthor.model.sections[i];

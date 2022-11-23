@@ -1,5 +1,5 @@
 # INDIe4all2 project
-The aim of this project is to bring the power of the Indie4all projects to households Internet access difficulties. Once you have deployed your Docker container on your computer, you will not need Internet access to create, export, import, preview and generate accessible learning units, all with an easy-to-use interface.
+The aim of this project is to bring the power of the Indie4all projects to households with Internet access difficulties. Once you have deployed your Docker container on your computer, you will not need Internet access to create, export, import, preview and generate accessible learning units, all with an easy-to-use interface.
 ## Prerequisites
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed.
 - [Docker Desktop](https://docs.docker.com/desktop/) or [Docker Engine](https://docs.docker.com/engine/install/) installed.

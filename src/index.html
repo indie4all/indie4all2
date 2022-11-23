@@ -180,7 +180,7 @@
         }
 		
         /** Entry point */
-        (function () {
+        $(document).ready(function () {
 
             $('#upload-model').on('click', function() {
                 $('#upload-file-model').trigger('click');
@@ -211,7 +211,7 @@
             var domPalette = document.getElementById('palette');
             var domContainer = document.getElementById('main-container');
             indieauthor.init(domPalette, domContainer, function () {});
-        })();
+        });
     </script>
 </body>
 

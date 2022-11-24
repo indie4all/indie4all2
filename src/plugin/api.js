@@ -1,31 +1,6 @@
 // EDITOR FUNCTIONS
 indieauthor.api.editorFunctions = {};
 
-indieauthor.api.editorFunctions.getEditorContent = function (onSuccess, onError) {
-    if (indieauthor.api.validateContent(false)) {
-        var sections = indieauthor.model.sections;
-        onSuccess(sections);
-    } else {
-        onError(indieauthor.strings.messages.contentErrors);
-    }
-}
-
-/**
- * If the editor content is valid, obtains the current model and returns its sections in an onSuccess function. 
- * 
- * @param {Function} onSuccess Function to be runned when a success event is thrown. It will be called with the sections as an array parameter
- * @param {Function} onError Function to be runned when an error event is thrown. It will be called with a message in a string
- */
-indieauthor.api.getEditorContent = function (onSuccess, onError) {
-    if (indieauthor.api.validateContent(false)) {
-        var sections = indieauthor.model.sections;
-        var version = indieauthor.model.CURRENT_MODEL_VERSION;
-        onSuccess(sections, version);
-    } else {
-        onError(indieauthor.strings.messages.contentErrors);
-    }
-}
-
 /**
  * Validates the current editor model and shows errors associated with it
  * 
@@ -119,17 +94,6 @@ indieauthor.api.undo = function () {
 
 indieauthor.api.redo = function () {
     indieauthor.undoredo.redo();
-}
-
-
-// Editor functions
-indieauthor.api.editorFunctions.getEditorContent = function (onSuccess, onError) {
-    if (indieauthor.api.validateContent(false)) {
-        var sections = indieauthor.model.sections;
-        onSuccess(sections);
-    } else {
-        onError(indieauthor.strings.messages.contentErrors);
-    }
 }
 
 indieauthor.api.editorFunctions.loadModelIntoPlugin = function (model, onLoaded, onError) {

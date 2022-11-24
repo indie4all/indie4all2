@@ -732,11 +732,13 @@ indieauthor.openUnitSettings = function (mode = "download") {
         }
         const formData = indieauthor.utils.toJSON(form);
         // Overwrite indieauthor.model with the specified data
-        const model = $.extend(indieauthor.model, formData);
+        $.extend(indieauthor.model, formData);
         // Generate a new resourceId if necessary
-        if (typeof model.resourceId !== "string")
-            model.resourceId = indieauthor.utils.generate_uuid();
-        // Remove unnecessary fields
+        if (typeof indieauthor.model.resourceId !== "string")
+            indieauthor.model.resourceId = indieauthor.utils.generate_uuid();
+        // Deep copy of the indieauthor model
+        const model = $.extend(true, {}, indieauthor.model);
+        // Remove unnecessary fields for the exported model
         delete model.VERSION_HISTORY;
         delete model.currentErrors;
 

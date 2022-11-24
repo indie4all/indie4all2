@@ -163,22 +163,7 @@
     <script src="js/editor/editor.js"></script>
     <script src="js/editor/lang/es.js"></script>
 
-    <script type="text/javascript">
-        function saveContent() {
-            indieauthor.api.getEditorContent(function (sections, version) {
-                var transformed = indieauthor.transform.runTransformation({
-                    title: "test",
-                    user: "Test",
-                    language: "ES"
-                }, sections, 'Preview');
-
-                console.log(transformed);
-
-            }, function (error) {
-                console.error("ERROR " + error);
-            })
-        }
-		
+    <script type="text/javascript">		
         /** Entry point */
         $(document).ready(function () {
 

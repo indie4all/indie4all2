@@ -1,4 +1,4 @@
-indieauthor.strings = {
+{
     "buttons": {
         "toggleCategories": "Show/Hide categories",
         "viewImage": "View image"
@@ -14,17 +14,17 @@ indieauthor.strings = {
             "label": "Alternative text for the image",
             "placeholder": "Alternative text"
         },
-        help: {
-            label: "Help",
-            placeholder: "Default help text",
-            help: "This will be the text for helping the user understand the interaction with the widget. <strong>If left in blank, it will take the default text.</strong>",
-            button: "Default"
+        "help": {
+            "label": "Help",
+            "placeholder": "Default help text",
+            "help": "This will be the text for helping the user understand the interaction with the widget. <strong>If left in blank, it will take the default text.</strong>",
+            "button": "Default"
         },
         "feedback": {
             "positive": "Positive feedback...",
             "negative": "Negative feedback...",
             "help": "Intdouce the feedback that the student occurred whether he answered correctly or incorrectly",
-            "label": "Feedback",
+            "label": "Feedback"
         },
         "captions": {
             "label": "Subtitles (CC)",
@@ -160,7 +160,7 @@ indieauthor.strings = {
             "image": {
                 "invalid": "The URL set for the image is not valid. You must make sure to provide a valid indiemedia URL in the image field.",
                 "sizeNotSet": "The width and the height of the image must be set when its aspect is \"Custom\""
-            },
+            }
         },
         "ImageAndSoundContainer": {
             "columns": {
@@ -408,7 +408,7 @@ indieauthor.strings = {
                 "notUniqueName": "The instance name must be unique in the whole content unit"
             },
             "alt": {
-                "invalid": "You must provide an alternative text for the image",
+                "invalid": "You must provide an alternative text for the image"
             },
             "captions": {
                 "invalid": "The URL set for subtitles is not valid. You must provide a valid indiemedia URL"
@@ -450,7 +450,7 @@ indieauthor.strings = {
         "delete": "Delete content",
 		"duplicate": "Duplicate element",
         "edit": "Edit content",
-		"export": "Export element"
+        "export": "Export element"
     },
     "messages": {
         "changesSaved": "Changes saved successfully.",
@@ -458,9 +458,9 @@ indieauthor.strings = {
         "confirmLoadModel": "A previous unit has been detected. Choose whether to load or discard it.",
         "contentCleared": "Content deleted successfully.",
         "contentErrors": "Ooops! There are errors in your content. Check the error messages and follow their instructions to fix them.",
-		"couldNotExportElement": "The element could not be exported",
+        "couldNotExportElement": "The element could not be exported",
         "couldNotExportSection": "The section could not be exported",
-        "deletedSection": "Section removed successfully.",
+		"deletedSection": "Section removed successfully.",
         "emptyContent": "You have not added content yet.",
         "errorMessage": "Error",
 		"exportedElement": "Element successfully exported",
@@ -538,7 +538,7 @@ indieauthor.strings = {
                 "placeholder": "Write the author's email"
             },
             "institution": {
-                "help": "Name of hte institution",
+                "help": "Name of the institution",
                 "label": "Institution",
                 "placeholder": "Write the name of the institution"
             },
@@ -903,7 +903,7 @@ indieauthor.strings = {
                     "w": "Width",
                     "h": "Height"
                 }
-            },
+            }
         },
         "Animation": {
             "label": "Animation",
@@ -925,7 +925,7 @@ indieauthor.strings = {
                     "w": "Width",
                     "h": "Height"
                 }
-            },
+            }
         },
         "CorrectWord": {
             "label": "Correct word"
@@ -953,7 +953,7 @@ indieauthor.strings = {
             "prev": "Correct word has not been set yet ..."
         },
         "MissingWords": {
-            "label": "Missing words",
+            "label": "Missing words"
         },
         "MissingWordsItem": {
             "form": {
@@ -978,7 +978,7 @@ indieauthor.strings = {
             "prev": "Missing words item has not been set yet..."
         },
         "SentenceOrderContainer": {
-            "label": "Sentence ordering",
+            "label": "Sentence ordering"
         },
         "SentenceOrderItem": {
             "form": {
@@ -1021,7 +1021,7 @@ indieauthor.strings = {
             }
         },
         "ButtonTextContainer": {
-            "label": "Buttons with text",
+            "label": "Buttons with text"
         },
         "ButtonTextItem": {
             "form": {
@@ -1243,4 +1243,4 @@ indieauthor.strings = {
             }
         }
     }
-};
+}

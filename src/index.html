@@ -161,12 +161,10 @@
 	<script type="text/javascript" src="vendor/crypto-js/crypto-js.js"></script>
     <!-- EDITOR -->
     <script src="js/editor/editor.js"></script>
-    <script src="js/editor/lang/es.js"></script>
-
     <script type="text/javascript">		
         /** Entry point */
         $(document).ready(function () {
-
+        
             $('#upload-model').on('click', function() {
                 $('#upload-file-model').trigger('click');
             });
@@ -193,9 +191,19 @@
 			
             stickybits('.bd-navbar');
 
-            var domPalette = document.getElementById('palette');
-            var domContainer = document.getElementById('main-container');
-            indieauthor.init(domPalette, domContainer, function () {});
+            const domPalette = document.getElementById('palette');
+            const domContainer = document.getElementById('main-container');
+            const SUPPORTED_LANGUAGES = ['el', 'en', 'es', 'fr', 'lt'];
+            let lang = navigator && navigator.language ? navigator.language.substr(0,2) : 'en';
+            lang = SUPPORTED_LANGUAGES.includes(lang) ? lang : 'en';
+            
+            fetch(`js/editor/lang/${lang}.json`)
+            .then(response => response.json())
+            .then(response => {
+                indieauthor = indieauthor || {};
+                indieauthor.strings = response;
+                indieauthor.init(domPalette, domContainer, function () {});
+            });     
         });
     </script>
 </body>

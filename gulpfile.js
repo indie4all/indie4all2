@@ -56,7 +56,7 @@ gulp.task('scripts', function (done) {
         .pipe(gulp.dest(webEditorFolder))
         .pipe(gulp.dest(distJsFolder));
 
-    gulp.src([plguinFile('i18n/*.js')])
+    gulp.src([plguinFile('i18n/*.json')])
         .pipe(gulp.dest(webEditorFolder + "/lang"))
         .pipe(gulp.dest(distLangFolder));
 

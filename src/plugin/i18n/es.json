@@ -1,4 +1,4 @@
-indieauthor.strings = {
+{
     "buttons": {
         "toggleCategories": "Mostrar/Ocultar categorías",
         "viewImage": "Ver imagen"
@@ -14,17 +14,17 @@ indieauthor.strings = {
             "label": "Texto alternativo para la imagen",
             "placeholder": "Texto alternativo"
         },
-        help: {
-            label: "Ayuda",
-            placeholder: "Texto de ayuda por defecto",
-            help: "Este texto será el que aparezca encima del widget para que el usuario entienda cómo interaccionar con el widget. <strong>Si se deja en blanco tomará el valor por defecto.</strong>",
-            button: "Por defecto"
+        "help": {
+            "label": "Ayuda",
+            "placeholder": "Texto de ayuda por defecto",
+            "help": "Este texto será el que aparezca encima del widget para que el usuario entienda cómo interaccionar con el widget. <strong>Si se deja en blanco tomará el valor por defecto.</strong>",
+            "button": "Por defecto"
         },
         "feedback": {
             "positive": "Feedback positivo...",
             "negative": "Feedback negativo...",
             "help": "Intdouce el feedback que recibirá el alumno tanto si responde correcta o incorrectamente",
-            "label": "Feedback",
+            "label": "Feedback"
         },
         "captions": {
             "label": "Subtítulos (CC)",
@@ -160,7 +160,7 @@ indieauthor.strings = {
             "image": {
                 "invalid": "La URL establecida para la imagen no es válida. Debes asegurarte de proporcionar una URL válida de indiemedia en el campo imagen.",
                 "sizeNotSet": "El ancho y el alto de la imagen deben estar establecidos cuando su aspecto es \"Personalizado\""
-            },
+            }
         },
         "ImageAndSoundContainer": {
             "columns": {
@@ -397,7 +397,7 @@ indieauthor.strings = {
         "Video": {
             "videourl": {
                 "invalid": "La URL establecida para el vídeo no es válida. Debes asegurarte de proporcionar una URL válida de indiemedia o Youtube."
-            },
+            }
         },
 		"Table": {
             "empty":  "La tabla no tiene columnas establecidas"
@@ -408,7 +408,7 @@ indieauthor.strings = {
                 "notUniqueName": "El nombre de la instancia debe ser único en todo el contenido."
             },
             "alt": {
-                "invalid": "Debes proporcionar un texto alternativo para la imagen",
+                "invalid": "Debes proporcionar un texto alternativo para la imagen"
             },
             "captions": {
                 "invalid": "La URL establecida para los subtitulos no es válida. Debes asegurarte de proporcionar una URL válida de indiemedia"
@@ -903,7 +903,7 @@ indieauthor.strings = {
                     "w": "Ancho",
                     "h": "Alto"
                 }
-            },
+            }
         },
         "Animation": {
             "label": "Animación",
@@ -925,7 +925,7 @@ indieauthor.strings = {
                     "w": "Ancho",
                     "h": "Alto"
                 }
-            },
+            }
         },
         "CorrectWord": {
             "label": "Palabra correcta"
@@ -953,7 +953,7 @@ indieauthor.strings = {
             "prev": "La palabra correcta no ha sido establecida todavía..."
         },
         "MissingWords": {
-            "label": "Palabras faltantes",
+            "label": "Palabras faltantes"
         },
         "MissingWordsItem": {
             "form": {
@@ -978,7 +978,7 @@ indieauthor.strings = {
             "prev": "El elemento de palabras faltantes no ha sido establecido todavía..."
         },
         "SentenceOrderContainer": {
-            "label": "Ordenamiento de frases",
+            "label": "Ordenamiento de frases"
         },
         "SentenceOrderItem": {
             "form": {
@@ -1021,7 +1021,7 @@ indieauthor.strings = {
             }
         },
         "ButtonTextContainer": {
-            "label": "Botones con texto",
+            "label": "Botones con texto"
         },
         "ButtonTextItem": {
             "form": {
@@ -1243,4 +1243,4 @@ indieauthor.strings = {
             }
         }
     }
-};
+}

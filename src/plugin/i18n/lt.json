@@ -1,4 +1,4 @@
-indieauthor.strings = {
+{
     "buttons": {
         "toggleCategories": "Show/Hide categories",
         "viewImage": "View image"
@@ -14,17 +14,17 @@ indieauthor.strings = {
             "label": "Alternative text for the image",
             "placeholder": "Alternative text"
         },
-        help: {
-            label: "Help",
-            placeholder: "Default help text",
-            help: "This will be the text for helping the user understand the interaction with the widget. <strong>If left in blank, it will take the default text.</strong>",
-            button: "Default"
+        "help": {
+            "label": "Help",
+            "placeholder": "Default help text",
+            "help": "This will be the text for helping the user understand the interaction with the widget. <strong>If left in blank, it will take the default text.</strong>",
+            "button": "Default"
         },
         "feedback": {
             "positive": "Positive feedback...",
             "negative": "Negative feedback...",
             "help": "Intdouce the feedback that the student occurred whether he answered correctly or incorrectly",
-            "label": "Feedback",
+            "label": "Feedback"
         },
         "captions": {
             "label": "Subtitles (CC)",
@@ -160,7 +160,7 @@ indieauthor.strings = {
             "image": {
                 "invalid": "The URL set for the image is not valid. You must make sure to provide a valid indiemedia URL in the image field.",
                 "sizeNotSet": "The width and the height of the image must be set when its aspect is \"Custom\""
-            },
+            }
         },
         "ImageAndSoundContainer": {
             "columns": {
@@ -256,7 +256,7 @@ indieauthor.strings = {
         },
         "MissingWords": {
             "data": {
-                "empty": "You must provide at least one missing words item."
+                "empty": "You must provide at least one Missing words item."
             }
         },
         "MissingWordsItem": {
@@ -408,7 +408,7 @@ indieauthor.strings = {
                 "notUniqueName": "The instance name must be unique in the whole content unit"
             },
             "alt": {
-                "invalid": "You must provide an alternative text for the image",
+                "invalid": "You must provide an alternative text for the image"
             },
             "captions": {
                 "invalid": "The URL set for subtitles is not valid. You must provide a valid indiemedia URL"
@@ -450,7 +450,7 @@ indieauthor.strings = {
         "delete": "Delete content",
 		"duplicate": "Duplicate element",
         "edit": "Edit content",
-        "export": "Export element"
+		"export": "Export element"
     },
     "messages": {
         "changesSaved": "Changes saved successfully.",
@@ -538,7 +538,7 @@ indieauthor.strings = {
                 "placeholder": "Write the author's email"
             },
             "institution": {
-                "help": "Name of the institution",
+                "help": "Name of hte institution",
                 "label": "Institution",
                 "placeholder": "Write the name of the institution"
             },
@@ -885,7 +885,7 @@ indieauthor.strings = {
         },
         "Puzzle": {
             "label": "Puzzle",
-            "prev": "The puzzle has not been set yet ...",
+            "prev": "The puzzle has not yet been set...",
             "form": {
                 "image": {
                     "help": "This will be the image that appears as the background of the puzzle. You can choose one of your uploaded images.",
@@ -896,14 +896,14 @@ indieauthor.strings = {
                 "pieces": {
                     "new": "Add new piece...",
                     "delete": "Delete",
-                    "altImg": "Alternative text for clipping", 
+                    "altImg": "Alternative text for clipping",
                     "altRec": "Alternative text for position",
                     "x": "Left",
                     "y": "Top",
                     "w": "Width",
                     "h": "Height"
                 }
-            },
+            }
         },
         "Animation": {
             "label": "Animation",
@@ -925,7 +925,7 @@ indieauthor.strings = {
                     "w": "Width",
                     "h": "Height"
                 }
-            },
+            }
         },
         "CorrectWord": {
             "label": "Correct word"
@@ -953,7 +953,7 @@ indieauthor.strings = {
             "prev": "Correct word has not been set yet ..."
         },
         "MissingWords": {
-            "label": "Missing words",
+            "label": "Missing words"
         },
         "MissingWordsItem": {
             "form": {
@@ -966,7 +966,7 @@ indieauthor.strings = {
                     "label": "Preview of the sentence",
                     "placeholder": "Text of the sentence with ___ marker",
                     "help": "This is how you would see the sentence in the content unit."
-
+                    
                 },
                 "combinations": {
                     "new": "Add new answer...",
@@ -978,7 +978,7 @@ indieauthor.strings = {
             "prev": "Missing words item has not been set yet..."
         },
         "SentenceOrderContainer": {
-            "label": "Sentence ordering",
+            "label": "Sentence ordering"
         },
         "SentenceOrderItem": {
             "form": {
@@ -1021,7 +1021,7 @@ indieauthor.strings = {
             }
         },
         "ButtonTextContainer": {
-            "label": "Buttons with text",
+            "label": "Buttons with text"
         },
         "ButtonTextItem": {
             "form": {
@@ -1243,4 +1243,4 @@ indieauthor.strings = {
             }
         }
     }
-};
+}

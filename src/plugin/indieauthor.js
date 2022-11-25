@@ -733,9 +733,8 @@ indieauthor.openUnitSettings = function (mode = "download") {
         const formData = indieauthor.utils.toJSON(form);
         // Overwrite indieauthor.model with the specified data
         $.extend(indieauthor.model, formData);
-        // Generate a new resourceId if necessary
-        if (typeof indieauthor.model.resourceId !== "string")
-            indieauthor.model.resourceId = indieauthor.utils.generate_uuid();
+        // Generate a new resourceId
+        indieauthor.model.resourceId = indieauthor.utils.generate_uuid();
         // Deep copy of the indieauthor model
         const model = $.extend(true, {}, indieauthor.model);
         // Remove unnecessary fields for the exported model

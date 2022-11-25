@@ -182,7 +182,7 @@
             });
 
 			// Change caret-down / caret-up icon
-			$('.editor-container').on('click', '[data-toggle]', function() {
+			$('.editor-container').on('click', '[data-toggle="collapse"]', function() {
 				let $icon = $(this).find('i');
 				let show = $($(this).attr('data-target')).is('.collapse.show');
 				$icon.toggleClass('fa-caret-down', !show);

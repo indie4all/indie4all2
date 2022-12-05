@@ -1,0 +1,42 @@
+<form id="f-{{instanceId}}">
+    <div class="form-group">
+        <label for="instanceName">{{translate "common.name.label"}}</label>
+        <input type="text" name="instanceName" class="form-control" value="{{instanceName}}" 
+            placeholder="{{translate "common.name.placeholder"}}" autocomplete="off" required />
+        <small class="form-text text-muted">{{translate "common.name.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label for="help">{{translate "common.help.label"}}</label>
+        <div class="input-group mb-3">
+            <input name="help" type="text" class="form-control" placeholder="{{translate "common.help.placeholder"}}"
+                value="{{help}}">
+            <div class="input-group-append">
+                <button class="btn btn-indie" type="button" onclick="$(\'input[name=help]\').val(\'\')">
+                    {{translate "common.help.button"}}
+                </button>
+            </div>
+        </div>
+        <small class="form-text text-muted">{{translate "common.help.help"}}</small>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-12">
+            <label for="question-{{instanceId}}">{{translate "widgets.GuessWord.form.question.label"}}</label>
+            <input type="text" id="question-{{instanceId}}" class="form-control" name="question"
+                placeholder="{{translate "widgets.GuessWord.form.question.placeholder"}}" required
+                value="{{question}}" />
+            <small class="form-text text-muted">{{translate "widgets.GuessWord.form.question.help"}}</small>
+        </div>
+        <div class="form-group col-12 col-lg-8">
+            <label for="answer-{{instanceId}}">{{translate "widgets.GuessWord.form.answer.label"}}</label>
+            <input type="text" id="answer-{{instanceId}}" class="form-control" name="answer" required
+                placeholder="{{translate "widgets.GuessWord.form.answer.placeholder"}}" value="{{answer}}" />
+            <small class="form-text text-muted">{{translate "widgets.GuessWord.form.answer.help"}}</small>
+        </div>
+        <div class="form-group col-12 col-lg-4">
+            <label for="attempts-{{instanceId}}">{{translate "widgets.GuessWord.form.attempts.label"}}</label>
+            <input type="number" min="1" max="9" step="1" class="form-control" id="attempts-{{instanceId}}"
+                name="attempts" value="{{attempts}}" required />
+            <small class="form-text text-muted">{{translate "widgets.GuessWord.form.attempts.help"}}</small>
+        </div>
+    </div>
+</form>

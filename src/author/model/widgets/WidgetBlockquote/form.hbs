@@ -1,0 +1,33 @@
+<form id="f-{{instanceId}}">
+    <div class="form-group">
+        <label for="quote">{{translate "widgets.Blockquote.form.quote.label"}}</label>
+        <textarea rows="3" class="form-control" name="quote" 
+            placeholder="{{translate 'widgets.Blockquote.form.quote.placeholder'}}" required>{{quote}}
+        </textarea>
+        <small class="form-text text-muted">{{translate 'widgets.Blockquote.form.quote.help'}}</small>
+    </div>
+    <div class="form-group">
+        <label for="caption">{{translate 'widgets.Blockquote.form.caption.label'}}</label>
+        <input type="text" class="form-control" name="caption" value="{{caption}}" 
+            placeholder="{{translate 'widgets.Blockquote.form.caption.placeholder'}}" autocomplete="off"></input>
+        <small class="form-text text-muted">{{translate 'widgets.Blockquote.form.quote.help'}}</small>
+    </div>
+    <div class="form-group">
+        <label for="source">{{translate 'widgets.Blockquote.form.source.label'}}</label>
+        <input type="text" class="form-control" name="source" value="{{source}}" 
+            placeholder="{{translate 'widgets.Blockquote.form.source.placeholder'}}" autocomplete="off"></input>
+        <small class="form-text text-muted">{{translate 'widgets.Blockquote.form.source.help'}}</small>
+    </div>
+    <div class="form-group">
+        <label for="alignment">{{translate 'widgets.Blockquote.form.alignment.label'}}</label>
+        <select class="form-control" name="alignment">
+            <option value="left" {{#ifeq alignment 'left' }}selected{{/ifeq}}>
+                {{translate 'widgets.Blockquote.form.alignment.values.left'}}
+            </option>
+            <option value="right" {{#ifeq alignment 'right' }}selected{{/ifeq}}>
+                {{translate 'widgets.Blockquote.form.alignment.values.right'}}
+            </option>
+        </select>
+        <small class="form-text text-muted">{{translate 'widgets.Blockquote.form.alignment.help'}}</small>
+    </div>
+</form>

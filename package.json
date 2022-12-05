@@ -37,11 +37,15 @@
     "gulp-strip-comments": "^2.5.2",
     "gulp-terser": "^2.1.0",
     "gulp4-run-sequence": "^1.0.1",
+    "handlebars-loader": "^1.7.2",
+    "html-loader": "^4.2.0",
     "jasmine": "^4.1.0",
     "jasmine-console-reporter": "^3.1.0",
     "jsdom": "^19.0.0",
     "node-sass": "^6.0.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
   },
   "scripts": {
     "clean": "rimraf dist/* && rimraf web/*",

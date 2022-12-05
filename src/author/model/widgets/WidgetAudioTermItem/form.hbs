@@ -1,0 +1,29 @@
+<form id="f-{{instanceId}}">
+    <div class="form-group">
+        <label>{{translate "widgets.AudioTermItem.form.term.label"}}</label>
+        <input type="text" class="form-control" name="term" value="{{term}}" 
+            placeholder="{{translate "widgets.AudioTermItem.form.term.placeholder"}}" autocomplete="off" required />
+        <small class="form-text text-muted">{{translate "widgets.AudioTermItem.form.term.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label>{{translate "widgets.AudioTermItem.form.definition.label"}}</label>
+        <textarea class="form-control" name="definition" 
+            placeholder="{{translate "widgets.AudioTermItem.form.definition.placeholder"}}" required>
+            {{definition}}
+        </textarea>
+        <small class="form-text text-muted">{{translate "widgets.AudioTermItem.form.definition.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label>{{translate "widgets.AudioTermItem.form.audio.label"}}</label>
+        <input type="file" class="form-control" name="audio"
+            accept="audio/3gpp, audio/3gpp2, audio/aac, audio/ogg, audio/opus, audio/mp4, audio/mpeg, audio/vnd.wav, audio/vorbis, audio/wave, audio/x-aiff" />
+        <small class="form-text text-muted">{{translate "widgets.AudioTermItem.form.audio.help"}}</small>
+        <input type="hidden" name="audioblob" value="{{audioblob}}" />
+    </div>
+    <div class="form-group">
+        <label for="text">{{translate "common.captions.label"}}</label>
+        <input type="file" class="form-control" name="captions" accept=".vtt" />
+        <small class="form-text text-muted">{{translate "common.captions.help"}}</small>
+        <input type="hidden" name="captionsblob" value="{{captionsblob}}" />
+    </div>
+</form>

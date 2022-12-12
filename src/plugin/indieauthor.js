@@ -83,8 +83,31 @@ indieauthor.init = function (palette, container, initCallBack) {
     indieauthor.drake.on('drop', function (el, target, source, sibling) {
         indieauthor.drop(el, target, source, sibling);
     });
+    indieauthor.initLoading();
 
     if (initCallBack) initCallBack();
+}
+
+indieauthor.initLoading = function() {
+
+    const loadingTemplate = `<div id="modal-loading" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-header modal-indie">
+                <h5 id="modal-settings-tittle" class="modal-title">
+                    {{translate "common.loading.title" }}
+                </h5>
+            </div>
+            <div class="modal-content border-indie">
+                <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                <div class="loading-message text-center font-weight-bold pb-4 mb-4">
+                    {{translate "common.loading.description" }}
+                </div>
+            </div>
+        </div>
+    </div>`;
+
+    const rendered = indieauthor.renderTemplate(loadingTemplate);
+    $(indieauthor.container).after(rendered);
 }
 
 indieauthor.configure = function () {
@@ -728,6 +751,7 @@ indieauthor.openUnitSettings = function (mode = "download") {
         e.preventDefault();
         if (!indieauthor.api.validateContent(false)) {
             console.error(indieauthor.strings.messages.contentErrors);
+            $("#modal-settings").modal('hide');
             return;
         }
         const formData = indieauthor.utils.toJSON(form);
@@ -740,15 +764,15 @@ indieauthor.openUnitSettings = function (mode = "download") {
         // Remove unnecessary fields for the exported model
         delete model.VERSION_HISTORY;
         delete model.currentErrors;
-
-        if (mode === 'download')
-            indieauthor.api.download(model);
-        else if (mode === 'publish')
-            indieauthor.api.publish(model);
-        else if (mode === 'preview')
-            indieauthor.api.preview(model);
-            
-        $("#modal-settings").modal('hide');
+        $("#modal-settings").off('hidden.bs.modal').on('hidden.bs.modal', function() {
+            if (mode === 'download')
+                indieauthor.api.download(model);
+            else if (mode === 'publish')
+                indieauthor.api.publish(model);
+            else if (mode === 'preview')
+                indieauthor.api.preview(model);
+        });
+        $("#modal-settings").modal('hide');        
     });
 
     $("#modal-settings .btn-submit").on('click', function (e) {

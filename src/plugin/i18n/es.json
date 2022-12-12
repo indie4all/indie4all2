@@ -36,6 +36,10 @@
             "placeholder": "Ejemplo: https://indiemedia.upct.es/descriptions.vtt",
             "help": "URL de INDIeMedia del fichero que contiene descripciones de texto de lo que sucede en el video para cuando la parte del video no está disponible porque el espectador es ciego y no usa una pantalla. Las descripciones son leídas por un lector de pantalla o convertidas en una pista de audio separada."
         },
+        "loading": {
+            "title": "Cargando",
+            "description": "Generando unidad..."
+        },
         "selectType": "Selecciona un tipo de las siguientes opciones"
     },
     "errors": {

@@ -151,6 +151,7 @@ indieauthor.api.download = function (model) {
 indieauthor.api.preview = function(model) {
     const onGenerated = async (response) => {
         const uri = await response.text();
+        $("#modal-loading").modal('hide');
         window.open(uri, '_blank');
     };
     model.mode = "LocalPreview";
@@ -158,6 +159,7 @@ indieauthor.api.preview = function(model) {
     const headers = new Headers();
     headers.append("Content-Type", "application/json");
     const requestOptions = { method: 'PUT', body: JSON.stringify(model), redirect: 'follow', headers };
+    $("#modal-loading").modal({ show: true, keyboard: false, backdrop: 'static' });
     fetch("/model/preview", requestOptions)
         .then(onGenerated)
         .catch(error => console.log('error', error));
@@ -187,12 +189,14 @@ indieauthor.api.publish = function (model) {
         link.click();
         document.body.removeChild(link);
         window.URL.revokeObjectURL(url);
+        $("#modal-loading").modal('hide');
     };
     model.mode = "Local";
     // Download the generated files
     const headers = new Headers();
     headers.append("Content-Type", "application/json");
     const requestOptions = { method: 'PUT', body: JSON.stringify(model), redirect: 'follow', headers };
+    $("#modal-loading").modal({ show: true, keyboard: false, backdrop: 'static' });
     fetch("/model/publish", requestOptions)
         .then(onGenerated)
         .catch(error => console.log('error', error));

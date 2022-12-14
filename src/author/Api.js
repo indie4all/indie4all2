@@ -1,6 +1,5 @@
 /* global $ */
 /* global bootprompt */
-
 import Author from "./Author";
 import I18n from "./I18n";
 import UndoRedo from "./undoredo";
@@ -63,8 +62,8 @@ export default class Api {
             // Remove unnecessary fields for the exported model
             delete myModel.VERSION_HISTORY;
             delete myModel.currentErrors;
-            onSubmit && onSubmit(myModel);
             $("#modal-settings").modal('hide');
+            onSubmit && onSubmit(myModel);
         });
 
         $("#modal-settings .btn-submit").on('click', function () {
@@ -100,7 +99,7 @@ export default class Api {
 
     toggleCategory(category) { this.author.toggleCategory(category); }
 
-    validate() {  this.author.validateContent(true); }
+    validate() {  return this.author.validateContent(true); }
 
     /**
      * Clears the content of the editor
@@ -173,11 +172,13 @@ export default class Api {
     }
 
     preview() {
-
+        const self = this;
         const onSubmit = (model) => {
+            self.author.showLoading(self.i18n.translate("common.loading.description"));
             const onGenerated = async (response) => {
                 const uri = await response.text();
                 window.open(uri, '_blank');
+                self.author.hideLoading();
             };
             // Download the generated files
             const headers = new Headers();
@@ -185,18 +186,22 @@ export default class Api {
             const requestOptions = { method: 'PUT', body: JSON.stringify(model), redirect: 'follow', headers };
             fetch("/model/preview", requestOptions)
                 .then(onGenerated)
-                .catch(error => console.log('error', error));
+                .catch(error => {
+                    console.log('error', error);
+                    self.author.hideLoading(); 
+                });
         }
 
-        this.#openUnitSettings(onSubmit);
+        self.#openUnitSettings(onSubmit);
     }
 
     /**
      * Generates a zip file with the content of the unit
      */
     publish() {
-
+        const self = this;
         const onSubmit = (model) => {
+            self.author.showLoading(self.i18n.translate("common.loading.description"));
             const onGenerated = async response => {
                 const type = response.headers.get('content-type');
                 const filename = response.headers.get('content-disposition')
@@ -215,6 +220,7 @@ export default class Api {
                 link.click();
                 document.body.removeChild(link);
                 window.URL.revokeObjectURL(url);
+                self.author.hideLoading();
             };
             // Download the generated files
             const headers = new Headers();
@@ -222,7 +228,10 @@ export default class Api {
             const requestOptions = { method: 'PUT', body: JSON.stringify(model), redirect: 'follow', headers };
             fetch("/model/publish", requestOptions)
                 .then(onGenerated)
-                .catch(error => console.log('error', error));
+                .catch(error => {
+                    console.log('error', error);
+                    self.author.hideLoading(); 
+                });
         }
         this.#openUnitSettings(onSubmit);
     }

@@ -3,6 +3,7 @@ import template from "./template.hbs";
 import palette from "./palette.hbs";
 import WidgetElement from "../WidgetElement/WidgetElement";
 import Utils from "../../../Utils";
+import "./styles.scss";
 
 export default class WidgetInteractiveVideo extends WidgetElement {
     config = {

@@ -6,6 +6,7 @@ import form from './form.hbs'
 import palette from './palette.hbs'
 import piece from './piece.hbs'
 import template from './template.hbs'
+import './styles.scss';
 
 export default class WidgetAnimation extends WidgetElement {
     

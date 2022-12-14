@@ -1,6 +1,7 @@
 import palette from "./palette.hbs"
 import template from "./template.hbs"
 import WidgetElement from "../WidgetElement/WidgetElement";
+import './styles.scss';
 
 export default class WidgetColumnLayout extends WidgetElement {
     config = {

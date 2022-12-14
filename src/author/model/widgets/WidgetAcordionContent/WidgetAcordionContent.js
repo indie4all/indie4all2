@@ -2,6 +2,7 @@ import WidgetElement from "../WidgetElement/WidgetElement.js"
 
 import form from './form.hbs'
 import template from './template.hbs'
+import './styles.scss';
 
 export default class WidgetAcordionContent extends WidgetElement {
     

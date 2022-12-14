@@ -1,6 +1,5 @@
 /* global $ */
-/* global dragula */
-
+import dragula from 'dragula';
 import Utils from "./Utils";
 import ModelManager from "./model/ModelManager";
 

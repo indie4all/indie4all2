@@ -3,6 +3,7 @@ import palette from "./palette.hbs";
 import template from "./template.hbs";
 import WidgetElement from "../WidgetElement/WidgetElement";
 import Utils from "../../../Utils";
+import './styles.scss';
 
 export default class WidgetModal extends WidgetElement {
     
@@ -57,7 +58,7 @@ export default class WidgetModal extends WidgetElement {
         };
     }
 
-    hasChildren { return true; }
+    hasChildren() { return true; }
 
     preview(model) {
         const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');

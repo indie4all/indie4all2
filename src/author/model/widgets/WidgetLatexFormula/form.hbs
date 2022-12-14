@@ -1,15 +1,20 @@
 <form id="f-{{instanceId}}">
-    <div class="form-group"> 
-        <label for="instanceName">{{translate "common.name.label"}}</label>
-        <input type="text" name="instanceName" class="form-control" value="{{instanceName}}" 
-            placeholder="{{translate "common.name.placeholder"}}" autocomplete="off" required />
-        <small class="form-text text-muted">{{translate "common.name.help"}}</small>
+    <div class="form-group">
+        <label for="formula">{{translate "widgets.LatexFormula.form.caption.label"}}</label>
+        <input type="text" class="form-control" name="caption" 
+            placeholder="{{translate "widgets.LatexFormula.form.caption.placeholder"}}" value="{{caption}}" 
+            autocomplete="off" required></input>
+        <small class="form-text text-muted">
+            {{translate "widgets.LatexFormula.form.caption.help"}}
+        </small>
     </div>
     <div class="form-group">
-        <label for="text">{{translate "widgets.InteractiveVideo.form.url.label"}}</label>
-        <input type="url" class="form-control" name="videourl" 
-            placeholder="{{translate "widgets.InteractiveVideo.form.url.placeholder"}}" value="{{{videourl}}}" 
-            autocomplete="off" required />
-        <small class="form-text text-muted">{{translate "widgets.InteractiveVideo.form.url.help"}}</small>
+        <label for="formula">{{translate "widgets.LatexFormula.form.formula.label"}}</label>
+        <textarea cols="3" data-content="formula" class="form-control formula" name="formula" 
+            placeholder="{{translate "widgets.LatexFormula.form.formula.placeholder"}}" required>
+            {{formula}}
+        </textarea>
+        <small class="form-text text-muted">{{translate "widgets.LatexFormula.form.formula.help"}}</small>
+        <div class="formula-preview" data-content="formula-preview"></div>
     </div>
 </form>

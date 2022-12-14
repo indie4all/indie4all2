@@ -4,6 +4,7 @@ import template from "./template.hbs";
 import WidgetElement from "../WidgetElement/WidgetElement";
 import Utils from "../../../Utils";
 import RichTextEditorElement from "../mixings/RichTextEditorElement";
+import "./styles.scss";
 
 export default class WidgetCouplesItem extends WidgetElement {
 

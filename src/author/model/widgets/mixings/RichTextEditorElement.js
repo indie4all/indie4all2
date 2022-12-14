@@ -1,3 +1,6 @@
+/* global $ */
+import I18n from '../../../I18n';
+
 export default {
 
     /**
@@ -35,11 +38,11 @@ export default {
                 },
                 templates: [
                     {
-                        name: indieauthor.strings.plugins.trumbowyg.templates.code,
+                        name: I18n.getInstance().translate("plugins.trumbowyg.templates.code"),
                         html: "\\begin[language]{}Code\\end"
                     },
                     {
-                        name: indieauthor.strings.plugins.trumbowyg.templates.screenReader,
+                        name: I18n.getInstance().translate("plugins.trumbowyg.templates.screenReader"),
                         html: "\\begin[hidden]{}Help text\\end"
                     }
                 ]

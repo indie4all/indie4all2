@@ -2,6 +2,7 @@
 import form from "./form.hbs";
 import template from "./template.hbs";
 import WidgetElement from "../WidgetElement/WidgetElement";
+import "./styles.scss";
 
 export default class WidgetGapQuestion extends WidgetElement {
 

@@ -36,6 +36,10 @@
             "placeholder": "Example: https://indiemedia.upct.es/descriptions.vtt",
             "help": "INDIeMedia URL of the file containing text descriptions of what happens in the video for when the part of the video is not available because the viewer is blind and does not use a screen. Descriptions are read by a screen reader or converted to a separate audio track."
         },
+        "loading": {
+            "title": "Loading",
+            "description": "Generating unit..."
+        },
         "selectType": "Select a type from the following options"
     },
     "errors": {

@@ -3,6 +3,7 @@ import form from "./form.hbs";
 import template from "./template.hbs";
 import WidgetElement from "../WidgetElement/WidgetElement";
 import Utils from "../../../Utils";
+import "./styles.scss";
 
 export default class WidgetCorrectWordItem extends WidgetElement {
     

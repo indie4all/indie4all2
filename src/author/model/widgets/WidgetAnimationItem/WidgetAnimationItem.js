@@ -3,6 +3,7 @@ import prev from "./prev.hbs";
 import template from "./template.hbs";
 import WidgetElement from "../WidgetElement/WidgetElement";
 import Utils from "../../../Utils";
+import './styles.scss';
 
 export default class WidgetAnimationItem extends WidgetElement {
     config = {

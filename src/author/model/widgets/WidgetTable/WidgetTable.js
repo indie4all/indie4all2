@@ -1,11 +1,12 @@
 /* global $ */
-/* global DataTable */
+import DataTable from 'datatables.net';
 import form from "./form.hbs";
 import palette from "./palette.hbs";
 import template from "./template.hbs";
 import WidgetElement from "../WidgetElement/WidgetElement";
 import Utils from "../../../Utils";
 import I18n from "../../../I18n";
+import "./styles.scss";
 
 export default class WidgetTable extends WidgetElement {
     config = {

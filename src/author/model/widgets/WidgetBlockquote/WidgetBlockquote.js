@@ -1,6 +1,7 @@
 import form from "./form.hbs";
 import palette from "./palette.hbs";
 import template from "./template.hbs";
+import "./styles.scss";
 
 import WidgetElement from "../WidgetElement/WidgetElement";
 

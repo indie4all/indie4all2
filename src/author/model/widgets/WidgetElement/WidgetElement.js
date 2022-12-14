@@ -1,10 +1,11 @@
 import I18n from "../../../I18n";
-import btnAddElementTemplate from "./btnAddElement";
-import btnEditElementTemplate from "./btnEditElement";
-import btnDeleteElementTemplate from "./btnDeleteElement";
-import btnExportElementTemplate from "./btnExportElement";
-import btnCopyElementTemplate from "./btnCopyElement";
+import btnAddElementTemplate from "./btnAddElement.hbs";
+import btnEditElementTemplate from "./btnEditElement.hbs";
+import btnDeleteElementTemplate from "./btnDeleteElement.hbs";
+import btnExportElementTemplate from "./btnExportElement.hbs";
+import btnCopyElementTemplate from "./btnCopyElement.hbs";
 import ModelElement from "../../ModelElement";
+import './styles.scss';
 
 export default class WidgetElement extends ModelElement {
 

@@ -1,10 +1,11 @@
-/* global katex */
+import katex from 'katex';
 import form from "./form.hbs";
 import palette from "./palette.hbs";
 import preview from "./preview.hbs";
 import template from "./template.hbs";
 import WidgetElement from "../WidgetElement/WidgetElement";
 import Utils from "../../../Utils";
+import "./styles.scss";
 
 export default class WidgetLatexFormula extends WidgetElement {
     
@@ -78,14 +79,14 @@ export default class WidgetLatexFormula extends WidgetElement {
         var formulaPreview = document.querySelector('[data-content="formula-preview"]');
         var timeout = null;
 
-        // TODO:
         if (!Utils.isEmpty(model.data))
             this.#showFormula(model.data.formula, formulaPreview);
 
+        const self = this;
         formulaInput.onkeyup = function () {
             clearTimeout(timeout);
             timeout = setTimeout(function () {
-                this.#showFormula(formulaInput.value, formulaPreview);
+                self.#showFormula(formulaInput.value, formulaPreview);
             }, 500);
         };
     }

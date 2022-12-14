@@ -4,6 +4,7 @@ import palette from "./palette.hbs"
 import form from './form.hbs'
 import template from './template.hbs'
 import Utils from "../../../Utils.js"
+import './styles.scss';
 
 export default class WidgetAcordionContainer extends WidgetElement {
 

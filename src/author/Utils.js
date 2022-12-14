@@ -1,4 +1,5 @@
 import I18n from "./I18n";
+import toastr from "toastr";
 
 export default class Utils {
 
@@ -56,7 +57,7 @@ export default class Utils {
 
     static #notify(title, message, type) {
         toastr[type](message, title, {
-            timeOut: 5000,
+            timeOut: 50000,
             positionClass: "toast-bottom-right"
         });
     }

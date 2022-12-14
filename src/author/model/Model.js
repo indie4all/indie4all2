@@ -43,15 +43,15 @@ export class Model {
      */
     #regenerateModelKeys(elem) {
 
-        const modelElement = elem.widget ? ModelManager.getWidget(elem.widget) : ModelManager.getSection();
+        const modelElement = elem.widget && elem.widget !== 'Section' ? ModelManager.getWidget(elem.widget) : ModelManager.getSection();
         elem.id = Utils.generate_uuid();
         // Set instance name if necessary
-        if (elem.params && elem.params.name && elem.widget &&
+        if (elem.params?.name && elem.widget &&
             elem.widget !== 'TabContent') // Fix: params.name in TabContent must be kept as it is
         {
             elem.params.name = modelElement.emptyData().params.name;
         }
-        if (modelElement.hasChildren(elem.type)) {
+        if (modelElement.hasChildren()) {
             let children = elem.type === 'layout' ? elem.data.flat() : elem.data;
             children.forEach(this.#regenerateModelKeys);
         }
@@ -85,7 +85,7 @@ export class Model {
             type: elementType,
             widget: widget
         }
-        const widgetData = ModelManager.get(widget).emptyData(widgetInfo);
+        const widgetData = ModelManager.getWidget(widget).emptyData(widgetInfo);
         return $.extend(widgetData, modelObject);
     }
 
@@ -153,7 +153,7 @@ export class Model {
         if (element.id == dataElementId)
             return element;
 
-        const modelElement = element.widget ? ModelManager.getWidget(element.widget) : 
+        const modelElement = element.widget && element.widget !== 'Section' ? ModelManager.getWidget(element.widget) : 
             ModelManager.getSection();
         if (modelElement.hasChildren()) {
             var elementsArray = element.type == 'layout' ? [].concat.apply([], element.data) : element.data;
@@ -211,7 +211,6 @@ export class Model {
 
     validate() {
         const self = this;
-        if (self.sections.length == 0) { return ["messages.emptyContent"]; }
         const errors = [];
         self.sections.forEach(section => {
             const keys = ModelManager.getSection().validateModel(section);
@@ -236,7 +235,7 @@ export class Model {
     validateElement(element, errors) {
         const validationErrors = [];
 
-        if (element.params.name && !this.isUniqueName(element.params.name, element.id))
+        if (element.params?.name && !this.isUniqueName(element.params.name, element.id))
             validationErrors.push("common.name.notUniqueName");
 
         const widget = ModelManager.getWidget(element.widget);
@@ -244,7 +243,7 @@ export class Model {
         if (validationErrors.length > 0) 
             errors.push({ element: element.id, keys: validationErrors});
 
-        if (this.hasChildren(element.type)) {
+        if (widget.hasChildren()) {
             var elementsArray = element.type == 'layout' ? [].concat.apply([], element.data) : element.data;
             elementsArray.forEach(elem => this.validateElement(elem, errors));
         }
@@ -255,10 +254,10 @@ export class Model {
 
         var recursiveIsUnique = function (element, name, currentElementId) {
 
-            if (element.params && (element.params.name && (element.params.name == name && element.id != currentElementId)))
+            if (element.params?.name && (element.params.name == name && element.id != currentElementId))
                 return false;
 
-            if (ModelManager.getWidget(element.widget).hasChildren()) {
+            if ((element.widget === "Section" ? ModelManager.getSection() : ModelManager.getWidget(element.widget)).hasChildren()) {
                 const elementsArray = element.type == 'layout' ? [].concat.apply([], element.data) : element.data;
                 return elementsArray.every(elem => recursiveIsUnique(elem, name, currentElementId));
             }

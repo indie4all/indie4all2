@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+    <title>INDIeAuthor | Prototype</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <!-- NAVBAR-->
+    <nav class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+        <a class="navbar-brand" href="#">INDIeAuthor</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Content <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- PAGE CONTENT -->
+    <div class="container-fluid main-content">
+        <div class="row">
+            <div class="col-12 col-md-3 col-lg-2 bd-sidebar">
+                <nav class="palette-nav">
+                    <div id="palette" data-type="palette" class="dragula-container row">
+                        <!-- ITEMS WILL BE PLACED HERE -->
+                    </div>
+                </nav>
+
+            </div>
+            <main role="main" class="col-12 col-md-9 col-lg-10 offset-md-3 offset-lg-2  bd-content no-padding">
+                <div class="editor-container-header">
+                    <div class="col left">
+                        <!-- Left buttons in header -->
+                        <button onclick="indieauthor.api.publish()" class="btn btn-header btn-info l" data-toggle="tooltip"
+                            data-title="Publish content">
+                            <i class="fa fa-globe"></i></button>
+                        <button onclick="indieauthor.api.preview()" class="btn btn-header btn-info l" data-toggle="tooltip"
+                            data-title="Preview content">
+                            <i class="fa fa-eye"></i></button>
+                        <button onclick="indieauthor.api.validate()" class="btn btn-header btn-info l"
+                            data-toggle="tooltip" data-title="Validate model">
+                            <i class="fa fa-check"></i></button>
+                        <input type="file" accept="application/json" id="upload-file-model" hidden />
+                        <button id="upload-model" class="btn btn-header btn-info" data-toggle="tooltip"
+                            data-title="Upload model"><i class="fa fa-cloud-upload-alt"></i></button>
+                        <button onclick="indieauthor.api.download()" class="btn btn-header btn-info" data-toggle="tooltip"
+                            data-title="Download model"><i class="fa fa-cloud-download-alt"></i></button>
+                        
+                        <!-- Right buttons in header -->
+                        <button onclick="indieauthor.api.undo()" class="btn btn-header btn-info r" data-toggle="tooltip"
+                            data-title="Undo action"> <i class="fa fa-undo"></i>
+                        </button>
+
+                        <button onclick="indieauthor.api.redo()" class="btn btn-header btn-info r" data-toggle="tooltip"
+                            data-title="Redo action"> <i class="fa fa-redo"></i>
+                        </button>
+
+                        <button onclick="indieauthor.api.addSection(undefined, true)" class="btn btn-header btn-success r"
+                            data-toggle="tooltip" data-title="Add new section"> <i
+                                class="fa fa-plus-circle"></i></button>
+								
+						<button onclick="indieauthor.api.importSection(true)" class="btn btn-header btn-success r"
+                            data-toggle="tooltip" data-title="Import section"> <i
+                                class="fa fa-file-import"></i></button>
+								
+                        <button onclick="indieauthor.api.clear()" class="btn btn-header btn-danger r"
+                            data-toggle="tooltip" data-title="Clear content"> <i class="fa fa-trash-alt"></i></button>
+                    </div>
+                </div>
+                <div class="editor-container">
+                    <div id="main-container" data-type="main-container" data-content>
+
+                    </div>
+                </div>
+                <div id="editor-footer" class="editor-footer">
+                    <div class="alert alert-pale" role="alert">
+                        You can add new sections with the toolbar on top
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- MODAL SETTINGS-->
+    <div id="modal-settings" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content border-indie">
+                <div class="modal-header modal-indie">
+                    <h5 id="modal-settings-tittle" class="modal-title">Modal title</h5>
+                </div>
+                <div id="modal-settings-body" class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-indie btn-submit">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

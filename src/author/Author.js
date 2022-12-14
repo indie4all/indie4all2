@@ -1,6 +1,6 @@
 /* global $ */
-/* global CryptoJS */
-/* global bootprompt */
+import CryptoJS from 'crypto-js';
+import bootprompt from 'bootprompt';
 import DragDropHandler from "./DragDropHandler";
 import I18n from "./I18n";
 import { Model } from "./model/Model";
@@ -9,6 +9,7 @@ import Utils from "./Utils";
 import alertErrorTemplate from "./alertError.hbs";
 
 import categoryTemplate from "./category.hbs"
+import loadingTemplate from "./loading.hbs"
 import ModelManager from "./model/ModelManager";
 import ActionAddElement from "./actions/ActionAddElement"
 import ActionAddSection from "./actions/ActionAddSection"
@@ -18,6 +19,8 @@ import ActionRemoveElement from "./actions/ActionRemoveElement"
 import ActionRemoveSection from "./actions/ActionRemoveSection"
 import ActionSwapSections from "./actions/ActionSwapSections"
 import widgetsJson from "./model/widgets/widgets.json"
+
+import "./common-styles.scss";
 
 export default class Author {
 
@@ -44,6 +47,17 @@ export default class Author {
         this.palette = palette;
         this.container = container;
         if (initCallBack) initCallBack();
+        !$('#modal-loading').length && $(this.container).after(loadingTemplate());
+    }
+
+    showLoading(message) {
+        const $modal = $('#modal-loading');
+        $modal.find('.loading-message').text(message);
+        $modal.modal({ show: true, keyboard: false, backdrop: 'static'});
+    }
+
+    hideLoading() {
+        $('#modal-loading').modal('hide');
     }
 
     onMoveElement(el, target) {
@@ -187,7 +201,6 @@ export default class Author {
     }
 
     importElement(sectionId, isCommand) {
-        
         try {
             const userCookie = document.cookie && document.cookie.split('; ').find(cookie => cookie.startsWith('INDIE_USER='));
             const encrypted = localStorage.getItem('copied-element');
@@ -328,16 +341,15 @@ export default class Author {
         const widgetInfo = { id: dataElementId };
         if (elementType == 'layout') widgetInfo.columns = viewElement.dataset.columns;
         const widgetElement = ModelManager.getWidget(widget);
-        const elementToBeAppended = elementToBeAppended.createElement(widgetInfo);
-        const toolbar = $("[data-id='" + dataElementId + "'] [data-toolbar]")[0];
+        const elementToBeAppended = widgetElement.createElement(widgetInfo);
         const buttons = widgetElement.generateToolbar(dataElementId);
         Utils.clearDataAttributes(viewElement);
         viewElement.innerHTML = '';
         $(viewElement).removeClass('palette-item');
         $(viewElement).addClass('container-item');
         $(viewElement).append(elementToBeAppended);
-        $(toolbar).append(buttons);
-        
+        const toolbar = $("[data-id='" + dataElementId + "'] [data-toolbar]")[0];
+        $(toolbar).append(buttons);        
         if (modelCreation) { // MODEL CREATION
             var modelObject = this.model.createObject(elementType, widget, dataElementId, widgetInfo);
             this.model.appendObject(modelObject, inPositionElementId, parentContainerId, parentContainerIndex);
@@ -361,7 +373,6 @@ export default class Author {
 
         // 2 Populate the modal with the inputs of the widget
         var modalContent = modelElem.getInputs(modelObject);
-
         // 3 Open the modal with values put
         document.getElementById('modal-settings-body').innerHTML = modalContent.inputs;
         document.getElementById('modal-settings-tittle').innerHTML = modalContent.title;
@@ -390,8 +401,8 @@ export default class Author {
                 modelElem.settingsClosed(modelObject);
                 $("#modal-settings").modal('hide');
                 $("#modal-settings-body .errors").remove();
-                const previewElement = modelElem.preview(modelObject);
                 modelElem.updateModelFromForm(modelObject, formData);
+                const previewElement = modelElem.preview(modelObject);
                 // Clear modal values
                 document.getElementById('modal-settings-body').innerHTML = '';
                 document.getElementById('modal-settings-tittle').innerHTML = '';
@@ -595,6 +606,7 @@ export default class Author {
         // Show new errors
         newErrors
             .forEach(error => {
+                console.log("ERROR!", error);
                 const element = document.querySelector("[data-id='" + error.element + "']");
                 const preview = element.querySelector('[data-prev]');
                 const title = error.keys
@@ -607,14 +619,14 @@ export default class Author {
 
     creatToolTipError = function (title, previewElement) {
         previewElement.dataset.title = title;
-        previewElement.dataset['original-title'] = title;
+        previewElement.dataset['originalTitle'] = title;
         previewElement.addEventListener('mouseenter', $(previewElement).tooltip('show'));
         previewElement.addEventListener('mouseleave', $(previewElement).tooltip('hide'));
     }
 
     deleteToolTipError(previewElement) {
         delete previewElement.dataset.title;
-        delete previewElement.dataset['original-title'];
+        delete previewElement.dataset['originalTitle'];
         previewElement.removeEventListener('mouseenter', $(previewElement).tooltip('show'));
         previewElement.removeEventListener('mouseout', $(previewElement).tooltip('hide'));
         $(previewElement).tooltip('dispose');
@@ -637,6 +649,10 @@ export default class Author {
         var newErrors = this.model.validate();
         // Paint errors in the view
         this.showErrors(currentErrors, newErrors);
+        if (this.model.sections.length == 0) {
+            if (print) Utils.notifyError(this.i18n.translate("messages.emptyContent"));
+            return false;
+        }
         if (newErrors.length > 0) {
             if (print) Utils.notifyError(this.i18n.translate("messages.contentErrors"));
             return false;

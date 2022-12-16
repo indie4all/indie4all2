@@ -35,16 +35,13 @@ export default class WidgetTextBlock extends WidgetElement {
     }
 
     createPaletteItem() {
-        return {
-            content: palette({
-                category: this.config.category,
-                type: this.config.type,
-                widget: this.config.widget,
-                icon: this.config.icon,
-                label: "widgets." + this.config.widget + ".label"
-            }),
-            numItems: 1
-        }
+        return palette({
+            category: this.config.category,
+            type: this.config.type,
+            widget: this.config.widget,
+            icon: this.config.icon,
+            label: "widgets." + this.config.widget + ".label"
+        });
     }
 
     emptyData() {

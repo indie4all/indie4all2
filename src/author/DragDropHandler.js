@@ -5,8 +5,9 @@ import ModelManager from "./model/ModelManager";
 
 export default class DragDropHandler {
 
-    constructor(palette, onMoveElement, onMoveElementIntoContainer, onCreateElement) {
+    constructor(palette, container, onMoveElement, onMoveElementIntoContainer, onCreateElement) {
         this.palette = palette;
+        this.container = container;
         this.onMoveElement = onMoveElement;
         this.onMoveElementIntoContainer = onMoveElementIntoContainer;
         this.onCreateElement = onCreateElement;

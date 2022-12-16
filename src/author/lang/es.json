@@ -111,6 +111,9 @@
         "ColumnLayout": {
             "data": {
                 "empty": "Todas las columnas de la disposición deben contener al menos un elemento arrastrándolo desde la paleta de la izquierda."
+            },
+            "width": {
+                "invalid": "Ancho de columna inválido"
             }
         },
         "CouplesContainer": {
@@ -712,7 +715,13 @@
         },
         "ColumnLayout": {
             "columnsLabel": "columnas",
-            "label": "Disposición"
+            "label": "Disposición",
+            "form": {
+                "width": {
+                    "1": "Ancho de la primera columna",
+                    "help": "La otra columna ocupará el ancho restante"
+                }
+            }
         },
         "CouplesContainer": {
             "label": "Parejas",

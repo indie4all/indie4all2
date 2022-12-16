@@ -57,10 +57,7 @@ export default class WidgetTable extends WidgetElement {
     }
 
     createPaletteItem() {
-        return {
-            content: palette(this.config),
-            numItems: 1
-        }
+        return palette(this.config);
     }
 
     emptyData() {

@@ -111,6 +111,9 @@
         "ColumnLayout": {
             "data": {
                 "empty": "All columns in the layout must contain at least one element by dragging it from the left palette."
+            },
+            "width": {
+                "invalid": "Invalid column width"
             }
         },
         "CouplesContainer": {
@@ -712,7 +715,13 @@
         },
         "ColumnLayout": {
             "columnsLabel": "columns",
-            "label": "Layout"
+            "label": "Layout",
+            "form": {
+                "width": {
+                    "1": "Width of the first column",
+                    "help": "The other column will occupy the remaining width"
+                }
+            }
         },
         "CouplesContainer": {
             "label": "Couples",

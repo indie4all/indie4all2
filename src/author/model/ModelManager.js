@@ -10,7 +10,9 @@ import WidgetBlockquote from "./widgets/WidgetBlockquote/WidgetBlockquote.js";
 import WidgetButtonTextContainer from "./widgets/WidgetButtonTextContainer/WidgetButtonTextContainer.js";
 import WidgetButtonTextItem from "./widgets/WidgetButtonTextItem/WidgetButtonTextItem.js";
 import WidgetChooseOption from "./widgets/WidgetChooseOption/WidgetChooseOption.js";
-import WidgetColumnLayout from "./widgets/WidgetColumnLayout/WidgetColumnLayout.js";
+import WidgetTwoColumnsLayout from "./widgets/WidgetTwoColumnsLayout/WidgetTwoColumnsLayout.js";
+import WidgetThreeColumnsLayout from "./widgets/WidgetThreeColumnsLayout/WidgetThreeColumnsLayout.js";
+import WidgetFourColumnsLayout from "./widgets/WidgetFourColumnsLayout/WidgetFourColumnsLayout.js";
 import WidgetCorrectWordContainer from "./widgets/WidgetCorrectWordContainer/WidgetCorrectWordContainer.js";
 import WidgetCorrectWordItem from "./widgets/WidgetCorrectWordItem/WidgetCorrectWordItem.js";
 import WidgetCouplesContainer from "./widgets/WidgetCouplesContainer/WidgetCouplesContainer.js";
@@ -56,18 +58,19 @@ export default class ModelManager {
         let widgets = [ new WidgetAcordionContainer(), new WidgetAcordionContent(), new WidgetAnimation(),
           new WidgetAnimationContainer(), new WidgetAnimationItem(), new WidgetAudioTermContainer(),
           new WidgetAudioTermItem(), new WidgetBlockquote(), new WidgetButtonTextContainer(),
-          new WidgetButtonTextItem(), new WidgetChooseOption(), new WidgetColumnLayout(),
-          new WidgetCorrectWordContainer(), new WidgetCorrectWordItem(), new WidgetCouplesContainer(),
-          new WidgetCouplesItem(), new WidgetDragdropContainer(), new WidgetDragdropItem(),
-          new WidgetGapQuestion(), new WidgetGuessWord(), new WidgetImage(),
-          new WidgetImageAndSoundContainer(), new WidgetImageAndSoundItem(), new WidgetImageAndText(),
-          new WidgetInteractiveVideo(), new WidgetLatexFormula(), new WidgetMissingwordsContainer(),
-          new WidgetMissingwordsItem(), new WidgetModal(), new WidgetPuzzle(), new WidgetSchemaContainer(),
-          new WidgetSchemaItem(), new WidgetSentenceorderContainer(), new WidgetSentenceorderItem(),
-          new WidgetSimpleImage(), new WidgetSimpleQuestion(), new WidgetTabContent(), new WidgetTable(),
-          new WidgetTabsContainer(), new WidgetTermClassifcation(), new WidgetTermClassificationItem(),
-          new WidgetTestContainer(), new WidgetTextBlock(), new WidgetTrueFalseContainer(),
-          new WidgetTrueFalseItem(), new WidgetTrueFalseQuestion(), new WidgetVideo()]
+          new WidgetButtonTextItem(), new WidgetChooseOption(), new WidgetTwoColumnsLayout(),
+          new WidgetThreeColumnsLayout(), new WidgetFourColumnsLayout(),  new WidgetCorrectWordContainer(), 
+          new WidgetCorrectWordItem(), new WidgetCouplesContainer(), new WidgetCouplesItem(), 
+          new WidgetDragdropContainer(), new WidgetDragdropItem(), new WidgetGapQuestion(), 
+          new WidgetGuessWord(), new WidgetImage(), new WidgetImageAndSoundContainer(), 
+          new WidgetImageAndSoundItem(), new WidgetImageAndText(), new WidgetInteractiveVideo(), 
+          new WidgetLatexFormula(), new WidgetMissingwordsContainer(), new WidgetMissingwordsItem(), 
+          new WidgetModal(), new WidgetPuzzle(), new WidgetSchemaContainer(), new WidgetSchemaItem(), 
+          new WidgetSentenceorderContainer(), new WidgetSentenceorderItem(), new WidgetSimpleImage(), 
+          new WidgetSimpleQuestion(), new WidgetTabContent(), new WidgetTable(), new WidgetTabsContainer(), 
+          new WidgetTermClassifcation(), new WidgetTermClassificationItem(), new WidgetTestContainer(), 
+          new WidgetTextBlock(), new WidgetTrueFalseContainer(), new WidgetTrueFalseItem(), 
+          new WidgetTrueFalseQuestion(), new WidgetVideo()]
           
         this.#widgets = Object.fromEntries(widgets.map(elem => [elem.config.widget, elem]));
         this.#section = new Section();

@@ -41,7 +41,7 @@ export default class Author {
         this.plugins = {};
         this.api = {};
         this.icons = {};
-        this.dragDropHandler = new DragDropHandler(palette, ddMove, ddMoveIntoContainer, ddCreate);
+        this.dragDropHandler = new DragDropHandler(palette, container, ddMove, ddMoveIntoContainer, ddCreate);
         this.i18n = I18n.getInstance();
         this.loadWidgets(palette);
         this.palette = palette;
@@ -392,9 +392,9 @@ export default class Author {
                 $("#modal-settings").animate({ scrollTop: 0 }, "slow");
                 const errorText = errors.map(error => self.i18n.translate("errors." + error)).join(". ")
                 if ($("#modal-settings-body .errors").length == 0) {
-                    $("#modal-settings-body").prepend('<div class="errors">' + alertErrorTemplate(errorText) + '</div>');
+                    $("#modal-settings-body").prepend('<div class="errors">' + alertErrorTemplate({errorText}) + '</div>');
                 } else {
-                    $("#modal-settings-body .errors").html(alertErrorTemplate(errorText));
+                    $("#modal-settings-body .errors").html(alertErrorTemplate({errorText}));
                 }
 
             } else {
@@ -407,7 +407,7 @@ export default class Author {
                 document.getElementById('modal-settings-body').innerHTML = '';
                 document.getElementById('modal-settings-tittle').innerHTML = '';
                 // Clean errors
-                self.deleteToolTipError(previewElement);
+                previewElement && self.deleteToolTipError(previewElement);
                 $(document.querySelector("[data-id='" + modelObject.id + "']").parentNode).removeClass('editor-error', 200);
                 $(form).remove();
             }
@@ -540,10 +540,9 @@ export default class Author {
                 const [category, widgets] = entry;
                 const widgetsPalette = widgets
                     .filter(widget => !ModelManager.getWidget(widget).paletteHidden)
-                    .map(widget => ModelManager.getWidget(widget).createPaletteItem().content);
+                    .map(widget => ModelManager.getWidget(widget).createPaletteItem());
                 const categoryView = categoryTemplate({ title: "palette." + category, 
                     category: category, numWidgets: widgetsPalette.length});
-                // TODO: review numitems!!!
                 $(palette).append(categoryView);
                 $(palette).append(widgetsPalette);
             });
@@ -606,7 +605,6 @@ export default class Author {
         // Show new errors
         newErrors
             .forEach(error => {
-                console.log("ERROR!", error);
                 const element = document.querySelector("[data-id='" + error.element + "']");
                 const preview = element.querySelector('[data-prev]');
                 const title = error.keys

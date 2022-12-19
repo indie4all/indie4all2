@@ -40,7 +40,10 @@
             "title": "Loading",
             "description": "Generating unit..."
         },
-        "selectType": "Select a type from the following options"
+        "selectType": "Select a type from the following options",
+        "preview": "Unit preview",
+        "publish": "Publish unit",
+        "download": "Export unit data"
     },
     "errors": {
         "AcordionContainer": {

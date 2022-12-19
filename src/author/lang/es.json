@@ -40,7 +40,10 @@
             "title": "Cargando",
             "description": "Generando unidad..."
         },
-        "selectType": "Selecciona un tipo de las siguientes opciones"
+        "selectType": "Selecciona un tipo de las siguientes opciones",
+        "preview": "Vista previa de la unidad",
+        "publish": "Publicar unidad",
+        "download": "Exportar datos de la unidad"
     },
     "errors": {
         "AcordionContainer": {

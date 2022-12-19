@@ -15,7 +15,7 @@ export default class Api {
         this.undoredo = UndoRedo.getInstance();
     }
 
-    #openUnitSettings = function (onSubmit) {
+    #openUnitSettings = function (title, onSubmit) {
 
         // Check if the model is valid before trying to download
         if (!this.validate()) {
@@ -46,6 +46,7 @@ export default class Api {
             license: model.license ?? ''
         };
         // Create the form
+        document.getElementById('modal-settings-tittle').innerHTML = title;
         document.getElementById('modal-settings-body').innerHTML = downloadTemplate(data);
         $("#modal-settings").modal({ show: true, keyboard: false, focus: true, backdrop: 'static' });
 
@@ -167,8 +168,8 @@ export default class Api {
             document.body.removeChild(link);
             window.URL.revokeObjectURL(url);
         };
-
-        this.#openUnitSettings(onSubmit);
+        const title = this.i18n.translate("common.download");
+        this.#openUnitSettings(title, onSubmit);
     }
 
     preview() {
@@ -191,8 +192,8 @@ export default class Api {
                     self.author.hideLoading(); 
                 });
         }
-
-        self.#openUnitSettings(onSubmit);
+        const title = this.i18n.translate("common.preview");
+        self.#openUnitSettings(title, onSubmit);
     }
 
     /**
@@ -233,6 +234,7 @@ export default class Api {
                     self.author.hideLoading(); 
                 });
         }
-        this.#openUnitSettings(onSubmit);
+        const title = this.i18n.translate("common.publish");
+        this.#openUnitSettings(title, onSubmit);
     }
 }

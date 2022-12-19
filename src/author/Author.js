@@ -50,9 +50,8 @@ export default class Author {
         !$('#modal-loading').length && $(this.container).after(loadingTemplate());
     }
 
-    showLoading(message) {
+    showLoading() {
         const $modal = $('#modal-loading');
-        $modal.find('.loading-message').text(message);
         $modal.modal({ show: true, keyboard: false, backdrop: 'static'});
     }
 

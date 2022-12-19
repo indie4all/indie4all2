@@ -175,7 +175,7 @@ export default class Api {
     preview() {
         const self = this;
         const onSubmit = (model) => {
-            self.author.showLoading(self.i18n.translate("common.loading.description"));
+            self.author.showLoading();
             const onGenerated = async (response) => {
                 const uri = await response.text();
                 window.open(uri, '_blank');
@@ -202,7 +202,7 @@ export default class Api {
     publish() {
         const self = this;
         const onSubmit = (model) => {
-            self.author.showLoading(self.i18n.translate("common.loading.description"));
+            self.author.showLoading();
             const onGenerated = async response => {
                 const type = response.headers.get('content-type');
                 const filename = response.headers.get('content-disposition')

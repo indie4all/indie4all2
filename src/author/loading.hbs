@@ -1,16 +1,16 @@
 <div id="modal-loading" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-header modal-indie">
-            <h2 id="modal-loading-title" class="modal-title">
-                {{translate "common.loading.title" }}
-            </h2>
-        </div>
-        <div class="modal-content border-indie">
-            <div class="lds-default">
-                <div></div><div></div><div></div><div></div><div></div><div></div>
-                <div></div><div></div><div></div><div></div><div></div><div></div>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content ">
+            <div class="modal-header modal-indie">
+                <h2 id="modal-loading-title" class="modal-title h5">
+                    {{translate "common.loading.title" }}
+                </h2>
             </div>
-            <div class="loading-message text-center font-weight-bold pb-4 mb-4">
+            <div class="modal-body">
+                <p>
+                    <i class="fa fa-spin fa-spinner"></i>
+                    {{translate "common.loading.description" }}
+                </p>
             </div>
         </div>
     </div>

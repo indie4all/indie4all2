@@ -76,7 +76,7 @@
     }
   ],
   "nodemonConfig": {
-    "watch": "src"
+    "watch": ["src", "server.js"]
   },
   "license": "Apache-2.0"
 }

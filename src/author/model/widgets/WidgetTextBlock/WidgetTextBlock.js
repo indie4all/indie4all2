@@ -45,14 +45,15 @@ export default class WidgetTextBlock extends WidgetElement {
     }
 
     emptyData() {
-        return { data: { text: "" } };
+        return { data: { style: "default", text: "" } };
     }
 
     getInputs(model) {
         const data = {
             instanceId: model.id,
             label: "widgets." + this.config.widget + ".form.label",
-            help: "widgets." + this.config.widget + ".form.help"
+            help: "widgets." + this.config.widget + ".form.help",
+            style: model.data.style
         }
 
         return {
@@ -74,6 +75,7 @@ export default class WidgetTextBlock extends WidgetElement {
 
     updateModelFromForm(model, form) {
         model.data.text = this.clearAndSanitizeHtml(form.textblockText);
+        model.data.style = form.style;
     }
 
     validateModel(widget) {

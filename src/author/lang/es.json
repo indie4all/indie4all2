@@ -1162,7 +1162,15 @@
             "form": {
                 "help": "Debes escribir obligatoriamente un texto.",
                 "label": "En este editor de texto puedes escribir el contenido del bloque.",
-                "placeholder": "Introduce un texto..."
+                "placeholder": "Introduce un texto...",
+                "styles": {
+                    "label": "Estilo del bloque de texto",
+                    "default": "Sin estilo",
+                    "more": "Saber más",
+                    "note": "Nota",
+                    "attention": "Atención",
+                    "help": "Determina el diseño de la caja que envuelve al texto"
+                }
             },
             "label": "Bloque de texto",
             "prev": "Texto no establecido todavía..."

@@ -1162,7 +1162,15 @@
             "form": {
                 "help": "In this text editor you can write the content of the block.",
                 "label": "Text block",
-                "placeholder": "Introduce some text..."
+                "placeholder": "Introduce some text...",
+                "styles": {
+                    "label": "Text block style",
+                    "default": "No style",
+                    "more": "Learn more",
+                    "note": "Note",
+                    "attention": "Attention",
+                    "help": "Determines the layout of the box that surrounds the text"
+                }
             },
             "label": "Text Block",
             "prev": "Text not yet set ..."

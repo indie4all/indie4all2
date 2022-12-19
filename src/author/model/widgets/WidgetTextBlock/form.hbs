@@ -1,7 +1,25 @@
 <form id="f-{{instanceId}}">
     <div class="form-group">
-        <label for="textblockText">{{translate label}}</label>
+        <label for="text-block-style">{{translate "widgets.TextBlock.form.styles.label"}}</label>
+        <select class="form-control" id="text-block-style" name="style">
+            <option value="default" {{#ifeq style "default" }} selected {{/ifeq}}>
+                {{translate "widgets.TextBlock.form.styles.default" }}
+            </option>
+            <option value="more" {{#ifeq style "more" }} selected {{/ifeq}}>
+                {{translate "widgets.TextBlock.form.styles.more" }}
+            </option>
+            <option value="note" {{#ifeq style "note" }} selected {{/ifeq}}>
+                {{translate "widgets.TextBlock.form.styles.note" }}
+            </option>
+            <option value="attention" {{#ifeq style "attention" }} selected {{/ifeq}}>
+                {{translate "widgets.TextBlock.form.styles.attention" }}
+            </option>
+        </select>
+        <small class="form-text text-muted">{{translate "widgets.TextBlock.form.styles.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label for="textblockText">{{translate "widgets.TextBlock.form.label" }}</label>
         <textarea rows="10" class="form-control texteditor" name="textblockText"></textarea>
-        <small class="form-text text-muted">{{translate help}}</small>
+        <small class="form-text text-muted">{{translate "widgets.TextBlock.form.help" }}</small>
     </div>
 </form>

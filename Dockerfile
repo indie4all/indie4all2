@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM node:19
+FROM node:18
 ENV NODE_ENV production
 RUN apt-get -y update
 COPY . .

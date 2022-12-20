@@ -1,0 +1,14 @@
+<form id="f-{{instanceId}}">
+    <div class="form-group">
+        <label for="column">{{translate "widgets.TermClassificationItem.form.column.label"}}</label>
+        <input type="text" class="form-control" name="column" required 
+            placeholder="{{translate "widgets.TermClassificationItem.form.column.placeholder"}}"
+            value="{{column}}" autocomplete="off" />
+        <small class="form-text text-muted">{{translate "widgets.TermClassificationItem.form.column.help"}}</small>
+    </div>
+    <label for="definition">{{translate "widgets.TermClassificationItem.form.terms.label"}}</label>
+    <textarea rows="4" class="form-control" name="terms"
+        placeholder="{{translate "widgets.TermClassificationItem.form.terms.placeholder"}}" 
+        required>{{terms}}</textarea>
+    <small class="form-text text-muted">{{translate "widgets.TermClassificationItem.form.terms.help"}}</small>
+</form>

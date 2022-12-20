@@ -12,7 +12,7 @@ const config = {
             test: /\.hbs$/i,
             loader: "handlebars-loader",
             options: {
-              helperDirs: path.join(__dirname , "src", "author", "handlebars-helpers"),
+              helperDirs: path.join(__dirname , "src", "handlebars-helpers"),
               precompileOptions: { knownHelpersOnly: false }
             }
         },
@@ -46,7 +46,7 @@ const config = {
 const webConfig = merge(config, {
   name: "web",
   plugins: [ 
-    new HtmlWebpackPlugin({ template: './src/index.hbs' }),
+    new HtmlWebpackPlugin({ template: './src/views/index.hbs' }),
     new CopyPlugin({patterns: [
       { from: "./src/manifest.json", to: "."}, 
       { from: "./src/favicon.ico", to: "."}]}) ],

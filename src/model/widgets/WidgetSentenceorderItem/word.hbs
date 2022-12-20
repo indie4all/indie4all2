@@ -1,0 +1,14 @@
+<div class="form-group col-12 col-sm-6 col-lg-4 word">
+    <div class="form-row">
+        <div class="col-9">
+            <label for="word[{{pos}}]">{{translate "widgets.SentenceOrderItem.form.words.text"}}</label>
+            <input type="text" class="form-control" id="word[{{pos}}]" name="word[{{pos}}]" value="{{word}}" required />
+        </div>
+        <div class="col-3">
+            <label for="delete-word-{{pos}}">{{translate "widgets.SentenceOrderItem.form.words.delete"}} &nbsp;</label>
+            <button class="btn btn-block btn-danger btn-delete" id="delete-word-{{pos}}">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+    </div>
+</div>

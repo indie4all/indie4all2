@@ -1,0 +1,40 @@
+.form-widget-table div.DTED_Lightbox_Background {
+  z-index: 1050;
+}
+.form-widget-table div.DTED_Lightbox_Wrapper {
+  z-index: 1051;
+}
+.form-widget-table .btn-delete-column {
+    padding: 5px;
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: 900;
+}
+.form-widget-table .dataTable td:empty {
+    height: 20px;
+}
+.form-widget-table #table:empty {
+    border: 2px dotted gray;
+    border-collapse: separate;
+    min-height: 100px;
+}
+.form-widget-table .table-wrapper {
+  position: relative;
+}
+.form-widget-table .table-empty {
+  display: none;
+}
+.form-widget-table #table:empty + .table-empty {
+    display: block;
+    position: absolute;
+    top: 55px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: gray;
+}
+
+.form-widget-table .table-edit {
+  width: 100%;
+}

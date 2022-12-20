@@ -1,0 +1,15 @@
+<form id="f-{{instanceId}}">
+    <div class="form-group">
+        <label for="image">{{translate "widgets.AnimationItem.form.image.label"}}</label>
+        <input type="text" class="form-control" name="image" required 
+            placeholder="{{translate "widgets.AnimationItem.form.image.placeholder"}}" 
+            value="{{image}}" autocomplete="off" />
+        <small class="form-text text-muted">{{translate "widgets.AnimationItem.form.image.help"}}</small>
+    </div>
+    {{#if image}}
+    <div class="form-group">
+        <p>{{translate "widgets.AnimationItem.form.prev"}}</p>
+        <img class="img-fluid" src="{{image}}" />
+    </div>
+    {{/if}}
+</form>

@@ -1,0 +1,58 @@
+<form id="f-unit-settings">
+    <div class="form-group">
+        <label for="unit-title">{{translate "units.form.title.label"}}</label>
+        <input type="text" id="unit-title" name="title" class="form-control" value="{{title}}"
+            placeholder="{{translate "units.form.title.placeholder"}}" autocomplete="off" required />
+        <small class="form-text text-muted">{{translate "units.form.title.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label for="unit-language">{{translate "units.form.language.label"}}</label>
+        <select id="unit-language" name="language" class="form-control" required>
+            {{#each languages}}
+            <option value="{{this}}" {{#ifeq this ../language}} selected {{/ifeq}}>
+                {{translate (concat "units.form.language." this) }}
+            </option>
+            {{/each}}
+        </select>
+        <small class="form-text text-muted">{{translate "units.form.language.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label for="unit-license">{{translate "units.form.license.label"}}</label>
+        <select id="unit-license" name="license" class="form-control" required>
+            {{#each licenses}}
+            <option value="{{this}}" {{#ifeq this ../license}} selected {{/ifeq}}>
+                {{translate (concat "units.form.license." this) }}
+            </option>
+            {{/each}}
+        </select>
+        <small class="form-text text-muted">{{translate "units.form.license.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label for="unit-theme">{{translate "units.form.theme.label"}}</label>
+        <select id="unit-theme" name="theme" class="form-control" required>
+            {{#each themes}}
+            <option value="{{this}}" {{#ifeq this ../theme}} selected {{/ifeq}}>{{this}}</option>
+            {{/each}}
+        </select>
+        <small class="form-text text-muted">{{translate "units.form.theme.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label for="unit-author">{{translate "units.form.author.label"}}</label>
+        <input type="text" id="unit-author" name="user" class="form-control" value="{{user}}" 
+            placeholder="{{translate "units.form.author.placeholder"}}" autocomplete="off" required />
+        <small class="form-text text-muted">{{translate "units.form.author.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label for="unit-email">{{translate "units.form.email.label"}}</label>
+        <input type="email" id="unit-email" name="email" class="form-control" value="{{email}}"
+            placeholder="{{translate "units.form.email.placeholder"}}" autocomplete="off" required />
+        <small class="form-text text-muted">{{translate "units.form.email.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label for="unit-institution">{{translate "units.form.institution.label"}}</label>
+        <input type="text" id="unit-institution" name="institution" class="form-control" value="{{institution}}"
+            placeholder="{{translate "units.form.institution.placeholder"}}" autocomplete="off" required />
+        <small class="form-text text-muted">{{translate "units.form.institution.help"}}</small>
+    </div>
+    <input type="submit" class="hide" />
+</form>

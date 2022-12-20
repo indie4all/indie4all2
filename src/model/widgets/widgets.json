@@ -1,0 +1,10 @@
+{
+    "simpleElements": ["TextBlock", "Blockquote", "LatexFormula", "Video", "SimpleImage", "Table"],
+    "layouts": ["TwoColumnsLayout", "ThreeColumnsLayout", "FourColumnsLayout"],
+    "containers": ["TabsContainer", "AcordionContainer", "Modal"],
+    "interactiveElements": ["ImageAndText", "Image", "ChooseOption", "DragdropContainer", "TrueFalseContainer",
+        "AnimationContainer", "AudioTermContainer", "ImageAndSoundContainer", "CouplesContainer", "SchemaContainer",
+        "InteractiveVideo", "Puzzle", "CorrectWord", "MissingWords", "SentenceOrderContainer", "GuessWord",
+        "ButtonTextContainer", "Animation", "TermClassification"],
+    "exerciseElement": ["Test"]
+}

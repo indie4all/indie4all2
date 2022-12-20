@@ -16,8 +16,9 @@ const ASSETS_FOLDER = "assets"
 const OUTPUT_FOLDER = "preview"
 const UNITS_FOLDER = "units";
 const OUTPUT_ZIPFILE = `generated.zip`
+const OUTPUT_SCORMFILE = `indie-scorm.zip`
 
-const copyAssets = function(folder, theme) {
+const copyAssets = function(folder, theme, mode) {
     fs.copySync(ASSETS_FOLDER, folder, {overwrite: true});
     // Remove files not related to the current theme
     glob(folder + '/**/*theme*', {nocase: true}, (err, files) => {
@@ -25,6 +26,8 @@ const copyAssets = function(folder, theme) {
             .filter(file => !file.toLowerCase().includes(theme.toLowerCase() + "."))
             .forEach(file => fs.unlinkSync(file));
     });
+    // Remove scorm libraries if the unit is not of SCORM type
+    mode !== "SCORM" && fs.rmSync(folder + '/scorm/', {recursive: true, force: true});
 }
 
 const cleanOldPreviews = function() {
@@ -49,13 +52,12 @@ const cleanOldPreviews = function() {
     });
 }
 
-
-const generate = function(req, res, onGenerated) {
+const generate = function(req, res, onGenerated, mode = "Local") {
     const model = req.body
     if (Object.keys(model).length === 0 && Object.getPrototypeOf(model) === Object.prototype)
         return res.status(StatusCodes.NO_CONTENT).send();
     // Set unit mode to local
-    model.mode = "Local";
+    model.mode = mode;
     // Disable analytics by default
     model.analytics = "0";
     fs.writeFile(INPUT_MODEL, JSON.stringify(model), function(error) {
@@ -72,10 +74,20 @@ const generate = function(req, res, onGenerated) {
                 return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send(err);
             }
             logger.imp(stdout);
-            return onGenerated(OUTPUT);
+            return onGenerated(OUTPUT, model);
         });
     });
 }
+
+const onPublishUnit = function(res, output, folder, model) {
+    copyAssets(`${folder}/${ASSETS_FOLDER}`, model.theme, model.mode);
+    const zip = new AdmZip();
+    zip.addLocalFolder(folder);
+    const binary = zip.toBuffer();
+    fs.rmSync(folder, {recursive: true, force: true});
+    return res.attachment(output).type("application/zip").status(StatusCodes.CREATED).send(binary);
+}
+
 
 app.use(express.static(WEB));
 // Enable access to preview units
@@ -85,24 +97,20 @@ app.use(express.json({limit: '500mb'}));
 
 app.put('/model/preview', function(req, res) {
     const onGenerated = (folder) => {
-        copyAssets(`${folder}/${ASSETS_FOLDER}`, req.body.theme);
+        copyAssets(`${folder}/${ASSETS_FOLDER}`, req.body.theme, "Local");
         return res.type("text/uri").send(UNITS_FOLDER + "/" + folder);
     };          
     generate(req, res, onGenerated); 
-    
 });
 
 app.put('/model/publish', function(req, res) {
-    const onGenerated = (folder) => {
-        copyAssets(`${folder}/${ASSETS_FOLDER}`, req.body.theme);
-        const zip = new AdmZip();
-        zip.addLocalFolder(folder);
-        const binary = zip.toBuffer();
-        fs.rmSync(folder, {recursive: true, force: true});
-        return res.attachment(OUTPUT_ZIPFILE).type("application/zip").status(StatusCodes.CREATED).send(binary);
-    };          
-    generate(req, res, onGenerated);    
+    generate(req, res, onPublishUnit.bind(this, res, OUTPUT_ZIPFILE));    
 });
+
+app.put('/model/scorm', function(req, res) {
+    generate(req, res, onPublishUnit.bind(this, res, OUTPUT_SCORMFILE), "SCORM");    
+});
+
 
 app.listen(8000, function() {
     logger.imp("---------------");

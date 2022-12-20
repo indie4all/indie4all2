@@ -3,12 +3,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'toastr/build/toastr.css'; 
 import icons from "trumbowyg/dist/ui/icons.svg"
 $.trumbowyg.svgPath = icons; // './vendor/trumbowyg/ui/icons.svg';
-import Api from "./author/Api"
-import "./overrides.css"
+import Api from "./Api"
 import "trumbowyg"
 import "trumbowyg/dist/ui/trumbowyg.css"
-import './vendor/trumbowyg/trumbowyg.template'
-import './vendor/trumbowyg/trumbowyg.whitespace'
 import 'datatables.net-dt';
 import 'datatables.net-dt/css/jquery.dataTables.css';
 import 'datatables.net-buttons-dt';
@@ -20,6 +17,9 @@ import 'datatables.net-select-dt/css/select.dataTables.css';
 import 'katex/dist/katex.css'
 import "@fortawesome/fontawesome-free/js/all.js";
 import "@fortawesome/fontawesome-free/css/all.css";
+import "./styles/overrides.css"
+import './vendor/trumbowyg/trumbowyg.template'
+import './vendor/trumbowyg/trumbowyg.whitespace'
 
 /** Entry point */
 $(function () {
@@ -58,7 +58,6 @@ $(function () {
         $icon.toggleClass('fa-caret-up', show);
     });
 
-    window.indieauthor = { api };
-    console.log("Webpack loaded");
+    window.IndieAuthor = api;
 });
 

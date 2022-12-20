@@ -1,0 +1,18 @@
+<form id="f-{{instanceId}}">
+    <div class="form-group">
+        <label for="image">{{translate "widgets.SchemaItem.form.image.label"}}</label>
+        <input type="file" class="form-control" name="image" accept="image/png, image/jpeg" />
+        <small class="form-text text-muted">{{translate "widgets.SchemaItem.form.image.help"}}</small>
+        <input type="hidden" name="blob" value="{{blob}}" />
+    </div>
+    <div class="form-group">
+        <label for="alt">{{translate "common.alt.label"}}</label>
+        <input type="text" class="form-control" name="alt" required autocomplete="off" 
+            placeholder="{{translate "common.alt.placeholder"}}" value="{{alt}}" />
+        <small class="form-text text-muted">{{translate "common.alt.help"}}</small>
+    </div>
+    <div class="form-group d-none">
+        <p>{{translate "widgets.SchemaItem.form.prev"}}</p>
+        <img class="img-fluid img-preview" src="{{blob}}" />
+    </div>
+</form>

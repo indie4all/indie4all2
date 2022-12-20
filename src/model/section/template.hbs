@@ -1,0 +1,47 @@
+<div class="section-container">
+    <div id="sec-{{id}}" data-id="{{id}}">
+        <div class="section-header">
+            <div class="b1">
+                <img src="{{{icon}}}" class="section-icon" />
+            </div>
+            <div class="b2" data-prev>{{name}}</div>
+            <div class="b3" data-toolbar>
+                <button onClick="IndieAuthor.exportSection('{{id}}')" class="btn btn-sm btn-info" type="button"
+                    title="{{translate "sections.export"}}">
+                    <i class="fa fa-file-export"></i>
+                </button>
+                <button onClick="IndieAuthor.importElement('{{id}}')" class="btn btn-sm btn-info" type="button"
+                    title="{{translate "sections.import"}}">
+                    <i class="fa fa-file-import"></i>
+                </button>
+                <button class="btn btn-sm btn-info" type="button" data-toggle="collapse"
+                    data-target="#section-elements-{{id}}" title="{{translate "sections.expandContract"}}"
+                    aria-expanded="true" aria-controls="section-elements-{{id}}">
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <button onClick="IndieAuthor.copySection('{{id}}')" class="btn btn-sm btn-info" type="button"
+                    title="{{translate "sections.duplicate"}}">
+                    <i class="fa fa-copy"></i>
+                </button>
+                <button onClick="IndieAuthor.swap('{{id}}', 1)" class="btn btn-sm btn-info" 
+                    title="{{translate "sections.moveUp"}}">
+                    <i class="fa fa-arrow-up"></i>
+                </button>
+                <button onClick="IndieAuthor.swap('{{id}}', 0)" class="btn btn-sm btn-info" 
+                    title="{{translate "sections.moveDown"}}">
+                    <i class="fa fa-arrow-down"></i>
+                </button>
+                <button class="btn btn-sm btn-success" onClick="IndieAuthor.editSection('{{id}}')"
+                    data-toggle="tooltip" title="{{translate "sections.edit"}}">
+                    <i class="fa fa-edit"></i>
+                </button>
+                <button class="btn btn-sm btn-danger" onclick="indieauthor.removeSection('{{id}}')"
+                    data-toggle="tooltip" title="{{translate "sections.deleteSection"}}">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div id="section-elements-{{id}}" class="section-elements dragula-container collapse show" data-type="{{type}}"
+            data-role="container"></div>
+    </div>
+</div>

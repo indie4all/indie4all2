@@ -1,10 +1,9 @@
 import form from "./form.hbs";
-import template from "./template.hbs";
-import WidgetElement from "../WidgetElement/WidgetElement";
 import Utils from "../../../Utils";
 import './styles.scss';
+import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 
-export default class WidgetTermClassificationItem extends WidgetElement {
+export default class WidgetTermClassificationItem extends WidgetItemElement {
 
     config = {
         widget: "TermClassificationItem",
@@ -13,6 +12,7 @@ export default class WidgetTermClassificationItem extends WidgetElement {
         category: "interactiveElements",
         toolbar: { edit: true },
         icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAvCAMAAACvztidAAAAnFBMVEUAAAB4h5oeN1YeN1YoQF54h5okPFt4h5p4h5oeN1YeN1YqQl8mPlx4h5opQF54h5pEWXMeN1b///8eN1Z4h5qOm6pWaIBhc4nHzdX5DVz6KnDx8vTj5ur8hq39wtb9pMKqtL/8dqP7Z5lygpU5T2v3GGQ0Mlf/8PX+4ev+0eD6SYRPY3tHXHW4wMqcp7WAjqD7WI7UJ2iTKF5HL1d5YSg4AAAAEnRSTlMAQECA/jD34NBgELqmoJeAcDCW+Nc0AAABIElEQVRIx83U23KCMBCA4ZgCWnvOJoBBQLB46rl9/3drgGiQTtm90fG/ysU3TFhCWB0f7om5rgJACq739tZ7T8Rg8w+wmsObQFPBtN3Eq8BLgLc4FITOjNWh7voIz+Mmg0HZoLeOxg8Wq+fQBDUWNuitIynvLFbChGHpH+HZn9IuHpGf7LDbM47dNHC87wR4ETbRsFrGJqDg/pzTA84txue8/tZ6Q9vGqqi+MtoLbstZuaWNLttVxYo251zrdD0wjVg11VtNtc6R0YXtD7Epql1GnfNn+YN8FOQ8n/Pw41eBw/gl4zDaxWHSzW8xhxjHyls2mN14iwR5roIX2WJ2D1iesRazKTc9Rv9noMU2X6I5zCaYHTOXP0Gsz7qNBjPgFwmdi7gk6W/UAAAAAElFTkSuQmCC",
+        cssClass: "widget-column-classificacion-item"
     }
 
     functions = {
@@ -45,15 +45,6 @@ export default class WidgetTermClassificationItem extends WidgetElement {
             if (Utils.isStringEmptyOrWhitespace(terms)) return false;
             return regex.test(terms);
         }
-    }
-
-    createElement(widget) {
-        return template({
-            type: this.config.type,
-            widget: this.config.widget,
-            icon: this.config.icon,
-            id: widget.id
-        });
     }
 
     emptyData() {

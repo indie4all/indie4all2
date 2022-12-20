@@ -51,7 +51,7 @@ export default class Api {
         $("#modal-settings").modal({ show: true, keyboard: false, focus: true, backdrop: 'static' });
 
         let form = document.getElementById('f-unit-settings');
-        $(form).on('submit', function (e) {
+        $(form).off('submit').on('submit', function (e) {
             e.preventDefault();
             const formData = Utils.toJSON(form);
             // Overwrite indieauthor.model with the specified data

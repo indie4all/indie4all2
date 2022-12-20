@@ -67,7 +67,7 @@ export class Model {
     }
 
     
-    createObject = function (elementType, widget, dataElementId, widgetInfo) {
+    createObject(elementType, widget, dataElementId, widgetInfo) {
         var modelObject = {
             id: dataElementId,
             type: elementType,

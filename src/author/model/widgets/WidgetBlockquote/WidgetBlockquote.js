@@ -1,5 +1,4 @@
 import form from "./form.hbs";
-import palette from "./palette.hbs";
 import template from "./template.hbs";
 import "./styles.scss";
 
@@ -24,19 +23,6 @@ export default class WidgetBlockquote extends WidgetElement {
             icon: this.config.icon,
             prev: "widgets.Blockquote.prev"
         });
-    }
-
-    createPaletteItem() {
-        return {
-            content: palette({
-                category: this.config.category,
-                type: this.config.type,
-                widget: this.config.widget,
-                icon: this.config.icon,
-                label: "widgets.Blockquote.label"
-            }),
-            numItems: 1
-        }
     }
 
     emptyData() {

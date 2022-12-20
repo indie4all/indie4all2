@@ -1,5 +1,4 @@
 /* global $ */
-import palette from "./palette.hbs"
 import template from "./template.hbs"
 import form from "./form.hbs"
 import WidgetElement from "../WidgetElement/WidgetElement";
@@ -22,15 +21,6 @@ export default class WidgetTwoColumnsLayout extends WidgetElement {
             id: widget.id,
             icon: this.config.icon,
             columns: [6, 6]
-        });
-    }
-
-    createPaletteItem() {
-        return palette({
-            widget: this.config.widget,
-            type: this.config.type,
-            category: this.config.category,
-            icon: this.config.icon
         });
     }
 

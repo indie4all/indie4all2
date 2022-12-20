@@ -1,4 +1,3 @@
-import palette from "./palette.hbs"
 import template from "./template.hbs"
 import WidgetElement from "../WidgetElement/WidgetElement";
 import './styles.scss';
@@ -20,16 +19,6 @@ export default class WidgetThreeColumnsLayout extends WidgetElement {
             id: widget.id,
             icon: this.config.icon,
             columns: [4,4,4]
-        });
-    }
-
-    createPaletteItem() {
-
-        return palette({
-            widget: this.config.widget,
-            type: this.config.type,
-            category: this.config.category,
-            icon: this.config.icon
         });
     }
 

@@ -595,6 +595,9 @@
         }
     },
     "widgets": {
+        "GenericWidget": {
+            "label": "Widget"
+        },
         "AcordionContainer": {
             "label": "Acordion"
         },
@@ -725,6 +728,15 @@
                     "help": "The other column will occupy the remaining width"
                 }
             }
+        },
+        "TwoColumnsLayout": {
+            "label": "Two columns"
+        },
+        "ThreeColumnsLayout": {
+            "label": "Three columns"
+        },
+        "FourColumnsLayout": {
+            "label": "Four columns"
         },
         "CouplesContainer": {
             "label": "Couples",

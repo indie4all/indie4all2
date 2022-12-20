@@ -5,6 +5,7 @@ import btnDeleteElementTemplate from "./btnDeleteElement.hbs";
 import btnExportElementTemplate from "./btnExportElement.hbs";
 import btnCopyElementTemplate from "./btnCopyElement.hbs";
 import ModelElement from "../../ModelElement";
+import palette from "./palette.hbs";
 import './styles.scss';
 
 export default class WidgetElement extends ModelElement {
@@ -12,6 +13,11 @@ export default class WidgetElement extends ModelElement {
     config = {};
 
     paleteHidden = false
+
+    createPaletteItem() {
+        const label = I18n.getInstance().translate(`widgets.${this.config.widget ?? "GenericWidget" }.label`);
+        return palette({...this.config, label});
+    }
 
     generateToolbar(id) {
         const type = this.config.type;

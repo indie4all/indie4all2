@@ -1,6 +1,6 @@
 /* global $ */
+/* global bootprompt */
 import CryptoJS from 'crypto-js';
-import bootprompt from 'bootprompt';
 import DragDropHandler from "./DragDropHandler";
 import I18n from "./I18n";
 import { Model } from "./model/Model";
@@ -135,7 +135,7 @@ export default class Author {
         } else {
             containerId = target.parentNode.dataset.id;
             targetContainer = this.model.findObject(containerId);
-            containerPosition = this.utils.findIndexObjectInArray(targetContainer.data, 'id', inPositionElementId);
+            containerPosition = Utils.findIndexObjectInArray(targetContainer.data, 'id', inPositionElementId);
         }
 
         // For command
@@ -338,7 +338,6 @@ export default class Author {
     createViewElement(elementType, widget, viewElement, dataElementId, parentType, parentContainerIndex, parentContainerId, inPositionElementId, modelCreation) {
         // Element setup
         const widgetInfo = { id: dataElementId };
-        if (elementType == 'layout') widgetInfo.columns = viewElement.dataset.columns;
         const widgetElement = ModelManager.getWidget(widget);
         const elementToBeAppended = widgetElement.createElement(widgetInfo);
         const buttons = widgetElement.generateToolbar(dataElementId);
@@ -383,7 +382,7 @@ export default class Author {
         input.classList.add('hide');
         form.appendChild(input);
 
-        $(form).on('submit', function (e) {
+        $(form).off('submit').on('submit', function (e) {
             e.preventDefault();
             var formData = Utils.toJSON(form);
             var errors = self.model.validateFormElement(modelElem, formData, dataElementId);

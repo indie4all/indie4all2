@@ -595,6 +595,9 @@
         }
     },
     "widgets": {
+        "GenericWidget": {
+            "label": "Widget"
+        },
         "AcordionContainer": {
             "label": "Menú acordeón"
         },
@@ -725,6 +728,15 @@
                     "help": "La otra columna ocupará el ancho restante"
                 }
             }
+        },
+        "TwoColumnsLayout": {
+            "label": "Dos columnas"
+        },
+        "ThreeColumnsLayout": {
+            "label": "Tres columnas"
+        },
+        "FourColumnsLayout": {
+            "label": "Cuatro columnas"
         },
         "CouplesContainer": {
             "label": "Parejas",

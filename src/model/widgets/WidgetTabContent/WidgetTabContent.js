@@ -1,9 +1,9 @@
 import form from "./form.hbs";
 import Utils from "../../../Utils";
 import './styles.scss';
-import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
+import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
 
-export default class WidgetTabContent extends WidgetItemElement {
+export default class WidgetTabContent extends WidgetContainerElement {
     config = {
         widget: "TabContent",
         type: "element-container",
@@ -30,8 +30,6 @@ export default class WidgetTabContent extends WidgetItemElement {
             title: this.translate("widgets.TabContent.label")
         };
     }
-
-    hasChildren() { return true; }
 
     preview(model) {
         const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');

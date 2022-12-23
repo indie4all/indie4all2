@@ -44,8 +44,6 @@ export default class AnimationContainer extends WidgetContainerElement {
         };
     }
 
-    hasChildren() { return true; }
-
     preview(model) {
         const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
         element.querySelector("span").innerHTML = model.params.name ? model.params.name : this.translate("widgets.AnimationContainer.label");

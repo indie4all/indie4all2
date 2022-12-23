@@ -1,5 +1,7 @@
+/* global $ */
 import I18n from "./I18n";
 import toastr from "toastr";
+import ModelManager from "./model/ModelManager";
 
 export default class Utils {
 
@@ -135,7 +137,7 @@ export default class Utils {
     }
 
     static isURL(st) {
-        var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+        var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-/]))?/;
         return regex.test(st);
     }
 
@@ -165,7 +167,7 @@ export default class Utils {
     }
 
     static isValidBase64DataUrl(data) {
-        const pattern = /^data:([-\w.]+\/[-\w.+]+)?;base64\,([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$/;
+        const pattern = /^data:([-\w.]+\/[-\w.+]+)?;base64,([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$/;
         return typeof data === 'string' && data.match(pattern);
     }
 
@@ -265,11 +267,24 @@ export default class Utils {
         return await this.encodeBlobAsBase64DataURL(res.blob());
     }
 
-    static renderTemplate(template, model) {
-        var templateInstance = Handlebars.compile(template);
-        var html = templateInstance(model);
-        return html;
+    static findAllElements(model) {
+
+        let result = [...model.sections];
+        let children = [...model.sections];
+        do {
+            children = children
+                .filter(elem => ModelManager.hasChildren(elem))
+                .flatMap(elem => elem.type === 'layout' ? elem.data.flat() : elem.data);
+            result = result.concat(children);
+        } while(children.length);
+        return result;
     }
+
+    static findElementsOfType(model, type) {
+        return Utils.findAllElements(model)
+            .filter(elem => Array.isArray(type) ? type.includes(elem.widget) : (type === elem.widget));                
+    }
+
 }
 
 

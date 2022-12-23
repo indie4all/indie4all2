@@ -5,7 +5,13 @@ import template from "./template.hbs";
 export default class WidgetContainerElement extends WidgetElement {
 
     createElement(widget) {
-        const label = I18n.getInstance().translate(`widgets.${this.config.widget ?? "GenericWidget" }.label`);
+        const i18n = I18n.getInstance();
+        const path = i18n.hasKey(`widgets.${this.config.widget}.prev`) ? 
+            `widgets.${this.config.widget}.prev` :
+            `widgets.${this.config.widget ?? "GenericWidget" }.label`;
+        const label = i18n.translate(path);
         return template({...this.config, label, id: widget.id});
     }
+
+    hasChildren() { return true; }
 }

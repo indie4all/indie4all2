@@ -54,6 +54,10 @@ export default class ModelManager {
     static #widgets = {};
     static #section = null;
 
+    static #containerTypes = ['specific-container', 'simple-container', 
+        'specific-element-container', 'element-container','layout',
+        'section-container' ];
+
     static {
         let widgets = [ new WidgetAcordionContainer(), new WidgetAcordionContent(), new WidgetAnimation(),
           new WidgetAnimationContainer(), new WidgetAnimationItem(), new WidgetAudioTermContainer(),
@@ -82,5 +86,9 @@ export default class ModelManager {
 
     static getSection() {
         return this.#section;
+    }
+
+    static hasChildren(elem) {
+        return ModelManager.#containerTypes.includes(elem.type);
     }
 }

@@ -1,6 +1,5 @@
 /* global $ */
 import form from "./form.hbs";
-import template from "./template.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";

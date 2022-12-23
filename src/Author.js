@@ -578,10 +578,7 @@ export default class Author {
                     columnElements.forEach(columnElement => this.loadElement(target, columnElement));
                 });
             } else {
-                var subContainerTarget = 
-                (element.type == 'specific-container' || element.type == 'simple-container' || element.type == 'specific-element-container') ? 
-                    viewElement.querySelector('[data-content]') : 
-                    viewElement.querySelector('[data-role="container"]');
+                var subContainerTarget = viewElement.querySelector('[data-content]');
                 element.data.forEach(elem => this.loadElement(subContainerTarget, elem));
             }
         }

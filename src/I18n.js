@@ -23,6 +23,10 @@ export default class I18n {
         return this.#INSTANCE;
     }
 
+    hasKey(query) {
+        return this.translate(query).length > 0;
+    }
+
     translate(query) {
         switch (this.#locale) {
             case "EL": return jsonpath.query(LANG_EL, "$."+query);

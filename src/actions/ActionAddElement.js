@@ -22,9 +22,7 @@ export default class ActionAddElement extends ActionElement {
         if (this.parentElement.type == 'layout')
             target = this.parentContainer.querySelector('[data-index="' + this.parentContainerIndex + '"');
         else
-            target = (this.parentElement.type == 'specific-container' || this.parentElement.type == 'simple-container' || this.parentElement.type == 'specific-element-container') ? 
-                this.parentContainer.querySelector('[data-content]') : 
-                this.parentContainer.querySelector('[data-role="container"]');
+            target = this.parentContainer.querySelector('[data-content]');
 
         if (this.inPositionElementId != -1) {
             const targetItem = $(target).find('.container-item [data-id="' + this.inPositionElementId + '"]');

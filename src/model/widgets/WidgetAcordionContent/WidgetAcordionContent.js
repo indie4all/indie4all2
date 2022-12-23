@@ -1,8 +1,8 @@
 import form from './form.hbs'
 import './styles.scss';
-import WidgetItemElement from "../WidgetItemElement/WidgetItemElement.js";
+import WidgetContainerElement from '../WidgetContainerElement/WidgetContainerElement';
 
-export default class WidgetAcordionContent extends WidgetItemElement {
+export default class WidgetAcordionContent extends WidgetContainerElement {
     
     config = { 
         widget: "AcordionContent",

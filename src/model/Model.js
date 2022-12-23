@@ -1,16 +1,14 @@
 /* global $ */
 import I18n from "../I18n.js";
 import Utils from "../Utils.js";
+import Migrator from "./migration/Migrator.js";
 import ModelManager from "./ModelManager.js";
 
 export class Model {
 
-    static #VERSION_HISTORY = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
     constructor(model) {
+        Migrator.migrate(model);
         this.i18n = I18n.getInstance();
-        // TODO: migration from older versions
-        this.CURRENT_MODEL_VERSION = model.CURRENT_MODEL_VERSION ?? 9;
         this.sections = model.sections ?? [];
         this.title = model.title;
         this.user = model.user;

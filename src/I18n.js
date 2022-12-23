@@ -36,4 +36,9 @@ export default class I18n {
             default: return jsonpath.query(LANG_EN, "$."+query);
         }
     }
+
+    value(query) {
+        const translations = this.translate(query);
+        return translations.length ? translations[0] : "";
+    }
 }

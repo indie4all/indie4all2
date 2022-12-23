@@ -444,6 +444,9 @@
             "typeImageNotSelected": "If type is Background Image, you need to set an image"
         }
     },
+    "footer": {
+        "content": "You can add new sections with the toolbar on top"
+    },
     "general": {
         "areYouSure": "Are you sure?",
         "cancel": "Cancel",
@@ -454,6 +457,19 @@
         "load": "Load",
         "modelDetected": "Do you want to load a previous unit?",
         "true": "True"
+    },
+    "header": {
+        "publish": "Publish content",
+        "scorm": "Export as SCORM",
+        "preview": "Preview content",
+        "validate": "Validate unit",
+        "upload": "Upload unit",
+        "download": "Download unit",
+        "undo": "Undo action",
+        "redo": "Redo action",
+        "addSection": "Add section",
+        "importSection": "Import section",
+        "clear": "Clear content"
     },
     "items": {
         "add": "Add content",

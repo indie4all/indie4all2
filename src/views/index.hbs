@@ -35,43 +35,56 @@
                 <div class="editor-container-header">
                     <div class="col left">
                         <!-- Left buttons in header -->
-                        <button onclick="IndieAuthor.publish()" class="btn btn-header btn-info l" data-toggle="tooltip"
-                            data-title="Publish content">
+                        <button onclick="IndieAuthor.publish()" class="btn btn-header btn-info l author-publish" 
+                            data-toggle="tooltip" data-title="">
                             <i class="fa fa-globe"></i></button>
-                        <button onclick="IndieAuthor.scorm()" class="btn btn-header btn-info l" data-toggle="tooltip"
-                            data-title="Export as SCORM">
+                        <button onclick="IndieAuthor.scorm()" class="btn btn-header btn-info l author-scorm" 
+                            data-toggle="tooltip" data-title="">
                             <i class="fa fa-box-open"></i></button>
-                        <button onclick="IndieAuthor.preview()" class="btn btn-header btn-info l" data-toggle="tooltip"
-                            data-title="Preview content">
+                        <button onclick="IndieAuthor.preview()" class="btn btn-header btn-info l author-preview" 
+                            data-toggle="tooltip" data-title="">
                             <i class="fa fa-eye"></i></button>
-                        <button onclick="IndieAuthor.validate()" class="btn btn-header btn-info l"
-                            data-toggle="tooltip" data-title="Validate unit">
+                        <button onclick="IndieAuthor.validate()" class="btn btn-header btn-info l author-validate"
+                            data-toggle="tooltip" data-title="">
                             <i class="fa fa-check"></i></button>
                         <input type="file" accept="application/json" id="upload-file-model" hidden />
-                        <button id="upload-model" class="btn btn-header btn-info" data-toggle="tooltip"
-                            data-title="Upload unit"><i class="fa fa-cloud-upload-alt"></i></button>
-                        <button onclick="IndieAuthor.download()" class="btn btn-header btn-info" data-toggle="tooltip"
-                            data-title="Download unit"><i class="fa fa-cloud-download-alt"></i></button>
+                        <button id="upload-model" class="btn btn-header btn-info author-upload" 
+                            data-toggle="tooltip" data-title="">
+                            <i class="fa fa-cloud-upload-alt"></i>
+                        </button>
+                        <button onclick="IndieAuthor.download()" class="btn btn-header btn-info author-download" 
+                            data-toggle="tooltip" data-title="">
+                            <i class="fa fa-cloud-download-alt"></i>
+                        </button>
                         
                         <!-- Right buttons in header -->
-                        <button onclick="IndieAuthor.undo()" class="btn btn-header btn-info r" data-toggle="tooltip"
-                            data-title="Undo action"> <i class="fa fa-undo"></i>
+                        <button onclick="IndieAuthor.undo()" class="btn btn-header btn-info r author-undo" 
+                            data-toggle="tooltip" data-title="">
+                            <i class="fa fa-undo"></i>
                         </button>
 
-                        <button onclick="IndieAuthor.redo()" class="btn btn-header btn-info r" data-toggle="tooltip"
-                            data-title="Redo action"> <i class="fa fa-redo"></i>
+                        <button onclick="IndieAuthor.redo()" class="btn btn-header btn-info r author-redo" 
+                            data-toggle="tooltip" data-title="">
+                            <i class="fa fa-redo"></i>
                         </button>
 
-                        <button onclick="IndieAuthor.addSection(undefined, true)" class="btn btn-header btn-success r"
-                            data-toggle="tooltip" data-title="Add new section"> <i
-                                class="fa fa-plus-circle"></i></button>
+                        <button onclick="IndieAuthor.addSection(undefined, true)" 
+                            class="btn btn-header btn-success r author-add-section"
+                            data-toggle="tooltip" data-title=""> 
+                            <i class="fa fa-plus-circle"></i>
+                        </button>
 								
-						<button onclick="IndieAuthor.importSection(true)" class="btn btn-header btn-success r"
-                            data-toggle="tooltip" data-title="Import section"> <i
-                                class="fa fa-file-import"></i></button>
+						<button onclick="IndieAuthor.importSection(true)" 
+                            class="btn btn-header btn-success r author-import-section"
+                            data-toggle="tooltip" data-title=""> 
+                            <i class="fa fa-file-import"></i>
+                        </button>
 								
-                        <button onclick="IndieAuthor.clear()" class="btn btn-header btn-danger r"
-                            data-toggle="tooltip" data-title="Clear content"> <i class="fa fa-trash-alt"></i></button>
+                        <button onclick="IndieAuthor.clear()" 
+                            class="btn btn-header btn-danger r author-clear"
+                            data-toggle="tooltip" data-title=""> 
+                            <i class="fa fa-trash-alt"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="editor-container">
@@ -80,9 +93,7 @@
                     </div>
                 </div>
                 <div id="editor-footer" class="editor-footer">
-                    <div class="alert alert-pale" role="alert">
-                        You can add new sections with the toolbar on top
-                    </div>
+                    <div class="alert alert-pale" role="alert"></div>
                 </div>
             </main>
         </div>

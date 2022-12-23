@@ -444,6 +444,9 @@
             "typeImageNotSelected": "Si el tipo seleccionado es  Imagen de fondo, debes establecer la imagen."
         }
     },
+    "footer": {
+        "content": "Puedes añadir nuevas secciones haciendo uso de la barra de herramientas superior"
+    },
     "general": {
         "areYouSure": "¿Estás seguro?",
         "cancel": "Cancelar",
@@ -454,6 +457,19 @@
         "load": "Cargar",
         "modelDetected": "Quieres cargar una unidad previa?",
         "true": "Verdadero"
+    },
+    "header": {
+        "publish": "Publicar contenido",
+        "scorm": "Exportar en formato SCORM",
+        "preview": "Previsualizar contenido",
+        "validate": "Validar unidad",
+        "upload": "Subir unidad",
+        "download": "Descargar unidad",
+        "undo": "Deshacer acción",
+        "redo": "Rehacer acción",
+        "addSection": "Añadir sección",
+        "importSection": "Importar sección",
+        "clear": "Limpiar contenido"
     },
     "items": {
         "add": "Añadir contenido",

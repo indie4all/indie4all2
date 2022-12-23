@@ -20,6 +20,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import "./styles/overrides.css"
 import './vendor/trumbowyg/trumbowyg.template'
 import './vendor/trumbowyg/trumbowyg.whitespace'
+import I18n from './I18n';
 
 /** Entry point */
 $(function () {
@@ -27,6 +28,7 @@ $(function () {
     const domPalette = document.getElementById('palette');
     const domContainer = document.getElementById('main-container');
     const api = new Api(domPalette, domContainer, function() {});
+    const i18n = I18n.getInstance();
     $('#upload-model').on('click', function() {
         $('#upload-file-model').trigger('click');
     });
@@ -40,6 +42,19 @@ $(function () {
         }
         reader.readAsText(this.files[0]);
     });
+
+    $('.author-publish').data('title', i18n.value('header.publish'));
+    $('.author-scorm').data('title', i18n.value('header.scorm'));
+    $('.author-preview').data('title', i18n.value('header.preview'));
+    $('.author-validate').data('title', i18n.value('header.validate'));
+    $('.author-upload').data('title', i18n.value('header.upload'));
+    $('.author-download').data('title', i18n.value('header.download'));
+    $('.author-undo').data('title', i18n.value('header.undo'));
+    $('.author-redo').data('title', i18n.value('header.redo'));
+    $('.author-add-section').data('title', i18n.value('header.addSection'));
+    $('.author-import-section').data('title', i18n.value('header.importSection'));
+    $('.author-clear').data('title', i18n.value('header.clear'));
+    $('#editor-footer .alert')[0].innerHTML = i18n.value('footer.content');
 
     // Needed in order to hide after click in delete button
     $(document).on('click', "#main-container .btn", function () {

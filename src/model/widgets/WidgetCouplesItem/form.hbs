@@ -32,14 +32,14 @@
                 </div>
             </div>
         </fieldset>
-        <div class="form-group text {{#ifeq type " image"}} d-none {{/ifeq}}">
+        <div class="form-group text {{#ifeq type "image"}} d-none {{/ifeq}}">
             <label for="text-{{@index}}-{{instanceId}}">{{translate "widgets.CouplesItem.form.text.label"}}</label>
             <textarea rows="5" class="form-control texteditor" id="text-{{@index}}-{{instanceId}}"
                 name="couple[{{@index}}][text]" placeholder="{{translate "widgets.CouplesItem.form.text.placeholder"}}"
                 {{#ifneq type "image" }} required {{/ifneq}}></textarea>
             <small class="form-text text-muted">{{translate "widgets.CouplesItem.form.text.help"}}</small>
         </div>
-        <div class="image {{#ifneq type " image"}} d-none {{/ifneq}}">
+        <div class="image {{#ifneq type "image"}} d-none {{/ifneq}}">
             <div class="form-group">
                 <label for="image">{{translate "widgets.CouplesItem.form.image.label"}}</label>
                 <input type="file" class="form-control img-input" name="couple[{{@index}}][image]"

@@ -6696,9 +6696,14 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
                 positions.forEach(pos => $widget.find('.letter-' + (pos + 1)).text(chr));
                 if (!positions.length) {
                     let $numAttempts = $widget.find('.guess-attempts i');
-                    $numAttempts.removeClass('fa-circle-' + currentAttempts);
+                    if ($numAttempts.hasClass('fa-circle-' + currentAttempts)) {
+                        $numAttempts.removeClass('fa-circle-' + currentAttempts);
+                        $numAttempts.addClass('fa-circle-' + (currentAttempts-1));
+                    } else {
+                        $numAttempts.removeClass('fa-' + currentAttempts);
+                        $numAttempts.addClass('fa-' + (currentAttempts-1));
+                    }
                     currentAttempts -= 1;
-                    $numAttempts.addClass('fa-circle-' + currentAttempts);
                     if (currentAttempts === 0) {
                         $widget.find('.hangman-letter').prop('disabled', true);
                         $widget.find('.btn-check-answer').prop('disabled', true);
@@ -6731,10 +6736,13 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
 
             $widget.on('click', '.btn-reset', function () {
                 let $numAttempts = $widget.find('.guess-attempts i');
-                $numAttempts
-                    .removeClass('fa-circle-' + currentAttempts)
-                    .addClass('fa-circle-' + attempts)
-                    .attr('aria-label', attempts);
+                if ($numAttempts.hasClass('fa-circle-' + currentAttempts)) {
+                    $numAttempts.removeClass('fa-circle-' + currentAttempts);
+                    $numAttempts.addClass('fa-circle-' + attempts);
+                } else {
+                    $numAttempts.removeClass('fa-' + currentAttempts);
+                    $numAttempts.addClass('fa-' + attempts);
+                }
                 currentLetters = new Set();
                 currentAttempts = attempts;
                 $widget.find('.hangman-letter').prop('disabled', false);

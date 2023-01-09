@@ -65,14 +65,12 @@ export default class WidgetTermClassificationItem extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
         let prev = this.translate("widgets.TermClassificationItem.prev");
         if (model.data.column && model.data.terms.length > 0) {
             const allWords = this.functions.reduceTerms(model.data.terms);
             prev = `${model.data.column} - ${allWords}`;
         }
-        element.innerHTML = prev;
-        return element;
+        return prev;
     }
 
     updateModelFromForm(model, form) {

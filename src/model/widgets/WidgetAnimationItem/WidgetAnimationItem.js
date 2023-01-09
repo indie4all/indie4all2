@@ -32,9 +32,7 @@ export default class WidgetAnimationItem extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = model.data.image ? prev(model.data) : this.translate("widgets.AnimationItem.prev");
-        return element;
+        return model.data?.image ? prev(model.data) : this.translate("widgets.AnimationItem.prev");
     }
 
     updateModelFromForm(model, form) {

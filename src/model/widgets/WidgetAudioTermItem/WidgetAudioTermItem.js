@@ -67,12 +67,9 @@ export default class WidgetAudioTermItem extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        if (model.data.term && model.data.definition)
-            element.innerHTML = model.data.term + " -> " + model.data.definition;
-        else
-            element.innerHTML = this.translate("widgets.AudioTermItem.prev");
-        return element;
+        return model.data?.term && model.data?.definition ?
+            model.data.term + " -> " + model.data.definition :
+            this.translate("widgets.AudioTermItem.prev");
     }
 
     updateModelFromForm(model, form) {

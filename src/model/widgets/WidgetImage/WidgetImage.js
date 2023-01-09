@@ -78,9 +78,7 @@ export default class WidgetImage extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = (model.data.text && model.data.image && model.params.name) ? model.params.name : this.translate("widgets.Image.prev");
-        return element;
+        return model.params?.name ?? this.translate("widgets.Image.prev")
     }
 
     updateModelFromForm(model, form) {

@@ -312,9 +312,7 @@ export default class WidgetPuzzle extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = model.params.name ? model.params.name : this.translate("widgets.Puzzle.label");
-        return element;
+        return model.params?.name ?? this.translate("widgets.Puzzle.label");
     }
 
     updateModelFromForm(model, form) {

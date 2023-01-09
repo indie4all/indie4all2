@@ -47,13 +47,7 @@ export default class WidgetLatexFormula extends WidgetItemElement {
     }
 
     preview(model) {
-        const domPreview = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        if (model.data.caption && model.data.formula)
-            domPreview.innerHTML = preview(model.data);
-        else
-            domPreview.innerHTML = this.translate("widgets.LatexFormula.prev");
-        return domPreview;
-
+        return model.data?.caption && model.data?.formula ? preview(model.data) : this.translate("widgets.LatexFormula.prev");
     }
 
     settingsOpened(model) {

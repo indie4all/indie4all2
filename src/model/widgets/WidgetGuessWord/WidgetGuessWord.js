@@ -52,12 +52,9 @@ export default class WidgetGuessWord extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        if (model.params.name && model.data.question)
-            element.innerHTML = model.params.name + " | " + model.data.question;
-        else
-            element.innerHTML = this.translate("widgets.GuessWord.prev");
-        return element;
+        return model.params?.name && model.data?.question ?
+            model.params.name + " | " + model.data.question :
+            this.translate("widgets.GuessWord.prev");
     }
 
     updateModelFromForm(model, form) {

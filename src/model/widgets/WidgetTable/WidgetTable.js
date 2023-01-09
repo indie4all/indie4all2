@@ -235,9 +235,9 @@ export default class WidgetTable extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = (model.data.columns.length) ? model.data.columns.map(col => col.replaceAll(/<br\s*\/?>/g, ' ')).join(' | ') : this.translate("widgets.Table.prev");
-        return element;
+        return (model.data.columns.length) ? 
+            model.data.columns.map(col => col.replaceAll(/<br\s*\/?>/g, ' ')).join(' | ') : 
+            this.translate("widgets.Table.prev");
     }
 
     updateModelFromForm(model, form) {

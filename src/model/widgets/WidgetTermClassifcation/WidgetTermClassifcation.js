@@ -73,9 +73,7 @@ export default class WidgetTermClassification extends WidgetContainerElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = model.params.name ? model.params.name : this.translate("widgets.TermClassification.prev");
-        return element;
+        return model.params?.name ?? this.translate("widgets.TermClassification.prev");
     }
 
     updateModelFromForm(model, form) {

@@ -46,9 +46,7 @@ export default class WidgetTextBlock extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = model.data.text.length > 0 ? model.data.text : this.translate("widgets.TextBlock.prev");
-        return element;
+        return model.data.text.length > 0 ? model.data.text : this.translate("widgets.TextBlock.prev");
     }
 
     updateModelFromForm(model, form) {

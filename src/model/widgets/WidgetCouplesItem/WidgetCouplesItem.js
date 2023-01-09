@@ -95,15 +95,10 @@ export default class WidgetCouplesItem extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        let couples = model.data.couples.filter(couple => ["image", "text"].includes(couple.type));
-        if (couples.length === 2) {
-            let html = couples.map(couple => couple.type === "image" ? `<div>${couple.alt}</div>` : `<div>${couple.text}</div>`).join(' -> ');
-            element.innerHTML = html
-        }
-        else
-            element.innerHTML = this.translate("widgets.CouplesItem.prev");
-        return element;
+        const couples = model.data.couples.filter(couple => ["image", "text"].includes(couple.type));
+        return couples.length === 2 ?  
+            couples.map(couple => couple.type === "image" ? `<div>${couple.alt}</div>` : `<div>${couple.text}</div>`).join(' -> ') :
+            this.translate("widgets.CouplesItem.prev");
     }
 
     updateModelFromForm(model, form) {

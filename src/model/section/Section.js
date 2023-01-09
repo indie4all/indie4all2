@@ -34,11 +34,7 @@ export default class Section extends ModelElement {
     hasChildren() { return true; }
 
     preview(model) {
-        const element = document
-            .querySelector('[data-id="' + model.id + '"]')
-            .querySelector('.b2');
-        element.innerHTML = prevTemplate(model);
-        return element;
+        return prevTemplate(model);
     }
 
     createElement(section) {

@@ -93,9 +93,7 @@ export default class WidgetMissingWordsItem extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = model.data.sentence ? model.data.sentence : this.translate("widgets.MissingWordsItem.prev");
-        return element;
+        return model.data?.sentence ?? this.translate("widgets.MissingWordsItem.prev");
     }
 
     updateModelFromForm(model, form) {

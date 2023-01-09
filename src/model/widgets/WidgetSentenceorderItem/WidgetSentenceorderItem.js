@@ -49,9 +49,7 @@ export default class WidgetSentenceOrderItem extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = model.data.answers.length ? model.data.answers[0] : this.translate("widgets.SentenceOrderItem.prev");
-        return element;
+        return model.data.answers.length ? model.data.answers[0] : this.translate("widgets.SentenceOrderItem.prev");
     }
 
     settingsClosed(model) {

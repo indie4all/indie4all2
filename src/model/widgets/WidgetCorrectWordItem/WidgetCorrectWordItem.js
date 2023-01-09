@@ -60,9 +60,8 @@ export default class WidgetCorrectWordItem extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = (model.data.question && model.data.word) ? (model.data.question + " -> " + model.data.word) : this.translate("widgets.CorrectWordItem.prev");
-        return element;
+        return (model.data?.question && model.data?.word) ? 
+            (model.data.question + " -> " + model.data.word) : this.translate("widgets.CorrectWordItem.prev");
     }
 
     updateModelFromForm(model, form) {

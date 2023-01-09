@@ -46,12 +46,7 @@ export default class WidgetSimpleImage extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        if (model.params.name)
-            element.innerHTML = model.params.name;
-        else
-            element.innerHTML = this.translate("widgets.SimpleImage.prev");
-        return element;
+        return model.params?.name ?? this.translate("widgets.SimpleImage.prev");
     }
 
     settingsOpened(model) {

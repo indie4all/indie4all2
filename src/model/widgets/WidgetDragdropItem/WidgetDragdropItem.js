@@ -33,12 +33,9 @@ export default class WidgetDragdropItem extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        if (model.data.term && model.data.definition)
-            element.innerHTML = "<p><b>" + model.data.term + "</b>" + "<span> -> " + model.data.definition + "</span></p>";
-        else
-            element.innerHTML = this.translate("widgets.DragdropItem.prev");
-        return element;
+        return model.data?.term && model.data?.definition ?
+            `<p><b>${model.data.term}</b><span> -> ${model.data.definition}</span></p>` :
+            this.translate("widgets.DragdropItem.prev");
     }
 
     updateModelFromForm(model, form) {

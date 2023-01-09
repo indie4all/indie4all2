@@ -31,12 +31,7 @@ export default class WidgetAcordionContent extends WidgetContainerElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        if (model.params.title)
-            element.innerHTML = this.translate("widgets.AcordionContent.label") + ": " + model.params.title;
-        else
-            element.innerHTML = this.translate("widgets.AcordionContent.label");
-        return element;
+        return this.translate("widgets.AcordionContent.label") + (model.params?.title ?? "");
     }
 
     updateModelFromForm(model, form) {

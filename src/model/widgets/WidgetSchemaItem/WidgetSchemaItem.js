@@ -33,9 +33,7 @@ export default class WidgetSchemaItem extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = model.data.alt ? model.data.alt : this.translate("widgets.SchemaItem.prev");
-        return element;
+        return model.data?.alt ?? this.translate("widgets.SchemaItem.prev");
     }
 
     settingsOpened(model) {

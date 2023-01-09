@@ -38,12 +38,8 @@ export default class WidgetInteractiveVideo extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        if (model.params.name && model.data.videourl)
-            element.innerHTML = model.params.name + ": " + model.data.videourl;
-        else
-            element.innerHTML = this.translate("widgets.InteractiveVideo.prev");
-        return element;
+        return model.params?.name && model.data?.videourl ? 
+            model.params.name + ": " + model.data.videourl : this.translate("widgets.InteractiveVideo.prev");
     }
 
     updateModelFromForm(model, form) {

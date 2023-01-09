@@ -40,9 +40,7 @@ export default class WidgetTrueFalseQuestion extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = model.data.question ? model.data.question : this.translate("widgets.TrueFalseQuestion.prev");
-        return element;
+        return model.data?.question ?? this.translate("widgets.TrueFalseQuestion.prev");
     }
 
     settingsOpened(model) {

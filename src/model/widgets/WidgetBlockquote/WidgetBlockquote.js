@@ -34,9 +34,7 @@ export default class WidgetBlockquote extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = model.data.quote ? model.data.quote : this.translate("widgets.Blockquote.prev");
-        return element;
+        return model.data?.quote ?? this.translate("widgets.Blockquote.prev");
     }
 
     updateModelFromForm(model, form) {

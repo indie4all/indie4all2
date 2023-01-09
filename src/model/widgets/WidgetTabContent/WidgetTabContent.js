@@ -32,9 +32,7 @@ export default class WidgetTabContent extends WidgetContainerElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = this.translate("widgets.TabContent.label") + ": " + (model.params.name ? model.params.name : "");
-        return element;
+        return this.translate("widgets.TabContent.label") + ": " + (model.params?.name ?? "");
     }
 
     updateModelFromForm(model, form) {

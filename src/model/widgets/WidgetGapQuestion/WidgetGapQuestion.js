@@ -75,9 +75,7 @@ export default class WidgetGapQuestion extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = model.data.question ? model.data.question : this.translate("widgets.GapQuestion.prev");
-        return element;
+        return model.data?.question ?? this.translate("widgets.GapQuestion.prev");
     }
 
     settingsClosed(model) {

@@ -42,9 +42,7 @@ export default class WidgetModal extends WidgetContainerElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.querySelector("span").innerHTML = model.params.name ? model.params.name : this.translate("widgets.Modal.label");
-        return element;
+        return model.params?.name ?? this.translate("widgets.Modal.label");
     }
 
     updateModelFromForm(model, form) {

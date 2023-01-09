@@ -46,7 +46,8 @@ export default class ActionAddElement extends ActionElement {
 
     regeneratePreview(element) {
         const widget = ModelManager.getWidget(element.widget);
-        widget.preview(element);
+        const previewElement = document.querySelector('[data-id="'+element.id+'"]').querySelector('[data-prev]');
+        previewElement.innerHTML = widget.preview(element);
         if (widget.hasChildren(element.type)) {
             var elementsArray = element.type == 'layout' ? [].concat.apply([], element.data) : element.data;
             for (var i = 0; i < elementsArray.length; i++) {

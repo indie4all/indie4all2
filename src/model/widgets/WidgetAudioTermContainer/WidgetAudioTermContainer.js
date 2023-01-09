@@ -39,9 +39,7 @@ export default class WidgetAudioTermContainer extends WidgetContainerElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.querySelector("span").innerHTML = model.params.name ? model.params.name : this.translate("widgets.AudioTermContainer.label");
-        return element;
+        return model.params?.name ?? this.translate("widgets.AudioTermContainer.label");
     }
 
     updateModelFromForm(model, form) {

@@ -203,9 +203,7 @@ export default class WidgetAnimation extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = model.params.name ? model.params.name : this.translate("widgets.Animation.label");
-        return element;
+        return model.params?.name ?? this.translate("widgets.Animation.label");
     }
 
     settingsClosed(model) {

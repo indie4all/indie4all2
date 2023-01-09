@@ -59,9 +59,7 @@ export default class WidgetVideo extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = (model.data.videourl) ? model.params.name + ": " + model.data.videourl : this.translate("widgets.Video.prev");
-        return element;
+        return (model.data.videourl) ? model.params.name + ": " + model.data.videourl : this.translate("widgets.Video.prev");
     }
 
     settingsClosed(model) {

@@ -39,9 +39,7 @@ export default class WidgetMissingWords extends WidgetContainerElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.querySelector("span").innerHTML = model.params.name ? model.params.name : this.translate("widgets.MissingWords.label");
-        return element;
+        return model.params?.name ?? this.translate("widgets.MissingWords.label");
     }
 
     updateModelFromForm(model, form) {

@@ -22,7 +22,7 @@ import "./styles/common-styles.scss";
 
 export default class Author {
 
-    constructor(palette, container, initCallBack) {
+    constructor(palette, container) {
 
         // TODO: fix this, not very smart
         const ddMove = (el, target) => this.onMoveElement(el, target);
@@ -44,7 +44,6 @@ export default class Author {
         this.loadWidgets(palette);
         this.palette = palette;
         this.container = container;
-        if (initCallBack) initCallBack();
         !$('#modal-loading').length && $(this.container).after(loadingTemplate());
     }
 
@@ -398,7 +397,8 @@ export default class Author {
                 $("#modal-settings").modal('hide');
                 $("#modal-settings-body .errors").remove();
                 modelElem.updateModelFromForm(modelObject, formData);
-                const previewElement = modelElem.preview(modelObject);
+                const previewElement = document.querySelector('[data-id="' + modelObject.id + '"]').querySelector('[data-prev]');
+                previewElement.querySelector("span").innerHTML = modelElem.preview(modelObject);
                 // Clear modal values
                 document.getElementById('modal-settings-body').innerHTML = '';
                 document.getElementById('modal-settings-tittle').innerHTML = '';
@@ -555,7 +555,6 @@ export default class Author {
             const section = element.id ? this.model.findObject(element.id) : this.model.createSection();
             const rendered = modelElement.createElement(section);
             $(this.container).append(rendered);
-            modelElement.preview(element);
         } else {
             modelElement = ModelManager.getWidget(element.widget);
             const el = document.createElement("div");            
@@ -566,8 +565,9 @@ export default class Author {
             if (parentType == 'layout') parentContainerIndex = target.dataset.index;    
             $(target).append(el);
             this.createViewElement(element.type, element.widget, el, element.id, parentType, parentContainerIndex, parentContainerId, -1, modelCreation);
-            modelElement.preview(element);
         }
+        const previewElement = document.querySelector('[data-id="'+element.id+'"]').querySelector('[data-prev]');
+        previewElement.innerHTML = modelElement.preview(element);
 
         if (modelElement.hasChildren()) {
             

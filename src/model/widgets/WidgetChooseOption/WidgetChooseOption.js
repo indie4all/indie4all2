@@ -69,12 +69,8 @@ export default class WidgetChooseOption extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        if (model.params.name && model.data.text)
-            element.innerHTML = model.params.name + " | " + model.data.text;
-        else
-            element.innerHTML = this.translate("widgets.ChooseOption.prev");
-        return element;
+        return model.params?.name && model.data?.text ? 
+            model.params.name + " | " + model.data.text : this.translate("widgets.ChooseOption.prev");
     }
 
     emptyData() {

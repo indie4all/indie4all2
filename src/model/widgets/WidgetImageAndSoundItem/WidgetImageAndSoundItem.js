@@ -38,9 +38,7 @@ export default class WidgetImageAndSoundItem extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = model.data.text ? model.data.text : this.translate("widgets.ImageAndSoundItem.prev");
-        return element;
+        return model.data?.text ?? this.translate("widgets.ImageAndSoundItem.prev");
     }
 
     settingsOpened(model) {

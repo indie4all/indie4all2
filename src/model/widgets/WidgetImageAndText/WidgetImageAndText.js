@@ -75,9 +75,7 @@ export default class WidgetImageAndText extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = model.params.name ? model.params.name : this.translate("widgets.ImageAndText.prev");
-        return element;
+        return model.params?.name ?? this.translate("widgets.ImageAndText.prev");
     }
 
     updateModelFromForm(model, form) {

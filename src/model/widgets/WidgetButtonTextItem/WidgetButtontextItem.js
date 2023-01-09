@@ -42,9 +42,7 @@ export default class WidgetButtonTextItem extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = model.data.alt ? model.data.alt : this.translate("widgets.ButtonTextItem.prev");
-        return element;
+        return model.data?.alt ?? this.translate("widgets.ButtonTextItem.prev");
     }
 
     settingsOpened(model) {

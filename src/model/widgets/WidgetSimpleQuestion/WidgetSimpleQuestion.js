@@ -60,9 +60,7 @@ export default class WidgetSimpleQuestion extends WidgetItemElement {
     }
 
     preview(model) {
-        const element = document.querySelector('[data-id="' + model.id + '"]').querySelector('[data-prev]');
-        element.innerHTML = model.data.question ? model.data.question : this.translate("widgets.SimpleQuestion.prev");
-        return element;
+        return model.data?.question ?? this.translate("widgets.SimpleQuestion.prev");
     }
 
     updateModelFromForm(model, form) {

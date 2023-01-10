@@ -1,19 +1,11 @@
 import template from "./template.hbs"
 import WidgetElement from "../WidgetElement/WidgetElement";
-import './styles.scss';
 
 export default class WidgetColumnsLayout extends WidgetElement {
 
     createElement(widget) {
         const canEdit = this.config.toolbar.edit;
-        return template({
-            type: this.config.type,
-            widget: this.config.widget,
-            id: widget.id,
-            icon: this.config.icon,
-            columns: this.config.columns,
-            canEdit
-        });
+        return template({...this.config, canEdit, id: widget.id});
     }
     
     hasChildren() { return true; }

@@ -1,16 +1,16 @@
 <div class="section-container">
-    <div id="sec-{{id}}" data-id="{{id}}">
+    <div id="sec-{{id}}" class="section-element" data-id="{{id}}">
         <div class="section-header">
             <div class="b1">
                 <img src="{{{icon}}}" class="section-icon" />
             </div>
             <div class="b2" data-prev>{{name}}</div>
             <div class="b3" data-toolbar>
-                <button onClick="IndieAuthor.exportSection('{{id}}')" class="btn btn-sm btn-info" type="button"
+                <button class="author-export-section btn btn-sm btn-info" type="button"
                     title="{{translate "sections.export"}}">
                     <i class="fa fa-file-export"></i>
                 </button>
-                <button onClick="IndieAuthor.importElement('{{id}}')" class="btn btn-sm btn-info" type="button"
+                <button class="author-import-element btn btn-sm btn-info" type="button"
                     title="{{translate "sections.import"}}">
                     <i class="fa fa-file-import"></i>
                 </button>
@@ -19,23 +19,23 @@
                     aria-expanded="true" aria-controls="section-elements-{{id}}">
                     <i class="fa fa-caret-down"></i>
                 </button>
-                <button onClick="IndieAuthor.copySection('{{id}}')" class="btn btn-sm btn-info" type="button"
+                <button class="author-copy-section btn btn-sm btn-info" type="button"
                     title="{{translate "sections.duplicate"}}">
                     <i class="fa fa-copy"></i>
                 </button>
-                <button onClick="IndieAuthor.swap('{{id}}', 1)" class="btn btn-sm btn-info" 
+                <button class="author-swap-up btn btn-sm btn-info" 
                     title="{{translate "sections.moveUp"}}">
                     <i class="fa fa-arrow-up"></i>
                 </button>
-                <button onClick="IndieAuthor.swap('{{id}}', 0)" class="btn btn-sm btn-info" 
+                <button class="author-swap-down btn btn-sm btn-info" 
                     title="{{translate "sections.moveDown"}}">
                     <i class="fa fa-arrow-down"></i>
                 </button>
-                <button class="btn btn-sm btn-success" onClick="IndieAuthor.editSection('{{id}}')"
+                <button class="author-edit-section btn btn-sm btn-success"
                     data-toggle="tooltip" title="{{translate "sections.edit"}}">
                     <i class="fa fa-edit"></i>
                 </button>
-                <button class="btn btn-sm btn-danger" onclick="indieauthor.removeSection('{{id}}')"
+                <button class="author-remove-section btn btn-sm btn-danger"
                     data-toggle="tooltip" title="{{translate "sections.deleteSection"}}">
                     <i class="fa fa-times"></i>
                 </button>

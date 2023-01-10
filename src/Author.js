@@ -337,14 +337,11 @@ export default class Author {
         const widgetInfo = { id: dataElementId };
         const widgetElement = ModelManager.getWidget(widget);
         const elementToBeAppended = widgetElement.createElement(widgetInfo);
-        const buttons = widgetElement.generateToolbar(dataElementId);
         Utils.clearDataAttributes(viewElement);
         viewElement.innerHTML = '';
         $(viewElement).removeClass('palette-item');
         $(viewElement).addClass('container-item');
-        $(viewElement).append(elementToBeAppended);
-        const toolbar = $("[data-id='" + dataElementId + "'] [data-toolbar]")[0];
-        $(toolbar).append(buttons);        
+        $(viewElement).append(elementToBeAppended);  
         if (modelCreation) { // MODEL CREATION
             var modelObject = this.model.createObject(elementType, widget, dataElementId, widgetInfo);
             this.model.appendObject(modelObject, inPositionElementId, parentContainerId, parentContainerIndex);

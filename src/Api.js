@@ -8,10 +8,10 @@ import downloadTemplate from "./views/download.hbs"
 
 export default class Api {
 
-    constructor(palette, container, onInit) {
+    constructor(palette, container) {
         this.container = container;
         this.i18n = I18n.getInstance();
-        this.author = new Author(palette, container, onInit);
+        this.author = new Author(palette, container);
         this.undoredo = UndoRedo.getInstance();
     }
 

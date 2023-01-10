@@ -50,12 +50,18 @@ const webConfig = merge(config, {
     new CopyPlugin({patterns: [
       { from: "./src/manifest.json", to: "."}, 
       { from: "./src/favicon.ico", to: "."}]}) ],
-  output: { path: path.resolve(__dirname, 'web') }
+  output: { 
+    path: path.resolve(__dirname, 'web'),
+    library: "IndieAuthor" 
+  }
 });
 
 const distConfig = merge(config, {
   name: "dist",
-  output: { path: path.resolve(__dirname, 'dist') }
+  output: { 
+    path: path.resolve(__dirname, 'dist'),
+    library: "IndieAuthor"
+  }
 });
 
 module.exports = [distConfig, webConfig];

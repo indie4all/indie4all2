@@ -20,59 +20,12 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import "./styles/overrides.css"
 import './vendor/trumbowyg/trumbowyg.template'
 import './vendor/trumbowyg/trumbowyg.whitespace'
-import I18n from './I18n';
+import { init as init_events } from './events'
 
-/** Entry point */
-$(function () {
-
-    const domPalette = document.getElementById('palette');
-    const domContainer = document.getElementById('main-container');
-    const api = new Api(domPalette, domContainer, function() {});
-    const i18n = I18n.getInstance();
-    $('#upload-model').on('click', function() {
-        $('#upload-file-model').trigger('click');
-    });
-    $('#upload-file-model').on('change', function() {
-        const reader = new FileReader();
-        reader.onload = (event) => {
-            const model = JSON.parse(event.target.result);
-            api.load(model, function() {
-                $('#main-container').css('width', '').css('height', '');
-            });
-        }
-        reader.readAsText(this.files[0]);
-    });
-
-    $('.author-publish').data('title', i18n.value('header.publish'));
-    $('.author-scorm').data('title', i18n.value('header.scorm'));
-    $('.author-preview').data('title', i18n.value('header.preview'));
-    $('.author-validate').data('title', i18n.value('header.validate'));
-    $('.author-upload').data('title', i18n.value('header.upload'));
-    $('.author-download').data('title', i18n.value('header.download'));
-    $('.author-undo').data('title', i18n.value('header.undo'));
-    $('.author-redo').data('title', i18n.value('header.redo'));
-    $('.author-add-section').data('title', i18n.value('header.addSection'));
-    $('.author-import-section').data('title', i18n.value('header.importSection'));
-    $('.author-clear').data('title', i18n.value('header.clear'));
-    $('#editor-footer .alert')[0].innerHTML = i18n.value('footer.content');
-
-    // Needed in order to hide after click in delete button
-    $(document).on('click', "#main-container .btn", function () {
-        $("[data-toggle='tooltip']").tooltip('hide');
-    });
-
-    // Tooltips
-    $("body").tooltip({ trigger: 'hover', selector: "[data-toggle='tooltip']"});
-
-
-    // Change caret-down / caret-up icon
-    $('.editor-container').on('click', '[data-toggle="collapse"]', function() {
-        let $icon = $(this).find('i');
-        let show = $($(this).attr('data-target')).is('.collapse.show');
-        $icon.toggleClass('fa-caret-down', !show);
-        $icon.toggleClass('fa-caret-up', show);
-    });
-
-    window.IndieAuthor = api;
-});
+const domPalette = document.getElementById('palette');
+const domContainer = document.getElementById('main-container');
+// Initialize the IndieAuthor api
+const api = new Api(domPalette, domContainer);
+init_events(api);
+export { api };
 

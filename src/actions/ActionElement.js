@@ -1,7 +1,6 @@
 export default class ActionElement {
 
-    constructor(modelId, container, model, data) {
-        this.modelId = modelId;
+    constructor(container, model, data) {
         this.container = container;
         this.model = model;
         this.data = data;
@@ -9,8 +8,4 @@ export default class ActionElement {
 
     do() {}
     undo() {}
-
-    clearElement(elementString) {
-        return elementString.replace('gu-transit', '');
-    }
 }

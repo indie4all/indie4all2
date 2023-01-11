@@ -19,6 +19,6 @@ export default class ActionAddSection extends ActionElement {
     }
 
     undo() {
-        (new ActionRemoveSection(this.modelId, this.container, this.model, this.data)).do();
+        (new ActionRemoveSection(this.container, this.model, this.data)).do();
     }
 }

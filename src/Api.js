@@ -127,7 +127,7 @@ export default class Api {
     /**
      * Adds an empty section
      */
-    addSection() { this.#author.addSection(undefined, true); }
+    addSection() { this.#author.addSection(); }
 
     /**
      * Adds an empty model element into a container
@@ -142,7 +142,7 @@ export default class Api {
      */
     copyElement(id) { 
         let sectionId = $(`[data-id=${id}]`).closest('.section-elements').attr('id').split('-').at(-1);
-        this.#author.copyModelElement(this.#author.getModelElement(id), sectionId, true);
+        this.#author.copyModelElement(this.#author.getModelElement(id), sectionId);
     }
 
     /**
@@ -150,7 +150,7 @@ export default class Api {
      * @param {string} id - SectionID
      */
     copySection(id) { 
-        this.#author.copyModelSection(this.#author.getModelElement(id), true);    
+        this.#author.copyModelSection(this.#author.getModelElement(id));    
     }
 
     /**
@@ -163,7 +163,7 @@ export default class Api {
             const encrypted = localStorage.getItem('copied-element');
             const json = CryptoJS.AES.decrypt(encrypted, userCookie.split('=')[1]).toString(CryptoJS.enc.Utf8);
             if (json) {
-                this.#author.copyModelElement(JSON.parse(json), id, true);
+                this.#author.copyModelElement(JSON.parse(json), id);
                 Utils.notifySuccess(this.#i18n.translate("messages.importedElement"));
                 return;
             }
@@ -184,7 +184,7 @@ export default class Api {
             const encrypted = localStorage.getItem('copied-section');
             const json = CryptoJS.AES.decrypt(encrypted, userCookie.split('=')[1]).toString(CryptoJS.enc.Utf8);
             if (json) {
-                this.#author.copyModelSection(JSON.parse(json), true);
+                this.#author.copyModelSection(JSON.parse(json));
                 Utils.notifySuccess(this.#i18n.translate("messages.importedSection"));
                 return;
             }

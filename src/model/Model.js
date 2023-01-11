@@ -44,16 +44,6 @@ export class Model {
     }
 
     /**
-     * Creates a new, empty section
-     * @returns Empty section
-     */
-    createSection() {
-        const section = ModelManager.getSection().emptyData(this.sections.length + 1);
-        this.sections.push(section);
-        return section;
-    }
-
-    /**
      * Returns a copy of the model with its keys changed
      * @param {*} original 
      * @returns 
@@ -65,7 +55,7 @@ export class Model {
     }
 
     
-    createObject(widget, id) {
+    createWidget(widget, id) {
         return ModelManager.getWidget(widget).emptyData(id);
     }
 

@@ -54,79 +54,52 @@ export default class Author {
         this.model.sections = [];
     }
 
-    copyModelElement(element, sectionId, isCommand) {
+    copyModelElement(element, sectionId) {
         const position = Utils.findIndexObjectInArray(this.model.sections, "id", sectionId);
         const section = this.model.sections[position];
         let copy = this.model.copyElement(element);
-        let container = document.getElementById('section-elements-' + section.id);
-        this.loadElement(container, copy);
-        section.data.push(copy);
-        if (isCommand) {
-            const action = new ActionAddElement(copy.id, this.container, this.model, {
-                element: copy,
-                parentType: 'section-container',
-                parentContainerIndex: this.model.sections.indexOf(section),
-                parentContainerId: section.id,
-                inPositionElementId: -1 // Change
-            });
-            this.undoredo.pushCommand(action);
-        }
+        const action = new ActionAddElement(this.container, this.model, {
+            element: copy,
+            parentContainerIndex: this.model.sections.indexOf(section),
+            parentContainerId: section.id,
+            inPositionElementId: -1
+        });
+        this.undoredo.pushAndExecuteCommand(action);
     }
 
-    copyModelSection = function (section, isCommand) {
+    copyModelSection(section) {
         let copy = this.model.copyElement(section);
-        this.model.sections.push(copy);
-        this.loadElement(this.container, copy);
-        if (isCommand) {
-            this.undoredo.pushCommand(new ActionAddSection(copy.id, this.container, this.model, {
-                element: copy,
-                parentType: "section-container",
-                position: (this.model.sections.length - 1)
-            }));
-        }
+        const action = new ActionAddSection(this.container, this.model, {
+            element: copy,
+            position: (this.model.sections.length - 1)
+        });
+        this.undoredo.pushAndExecuteCommand(action);
     }
 
-    addSection(sectionId, isCommand) {
-        const section = sectionId ? this.model.findObject(sectionId) : this.model.createSection();
-        const rendered = ModelManager.getSection().createElement(section);
-        $(this.container).append(rendered);
-        if (isCommand) 
-            this.undoredo.pushCommand(new ActionAddSection(section.id, this.container, this.model, {
-                element: section,
-                parentType: "section-container",
-                position: (this.model.sections.length - 1)
-            }));
+    addSection() {
+        const section = ModelManager.getSection().emptyData(this.model.sections.length + 1);
+        const action = new ActionAddSection(this.container, this.model, {
+            element: section,
+            position: this.model.sections.length
+        });
+        this.undoredo.pushAndExecuteCommand(action);
     }
 
     removeSection(sectionId) {
-        this.undoredo.pushCommand(new ActionRemoveSection(sectionId, this.container, this.model, {
+        const action = new ActionRemoveSection(this.container, this.model, {
             element: $.extend({}, this.model.findObject(sectionId)),
-            parentType: "section-container",
             position: Utils.findIndexObjectInArray(this.model.sections, "id", sectionId)
-        }));
-
-        this.deleteToolTipError(document.getElementById("sec-" + sectionId).querySelector('[data-prev]'));
-        this.model.removeElement(sectionId);
-        $(document.getElementById("sec-" + sectionId).parentNode).fadeOut(400, function () {
-            $(this).remove();
         });
-
+        this.undoredo.pushAndExecuteCommand(action);
         Utils.notifySuccess(this.i18n.translate("messages.deletedSection"));
     }
 
     swap(sectionOriginId, direction) {
-        var positionQuery = (direction == 1) ? $(document.getElementById("sec-" + sectionOriginId).parentNode).prev() : $(document.getElementById("sec-" + sectionOriginId).parentNode).next();
-
-        if (positionQuery.length == 1) {
-            var targetOrigin = positionQuery[0].firstElementChild.dataset.id;
-            Utils.swap(document.getElementById("sec-" + sectionOriginId).parentNode, document.getElementById("sec-" + targetOrigin).parentNode);
-            this.model.swap(sectionOriginId, targetOrigin);
-        }
-
-        this.undoredo.pushCommand(new ActionSwapSections(null, this.container, this.model, {
+        const action = new ActionSwapSections(this.container, this.model, {
             sectionOriginId: sectionOriginId,
             direction: direction
-        }));
+        });
+        this.undoredo.pushAndExecuteCommand(action);
     }
 
     openSettings(dataElementId, type = "widget") {
@@ -198,41 +171,28 @@ export default class Author {
     removeElement(id) {
         var elementToBeRemoved = this.model.findObject(id);
         var parent = this.model.findParentOfObject(id);
-
         var parentContainerId = parent.id;
         var parentContainerIndex = -1;
         var inPositionElementId = -1;
-
-        let objectIndex, positionIndex;
+        let container;
         if (parent.type == 'layout') {
-            for (var i = 0; i < parent.data.length; i++) {
-                var elementArray = parent.data[i];
-                objectIndex = Utils.findIndexObjectInArray(elementArray, "id", id);
-                if (objectIndex != -1) {
-                    positionIndex = objectIndex + 1;
-                    if (positionIndex < elementArray.length) inPositionElementId = elementArray[positionIndex].id;
-                    parentContainerIndex = i;
-                }
-            }
+            parentContainerIndex = parent.data.findIndex(elemArr => elemArr.findIndex(elem => elem.id === id) !== -1);
+            container = parent.data[parentContainerIndex];
         } else {
-            objectIndex = Utils.findIndexObjectInArray(parent.data, "id", id);
-            positionIndex = objectIndex + 1;
-            if (positionIndex < parent.data.length) inPositionElementId = parent.data[positionIndex].id;
+            container = parent.data;
         }
 
-        this.undoredo.pushCommand(new ActionRemoveElement(id, this.container, this.model, {
-            element: $.extend({}, elementToBeRemoved),
-            parentType: parent.type,
-            parentContainerIndex: parentContainerIndex,
-            parentContainerId: parentContainerId,
-            inPositionElementId: inPositionElementId
-        }));
+        const positionIndex = container.findIndex(elem => elem.id === id) + 1;
+        if (positionIndex < container.length)
+            inPositionElementId = container[positionIndex + 1].id;
 
-        this.deleteToolTipError(document.querySelector("[data-id='" + id + "']").querySelector('[data-prev]'));
-        this.model.removeElement(id);
-        $(document.querySelector("[data-id='" + id + "']")).fadeOut(400, function () {
-            $(this.parentNode).remove();
+        const action = new ActionRemoveElement(this.container, this.model, {
+            element: $.extend({}, elementToBeRemoved),
+            parentContainerIndex,
+            parentContainerId,
+            inPositionElementId
         });
+        this.undoredo.pushAndExecuteCommand(action);
     }
 
     addContent(containerId, widget) {
@@ -264,24 +224,17 @@ export default class Author {
 
     addSpecificContent(containerId, widgetTypeToCreate) {
         const target = document.querySelector('[data-id="' + containerId + '"]');
-        const dataElementId = Utils.generate_uuid();
-        const elementToBeAppended = ModelManager.getWidget(widgetTypeToCreate).createElement({ id: dataElementId });
-        target.querySelector('[data-content]').innerHTML = elementToBeAppended;
-        
-        const parentType = target.dataset.type; // Parent type
-        const parentContainerIndex = -1; // Parent container index (only for layout)
+        const dataElementId = Utils.generate_uuid();       
         const parentContainerId = $(target).closest('[data-id]')[0].dataset.id;
         const inPositionElementId = -1;
-
-        const modelObject = this.model.createObject(widgetTypeToCreate, dataElementId);
-        this.model.appendObject(modelObject, inPositionElementId, parentContainerId, parentContainerIndex);
-        this.undoredo.pushCommand(new ActionAddElement(dataElementId, this.container, this.model, {
-            element: $.extend({}, modelObject),
-            parentType: parentType,
-            parentContainerIndex: parentContainerIndex,
-            parentContainerId: parentContainerId,
-            inPositionElementId: inPositionElementId
-        }));
+        const modelObject = this.model.createWidget(widgetTypeToCreate, dataElementId);
+        const action = new ActionAddElement(this.container, this.model, {
+            element: modelObject,
+            parentContainerIndex: -1,
+            parentContainerId,
+            inPositionElementId
+        });
+        this.undoredo.pushAndExecuteCommand(action);
     }
 
     toggleCategory(category) {
@@ -309,15 +262,6 @@ export default class Author {
         } catch (err) {
             console.error(err);
         }
-    }
-
-    loadElement(target, element) {
-
-        let modelElement = element.widget === "Section" ? ModelManager.getSection() : ModelManager.getWidget(element.widget);
-        const el = modelElement.createElement(element);
-        $(target).append(el);
-        const previewElement = document.querySelector('[data-id="'+element.id+'"]').querySelector('[data-prev]');
-        previewElement.innerHTML = modelElement.preview(element);
     }
 
     showErrors(currentErrors, newErrors) {
@@ -357,10 +301,6 @@ export default class Author {
         previewElement.removeEventListener('mouseenter', $(previewElement).tooltip('show'));
         previewElement.removeEventListener('mouseout', $(previewElement).tooltip('hide'));
         $(previewElement).tooltip('dispose');
-    }
-
-    findElementByDataId(dataId) {
-        return document.querySelector("[data-id='" + dataId + "']");
     }
 
     /**

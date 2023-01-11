@@ -207,7 +207,7 @@ export default class DragDropHandler {
         var inPositionElementId = sibling != null ? $(sibling).children('.widget').first().data('id') : -1;
         const elementToBeAppended = ModelManager.getWidget(widget).createElement({ id: dataElementId });
         $(el).replaceWith(elementToBeAppended);
-        const modelObject = this.model.createObject(widget, dataElementId);
+        const modelObject = this.model.createWidget(widget, dataElementId);
         this.model.appendObject(modelObject, inPositionElementId, parentContainerId, parentContainerIndex);
         this.undoredo.pushCommand(new ActionAddElement(dataElementId, this.container, this.model, {
             element: $.extend({}, this.model.findObject(dataElementId)),

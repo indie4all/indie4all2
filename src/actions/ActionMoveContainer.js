@@ -6,8 +6,7 @@ export default class ActionMoveContainer extends ActionElement {
     
     do() {
         // Remove element from current location
-        (new ActionRemoveElement(this.modelId, this.container, this.model, this.data.element)).do();
-        //indieauthor.undoredo.functions.removeElement(modelId, this.data.element);
+        (new ActionRemoveElement(this.container, this.model, this.data.element)).do();
 
         // Add element to the target location   
         var targetParent = this.model.findObject(this.data.target.id);
@@ -21,13 +20,13 @@ export default class ActionMoveContainer extends ActionElement {
         else
             inPosition = elementsArray[elementsArray.length - 1].id;
 
-        (new ActionAddElement(this.modelId, this.container,this.model, {...this.data, inPositionElementId: inPosition})).do()
+        (new ActionAddElement(this.container,this.model, {...this.data, inPositionElementId: inPosition})).do()
     }
 
     undo() {
         
         // Remove element from current location
-        (new ActionRemoveElement(this.modelId, this.container, this.model, this.data)).do();
+        (new ActionRemoveElement(this.container, this.model, this.data)).do();
 
         // Add element to the original location  
         var sourceParent = this.model.findObject(this.data.source.id);
@@ -41,6 +40,6 @@ export default class ActionMoveContainer extends ActionElement {
         else
             inPosition = elementsArray[elementsArray.length - 1].id;
 
-        (new ActionAddElement(this.modelId, this.container, this.model, {...this.data, inPositionElementId: inPosition})).do();
+        (new ActionAddElement(this.container, this.model, {...this.data, inPositionElementId: inPosition})).do();
     }
 }

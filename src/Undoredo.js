@@ -55,6 +55,11 @@ export default class UndoRedo {
         this.commandArray = [];
     }
 
+    pushAndExecuteCommand(actionElement) {
+        this.pushCommand(actionElement);
+        actionElement.do();
+    }
+
     pushCommand(actionElement) {
         // Clear the rest of commands if a new command is applied in the middle of the array 
         if (this.currentIndex < (this.commandArray.length - 1))

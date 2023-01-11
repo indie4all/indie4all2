@@ -5,12 +5,11 @@ import ActionElement from "./ActionElement";
 export default class ActionRemoveSection extends ActionElement {
 
     do() {
-        //indieauthor.deleteToolTipError(document.getElementById("sec-" + id).querySelector('[data-prev]'));
-        this.model.removeElement(this.modelId);
-        $(document.getElementById("sec-" + this.modelId).parentNode).remove();
+        this.model.removeElement(this.data.element.id);
+        $(document.getElementById("sec-" + this.data.element.id).parentNode).remove();
     }
 
     undo() {
-        (new ActionAddSection(this.modelId, this.container, this.model, this.data)).do();
+        (new ActionAddSection(this.data.element.id, this.container, this.model, this.data)).do();
     }
 }

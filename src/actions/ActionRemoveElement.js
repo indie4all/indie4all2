@@ -5,11 +5,13 @@ import ActionElement from "./ActionElement";
 export default class ActionRemoveElement extends ActionElement {
 
     do() {
-        this.model.removeElement(this.modelId);
-        $(document.querySelector("[data-id='" + this.modelId + "']").parentNode).remove();
+        this.model.removeElement(this.data.element.id);
+        $(document.querySelector("[data-id='" + this.data.element.id + "']")).fadeOut(400, function () {
+            $(this).parent().remove();
+        });
     }
 
     undo() {
-        (new ActionAddElement(this.modelId, this.container, this.model, this.data)).do();
+        (new ActionAddElement(this.data.element.id, this.container, this.model, this.data)).do();
     }
 }

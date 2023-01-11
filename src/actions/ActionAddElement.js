@@ -5,10 +5,9 @@ import ActionRemoveElement from "./ActionRemoveElement";
 
 export default class ActionAddElement extends ActionElement {
 
-    constructor(id, container, model, data) {
-        super(id, container, model, data);
+    constructor(container, model, data) {
+        super(container, model, data);
         this.element = data.element;
-        this.parentType = data.parentType;
         this.parentContainerId = data.parentContainerId;
         this.parentContainerIndex = data.parentContainerIndex;
         this.inPositionElementId = data.inPositionElementId;
@@ -19,10 +18,13 @@ export default class ActionAddElement extends ActionElement {
     do() {
         const view = ModelManager.getWidget(this.element.widget).createElement(this.element);
         let target;
-        if (this.parentElement.type == 'layout')
+        if (this.parentElement.type == 'layout') {
             target = this.parentContainer.querySelector('[data-index="' + this.parentContainerIndex + '"');
-        else
+            this.model.appendObject(this.element, this.inPositionElementId, this.parentContainerId, this.parentContainerIndex);
+        } else {
             target = this.parentContainer.querySelector('[data-content]');
+            this.model.appendObject(this.element, this.inPositionElementId, this.parentContainerId);
+        }
 
         if (this.inPositionElementId != -1) {
             const targetItem = $(target).find('.container-item [data-id="' + this.inPositionElementId + '"]');
@@ -31,14 +33,9 @@ export default class ActionAddElement extends ActionElement {
         } else {
             $(target).append(view);
         }
-
-        if (this.parentType == 'layout')
-            this.model.appendObject(this.element, this.inPositionElementId, this.parentContainerId, this.parentContainerIndex);
-        else
-            this.model.appendObject(this.element, this.inPositionElementId, this.parentContainerId);
     }
 
     undo() {
-        (new ActionRemoveElement(this.modelId, this.container, this.model, this.data)).do();
+        (new ActionRemoveElement(this.container, this.model, this.data)).do();
     }
 }

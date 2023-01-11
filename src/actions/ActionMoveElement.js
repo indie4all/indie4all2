@@ -4,10 +4,6 @@ import ActionElement from "./ActionElement";
 
 export default class ActionMoveElement extends ActionElement {
 
-    #findElementByDataId(dataId) {
-        return document.querySelector("[data-id='" + dataId + "']");
-    }
-
     #move(data, from, to) {
         const containerType = data.containerType;
         const containerId = data.containerId;
@@ -28,8 +24,8 @@ export default class ActionMoveElement extends ActionElement {
             Utils.array_move(parentContainer.data, initialPosition, finalPosition);
         }
 
-        var initialElement = this.#findElementByDataId(initialModel.id).parentNode;
-        var finalElement = this.#findElementByDataId(finalModel.id).parentNode;
+        var initialElement = document.querySelector("[data-id='" + initialModel.id + "']").parentNode;
+        var finalElement = document.querySelector("[data-id='" + finalModel.id + "']").parentNode;
 
         // View move
         if (initialPosition < finalPosition) {

@@ -59,7 +59,7 @@ export function init(api) {
 
     $('body').on('click', '.author-add-content', function() {
         const $ancestor = $(this).closest('[data-id]');
-        api.addContent($ancestor.data('id'), $ancestor.data('widget'), $ancestor.data('type'));
+        api.addContent($ancestor.data('id'), $ancestor.data('widget'));
     });
 
     $('body').on('click', '.author-edit-element', function() {

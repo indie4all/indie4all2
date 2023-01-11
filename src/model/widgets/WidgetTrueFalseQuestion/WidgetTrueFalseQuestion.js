@@ -16,8 +16,11 @@ export default class WidgetTrueFalseQuestion extends WidgetItemElement {
         cssClass: "widget-question"
     }
 
-    emptyData() {
+    emptyData(id) {
         return {
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
             data: {
                 question: "",
                 answer: true,

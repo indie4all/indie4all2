@@ -17,16 +17,17 @@ export default class WidgetAcordionContainer extends WidgetContainerElement {
     }
 
 
-    emptyData() {
-        var object = {
+    emptyData(id) {
+        return {
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
             params: {
                 name: this.config.label + "-" + Utils.generate_uuid(),
                 help: ""
             },
             data: []
         };
-
-        return object;
     }
 
     getInputs(model) {

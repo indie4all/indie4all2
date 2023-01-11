@@ -7,7 +7,6 @@ export default class ActionAddElement extends ActionElement {
 
     constructor(id, container, model, data) {
         super(id, container, model, data);
-        this.view = this.clearElement(data.view);
         this.element = data.element;
         this.parentType = data.parentType;
         this.parentContainerId = data.parentContainerId;
@@ -18,6 +17,7 @@ export default class ActionAddElement extends ActionElement {
     }
 
     do() {
+        const view = ModelManager.getWidget(this.element.widget).createElement(this.element);
         let target;
         if (this.parentElement.type == 'layout')
             target = this.parentContainer.querySelector('[data-index="' + this.parentContainerIndex + '"');
@@ -27,32 +27,18 @@ export default class ActionAddElement extends ActionElement {
         if (this.inPositionElementId != -1) {
             const targetItem = $(target).find('.container-item [data-id="' + this.inPositionElementId + '"]');
             const closestItemContent = $(targetItem).parent();
-            $(closestItemContent).before(this.view);
+            $(closestItemContent).before(view);
         } else {
-            $(target).append(this.view);
+            $(target).append(view);
         }
 
         if (this.parentType == 'layout')
             this.model.appendObject(this.element, this.inPositionElementId, this.parentContainerId, this.parentContainerIndex);
         else
             this.model.appendObject(this.element, this.inPositionElementId, this.parentContainerId);
-
-        this.regeneratePreview(this.element);
     }
 
     undo() {
         (new ActionRemoveElement(this.modelId, this.container, this.model, this.data)).do();
-    }
-
-    regeneratePreview(element) {
-        const widget = ModelManager.getWidget(element.widget);
-        const previewElement = document.querySelector('[data-id="'+element.id+'"]').querySelector('[data-prev]');
-        previewElement.innerHTML = widget.preview(element);
-        if (widget.hasChildren(element.type)) {
-            var elementsArray = element.type == 'layout' ? [].concat.apply([], element.data) : element.data;
-            for (var i = 0; i < elementsArray.length; i++) {
-                this.regeneratePreview(elementsArray[i]);
-            }
-        }
     }
 }

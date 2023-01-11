@@ -1,6 +1,7 @@
 import form from './form.hbs'
 import './styles.scss';
 import WidgetContainerElement from '../WidgetContainerElement/WidgetContainerElement';
+import Utils from '../../../Utils';
 
 export default class WidgetAcordionContent extends WidgetContainerElement {
     
@@ -15,8 +16,14 @@ export default class WidgetAcordionContent extends WidgetContainerElement {
         cssClass: "widget-acordion-content"
     }
 
-    emptyData() {
-        return { params: { title: ""}, data: [] };
+    emptyData(id) {
+        return {
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
+            params: { title: ""}, 
+            data: [] 
+        };
     }
 
     getInputs(model) {

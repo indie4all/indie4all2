@@ -36,8 +36,12 @@ export default class WidgetSentenceOrderItem extends WidgetItemElement {
         }
     }
 
-    emptyData() {
-        return { data: { answers: [], words: [] }};
+    emptyData(id) {
+        return { 
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
+            data: { answers: [], words: [] }};
     }
 
     getInputs(model) {

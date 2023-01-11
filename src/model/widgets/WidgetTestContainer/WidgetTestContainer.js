@@ -16,8 +16,11 @@ export default class WidgetTestContainer extends WidgetContainerElement {
         cssClass: "widget-test"
     }
 
-    emptyData() {
+    emptyData(id) {
         return {
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
             params: {
                 name: this.config.label + "-" + Utils.generate_uuid(),
                 help: ""
@@ -40,7 +43,7 @@ export default class WidgetTestContainer extends WidgetContainerElement {
     }
 
     preview(model) {
-        return model.params?.name ?? this.translate("widgets.Test");
+        return model.params?.name ?? this.translate("widgets.Test.label");
     }
 
     updateModelFromForm(model, form) {

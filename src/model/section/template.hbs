@@ -4,7 +4,7 @@
             <div class="b1">
                 <img src="{{{icon}}}" class="section-icon" />
             </div>
-            <div class="b2" data-prev>{{name}}</div>
+            <div class="b2" data-prev>{{{name}}}</div>
             <div class="b3" data-toolbar>
                 <button class="author-export-section btn btn-sm btn-info" type="button"
                     title="{{translate "sections.export"}}">
@@ -43,6 +43,7 @@
         </div>
         <div id="section-elements-{{id}}" 
             class="section-elements dragula-container collapse show" data-type="{{type}}" data-content>
+            {{{children}}}
         </div>
     </div>
 </div>

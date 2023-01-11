@@ -27,8 +27,12 @@ export default class WidgetMissingWordsItem extends WidgetItemElement {
         }
     }
 
-    emptyData() {
-        return { data: { sentence: "", combinations: [] } };
+    emptyData(id) {
+        return { 
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
+            data: { sentence: "", combinations: [] } };
     }
 
     getInputs(model) {

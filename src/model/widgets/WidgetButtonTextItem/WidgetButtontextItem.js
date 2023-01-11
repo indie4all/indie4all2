@@ -24,8 +24,12 @@ export default class WidgetButtonTextItem extends WidgetItemElement {
         cssClass: "widget-button-text-item"
     }
 
-    emptyData() {
-        return { data: { text: "", image: "", alt: "" } };
+    emptyData(id) {
+        return { 
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
+            data: { text: "", image: "", alt: "" } };
     }
 
     getInputs(model) {

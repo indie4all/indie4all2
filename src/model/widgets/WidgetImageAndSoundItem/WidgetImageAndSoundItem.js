@@ -16,8 +16,11 @@ export default class WidgetImageAndSoundItem extends WidgetItemElement {
         cssClass: "widget-image-and-sound-item"
     }
 
-    emptyData() {
+    emptyData(id) {
         return {
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
             data: { text: "", alt: "", blob: "", audioblob: "", captionsblob: "" }
         };
     }

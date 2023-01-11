@@ -35,8 +35,11 @@ export default class WidgetVideo extends WidgetItemElement {
         }
     }
 
-    emptyData() {
+    emptyData(id) {
         return {
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
             params: {
                 name: this.config.label + "-" + Utils.generate_uuid(),
             },
@@ -59,7 +62,7 @@ export default class WidgetVideo extends WidgetItemElement {
     }
 
     preview(model) {
-        return (model.data.videourl) ? model.params.name + ": " + model.data.videourl : this.translate("widgets.Video.prev");
+        return (model?.data?.videourl) ? model.params.name + ": " + model.data.videourl : this.translate("widgets.Video.prev");
     }
 
     settingsClosed(model) {

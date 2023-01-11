@@ -15,8 +15,12 @@ export default class WidgetTabContent extends WidgetContainerElement {
         cssClass: "widget-tab-content"
     }
 
-    emptyData() {
-        return { params: { name: "" }, data: [] };
+    emptyData(id) {
+        return { 
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
+            params: { name: "" }, data: [] };
     }
 
     getInputs(model) {
@@ -32,7 +36,7 @@ export default class WidgetTabContent extends WidgetContainerElement {
     }
 
     preview(model) {
-        return this.translate("widgets.TabContent.label") + ": " + (model.params?.name ?? "");
+        return this.translate("widgets.TabContent.label") + " " + (model.params?.name ?? "");
     }
 
     updateModelFromForm(model, form) {

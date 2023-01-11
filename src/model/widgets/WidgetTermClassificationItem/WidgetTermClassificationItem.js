@@ -47,8 +47,12 @@ export default class WidgetTermClassificationItem extends WidgetItemElement {
         }
     }
 
-    emptyData() {
-        return { data: { column: "", terms: [] } };
+    emptyData(id) {
+        return { 
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
+            data: { column: "", terms: [] } };
     }
 
     getInputs(model) {

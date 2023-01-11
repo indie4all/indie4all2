@@ -15,8 +15,12 @@ export default class WidgetSchemaItem extends WidgetItemElement {
         cssClass: "widget-schema-item"
     }
 
-    emptyData() {
-        return { data: { blob: "", alt: "" } };
+    emptyData(id) {
+        return { 
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
+            data: { blob: "", alt: "" } };
     }
 
     getInputs(model) {

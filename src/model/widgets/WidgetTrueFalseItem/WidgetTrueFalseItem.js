@@ -16,8 +16,11 @@ export default class WidgetTrueFalseItem extends WidgetItemElement {
         cssClass: "widget-true-false-item"
     }
 
-    emptyData() {
+    emptyData(id) {
         return {
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
             data: {
                 question: "",
                 answer: true,

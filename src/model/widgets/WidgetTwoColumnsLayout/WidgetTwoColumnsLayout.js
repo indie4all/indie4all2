@@ -2,6 +2,7 @@
 import form from "./form.hbs"
 import './styles.scss';
 import WidgetColumnsLayout from "../WidgetColumnsLayout/WidgetColumnsLayout";
+import Utils from "../../../Utils";
 
 export default class WidgetTwoColumnsLayout extends WidgetColumnsLayout {
     config = {
@@ -14,8 +15,12 @@ export default class WidgetTwoColumnsLayout extends WidgetColumnsLayout {
         columns: [6, 6]
     }
 
-    emptyData() {
-        return { params: { firstColumnWidth: 6} , data: [[],[]] };
+    emptyData(id) {
+        return { 
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
+            params: { firstColumnWidth: 6} , data: [[],[]] };
     }
 
     getInputs(model) {

@@ -15,8 +15,11 @@ export default class WidgetCouplesContainer extends WidgetContainerElement {
         cssClass: "widget-couples-container"
     }
 
-    emptyData() {
+    emptyData(id) {
         return {
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
             params: {
                 name: this.config.label + "-" + Utils.generate_uuid(),
                 help: ""

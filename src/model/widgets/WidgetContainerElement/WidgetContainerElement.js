@@ -1,18 +1,17 @@
-import I18n from "../../../I18n";
+import ModelManager from "../../ModelManager";
 import WidgetElement from "../WidgetElement/WidgetElement";
 import template from "./template.hbs";
 
 export default class WidgetContainerElement extends WidgetElement {
 
     createElement(widget) {
-        const i18n = I18n.getInstance();
-        const path = i18n.hasKey(`widgets.${this.config.widget}.prev`) ? 
-            `widgets.${this.config.widget}.prev` :
-            `widgets.${this.config.widget ?? "GenericWidget" }.label`;
-        const label = i18n.translate(path);
+        const label = this.preview(widget);
+        const canAdd = this.config.type == 'specific-container' || this.config.type == 'specific-element-container';
         const canEdit = this.config.toolbar.edit;
         const canCopy = this.config.type !== 'specific-element';
-        return template({...this.config, label, canEdit, canCopy, id: widget.id});
+        const children = widget.data ? 
+            widget.data.map(child => ModelManager.getWidget(child.widget).createElement(child)).join('') : "";
+        return template({...this.config, label, canAdd, canEdit, canCopy, id: widget.id, children});
     }
 
     hasChildren() { return true; }

@@ -39,7 +39,7 @@ export class Model {
         }
         if (modelElement.hasChildren()) {
             let children = elem.type === 'layout' ? elem.data.flat() : elem.data;
-            children.forEach(this.#regenerateModelKeys);
+            children.forEach((child) => this.#regenerateModelKeys(child));
         }
     }
 
@@ -65,14 +65,8 @@ export class Model {
     }
 
     
-    createObject(elementType, widget, dataElementId, widgetInfo) {
-        var modelObject = {
-            id: dataElementId,
-            type: elementType,
-            widget: widget
-        }
-        const widgetData = ModelManager.getWidget(widget).emptyData(widgetInfo);
-        return $.extend(widgetData, modelObject);
+    createObject(widget, id) {
+        return ModelManager.getWidget(widget).emptyData(id);
     }
 
     appendObject(modelObject, inPositionElementId, parentContainerId, parentContainerIndex) {

@@ -15,8 +15,12 @@ export default class WidgetAudioTermItem extends WidgetItemElement {
         cssClass: "widget-audio-term-item"
     }
 
-    emptyData() {
-        return { data: { term: "", definition: "", audioblob: "", captionsblob: "" } };
+    emptyData(id) {
+        return { 
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
+            data: { term: "", definition: "", audioblob: "", captionsblob: "" } };
     }
 
     getInputs(model) {

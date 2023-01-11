@@ -3,6 +3,7 @@ import form from "./form.hbs";
 import RichTextEditorElement from "../mixings/RichTextEditorElement";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
+import Utils from "../../../Utils";
 
 export default class WidgetTextBlock extends WidgetItemElement {
 
@@ -22,8 +23,12 @@ export default class WidgetTextBlock extends WidgetItemElement {
         cssClass: "widget-textblock"
     }
 
-    emptyData() {
-        return { data: { style: "default", text: "" } };
+    emptyData(id) {
+        return { 
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
+            data: { style: "default", text: "" } };
     }
 
     getInputs(model) {
@@ -46,7 +51,7 @@ export default class WidgetTextBlock extends WidgetItemElement {
     }
 
     preview(model) {
-        return model.data.text.length > 0 ? model.data.text : this.translate("widgets.TextBlock.prev");
+        return model?.data?.text?.length ? model.data.text : this.translate("widgets.TextBlock.prev");
     }
 
     updateModelFromForm(model, form) {

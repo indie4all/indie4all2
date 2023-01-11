@@ -1,6 +1,7 @@
 import form from "./form.hbs";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
+import Utils from "../../../Utils";
 
 export default class WidgetSimpleQuestion extends WidgetItemElement {
 
@@ -27,9 +28,12 @@ export default class WidgetSimpleQuestion extends WidgetItemElement {
         maxAnswers: 4
     }
 
-    emptyData() {
+    emptyData(id) {
 
         return {
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
             data: { question: "", answers: [], feedback: { positive: "", negative: "" } }
         }
     }

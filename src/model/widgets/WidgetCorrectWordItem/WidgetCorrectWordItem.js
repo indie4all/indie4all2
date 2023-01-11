@@ -16,8 +16,12 @@ export default class WidgetCorrectWordItem extends WidgetItemElement {
         cssClass: "widget-correct-word-item"
     }
 
-    emptyData() {
-        return { data: { question: "", word: "", blob: "", alt: "" }};
+    emptyData(id) {
+        return { 
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
+            data: { question: "", word: "", blob: "", alt: "" }};
     }
 
     getInputs(model) {

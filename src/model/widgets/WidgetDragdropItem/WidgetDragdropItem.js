@@ -1,6 +1,7 @@
 import form from "./form.hbs";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
+import Utils from "../../../Utils";
 
 export default class WidgetDragdropItem extends WidgetItemElement {
     config = {
@@ -13,8 +14,11 @@ export default class WidgetDragdropItem extends WidgetItemElement {
         cssClass: "widget-dragdrop-item"
     }
 
-    emptyData() {
+    emptyData(id) {
         return {
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
             data: { term: "", definition: "" }
         };
     }

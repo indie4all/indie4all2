@@ -1,6 +1,7 @@
 import I18n from "../../I18n";
 import Utils from "../../Utils";
 import ModelElement from "../ModelElement";
+import ModelManager from "../ModelManager";
 import formTemplate from "./form.hbs";
 import prevTemplate from "./prev.hbs";
 import sectionTemplate from "./template.hbs"
@@ -42,7 +43,8 @@ export default class Section extends ModelElement {
             type: "section-container",
             id: section.id,
             name: section.name,
-            icon: this.#icon
+            icon: this.#icon,
+            children: section.data ? section.data.map(child => ModelManager.getWidget(child.widget).createElement(child)).join('') : ""
         });
     }
 

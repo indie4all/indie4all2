@@ -1,6 +1,5 @@
 /* global $ */
 /* global bootprompt */
-import CryptoJS from 'crypto-js';
 import DragDropHandler from "./DragDropHandler";
 import I18n from "./I18n";
 import { Model } from "./model/Model";
@@ -9,8 +8,6 @@ import Utils from "./Utils";
 import ModelManager from "./model/ModelManager";
 import ActionAddElement from "./actions/ActionAddElement"
 import ActionAddSection from "./actions/ActionAddSection"
-import ActionMoveContainer from "./actions/ActionMoveContainer"
-import ActionMoveElement from "./actions/ActionMoveElement"
 import ActionRemoveElement from "./actions/ActionRemoveElement"
 import ActionRemoveSection from "./actions/ActionRemoveSection"
 import ActionSwapSections from "./actions/ActionSwapSections"
@@ -23,13 +20,6 @@ import "./styles/common-styles.scss";
 export default class Author {
 
     constructor(palette, container) {
-
-        // TODO: fix this, not very smart
-        const ddMove = (el, target) => this.onMoveElement(el, target);
-        const ddMoveIntoContainer = (el, target, sibling) => 
-            this.onMoveElementIntoContainer(el, target, sibling);
-        const ddCreate = (el, target, sibling) => this.onCreateElement(el, target, sibling);
-
         this.version = "1.12.2";
         this.widgets = {};
         this.model = new Model({});
@@ -39,7 +29,7 @@ export default class Author {
         this.plugins = {};
         this.api = {};
         this.icons = {};
-        this.dragDropHandler = new DragDropHandler(palette, container, ddMove, ddMoveIntoContainer, ddCreate);
+        this.dragDropHandler = new DragDropHandler(palette, container, this.model);
         this.i18n = I18n.getInstance();
         this.loadWidgets(palette);
         this.palette = palette;
@@ -56,132 +46,16 @@ export default class Author {
         $('#modal-loading').modal('hide');
     }
 
-    onMoveElement(el, target) {
-
-        var elementId = el.firstChild.dataset.id;
-        var containerType = target.dataset.type;
-        // New order of the elements inside the target
-        var targetChildren = [].slice.call(target.children).map(function (ch) {
-            return ch.firstChild.dataset.id;
-        });
-
-        var newPosition = targetChildren.indexOf(el.firstChild.dataset.id, 0);
-
-        let containerId, containerIndex, parentContainer, initialPosition;
-        if (containerType == 'layout') {
-            containerId = target.parentNode.parentNode.parentNode.dataset.id; // 3 nesting levels 
-            containerIndex = target.dataset.index;
-            parentContainer = this.model.findObject(containerId);
-            initialPosition = Utils.findIndexObjectInArray(parentContainer.data[containerIndex], 'id', elementId);
-            this.undoredo.pushCommand(new ActionMoveElement(elementId, this.container, this.model, {
-                containerType: containerType,
-                containerIndex: containerIndex,
-                containerId: containerId,
-                initialPosition: initialPosition,
-                finalPosition: newPosition
-            }));
-
-            this.model.moveElementWithinContainer(elementId, newPosition, containerId, containerIndex);
-        } else {
-            containerId = target.parentNode.dataset.id;
-            parentContainer = this.model.findObject(containerId);
-            initialPosition = Utils.findIndexObjectInArray(parentContainer.data, 'id', elementId);
-            this.undoredo.pushCommand(new ActionMoveElement(elementId, this.container, this.model, {
-                containerType: containerType,
-                containerIndex: -1,
-                containerId: containerId,
-                initialPosition: initialPosition,
-                finalPosition: newPosition
-            }));
-            this.model.moveElementWithinContainer(elementId, newPosition, containerId);
-        }
+    getModelElement(id) {
+        return this.model.findObject(id);
     }
 
-    onMoveElementIntoContainer(el, target, sibling) {
-        // Get the source container and source element position
-        var elementId = el.firstChild.dataset.id;
-        var element = this.model.findObject(elementId);
-        var parentElement = this.model.findParentOfObject(elementId);
-        var sourceContainerIndex = -1;
-        var sourcePosition;
-
-        if (parentElement.type == 'layout') {
-            for (var i = 0; i < parentElement.data.length; i++) {
-                var sourceelementIndex = Utils.findIndexObjectInArray(parentElement.data[i], 'id', elementId);
-                if (sourceelementIndex != -1) {
-                    sourcePosition = sourceelementIndex;
-                    sourceContainerIndex = i;
-                }
-            }
-        } else {
-            sourcePosition = Utils.findIndexObjectInArray(parentElement.data, 'id', elementId);
-        }
-
-        // Get target
-        var inPositionElementId = sibling != null ? sibling.firstChild.dataset.id : -1;
-        var containerType = target.dataset.type;
-        var containerId;
-        var containerIndex = -1;
-        var containerPosition;
-        let targetContainer;
-        if (containerType == 'layout') {
-            containerId = target.parentNode.parentNode.parentNode.dataset.id;
-            containerIndex = target.dataset.index;
-            targetContainer = this.model.findObject(containerId);
-            containerPosition = Utils.findIndexObjectInArray(targetContainer.data[containerIndex], 'id', inPositionElementId);
-        } else {
-            containerId = target.parentNode.dataset.id;
-            targetContainer = this.model.findObject(containerId);
-            containerPosition = Utils.findIndexObjectInArray(targetContainer.data, 'id', inPositionElementId);
-        }
-
-        // For command
-        
-        this.undoredo.pushCommand(new ActionMoveContainer(elementId, this.container, this.model, {
-            source: {
-                id: parentElement.id,
-                type: parentElement.type,
-                position: sourcePosition,
-                index: sourceContainerIndex
-            },
-            target: {
-                id: containerId,
-                type: containerType,
-                position: containerPosition,
-                index: containerIndex
-            },
-            element: $.extend({}, element),
-            view: this.findElementByDataId(elementId).parentNode.outerHTML
-        }));
-
-        // Move
-        this.model.moveElementFromContainerToAnother(elementId, inPositionElementId, containerId, containerIndex);
-    }
-
-    onCreateElement(el, target, sibling) {
-        var elementType = el.dataset.type; // Element type (element, container)
-        var widget = el.dataset.widget; // Widget type (TextBlock, Image...etc)
-        var parentType = target.dataset.type; // Parent type
-        var parentContainerIndex = -1; // Parent container index (only for layout)
-        if (parentType == 'layout') parentContainerIndex = target.dataset.index;
-        var parentContainerId = $(target).closest('[data-id]')[0].dataset.id;
-        var dataElementId = Utils.generate_uuid();
-        var inPositionElementId = sibling != null ? sibling.firstChild.dataset.id : -1;
-        this.createViewElement(elementType, widget, el, dataElementId, parentType, parentContainerIndex, parentContainerId, inPositionElementId, true);
-        this.undoredo.pushCommand(new ActionAddElement(dataElementId, this.container, this.model, {
-            element: $.extend({}, this.model.findObject(dataElementId)),
-            parentType: parentType,
-            parentContainerIndex: parentContainerIndex,
-            parentContainerId: parentContainerId,
-            inPositionElementId: inPositionElementId,
-            view: el.outerHTML
-        }));
-    }
-
-    copyModelElement(element, section, isCommand) {
+    copyModelElement(element, sectionId, isCommand) {
+        const position = Utils.findIndexObjectInArray(this.model.sections, "id", sectionId);
+        const section = this.model.sections[position];
         let copy = this.model.copyElement(element);
         let container = document.getElementById('section-elements-' + section.id);
-        this.loadElement(container, copy, false, false);
+        this.loadElement(container, copy);
         section.data.push(copy);
         if (isCommand) {
             const action = new ActionAddElement(copy.id, this.container, this.model, {
@@ -189,102 +63,23 @@ export default class Author {
                 parentType: 'section-container',
                 parentContainerIndex: this.model.sections.indexOf(section),
                 parentContainerId: section.id,
-                inPositionElementId: -1, // Change
-                view: $(`[data-id=${copy.id}]`).closest('.container-item').prop('outerHTML')
+                inPositionElementId: -1 // Change
             });
             this.undoredo.pushCommand(action);
         }
     }
 
-    importElement(sectionId, isCommand) {
-        try {
-            const userCookie = document.cookie && document.cookie.split('; ').find(cookie => cookie.startsWith('INDIE_USER='));
-            const encrypted = localStorage.getItem('copied-element');
-            const json = CryptoJS.AES.decrypt(encrypted, userCookie.split('=')[1]).toString(CryptoJS.enc.Utf8);
-            if (json) {
-                const position = Utils.findIndexObjectInArray(this.model.sections, "id", sectionId);
-                const section = this.model.sections[position];
-                this.copyModelElement(JSON.parse(json), section, isCommand);
-                Utils.notifySuccess(this.i18n.translate("messages.importedElement"));
-                return;
-            }
-            localStorage.removeItem('copied-element');
-            Utils.notifyWarning(this.i18n.translate("messages.noElement"));
-        
-        } catch (err) {
-            localStorage.removeItem('copied-element');
-            Utils.notifyWarning(this.i18n.translate("messages.noElement"));    
-        }    
-    }
-
-    exportElement(elementId) {
-        try {
-            const userCookie = document.cookie && document.cookie.split('; ').find(cookie => cookie.startsWith('INDIE_USER='));
-            const key = userCookie.split('=')[1];
-            const original = this.model.findObject(elementId);
-            const encrypted = CryptoJS.AES.encrypt(JSON.stringify(original), key).toString();
-            localStorage.setItem('copied-element', encrypted);
-            Utils.notifySuccess(this.i18n.translate("messages.exportedElement"));
-        } catch (err) {
-            Utils.notifyWarning(this.i18n.translate("messages.couldNotExportElement"));
-        }
-    }
-
-    copyElement = function (elementId, isCommand) {
-        let sectionId = $(`[data-id=${elementId}]`).closest('.section-elements').attr('id').split('-').at(-1);
-        let position = Utils.findIndexObjectInArray(this.model.sections, "id", sectionId);
-        let section = this.model.sections[position];
-        this.copyModelElement(this.model.findObject(elementId), section, isCommand);
-    }
-
     copyModelSection = function (section, isCommand) {
         let copy = this.model.copyElement(section);
         this.model.sections.push(copy);
-        this.loadElement(this.container, copy, true, false);
+        this.loadElement(this.container, copy);
         if (isCommand) {
             this.undoredo.pushCommand(new ActionAddSection(copy.id, this.container, this.model, {
                 element: copy,
                 parentType: "section-container",
-                view: $('#sec-' + copy.id).closest('.section-container').prop('outerHTML'),
                 position: (this.model.sections.length - 1)
             }));
         }
-    }
-
-    importSection = function (isCommand) {
-        try {
-            const userCookie = document.cookie && document.cookie.split('; ').find(cookie => cookie.startsWith('INDIE_USER='));
-            const encrypted = localStorage.getItem('copied-section');
-            const json = CryptoJS.AES.decrypt(encrypted, userCookie.split('=')[1]).toString(CryptoJS.enc.Utf8);
-            if (json) {
-                this.copyModelSection(JSON.parse(json), isCommand);
-                Utils.notifySuccess(this.i18n.translate("messages.importedSection"));
-                return;
-            }
-            localStorage.removeItem('copied-section');
-            Utils.notifyWarning(this.i18n.translate("messages.noSection"));
-        } catch (err) {
-            localStorage.removeItem('copied-section');
-            Utils.notifyWarning(this.i18n.translate("messages.noSection"));
-        } 
-    }
-
-    exportSection(elementId) {
-        try {
-            const userCookie = document.cookie && document.cookie.split('; ').find(cookie => cookie.startsWith('INDIE_USER='));
-            const key = userCookie.split('=')[1];
-            const original = this.model.findObject(elementId);
-            const encrypted = CryptoJS.AES.encrypt(JSON.stringify(original), key).toString();
-            localStorage.setItem('copied-section', encrypted);
-            Utils.notifySuccess(this.i18n.translate("messages.exportedSection"));
-        } catch (err) {
-            Utils.notifyWarning(this.i18n.translate("messages.couldNotExportSection"));
-        }    
-    }
-
-    copySection(sectionId, isCommand) {
-        let position = Utils.findIndexObjectInArray(this.model.sections, "id", sectionId);
-        this.copyModelSection(this.model.sections[position], isCommand);
     }
 
     addSection(sectionId, isCommand) {
@@ -295,7 +90,6 @@ export default class Author {
             this.undoredo.pushCommand(new ActionAddSection(section.id, this.container, this.model, {
                 element: section,
                 parentType: "section-container",
-                view: rendered,
                 position: (this.model.sections.length - 1)
             }));
     }
@@ -304,8 +98,7 @@ export default class Author {
         this.undoredo.pushCommand(new ActionRemoveSection(sectionId, this.container, this.model, {
             element: $.extend({}, this.model.findObject(sectionId)),
             parentType: "section-container",
-            position: Utils.findIndexObjectInArray(this.model.sections, "id", sectionId),
-            view: this.findElementByDataId(sectionId).parentNode.outerHTML
+            position: Utils.findIndexObjectInArray(this.model.sections, "id", sectionId)
         }));
 
         this.deleteToolTipError(document.getElementById("sec-" + sectionId).querySelector('[data-prev]'));
@@ -330,22 +123,6 @@ export default class Author {
             sectionOriginId: sectionOriginId,
             direction: direction
         }));
-    }
-
-    createViewElement(elementType, widget, viewElement, dataElementId, parentType, parentContainerIndex, parentContainerId, inPositionElementId, modelCreation) {
-        // Element setup
-        const widgetInfo = { id: dataElementId };
-        const widgetElement = ModelManager.getWidget(widget);
-        const elementToBeAppended = widgetElement.createElement(widgetInfo);
-        Utils.clearDataAttributes(viewElement);
-        viewElement.innerHTML = '';
-        $(viewElement).removeClass('palette-item');
-        $(viewElement).addClass('container-item');
-        $(viewElement).append(elementToBeAppended);  
-        if (modelCreation) { // MODEL CREATION
-            var modelObject = this.model.createObject(elementType, widget, dataElementId, widgetInfo);
-            this.model.appendObject(modelObject, inPositionElementId, parentContainerId, parentContainerIndex);
-        }
     }
 
     openSettings(dataElementId, type = "widget") {
@@ -395,7 +172,7 @@ export default class Author {
                 $("#modal-settings-body .errors").remove();
                 modelElem.updateModelFromForm(modelObject, formData);
                 const previewElement = document.querySelector('[data-id="' + modelObject.id + '"]').querySelector('[data-prev]');
-                previewElement.querySelector("span").innerHTML = modelElem.preview(modelObject);
+                previewElement.innerHTML = modelElem.preview(modelObject);
                 // Clear modal values
                 document.getElementById('modal-settings-body').innerHTML = '';
                 document.getElementById('modal-settings-tittle').innerHTML = '';
@@ -444,8 +221,7 @@ export default class Author {
             parentType: parent.type,
             parentContainerIndex: parentContainerIndex,
             parentContainerId: parentContainerId,
-            inPositionElementId: inPositionElementId,
-            view: this.findElementByDataId(id).parentNode.outerHTML
+            inPositionElementId: inPositionElementId
         }));
 
         this.deleteToolTipError(document.querySelector("[data-id='" + id + "']").querySelector('[data-prev]'));
@@ -455,25 +231,18 @@ export default class Author {
         });
     }
 
-    addContent(containerId, widget, type) {
+    addContent(containerId, widget) {
         const self = this;
+        const widgetElem = ModelManager.getWidget(widget);
+        const type = widgetElem.config.type;
         if (type != 'specific-container' && type != 'specific-element-container')
             throw new Error('Cannot create content for non-specific container');
 
-        var widgetTypeToCreate;
-
-        const widgetElem = ModelManager.getWidget(widget);
         if (widgetElem.config.allow.length > 1) {
-            var options = [];
-
-            for (var i = 0; i < widgetElem.config.allow.length; i++) {
-                var widgetAllowed = widgetElem.config.allow[i];
-                options.push({
-                    text: this.i18n.translate(`widgets.${widgetAllowed}.label`),
-                    value: widgetAllowed
-                });
-            }
-
+            const options = widgetElem.config.allow.map(allowed => ({
+                text: this.i18n.translate(`widgets.${allowed}.label`),
+                value: allowed
+            }));
             bootprompt.prompt({
                 title: this.i18n.translate("common.selectType"),
                 inputType: 'select',
@@ -481,39 +250,33 @@ export default class Author {
                 value: widgetElem.config.allow[0], // Default option
                 closeButton: false,
                 callback: function (result) {
-                    if (result) {
-                        widgetTypeToCreate = result;
-                        self.addSpecificContent(containerId, widgetTypeToCreate);
-                    }
+                    result && self.addSpecificContent(containerId, result);
                 }
             });
         } else {
-            widgetTypeToCreate = widgetElem.config.allow[0];
-            self.addSpecificContent(containerId, widgetTypeToCreate);
+            self.addSpecificContent(containerId, widgetElem.config.allow[0]);
         }
     }
 
     addSpecificContent(containerId, widgetTypeToCreate) {
-        var elementTypeToCreate = ModelManager.getWidget(widgetTypeToCreate).config.type;
-        var target = document.querySelector('[data-id="' + containerId + '"]');
+        const target = document.querySelector('[data-id="' + containerId + '"]');
+        const dataElementId = Utils.generate_uuid();
+        const elementToBeAppended = ModelManager.getWidget(widgetTypeToCreate).createElement({ id: dataElementId });
+        target.querySelector('[data-content]').innerHTML = elementToBeAppended;
+        
+        const parentType = target.dataset.type; // Parent type
+        const parentContainerIndex = -1; // Parent container index (only for layout)
+        const parentContainerId = $(target).closest('[data-id]')[0].dataset.id;
+        const inPositionElementId = -1;
 
-        var newElement = document.createElement("div");
-        target.querySelector('[data-content]').appendChild(newElement);
-        var dataElementId = Utils.generate_uuid();
-
-        var parentType = target.dataset.type; // Parent type
-        var parentContainerIndex = -1; // Parent container index (only for layout)
-        var parentContainerId = $(target).closest('[data-id]')[0].dataset.id;
-        var inPositionElementId = -1;
-
-        this.createViewElement(elementTypeToCreate, widgetTypeToCreate, newElement, dataElementId, parentType, parentContainerIndex, parentContainerId, inPositionElementId, true);
+        const modelObject = this.model.createObject(widgetTypeToCreate, dataElementId);
+        this.model.appendObject(modelObject, inPositionElementId, parentContainerId, parentContainerIndex);
         this.undoredo.pushCommand(new ActionAddElement(dataElementId, this.container, this.model, {
-            element: $.extend({}, this.model.findObject(dataElementId)),
+            element: $.extend({}, modelObject),
             parentType: parentType,
             parentContainerIndex: parentContainerIndex,
             parentContainerId: parentContainerId,
-            inPositionElementId: inPositionElementId,
-            view: newElement.outerHTML
+            inPositionElementId: inPositionElementId
         }));
     }
 
@@ -544,41 +307,13 @@ export default class Author {
         }
     }
 
-    loadElement(target, element, isSection, modelCreation = false) {
+    loadElement(target, element) {
 
-        let modelElement;
-        if (isSection) {
-            modelElement = ModelManager.getSection();
-            const section = element.id ? this.model.findObject(element.id) : this.model.createSection();
-            const rendered = modelElement.createElement(section);
-            $(this.container).append(rendered);
-        } else {
-            modelElement = ModelManager.getWidget(element.widget);
-            const el = document.createElement("div");            
-            const parentType = target.dataset.type;
-            let parentContainerIndex = -1; // Parent container index (only for layout)
-            let parentContainerId = $(target).closest('[data-id]')[0].dataset.id;
-            if (element.type == 'layout') el.dataset.columns = element.data.length;
-            if (parentType == 'layout') parentContainerIndex = target.dataset.index;    
-            $(target).append(el);
-            this.createViewElement(element.type, element.widget, el, element.id, parentType, parentContainerIndex, parentContainerId, -1, modelCreation);
-        }
+        let modelElement = element.widget === "Section" ? ModelManager.getSection() : ModelManager.getWidget(element.widget);
+        const el = modelElement.createElement(element);
+        $(target).append(el);
         const previewElement = document.querySelector('[data-id="'+element.id+'"]').querySelector('[data-prev]');
         previewElement.innerHTML = modelElement.preview(element);
-
-        if (modelElement.hasChildren()) {
-            
-            const viewElement = document.querySelector('[data-id="' + element.id + '"]');
-            if (element.type == 'layout') {
-                element.data.forEach((columnElements, index) => {
-                    const target = viewElement.querySelector('[data-index="' + index + '"');
-                    columnElements.forEach(columnElement => this.loadElement(target, columnElement));
-                });
-            } else {
-                var subContainerTarget = viewElement.querySelector('[data-content]');
-                element.data.forEach(elem => this.loadElement(subContainerTarget, elem));
-            }
-        }
     }
 
     showErrors(currentErrors, newErrors) {
@@ -658,7 +393,11 @@ export default class Author {
      */
     loadModelIntoPlugin(model) {
         this.model = new Model(model);
-        this.model.sections.forEach(section => 
-            this.loadElement(this.container, section, true));
+        this.dragDropHandler.setModel(this.model);
+        this.model.sections.forEach(sectionData => {
+            const sectionElement = ModelManager.getSection();
+            const sectionHTML = sectionElement.createElement(sectionData);
+            $(this.container).append(sectionHTML);        
+        });
     }
 }

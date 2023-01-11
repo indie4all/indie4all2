@@ -1,5 +1,6 @@
 import './styles.scss';
 import WidgetColumnsLayout from "../WidgetColumnsLayout/WidgetColumnsLayout";
+import Utils from '../../../Utils';
 
 export default class WidgetFourColumnsLayout extends WidgetColumnsLayout {
     config = {
@@ -12,7 +13,11 @@ export default class WidgetFourColumnsLayout extends WidgetColumnsLayout {
         columns: [3,3,3,3]
     }
 
-    emptyData() {
-        return { data: [[],[], [], []] };
+    emptyData(id) {
+        return { 
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
+            data: [[],[], [], []] };
     }
 }

@@ -23,8 +23,11 @@ export default class WidgetCouplesItem extends WidgetItemElement {
     cssClass: "widget-couple-item"
   }
 
-  emptyData() {
+  emptyData(id) {
     return {
+        id: id ?? Utils.generate_uuid(),
+        type: this.config.type,
+        widget: this.config.widget,
         data: {
             couples: [
                 { type: "", text: "", alt: "", blob: "" },

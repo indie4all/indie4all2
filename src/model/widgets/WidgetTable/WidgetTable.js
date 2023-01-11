@@ -46,8 +46,11 @@ export default class WidgetTable extends WidgetItemElement {
         }
     }
 
-    emptyData() {
+    emptyData(id) {
         return {
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
             params: {
                 name: this.config.label + "-" + Utils.generate_uuid(),
                 help: ''
@@ -235,7 +238,7 @@ export default class WidgetTable extends WidgetItemElement {
     }
 
     preview(model) {
-        return (model.data.columns.length) ? 
+        return (model?.data?.columns?.length) ? 
             model.data.columns.map(col => col.replaceAll(/<br\s*\/?>/g, ' ')).join(' | ') : 
             this.translate("widgets.Table.prev");
     }

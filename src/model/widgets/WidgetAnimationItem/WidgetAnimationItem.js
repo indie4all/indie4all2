@@ -15,8 +15,12 @@ export default class WidgetAnimationItem extends WidgetItemElement {
         cssClass: "widget-animation-item"
     }
 
-    emptyData() {
-        return { data: { image: "" } };
+    emptyData(id) {
+        return { 
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
+            data: { image: "" } };
     }
 
     getInputs(model) {

@@ -1,11 +1,16 @@
 import template from "./template.hbs"
 import WidgetElement from "../WidgetElement/WidgetElement";
+import ModelManager from "../../ModelManager";
 
 export default class WidgetColumnsLayout extends WidgetElement {
 
     createElement(widget) {
         const canEdit = this.config.toolbar.edit;
-        return template({...this.config, canEdit, id: widget.id});
+        const children = widget.data ?
+            widget.data.map(child =>
+                child.map(subchild => ModelManager.getWidget(subchild.widget).createElement(subchild)).join("")
+            ) : Array.from(" ".repeat(this.config.columns.length));
+        return template({...this.config, canEdit, id: widget.id, children });
     }
     
     hasChildren() { return true; }

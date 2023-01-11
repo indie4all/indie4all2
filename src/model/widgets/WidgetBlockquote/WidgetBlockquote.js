@@ -2,6 +2,7 @@ import form from "./form.hbs";
 import "./styles.scss";
 
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
+import Utils from "../../../Utils";
 
 export default class WidgetBlockquote extends WidgetItemElement {
 
@@ -15,8 +16,12 @@ export default class WidgetBlockquote extends WidgetItemElement {
         cssClass: "widget-blockquote"
     }
 
-    emptyData() {
-        return { data: { quote: "", caption: "", alignment: "", source: "" } };
+    emptyData(id) {
+        return { 
+            id: id ?? Utils.generate_uuid(),
+            type: this.config.type,
+            widget: this.config.widget,
+            data: { quote: "", caption: "", alignment: "", source: "" } };
     }
 
     getInputs(model) {
@@ -34,7 +39,7 @@ export default class WidgetBlockquote extends WidgetItemElement {
     }
 
     preview(model) {
-        return model.data?.quote ?? this.translate("widgets.Blockquote.prev");
+        return model.data?.quote ? model.data.quote : this.translate("widgets.Blockquote.prev");
     }
 
     updateModelFromForm(model, form) {

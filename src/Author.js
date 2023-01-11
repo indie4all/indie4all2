@@ -50,6 +50,10 @@ export default class Author {
         return this.model.findObject(id);
     }
 
+    clearModelSections() {
+        this.model.sections = [];
+    }
+
     copyModelElement(element, sectionId, isCommand) {
         const position = Utils.findIndexObjectInArray(this.model.sections, "id", sectionId);
         const section = this.model.sections[position];

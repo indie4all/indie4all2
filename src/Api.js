@@ -9,11 +9,16 @@ import downloadTemplate from "./views/download.hbs"
 
 export default class Api {
 
+    #container;
+    #i18n;
+    #author;
+    #undoredo;
+
     constructor(palette, container) {
-        this.container = container;
-        this.i18n = I18n.getInstance();
-        this.author = new Author(palette, container);
-        this.undoredo = UndoRedo.getInstance();
+        this.#container = container;
+        this.#i18n = I18n.getInstance();
+        this.#author = new Author(palette, container);
+        this.#undoredo = UndoRedo.getInstance();
     }
 
     /**
@@ -51,7 +56,7 @@ export default class Api {
             response.blob().then(blob => {
                 const zip = new File([blob], filename, { type });
                 self.#downloadFile(zip);
-                self.author.hideLoading();
+                self.#author.hideLoading();
                 resolve();
             });
         });
@@ -66,7 +71,7 @@ export default class Api {
 
         // Check if the model is valid before trying to download
         if (!this.validate()) {
-            console.error(this.i18n.translate("messages.contentErrors"));
+            console.error(this.#i18n.translate("messages.contentErrors"));
             return;
         }
 
@@ -78,7 +83,7 @@ export default class Api {
         const languages = ["EN", "ES", "FR", "EL", "LT"];
         const licenses = ["PRIVATE", "BY", "BYSA", "BYND", "BYNC", "BYNCSA", "BYNCND"];
 
-        const model = this.author.model;
+        const model = this.#author.model;
 
         const data = {
             themes, 
@@ -122,14 +127,14 @@ export default class Api {
     /**
      * Adds an empty section
      */
-    addSection() { this.author.addSection(undefined, true); }
+    addSection() { this.#author.addSection(undefined, true); }
 
     /**
      * Adds an empty model element into a container
      * @param {string} id - Container ID
      * @param {string} widget - Type of model element
      */
-    addContent(id, widget) { this.author.addContent(id, widget)}
+    addContent(id, widget) { this.#author.addContent(id, widget)}
 
     /**
      * Duplicates a given model element
@@ -137,7 +142,7 @@ export default class Api {
      */
     copyElement(id) { 
         let sectionId = $(`[data-id=${id}]`).closest('.section-elements').attr('id').split('-').at(-1);
-        this.author.copyModelElement(this.author.getModelElement(id), sectionId, true);
+        this.#author.copyModelElement(this.#author.getModelElement(id), sectionId, true);
     }
 
     /**
@@ -145,7 +150,7 @@ export default class Api {
      * @param {string} id - SectionID
      */
     copySection(id) { 
-        this.author.copyModelSection(this.author.getModelElement(id), true);    
+        this.#author.copyModelSection(this.#author.getModelElement(id), true);    
     }
 
     /**
@@ -158,15 +163,15 @@ export default class Api {
             const encrypted = localStorage.getItem('copied-element');
             const json = CryptoJS.AES.decrypt(encrypted, userCookie.split('=')[1]).toString(CryptoJS.enc.Utf8);
             if (json) {
-                this.author.copyModelElement(JSON.parse(json), id, true);
-                Utils.notifySuccess(this.i18n.translate("messages.importedElement"));
+                this.#author.copyModelElement(JSON.parse(json), id, true);
+                Utils.notifySuccess(this.#i18n.translate("messages.importedElement"));
                 return;
             }
             localStorage.removeItem('copied-element');
-            Utils.notifyWarning(this.i18n.translate("messages.noElement"));
+            Utils.notifyWarning(this.#i18n.translate("messages.noElement"));
         } catch (err) {
             localStorage.removeItem('copied-element');
-            Utils.notifyWarning(this.i18n.translate("messages.noElement"));    
+            Utils.notifyWarning(this.#i18n.translate("messages.noElement"));    
         }    
     }
 
@@ -179,15 +184,15 @@ export default class Api {
             const encrypted = localStorage.getItem('copied-section');
             const json = CryptoJS.AES.decrypt(encrypted, userCookie.split('=')[1]).toString(CryptoJS.enc.Utf8);
             if (json) {
-                this.author.copyModelSection(JSON.parse(json), true);
-                Utils.notifySuccess(this.i18n.translate("messages.importedSection"));
+                this.#author.copyModelSection(JSON.parse(json), true);
+                Utils.notifySuccess(this.#i18n.translate("messages.importedSection"));
                 return;
             }
             localStorage.removeItem('copied-section');
-            Utils.notifyWarning(this.i18n.translate("messages.noSection"));
+            Utils.notifyWarning(this.#i18n.translate("messages.noSection"));
         } catch (err) {
             localStorage.removeItem('copied-section');
-            Utils.notifyWarning(this.i18n.translate("messages.noSection"));
+            Utils.notifyWarning(this.#i18n.translate("messages.noSection"));
         } 
     }
 
@@ -195,25 +200,25 @@ export default class Api {
      * Removes a given model element
      * @param {string} id - Model element ID
      */
-    removeElement(id)  { this.author.removeElement(id); }
+    removeElement(id)  { this.#author.removeElement(id); }
 
     /**
      * Removes a given section
      * @param {String} id - Section ID
      */
-    removeSection(id) { this.author.removeSection(id); }
+    removeSection(id) { this.#author.removeSection(id); }
 
     /**
      * Opens a modal to edit the given element fields
      * @param {string} id - Model element ID
      */
-    editElement(id) { this.author.openSettings(id); }
+    editElement(id) { this.#author.openSettings(id); }
 
     /**
      * Opens a modal to edit the given section fields
      * @param {string} id - Section ID
      */
-    editSection(id) { this.author.openSettings(id, "section"); }
+    editSection(id) { this.#author.openSettings(id, "section"); }
 
     /**
      * Stores the given model element encrypted in LocalStorage using the user's cookie
@@ -223,12 +228,12 @@ export default class Api {
         try {
             const userCookie = document.cookie && document.cookie.split('; ').find(cookie => cookie.startsWith('INDIE_USER='));
             const key = userCookie.split('=')[1];
-            const original = this.author.getModelElement(id);
+            const original = this.#author.getModelElement(id);
             const encrypted = CryptoJS.AES.encrypt(JSON.stringify(original), key).toString();
             localStorage.setItem('copied-element', encrypted);
-            Utils.notifySuccess(this.i18n.translate("messages.exportedElement"));
+            Utils.notifySuccess(this.#i18n.translate("messages.exportedElement"));
         } catch (err) {
-            Utils.notifyWarning(this.i18n.translate("messages.couldNotExportElement"));
+            Utils.notifyWarning(this.#i18n.translate("messages.couldNotExportElement"));
         }
     }
 
@@ -240,12 +245,12 @@ export default class Api {
         try {
             const userCookie = document.cookie && document.cookie.split('; ').find(cookie => cookie.startsWith('INDIE_USER='));
             const key = userCookie.split('=')[1];
-            const original = this.author.getModelElement(id);
+            const original = this.#author.getModelElement(id);
             const encrypted = CryptoJS.AES.encrypt(JSON.stringify(original), key).toString();
             localStorage.setItem('copied-section', encrypted);
-            Utils.notifySuccess(this.i18n.translate("messages.exportedSection"));
+            Utils.notifySuccess(this.#i18n.translate("messages.exportedSection"));
         } catch (err) {
-            Utils.notifyWarning(this.i18n.translate("messages.couldNotExportSection"));
+            Utils.notifyWarning(this.#i18n.translate("messages.couldNotExportSection"));
         }        
     }
 
@@ -254,19 +259,19 @@ export default class Api {
      * @param {string} id - Section ID
      * @param {0,1} direction - Down (0) or Up (1)
      */
-    swap(id, direction) { this.author.swap(id, direction); }
+    swap(id, direction) { this.#author.swap(id, direction); }
 
     /**
      * Expands/Collapses the given category
      * @param {string} category - Category ID
      */
-    toggleCategory(category) { this.author.toggleCategory(category); }
+    toggleCategory(category) { this.#author.toggleCategory(category); }
 
     /**
      * Validates the current state of the model and shows its errors
      * @returns True if the model is valid, false otherwise
      */
-    validate() {  return this.author.validateContent(true); }
+    validate() {  return this.#author.validateContent(true); }
 
     /**
      * Clears the content of the editor
@@ -274,24 +279,24 @@ export default class Api {
     clear() {
         const self = this;
         bootprompt.confirm({
-            title: this.i18n.translate("general.areYouSure"),
-            message: this.i18n.translate("messages.confirmClearContent"),
+            title: this.#i18n.translate("general.areYouSure"),
+            message: this.#i18n.translate("messages.confirmClearContent"),
             buttons: {
                 confirm: {
-                    label: this.i18n.translate("general.delete"),
+                    label: this.#i18n.translate("general.delete"),
                     className: 'btn-danger'
                 },
                 cancel: {
-                    label: this.i18n.translate("general.cancel"),
+                    label: this.#i18n.translate("general.cancel"),
                     className: 'btn-indie'
                 }
             },
             callback: function (result) {
                 if (result) {
-                    $(self.container).children().fadeOut(500, function () {
-                        $(self.container).empty();
-                        Utils.notifySuccess(this.i18n.translate("messages.contentCleared"));
-                        this.model.sections = [];
+                    $(self.#container).children().fadeOut(500, function () {
+                        $(self.#container).empty();
+                        Utils.notifySuccess(this.#i18n.translate("messages.contentCleared"));
+                        this.#author.clearModelSections();
                     });
                 }
             },
@@ -302,12 +307,12 @@ export default class Api {
     /**
      * Undoes an action
      */
-    undo() { this.undoredo.undo(); }
+    undo() { this.#undoredo.undo(); }
 
     /**
      * Repeats a previously undone action
      */
-    redo() { this.undoredo.redo(); }
+    redo() { this.#undoredo.redo(); }
 
     /**
      * Loads a model into the application
@@ -318,14 +323,14 @@ export default class Api {
     load(model, onLoaded, onError) {
         const self = this;
         try {
-            $(self.container).toggle(1000, function() {
-                $(self.container).empty();
-                self.author.loadModelIntoPlugin(model);
-                $(self.container).toggle(1000, onLoaded);
+            $(self.#container).toggle(1000, function() {
+                $(self.#container).empty();
+                self.#author.loadModelIntoPlugin(model);
+                $(self.#container).toggle(1000, onLoaded);
             });
         } catch (err) {
-            $(self.container).empty();
-            self.author.resetModel();
+            $(self.#container).empty();
+            self.#author.resetModel();
             onError && onError(err);
         }
     }
@@ -339,7 +344,7 @@ export default class Api {
             const file = new File([JSON.stringify(model, null, 2)], "model.json", { type: "application/json" });
             self.#downloadFile(file);
         };
-        const title = this.i18n.translate("common.download");
+        const title = this.#i18n.translate("common.download");
         this.#openUnitSettings(title, onSubmit);
     }
 
@@ -349,11 +354,11 @@ export default class Api {
     preview() {
         const self = this;
         const onSubmit = (model) => {
-            self.author.showLoading();
+            self.#author.showLoading();
             const onGenerated = async (response) => {
                 const uri = await response.text();
                 window.open(uri, '_blank');
-                self.author.hideLoading();
+                self.#author.hideLoading();
             };
             // Download the generated files
             const headers = new Headers();
@@ -363,10 +368,10 @@ export default class Api {
                 .then(onGenerated)
                 .catch(error => {
                     console.log('error', error);
-                    self.author.hideLoading(); 
+                    self.#author.hideLoading(); 
                 });
         }
-        const title = this.i18n.translate("common.preview");
+        const title = this.#i18n.translate("common.preview");
         self.#openUnitSettings(title, onSubmit);
     }
 
@@ -376,7 +381,7 @@ export default class Api {
     scorm() {
         const self = this;
         const onSubmit = (model) => {
-            self.author.showLoading();
+            self.#author.showLoading();
             // Download the generated files
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
@@ -385,10 +390,10 @@ export default class Api {
                 .then(self.#onPublishModel.bind(self))
                 .catch(error => {
                     console.log('error', error);
-                    self.author.hideLoading(); 
+                    self.#author.hideLoading(); 
                 });
         }
-        const title = this.i18n.translate("common.publish");
+        const title = this.#i18n.translate("common.publish");
         this.#openUnitSettings(title, onSubmit);
     }
 
@@ -398,7 +403,7 @@ export default class Api {
     publish() {
         const self = this;
         const onSubmit = (model) => {
-            self.author.showLoading();
+            self.#author.showLoading();
             // Download the generated files
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
@@ -407,10 +412,10 @@ export default class Api {
                 .then(self.#onPublishModel.bind(self))
                 .catch(error => {
                     console.log('error', error);
-                    self.author.hideLoading(); 
+                    self.#author.hideLoading(); 
                 });
         }
-        const title = this.i18n.translate("common.publish");
+        const title = this.#i18n.translate("common.publish");
         this.#openUnitSettings(title, onSubmit);
     }
 }

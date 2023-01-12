@@ -34,7 +34,7 @@ export default class DragDropHandler {
 
     accept(element, target) {
         // Depending if the element comes from the palette or from the main container, the info will be inside the element's first child or the element itself
-        var originElement = $(element).hasClass('palette-item') ? element : $(element).children('.widget')[0];
+        var originElement = $(element).hasClass('palette-item') ? element : $(element).children('div')[0];
 
         // Extract the info
         var itemType = originElement.dataset.type;
@@ -96,49 +96,37 @@ export default class DragDropHandler {
 
     onMoveElement(el, target) {
 
-        const origin = $(el).children('.widget')[0];
+        const origin = $(el).children('div')[0];
         var elementId = origin.dataset.id;
         var containerType = target.dataset.type;
         // New order of the elements inside the target
         var targetChildren = [].slice.call(target.children).map(function (ch) {
-            return $(ch).children('.widget')[0].dataset.id;
+            return $(ch).children('div')[0].dataset.id;
         });
 
         var newPosition = targetChildren.indexOf(origin.dataset.id, 0);
 
-        let containerId, containerIndex, parentContainer, initialPosition;
+        let containerId, containerIndex = -1, parentContainer, initialPosition;
         if (containerType == 'layout') {
             containerId = target.parentNode.parentNode.parentNode.dataset.id; // 3 nesting levels 
             containerIndex = target.dataset.index;
             parentContainer = this.model.findObject(containerId);
             initialPosition = Utils.findIndexObjectInArray(parentContainer.data[containerIndex], 'id', elementId);
-            this.undoredo.pushCommand(new ActionMoveElement(elementId, this.container, this.model, {
-                containerType: containerType,
-                containerIndex: containerIndex,
-                containerId: containerId,
-                initialPosition: initialPosition,
-                finalPosition: newPosition
-            }));
-
-            this.model.moveElementWithinContainer(elementId, newPosition, containerId, containerIndex);
         } else {
             containerId = target.parentNode.dataset.id;
             parentContainer = this.model.findObject(containerId);
             initialPosition = Utils.findIndexObjectInArray(parentContainer.data, 'id', elementId);
-            this.undoredo.pushCommand(new ActionMoveElement(elementId, this.container, this.model, {
-                containerType: containerType,
-                containerIndex: -1,
-                containerId: containerId,
-                initialPosition: initialPosition,
-                finalPosition: newPosition
-            }));
-            this.model.moveElementWithinContainer(elementId, newPosition, containerId);
         }
+        const action = new ActionMoveElement(this.container, this.model, {
+            containerType, containerIndex, containerId, initialPosition, finalPosition: newPosition
+        });
+        this.undoredo.pushCommand(action);
+        this.model.moveElementWithinContainer(elementId, newPosition, containerId, containerIndex == -1 ? null : containerIndex);
     }
 
     onMoveElementIntoContainer(el, target, sibling) {
         // Get the source container and source element position
-        const origin = $(el).children('.widget')[0];
+        const origin = $(el).children('div')[0];
         var elementId = origin.dataset.id;
         var element = this.model.findObject(elementId);
         var parentElement = this.model.findParentOfObject(elementId);
@@ -158,7 +146,7 @@ export default class DragDropHandler {
         }
 
         // Get target
-        var inPositionElementId = sibling != null ? $(sibling).children('.widget')[0].dataset.id : -1;
+        var inPositionElementId = sibling != null ? $(sibling).children('div')[0].dataset.id : -1;
         var containerType = target.dataset.type;
         var containerId;
         var containerIndex = -1;
@@ -177,7 +165,7 @@ export default class DragDropHandler {
 
         // For command
         
-        this.undoredo.pushCommand(new ActionMoveContainer(elementId, this.container, this.model, {
+        this.undoredo.pushCommand(new ActionMoveContainer(this.container, this.model, {
             source: {
                 id: parentElement.id,
                 type: parentElement.type,
@@ -204,17 +192,14 @@ export default class DragDropHandler {
         if (parentType == 'layout') parentContainerIndex = target.dataset.index;
         var parentContainerId = $(target).closest('[data-id]')[0].dataset.id;
         var dataElementId = Utils.generate_uuid();
-        var inPositionElementId = sibling != null ? $(sibling).children('.widget').first().data('id') : -1;
+        var inPositionElementId = sibling != null ? $(sibling).children('div').first().data('id') : -1;
         const elementToBeAppended = ModelManager.getWidget(widget).createElement({ id: dataElementId });
         $(el).replaceWith(elementToBeAppended);
         const modelObject = this.model.createWidget(widget, dataElementId);
         this.model.appendObject(modelObject, inPositionElementId, parentContainerId, parentContainerIndex);
-        this.undoredo.pushCommand(new ActionAddElement(dataElementId, this.container, this.model, {
-            element: $.extend({}, this.model.findObject(dataElementId)),
-            parentType: parentType,
-            parentContainerIndex: parentContainerIndex,
-            parentContainerId: parentContainerId,
-            inPositionElementId: inPositionElementId
+        this.undoredo.pushCommand(new ActionAddElement(this.container, this.model, {
+            element: $.extend({}, modelObject),
+            parentType, parentContainerIndex, parentContainerId, inPositionElementId
         }));
     }
 }

@@ -12,6 +12,6 @@ export default class ActionRemoveElement extends ActionElement {
     }
 
     undo() {
-        (new ActionAddElement(this.data.element.id, this.container, this.model, this.data)).do();
+        (new ActionAddElement(this.container, this.model, this.data)).do();
     }
 }

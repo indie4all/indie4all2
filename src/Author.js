@@ -46,14 +46,27 @@ export default class Author {
         $('#modal-loading').modal('hide');
     }
 
+    /**
+     * Retrieves a model element
+     * @param {string} id - Model Element ID
+     * @returns 
+     */
     getModelElement(id) {
         return this.model.findObject(id);
     }
 
+    /**
+     * Removes all model sections
+     */
     clearModelSections() {
         this.model.sections = [];
     }
 
+    /**
+     * Duplicates a given model element
+     * @param {object} element - Model Element data
+     * @param {id} sectionId - Section ID
+     */
     copyModelElement(element, sectionId) {
         const position = Utils.findIndexObjectInArray(this.model.sections, "id", sectionId);
         const section = this.model.sections[position];
@@ -67,6 +80,10 @@ export default class Author {
         this.undoredo.pushAndExecuteCommand(action);
     }
 
+    /**
+     * Duplicates an existing section
+     * @param {object} section - section data
+     */
     copyModelSection(section) {
         let copy = this.model.copyElement(section);
         const action = new ActionAddSection(this.container, this.model, {
@@ -76,6 +93,9 @@ export default class Author {
         this.undoredo.pushAndExecuteCommand(action);
     }
 
+    /**
+     * Adds a new empty section
+     */
     addSection() {
         const section = ModelManager.getSection().emptyData(this.model.sections.length + 1);
         const action = new ActionAddSection(this.container, this.model, {
@@ -85,6 +105,10 @@ export default class Author {
         this.undoredo.pushAndExecuteCommand(action);
     }
 
+    /**
+     * Removes a given section
+     * @param {string} sectionId - Section ID
+     */
     removeSection(sectionId) {
         const action = new ActionRemoveSection(this.container, this.model, {
             element: $.extend({}, this.model.findObject(sectionId)),
@@ -94,6 +118,11 @@ export default class Author {
         Utils.notifySuccess(this.i18n.translate("messages.deletedSection"));
     }
 
+    /**
+     * Moves a section up or down
+     * @param {string} sectionOriginId - ID of the section to move
+     * @param {number} direction 1 up, 0 down
+     */
     swap(sectionOriginId, direction) {
         const action = new ActionSwapSections(this.container, this.model, {
             sectionOriginId: sectionOriginId,
@@ -102,6 +131,11 @@ export default class Author {
         this.undoredo.pushAndExecuteCommand(action);
     }
 
+    /**
+     * Opens a new modal window to edit a given model element
+     * @param {string} dataElementId - ModelElement ID
+     * @param {widget|section} type - type of element: section or widget
+     */
     openSettings(dataElementId, type = "widget") {
 
         const self = this;
@@ -168,6 +202,10 @@ export default class Author {
         modelElem.settingsOpened(modelObject);
     }
 
+    /**
+     * Removes a given model element
+     * @param {string} id - Model element ID
+     */
     removeElement(id) {
         var elementToBeRemoved = this.model.findObject(id);
         var parent = this.model.findParentOfObject(id);
@@ -195,6 +233,11 @@ export default class Author {
         this.undoredo.pushAndExecuteCommand(action);
     }
 
+    /**
+     * Creates a given widget in a specified container
+     * @param {string} containerId - Container ID
+     * @param {string} widget - Type of widget
+     */
     addContent(containerId, widget) {
         const self = this;
         const widgetElem = ModelManager.getWidget(widget);
@@ -222,12 +265,16 @@ export default class Author {
         }
     }
 
+    /**
+     * Creates a new child for the given container
+     * @param {string} containerId - Container ID
+     * @param {string} widgetTypeToCreate - Type of widget
+     */
     addSpecificContent(containerId, widgetTypeToCreate) {
         const target = document.querySelector('[data-id="' + containerId + '"]');
-        const dataElementId = Utils.generate_uuid();       
         const parentContainerId = $(target).closest('[data-id]')[0].dataset.id;
         const inPositionElementId = -1;
-        const modelObject = this.model.createWidget(widgetTypeToCreate, dataElementId);
+        const modelObject = this.model.createWidget(widgetTypeToCreate);
         const action = new ActionAddElement(this.container, this.model, {
             element: modelObject,
             parentContainerIndex: -1,
@@ -237,6 +284,10 @@ export default class Author {
         this.undoredo.pushAndExecuteCommand(action);
     }
 
+    /**
+     * Expands/Collapses a given category
+     * @param {string} category - Category ID
+     */
     toggleCategory(category) {
         var divCategory = document.querySelector("[data-category-header='" + category + "']");
         var icon = divCategory.querySelector("[data-icon]");
@@ -247,6 +298,10 @@ export default class Author {
         divCategory.dataset.hidden = !isHidden;
     }
 
+    /**
+     * Initializes the widgets palette with the elements contained in widgets.json
+     * @param {HTMLElement} palette - Container for the widgets palette
+     */
     loadWidgets(palette) {
         try {
             Object.entries(widgetsJson).forEach(entry => {
@@ -264,6 +319,11 @@ export default class Author {
         }
     }
 
+    /**
+     * Shows the current model errors and hides de previous ones
+     * @param {array} currentErrors - Previous model errors
+     * @param {array} newErrors - Current model errors
+     */
     showErrors(currentErrors, newErrors) {
 
         // Remove previous errors
@@ -288,13 +348,22 @@ export default class Author {
             });
     }
 
-    creatToolTipError = function (title, previewElement) {
+    /**
+     * Adds a tooltip with a descriptive validation error to the widget preview
+     * @param {string} title - Error text 
+     * @param {HTMLElement} previewElement - Textual preview of the widget element 
+     */
+    creatToolTipError(title, previewElement) {
         previewElement.dataset.title = title;
         previewElement.dataset['originalTitle'] = title;
         previewElement.addEventListener('mouseenter', $(previewElement).tooltip('show'));
         previewElement.addEventListener('mouseleave', $(previewElement).tooltip('hide'));
     }
 
+    /**
+     * Removes the tooltip validation errors from the widget preview
+     * @param {HTMLElement} previewElement - Textual preview of the widget element
+     */
     deleteToolTipError(previewElement) {
         delete previewElement.dataset.title;
         delete previewElement.dataset['originalTitle'];

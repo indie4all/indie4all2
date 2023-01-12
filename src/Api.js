@@ -13,12 +13,29 @@ export default class Api {
     #i18n;
     #author;
     #undoredo;
+    /**
+     * API configuration options. Values:
+     * - `requestAdditionalDataOnPopulate`: (boolean) sets if the API should show a modal asking for additional information when publishing a unit. Default value: true.
+     * - `previewBackendURL`: (string) server URL to preview the current unit. Default value: '/model/preview'.
+     * - `publishBackendURL`: (string) server URL to publish the current unit. Default value: '/model/publish'.
+     * - `scormBackendURL`: (string) server URL to generate a scorm package with the contents of the unit. Default value: '/model/scorm'.
+     * - `encryptionKey`: (function|string|null) key to encrypt sensitive data. If null, no encryption is done.
+     */
+    #options;
 
     constructor(palette, container) {
         this.#container = container;
         this.#i18n = I18n.getInstance();
+        this.#options = {
+            'requestAdditionalDataOnPopulate': false,
+            'previewBackendURL': '/model/preview',
+            'publishBackendURL': '/model/publish',
+            'scormBackendURL': '/model/scorm',
+            'encryptionKey': null
+        }
         this.#author = new Author(palette, container);
         this.#undoredo = UndoRedo.getInstance();
+        
     }
 
     /**
@@ -67,7 +84,7 @@ export default class Api {
      * @param {string} title - Title of the modal window
      * @param {function} onSubmit - Action to perform when the user submits the form
      */
-    #openUnitSettings = function (title, onSubmit) {
+    #openUnitSettings(title, onSubmit) {
 
         // Check if the model is valid before trying to download
         if (!this.validate()) {
@@ -125,6 +142,59 @@ export default class Api {
     }
 
     /**
+     * Populates a model to a server, optionally showing a modal for requesting additional information
+     * @param {string} title - Title of the modal window
+     * @param {function} onSubmit - Action to perform when the model is ready to be populated
+     */
+    #populateModel(title, onSubmit) {
+        if (this.#options['requestAdditionalDataOnPopulate'])
+            this.#openUnitSettings(title, onSubmit);
+        else {
+            const myModel = $.extend(true, {}, this.#author.model);
+            // Remove unnecessary fields for the exported model
+            delete myModel.VERSION_HISTORY;
+            delete myModel.currentErrors;
+            onSubmit && onSubmit(myModel);
+        }
+    }
+
+    /**
+     * Encrypts a text if an encryptionKey is provided
+     * @param {string} text - Text to be encrypted
+     * @returns string - Encrypted text
+     */
+    #encrypt(text) {
+        const encOption = this.#options['encryptionKey'];
+        if (encOption === null)
+            return text;
+        
+        const key = typeof encOption === 'function' ? encOption() : encOption;
+        return CryptoJS.AES.encrypt(text, key).toString();
+    }
+
+    /**
+     * Decrypts a text if an encryptionKey is provided
+     * @param {string} text - Text to be decrypted
+     * @returns string - Decrypted text
+     */
+    #decrypt(encrypted) {
+        const encOption = this.#options['encryptionKey'];
+        if (encOption === null)
+            return encrypted;
+        
+        const key = typeof encOption === 'function' ? encOption() : encOption;
+        return CryptoJS.AES.decrypt(encrypted, key).toString(CryptoJS.enc.Utf8);
+    }
+
+    /**
+     * Updates the current options of the API
+     * @param {object} options - set of options to update
+     */
+    setOptions(options) {
+        $.extend(this.#options, options);
+    }
+
+    /**
      * Adds an empty section
      */
     addSection() { this.#author.addSection(); }
@@ -159,9 +229,8 @@ export default class Api {
      */
     importElement(id) { 
         try {
-            const userCookie = document.cookie && document.cookie.split('; ').find(cookie => cookie.startsWith('INDIE_USER='));
             const encrypted = localStorage.getItem('copied-element');
-            const json = CryptoJS.AES.decrypt(encrypted, userCookie.split('=')[1]).toString(CryptoJS.enc.Utf8);
+            const json = this.#decrypt(encrypted);
             if (json) {
                 this.#author.copyModelElement(JSON.parse(json), id);
                 Utils.notifySuccess(this.#i18n.translate("messages.importedElement"));
@@ -180,9 +249,8 @@ export default class Api {
      */
     importSection() { 
         try {
-            const userCookie = document.cookie && document.cookie.split('; ').find(cookie => cookie.startsWith('INDIE_USER='));
             const encrypted = localStorage.getItem('copied-section');
-            const json = CryptoJS.AES.decrypt(encrypted, userCookie.split('=')[1]).toString(CryptoJS.enc.Utf8);
+            const json = this.#decrypt(encrypted);
             if (json) {
                 this.#author.copyModelSection(JSON.parse(json));
                 Utils.notifySuccess(this.#i18n.translate("messages.importedSection"));
@@ -224,12 +292,10 @@ export default class Api {
      * Stores the given model element encrypted in LocalStorage using the user's cookie
      * @param {string} id - Model element ID 
      */
-    exportElement(id) { 
+    exportElement(id) {
         try {
-            const userCookie = document.cookie && document.cookie.split('; ').find(cookie => cookie.startsWith('INDIE_USER='));
-            const key = userCookie.split('=')[1];
             const original = this.#author.getModelElement(id);
-            const encrypted = CryptoJS.AES.encrypt(JSON.stringify(original), key).toString();
+            const encrypted = this.#encrypt(JSON.stringify(original));
             localStorage.setItem('copied-element', encrypted);
             Utils.notifySuccess(this.#i18n.translate("messages.exportedElement"));
         } catch (err) {
@@ -243,10 +309,8 @@ export default class Api {
      */
     exportSection(id) { 
         try {
-            const userCookie = document.cookie && document.cookie.split('; ').find(cookie => cookie.startsWith('INDIE_USER='));
-            const key = userCookie.split('=')[1];
             const original = this.#author.getModelElement(id);
-            const encrypted = CryptoJS.AES.encrypt(JSON.stringify(original), key).toString();
+            const encrypted = this.#encrypt(JSON.stringify(original));
             localStorage.setItem('copied-section', encrypted);
             Utils.notifySuccess(this.#i18n.translate("messages.exportedSection"));
         } catch (err) {
@@ -345,7 +409,7 @@ export default class Api {
             self.#downloadFile(file);
         };
         const title = this.#i18n.translate("common.download");
-        this.#openUnitSettings(title, onSubmit);
+        this.#populateModel(title, onSubmit);
     }
 
     /**
@@ -364,7 +428,7 @@ export default class Api {
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
             const requestOptions = { method: 'PUT', body: JSON.stringify(model), redirect: 'follow', headers };
-            fetch("/model/preview", requestOptions)
+            fetch(this.#options['previewBackendURL'], requestOptions)
                 .then(onGenerated)
                 .catch(error => {
                     console.log('error', error);
@@ -372,7 +436,7 @@ export default class Api {
                 });
         }
         const title = this.#i18n.translate("common.preview");
-        self.#openUnitSettings(title, onSubmit);
+        self.#populateModel(title, onSubmit);
     }
 
     /**
@@ -386,7 +450,7 @@ export default class Api {
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
             const requestOptions = { method: 'PUT', body: JSON.stringify(model), redirect: 'follow', headers };
-            fetch("/model/scorm", requestOptions)
+            fetch(this.#options['scormBackendURL'], requestOptions)
                 .then(self.#onPublishModel.bind(self))
                 .catch(error => {
                     console.log('error', error);
@@ -394,7 +458,7 @@ export default class Api {
                 });
         }
         const title = this.#i18n.translate("common.publish");
-        this.#openUnitSettings(title, onSubmit);
+        this.#populateModel(title, onSubmit);
     }
 
     /**
@@ -408,7 +472,7 @@ export default class Api {
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
             const requestOptions = { method: 'PUT', body: JSON.stringify(model), redirect: 'follow', headers };
-            fetch("/model/publish", requestOptions)
+            fetch(this.#options['publishBackendURL'], requestOptions)
                 .then(self.#onPublishModel.bind(self))
                 .catch(error => {
                     console.log('error', error);
@@ -416,6 +480,6 @@ export default class Api {
                 });
         }
         const title = this.#i18n.translate("common.publish");
-        this.#openUnitSettings(title, onSubmit);
+        this.#populateModel(title, onSubmit);        
     }
 }

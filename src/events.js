@@ -91,7 +91,7 @@ export function init(api) {
     $('#editor-footer .alert')[0].innerHTML = i18n.value('footer.content');
 
     // Needed in order to hide after click in delete button
-    $(document).on('click', "#main-container .btn", function () {
+    $("#main-container").on('click', ".btn", function () {
         $("[data-toggle='tooltip']").tooltip('hide');
     });
 

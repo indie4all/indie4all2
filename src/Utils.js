@@ -59,7 +59,7 @@ export default class Utils {
 
     static #notify(title, message, type) {
         toastr[type](message, title, {
-            timeOut: 50000,
+            timeOut: 5000,
             positionClass: "toast-bottom-right"
         });
     }

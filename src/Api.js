@@ -61,6 +61,13 @@ export default class Api {
      */
     #onPublishModel(response) {
         const self = this;
+        if (!response.ok) {
+            // Wait until the modal is fully loaded (1 sec)
+            setTimeout(() => self.#author.hideLoading(), 1000);
+            Utils.notifyError(this.#i18n.translate("messages.publishError"));
+            return;
+        }
+        
         return new Promise(resolve => {
             const type = response.headers.get('content-type');
             const filename = response.headers.get('content-disposition')
@@ -130,7 +137,6 @@ export default class Api {
             // Deep copy of the indieauthor model
             const myModel = $.extend(true, {}, model);
             // Remove unnecessary fields for the exported model
-            delete myModel.VERSION_HISTORY;
             delete myModel.currentErrors;
             $("#modal-settings").modal('hide');
             onSubmit && onSubmit(myModel);
@@ -152,7 +158,6 @@ export default class Api {
         else {
             const myModel = $.extend(true, {}, this.#author.model);
             // Remove unnecessary fields for the exported model
-            delete myModel.VERSION_HISTORY;
             delete myModel.currentErrors;
             onSubmit && onSubmit(myModel);
         }
@@ -420,9 +425,14 @@ export default class Api {
         const onSubmit = (model) => {
             self.#author.showLoading();
             const onGenerated = async (response) => {
+                // Wait until the modal is fully loaded (1 sec)
+                setTimeout(() => self.#author.hideLoading(), 1000);
+                if (!response.ok) {
+                    Utils.notifyError(this.#i18n.translate("messages.previewError"));
+                    return;
+                }
                 const uri = await response.text();
-                window.open(uri, '_blank');
-                self.#author.hideLoading();
+                window.open(uri, '_blank'); 
             };
             // Download the generated files
             const headers = new Headers();

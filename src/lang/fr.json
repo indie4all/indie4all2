@@ -498,6 +498,8 @@
         "noRedo": "Nothing to redo",
 		"noSection": "There are no sections to import",
         "noUndo": "Nothing to undo",
+        "previewError": "The unit could not be previewed",
+        "publishError": "The unit could not be published",
         "successMessage": "Ok",
         "warningMessage": "Atention"
     },

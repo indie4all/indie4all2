@@ -498,6 +498,8 @@
         "noRedo": "Nada que rehacer",
 		"noSection": "No hay secciones que importar",
         "noUndo": "Nada que deshacer",
+        "previewError": "No se pudo previsualizar la unidad",
+        "publishError": "No se pudo publicar la unidad",
         "successMessage": "Ok",
         "warningMessage": "Atención"
     },

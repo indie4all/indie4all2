@@ -93,12 +93,6 @@ export default class Api {
      */
     #openUnitSettings(title, onSubmit) {
 
-        // Check if the model is valid before trying to download
-        if (!this.validate()) {
-            console.error(this.#i18n.translate("messages.contentErrors"));
-            return;
-        }
-
         $("#modal-settings .btn-submit").off('click'); // Unbind button submit click event 
         const themes = ["GeneralTheme1", "GeneralTheme2", "GeneralTheme3", "GeneralTheme4", "GeneralTheme5",
         "GeneralTheme6", "GeneralTheme7", "GeneralTheme8", "GeneralTheme9", "GeneralTheme10", "GeneralTheme11",
@@ -153,6 +147,13 @@ export default class Api {
      * @param {function} onSubmit - Action to perform when the model is ready to be populated
      */
     #populateModel(title, onSubmit) {
+        
+        // Check if the model is valid before trying to download
+        if (!this.validate()) {
+            console.error(this.#i18n.translate("messages.contentErrors"));
+            return;
+        }
+
         if (this.#options['requestAdditionalDataOnPopulate'])
             this.#openUnitSettings(title, onSubmit);
         else {

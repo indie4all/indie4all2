@@ -197,7 +197,7 @@ export class Model {
     validateFormElement(modelElement, form, dataElementId) {
         let errors = [];
         // If they have name, all the elements must have an unique name
-        if (form.instanceName && !this.isUniqueName(form.instanceName, dataElementId))
+        if (!modelElement.config.skipNameValidation && form.instanceName && !this.isUniqueName(form.instanceName, dataElementId))
             errors.push("common.name.notUniqueName");
         errors = errors.concat(modelElement.validateForm(form, dataElementId));
         return errors;
@@ -205,11 +205,11 @@ export class Model {
 
     validateElement(element, errors) {
         let validationErrors = [];
+        const widget = ModelManager.getWidget(element.widget);
 
-        if (element.params?.name && !this.isUniqueName(element.params.name, element.id))
+        if (!widget.config.skipNameValidation && element.params?.name && !this.isUniqueName(element.params.name, element.id))
             validationErrors.push("common.name.notUniqueName");
 
-        const widget = ModelManager.getWidget(element.widget);
         validationErrors = validationErrors.concat(widget.validateModel(element));
         if (validationErrors.length > 0) 
             errors.push({ element: element.id, keys: validationErrors});

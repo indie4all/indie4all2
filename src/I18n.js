@@ -9,11 +9,11 @@ export default class I18n {
 
     static #INSTANCE = null;
     #locale = 'EN';
+    #LANGUAGES = ["EL", "ES", "EN", "FR", "LT"];
 
     constructor() {
         let lang = navigator && navigator.language ? navigator.language.substring(0,2) : 'en';
-        const LANGUAGES = ["EL", "ES", "EN", "FR", "LT"];
-        this.#locale = LANGUAGES.find(elem => elem === lang.toUpperCase()) ?? "EN";
+        this.#locale = this.#LANGUAGES.find(elem => elem === lang.toUpperCase()) ?? "EN";
     }
 
     static getInstance() {
@@ -28,7 +28,13 @@ export default class I18n {
     }
 
     translate(query) {
-        switch (this.#locale) {
+        return this.translateLang(query, this.#locale);
+    }
+
+    translateLang(query, lang) {
+        const upperLang = lang.toUpperCase();
+        const realLang = this.#LANGUAGES.includes(upperLang) ? upperLang : LANG_EN;
+        switch (realLang) {
             case "EL": return jsonpath.query(LANG_EL, "$."+query);
             case "ES": return jsonpath.query(LANG_ES, "$."+query);
             case "FR": return jsonpath.query(LANG_FR, "$."+query);
@@ -39,6 +45,11 @@ export default class I18n {
 
     value(query) {
         const translations = this.translate(query);
+        return translations.length ? translations[0] : "";
+    }
+
+    valueLang(query, lang) {
+        const translations = this.translateLang(query, lang);
         return translations.length ? translations[0] : "";
     }
 }

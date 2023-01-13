@@ -8,6 +8,11 @@ export function init(api) {
         $('#upload-file-model').trigger('click');
     });
     $('#upload-file-model').on('change', function() {
+        
+        // Do not upload the model if the user has cancelled the selection
+        if (this.files.length === 0)
+            return;
+
         const reader = new FileReader();
         reader.onload = (event) => {
             const model = JSON.parse(event.target.result);

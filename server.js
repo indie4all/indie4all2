@@ -98,7 +98,7 @@ app.use(express.json({limit: '500mb'}));
 app.put('/model/preview', function(req, res) {
     const onGenerated = (folder) => {
         copyAssets(`${folder}/${ASSETS_FOLDER}`, req.body.theme, "Local");
-        return res.type("text/uri").send(UNITS_FOLDER + "/" + folder);
+        return res.status(StatusCodes.OK).json({success: true, url: UNITS_FOLDER + "/" + folder });
     };          
     generate(req, res, onGenerated); 
 });

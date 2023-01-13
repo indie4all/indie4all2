@@ -434,8 +434,8 @@ export default class Api {
                     Utils.notifyError(this.#i18n.translate("messages.previewError"));
                     return;
                 }
-                const uri = await response.text();
-                window.open(uri, '_blank'); 
+                const json = await response.json();
+                window.open(json.url, '_blank'); 
             };
             // Download the generated files
             const headers = new Headers();

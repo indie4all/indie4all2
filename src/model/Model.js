@@ -8,6 +8,7 @@ export class Model {
 
     constructor(model) {
         Migrator.migrate(model);
+        this.version = model.version;
         this.i18n = I18n.getInstance();
         this.sections = model.sections ?? [];
         this.title = model.title;

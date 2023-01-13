@@ -7,27 +7,28 @@ export default class Migrator {
     };
 
     // Get the latest version
-    static CURRENT_MODEL_VERSION = Math.max(...Object.keys(this.VERSION_MIGRATIONS));
+    static CURRENT_MODEL_VERSION = Math.max(...Object.keys(this.VERSION_MIGRATIONS).map(v => parseInt(v)));
 
     static migrate(model) {
 
         if (!model.sections) {
-            model.CURRENT_MODEL_VERSION = Migrator.CURRENT_MODEL_VERSION;
+            model.version = Migrator.CURRENT_MODEL_VERSION;
             return;
         }
 
-        if (typeof model.CURRENT_MODEL_VERSION !== "number")
-            model.CURRENT_MODEL_VERSION = 0;
+        if (typeof model.version !== "number")
+            model.version = 0;
 
-        const version = Math.round(model.CURRENT_MODEL_VERSION);
+        const version = Math.round(model.version);
         if (version > Migrator.CURRENT_MODEL_VERSION)
             throw new Error("The current version of the model is not compatible with this tool.");
         if (version < Migrator.CURRENT_MODEL_VERSION) {
             Object.keys(Migrator.VERSION_MIGRATIONS)
+                .map(v => parseInt(v))
                 .filter(v => v >= version)
-                .sort().forEach(v => {
+                .sort((v1,v2) => v1 - v2).forEach(v => {
                     Migrator.VERSION_MIGRATIONS[v].run(model);
-                    model.CURRENT_MODEL_VERSION = v;
+                    model.version = v;
                 });
         }
     }

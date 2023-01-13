@@ -43,7 +43,8 @@
         "selectType": "Selecciona un tipo de las siguientes opciones",
         "preview": "Vista previa de la unidad",
         "publish": "Publicar unidad",
-        "download": "Exportar datos de la unidad"
+        "download": "Exportar datos de la unidad",
+        "save": "Guardar unidad"
     },
     "errors": {
         "AcordionContainer": {
@@ -469,7 +470,8 @@
         "redo": "Rehacer acción",
         "addSection": "Añadir sección",
         "importSection": "Importar sección",
-        "clear": "Limpiar contenido"
+        "clear": "Limpiar contenido",
+        "save": "Guardar contenido"
     },
     "items": {
         "add": "Añadir contenido",
@@ -500,8 +502,10 @@
         "noUndo": "Nada que deshacer",
         "previewError": "No se pudo previsualizar la unidad",
         "publishError": "No se pudo publicar la unidad",
+        "saveError": "No se pudo guardar la unidad",
         "successMessage": "Ok",
-        "warningMessage": "Atención"
+        "warningMessage": "Atención",
+        "savedUnit": "Unidad guardada con éxito"
     },
     "palette": {
         "containers": "Contenedores",

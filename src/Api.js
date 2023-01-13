@@ -18,6 +18,7 @@ export default class Api {
      * - `requestAdditionalDataOnPopulate`: (boolean) sets if the API should show a modal asking for additional information when publishing a unit. Default value: true.
      * - `previewBackendURL`: (string) server URL to preview the current unit. Default value: '/model/preview'.
      * - `publishBackendURL`: (string) server URL to publish the current unit. Default value: '/model/publish'.
+     * - `saveBackendURL`: (string) server URL to store the contents of the unit. Default value: '/model/save'.
      * - `scormBackendURL`: (string) server URL to generate a scorm package with the contents of the unit. Default value: '/model/scorm'.
      * - `encryptionKey`: (function|string|null) key to encrypt sensitive data. If null, no encryption is done.
      */
@@ -30,6 +31,7 @@ export default class Api {
             'requestAdditionalDataOnPopulate': false,
             'previewBackendURL': '/model/preview',
             'publishBackendURL': '/model/publish',
+            'saveBackendURL': '/model/save',
             'scormBackendURL': '/model/scorm',
             'encryptionKey': null
         }
@@ -408,6 +410,41 @@ export default class Api {
     }
 
     /**
+     * Stores the model in the server
+     */
+    save() {
+        const self = this;
+        const onSubmit = (model) => {
+            self.#author.showLoading();
+            const onGenerated = async (response) => {
+                // Wait until the modal is fully loaded (1 sec)
+                setTimeout(() => self.#author.hideLoading(), 1000);
+                if (!response.ok) {
+                    Utils.notifyError(this.#i18n.translate("messages.saveError"));
+                    return;
+                }
+                const json = await response.json();
+                if (json.success)
+                    Utils.notifySuccess(this.#i18n.translate("messages.savedUnit"));
+                else
+                    Utils.notifyError(this.#i18n.translate("messages.saveError"));
+            };
+            // Download the generated files
+            const headers = new Headers();
+            headers.append("Content-Type", "application/json");
+            const requestOptions = { method: 'POST', body: JSON.stringify(model), redirect: 'follow', headers };
+            fetch(this.#options['saveBackendURL'], requestOptions)
+                .then(onGenerated)
+                .catch(error => {
+                    console.log('error', error);
+                    self.#author.hideLoading(); 
+                });
+        };
+        const title = this.#i18n.translate("common.save");
+        this.#populateModel(title, onSubmit);
+    }
+
+    /**
      * Downloads the current model in XText format
      */
     download() {
@@ -440,7 +477,7 @@ export default class Api {
             // Download the generated files
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
-            const requestOptions = { method: 'PUT', body: JSON.stringify(model), redirect: 'follow', headers };
+            const requestOptions = { method: 'POST', body: JSON.stringify(model), redirect: 'follow', headers };
             fetch(this.#options['previewBackendURL'], requestOptions)
                 .then(onGenerated)
                 .catch(error => {
@@ -462,7 +499,7 @@ export default class Api {
             // Download the generated files
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
-            const requestOptions = { method: 'PUT', body: JSON.stringify(model), redirect: 'follow', headers };
+            const requestOptions = { method: 'POST', body: JSON.stringify(model), redirect: 'follow', headers };
             fetch(this.#options['scormBackendURL'], requestOptions)
                 .then(self.#onPublishModel.bind(self))
                 .catch(error => {
@@ -484,7 +521,7 @@ export default class Api {
             // Download the generated files
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
-            const requestOptions = { method: 'PUT', body: JSON.stringify(model), redirect: 'follow', headers };
+            const requestOptions = { method: 'POST', body: JSON.stringify(model), redirect: 'follow', headers };
             fetch(this.#options['publishBackendURL'], requestOptions)
                 .then(self.#onPublishModel.bind(self))
                 .catch(error => {

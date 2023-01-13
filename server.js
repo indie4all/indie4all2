@@ -95,7 +95,13 @@ app.use(`/${UNITS_FOLDER}/preview`, express.static(OUTPUT_FOLDER));
 // Parse JSON from POST body (for future validation)
 app.use(express.json({limit: '500mb'}));
 
-app.put('/model/preview', function(req, res) {
+app.post('/model/save', function(req, res) {
+    return res
+        .status(StatusCodes.OK)
+        .json({ success: true, message: "OK" });
+});
+
+app.post('/model/preview', function(req, res) {
     const onGenerated = (folder) => {
         copyAssets(`${folder}/${ASSETS_FOLDER}`, req.body.theme, "Local");
         return res.status(StatusCodes.OK).json({success: true, url: UNITS_FOLDER + "/" + folder });
@@ -103,11 +109,11 @@ app.put('/model/preview', function(req, res) {
     generate(req, res, onGenerated); 
 });
 
-app.put('/model/publish', function(req, res) {
+app.post('/model/publish', function(req, res) {
     generate(req, res, onPublishUnit.bind(this, res, OUTPUT_ZIPFILE));    
 });
 
-app.put('/model/scorm', function(req, res) {
+app.post('/model/scorm', function(req, res) {
     generate(req, res, onPublishUnit.bind(this, res, OUTPUT_SCORMFILE), "SCORM");    
 });
 

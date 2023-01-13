@@ -26,6 +26,7 @@ export function init(api) {
     $('.author-scorm').on('click', () => api.scorm()).data('title', i18n.value('header.scorm'));
     $('.author-preview').on('click', () => api.preview()).data('title', i18n.value('header.preview'));
     $('.author-validate').on('click', () => api.validate()).data('title', i18n.value('header.validate'));
+    $('.author-save').on('click', () => api.save()).data('title', i18n.value('header.save'));
     $('.author-upload').data('title', () => i18n.value('header.upload'));
     $('.author-download').on('click', () => api.download()).data('title', i18n.value('header.download'));
     $('.author-undo').on('click', () => api.undo()).data('title', i18n.value('header.undo'));

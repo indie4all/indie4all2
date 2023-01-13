@@ -43,7 +43,8 @@
         "selectType": "Select a type from the following options",
         "preview": "Unit preview",
         "publish": "Publish unit",
-        "download": "Export unit data"
+        "download": "Export unit data",
+        "save": "Save unit"
     },
     "errors": {
         "AcordionContainer": {
@@ -469,7 +470,8 @@
         "redo": "Redo action",
         "addSection": "Add section",
         "importSection": "Import section",
-        "clear": "Clear content"
+        "clear": "Clear content",
+        "save": "Save content"
     },
     "items": {
         "add": "Add content",
@@ -500,8 +502,10 @@
         "noUndo": "Nothing to undo",
         "previewError": "The unit could not be previewed",
         "publishError": "The unit could not be published",
+        "saveError": "The unit could not be saved",
         "successMessage": "Ok",
-        "warningMessage": "Atention"
+        "warningMessage": "Atention",
+        "savedUnit": "Unit successfully saved"
     },
     "palette": {
         "containers": "Containers",

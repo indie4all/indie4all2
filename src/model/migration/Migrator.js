@@ -2,11 +2,12 @@ import Migration9to10 from "./Migration9to10";
 
 export default class Migrator {
 
-    static CURRENT_MODEL_VERSION = 10;
-
     static VERSION_MIGRATIONS = {
         10: Migration9to10
     };
+
+    // Get the latest version
+    static CURRENT_MODEL_VERSION = Math.max(...Object.keys(this.VERSION_MIGRATIONS));
 
     static migrate(model) {
 

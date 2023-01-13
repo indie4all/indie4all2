@@ -132,6 +132,7 @@ export default class Api {
             const myModel = $.extend(true, {}, model);
             // Remove unnecessary fields for the exported model
             delete myModel.currentErrors;
+            delete myModel.i18n;
             $("#modal-settings").modal('hide');
             onSubmit && onSubmit(myModel);
         });
@@ -160,6 +161,7 @@ export default class Api {
             const myModel = $.extend(true, {}, this.#author.model);
             // Remove unnecessary fields for the exported model
             delete myModel.currentErrors;
+            delete myModel.i18n;
             onSubmit && onSubmit(myModel);
         }
     }

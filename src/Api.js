@@ -28,7 +28,7 @@ export default class Api {
         this.#container = container;
         this.#i18n = I18n.getInstance();
         this.#options = {
-            'requestAdditionalDataOnPopulate': false,
+            'requestAdditionalDataOnPopulate': true,
             'previewBackendURL': '/model/preview',
             'publishBackendURL': '/model/publish',
             'saveBackendURL': '/model/save',
@@ -149,7 +149,7 @@ export default class Api {
      * @param {string} title - Title of the modal window
      * @param {function} onSubmit - Action to perform when the model is ready to be populated
      */
-    #populateModel(title, onSubmit) {
+    #populateModel(onSubmit) {
         
         // Check if the model is valid before trying to download
         if (!this.validate()) {
@@ -158,7 +158,7 @@ export default class Api {
         }
 
         if (this.#options['requestAdditionalDataOnPopulate'])
-            this.#openUnitSettings(title, onSubmit);
+            this.#openUnitSettings(this.#i18n.value(`common.unit.settings`), onSubmit);
         else {
             const myModel = $.extend(true, {}, this.#author.model);
             // Remove unnecessary fields for the exported model
@@ -397,10 +397,14 @@ export default class Api {
     load(model, onLoaded, onError) {
         const self = this;
         try {
+            self.#author.showLoading();
             $(self.#container).toggle(1000, function() {
                 $(self.#container).empty();
                 self.#author.loadModelIntoPlugin(model);
-                $(self.#container).toggle(1000, onLoaded);
+                $(self.#container).toggle(1000, () => {
+                    self.#author.hideLoading();
+                    onLoaded && onLoaded();
+                });
             });
         } catch (err) {
             $(self.#container).empty();
@@ -415,7 +419,9 @@ export default class Api {
     save() {
         const self = this;
         const onSubmit = (model) => {
-            self.#author.showLoading();
+            const title = this.#i18n.value("common.save.title");
+            const description = this.#i18n.value("common.save.description");
+            self.#author.showLoading(title, description);
             const onGenerated = async (response) => {
                 // Wait until the modal is fully loaded (1 sec)
                 setTimeout(() => self.#author.hideLoading(), 1000);
@@ -440,8 +446,7 @@ export default class Api {
                     self.#author.hideLoading(); 
                 });
         };
-        const title = this.#i18n.translate("common.save");
-        this.#populateModel(title, onSubmit);
+        this.#populateModel(onSubmit);
     }
 
     /**
@@ -453,8 +458,7 @@ export default class Api {
             const file = new File([JSON.stringify(model, null, 2)], "model.json", { type: "application/json" });
             self.#downloadFile(file);
         };
-        const title = this.#i18n.translate("common.download");
-        this.#populateModel(title, onSubmit);
+        this.#populateModel(onSubmit);
     }
 
     /**
@@ -463,7 +467,9 @@ export default class Api {
     preview() {
         const self = this;
         const onSubmit = (model) => {
-            self.#author.showLoading();
+            const title = this.#i18n.value("common.preview.title");
+            const description = this.#i18n.value("common.preview.description");
+            self.#author.showLoading(title, description);
             const onGenerated = async (response) => {
                 // Wait until the modal is fully loaded (1 sec)
                 setTimeout(() => self.#author.hideLoading(), 1000);
@@ -472,7 +478,10 @@ export default class Api {
                     return;
                 }
                 const json = await response.json();
-                window.open(json.url, '_blank'); 
+                window.open(json.url, '_blank');
+                $('#modal-preview-generated-url').html(json.url);
+                $('#modal-preview-generated-url').attr('href', json.url);
+                $('#modal-preview-generated').modal({show: true, backdrop: true});
             };
             // Download the generated files
             const headers = new Headers();
@@ -485,8 +494,7 @@ export default class Api {
                     self.#author.hideLoading(); 
                 });
         }
-        const title = this.#i18n.translate("common.preview");
-        self.#populateModel(title, onSubmit);
+        self.#populateModel(onSubmit);
     }
 
     /**
@@ -495,7 +503,9 @@ export default class Api {
     scorm() {
         const self = this;
         const onSubmit = (model) => {
-            self.#author.showLoading();
+            const title = this.#i18n.value("common.scorm.title");
+            const description = this.#i18n.value("common.scorm.description");
+            self.#author.showLoading(title, description);
             // Download the generated files
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
@@ -507,8 +517,7 @@ export default class Api {
                     self.#author.hideLoading(); 
                 });
         }
-        const title = this.#i18n.translate("common.publish");
-        this.#populateModel(title, onSubmit);
+        this.#populateModel(onSubmit);
     }
 
     /**
@@ -517,7 +526,9 @@ export default class Api {
     publish() {
         const self = this;
         const onSubmit = (model) => {
-            self.#author.showLoading();
+            const title = this.#i18n.value("common.publish.title");
+            const description = this.#i18n.value("common.publish.description");
+            self.#author.showLoading(title, description);
             // Download the generated files
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
@@ -529,7 +540,6 @@ export default class Api {
                     self.#author.hideLoading(); 
                 });
         }
-        const title = this.#i18n.translate("common.publish");
-        this.#populateModel(title, onSubmit);        
+        this.#populateModel(onSubmit);        
     }
 }

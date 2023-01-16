@@ -36,15 +36,42 @@
             "placeholder": "Example: https://indiemedia.upct.es/descriptions.vtt",
             "help": "INDIeMedia URL of the file containing text descriptions of what happens in the video for when the part of the video is not available because the viewer is blind and does not use a screen. Descriptions are read by a screen reader or converted to a separate audio track."
         },
+        "download": {
+            "title": "Downloading",
+            "description": "Downloading unit, please wait"
+        },
+        "generate": {
+            "title": "Generating",
+            "description": "Generating, please wait"
+        },
         "loading": {
             "title": "Loading",
-            "description": "Generating unit..."
+            "description": "Loading, please wait"
         },
-        "selectType": "Select a type from the following options",
-        "preview": "Unit preview",
-        "publish": "Publish unit",
-        "download": "Export unit data",
-        "save": "Save unit"
+        "preview": {
+            "title": "Generating preview",
+            "description": "Your preview is being generated, please wait",
+            "generated": {
+                "title": "Preview successfully generated",
+                "description": "Your preview is ready. If your browser does not redirect you to the preview, click on the link below:"
+            }
+        },
+        "publish": {
+            "title": "Publishing unit",
+            "description": "Your unit is being generated for its download, please wait"
+        },
+        "save": {
+            "title": "Saving",
+            "description": "Saving, please wait"
+        },
+        "scorm": {
+            "title": "Generating scorm",
+            "description": "Your scorm package is being generated, please wait"
+        },
+        "unit": {
+            "settings": "Enter unit data"
+        },
+        "selectType": "Select a type from the following options"
     },
     "errors": {
         "AcordionContainer": {
@@ -451,6 +478,7 @@
     "general": {
         "areYouSure": "Are you sure?",
         "cancel": "Cancel",
+        "close": "Close",
         "confirm": "Confirm",
         "delete": "Delete",
         "discard": "Discard",

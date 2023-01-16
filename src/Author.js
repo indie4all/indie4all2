@@ -15,6 +15,8 @@ import widgetsJson from "./model/widgets/widgets.json"
 import alertErrorTemplate from "./views/alertError.hbs";
 import categoryTemplate from "./views/category.hbs"
 import loadingTemplate from "./views/loading.hbs"
+import settingsTemplate from "./views/modal-settings.hbs"
+import previewGeneratedTemplate from "./views/preview-generated.hbs"
 import "./styles/common-styles.scss";
 
 export default class Author {
@@ -35,10 +37,14 @@ export default class Author {
         this.palette = palette;
         this.container = container;
         !$('#modal-loading').length && $(this.container).after(loadingTemplate());
+        !$('#modal-settings').length && $(this.container).after(settingsTemplate());
+        !$('#modal-preview-generated').length && $(this.container).after(previewGeneratedTemplate());
     }
 
-    showLoading() {
+    showLoading(title, message) {
         const $modal = $('#modal-loading');
+        $modal.find('#modal-loading-title').html(title ?? this.i18n.value("common.loading.title"));
+        $modal.find('#modal-loading-description').html(message ?? this.i18n.value("common.loading.description"));
         $modal.modal({ show: true, keyboard: false, backdrop: 'static'});
     }
 

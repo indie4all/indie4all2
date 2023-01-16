@@ -36,15 +36,42 @@
             "placeholder": "Ejemplo: https://indiemedia.upct.es/descriptions.vtt",
             "help": "URL de INDIeMedia del fichero que contiene descripciones de texto de lo que sucede en el video para cuando la parte del video no está disponible porque el espectador es ciego y no usa una pantalla. Las descripciones son leídas por un lector de pantalla o convertidas en una pista de audio separada."
         },
+        "download": {
+            "title": "Descargando",
+            "description": "Descargando unidad, por favor espere"
+        },
+        "generate": {
+            "title": "Generando",
+            "description": "Generando, por favor espere"
+        },
         "loading": {
             "title": "Cargando",
-            "description": "Generando unidad..."
+            "description": "Cargando, por favor espere"
         },
-        "selectType": "Selecciona un tipo de las siguientes opciones",
-        "preview": "Vista previa de la unidad",
-        "publish": "Publicar unidad",
-        "download": "Exportar datos de la unidad",
-        "save": "Guardar unidad"
+        "preview": {
+            "title": "Generando vista previa",
+            "description": "Tu vista previa está siendo generada, por favor espere",
+            "generated": {
+                "title": "Vista previa generada correctamente",
+                "description": "Tu vista previa está lista. Si tu navegador no te redirecciona a la vista previa, haz clic en el enlace que aparece a continuación:"
+            }
+        },
+        "publish": {
+            "title": "Publicando unidad",
+            "description": "Tu unidad está siendo generada para su descarga, por favor espere"
+        },
+        "save": {
+            "title": "Guardando",
+            "description": "Guardando, por favor espere"
+        },
+        "scorm": {
+            "title": "Generando paquete SCORM",
+            "description": "Tu paquete SCORM está siendo generado, por favor espere"
+        },
+        "unit": {
+            "settings": "Introduce los datos de la unidad"
+        },
+        "selectType": "Selecciona un tipo de las siguientes opciones"
     },
     "errors": {
         "AcordionContainer": {
@@ -451,6 +478,7 @@
     "general": {
         "areYouSure": "¿Estás seguro?",
         "cancel": "Cancelar",
+        "close": "Cerrar",
         "confirm": "Confirmar",
         "delete": "Eliminar",
         "discard": "Descartar",

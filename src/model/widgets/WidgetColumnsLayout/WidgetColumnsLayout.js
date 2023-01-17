@@ -1,6 +1,7 @@
 import template from "./template.hbs"
 import WidgetElement from "../WidgetElement/WidgetElement";
 import ModelManager from "../../ModelManager";
+import "./styles.scss"
 
 export default class WidgetColumnsLayout extends WidgetElement {
 

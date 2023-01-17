@@ -1,11 +1,11 @@
 <div class="container-item">
     <div class="widget-base widget-column-layout" data-type="{{type}}" data-widget="{{widget}}" data-id="{{id}}">
-        <div class="widget">
-            <div class="b1">
+        <div class="widget flex-column flex-md-row">
+            <div class="b1 col-auto d-none d-md-inline-block">
                 <img src="{{{icon}}}" class="img-fluid drag-item">
             </div>
-            <div class="b2" data-prev>{{translate "widgets.ColumnLayout.label"}}</div>
-            <div class="b3" data-toolbar>
+            <div class="b2 col-12 col-md-auto" data-prev>{{translate "widgets.ColumnLayout.label"}}</div>
+            <div class="b3 col-12 col-md-auto ml-auto" data-toolbar>
                 {{#if canEdit}}
                 <button class="author-edit-element btn btn-sm btn-success" data-toggle="tooltip" title="{{translate "items.edit"}}">
                     <i class="fa fa-edit"></i>
@@ -25,9 +25,9 @@
                 </button>
             </div>
         </div>
-        <div class="row">
+        <div class="row no-gutters">
             {{#each columns}}
-            <div class="col-{{this}}">
+            <div class="col-12 col-md-{{this}}">
                 <div data-role="container" data-widget="{{../widget}}" data-type="{{../type}}"
                     data-index="{{@index}}" class="element-container dragula-container">
                     {{{lookup ../children @index}}}

@@ -1,0 +1,19 @@
+.widget-column-layout {
+    .widget-textblock {
+        .b2 {
+            max-width: 450px;
+        }
+    }
+
+    @media all and (min-width: 768px) {
+        .widget {
+            .b2 {
+                max-width: 140px;
+                white-space: nowrap;
+                overflow: hidden;
+                padding: 0 12px;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}

@@ -9,6 +9,9 @@
             "label": "Nombre",
             "placeholder": "Nombre de la instancia del widget"
         },
+        "navbar": {
+            "options": "Expandir/contraer opciones"
+        },
         "alt": {
             "help": "Este es el texto alternativo de descripción para la imagen en materia de accesibilidad",
             "label": "Texto alternativo para la imagen",

@@ -9,6 +9,9 @@
             "label": "Name",
             "placeholder": "Name of this current widget instance"
         },
+        "navbar": {
+            "options": "Expand/collapse options"
+        },
         "alt": {
             "help": "This is the alternative text for the image in terms of accesibility",
             "label": "Alternative text for the image",

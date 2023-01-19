@@ -29,13 +29,13 @@ export default class WidgetButtonTextItem extends WidgetItemElement {
             id: id ?? Utils.generate_uuid(),
             type: this.config.type,
             widget: this.config.widget,
-            data: { text: "", image: "", alt: "" } };
+            data: { text: "", blob: "", alt: "" } };
     }
 
     getInputs(model) {
         const data = {
             instanceId: model.id,
-            image: model.data.image,
+            blob: model.data.blob,
             alt: model.data.alt,
         }
 
@@ -52,11 +52,32 @@ export default class WidgetButtonTextItem extends WidgetItemElement {
     settingsOpened(model) {
         let $editor = $('#f-' + model.id + ' .texteditor');
         this.initTextEditor(model.data.text, $editor);
+        const $form = $('#f-' + model.id);
+        const $iImg = $form.find('input[name=image]');
+        const $iBlob = $form.find('input[name=blob]');
+        const $preview = $form.find('.img-preview');
+        const $sectionPreview = $preview.closest('.form-group');
+        $iImg.prop('required', !model.data.blob);
+        $sectionPreview.toggleClass('d-none', !model.data.blob);
+        $iImg.on('change', function () {
+            $iBlob.val('');
+            $iImg.prop('required', true);
+            $preview.attr('src', '');
+            $sectionPreview.toggleClass('d-none', true);
+            if (this.files[0]) {
+                Utils.encodeBlobAsBase64DataURL(this.files[0]).then(value => {
+                    $iImg.prop('required', false);
+                    $iBlob.val(value);
+                    $preview.attr('src', value);
+                    $sectionPreview.toggleClass('d-none', false);
+                });
+            }
+        });
     }
 
     updateModelFromForm(model, form) {
         model.data.text = this.clearAndSanitizeHtml(form.text);
-        model.data.image = form.image;
+        model.data.blob = form.blob;
         model.data.alt = form.alt;
     }
 
@@ -64,7 +85,7 @@ export default class WidgetButtonTextItem extends WidgetItemElement {
         var errors = [];
         if (widget.data.text.length == 0) errors.push("ButtonTextItem.text.invalid");
         if (this.isEmptyText(widget.data.text)) errors.push("TextBlock.text.invalid");
-        if (!Utils.isIndieResource(widget.data.image)) errors.push("ButtonTextItem.image.invalid");
+        if (!Utils.isValidBase64DataUrl(widget.data.blob)) errors.push("common.imageblob.invalid");
         if (Utils.isStringEmptyOrWhitespace(widget.data.alt)) errors.push("common.alt.invalid");
         return errors;
     }
@@ -73,7 +94,7 @@ export default class WidgetButtonTextItem extends WidgetItemElement {
         var errors = [];
         if (form.text.length == 0) errors.push("ButtonTextItem.text.invalid");
         if (this.isEmptyText(form.text)) errors.push("TextBlock.text.invalid");
-        if (!Utils.isIndieResource(form.image)) errors.push("ButtonTextItem.image.invalid");
+        if (!Utils.isValidBase64DataUrl(form.blob)) errors.push("common.imageblob.invalid");
         if (Utils.isStringEmptyOrWhitespace(form.alt)) errors.push("common.alt.invalid")
         return errors;
     }

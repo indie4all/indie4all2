@@ -5,8 +5,6 @@ import './styles.scss';
 
 export default class WidgetElement extends ModelElement {
 
-    config = {};
-
     paleteHidden = false
 
     createPaletteItem() {

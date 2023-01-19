@@ -2,6 +2,8 @@ import I18n from "../I18n";
 
 export default class ModelElement {
 
+    config = {};
+
     createElement(data) {}
     
     emptyData(index) {}

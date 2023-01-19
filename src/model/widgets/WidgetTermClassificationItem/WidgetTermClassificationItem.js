@@ -41,7 +41,7 @@ export default class WidgetTermClassificationItem extends WidgetItemElement {
             return terms.map(t => t.trim()).reduce((pv, cv) => pv + ";" + cv);
         },
         matchTerms: function (terms) {
-            const regex = /^[\w\s]+(;[\w\s]*)*$/;
+            const regex = /^[\p{L}\s]+(;[\p{L}\s]*)*$/u;
             if (Utils.isStringEmptyOrWhitespace(terms)) return false;
             return regex.test(terms);
         }

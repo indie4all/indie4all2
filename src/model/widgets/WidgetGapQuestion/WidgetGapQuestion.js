@@ -79,7 +79,7 @@ export default class WidgetGapQuestion extends WidgetItemElement {
     }
 
     preview(model) {
-        return model.data?.question ?? this.translate("widgets.GapQuestion.prev");
+        return model.data?.question ? model.data.question : this.translate("widgets.GapQuestion.prev");
     }
 
     settingsClosed(model) {

@@ -64,7 +64,7 @@ export default class WidgetSimpleQuestion extends WidgetItemElement {
     }
 
     preview(model) {
-        return model.data?.question ?? this.translate("widgets.SimpleQuestion.prev");
+        return model.data?.question ? model.data.question : this.translate("widgets.SimpleQuestion.prev");
     }
 
     updateModelFromForm(model, form) {

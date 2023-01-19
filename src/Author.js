@@ -94,7 +94,7 @@ export default class Author {
         let copy = this.model.copyElement(section);
         const action = new ActionAddSection(this.container, this.model, {
             element: copy,
-            position: (this.model.sections.length - 1)
+            position: this.model.sections.length
         });
         this.undoredo.pushAndExecuteCommand(action);
     }

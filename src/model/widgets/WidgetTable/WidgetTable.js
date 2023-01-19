@@ -80,7 +80,7 @@ export default class WidgetTable extends WidgetItemElement {
         let $form = $('#f-' + model.id);
         const $table = $('#table');
         const deleteColumnStr = I18n.getInstance().translate("widgets.Table.form.deleteColumn");
-        const deleteColumnIcon = "<button title='" + deleteColumnStr + "' class='btn btn-danger fa fa-times btn-delete-column'></button>";
+        const deleteColumnIcon = "<button title='" + deleteColumnStr + "' class='btn btn-danger btn-delete-column'><i class='fa fa-times'></i></button>";
         let toColumn = (column) => { return { title: column + deleteColumnIcon, data: column } };
         let toRow = (row, idx) => { return { ...row, "DT_RowId": idx } }
         let obj = this;

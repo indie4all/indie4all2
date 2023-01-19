@@ -40,8 +40,8 @@ export default class WidgetTwoColumnsLayout extends WidgetColumnsLayout {
         const $container = $(`[data-id="${modelObject.id}"]`).find('.row');
         const $firstColumn = $container.children().eq(0);
         const $secondColumn = $container.children().eq(1);
-        $firstColumn.removeClass().addClass(`col-${width}`);
-        $secondColumn.removeClass().addClass(`col-${12 - width}`);
+        $firstColumn.removeClass().addClass(`col-md-${width}`);
+        $secondColumn.removeClass().addClass(`col-md-${12 - width}`);
     }
 
     updateModelFromForm(model, form) {

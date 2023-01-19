@@ -11,18 +11,19 @@ export default class ActionAddElement extends ActionElement {
         this.parentContainerId = data.parentContainerId;
         this.parentContainerIndex = data.parentContainerIndex;
         this.inPositionElementId = data.inPositionElementId;
-        this.parentContainer = document.querySelector("[data-id='" + this.parentContainerId + "']");
-        this.parentElement = this.model.findObject(this.parentContainerId);
     }
 
     do() {
+
+        const parentContainer = document.querySelector("[data-id='" + this.parentContainerId + "']");
+        const parentElement = this.model.findObject(this.parentContainerId);
         const view = ModelManager.getWidget(this.element.widget).createElement(this.element);
         let target;
-        if (this.parentElement.type == 'layout') {
-            target = this.parentContainer.querySelector('[data-index="' + this.parentContainerIndex + '"');
+        if (parentElement.type == 'layout') {
+            target = parentContainer.querySelector('[data-index="' + this.parentContainerIndex + '"');
             this.model.appendObject(this.element, this.inPositionElementId, this.parentContainerId, this.parentContainerIndex);
         } else {
-            target = this.parentContainer.querySelector('[data-content]');
+            target = parentContainer.querySelector('[data-content]');
             this.model.appendObject(this.element, this.inPositionElementId, this.parentContainerId);
         }
 

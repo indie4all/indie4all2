@@ -119,7 +119,7 @@ export function init(api) {
     });
 
     // Tooltips
-    $("body").tooltip({ selector: "[data-toggle='tooltip']", placement: 'left'});
+    $("body").tooltip({ selector: "[data-toggle='tooltip']", trigger: 'hover', placement: 'left'});
     // Activate navbar toggler collapse
     $("body").on('click', '[data-author-toggle="collapse"]', function() { $($(this).data('target')).collapse('toggle') });
 

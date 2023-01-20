@@ -5058,7 +5058,7 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
             let $audio = $('#' + $img.attr('data-sound'));
             $audio[0].currentTime = 0;
 			// Remove captions
-			$(this).find('.image-sound-term-content').empty();
+			$(this).closest('.image-sound-list-item').find('.image-sound-term-content').empty();
         }
 
 		let pauseAll = function() {
@@ -5160,7 +5160,7 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
                             {
                                 content += cues[i].text + '<br><br>'
                             }
-                            $self.parent().find('.image-sound-term-content').html(content.replace(/\n/g, '<br>'));	
+                            $self.closest('.image-sound-list-item').find('.image-sound-term-content').html(content.replace(/\n/g, '<br>'));	
                         }
                     };
                 }

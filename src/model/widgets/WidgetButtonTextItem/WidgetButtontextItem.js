@@ -46,7 +46,7 @@ export default class WidgetButtonTextItem extends WidgetItemElement {
     }
 
     preview(model) {
-        return model.data?.alt ?? this.translate("widgets.ButtonTextItem.prev");
+        return model.data?.alt ? model.data.alt : this.translate("widgets.ButtonTextItem.prev");
     }
 
     settingsOpened(model) {

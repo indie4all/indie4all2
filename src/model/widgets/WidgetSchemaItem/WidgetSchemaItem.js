@@ -37,7 +37,7 @@ export default class WidgetSchemaItem extends WidgetItemElement {
     }
 
     preview(model) {
-        return model.data?.alt ?? this.translate("widgets.SchemaItem.prev");
+        return model.data?.alt ? model.data.alt : this.translate("widgets.SchemaItem.prev");
     }
 
     settingsOpened(model) {

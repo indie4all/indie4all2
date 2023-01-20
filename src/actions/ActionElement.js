@@ -1,7 +1,6 @@
 export default class ActionElement {
 
-    constructor(container, model, data) {
-        this.container = container;
+    constructor(model, data) {
         this.model = model;
         this.data = data;
     }

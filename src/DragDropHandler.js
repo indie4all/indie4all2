@@ -117,7 +117,7 @@ export default class DragDropHandler {
             parentContainer = this.model.findObject(containerId);
             initialPosition = Utils.findIndexObjectInArray(parentContainer.data, 'id', elementId);
         }
-        const action = new ActionMoveElement(this.container, this.model, {
+        const action = new ActionMoveElement(this.model, {
             containerType, containerIndex, containerId, initialPosition, finalPosition: newPosition
         });
         this.undoredo.pushCommand(action);
@@ -165,7 +165,7 @@ export default class DragDropHandler {
 
         // For command
         
-        this.undoredo.pushCommand(new ActionMoveContainer(this.container, this.model, {
+        this.undoredo.pushCommand(new ActionMoveContainer(this.model, {
             source: {
                 id: parentElement.id,
                 type: parentElement.type,
@@ -197,7 +197,7 @@ export default class DragDropHandler {
         $(el).replaceWith(elementToBeAppended);
         const modelObject = this.model.createWidget(widget, dataElementId);
         this.model.appendObject(modelObject, inPositionElementId, parentContainerId, parentContainerIndex);
-        this.undoredo.pushCommand(new ActionAddElement(this.container, this.model, {
+        this.undoredo.pushCommand(new ActionAddElement(this.model, {
             element: $.extend({}, modelObject),
             parentType, parentContainerIndex, parentContainerId, inPositionElementId
         }));

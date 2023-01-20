@@ -6,7 +6,7 @@ export default class ActionMoveContainer extends ActionElement {
     
     do() {
         // Remove element from current location
-        (new ActionRemoveElement(this.container, this.model, this.data)).do();
+        (new ActionRemoveElement(this.model, this.data)).do();
 
         // Add element to the target location   
         var targetParent = this.model.findObject(this.data.target.id);
@@ -19,7 +19,7 @@ export default class ActionMoveContainer extends ActionElement {
         else
             inPosition = elementsArray[this.data.target.position].id;
         
-        (new ActionAddElement(this.container,this.model, 
+        (new ActionAddElement(this.model, 
             { element: this.data.element,
               parentContainerId: this.data.target.id,
               parentContainerIndex: this.data.target.index,
@@ -29,7 +29,7 @@ export default class ActionMoveContainer extends ActionElement {
     undo() {
         
         // Remove element from current location
-        (new ActionRemoveElement(this.container, this.model, this.data)).do();
+        (new ActionRemoveElement(this.model, this.data)).do();
 
         // Add element to the original location  
         var sourceParent = this.model.findObject(this.data.source.id);
@@ -42,7 +42,7 @@ export default class ActionMoveContainer extends ActionElement {
         else
             inPosition = elementsArray[this.data.source.position].id;
 
-        (new ActionAddElement(this.container, this.model, 
+        (new ActionAddElement(this.model, 
             {element: this.data.element, 
              parentContainerId: this.data.source.id,
              parentContainerIndex: this.data.source.index,

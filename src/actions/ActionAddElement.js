@@ -5,8 +5,8 @@ import ActionRemoveElement from "./ActionRemoveElement";
 
 export default class ActionAddElement extends ActionElement {
 
-    constructor(container, model, data) {
-        super(container, model, data);
+    constructor(model, data) {
+        super(model, data);
         this.element = data.element;
         this.parentContainerId = data.parentContainerId;
         this.parentContainerIndex = data.parentContainerIndex;
@@ -37,6 +37,6 @@ export default class ActionAddElement extends ActionElement {
     }
 
     undo() {
-        (new ActionRemoveElement(this.container, this.model, this.data)).do();
+        (new ActionRemoveElement(this.model, this.data)).do();
     }
 }

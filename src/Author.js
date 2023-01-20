@@ -77,7 +77,7 @@ export default class Author {
         const position = Utils.findIndexObjectInArray(this.model.sections, "id", sectionId);
         const section = this.model.sections[position];
         let copy = this.model.copyElement(element);
-        const action = new ActionAddElement(this.container, this.model, {
+        const action = new ActionAddElement(this.model, {
             element: copy,
             parentContainerIndex: this.model.sections.indexOf(section),
             parentContainerId: section.id,
@@ -92,9 +92,10 @@ export default class Author {
      */
     copyModelSection(section) {
         let copy = this.model.copyElement(section);
-        const action = new ActionAddSection(this.container, this.model, {
+        const action = new ActionAddSection(this.model, {
             element: copy,
-            position: this.model.sections.length
+            position: this.model.sections.length,
+            container: this.container
         });
         this.undoredo.pushAndExecuteCommand(action);
     }
@@ -104,9 +105,10 @@ export default class Author {
      */
     addSection() {
         const section = ModelManager.getSection().emptyData(this.model.sections.length + 1);
-        const action = new ActionAddSection(this.container, this.model, {
+        const action = new ActionAddSection(this.model, {
             element: section,
-            position: this.model.sections.length
+            position: this.model.sections.length,
+            container: this.container
         });
         this.undoredo.pushAndExecuteCommand(action);
     }
@@ -116,9 +118,10 @@ export default class Author {
      * @param {string} sectionId - Section ID
      */
     removeSection(sectionId) {
-        const action = new ActionRemoveSection(this.container, this.model, {
+        const action = new ActionRemoveSection(this.model, {
             element: $.extend({}, this.model.findObject(sectionId)),
-            position: Utils.findIndexObjectInArray(this.model.sections, "id", sectionId)
+            position: Utils.findIndexObjectInArray(this.model.sections, "id", sectionId),
+            container: this.container
         });
         this.undoredo.pushAndExecuteCommand(action);
         Utils.notifySuccess(this.i18n.translate("messages.deletedSection"));
@@ -130,7 +133,7 @@ export default class Author {
      * @param {number} direction 1 up, 0 down
      */
     swap(sectionOriginId, direction) {
-        const action = new ActionSwapSections(this.container, this.model, {
+        const action = new ActionSwapSections(this.model, {
             sectionOriginId: sectionOriginId,
             direction: direction
         });
@@ -230,7 +233,7 @@ export default class Author {
         if (positionIndex < container.length)
             inPositionElementId = container[positionIndex + 1].id;
 
-        const action = new ActionRemoveElement(this.container, this.model, {
+        const action = new ActionRemoveElement(this.model, {
             element: $.extend({}, elementToBeRemoved),
             parentContainerIndex,
             parentContainerId,
@@ -281,7 +284,7 @@ export default class Author {
         const parentContainerId = $(target).closest('[data-id]')[0].dataset.id;
         const inPositionElementId = -1;
         const modelObject = this.model.createWidget(widgetTypeToCreate);
-        const action = new ActionAddElement(this.container, this.model, {
+        const action = new ActionAddElement(this.model, {
             element: modelObject,
             parentContainerIndex: -1,
             parentContainerId,

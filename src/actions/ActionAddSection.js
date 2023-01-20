@@ -10,15 +10,15 @@ export default class ActionAddSection extends ActionElement {
         const view = ModelManager.getSection().createElement(element);
         const position = this.data.position;
         if (position == this.model.sections.length) {
-            $(this.container).append(view);
+            $(this.data.container).append(view);
             this.model.sections.push(element);
         } else {
-            $(view).insertBefore(this.container.children[position]);
+            $(view).insertBefore(this.data.container.children[position]);
             this.model.sections.splice(position, 0, element);
         }
     }
 
     undo() {
-        (new ActionRemoveSection(this.container, this.model, this.data)).do();
+        (new ActionRemoveSection(this.model, this.data)).do();
     }
 }

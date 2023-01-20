@@ -69,21 +69,29 @@ export default class Author {
     }
 
     /**
+     * Adds a new element to a container
+     * @param {object} modelElement - Model Element data
+     * @param {*} parentContainerId - ID of the container to add the element
+     */
+    addModelElement(modelElement, parentContainerId) {
+        const action = new ActionAddElement(this.model, {
+            element: modelElement,
+            // Only important for columns, and we cannot add items in columns without dragging
+            parentContainerIndex: -1,
+            parentContainerId,
+            // Add the element at the end of its container
+            inPositionElementId: -1
+        });
+        this.undoredo.pushAndExecuteCommand(action);
+    }
+
+    /**
      * Duplicates a given model element
      * @param {object} element - Model Element data
      * @param {id} sectionId - Section ID
      */
     copyModelElement(element, sectionId) {
-        const position = Utils.findIndexObjectInArray(this.model.sections, "id", sectionId);
-        const section = this.model.sections[position];
-        let copy = this.model.copyElement(element);
-        const action = new ActionAddElement(this.model, {
-            element: copy,
-            parentContainerIndex: this.model.sections.indexOf(section),
-            parentContainerId: section.id,
-            inPositionElementId: -1
-        });
-        this.undoredo.pushAndExecuteCommand(action);
+        this.addModelElement(this.model.copyElement(element), sectionId);
     }
 
     /**
@@ -91,20 +99,14 @@ export default class Author {
      * @param {object} section - section data
      */
     copyModelSection(section) {
-        let copy = this.model.copyElement(section);
-        const action = new ActionAddSection(this.model, {
-            element: copy,
-            position: this.model.sections.length,
-            container: this.container
-        });
-        this.undoredo.pushAndExecuteCommand(action);
+        this.addSection(this.model.copyElement(section));
     }
 
     /**
      * Adds a new empty section
      */
-    addSection() {
-        const section = ModelManager.getSection().emptyData(this.model.sections.length + 1);
+    addSection(modelSection) {
+        const section = modelSection ?? ModelManager.getSection().emptyData(this.model.sections.length + 1);
         const action = new ActionAddSection(this.model, {
             element: section,
             position: this.model.sections.length,
@@ -280,17 +282,7 @@ export default class Author {
      * @param {string} widgetTypeToCreate - Type of widget
      */
     addSpecificContent(containerId, widgetTypeToCreate) {
-        const target = document.querySelector('[data-id="' + containerId + '"]');
-        const parentContainerId = $(target).closest('[data-id]')[0].dataset.id;
-        const inPositionElementId = -1;
-        const modelObject = this.model.createWidget(widgetTypeToCreate);
-        const action = new ActionAddElement(this.model, {
-            element: modelObject,
-            parentContainerIndex: -1,
-            parentContainerId,
-            inPositionElementId
-        });
-        this.undoredo.pushAndExecuteCommand(action);
+        this.addModelElement(this.model.createWidget(widgetTypeToCreate), containerId);
     }
 
     /**

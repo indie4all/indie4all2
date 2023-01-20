@@ -4,49 +4,23 @@ import ActionRemoveElement from "./ActionRemoveElement";
 
 export default class ActionMoveContainer extends ActionElement {
     
-    do() {
+    #move(target) {
         // Remove element from current location
         (new ActionRemoveElement(this.model, this.data)).do();
-
         // Add element to the target location   
-        var targetParent = this.model.findObject(this.data.target.id);
-        var inPosition;
-        var elementsArray = (targetParent.type == 'layout') ? targetParent.data[this.data.target.index] : targetParent.data;
-
-        if (this.data.target.position == -1 || elementsArray.length == 0 || 
-            this.data.target.position >= elementsArray.length)
-            inPosition = -1;
-        else
-            inPosition = elementsArray[this.data.target.position].id;
+        const targetParent = this.model.findObject(target.id);    
+        const siblings = (targetParent.type == 'layout') ? targetParent.data[target.index] : targetParent.data;
+        const inPosition = (target.position == -1 || siblings.length == 0 || target.position >= siblings.length) ?
+            -1 : siblings[target.position].id;
         
         (new ActionAddElement(this.model, 
             { element: this.data.element,
-              parentContainerId: this.data.target.id,
-              parentContainerIndex: this.data.target.index,
+              parentContainerId: target.id,
+              parentContainerIndex: target.index,
               inPositionElementId: inPosition})).do()
     }
 
-    undo() {
-        
-        // Remove element from current location
-        (new ActionRemoveElement(this.model, this.data)).do();
+    do() { this.#move(this.data.target); }
 
-        // Add element to the original location  
-        var sourceParent = this.model.findObject(this.data.source.id);
-        var inPosition;
-        var elementsArray = (sourceParent.type == 'layout') ? sourceParent.data[this.data.source.index] : sourceParent.data;
-
-        if (this.data.source.position == -1 || elementsArray.length == 0 ||
-            this.data.source.position >= elementsArray.length)
-            inPosition = -1;
-        else
-            inPosition = elementsArray[this.data.source.position].id;
-
-        (new ActionAddElement(this.model, 
-            {element: this.data.element, 
-             parentContainerId: this.data.source.id,
-             parentContainerIndex: this.data.source.index,
-             inPositionElementId: inPosition
-            })).do();
-    }
+    undo() { this.#move(this.data.source); }
 }

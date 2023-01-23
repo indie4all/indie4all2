@@ -88,18 +88,12 @@ export class Model {
     }
     
     findObject(dataElementId) {
-        var elementsArray = this.sections;
-        var elementSearch;
-
-        for (var i = 0; i < elementsArray.length; i++) {
-            var element = elementsArray[i];
-            elementSearch = this.findElementOrSubelementInModel(element, dataElementId);
-
-            if (elementSearch)
-                break;
+        const arr = this.sections;
+        let result;
+        for (var i = 0; i < arr.length; i++) {
+            result = this.findElementOrSubelementInModel(arr[i], dataElementId);
+            if (result) return result;
         }
-
-        return elementSearch;
     }
 
     findElementOrSubelementInModel(element, dataElementId) {
@@ -107,9 +101,7 @@ export class Model {
         if (element.id == dataElementId)
             return element;
 
-        const modelElement = element.widget && element.widget !== 'Section' ? ModelManager.getWidget(element.widget) : 
-            ModelManager.getSection();
-        if (modelElement.hasChildren()) {
+        if (ModelManager.hasChildren(element)) {
             var elementsArray = element.type == 'layout' ? [].concat.apply([], element.data) : element.data;
             for (var i = 0; i < elementsArray.length; i++) {
                 const result = this.findElementOrSubelementInModel(elementsArray[i], dataElementId);
@@ -120,24 +112,22 @@ export class Model {
 
     findParentOfObject(dataElementId) {
 
-        const findParent = function (parent, elementArray, elementId) {
-            for (let i = 0; i < elementArray.length; i++) {
-                let element = elementArray[i];
-                if (element.id == elementId)
-                    return parent;
-                
-                if (ModelManager.getWidget(element.widget).hasChildren()) {
-                    const arr = element.type === 'layout' ? 
-                        [].concat.apply([], element.data) : element.data;
-                    const subParent = findParent(element, arr, elementId);
-                    if (subParent) return subParent;
+        const findParent = function (parent, elementId) {
+            const children = parent.type === 'layout' ? [].concat.apply([], parent.data) : parent.data;
+            if (children.find(child => child.id === elementId))
+                return parent;
+            for (let i = 0; i < children.length; i++) {
+                const child = children[i];
+                if (ModelManager.hasChildren(child)) {
+                    let found = findParent(child, elementId);
+                    if (found) return found;
                 }
             }
         }
 
         for (var i = 0; i < this.sections.length; i++) {
             const section = this.sections[i];
-            const parent = findParent(section, section.data, dataElementId);
+            const parent = findParent(section, dataElementId);
             if (parent) return parent;
         }
     }

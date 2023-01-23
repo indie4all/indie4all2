@@ -231,8 +231,8 @@ export default class Author {
             container = parent.data;
         }
 
-        const positionIndex = container.findIndex(elem => elem.id === id) + 1;
-        if (positionIndex < container.length)
+        const positionIndex = container.findIndex(elem => elem.id === id);
+        if (positionIndex < container.length - 1)
             inPositionElementId = container[positionIndex + 1].id;
 
         const action = new ActionRemoveElement(this.model, {

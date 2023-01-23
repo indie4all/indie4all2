@@ -61,47 +61,30 @@ export class Model {
     }
 
     appendObject(modelObject, inPositionElementId, parentContainerId, parentContainerIndex) {
-        var parent = this.findObject(parentContainerId);
-        if (parent.type == 'layout')
-            this.pushOrAppendObject(parent.data[parentContainerIndex], modelObject, inPositionElementId);
-        else
-            this.pushOrAppendObject(parent.data, modelObject, inPositionElementId);
-    }
-
-    pushOrAppendObject(array, modelObject, inPositionElementId) {
+        const parent = this.findObject(parentContainerId);
+        const container = parent.type == 'layout' ? parent.data[parentContainerIndex] : parent.data;
         if (inPositionElementId == -1)
-            array.push(modelObject);
+            container.push(modelObject);
         else {
-            var inPositionIndex = Utils.findIndexObjectInArray(array, 'id', inPositionElementId);
-            array.splice(inPositionIndex, 0, modelObject);
+            const index = Utils.findIndexObjectInArray(container, 'id', inPositionElementId);
+            container.splice(index, 0, modelObject);
         }
     }
 
     removeElement(dataElementId) {
-        var elementsArray = this.sections;
-        this.removeElementInModel(elementsArray, dataElementId);
+        this.removeElementInModel(this.sections, dataElementId);
     }
 
     removeElementInModel(elementsArray, dataElementId) {
-        for (var i = 0; i < elementsArray.length; i++) {
-            var element = elementsArray[i];
-
-            if (element.id == dataElementId) {
-                elementsArray.splice(i, 1);
-                return true;
-            } else {
-                if (element.type == 'layout') {
-                    for (var j = 0; j < element.data.length; j++) {
-                        var elementsSubArray = element.data[j];
-                        if (this.removeElementInModel(elementsSubArray, dataElementId)) return true;
-                    }
-                } else if (element.type == 'specific-container' || element.type == 'simple-container' || element.type == 'specific-element-container' || element.type == 'element-container' || element.type == 'section-container') {
-                    if (this.removeElementInModel(element.data, dataElementId)) return true;
-                }
+        elementsArray.forEach((elem, idx, arr) => {
+            if (elem.id == dataElementId) arr.splice(idx, 1);
+            if (ModelManager.hasChildren(elem)) {
+                if (elem.type === "layout") 
+                    elem.data.forEach(subArr => this.removeElementInModel(subArr, dataElementId));
+                else
+                    this.removeElementInModel(elem.data, dataElementId);
             }
-        }
-
-        return false;
+        });
     }
     
     findObject(dataElementId) {

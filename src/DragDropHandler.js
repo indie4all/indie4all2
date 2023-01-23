@@ -98,6 +98,7 @@ export default class DragDropHandler {
 
         const origin = $(el).children('div')[0];
         var elementId = origin.dataset.id;
+        var element = this.model.findObject(elementId);
         var containerType = target.dataset.type;
         // New order of the elements inside the target
         var targetChildren = [].slice.call(target.children).map(function (ch) {
@@ -118,7 +119,7 @@ export default class DragDropHandler {
             initialPosition = Utils.findIndexObjectInArray(parentContainer.data, 'id', elementId);
         }
         const action = new ActionMoveElement(this.model, {
-            containerType, containerIndex, containerId, initialPosition, finalPosition: newPosition
+            containerId, containerType, containerIndex, initialPosition, finalPosition: newPosition, element
         });
         this.undoredo.pushCommand(action);
         this.model.moveElementWithinContainer(elementId, newPosition, containerId, containerIndex == -1 ? null : containerIndex);

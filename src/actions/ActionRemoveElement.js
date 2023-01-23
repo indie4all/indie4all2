@@ -6,9 +6,7 @@ export default class ActionRemoveElement extends ActionElement {
 
     do() {
         this.model.removeElement(this.data.element.id);
-        $(document.querySelector("[data-id='" + this.data.element.id + "']")).fadeOut(400, function () {
-            $(this).parent().remove();
-        });
+        $(document.querySelector("[data-id='" + this.data.element.id + "']")).parent().remove();
     }
 
     undo() {

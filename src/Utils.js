@@ -104,13 +104,9 @@ export default class Utils {
     }
 
     static array_move(arr, old_index, new_index) {
-        if (new_index >= arr.length) {
-            var k = new_index - arr.length + 1;
-            while (k--) {
-                arr.push(undefined);
-            }
-        }
-        arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+        if (new_index >= arr.length)
+            arr.push(...new Array(new_index - arr.length + 1));
+        [arr[new_index], arr[old_index]] = [arr[old_index], arr[new_index]];
     }
 
     static swap(elementOrigin, elementTarget) {
@@ -186,5 +182,4 @@ export default class Utils {
         return Utils.findAllElements(model)
             .filter(elem => Array.isArray(type) ? type.includes(elem.widget) : (type === elem.widget));                
     }
-
 }

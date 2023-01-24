@@ -6,9 +6,12 @@
   "homepage": "https://github.com/cpcdupct/INDIeAuthor",
   "dependencies": {
     "adm-zip": "^0.5.9",
+    "config": "^3.3.9",
     "express": "^4.18.2",
     "fs-extra": "^10.1.0",
     "glob": "^8.0.3",
+    "helmet": "^6.0.1",
+    "http-errors": "^2.0.0",
     "http-status-codes": "^2.2.0",
     "jet-logger": "^1.2.6",
     "node-cron": "^3.0.2"
@@ -76,7 +79,12 @@
     }
   ],
   "nodemonConfig": {
-    "watch": ["src", "server.js"]
+    "watch": [
+      "controllers",
+      "routes",
+      "config",
+      "server.js"
+    ]
   },
   "license": "Apache-2.0"
 }

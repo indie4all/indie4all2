@@ -1,132 +1,41 @@
 const { LoggerModes, JetLogger } = require('jet-logger');
-const { StatusCodes } = require('http-status-codes');
-const exec = require('child_process').exec;
 const express = require('express');
-const fs = require('fs-extra');
-const AdmZip = require("adm-zip");
-const glob = require('glob');
-const cron = require('node-cron');
-
-const WEB = "web/";
+const helmet = require('helmet');
+const config = require("config");
+const modelRouter = require("./routes/model");
+const cleanPreviewsCron = require("./cron/cleanPreviews");
 const logger = JetLogger(LoggerModes.Console);
 const app = express();
-const INPUT_MODEL = "output.json"
-const OUTPUT_MODEL = "output.upctforma"
-const ASSETS_FOLDER = "assets"
-const OUTPUT_FOLDER = "preview"
-const UNITS_FOLDER = "units";
-const OUTPUT_ZIPFILE = `generated.zip`
-const OUTPUT_SCORMFILE = `indie-scorm.zip`
 
-const copyAssets = function(folder, theme, mode) {
-    fs.copySync(ASSETS_FOLDER, folder, {overwrite: true});
-    // Remove files not related to the current theme
-    glob(folder + '/**/*theme*', {nocase: true}, (err, files) => {
-        files
-            .filter(file => !file.toLowerCase().includes(theme.toLowerCase() + "."))
-            .forEach(file => fs.unlinkSync(file));
-    });
-    // Remove scorm libraries if the unit is not of SCORM type
-    mode !== "SCORM" && fs.rmSync(folder + '/scorm/', {recursive: true, force: true});
-}
-
-const cleanOldPreviews = function() {
-
-    fs.readdir(OUTPUT_FOLDER, {withFileTypes: true}, (err, files) => {
-        logger.imp("Cleaning old previews...");
-        if (err) {
-            logger.err("Could not read directory: " + OUTPUT_FOLDER);
-            logger.err(err);
-            return;
-        }
-
-        files
-            // Only directories
-            .filter(file => file.isDirectory)
-            // Whose name is numeric
-            .filter(dir => /^\d+$/.test(dir.name))
-            // And whose timestamp is lesser than now
-            .filter(dir => parseInt(dir.name) <= Date.now())
-            // Delete them
-            .forEach(dir => fs.rm(OUTPUT_FOLDER + "/" + dir.name, {recursive: true, force: true}));
-    });
-}
-
-const generate = function(req, res, onGenerated, mode = "Local") {
-    const model = req.body
-    if (Object.keys(model).length === 0 && Object.getPrototypeOf(model) === Object.prototype)
-        return res.status(StatusCodes.NO_CONTENT).send();
-    // Set unit mode to local
-    model.mode = mode;
-    // Disable analytics by default
-    model.analytics = "0";
-    fs.writeFile(INPUT_MODEL, JSON.stringify(model), function(error) {
-        if (error)
-            return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send(error);
-        
-        // Create a folder whose name is the current timestamp plus 10 minutes
-        const OUTPUT = `${OUTPUT_FOLDER}/${(new Date(Date.now() + 600000)).getTime()}`;
-        exec(`java -Dfile.encoding=UTF-8 -jar ./contentgenerator.jar ${INPUT_MODEL} ${OUTPUT}`, function(err, stdout, stderr) {
-            fs.unlinkSync(INPUT_MODEL);
-            fs.existsSync(OUTPUT_MODEL) && fs.unlinkSync(OUTPUT_MODEL);
-            if (err) {
-                logger.err(err);
-                return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send(err);
-            }
-            logger.imp(stdout);
-            return onGenerated(OUTPUT, model);
-        });
-    });
-}
-
-const onPublishUnit = function(res, output, folder, model) {
-    copyAssets(`${folder}/${ASSETS_FOLDER}`, model.theme, model.mode);
-    const zip = new AdmZip();
-    zip.addLocalFolder(folder);
-    const binary = zip.toBuffer();
-    fs.rmSync(folder, {recursive: true, force: true});
-    return res.attachment(output).type("application/zip").status(StatusCodes.CREATED).send(binary);
-}
-
-
-app.use(express.static(WEB));
-// Enable access to preview units
-app.use(`/${UNITS_FOLDER}/preview`, express.static(OUTPUT_FOLDER));
-// Parse JSON from POST body (for future validation)
+// Protect the app against well known vulnerabilities
+app.use(helmet({
+    crossOriginEmbedderPolicy: false,
+    contentSecurityPolicy: {
+      directives: {
+        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+        "default-src": ["'self'", "data:", "https://www.youtube.com"],
+        "script-src": ["'self'", "'unsafe-inline'", "https://www.youtube.com"],
+      },
+    }
+}));
+// Parse JSON in requests with a size limit of 500 mb
 app.use(express.json({limit: '500mb'}));
+// Access to the tool resources
+app.use(express.static(config.get("folder.web")));
+// Enable access to preview units
+app.use(config.get("url.previews"), express.static(config.get("folder.previews")));
+// Parse JSON from POST body (for future validation)
+app.use("/model", modelRouter);
 
-app.post('/model/save', function(req, res) {
-    return res
-        .status(StatusCodes.OK)
-        .json({ success: true, message: "OK" });
-});
-
-app.post('/model/preview', function(req, res) {
-    const onGenerated = (folder) => {
-        copyAssets(`${folder}/${ASSETS_FOLDER}`, req.body.theme, "Local");
-        return res.status(StatusCodes.OK).json({success: true, url: UNITS_FOLDER + "/" + folder });
-    };          
-    generate(req, res, onGenerated); 
-});
-
-app.post('/model/publish', function(req, res) {
-    generate(req, res, onPublishUnit.bind(this, res, OUTPUT_ZIPFILE));    
-});
-
-app.post('/model/scorm', function(req, res) {
-    generate(req, res, onPublishUnit.bind(this, res, OUTPUT_SCORMFILE), "SCORM");    
-});
-
-
-app.listen(8000, function() {
+app.listen(config.get("server.port"), config.get("server.host"), function() {
     logger.imp("---------------");
-    logger.imp("SERVER STARTED AT " + 8000);
+    logger.imp("SERVER STARTED AT " + config.get("server.host") + ":" + config.get("server.port"));
     logger.imp("---------------");
-    logger.imp("Serving EDITOR on " + WEB);
+    logger.imp("Serving EDITOR on " + config.get("folder.web"));
     logger.imp("---------------");
-    logger.imp("Serving PREVIEWS on " + OUTPUT_FOLDER + " folder ");
+    logger.imp("Serving PREVIEWS on " + config.get("folder.previews") + " folder ");
     logger.imp("---------------");
     logger.imp("Cleaning PREVIEWS every 10 minutes");
-    cron.schedule('*/10 * * * *', cleanOldPreviews);
+    cleanPreviewsCron.start();
     logger.imp("---------------");
 });

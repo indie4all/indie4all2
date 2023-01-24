@@ -1,6 +1,5 @@
 .git
 dist
-modules
 node_modules
 preview
 spec

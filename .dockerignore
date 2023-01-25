@@ -10,3 +10,4 @@ Dockerfile
 gulpfile.js
 README.md
 npm-debug.log
+webpack.*

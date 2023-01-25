@@ -3,7 +3,7 @@
 import DragDropHandler from "./DragDropHandler";
 import I18n from "./I18n";
 import { Model } from "./model/Model";
-import UndoRedo from "./undoredo";
+import UndoRedo from "./Undoredo";
 import Utils from "./Utils";
 import ModelManager from "./model/ModelManager";
 import ActionAddElement from "./actions/ActionAddElement"

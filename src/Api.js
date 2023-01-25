@@ -3,7 +3,7 @@
 import CryptoJS from 'crypto-js';
 import Author from "./Author";
 import I18n from "./I18n";
-import UndoRedo from "./undoredo";
+import UndoRedo from "./Undoredo";
 import Utils from "./Utils";
 import downloadTemplate from "./views/download.hbs"
 

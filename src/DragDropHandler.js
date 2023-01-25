@@ -4,7 +4,7 @@ import Utils from "./Utils";
 import ModelManager from "./model/ModelManager";
 import ActionMoveElement from './actions/ActionMoveElement';
 import ActionMoveContainer from './actions/ActionMoveContainer';
-import UndoRedo from './undoredo';
+import UndoRedo from './Undoredo';
 import ActionAddElement from './actions/ActionAddElement';
 
 export default class DragDropHandler {

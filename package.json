@@ -14,7 +14,8 @@
     "http-errors": "^2.0.0",
     "http-status-codes": "^2.2.0",
     "jet-logger": "^1.2.6",
-    "node-cron": "^3.0.2"
+    "node-cron": "^3.0.2",
+    "pm2": "^5.2.2"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.2.1",
@@ -56,7 +57,7 @@
   "scripts": {
     "clean": "rimraf dist/* && rimraf web/*",
     "build": "npx webpack --config webpack.prod.js",
-    "start": "npx webpack --config webpack.prod.js && node server.js",
+    "start": "npx webpack --config webpack.prod.js && pm2 start pm2.config.js",
     "start-dev": "npm-run-all --parallel watch:server watch:build",
     "test": "npm run build && jasmine --config=spec/support/jasmine.json --reporter=jasmine-console-reporter",
     "dockerize": "npm run build && docker build --pull --rm -f \"Dockerfile\" -t indie4all2:webpack \".\"",

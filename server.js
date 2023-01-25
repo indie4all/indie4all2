@@ -27,9 +27,9 @@ app.use(config.get("url.previews"), express.static(config.get("folder.previews")
 // Parse JSON from POST body (for future validation)
 app.use("/model", modelRouter);
 
-app.listen(config.get("server.port"), config.get("server.host"), function() {
+app.listen(config.get("server.port"), function() {
     logger.imp("---------------");
-    logger.imp("SERVER STARTED AT " + config.get("server.host") + ":" + config.get("server.port"));
+    logger.imp("SERVER STARTED AT PORT " + config.get("server.port"));
     logger.imp("---------------");
     logger.imp("Serving EDITOR on " + config.get("folder.web"));
     logger.imp("---------------");

@@ -3,3 +3,4 @@ web
 test.html
 dist
 preview
+.env

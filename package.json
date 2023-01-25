@@ -6,6 +6,7 @@
   "homepage": "https://github.com/cpcdupct/INDIeAuthor",
   "dependencies": {
     "adm-zip": "^0.5.9",
+    "compression": "^1.7.4",
     "config": "^3.3.9",
     "express": "^4.18.2",
     "fs-extra": "^10.1.0",

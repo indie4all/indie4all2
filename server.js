@@ -1,4 +1,5 @@
 const { LoggerModes, JetLogger } = require('jet-logger');
+const compression = require('compression');
 const express = require('express');
 const helmet = require('helmet');
 const config = require("config");
@@ -6,6 +7,9 @@ const modelRouter = require("./routes/model");
 const cleanPreviewsCron = require("./cron/cleanPreviews");
 const logger = JetLogger(LoggerModes.Console);
 const app = express();
+
+// Enable gzip compression
+app.use(compression());
 
 // Protect the app against well known vulnerabilities
 app.use(helmet({

@@ -61,7 +61,7 @@
     "start": "npx webpack --config webpack.prod.js && pm2 start pm2.config.js",
     "start-dev": "npm-run-all --parallel watch:server watch:build",
     "test": "npm run build && jasmine --config=spec/support/jasmine.json --reporter=jasmine-console-reporter",
-    "dockerize": "npm run build && docker build --pull --rm -f \"Dockerfile\" -t indie4all2:webpack \".\"",
+    "dockerize": "npm run build && docker build --pull --rm -f Dockerfile -t indie4all2/indie4all2:latest .",
     "watch:build": "npx webpack --config webpack.dev.js",
     "watch:server": "nodemon server.js"
   },

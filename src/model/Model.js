@@ -64,7 +64,7 @@ export class Model {
     }
     
     findObject(dataElementId) {
-        return Utils.findAllElements(this).find(elem => elem.id === dataElementId);
+        return Utils.findAllElements(this).find(elem => elem.id == dataElementId);
     }
 
     findParentOfObject(dataElementId) {
@@ -72,7 +72,7 @@ export class Model {
             .filter(elem => elem.hasChildren())
             .find(elem => {
                 const children = elem.type === 'layout' ? [].concat.apply([], elem.data) : elem.data;
-                return children.find(child => child.id === dataElementId);
+                return children.find(child => child.id == dataElementId);
             });
     }
 

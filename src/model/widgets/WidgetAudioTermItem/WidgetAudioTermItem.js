@@ -5,31 +5,31 @@ import './styles.scss';
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 
 export default class WidgetAudioTermItem extends WidgetItemElement {
-    config = {
-        widget: "AudioTermItem",
-        type: "specific-element",
-        label: "Audio Term Item",
-        category: "interactiveElements",
-        toolbar: { edit: true },
-        icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAYAAAB30kORAAAACXBIWXMAAAsSAAALEgHS3X78AAACk0lEQVRoge2Zz2vTYBjHv83mxG1sGUxlIK9DEZ0w8CIBsay7+GsHJ0gQdKgIPWyX7aKpJ72Y3tSLh4KI+AMpol566Gmtu1gHIgwq7GLtPzA3p6e1kTcsXUqTNE2yvAnkA4U0ed++n/fJ07dv88SggwjiKQDTYEsFwKdqKfvbzKIhTQTxMYD5QyP7QV+s+PKtjG3xK9VS9rupBhHEB0QQlXzxq8Ka9T+byoWZuwoRxDUiiLyV9NrzdznmwhpU/Mz0HBWfN/LliCAmAPBXpyYYp/IOA/19ODdxmr6/bHSd0w5owyAxaOHDBcrUJpG01+zt2cNLciYhyZmmVSTQ0vxAP/2xWwTwU5Izt7TzYUkPGukXNOoIYU7fRAilR8FKuiZ/RP3NkuP+jKQ/oP42BNJuo6tnV6W3ph6hJr1Wj82i62QynkvrJepLP6CsVNu035mM3Ql0t5xZ/4fas7xlp67Z88Bgr6kEFx8Ddz3ednCnfVuklZVfamcruPgJxM6ONVpo0XEi6gRP0oPeXjerQae0pofJbbdqExsnvgnDSDo2fhg9G686+pCu9A0vndri+epBv0hOI2+3b2t6uKQ7d9+xqN2+nkvr0aeZWRQ7nSR2W7ppIAdyZjDZMLnJe/gZ6aZBXUY9+jfuF5G0X0TSfhFJ+0VopWlRRivQBIb852X09e4zlq6WslS68PDJS2xs/g2E8/tcEeXVCo6QEcPr2t5jobxaWbw4c4+/c+0STh4b9VVSgwYtX1xWpY8fJTgwPGTYTl9HpI9TaS0xoT3oY8HB4SFV2KSWWUinkpONXd52hfS2UUtJziisJmGE3dXDvHLqL6qHXemFAAjTTHgKu9LpVLJAa9Xa8sgAOv5kOpVkNb5LAPwHyz3KdqgqcKEAAAAASUVORK5CYII=",
-        cssClass: "widget-audio-term-item"
+
+    static widget = "AudioTermItem";
+    static type = "specific-element";
+    static label = "Audio Term Item";
+    static category = "interactiveElements";
+    static toolbar = { edit: true };
+    static icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAYAAAB30kORAAAACXBIWXMAAAsSAAALEgHS3X78AAACk0lEQVRoge2Zz2vTYBjHv83mxG1sGUxlIK9DEZ0w8CIBsay7+GsHJ0gQdKgIPWyX7aKpJ72Y3tSLh4KI+AMpol566Gmtu1gHIgwq7GLtPzA3p6e1kTcsXUqTNE2yvAnkA4U0ed++n/fJ07dv88SggwjiKQDTYEsFwKdqKfvbzKIhTQTxMYD5QyP7QV+s+PKtjG3xK9VS9rupBhHEB0QQlXzxq8Ka9T+byoWZuwoRxDUiiLyV9NrzdznmwhpU/Mz0HBWfN/LliCAmAPBXpyYYp/IOA/19ODdxmr6/bHSd0w5owyAxaOHDBcrUJpG01+zt2cNLciYhyZmmVSTQ0vxAP/2xWwTwU5Izt7TzYUkPGukXNOoIYU7fRAilR8FKuiZ/RP3NkuP+jKQ/oP42BNJuo6tnV6W3ph6hJr1Wj82i62QynkvrJepLP6CsVNu035mM3Ql0t5xZ/4fas7xlp67Z88Bgr6kEFx8Ddz3ednCnfVuklZVfamcruPgJxM6ONVpo0XEi6gRP0oPeXjerQae0pofJbbdqExsnvgnDSDo2fhg9G686+pCu9A0vndri+epBv0hOI2+3b2t6uKQ7d9+xqN2+nkvr0aeZWRQ7nSR2W7ppIAdyZjDZMLnJe/gZ6aZBXUY9+jfuF5G0X0TSfhFJ+0VopWlRRivQBIb852X09e4zlq6WslS68PDJS2xs/g2E8/tcEeXVCo6QEcPr2t5jobxaWbw4c4+/c+0STh4b9VVSgwYtX1xWpY8fJTgwPGTYTl9HpI9TaS0xoT3oY8HB4SFV2KSWWUinkpONXd52hfS2UUtJziisJmGE3dXDvHLqL6qHXemFAAjTTHgKu9LpVLJAa9Xa8sgAOv5kOpVkNb5LAPwHyz3KdqgqcKEAAAAASUVORK5CYII=";
+    static cssClass = "widget-audio-term-item";
+
+    constructor(values) {
+        super(values);
+        this.data = values?.data ?? { term: "", definition: "", audioblob: "", captionsblob: "" };
     }
 
-    emptyData(id) {
-        return { 
-            id: id ?? Utils.generate_uuid(),
-            type: this.config.type,
-            widget: this.config.widget,
-            data: { term: "", definition: "", audioblob: "", captionsblob: "" } };
+    clone() {
+        return new WidgetAudioTermItem(this);
     }
 
-    getInputs(model) {
+    getInputs() {
         var data = {
-            instanceId: model.id,
-            term: model.data.term,
-            definition: model.data.definition,
-            audioblob: model.data.audioblob,
-            captionsblob: model.data.captionsblob
+            instanceId: this.id,
+            term: this.data.term,
+            definition: this.data.definition,
+            audioblob: this.data.audioblob,
+            captionsblob: this.data.captionsblob
         }
         
         return {
@@ -38,14 +38,14 @@ export default class WidgetAudioTermItem extends WidgetItemElement {
         };
     }
 
-    settingsOpened(model) {
-        let $form = $('#f-' + model.id);
+    settingsOpened() {
+        let $form = $('#f-' + this.id);
         const $iAudio = $form.find('input[name=audio]');
         const $iCaptions = $form.find('input[name=captions]')
         const $iAudioBlob = $form.find('input[name=audioblob]');
         const $iCaptionsBlob = $form.find('input[name=captionsblob]');
-        $iAudio.prop('required', !model.data.audioblob);
-        $iCaptions.prop('required', !model.data.captionsblob);
+        $iAudio.prop('required', !this.data.audioblob);
+        $iCaptions.prop('required', !this.data.captionsblob);
 
         $iAudio.on('change', function() {
             $iAudioBlob.val('');
@@ -70,26 +70,26 @@ export default class WidgetAudioTermItem extends WidgetItemElement {
         });
     }
 
-    preview(model) {
-        return model.data?.term && model.data?.definition ?
-            model.data.term + " -> " + model.data.definition :
+    preview() {
+        return this.data?.term && this.data?.definition ?
+            this.data.term + " -> " + this.data.definition :
             this.translate("widgets.AudioTermItem.prev");
     }
 
-    updateModelFromForm(model, form) {
-        model.data.term = form.term;
-        model.data.definition = form.definition;
-        model.data.audioblob = form.audioblob;
-        model.data.captionsblob = form.captionsblob;
+    updateModelFromForm(form) {
+        this.data.term = form.term;
+        this.data.definition = form.definition;
+        this.data.audioblob = form.audioblob;
+        this.data.captionsblob = form.captionsblob;
     }
 
-    validateModel(widget) {
+    validateModel() {
         var errors = [];
-        if (widget.data.term.length == 0) errors.push("AudioTermItem.term.invalid");
-        if (widget.data.definition.length == 0) errors.push("AudioTermItem.definition.invalid");
-        if (!Utils.isValidBase64DataUrl(widget.data.captionsblob))
+        if (this.data.term.length == 0) errors.push("AudioTermItem.term.invalid");
+        if (this.data.definition.length == 0) errors.push("AudioTermItem.definition.invalid");
+        if (!Utils.isValidBase64DataUrl(this.data.captionsblob))
             errors.push("common.captionsblob.invalid");
-        if (!Utils.isValidBase64DataUrl(widget.data.audioblob))
+        if (!Utils.isValidBase64DataUrl(this.data.audioblob))
             errors.push("common.audioblob.invalid");
         return errors;
     }

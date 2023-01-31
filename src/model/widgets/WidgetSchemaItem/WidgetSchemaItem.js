@@ -5,29 +5,29 @@ import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 
 export default class WidgetSchemaItem extends WidgetItemElement {
-    config = {
-        widget: "SchemaItem",
-        type: "specific-element",
-        label: "Schema Item",
-        category: "interactiveElements",
-        toolbar: { edit: true },
-        icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAYAAAB30kORAAAACXBIWXMAAAsSAAALEgHS3X78AAACZ0lEQVRoBWNkQAJy5mEGDAwMAQwDCx4wMDBseHRy1QdcroA7Ws48rJ+BgaFARlKUAYQHCpw4d40B6vDARydXXcDpDDnzsAY587D/Ow+e+j/Q4OPnL/89Ysv+y5mHvZczDxPA5+j3c1dsHXAHwwDI4VYB2SCHF2BzL5OceZgDAwODQIi3/QAnZQTg4+FmcLM3BfH9sckzwRgghYMJ8ONxD9OgcimRYNTR1AbsbKwCFe2zHCraZ6GUIoPa0QJ8PKDKbj8DA8P9ivZZCTDxoZI8QCE9HxTqDEMwTcczUNvRoCo4PKuRmkaiAwWG0dKDjmDU0fQCQ9LRLKQo/rf0MMO/ZYdxyqt+/spQ9fw1wx/vNtyG8HMxsExPA9PkApIc/SdzFl55XgYGBk2Q515ex6vur+5OBubKQLIdPZqm6QWGv6MZdeWpYimjrhxF+knKiKxHWxj+H8Gdya7eesiwZusBhvrCeNyGyIkyMMqJkORIdECSo0GA0UYTp9wXrv8M189w4lVDDTCaEekFRh1NL0BVR4MGLkO9HWjudKo7mh7Da6PJg15g1NH0AqOOphdggk7KwCZoBg3Yeeg0AzcXJ/aQfnRyFcjRBxonLGT49OXroHDzmq0HGa7desCgJCeJVR7WNC28duvBfs/YcoHkCC8GLVUFujoSBkCBtvPgabCj1ZXlGMREBLGqQ55HBA2nguYSHWADfQMBxEUEwQ7GMZd5oKMyzRHeCYDOkCZiU1nRPuv/QHkCGyC29MA9c0pfAHYHsY4uHAQOBqWEiQzEOrqjMu0AaK4aVjwOAADZ79hRmTZQ9lMIGBgYAGcFnkaUo+5mAAAAAElFTkSuQmCC",
-        cssClass: "widget-schema-item"
+
+    static widget = "SchemaItem";
+    static type = "specific-element";
+    static label = "Schema Item";
+    static category = "interactiveElements";
+    static toolbar = { edit: true };
+    static icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAYAAAB30kORAAAACXBIWXMAAAsSAAALEgHS3X78AAACZ0lEQVRoBWNkQAJy5mEGDAwMAQwDCx4wMDBseHRy1QdcroA7Ws48rJ+BgaFARlKUAYQHCpw4d40B6vDARydXXcDpDDnzsAY587D/Ow+e+j/Q4OPnL/89Ysv+y5mHvZczDxPA5+j3c1dsHXAHwwDI4VYB2SCHF2BzL5OceZgDAwODQIi3/QAnZQTg4+FmcLM3BfH9sckzwRgghYMJ8ONxD9OgcimRYNTR1AbsbKwCFe2zHCraZ6GUIoPa0QJ8PKDKbj8DA8P9ivZZCTDxoZI8QCE9HxTqDEMwTcczUNvRoCo4PKuRmkaiAwWG0dKDjmDU0fQCQ9LRLKQo/rf0MMO/ZYdxyqt+/spQ9fw1wx/vNtyG8HMxsExPA9PkApIc/SdzFl55XgYGBk2Q515ex6vur+5OBubKQLIdPZqm6QWGv6MZdeWpYimjrhxF+knKiKxHWxj+H8Gdya7eesiwZusBhvrCeNyGyIkyMMqJkORIdECSo0GA0UYTp9wXrv8M189w4lVDDTCaEekFRh1NL0BVR4MGLkO9HWjudKo7mh7Da6PJg15g1NH0AqOOphdggk7KwCZoBg3Yeeg0AzcXJ/aQfnRyFcjRBxonLGT49OXroHDzmq0HGa7desCgJCeJVR7WNC28duvBfs/YcoHkCC8GLVUFujoSBkCBtvPgabCj1ZXlGMREBLGqQ55HBA2nguYSHWADfQMBxEUEwQ7GMZd5oKMyzRHeCYDOkCZiU1nRPuv/QHkCGyC29MA9c0pfAHYHsY4uHAQOBqWEiQzEOrqjMu0AaK4aVjwOAADZ79hRmTZQ9lMIGBgYAGcFnkaUo+5mAAAAAElFTkSuQmCC";
+    static cssClass = "widget-schema-item";
+
+    constructor(values) {
+        super(values);
+        this.data = values?.data ?? { blob: "", alt: "" };
     }
 
-    emptyData(id) {
-        return { 
-            id: id ?? Utils.generate_uuid(),
-            type: this.config.type,
-            widget: this.config.widget,
-            data: { blob: "", alt: "" } };
+    clone() {
+        return new WidgetSchemaItem(this);
     }
 
-    getInputs(model) {
+    getInputs() {
         const data = {
-            instanceId: model.id,
-            alt: model.data.alt,
-            blob: model.data.blob
+            instanceId: this.id,
+            alt: this.data.alt,
+            blob: this.data.blob
         }
 
         return {
@@ -36,18 +36,18 @@ export default class WidgetSchemaItem extends WidgetItemElement {
         };
     }
 
-    preview(model) {
-        return model.data?.alt ? model.data.alt : this.translate("widgets.SchemaItem.prev");
+    preview() {
+        return this.data?.alt ? this.data.alt : this.translate("widgets.SchemaItem.prev");
     }
 
-    settingsOpened(model) {
-        const $form = $('#f-' + model.id);
+    settingsOpened() {
+        const $form = $('#f-' + this.id);
         const $iImg = $form.find('input[name=image]');
         const $iBlob = $form.find('input[name=blob]');
         const $preview = $form.find('.img-preview');
         const $sectionPreview = $preview.closest('.form-group');
-        $iImg.prop('required', !model.data.blob);
-        $sectionPreview.toggleClass('d-none', !model.data.blob);
+        $iImg.prop('required', !this.data.blob);
+        $sectionPreview.toggleClass('d-none', !this.data.blob);
         $iImg.on('change', function () {
             $iBlob.val('');
             $iImg.prop('required', true);
@@ -64,16 +64,16 @@ export default class WidgetSchemaItem extends WidgetItemElement {
         });
     }
 
-    updateModelFromForm(model, form) {
-        model.data.blob = form.blob;
-        model.data.alt = form.alt;
+    updateModelFromForm(form) {
+        this.data.blob = form.blob;
+        this.data.alt = form.alt;
     }
 
-    validateModel(widget) {
+    validateModel() {
         var errors = [];
-        if (!Utils.isValidBase64DataUrl(widget.data.blob))
+        if (!Utils.isValidBase64DataUrl(this.data.blob))
             errors.push("common.imageblob.invalid");
-        if (Utils.isStringEmptyOrWhitespace(widget.data.alt))
+        if (Utils.isStringEmptyOrWhitespace(this.data.alt))
             errors.push("common.alt.invalid");
         return errors;
     }

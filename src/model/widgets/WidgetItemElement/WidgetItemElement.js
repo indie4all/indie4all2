@@ -2,11 +2,16 @@ import WidgetElement from "../WidgetElement/WidgetElement";
 import template from "./template.hbs";
 
 export default class WidgetItemElement extends WidgetElement {
+
+    constructor(values) { super(values); }
     
-    createElement(widget) {
-        const label = this.preview(widget);
-        const canEdit = this.config.toolbar.edit;
-        const canCopy = this.config.type !== 'specific-element';
-        return template({...this.config, label, canEdit, canCopy, id: widget.id});
+    createElement() {
+        const label = this.preview();
+        const icon = this.constructor.icon;
+        const canEdit = this.constructor.toolbar.edit;
+        const canCopy = this.type !== 'specific-element';
+        const cssClass = this.constructor.cssClass;
+        
+        return template({cssClass, type: this.type, widget: this.widget, id: this.id, icon, label, canEdit, canCopy });
     }
 }

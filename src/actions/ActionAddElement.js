@@ -1,5 +1,4 @@
 /* global $ */
-import ModelManager from "../model/ModelManager";
 import ActionElement from "./ActionElement";
 import ActionRemoveElement from "./ActionRemoveElement";
 
@@ -17,7 +16,7 @@ export default class ActionAddElement extends ActionElement {
 
         const parentContainer = document.querySelector("[data-id='" + this.parentContainerId + "']");
         const parentElement = this.model.findObject(this.parentContainerId);
-        const view = ModelManager.getWidget(this.element.widget).createElement(this.element);
+        const view = this.element.createElement();
         let target;
         if (parentElement.type == 'layout') {
             target = parentContainer.querySelector('[data-index="' + this.parentContainerIndex + '"');

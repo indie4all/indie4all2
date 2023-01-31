@@ -2,18 +2,18 @@ import form from "./form.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
+import ModelManager from "../../ModelManager";
 
 export default class WidgetTermClassification extends WidgetContainerElement {
-    config = {
-        widget: "TermClassification",
-        type: "specific-element-container",
-        label: "Terms and Classification",
-        allow: ["TermClassificationItem"],
-        category: "interactiveElements",
-        toolbar: { edit: true },
-        icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAvCAMAAACvztidAAAAnFBMVEUAAAB4h5oeN1YeN1YoQF54h5okPFt4h5p4h5oeN1YeN1YqQl8mPlx4h5opQF54h5pEWXMeN1b///8eN1Z4h5qOm6pWaIBhc4nHzdX5DVz6KnDx8vTj5ur8hq39wtb9pMKqtL/8dqP7Z5lygpU5T2v3GGQ0Mlf/8PX+4ev+0eD6SYRPY3tHXHW4wMqcp7WAjqD7WI7UJ2iTKF5HL1d5YSg4AAAAEnRSTlMAQECA/jD34NBgELqmoJeAcDCW+Nc0AAABIElEQVRIx83U23KCMBCA4ZgCWnvOJoBBQLB46rl9/3drgGiQTtm90fG/ysU3TFhCWB0f7om5rgJACq739tZ7T8Rg8w+wmsObQFPBtN3Eq8BLgLc4FITOjNWh7voIz+Mmg0HZoLeOxg8Wq+fQBDUWNuitIynvLFbChGHpH+HZn9IuHpGf7LDbM47dNHC87wR4ETbRsFrGJqDg/pzTA84txue8/tZ6Q9vGqqi+MtoLbstZuaWNLttVxYo251zrdD0wjVg11VtNtc6R0YXtD7Epql1GnfNn+YN8FOQ8n/Pw41eBw/gl4zDaxWHSzW8xhxjHyls2mN14iwR5roIX2WJ2D1iesRazKTc9Rv9noMU2X6I5zCaYHTOXP0Gsz7qNBjPgFwmdi7gk6W/UAAAAAElFTkSuQmCC",
-        cssClass: "widget-term-classification"
-    }
+    
+    static widget = "TermClassification";
+    static type = "specific-element-container";
+    static label = "Terms and Classification";
+    static allow = ["TermClassificationItem"];
+    static category = "interactiveElements";
+    static toolbar = { edit: true };
+    static icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAvCAMAAACvztidAAAAnFBMVEUAAAB4h5oeN1YeN1YoQF54h5okPFt4h5p4h5oeN1YeN1YqQl8mPlx4h5opQF54h5pEWXMeN1b///8eN1Z4h5qOm6pWaIBhc4nHzdX5DVz6KnDx8vTj5ur8hq39wtb9pMKqtL/8dqP7Z5lygpU5T2v3GGQ0Mlf/8PX+4ev+0eD6SYRPY3tHXHW4wMqcp7WAjqD7WI7UJ2iTKF5HL1d5YSg4AAAAEnRSTlMAQECA/jD34NBgELqmoJeAcDCW+Nc0AAABIElEQVRIx83U23KCMBCA4ZgCWnvOJoBBQLB46rl9/3drgGiQTtm90fG/ysU3TFhCWB0f7om5rgJACq739tZ7T8Rg8w+wmsObQFPBtN3Eq8BLgLc4FITOjNWh7voIz+Mmg0HZoLeOxg8Wq+fQBDUWNuitIynvLFbChGHpH+HZn9IuHpGf7LDbM47dNHC87wR4ETbRsFrGJqDg/pzTA84txue8/tZ6Q9vGqqi+MtoLbstZuaWNLttVxYo251zrdD0wjVg11VtNtc6R0YXtD7Epql1GnfNn+YN8FOQ8n/Pw41eBw/gl4zDaxWHSzW8xhxjHyls2mN14iwR5roIX2WJ2D1iesRazKTc9Rv9noMU2X6I5zCaYHTOXP0Gsz7qNBjPgFwmdi7gk6W/UAAAAAElFTkSuQmCC";
+    static cssClass = "widget-term-classification";
 
     functions = {
         /**
@@ -47,26 +47,26 @@ export default class WidgetTermClassification extends WidgetContainerElement {
         }
     }
 
-    emptyData(id) {
-        return {
-            id: id ?? Utils.generate_uuid(),
-            type: this.config.type,
-            widget: this.config.widget,
-            params: {
-                name: `${this.config.label}-${Utils.generate_uuid()}`,
-                help: ""
-            },
-            data: []
+    constructor(values) {
+        super(values);
+        this.params = values?.params ?? {
+            name: `${WidgetTermClassification.label}-${Utils.generate_uuid()}`,
+            help: ""
         };
+        this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
     }
 
-    getInputs(model) {
+    clone() {
+        return new WidgetTermClassification(this);
+    }
+
+    getInputs() {
         const data = {
-            instanceId: model.id,
-            image: model.data.image,
-            instanceName: model.params.name,
-            help: model.params.help,
-            alt: model.data.alt
+            instanceId: this.id,
+            image: this.data.image,
+            instanceName: this.params.name,
+            help: this.params.help,
+            alt: this.data.alt
         }
 
         return {
@@ -75,21 +75,26 @@ export default class WidgetTermClassification extends WidgetContainerElement {
         }
     }
 
-    preview(model) {
-        return model.params?.name ?? this.translate("widgets.TermClassification.prev");
+    preview() {
+        return this.params?.name ?? this.translate("widgets.TermClassification.prev");
     }
 
-    updateModelFromForm(model, form) {
-        model.params.name = form.instanceName;
-        model.params.help = form.help;
+    regenerateIDs() {
+        super.regenerateIDs();
+        this.params.name = WidgetTermClassification.label + "-" + Utils.generate_uuid();
     }
 
-    validateModel(widget) {
+    updateModelFromForm(form) {
+        this.params.name = form.instanceName;
+        this.params.help = form.help;
+    }
+
+    validateModel() {
         var errors = [];
-        if (!Utils.hasNameInParams(widget)) errors.push("common.name.invalid");
-        const duplicatedcolumns = this.functions.getDuplicatedColumn(widget.data);
+        if (!Utils.hasNameInParams(this)) errors.push("common.name.invalid");
+        const duplicatedcolumns = this.functions.getDuplicatedColumn(this.data);
         if (duplicatedcolumns.length > 0) errors.push("TermClassification.data.duplicatedColumn")
-        const duplicatedTermsBetweenColumns = this.functions.getDuplicatedTerms(widget.data);
+        const duplicatedTermsBetweenColumns = this.functions.getDuplicatedTerms(this.data);
         if (duplicatedTermsBetweenColumns.length > 0) errors.push("TermClassification.data.duplicatedTerms")
         return errors;
     }

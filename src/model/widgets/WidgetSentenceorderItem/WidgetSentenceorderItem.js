@@ -8,15 +8,13 @@ import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 
 export default class WidgetSentenceOrderItem extends WidgetItemElement {
     
-    config = {
-        widget: "SentenceOrderItem",
-        type: "specific-element",
-        label: "Sentence Order Item",
-        category: "interactiveElements",
-        toolbar: { edit: true },
-        icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAvCAMAAACvztidAAAAllBMVEUAAAB4h5oeN1YeN1Z4h5okPFt4h5p4h5oeN1YeN1YqQl8mPlx4h5opQF54h5pEWXMeN1b///94h5oeN1b8hq39wtb6SYRWaIBhc4nx8vQqQmD5DVxygpX+4ev6KnCOm6r+0eD6OnpHXHXHzdW4wMqcp7WAjqDV2d9kdYo5T2uwucP/8PX9pML7Z5lPY3v5G2YnP13j5uqOsgN3AAAAEXRSTlMAQECAMPfg0GAQuqagl4BwMDhYLxIAAAEwSURBVEjHzdPtboIwFIDhykDnvg+HVltRNlBU9uXu/+aGtOSIZBwdifH9RZqHppRW7PO6exHUTYBMwW1t781KQ2c/OTrt4RLYkmBsF5ECn0bP4gmc0EWwjFwfENXN59L12sSRsuBTwczZhYwWqupN7fF0+FTjCKpkicGmJA1WOAwfzsGhfw4eWEzLmynbN635CB98uKx7p8EGbrVqPrTxhF6KMYeqHGMWa2NP4hKNZjFkaNYAa4MZ8BgSTLVOMQEG2zYYx7iB07DeIm41i10FYgF9ZubX3H83+H3m/2Dfs9FM06lrzczfbsL87SbM38F/4mu+3ccRToFPO+xhxuNkF1dY3JlCM/Mm+BVaLB6Ra1dah8XYK3ue/l0JHXb5IRthMeLsUFD+iLG+OGzQWQl+AeD7iqUwHFqjAAAAAElFTkSuQmCC",
-        cssClass: "widget-sentence-order-item"
-    }
+    static widget = "SentenceOrderItem";
+    static type = "specific-element";
+    static label = "Sentence Order Item";
+    static category = "interactiveElements";
+    static toolbar = { edit: true };
+    static icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAvCAMAAACvztidAAAAllBMVEUAAAB4h5oeN1YeN1Z4h5okPFt4h5p4h5oeN1YeN1YqQl8mPlx4h5opQF54h5pEWXMeN1b///94h5oeN1b8hq39wtb6SYRWaIBhc4nx8vQqQmD5DVxygpX+4ev6KnCOm6r+0eD6OnpHXHXHzdW4wMqcp7WAjqDV2d9kdYo5T2uwucP/8PX9pML7Z5lPY3v5G2YnP13j5uqOsgN3AAAAEXRSTlMAQECAMPfg0GAQuqagl4BwMDhYLxIAAAEwSURBVEjHzdPtboIwFIDhykDnvg+HVltRNlBU9uXu/+aGtOSIZBwdifH9RZqHppRW7PO6exHUTYBMwW1t781KQ2c/OTrt4RLYkmBsF5ECn0bP4gmc0EWwjFwfENXN59L12sSRsuBTwczZhYwWqupN7fF0+FTjCKpkicGmJA1WOAwfzsGhfw4eWEzLmynbN635CB98uKx7p8EGbrVqPrTxhF6KMYeqHGMWa2NP4hKNZjFkaNYAa4MZ8BgSTLVOMQEG2zYYx7iB07DeIm41i10FYgF9ZubX3H83+H3m/2Dfs9FM06lrzczfbsL87SbM38F/4mu+3ccRToFPO+xhxuNkF1dY3JlCM/Mm+BVaLB6Ra1dah8XYK3ue/l0JHXb5IRthMeLsUFD+iLG+OGzQWQl+AeD7iqUwHFqjAAAAAElFTkSuQmCC";
+    static cssClass = "widget-sentence-order-item";
 
     extensions = {
         validateAnswersWithWords: function (answers, words) {
@@ -36,34 +34,35 @@ export default class WidgetSentenceOrderItem extends WidgetItemElement {
         }
     }
 
-    emptyData(id) {
-        return { 
-            id: id ?? Utils.generate_uuid(),
-            type: this.config.type,
-            widget: this.config.widget,
-            data: { answers: [], words: [] }};
+    constructor(values) {
+        super(values);
+        this.data = values?.data ?? { answers: [], words: [] };
     }
 
-    getInputs(model) {
-        var data = { instanceId: model.id }
+    clone() {
+        return new WidgetSentenceOrderItem(this);
+    }
+
+    getInputs() {
+        var data = { instanceId: this.id }
         return {
             inputs: form(data),
             title: this.translate("widgets.SentenceOrderItem.label")
         };
     }
 
-    preview(model) {
-        return model.data.answers.length ? model.data.answers[0] : this.translate("widgets.SentenceOrderItem.prev");
+    preview() {
+        return this.data.answers.length ? this.data.answers[0] : this.translate("widgets.SentenceOrderItem.prev");
     }
 
-    settingsClosed(model) {
-        $("#f-" + model.id + " [name=question]").off('missingwords');
+    settingsClosed() {
+        $("#f-" + this.id + " [name=question]").off('missingwords');
     }
 
-    settingsOpened(model) {
-        let $form = $("#f-" + model.id);
-        let answers = $.extend(true, [], model.data.answers);
-        let words = $.extend(true, [], model.data.words);
+    settingsOpened() {
+        let $form = $("#f-" + this.id);
+        let answers = $.extend(true, [], this.data.answers);
+        let words = $.extend(true, [], this.data.words);
         let $answersContainer = $form.find('.answers');
         let $wordsContainer = $form.find('.words');
         
@@ -118,27 +117,27 @@ export default class WidgetSentenceOrderItem extends WidgetItemElement {
 
     }
 
-    updateModelFromForm(model, form) {
-        model.data.answers = form.answer;
-        model.data.words = form.word;
+    updateModelFromForm(form) {
+        this.data.answers = form.answer;
+        this.data.words = form.word;
     }
 
-    validateModel(widgetInstance) {
+    validateModel() {
         var errors = [];
-        if (!widgetInstance.data.words.length)
+        if (!this.data.words.length)
             errors.push("SentenceOrderItem.words.empty");
-        widgetInstance.data.words.forEach(word => {
+        this.data.words.forEach(word => {
             Utils.isStringEmptyOrWhitespace(word) &&
                 errors.push("SentenceOrderItem.words.invalid");
         });
-        if (!widgetInstance.data.answers.length)
+        if (!this.data.answers.length)
             errors.push("SentenceOrderItem.answers.empty");
-        widgetInstance.data.answers.forEach(answer => {
+        this.data.answers.forEach(answer => {
             Utils.isStringEmptyOrWhitespace(answer) &&
                 errors.push("SentenceOrderItem.answers.invalid");
         });
-        if (widgetInstance.data.answers.length && widgetInstance.data.words.length) {
-            if (!this.extensions.validateAnswersWithWords(widgetInstance.data.answers, widgetInstance.data.words))
+        if (this.data.answers.length && this.data.words.length) {
+            if (!this.extensions.validateAnswersWithWords(this.data.answers, this.data.words))
                 errors.push("SentenceOrderItem.answers.impossible");
         }
         return errors;

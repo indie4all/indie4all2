@@ -51,41 +51,39 @@ import WidgetVideo from "./widgets/WidgetVideo/WidgetVideo.js";
 
 export default class ModelManager {
 
-    static #widgets = {};
-    static #section = null;
+    static #elements = {};
 
     static #containerTypes = ['specific-container', 'simple-container', 
         'specific-element-container', 'element-container','layout',
         'section-container' ];
 
     static {
-        let widgets = [ new WidgetAcordionContainer(), new WidgetAcordionContent(), new WidgetAnimation(),
-          new WidgetAnimationContainer(), new WidgetAnimationItem(), new WidgetAudioTermContainer(),
-          new WidgetAudioTermItem(), new WidgetBlockquote(), new WidgetButtonTextContainer(),
-          new WidgetButtonTextItem(), new WidgetChooseOption(), new WidgetTwoColumnsLayout(),
-          new WidgetThreeColumnsLayout(), new WidgetFourColumnsLayout(),  new WidgetCorrectWordContainer(), 
-          new WidgetCorrectWordItem(), new WidgetCouplesContainer(), new WidgetCouplesItem(), 
-          new WidgetDragdropContainer(), new WidgetDragdropItem(), new WidgetGapQuestion(), 
-          new WidgetGuessWord(), new WidgetImage(), new WidgetImageAndSoundContainer(), 
-          new WidgetImageAndSoundItem(), new WidgetImageAndText(), new WidgetInteractiveVideo(), 
-          new WidgetLatexFormula(), new WidgetMissingwordsContainer(), new WidgetMissingwordsItem(), 
-          new WidgetModal(), new WidgetPuzzle(), new WidgetSchemaContainer(), new WidgetSchemaItem(), 
-          new WidgetSentenceorderContainer(), new WidgetSentenceorderItem(), new WidgetSimpleImage(), 
-          new WidgetSimpleQuestion(), new WidgetTabContent(), new WidgetTable(), new WidgetTabsContainer(), 
-          new WidgetTermClassifcation(), new WidgetTermClassificationItem(), new WidgetTestContainer(), 
-          new WidgetTextBlock(), new WidgetTrueFalseContainer(), new WidgetTrueFalseItem(), 
-          new WidgetTrueFalseQuestion(), new WidgetVideo()]
+        const elements = [ Section, WidgetAcordionContainer, WidgetAcordionContent, WidgetAnimation,
+          WidgetAnimationContainer, WidgetAnimationItem, WidgetAudioTermContainer,
+          WidgetAudioTermItem, WidgetBlockquote, WidgetButtonTextContainer,
+          WidgetButtonTextItem, WidgetChooseOption, WidgetTwoColumnsLayout,
+          WidgetThreeColumnsLayout, WidgetFourColumnsLayout,  WidgetCorrectWordContainer, 
+          WidgetCorrectWordItem, WidgetCouplesContainer, WidgetCouplesItem, 
+          WidgetDragdropContainer, WidgetDragdropItem, WidgetGapQuestion, 
+          WidgetGuessWord, WidgetImage, WidgetImageAndSoundContainer, 
+          WidgetImageAndSoundItem, WidgetImageAndText, WidgetInteractiveVideo, 
+          WidgetLatexFormula, WidgetMissingwordsContainer, WidgetMissingwordsItem, 
+          WidgetModal, WidgetPuzzle, WidgetSchemaContainer, WidgetSchemaItem, 
+          WidgetSentenceorderContainer, WidgetSentenceorderItem, WidgetSimpleImage, 
+          WidgetSimpleQuestion, WidgetTabContent, WidgetTable, WidgetTabsContainer, 
+          WidgetTermClassifcation, WidgetTermClassificationItem, WidgetTestContainer, 
+          WidgetTextBlock, WidgetTrueFalseContainer, WidgetTrueFalseItem, 
+          WidgetTrueFalseQuestion, WidgetVideo]
           
-        this.#widgets = Object.fromEntries(widgets.map(elem => [elem.config.widget, elem]));
-        this.#section = new Section();
+        this.#elements = Object.fromEntries(elements.map(elem => [elem.widget, elem]));
     }
 
-    static getWidget(widget) {
-        return this.#widgets[widget];
+    static get(widget = "Section") {
+        return this.#elements[widget];
     }
 
-    static getSection() {
-        return this.#section;
+    static create(widget = "Section", values) {
+        return new this.#elements[widget](values);
     }
 
     static hasChildren(elem) {

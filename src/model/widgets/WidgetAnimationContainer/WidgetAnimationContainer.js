@@ -2,61 +2,65 @@ import form from "./form.hbs"
 import Utils from "../../../Utils";
 import './styles.scss';
 import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
+import ModelManager from "../../ModelManager";
 
-export default class AnimationContainer extends WidgetContainerElement {
-    config = {
-        widget: "AnimationContainer",
-        type: "specific-element-container",
-        label: "Animation",
-        allow: ["AnimationItem"],
-        category: "interactiveElements",
-        toolbar: { edit: true },
-        icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAYAAAB30kORAAAACXBIWXMAAAsSAAALEgHS3X78AAAC3klEQVRoge2ZT2jTUBzHvw1z4rp1HXTKQNKhTFlhIIpk+Id1F/+DG8zMy5jiKEwv7UVbEWZP7a3z4qFMZAjiuh289LDTNr1sDkQYVJgHuyB4mLC/7iIa+YWmVvNS01qTdvQDgeS9l5dPwnu/l/eeDTnwgngMQA+sJQ3gpbSQWNezyErzghgD4D/Y0gw6rGL+bQoZ8V5pIfFOV4MXxIe8IMrTc29kq9nY2pYvDNyVeUFc4wXRmU967cmLpOXCKiR+qucOiftZvhwviF4Azr7LXRY35V846u0413WSrq+y8jn1hAqWE415fLiyMjVIVbrU7K3d4wxG4t5gJP5bFClraaejnga7GQAfg5H4DTW9UpoHfemn9NVRgW16EBUo3YpKjR41fybISyv4dvqBtuBzP7grJ5Tz1Ic0wrHxvBV7jrRixD+YvZ5KzmEyOZv3nonHI8VJY2OHWVBekoCM9ObWjvo3ZphPn1cLvse4tAE6j3uwMj+RLUgy/bfDCAxdg3+oj1kBpefmGblHj93RpsE3gzvbrkm2dfAmKf0djbSNd6Emeb9sBFkU1ab1iI1NKsf/piTSjoY6pXOyoA7naLDD0+Zm5hczHy2JtKetVTfGujv7FWGjMdgIu2RElL7g+3BcU5AbPp8dEa1G2zykVfx4/V6TbDvTnh0RrWaXDC5FMjo2pRvuKIJQh8yFOqZexClcurGOXVIvPQOFrkIkKEwWi3ZE7HCjdvNZwdXRYo9ZCz7VJQSzqEqbRVXaLKrSZsFlNmVKNr0vFdOvFmGv28esjZMWEiQ9Gx4dx+b217IQpoWd1HIah/gWZr46jAdSy+mZiwP3nLeuX1JmIlZAH216blGRPnqYx35XE9Midx+RllNpL9GrLvRZwQFXkyKsM3ecjYZ83dkfpswO6U1WyWAkLlv1EiyMRg/9nVNzUTyMSgfKQJhawiMYlY6GfLRG26uGRwug53dHQz6rnv+PAPgJZGTQLIzxpiAAAAAASUVORK5CYII=",
-        cssClass: "widget-animation-container"
-    }
+export default class WidgetAnimationContainer extends WidgetContainerElement {
 
-    paletteHidden = true
+    static widget = "AnimationContainer";
+    static type = "specific-element-container";
+    static label = "Animation";
+    static allow = ["AnimationItem"];
+    static category = "interactiveElements";
+    static toolbar = { edit: true };
+    static icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAYAAAB30kORAAAACXBIWXMAAAsSAAALEgHS3X78AAAC3klEQVRoge2ZT2jTUBzHvw1z4rp1HXTKQNKhTFlhIIpk+Id1F/+DG8zMy5jiKEwv7UVbEWZP7a3z4qFMZAjiuh289LDTNr1sDkQYVJgHuyB4mLC/7iIa+YWmVvNS01qTdvQDgeS9l5dPwnu/l/eeDTnwgngMQA+sJQ3gpbSQWNezyErzghgD4D/Y0gw6rGL+bQoZ8V5pIfFOV4MXxIe8IMrTc29kq9nY2pYvDNyVeUFc4wXRmU967cmLpOXCKiR+qucOiftZvhwviF4Azr7LXRY35V846u0413WSrq+y8jn1hAqWE415fLiyMjVIVbrU7K3d4wxG4t5gJP5bFClraaejnga7GQAfg5H4DTW9UpoHfemn9NVRgW16EBUo3YpKjR41fybISyv4dvqBtuBzP7grJ5Tz1Ic0wrHxvBV7jrRixD+YvZ5KzmEyOZv3nonHI8VJY2OHWVBekoCM9ObWjvo3ZphPn1cLvse4tAE6j3uwMj+RLUgy/bfDCAxdg3+oj1kBpefmGblHj93RpsE3gzvbrkm2dfAmKf0djbSNd6Emeb9sBFkU1ab1iI1NKsf/piTSjoY6pXOyoA7naLDD0+Zm5hczHy2JtKetVTfGujv7FWGjMdgIu2RElL7g+3BcU5AbPp8dEa1G2zykVfx4/V6TbDvTnh0RrWaXDC5FMjo2pRvuKIJQh8yFOqZexClcurGOXVIvPQOFrkIkKEwWi3ZE7HCjdvNZwdXRYo9ZCz7VJQSzqEqbRVXaLKrSZsFlNmVKNr0vFdOvFmGv28esjZMWEiQ9Gx4dx+b217IQpoWd1HIah/gWZr46jAdSy+mZiwP3nLeuX1JmIlZAH216blGRPnqYx35XE9Midx+RllNpL9GrLvRZwQFXkyKsM3ecjYZ83dkfpswO6U1WyWAkLlv1EiyMRg/9nVNzUTyMSgfKQJhawiMYlY6GfLRG26uGRwug53dHQz6rnv+PAPgJZGTQLIzxpiAAAAAASUVORK5CYII=";
+    static cssClass = "widget-animation-container";
+    static paletteHidden = true;
 
-    emptyData(id) {
-        return {
-            id: id ?? Utils.generate_uuid(),
-            type: this.config.type,
-            widget: this.config.widget,
-            params: {
-                name: this.config.label + "-" + Utils.generate_uuid(),
-                width: 0,
-                height: 0,
-                image: "",
-                help: ""
-            },
-            data: []
+    constructor(values) {
+        super(values);
+        this.params = values?.params ?? {
+            name: WidgetAnimationContainer.label + "-" + Utils.generate_uuid(),
+            width: 0,
+            height: 0,
+            image: "",
+            help: ""
         };
+        this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
     }
 
-    getInputs(model) {
+    clone() {
+        return new WidgetAnimationContainer(this);
+    }
+
+    getInputs() {
         return {
             inputs: form({
-                width: model.params.width,
-                height: model.params.height,
-                image: model.params.image,
-                id: model.id,
-                instanceName: model.params.name,
-                help: model.params.help
+                width: this.params.width,
+                height: this.params.height,
+                image: this.params.image,
+                id: this.id,
+                instanceName: this.params.name,
+                help: this.params.help
             }),
             title: this.translate("widgets.AnimationContainer.label")
         };
     }
 
-    preview(model) {
-        return model.params?.name ?? this.translate("widgets.AnimationContainer.label");
+    preview() {
+        return this.params?.name ?? this.translate("widgets.AnimationContainer.label");
     }
 
-    updateModelFromForm(model, form) {
-        model.params.width = parseInt(form.width);
-        model.params.height = parseInt(form.height);
-        model.params.image = form.image;
-        model.params.name = form.instanceName;
-        model.params.help = form.help;
+    regenerateIDs() {
+        super.regenerateIDs();
+        this.params.name = WidgetAnimationContainer.label + "-" + Utils.generate_uuid();
+    }
+
+    updateModelFromForm(form) {
+        this.params.width = parseInt(form.width);
+        this.params.height = parseInt(form.height);
+        this.params.image = form.image;
+        this.params.name = form.instanceName;
+        this.params.help = form.help;
     }
 
     validateForm(form) {
@@ -68,13 +72,13 @@ export default class AnimationContainer extends WidgetContainerElement {
         return errors;
     }
 
-    validateModel(model) {
+    validateModel() {
         var errors = [];
-        if (!model.params.width > 0) errors.push("AnimationContainer.width.invalid");
-        if (!model.params.height > 0) errors.push("AnimationContainer.height.invalid");
-        if (!Utils.isIndieResource(model.params.image)) errors.push("AnimationContainer.image.invalid");
-        if (model.data.length == 0) errors.push("AnimationContainer.data.empty");
-        if (!Utils.hasNameInParams(model)) errors.push("common.name.invalid");
+        if (!this.params.width > 0) errors.push("AnimationContainer.width.invalid");
+        if (!this.params.height > 0) errors.push("AnimationContainer.height.invalid");
+        if (!Utils.isIndieResource(this.params.image)) errors.push("AnimationContainer.image.invalid");
+        if (this.data.length == 0) errors.push("AnimationContainer.data.empty");
+        if (!Utils.hasNameInParams(this)) errors.push("common.name.invalid");
         return errors;
     }
 }

@@ -2,38 +2,37 @@ import form from "./form.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
+import ModelManager from "../../ModelManager";
 
-export default class TabsContainer extends WidgetContainerElement{
+export default class WidgetTabsContainer extends WidgetContainerElement{
 
-    config = {
-        widget: "TabsContainer",
-        type: "specific-container",
-        label: "Tabs menu",
-        allow: ["TabContent"],
-        category: "containers",
-        toolbar: { edit: true },
-        icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAYAAAB30kORAAAACXBIWXMAAAsSAAALEgHS3X78AAAC5klEQVRoge2ZTWgTQRiG302qYpOmKaRKQadVEbVQEaWuiNr0oMQq2IqsQmzFCjnUS3rR5FR7MblVLxWCv6BFowcVC+bUVD0Yg0EoRMxB0pyVNrZGUdKViU2tOrv5abKbwj6wkDAzO8/+5N3sfBwWQXhhB4BOqEscwONEyD8tZbEgTXhhCIBzXUM96KYWryNRzIt3JUL+d5IahBcuEV4QA+NvRLVJzsyKtu4LIuGFKcILZjnpqRv3R1UXzkLF93aep+JOlq+O8IIVgPnEkTaVb+U/mIwGHGprpd+Psdp12Q+0YyVRK+OjqyjTPNGkS82qlSvMLo/P6vL4/kqRqlzzzOfmf5hqqtG8uQlp112IEwnJ8XqvHTMbLIjGJpntcs8Fs8lIH3ZjAKZdHl+/1+24nVOaCp/sG5Rs/9jTi/S9l9D32Zjt4sQkfnZcxs2Bgxi6/pDZZ8/OZjwYHpDTyPgDuOXy+OJetyOY80zLkkxBt70RencXW/rVe8w9e7ukKf7hDIDgcvshNkFLDwWRvae3hhMYWd/CbDPVGJAefg7d0V3SOyC/U6HnyQe0Su3nuwFi4hM4Ysn7qGWljU8j2D35GVwjI5JS38DZ90PvPi45nopUjThhuhYAn+KYfeYCEaDXBpRKmqKzH5BMh3ygV0LuavwwdRe+z6JtVESTVgpNWik0aaXQpJVCk1YKTVopcksnv5ZPJZkqapjsX1OuhSA9HMhsZaO2euFloSTSeu9p+TeTUkDqC3prySlN4fZtK690EWjpoRTLVpoWZSQXGtUi8CIMQ/VqtnQi5KfSwcErd/BltoyZXACPRscRjcWxkTQwB2XToz8ai48d7r5oPneqI7OEqwb0pAXGwxnpLZsI1ljqmBaL64h0OZXWEq3ZhT41WGupywhLrFkHvW5H+0JOz1dIz7J6ujw+Ua2DYJFvekhXTpUl45GvdH8FCNM74SrylaYlA1qrzsajCtD5271uh1rzLxEAvwBy0swa2Lf+uwAAAABJRU5ErkJggg==",
-        cssClass: "widget-tabs-container"
+    static widget = "TabsContainer";
+    static type = "specific-container";
+    static label = "Tabs menu";
+    static allow = ["TabContent"];
+    static category = "containers";
+    static toolbar = { edit: true };
+    static icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAYAAAB30kORAAAACXBIWXMAAAsSAAALEgHS3X78AAAC5klEQVRoge2ZTWgTQRiG302qYpOmKaRKQadVEbVQEaWuiNr0oMQq2IqsQmzFCjnUS3rR5FR7MblVLxWCv6BFowcVC+bUVD0Yg0EoRMxB0pyVNrZGUdKViU2tOrv5abKbwj6wkDAzO8/+5N3sfBwWQXhhB4BOqEscwONEyD8tZbEgTXhhCIBzXUM96KYWryNRzIt3JUL+d5IahBcuEV4QA+NvRLVJzsyKtu4LIuGFKcILZjnpqRv3R1UXzkLF93aep+JOlq+O8IIVgPnEkTaVb+U/mIwGHGprpd+Psdp12Q+0YyVRK+OjqyjTPNGkS82qlSvMLo/P6vL4/kqRqlzzzOfmf5hqqtG8uQlp112IEwnJ8XqvHTMbLIjGJpntcs8Fs8lIH3ZjAKZdHl+/1+24nVOaCp/sG5Rs/9jTi/S9l9D32Zjt4sQkfnZcxs2Bgxi6/pDZZ8/OZjwYHpDTyPgDuOXy+OJetyOY80zLkkxBt70RencXW/rVe8w9e7ukKf7hDIDgcvshNkFLDwWRvae3hhMYWd/CbDPVGJAefg7d0V3SOyC/U6HnyQe0Su3nuwFi4hM4Ysn7qGWljU8j2D35GVwjI5JS38DZ90PvPi45nopUjThhuhYAn+KYfeYCEaDXBpRKmqKzH5BMh3ygV0LuavwwdRe+z6JtVESTVgpNWik0aaXQpJVCk1YKTVopcksnv5ZPJZkqapjsX1OuhSA9HMhsZaO2euFloSTSeu9p+TeTUkDqC3prySlN4fZtK690EWjpoRTLVpoWZSQXGtUi8CIMQ/VqtnQi5KfSwcErd/BltoyZXACPRscRjcWxkTQwB2XToz8ai48d7r5oPneqI7OEqwb0pAXGwxnpLZsI1ljqmBaL64h0OZXWEq3ZhT41WGupywhLrFkHvW5H+0JOz1dIz7J6ujw+Ua2DYJFvekhXTpUl45GvdH8FCNM74SrylaYlA1qrzsajCtD5271uh1rzLxEAvwBy0swa2Lf+uwAAAABJRU5ErkJggg==";
+    static cssClass = "widget-tabs-container";
+
+    constructor(values) {
+        super(values);
+        this.params = values?.params ?? {
+            name: WidgetTabsContainer.label + "-" + Utils.generate_uuid(),
+            help: ""
+        };
+        this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
     }
 
-    emptyData(id) {
-        return {
-            id: id ?? Utils.generate_uuid(),
-            type: this.config.type,
-            widget: this.config.widget,
-            params: {
-                name: this.config.label + "-" + Utils.generate_uuid(),
-                help: ""
-            },
-            data: []
-        }
+    clone() {
+        return new WidgetTabsContainer(this);
     }
 
-    getInputs(model) {
+    getInputs() {
         var data = {
-            instanceId: model.id,
-            instanceName: model.params.name,
-            help: model.params.help
+            instanceId: this.id,
+            instanceName: this.params.name,
+            help: this.params.help
         }
 
         return {
@@ -42,19 +41,24 @@ export default class TabsContainer extends WidgetContainerElement{
         };
     }
 
-    preview(model) {
-        return model.params?.name ?? this.translate("widgets.TabsContainer.label");
+    preview() {
+        return this.params?.name ?? this.translate("widgets.TabsContainer.label");
     }
 
-    updateModelFromForm(model, form) {
-        model.params.name = form.instanceName;
-        model.params.help = form.help;
+    regenerateIDs() {
+        super.regenerateIDs();
+        this.params.name = WidgetTabsContainer.label + "-" + Utils.generate_uuid();
     }
 
-    validateModel(widget) {
+    updateModelFromForm(form) {
+        this.params.name = form.instanceName;
+        this.params.help = form.help;
+    }
+
+    validateModel() {
         var keys = [];
-        if (widget.data.length == 0) keys.push("TabsContainer.data.empty");
-        if (!Utils.hasNameInParams(widget)) keys.push("common.name.invalid");
+        if (this.data.length == 0) keys.push("TabsContainer.data.empty");
+        if (!Utils.hasNameInParams(this)) keys.push("common.name.invalid");
         return keys;
     }
 

@@ -6,17 +6,15 @@ import './styles.scss';
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 
 export default class WidgetMissingWordsItem extends WidgetItemElement {
-    
-    config = {
-        widget: "MissingWordsItem",
-        type: "specific-element",
-        label: "Missing Words Item",
-        category: "interactiveElements",
-        toolbar: { edit: true },
-        icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAvCAMAAACvztidAAAAdVBMVEUAAAB4h5oeN1YeN1YoQF54h5okPFt4h5p4h5oeN1YeN1YqQl8mPlx4h5opQF54h5pEWXMeN1b///94h5oeN1ZWaIBhc4n8hq35DVzx8vT9wtaqtL+Om6qAjqD6SYRPY3tHXHX+4evj5urHzdW4wMqcp7X6KnCKJge2AAAAEnRSTlMAQECA/jD34NBgELqmoJeAcDCW+Nc0AAAAs0lEQVRIx+3U2w6CMAyA4To3QDxvBUXAs77/I4rQCTeuI/FCDf/Nbr4sTZoUngl3a2gbB8gUTKydyVumnZ1LJC3wqtmKIG6GOGq+DEWDE+3RT+I0XPbAxsz7YKP64NE/4I3t5IG3ZO87H0zv/mM4qSs7OE+aXNj2wt+/lAEP2GLPy09Y4IXHhTQ1hqnMM+bfAg+EYYFcsrKEIRZVq/R9xhC2KcPWYog4G0KbihiroNvIWQUekq6Fpx6q0IMAAAAASUVORK5CYII=",
-        cssClass: "widget-missing-words-item"
-    }
 
+    static widget = "MissingWordsItem";
+    static type = "specific-element";
+    static label = "Missing Words Item";
+    static category = "interactiveElements";
+    static toolbar = { edit: true };
+    static icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAvCAMAAACvztidAAAAdVBMVEUAAAB4h5oeN1YeN1YoQF54h5okPFt4h5p4h5oeN1YeN1YqQl8mPlx4h5opQF54h5pEWXMeN1b///94h5oeN1ZWaIBhc4n8hq35DVzx8vT9wtaqtL+Om6qAjqD6SYRPY3tHXHX+4evj5urHzdW4wMqcp7X6KnCKJge2AAAAEnRSTlMAQECA/jD34NBgELqmoJeAcDCW+Nc0AAAAs0lEQVRIx+3U2w6CMAyA4To3QDxvBUXAs77/I4rQCTeuI/FCDf/Nbr4sTZoUngl3a2gbB8gUTKydyVumnZ1LJC3wqtmKIG6GOGq+DEWDE+3RT+I0XPbAxsz7YKP64NE/4I3t5IG3ZO87H0zv/mM4qSs7OE+aXNj2wt+/lAEP2GLPy09Y4IXHhTQ1hqnMM+bfAg+EYYFcsrKEIRZVq/R9xhC2KcPWYog4G0KbihiroNvIWQUekq6Fpx6q0IMAAAAASUVORK5CYII=";
+    static cssClass = "widget-missing-words-item";
+    
     extensions = {
         validateQuestionBlankSpots: function (questionText) {
             if (!questionText || (questionText.length == 0))
@@ -27,19 +25,20 @@ export default class WidgetMissingWordsItem extends WidgetItemElement {
         }
     }
 
-    emptyData(id) {
-        return { 
-            id: id ?? Utils.generate_uuid(),
-            type: this.config.type,
-            widget: this.config.widget,
-            data: { sentence: "", combinations: [] } };
+    constructor(values) {
+        super(values);
+        this.data = values?.data ?? { sentence: "", combinations: [] };
     }
 
-    getInputs(model) {
+    clone() {
+        return new WidgetMissingWordsItem(this);
+    }
+
+    getInputs() {
         const data = {
-            instanceId: model.id,
-            sentence: model.data.sentence,
-            preview: model.data.sentence.replace('[blank]', '____')
+            instanceId: this.id,
+            sentence: this.data.sentence,
+            preview: this.data.sentence.replace('[blank]', '____')
         }
 
         return {
@@ -48,13 +47,13 @@ export default class WidgetMissingWordsItem extends WidgetItemElement {
         };
     }
 
-    settingsClosed(model) {
-        $("#f-" + model.id + " [name=question]").off('missingwords');
+    settingsClosed() {
+        $("#f-" + this.id + " [name=question]").off('missingwords');
     }
 
-    settingsOpened(model) {
-        let $form = $("#f-" + model.id);
-        let combinations = $.extend(true, [], model.data.combinations);
+    settingsOpened() {
+        let $form = $("#f-" + this.id);
+        let combinations = $.extend(true, [], this.data.combinations);
         let $combinationsContainer = $form.find('.combinations');
         combinations.forEach((comb, idx) => $combinationsContainer.append(combination({ combination: comb, pos: idx })));
         $form.on('keyup.missingwords', 'input[name="sentence"]', function () {
@@ -96,24 +95,24 @@ export default class WidgetMissingWordsItem extends WidgetItemElement {
         });
     }
 
-    preview(model) {
-        return model.data?.sentence ? model.data.sentence : this.translate("widgets.MissingWordsItem.prev");
+    preview() {
+        return this.data?.sentence ? this.data.sentence : this.translate("widgets.MissingWordsItem.prev");
     }
 
-    updateModelFromForm(model, form) {
-        model.data.combinations = form.combination;
-        model.data.sentence = form.sentence;
+    updateModelFromForm(form) {
+        this.data.combinations = form.combination;
+        this.data.sentence = form.sentence;
     }
 
-    validateModel(widget) {
+    validateModel() {
         var errors = [];
-        if (Utils.isStringEmptyOrWhitespace(widget.data.sentence))
+        if (Utils.isStringEmptyOrWhitespace(this.data.sentence))
             errors.push("MissingWords.sentence.empty");
-        if (!this.extensions.validateQuestionBlankSpots(widget.data.sentence))
+        if (!this.extensions.validateQuestionBlankSpots(this.data.sentence))
             errors.push("MissingWords.sentence.onlyOneBlank");
-        if (!widget.data.combinations.length)
+        if (!this.data.combinations.length)
             errors.push("MissingWords.combinations.empty");
-        widget.data.combinations.forEach(combination => {
+        this.data.combinations.forEach(combination => {
             Utils.isStringEmptyOrWhitespace(combination) &&
                 errors.push("MissingWords.combinations.invalid");
         });

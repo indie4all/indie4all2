@@ -48,25 +48,19 @@ export default class Author {
         $modal.modal({ show: true, keyboard: false, backdrop: 'static'});
     }
 
-    hideLoading() {
-        $('#modal-loading').modal('hide');
-    }
+    hideLoading() { $('#modal-loading').modal('hide'); }
 
     /**
      * Retrieves a model element
      * @param {string} id - Model Element ID
      * @returns 
      */
-    getModelElement(id) {
-        return this.model.findObject(id);
-    }
+    getModelElement(id) { return this.model.findObject(id); }
 
     /**
      * Removes all model sections
      */
-    clearModelSections() {
-        this.model.sections = [];
-    }
+    clearModelSections() { this.model.sections = []; }
 
     /**
      * Adds a new element to a container
@@ -106,7 +100,8 @@ export default class Author {
      * Adds a new empty section
      */
     addSection(modelSection) {
-        const section = modelSection ?? ModelManager.getSection().emptyData(this.model.sections.length + 1);
+        const index = this.model.sections.length + 1;
+        const section = modelSection ?? ModelManager.create("Section", {index});
         const action = new ActionAddSection(this.model, {
             element: section,
             position: this.model.sections.length,
@@ -121,7 +116,7 @@ export default class Author {
      */
     removeSection(sectionId) {
         const action = new ActionRemoveSection(this.model, {
-            element: $.extend({}, this.model.findObject(sectionId)),
+            element: this.model.findObject(sectionId),
             position: Utils.findIndexObjectInArray(this.model.sections, "id", sectionId),
             container: this.container
         });
@@ -147,7 +142,7 @@ export default class Author {
      * @param {string} dataElementId - ModelElement ID
      * @param {widget|section} type - type of element: section or widget
      */
-    openSettings(dataElementId, type = "widget") {
+    openSettings(dataElementId) {
 
         const self = this;
         // 0 Clear older values
@@ -155,15 +150,11 @@ export default class Author {
         $("#modal-settings .btn-submit").off('click'); // Unbind button submit click event 
 
         // 1  get model from object
-        var modelObject = this.model.findObject(dataElementId);
-        if (!modelObject) throw new Error('modelObject cannot be null');
-
-        const modelElem = type === "widget" ? 
-            ModelManager.getWidget(modelObject.widget) :
-            ModelManager.getSection();
+        var modelElem = this.model.findObject(dataElementId);
+        if (!modelElem) throw new Error('Could not locate the given element id');
 
         // 2 Populate the modal with the inputs of the widget
-        var modalContent = modelElem.getInputs(modelObject);
+        var modalContent = modelElem.getInputs();
         // 3 Open the modal with values put
         document.getElementById('modal-settings-body').innerHTML = modalContent.inputs;
         document.getElementById('modal-settings-tittle').innerHTML = modalContent.title;
@@ -178,7 +169,7 @@ export default class Author {
         $(form).off('submit').on('submit', function (e) {
             e.preventDefault();
             var formData = Utils.toJSON(form);
-            var errors = self.model.validateFormElement(modelElem, formData, dataElementId);
+            var errors = self.model.validateFormElement(modelElem, formData);
             if (errors.length > 0) {
                 $("#modal-settings").animate({ scrollTop: 0 }, "slow");
                 const errorText = errors.map(error => self.i18n.translate("errors." + error)).join(". ")
@@ -189,18 +180,18 @@ export default class Author {
                 }
 
             } else {
-                modelElem.settingsClosed(modelObject);
+                modelElem.settingsClosed();
                 $("#modal-settings").modal('hide');
                 $("#modal-settings-body .errors").remove();
-                modelElem.updateModelFromForm(modelObject, formData);
-                const previewElement = document.querySelector('[data-id="' + modelObject.id + '"]').querySelector('[data-prev]');
-                previewElement.innerHTML = modelElem.preview(modelObject);
+                modelElem.updateModelFromForm(formData);
+                const previewElement = document.querySelector('[data-id="' + modelElem.id + '"]').querySelector('[data-prev]');
+                previewElement.innerHTML = modelElem.preview();
                 // Clear modal values
                 document.getElementById('modal-settings-body').innerHTML = '';
                 document.getElementById('modal-settings-tittle').innerHTML = '';
                 // Clean errors
                 previewElement && self.deleteToolTipError(previewElement);
-                $(document.querySelector("[data-id='" + modelObject.id + "']").parentNode).removeClass('editor-error', 200);
+                $(document.querySelector("[data-id='" + modelElem.id + "']").parentNode).removeClass('editor-error', 200);
                 $(form).remove();
             }
         });
@@ -210,7 +201,7 @@ export default class Author {
         });
 
         // 5 Run when settings are opened
-        modelElem.settingsOpened(modelObject);
+        modelElem.settingsOpened();
     }
 
     /**
@@ -236,7 +227,7 @@ export default class Author {
             inPositionElementId = container[positionIndex + 1].id;
 
         const action = new ActionRemoveElement(this.model, {
-            element: $.extend({}, elementToBeRemoved),
+            element: elementToBeRemoved,
             parentContainerIndex,
             parentContainerId,
             inPositionElementId
@@ -251,13 +242,14 @@ export default class Author {
      */
     addContent(containerId, widget) {
         const self = this;
-        const widgetElem = ModelManager.getWidget(widget);
-        const type = widgetElem.config.type;
+        const widgetProto = ModelManager.get(widget);
+        const type = widgetProto.type;
         if (type != 'specific-container' && type != 'specific-element-container')
             throw new Error('Cannot create content for non-specific container');
 
-        if (widgetElem.config.allow.length > 1) {
-            const options = widgetElem.config.allow.map(allowed => ({
+        const allowed = widgetProto.allow;
+        if (allowed.length > 1) {
+            const options = allowed.map(allowed => ({
                 text: this.i18n.translate(`widgets.${allowed}.label`),
                 value: allowed
             }));
@@ -265,14 +257,14 @@ export default class Author {
                 title: this.i18n.translate("common.selectType"),
                 inputType: 'select',
                 inputOptions: options,
-                value: widgetElem.config.allow[0], // Default option
+                value: allowed[0], // Default option
                 closeButton: false,
                 callback: function (result) {
                     result && self.addSpecificContent(containerId, result);
                 }
             });
         } else {
-            self.addSpecificContent(containerId, widgetElem.config.allow[0]);
+            self.addSpecificContent(containerId, allowed[0]);
         }
     }
 
@@ -282,7 +274,7 @@ export default class Author {
      * @param {string} widgetTypeToCreate - Type of widget
      */
     addSpecificContent(containerId, widgetTypeToCreate) {
-        this.addModelElement(this.model.createWidget(widgetTypeToCreate), containerId);
+        this.addModelElement(ModelManager.create(widgetTypeToCreate), containerId);
     }
 
     /**
@@ -308,8 +300,9 @@ export default class Author {
             Object.entries(widgetsJson).forEach(entry => {
                 const [category, widgets] = entry;
                 const widgetsPalette = widgets
-                    .filter(widget => !ModelManager.getWidget(widget).paletteHidden)
-                    .map(widget => ModelManager.getWidget(widget).createPaletteItem());
+                    .map(widget => ModelManager.get(widget))
+                    .filter(proto => !proto.paletteHidden)
+                    .map(proto => proto.createPaletteItem());
                 const categoryView = categoryTemplate({ title: "palette." + category, 
                     category: category, numWidgets: widgetsPalette.length});
                 $(palette).append(categoryView);
@@ -408,10 +401,6 @@ export default class Author {
     loadModelIntoPlugin(model) {
         this.model = new Model(model);
         this.dragDropHandler.setModel(this.model);
-        this.model.sections.forEach(sectionData => {
-            const sectionElement = ModelManager.getSection();
-            const sectionHTML = sectionElement.createElement(sectionData);
-            $(this.container).append(sectionHTML);        
-        });
+        $(this.container).append(this.model.sections.map(section => section.createElement()));
     }
 }

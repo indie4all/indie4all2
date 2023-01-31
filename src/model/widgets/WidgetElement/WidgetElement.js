@@ -7,16 +7,28 @@ export default class WidgetElement extends ModelElement {
 
     paleteHidden = false
 
-    createPaletteItem() {
-        const label = I18n.getInstance().translate(`widgets.${this.config.widget ?? "GenericWidget" }.label`);
-        return palette({...this.config, label});
+    constructor(values) {
+        super(values);
+        this.label = this.constructor.label;
+    }
+
+    static createPaletteItem() {
+        const label = I18n.getInstance().translate(`widgets.${this.widget ?? "GenericWidget" }.label`);
+        return palette({category: this.category, type: this.type, widget: this.widget, icon: this.icon, label});
     }
 
     translate(query) {
         return I18n.getInstance().translate(query);
     }
 
-    validateModel(model) {}
+    validateModel() {}
 
     validateForm(form) {}
+
+    toJSON(key) {
+        const result = super.toJSON(key);
+        if (this.params) result["params"] = this.params;
+        if (this.data) result["data"] = this.data;
+        return result;
+    }
 }

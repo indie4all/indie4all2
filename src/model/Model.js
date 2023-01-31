@@ -2,7 +2,7 @@
 import I18n from "../I18n.js";
 import Utils from "../Utils.js";
 import Migrator from "./migration/Migrator.js";
-import ModelManager from "./ModelManager.js";
+import Section from "./section/Section.js";
 
 export class Model {
 
@@ -10,7 +10,7 @@ export class Model {
         Migrator.migrate(model);
         this.version = model.version;
         this.i18n = I18n.getInstance();
-        this.sections = model.sections ?? [];
+        this.sections = model.sections ? model.sections.map(sectionData => new Section(sectionData)) : [];
         this.title = model.title;
         this.user = model.user;
         this.email = model.email;
@@ -25,39 +25,15 @@ export class Model {
     }
 
     /**
-     * Changes the identifiers for the element and its children
-     * @param {*} elem 
-     */
-    #regenerateModelKeys(elem) {
-
-        const modelElement = elem.widget && elem.widget !== 'Section' ? ModelManager.getWidget(elem.widget) : ModelManager.getSection();
-        elem.id = Utils.generate_uuid();
-        // Set instance name if necessary
-        if (elem.params?.name && elem.widget &&
-            elem.widget !== 'TabContent') // Fix: params.name in TabContent must be kept as it is
-        {
-            elem.params.name = modelElement.emptyData().params.name;
-        }
-        if (modelElement.hasChildren()) {
-            let children = elem.type === 'layout' ? elem.data.flat() : elem.data;
-            children.forEach((child) => this.#regenerateModelKeys(child));
-        }
-    }
-
-    /**
      * Returns a copy of the model with its keys changed
      * @param {*} original 
      * @returns 
      */
     copyElement(original) {
-        let copy = $.extend(true, {}, original);
-        this.#regenerateModelKeys(copy);
+        let copy = original.clone();
+        copy.regenerateIDs();
+        // this.#regenerateModelKeys(copy);
         return copy;   
-    }
-
-    
-    createWidget(widget, id) {
-        return ModelManager.getWidget(widget).emptyData(id);
     }
 
     appendObject(modelObject, inPositionElementId, parentContainerId, parentContainerIndex) {
@@ -78,7 +54,7 @@ export class Model {
     removeElementInModel(elementsArray, dataElementId) {
         elementsArray.forEach((elem, idx, arr) => {
             if (elem.id == dataElementId) arr.splice(idx, 1);
-            if (ModelManager.hasChildren(elem)) {
+            if (elem.hasChildren()) {
                 if (elem.type === "layout") 
                     elem.data.forEach(subArr => this.removeElementInModel(subArr, dataElementId));
                 else
@@ -88,48 +64,16 @@ export class Model {
     }
     
     findObject(dataElementId) {
-        const arr = this.sections;
-        let result;
-        for (var i = 0; i < arr.length; i++) {
-            result = this.findElementOrSubelementInModel(arr[i], dataElementId);
-            if (result) return result;
-        }
-    }
-
-    findElementOrSubelementInModel(element, dataElementId) {
-
-        if (element.id == dataElementId)
-            return element;
-
-        if (ModelManager.hasChildren(element)) {
-            var elementsArray = element.type == 'layout' ? [].concat.apply([], element.data) : element.data;
-            for (var i = 0; i < elementsArray.length; i++) {
-                const result = this.findElementOrSubelementInModel(elementsArray[i], dataElementId);
-                if (result) return result;
-            }
-        }
+        return Utils.findAllElements(this).find(elem => elem.id === dataElementId);
     }
 
     findParentOfObject(dataElementId) {
-
-        const findParent = function (parent, elementId) {
-            const children = parent.type === 'layout' ? [].concat.apply([], parent.data) : parent.data;
-            if (children.find(child => child.id === elementId))
-                return parent;
-            for (let i = 0; i < children.length; i++) {
-                const child = children[i];
-                if (ModelManager.hasChildren(child)) {
-                    let found = findParent(child, elementId);
-                    if (found) return found;
-                }
-            }
-        }
-
-        for (var i = 0; i < this.sections.length; i++) {
-            const section = this.sections[i];
-            const parent = findParent(section, dataElementId);
-            if (parent) return parent;
-        }
+        return Utils.findAllElements(this)
+            .filter(elem => elem.hasChildren())
+            .find(elem => {
+                const children = elem.type === 'layout' ? [].concat.apply([], elem.data) : elem.data;
+                return children.find(child => child.id === dataElementId);
+            });
     }
 
     moveElementWithinContainer(elementId, newPosition, containerId, containerIndex) {
@@ -141,7 +85,7 @@ export class Model {
 
     moveElementFromContainerToAnother(elementId, inPositionElementId, targetContainerId, targetContainerIndex) {
         var originalObject = this.findObject(elementId);
-        var copyOfObject = $.extend({}, originalObject)
+        var copyOfObject = originalObject.clone();
         this.removeElement(originalObject.id);
         this.appendObject(copyOfObject, inPositionElementId, targetContainerId, targetContainerIndex);
     }
@@ -157,7 +101,7 @@ export class Model {
         const self = this;
         const errors = [];
         self.sections.forEach(section => {
-            const keys = ModelManager.getSection().validateModel(section);
+            const keys = section.validateModel();
             if (keys.length > 0) 
                 errors.push({ element: section.id, keys });
             section.data.forEach(element => self.validateElement(element, errors));
@@ -167,27 +111,26 @@ export class Model {
         return errors;
     }
 
-    validateFormElement(modelElement, form, dataElementId) {
+    validateFormElement(modelElement, form) {
         let errors = [];
         // If they have name, all the elements must have an unique name
-        if (!modelElement.config.skipNameValidation && form.instanceName && !this.isUniqueName(form.instanceName, dataElementId))
+        if (!modelElement.skipNameValidation && form.instanceName && !this.isUniqueName(form.instanceName, modelElement.id))
             errors.push("common.name.notUniqueName");
-        errors = errors.concat(modelElement.validateForm(form, dataElementId));
+        errors = errors.concat(modelElement.validateForm(form, modelElement.id));
         return errors;
     }
 
     validateElement(element, errors) {
         let validationErrors = [];
-        const widget = ModelManager.getWidget(element.widget);
 
-        if (!widget.config.skipNameValidation && element.params?.name && !this.isUniqueName(element.params.name, element.id))
+        if (!element.skipNameValidation && element.params?.name && !this.isUniqueName(element.params.name, element.id))
             validationErrors.push("common.name.notUniqueName");
 
-        validationErrors = validationErrors.concat(widget.validateModel(element));
+        validationErrors = validationErrors.concat(element.validateModel());
         if (validationErrors.length > 0) 
             errors.push({ element: element.id, keys: validationErrors});
 
-        if (widget.hasChildren()) {
+        if (element.hasChildren()) {
             var elementsArray = element.type == 'layout' ? [].concat.apply([], element.data) : element.data;
             elementsArray.forEach(elem => this.validateElement(elem, errors));
         }
@@ -201,14 +144,40 @@ export class Model {
             if (element.params?.name && (element.params.name == name && element.id != currentElementId))
                 return false;
 
-            if ((element.widget === "Section" ? ModelManager.getSection() : ModelManager.getWidget(element.widget)).hasChildren()) {
+            if (element.hasChildren()) {
                 const elementsArray = element.type == 'layout' ? [].concat.apply([], element.data) : element.data;
                 return elementsArray.every(elem => recursiveIsUnique(elem, name, currentElementId));
             }
-
             return true;
         }
 
         return sections.every(section => recursiveIsUnique(section, name, currentElementId));
+    }
+
+    update(formData) {
+        this.title = formData.title;
+        this.user = formData.user;
+        this.email = formData.email;
+        this.institution = formData.institution;
+        this.language = formData.language;
+        this.theme = formData.theme;
+        this.license = formData.license;
+    }
+
+    toJSON(key) {
+        const result = {
+            version: this.version,
+            sections: this.sections
+        }
+        if (this.title) result["title"] = this.title;
+        if (this.user) result["user"] = this.user;
+        if (this.email) result["email"] = this.email;
+        if (this.institution) result["institution"] = this.institution;
+        // Regenerate resourceId every time the model is serialized
+        result["resourceId"] = Utils.generate_uuid(); 
+        if (this.language) result["language"] = this.language;
+        if (this.theme) result["theme"] = this.theme;
+        if (this.license) result["license"] = this.license;
+        return result;
     }
 }

@@ -8,6 +8,14 @@ import WidgetItemElement from "../WidgetItemElement/WidgetItemElement"
 
 export default class WidgetAnimation extends WidgetItemElement {
     
+    static widget = "Animation";
+    static type = "element";
+    static label = "Animation";
+    static category = "interactiveElements";
+    static toolbar = { edit: true };
+    static icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAvCAMAAACvztidAAAAz1BMVEUAAAB4h5oeN1YeN1Z4h5okPFt4h5p4h5oeN1YeN1YqQl8mPlx4h5opQF54h5pEWXMeN1b///94h5oeN1a7w8xhc4n5DVxWaIDu8PLHzdXV2d/x8vT3+Pnh5OjM0dn7+/zl6Oz+4evQ1dy/x8+Om6oqQl/a3uT9wtaqtL/8hq1ygpVHXHXz9Pbq7O/9pMKcp7X7Z5n6SYT6KnA5T2v4ts38dqNPY3snP13/8PXKwc38lbeAjqCebo/7WI7tPHr5G2bsD1zRFVt+JVmaH1lHL1e+6C3CAAAAEXRSTlMAQECAMPfg0GAQuqagl4BwMDhYLxIAAAF3SURBVEjHzdTZcoIwFIDhiFvtDokISUBEEMR9q93393+mhohgK5C0V/0vYJj55nAROCBOKe8aZFXrUFD9ZG/P/BlRS7MeYKIViFRhXr3FcXWkiiNQ2eFO+jbkFuojPHYnEjgvOpbGjouQ6XTLcNeyLQbooI94fUxT3G5cZtgwLMwFttFBeLzHmnaeYlSUnWKtxrE4jiv/DpOOj+Qne22LXe+nQpw11J9u2Q0TGTzV9eV6toJ+hEsxjiJTDXTWB4wbhfmYmuZsFIPVox739sn5KiQ52INpOu/1HfL88BgTM01Per7jj7j0UJZ7/bIWn+CCuV4QDDeL5UYGz6W/jSEbLI/ZYCEeIJwcYU+MjWRtBPNffM+9eDClApw1cRGynRLM14bzbW0MaD42DAdz8GNt0BxsoKJwzmRiFPXnv1ty8ydYgaYYe9uIY3Dqh0Qw14M32g6DCyhqyy3HoKWwrtrFccpxUk0TlmHQFNkGyKo1BbYGDquUxsAXPhWNRXY4UVUAAAAASUVORK5CYII=";
+    static cssClass = "widget-animation";
+
     canvas = {
         handler: function () {
             const CORNER_RESIZE_RADIUS = 15;
@@ -170,34 +178,24 @@ export default class WidgetAnimation extends WidgetItemElement {
         }
     }
 
-    config = {
-        widget: "Animation",
-        type: "element",
-        label: "Animation",
-        category: "interactiveElements",
-        toolbar: { edit: true },
-        icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAvCAMAAACvztidAAAAz1BMVEUAAAB4h5oeN1YeN1Z4h5okPFt4h5p4h5oeN1YeN1YqQl8mPlx4h5opQF54h5pEWXMeN1b///94h5oeN1a7w8xhc4n5DVxWaIDu8PLHzdXV2d/x8vT3+Pnh5OjM0dn7+/zl6Oz+4evQ1dy/x8+Om6oqQl/a3uT9wtaqtL/8hq1ygpVHXHXz9Pbq7O/9pMKcp7X7Z5n6SYT6KnA5T2v4ts38dqNPY3snP13/8PXKwc38lbeAjqCebo/7WI7tPHr5G2bsD1zRFVt+JVmaH1lHL1e+6C3CAAAAEXRSTlMAQECAMPfg0GAQuqagl4BwMDhYLxIAAAF3SURBVEjHzdTZcoIwFIDhiFvtDokISUBEEMR9q93393+mhohgK5C0V/0vYJj55nAROCBOKe8aZFXrUFD9ZG/P/BlRS7MeYKIViFRhXr3FcXWkiiNQ2eFO+jbkFuojPHYnEjgvOpbGjouQ6XTLcNeyLQbooI94fUxT3G5cZtgwLMwFttFBeLzHmnaeYlSUnWKtxrE4jiv/DpOOj+Qne22LXe+nQpw11J9u2Q0TGTzV9eV6toJ+hEsxjiJTDXTWB4wbhfmYmuZsFIPVox739sn5KiQ52INpOu/1HfL88BgTM01Per7jj7j0UJZ7/bIWn+CCuV4QDDeL5UYGz6W/jSEbLI/ZYCEeIJwcYU+MjWRtBPNffM+9eDClApw1cRGynRLM14bzbW0MaD42DAdz8GNt0BxsoKJwzmRiFPXnv1ty8ydYgaYYe9uIY3Dqh0Qw14M32g6DCyhqyy3HoKWwrtrFccpxUk0TlmHQFNkGyKo1BbYGDquUxsAXPhWNRXY4UVUAAAAASUVORK5CYII=",
-        cssClass: "widget-animation"
+    constructor(values) {
+        super(values);
+        this.params = values?.params ?? { name: WidgetAnimation.label + "-" + Utils.generate_uuid() };
+        this.data = values?.data ?? { blob: "", alt: "", pieces: [] };
     }
 
-    emptyData(id) {
-        return {
-            id: id ?? Utils.generate_uuid(),
-            type: this.config.type,
-            widget: this.config.widget,
-            params: { name: this.config.label + "-" + Utils.generate_uuid() },
-            data: { blob: "", alt: "", pieces: [] }
-        };
+    clone() {
+        return new WidgetAnimation(this);
     }
 
-    getInputs(model) {
+    getInputs() {
         var data = {
-            instanceId: model.id,
-            blob: model.data.blob,
-            pieces: model.data.pieces,
-            instanceName: model.params.name,
-            help: model.params.help,
-            alt: model.data.alt
+            instanceId: this.id,
+            blob: this.data.blob,
+            pieces: this.data.pieces,
+            instanceName: this.params.name,
+            help: this.params.help,
+            alt: this.data.alt
         };
         return {
             inputs: form(data),
@@ -205,24 +203,24 @@ export default class WidgetAnimation extends WidgetItemElement {
         }
     }
 
-    preview(model) {
-        return model.params?.name ?? this.translate("widgets.Animation.label");
+    preview() {
+        return this.params?.name ?? this.translate("widgets.Animation.label");
     }
 
-    settingsClosed(model) {
-        $(`#f-${model.id}`).trigger('destroyCanvas.animation');
-        $(`#f-${model.id}`).off('animation');
+    settingsClosed() {
+        $(`#f-${this.id}`).trigger('destroyCanvas.animation');
+        $(`#f-${this.id}`).off('animation');
         $(window).off('animation');
     }
 
-    settingsOpened(model) {
+    settingsOpened() {
         
-        let $form = $('#f-' + model.id);
+        let $form = $('#f-' + this.id);
         let $piecesContainer = $form.find('.pieces');
         const $iImg = $('input[name=image]');
         const $iBlob = $('input[name=blob]');
-        $iImg.prop('required', !model.data.blob);
-        let rects = $.extend(true, [], model.data.pieces);
+        $iImg.prop('required', !this.data.blob);
+        let rects = $.extend(true, [], this.data.pieces);
         for (let chr of ['x', 'y', 'w', 'h'])
             rects.forEach(rect => rect[chr] = parseFloat(rect[chr]))
         let canvas = $form.find('.img-preview').first().get(0);
@@ -316,33 +314,38 @@ export default class WidgetAnimation extends WidgetItemElement {
             }
         });
 
-        model.data.blob && loadImageIntoCanvas(model.data.blob);
+        this.data.blob && loadImageIntoCanvas(this.data.blob);
     }
 
-    updateModelFromForm(model, form) {
-        model.params.name = form.instanceName;
-        model.params.help = form.help;
-        model.data.blob = form.blob;
-        model.data.alt = form.alt;
-        model.data.pieces = form.piece;  
+    regenerateIDs() {
+        super.regenerateIDs();
+        this.params.name = WidgetAnimation.label + "-" + Utils.generate_uuid();
     }
 
-    validateModel(widget) {
+    updateModelFromForm(form) {
+        this.params.name = form.instanceName;
+        this.params.help = form.help;
+        this.data.blob = form.blob;
+        this.data.alt = form.alt;
+        this.data.pieces = form.piece;  
+    }
+
+    validateModel() {
         let errors = [];
-        if (!Utils.hasNameInParams(widget))
+        if (!Utils.hasNameInParams(this))
             errors.push("common.name.invalid");
         
-        if (Utils.isStringEmptyOrWhitespace(widget.data.alt))
+        if (Utils.isStringEmptyOrWhitespace(this.data.alt))
              errors.push("common.alt.invalid");
 
-        if (!Utils.isValidBase64DataUrl(widget.data.blob))
+        if (!Utils.isValidBase64DataUrl(this.data.blob))
             errors.push("common.imageblob.invalid");
         
-        if (widget.data.pieces.length == 0)
+        if (this.data.pieces.length == 0)
             errors.push("Animation.piece.empty");
         
-        if (widget.data.pieces.length > 1) {
-            widget.data.pieces.forEach(piece => {
+        if (this.data.pieces.length > 1) {
+            this.data.pieces.forEach(piece => {
                 Utils.isStringEmptyOrWhitespace(piece.altImg) && errors.push("Animation.piece.altImg.invalid");
                 Utils.isStringEmptyOrWhitespace(piece.altRec) && errors.push("Animation.piece.altRec.invalid");
                 isNaN(parseFloat(piece['x'])) && errors.push("Animation.piece.x.invalid");

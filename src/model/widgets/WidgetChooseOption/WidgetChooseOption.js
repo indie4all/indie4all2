@@ -5,15 +5,14 @@ import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 
 export default class WidgetChooseOption extends WidgetItemElement {
-    config = {
-        widget: "ChooseOption",
-        type: "element",
-        label: "Choose option",
-        category: "interactiveElements",
-        toolbar: { edit: true },
-        icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAYAAAB30kORAAAACXBIWXMAAAsSAAALEgHS3X78AAADPUlEQVRoBe2ZT0gUURzHvy5atOq6ghZCTVJUJARRyERF6kVyDTKQ0YtFBgvZZZcidwkz67BbINalYKM/dgizDl0s7OJulzJDAmsOdlmXoIOB/710mPgNO2YwM/ue7uzYsh9YnMU3bz4783u/35v38rAKQZQOAmiCvcQBvE6MDs4aWaxIC6LUB8C3vaIc9LGLj+MykuJnEqODXww1BFG6IYiSMhz7pNjN3MKicrLtqiKI0owgSm4z6ZlHA0O2C2uQ+NGmSyTu0/N1CKJUC8Dd3Fhjcyj/xVVUiPqaavp+Wu//Du2AGm4kSkx8HBvKlJGcdLrZvKnAHQhFagOhyD9ZJN/sOvL3OHr6+rXcmXaoHtCA6/ad0+3a7SqiYjcCYDYQivjDQe9TU+n5xSW0dNxUj9tbPaYDY618GP+GxwNvsKOiHO0tHrNe6E4/CYQi8XDQGzWUlienML+whId3rqD+RLUld9qHZjSc7cRwbCyVtAY9kmjKmLY6FbqKnDzNK5HLHhkkJ50pUkpT6rOS+cVl7t4NU96RQ1VwFRfi8q0HaG6ULcvT8mQc3X794mKEaUV8cf+6Kk0FwAqoIlLhYszRK5hKV+2pxNtnty0RXg//5UA0vdOYW4YyMcXWU4kTeQd2qoc0eGkawIKr2Kk+0bRJ/z52DUriF3NnBV/7kCeUqTPDV0Mx5vN6uzrA87pnGh48wiqJafXPj5/TXKfxts++mM5/7oMykWDriWL6+H71kPLuu9hnZon21gbmtkgl7Th1GKAPJzSweAcXD9kXHj13+9UyywKV/N6ui+pLA2WOl0NRZgkKJ54nYyrNW77lFo86ZyFhnpdhin8e6eybmlbtZf/1FB7aEjHPeUjOKHkwDY+1TpZoHcNoLSMd5F63MkVOOlM4kpsyli0yrpXh92ModG7RPduRGB0k6ShVP6vfvFmhikqVeJdQoXuGlvL88mR8pKGt032h1WPpZMcMumm0GEnS+3YL2FpWqtt69T4iLafSXmKtttBnB9vKSlVhg73MaDjorVspLskd0vN6LQOhiGLXj9CDNXsY75xmFtWDVdq/AYQpEu6BVZq2DGivWkuPNkDXrwsHvXZdf50A+AOSff+MuTdefAAAAABJRU5ErkJggg==",
-        cssClass: "widget-choose-option"
-    }
+
+    static widget = "ChooseOption";
+    static type = "element";
+    static label = "Choose option";
+    static category = "interactiveElements";
+    static toolbar = { edit: true };
+    static icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAYAAAB30kORAAAACXBIWXMAAAsSAAALEgHS3X78AAADPUlEQVRoBe2ZT0gUURzHvy5atOq6ghZCTVJUJARRyERF6kVyDTKQ0YtFBgvZZZcidwkz67BbINalYKM/dgizDl0s7OJulzJDAmsOdlmXoIOB/710mPgNO2YwM/ue7uzYsh9YnMU3bz4783u/35v38rAKQZQOAmiCvcQBvE6MDs4aWaxIC6LUB8C3vaIc9LGLj+MykuJnEqODXww1BFG6IYiSMhz7pNjN3MKicrLtqiKI0owgSm4z6ZlHA0O2C2uQ+NGmSyTu0/N1CKJUC8Dd3Fhjcyj/xVVUiPqaavp+Wu//Du2AGm4kSkx8HBvKlJGcdLrZvKnAHQhFagOhyD9ZJN/sOvL3OHr6+rXcmXaoHtCA6/ad0+3a7SqiYjcCYDYQivjDQe9TU+n5xSW0dNxUj9tbPaYDY618GP+GxwNvsKOiHO0tHrNe6E4/CYQi8XDQGzWUlienML+whId3rqD+RLUld9qHZjSc7cRwbCyVtAY9kmjKmLY6FbqKnDzNK5HLHhkkJ50pUkpT6rOS+cVl7t4NU96RQ1VwFRfi8q0HaG6ULcvT8mQc3X794mKEaUV8cf+6Kk0FwAqoIlLhYszRK5hKV+2pxNtnty0RXg//5UA0vdOYW4YyMcXWU4kTeQd2qoc0eGkawIKr2Kk+0bRJ/z52DUriF3NnBV/7kCeUqTPDV0Mx5vN6uzrA87pnGh48wiqJafXPj5/TXKfxts++mM5/7oMykWDriWL6+H71kPLuu9hnZon21gbmtkgl7Th1GKAPJzSweAcXD9kXHj13+9UyywKV/N6ui+pLA2WOl0NRZgkKJ54nYyrNW77lFo86ZyFhnpdhin8e6eybmlbtZf/1FB7aEjHPeUjOKHkwDY+1TpZoHcNoLSMd5F63MkVOOlM4kpsyli0yrpXh92ModG7RPduRGB0k6ShVP6vfvFmhikqVeJdQoXuGlvL88mR8pKGt032h1WPpZMcMumm0GEnS+3YL2FpWqtt69T4iLafSXmKtttBnB9vKSlVhg73MaDjorVspLskd0vN6LQOhiGLXj9CDNXsY75xmFtWDVdq/AYQpEu6BVZq2DGivWkuPNkDXrwsHvXZdf50A+AOSff+MuTdefAAAAABJRU5ErkJggg==";
+    static cssClass = "widget-choose-option";
 
     extensions = {
         optionsNumber: 4,
@@ -27,15 +26,15 @@ export default class WidgetChooseOption extends WidgetItemElement {
         },
     }
 
-    getInputs(model) {
+    getInputs() {
         var data = {
-            instanceId: model.id,
-            text: model.data.text,
-            blob: model.data.blob,
-            options: model.data.options,
-            instanceName: model.params.name,
-            help: model.params.help,
-            alt: model.data.alt
+            instanceId: this.id,
+            text: this.data.text,
+            blob: this.data.blob,
+            options: this.data.options,
+            instanceName: this.params.name,
+            help: this.params.help,
+            alt: this.data.alt
         };
 
         return {
@@ -44,14 +43,38 @@ export default class WidgetChooseOption extends WidgetItemElement {
         };
     }
 
-    settingsOpened(model) {
-        const $form = $('#f-' + model.id);
+    constructor(values) {
+        super(values);
+        this.params = values?.params ?? {
+            name: WidgetChooseOption.label + "-" + Utils.generate_uuid(),
+            help: "",
+        };
+        this.data = values?.data ?? {
+            text: "", blob: "", alt: "",
+            options: [
+                {text: "", correct: false}, {text: "", correct: false},
+                {text: "", correct: false}, {text: "", correct: false}
+            ]
+        }
+    }
+
+    clone() {
+        return new WidgetChooseOption(this);
+    }
+
+    regenerateIDs() {
+        super.regenerateIDs();
+        this.params.name = WidgetChooseOption.label + "-" + Utils.generate_uuid();
+    }
+
+    settingsOpened() {
+        const $form = $('#f-' + this.id);
         const $iImg = $form.find('input[name=image]');
         const $iBlob = $form.find('input[name=blob]');
         const $preview = $form.find('.img-preview');
         const $sectionPreview = $preview.closest('.form-group');
-        $iImg.prop('required', !model.data.blob);
-        $sectionPreview.toggleClass('d-none', !model.data.blob);
+        $iImg.prop('required', !this.data.blob);
+        $sectionPreview.toggleClass('d-none', !this.data.blob);
 
         $iImg.on('change', function () {
             $sectionPreview.toggleClass('d-none', true);
@@ -68,35 +91,12 @@ export default class WidgetChooseOption extends WidgetItemElement {
         });
     }
 
-    preview(model) {
-        return model.params?.name && model.data?.text ? 
-            model.params.name + " | " + model.data.text : this.translate("widgets.ChooseOption.prev");
+    preview() {
+        return this.params?.name && this.data?.text ? 
+            this.params.name + " | " + this.data.text : this.translate("widgets.ChooseOption.prev");
     }
 
-    emptyData(id) {
-        return {
-            id: id ?? Utils.generate_uuid(),
-            type: this.config.type,
-            widget: this.config.widget,
-            params: {
-                name: this.config.label + "-" + Utils.generate_uuid(),
-                help: "",
-            },
-            data: {
-                text: "",
-                blob: "",
-                alt: "",
-                options: [
-                    {text: "", correct: false},
-                    {text: "", correct: false},
-                    {text: "", correct: false},
-                    {text: "", correct: false}
-                ]
-            }
-        };
-    }
-
-    updateModelFromForm(model, form) {
+    updateModelFromForm(form) {
         var options = [];
         for (var i = 0; i < this.extensions.optionsNumber; i++) {
             var option = form["option" + i];
@@ -105,25 +105,25 @@ export default class WidgetChooseOption extends WidgetItemElement {
             }
         }
 
-        model.data.options = options;
-        model.data.blob = form.blob;
-        model.data.text = form.text;
-        model.params.name = form.instanceName;
-        model.params.help = form.help;
-        model.data.alt = form.alt;
+        this.data.options = options;
+        this.data.blob = form.blob;
+        this.data.text = form.text;
+        this.params.name = form.instanceName;
+        this.params.help = form.help;
+        this.data.alt = form.alt;
     }
 
-    validateModel(widget) {
+    validateModel() {
         var errors = [];
-        if (widget.data.text.length == 0) errors.push("ChooseOption.text.invalid");
-        if (!Utils.isValidBase64DataUrl(widget.data.blob)) errors.push("common.imageblob.invalid");
-        if (this.extensions.optionsWithoutCorrect(widget.data.options))
+        if (this.data.text.length == 0) errors.push("ChooseOption.text.invalid");
+        if (!Utils.isValidBase64DataUrl(this.data.blob)) errors.push("common.imageblob.invalid");
+        if (this.extensions.optionsWithoutCorrect(this.data.options))
             errors.push("ChooseOption.options.noCorrect");
-        if (widget.data.options.length != this.extensions.optionsNumber)
+        if (this.data.options.length != this.extensions.optionsNumber)
             errors.push("ChooseOption.options.notEnougOptions");
-        if (!Utils.hasNameInParams(widget))
+        if (!Utils.hasNameInParams(this))
             errors.push("common.name.invalid");
-        if (Utils.isStringEmptyOrWhitespace(widget.data.alt))
+        if (Utils.isStringEmptyOrWhitespace(this.data.alt))
             errors.push("common.alt.invalid")
         return errors;
     }

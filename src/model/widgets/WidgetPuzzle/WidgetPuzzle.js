@@ -7,6 +7,14 @@ import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 
 export default class WidgetPuzzle extends WidgetItemElement {
 
+    static widget = "Puzzle";
+    static type = "element";
+    static label = "Puzzle";
+    static category = "interactiveElements";
+    static toolbar = { edit: true };
+    static icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAMAAABADLOjAAABAlBMVEUAAAAeN1YeN1Z4h5oeN1YeN1Z4h5oeN1YeN1Z4h5oeN1Z4h5pOYXl4h5p4h5olPVseN1YeN1YeN1Z4h5oeN1Z4h5p4h5p4h5r////WBUt4h5oeN1aPm6vHzdVWaYA1S2f40t77X5P8+fr9tc79ob/XBUvx8/T57/L46u/35Or8lbf8j7T8faj7Z5n5GWTiBk/gBk79/Pz79/j69Pb45uz9q8b8h677TohIXXb6LnM6UGv5EV/dBU3ZBUz43+f32eO5wcr9rsmdqLX7bZ1CV3L6KG76JWzqBlL42OL6ydmrtMD8mbr8ibD8c6GAj6BygpX7WI9ic4lcboX6P336Nnf1BlbkOH6qAAAAGHRSTlMAQIC/v+9AMBDv35cg38/Pn49wYGBQMBBrtB48AAABj0lEQVRIx+3SV3eCMBgGYGrd2r2Q1CooIhS1de+67d79/3+lJJ8UQg+J3vWi7wXnPeQxhiSClUiAk+Oo8JMD1L1gB8UjNg6gkchJoR2yZw9NmBJ49xDwFiqI/DwHbS2ukfO/o/fCZxvojBQ7onUxi3ODqwbVrSUpTOleiqRu1bJK6pDSCUrLRNySvymTrlF6m9ImBo/QDaJFhs5j0IR+iXuPpRtkviyu+heuMkvniFZL+fxTiqTko4emoRDtBHRuOr72at0aalWbXt1THqydNLzaJINL/Lhy8+UAPxWP/rTeVQDYmryBFD1adljfts4Pa7SG7zPmFZjQTr/f/FBhHx0Nh7HI4tOhsxAVWX2t0RoHb9PvHYQBr4aMCSk3tJpuprhnCSupO/ekw9Ag5tB17h2cYjCoum5YlaE7RLQUq94N4FwYWiaigxfegg/WfLRP/jVfJ1F6Dd2egRaC7QIX36O3lY6EupM0M6MXNJNWWojuxxE7mXcJtBOJE1rvcnXCpcM8HEsKrpzssNdxKmyYb5RBwWFBnx50AAAAAElFTkSuQmCC";
+    static cssClass = "widget-puzzle";
+
     canvas = {
         handler: function () {
             const CORNER_RESIZE_RADIUS = 15;
@@ -169,36 +177,26 @@ export default class WidgetPuzzle extends WidgetItemElement {
         }
     }
 
-    config = {
-        widget: "Puzzle",
-        type: "element",
-        label: "Puzzle",
-        category: "interactiveElements",
-        toolbar: { edit: true },
-        icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAMAAABADLOjAAABAlBMVEUAAAAeN1YeN1Z4h5oeN1YeN1Z4h5oeN1YeN1Z4h5oeN1Z4h5pOYXl4h5p4h5olPVseN1YeN1YeN1Z4h5oeN1Z4h5p4h5p4h5r////WBUt4h5oeN1aPm6vHzdVWaYA1S2f40t77X5P8+fr9tc79ob/XBUvx8/T57/L46u/35Or8lbf8j7T8faj7Z5n5GWTiBk/gBk79/Pz79/j69Pb45uz9q8b8h677TohIXXb6LnM6UGv5EV/dBU3ZBUz43+f32eO5wcr9rsmdqLX7bZ1CV3L6KG76JWzqBlL42OL6ydmrtMD8mbr8ibD8c6GAj6BygpX7WI9ic4lcboX6P336Nnf1BlbkOH6qAAAAGHRSTlMAQIC/v+9AMBDv35cg38/Pn49wYGBQMBBrtB48AAABj0lEQVRIx+3SV3eCMBgGYGrd2r2Q1CooIhS1de+67d79/3+lJJ8UQg+J3vWi7wXnPeQxhiSClUiAk+Oo8JMD1L1gB8UjNg6gkchJoR2yZw9NmBJ49xDwFiqI/DwHbS2ukfO/o/fCZxvojBQ7onUxi3ODqwbVrSUpTOleiqRu1bJK6pDSCUrLRNySvymTrlF6m9ImBo/QDaJFhs5j0IR+iXuPpRtkviyu+heuMkvniFZL+fxTiqTko4emoRDtBHRuOr72at0aalWbXt1THqydNLzaJINL/Lhy8+UAPxWP/rTeVQDYmryBFD1adljfts4Pa7SG7zPmFZjQTr/f/FBhHx0Nh7HI4tOhsxAVWX2t0RoHb9PvHYQBr4aMCSk3tJpuprhnCSupO/ekw9Ag5tB17h2cYjCoum5YlaE7RLQUq94N4FwYWiaigxfegg/WfLRP/jVfJ1F6Dd2egRaC7QIX36O3lY6EupM0M6MXNJNWWojuxxE7mXcJtBOJE1rvcnXCpcM8HEsKrpzssNdxKmyYb5RBwWFBnx50AAAAAElFTkSuQmCC",
-        cssClass: "widget-puzzle"
-    }
-
-    emptyData(id) {
-        return {
-            id: id ?? Utils.generate_uuid(),
-            type: this.config.type,
-            widget: this.config.widget,
-            params: {
-                name: this.config.label + "-" + Utils.generate_uuid(),
-            },
-            data: { blob: "", alt: "", pieces: [] }
+    constructor(values) {
+        super(values);
+        this.params = values?.params ?? {
+            name: WidgetPuzzle.label + "-" + Utils.generate_uuid(),
         };
+        this.data = values?.data ?? { blob: "", alt: "", pieces: [] };
     }
 
-    getInputs(model) {
+    clone() {
+        return new WidgetPuzzle(this);
+    }
+
+    getInputs() {
         var data = {
-            instanceId: model.id,
-            blob: model.data.blob,
-            pieces: model.data.pieces,
-            instanceName: model.params.name,
-            help: model.params.help,
-            alt: model.data.alt
+            instanceId: this.id,
+            blob: this.data.blob,
+            pieces: this.data.pieces,
+            instanceName: this.params.name,
+            help: this.params.help,
+            alt: this.data.alt
         };
 
         return {
@@ -207,20 +205,24 @@ export default class WidgetPuzzle extends WidgetItemElement {
         }
     }
 
-    settingsClosed(model) {
-        $(`#f-${model.id}`).trigger('destroyCanvas.puzzle');
-        $(`#f-${model.id}`).off('puzzle');
+    regenerateIDs() {
+        super.regenerateIDs();
+        this.params.name = WidgetPuzzle.label + "-" + Utils.generate_uuid();
+    }
+
+    settingsClosed() {
+        $(`#f-${this.id}`).trigger('destroyCanvas.puzzle');
+        $(`#f-${this.id}`).off('puzzle');
         $(window).off('puzzle');
     }
 
-    settingsOpened(model) {
-        
-        let $form = $('#f-' + model.id);
+    settingsOpened() {
+        let $form = $('#f-' + this.id);
         let $piecesContainer = $form.find('.pieces');
         const $iImg = $('input[name=image]');
         const $iBlob = $('input[name=blob]');
-        $iImg.prop('required', !model.data.blob);
-        let rects = $.extend(true, [], model.data.pieces);
+        $iImg.prop('required', !this.data.blob);
+        let rects = $.extend(true, [], this.data.pieces);
         for (let chr of ['x', 'y', 'w', 'h'])
             rects.forEach(rect => rect[chr] = parseFloat(rect[chr]))
         let canvas = $form.find('.img-preview').first().get(0);
@@ -311,32 +313,32 @@ export default class WidgetPuzzle extends WidgetItemElement {
             }
         });
 
-        model.data.blob && loadImageIntoCanvas(model.data.blob);
+        this.data.blob && loadImageIntoCanvas(this.data.blob);
     }
 
-    preview(model) {
-        return model.params?.name ?? this.translate("widgets.Puzzle.label");
+    preview() {
+        return this.params?.name ?? this.translate("widgets.Puzzle.label");
     }
 
-    updateModelFromForm(model, form) {
-        model.params.name = form.instanceName;
-        model.params.help = form.help;
-        model.data.blob = form.blob;
-        model.data.alt = form.alt;
-        model.data.pieces = form.piece;
+    updateModelFromForm(form) {
+        this.params.name = form.instanceName;
+        this.params.help = form.help;
+        this.data.blob = form.blob;
+        this.data.alt = form.alt;
+        this.data.pieces = form.piece;
     }
 
-    validateModel(widget) {
+    validateModel() {
         let errors = [];
-        if (!Utils.hasNameInParams(widget)) errors.push("common.name.invalid");
-        if (Utils.isStringEmptyOrWhitespace(widget.data.alt))
+        if (!Utils.hasNameInParams(this)) errors.push("common.name.invalid");
+        if (Utils.isStringEmptyOrWhitespace(this.data.alt))
              errors.push("common.alt.invalid")
-        if (!Utils.isValidBase64DataUrl(widget.data.blob))
+        if (!Utils.isValidBase64DataUrl(this.data.blob))
             errors.push("common.imageblob.invalid");
-        if (widget.data.pieces.length == 0)
+        if (this.data.pieces.length == 0)
             errors.push("Puzzle.piece.empty");
-        if (widget.data.pieces.length > 1) {
-            widget.data.pieces.forEach(piece => {
+        if (this.data.pieces.length > 1) {
+            this.data.pieces.forEach(piece => {
                 Utils.isStringEmptyOrWhitespace(piece.altImg) && errors.push("Puzzle.piece.altImg.invalid");
                 Utils.isStringEmptyOrWhitespace(piece.altRec) && errors.push("Puzzle.piece.altRec.invalid");
                 isNaN(parseFloat(piece['x'])) && errors.push("Puzzle.piece.x.invalid");

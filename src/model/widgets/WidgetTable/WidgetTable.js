@@ -7,15 +7,14 @@ import "./styles.scss";
 import WidgetItemElement from '../WidgetItemElement/WidgetItemElement';
 
 export default class WidgetTable extends WidgetItemElement {
-    config = {
-        widget: "Table",
-        type: "element",
-        label: "Table",
-        category: "simpleElements",
-        toolbar: { edit: true },
-        icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAvCAMAAACvztidAAAArlBMVEUAAAB4h5oeN1YwR2MeN1Z4h5oqQl91hJgpQV94h5ooQF0wR2MuRWIeN1YeN1Z4h5oeN1Z4h5p4h5pUZ394h5p4h5p4h5r///94h5oeN1b8hq1hc4n9wtaOm6r8lbdIXHX6SYT5DVzCGFr6MnX6Pn36Onr6J278daL7Z5n7WI/6I2vj5urV2d+qtL/6UYtneI1cboX6LnL5GmQvRmP9pMLgfKJ6iJv7ZpjRRnvCI2JyIpDoAAAAF3RSTlMAQEDQEBD++Ozg2b+sYFAwMNDAoJBwYF3JWpEAAAETSURBVEjH1ZXJbsIwEEADJQVKW7rHSwhpE5wFSAt0/f8fa/AMRkKObS4ovMuTo3eYyJLHq+l1zdx5it41tTG49ZCry2VgZsEp1jd0EVjhA4hHPLAzpzD3xSRwgHbbFy+nDXxjzIfPKp7QBqa7mJCnY2LiHxN3MP56Q/5Ail9NzBh8DGfgKMZzfNI4qyLJjwBX6CzVxEWZSlYCLNbgJGnvDxYikYgSXKJXupnzPJREM3CGjtLTXkpTrBsjfkXWIIVo76WwmEnyBFwJPOvikAF5Ac7Q7PMwNnL28ajv9PK/y9htp2yIjB221ZzTD4hd9uCmbiHGDfvIG9nOizHyQqyMVez3be2Dt2c8NLf3PnRIx0gd/ANxY7W2IhchaQAAAABJRU5ErkJggg==",
-        cssClass: "widget-table"
-    }
+    
+    static widget = "Table";
+    static type = "element";
+    static label = "Table";
+    static category = "simpleElements";
+    static toolbar = { edit: true };
+    static icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAvCAMAAACvztidAAAArlBMVEUAAAB4h5oeN1YwR2MeN1Z4h5oqQl91hJgpQV94h5ooQF0wR2MuRWIeN1YeN1Z4h5oeN1Z4h5p4h5pUZ394h5p4h5p4h5r///94h5oeN1b8hq1hc4n9wtaOm6r8lbdIXHX6SYT5DVzCGFr6MnX6Pn36Onr6J278daL7Z5n7WI/6I2vj5urV2d+qtL/6UYtneI1cboX6LnL5GmQvRmP9pMLgfKJ6iJv7ZpjRRnvCI2JyIpDoAAAAF3RSTlMAQEDQEBD++Ozg2b+sYFAwMNDAoJBwYF3JWpEAAAETSURBVEjH1ZXJbsIwEEADJQVKW7rHSwhpE5wFSAt0/f8fa/AMRkKObS4ovMuTo3eYyJLHq+l1zdx5it41tTG49ZCry2VgZsEp1jd0EVjhA4hHPLAzpzD3xSRwgHbbFy+nDXxjzIfPKp7QBqa7mJCnY2LiHxN3MP56Q/5Ail9NzBh8DGfgKMZzfNI4qyLJjwBX6CzVxEWZSlYCLNbgJGnvDxYikYgSXKJXupnzPJREM3CGjtLTXkpTrBsjfkXWIIVo76WwmEnyBFwJPOvikAF5Ac7Q7PMwNnL28ajv9PK/y9htp2yIjB221ZzTD4hd9uCmbiHGDfvIG9nOizHyQqyMVez3be2Dt2c8NLf3PnRIx0gd/ANxY7W2IhchaQAAAABJRU5ErkJggg==";
+    static cssClass = "widget-table";
 
     functions = {
         retrieveUpdatedColumns: function () {
@@ -46,25 +45,25 @@ export default class WidgetTable extends WidgetItemElement {
         }
     }
 
-    emptyData(id) {
-        return {
-            id: id ?? Utils.generate_uuid(),
-            type: this.config.type,
-            widget: this.config.widget,
-            params: {
-                name: this.config.label + "-" + Utils.generate_uuid(),
-                help: ''
-            },
-            data: { columns: [], rows: [] }
+    constructor(values) {
+        super(values);
+        this.params = values?.params ?? {
+            name: WidgetTable.label + "-" + Utils.generate_uuid(),
+            help: ''
         };
+        this.data = values?.data ?? { columns: [], rows: [] };
     }
 
-    getInputs(model) {
+    clone() {
+        return new WidgetTable(this);
+    }
+
+    getInputs() {
         const data = {
-            instanceId: model.id,
-            instanceName: model.params.name,
-            help: model.params.help,
-            numColumns: model.data.columns.length
+            instanceId: this.id,
+            instanceName: this.params.name,
+            help: this.params.help,
+            numColumns: this.data.columns.length
         };
         return {
             inputs: form(data),
@@ -72,12 +71,12 @@ export default class WidgetTable extends WidgetItemElement {
         };
     }
 
-    settingsClosed(model) {
-        $(`#f-${model.id} input[name="videourl"]`).off('change');
+    settingsClosed() {
+        $(`#f-${this.id} input[name="videourl"]`).off('change');
     }
 
-    settingsOpened(model) {
-        let $form = $('#f-' + model.id);
+    settingsOpened() {
+        let $form = $('#f-' + this.id);
         const $table = $('#table');
         const deleteColumnStr = I18n.getInstance().translate("widgets.Table.form.deleteColumn");
         const deleteColumnIcon = "<button title='" + deleteColumnStr + "' class='btn btn-danger btn-delete-column'><i class='fa fa-times'></i></button>";
@@ -218,8 +217,8 @@ export default class WidgetTable extends WidgetItemElement {
                 }
             });
         };
-        if (model.data.columns.length > 0)
-            initTable(model.data.columns, model.data.rows);
+        if (this.data.columns.length > 0)
+            initTable(this.data.columns, this.data.rows);
         
         $('.btn-add-column').on('click', addColumn);
         $table.on('click', 'th, td:not(.dataTables_empty)', editCell);
@@ -237,23 +236,23 @@ export default class WidgetTable extends WidgetItemElement {
         });
     }
 
-    preview(model) {
-        return (model?.data?.columns?.length) ? 
-            model.data.columns.map(col => col.replaceAll(/<br\s*\/?>/g, ' ')).join(' | ') : 
+    preview() {
+        return (this?.data?.columns?.length) ? 
+            this.data.columns.map(col => col.replaceAll(/<br\s*\/?>/g, ' ')).join(' | ') : 
             this.translate("widgets.Table.prev");
     }
 
-    updateModelFromForm(model, form) {
-        model.params.name = form.instanceName;
-        model.params.help = form.help;
-        model.data.rows = this.functions.retrieveUpdatedRows();
-        model.data.columns = this.functions.retrieveUpdatedColumns();
+    updateModelFromForm(form) {
+        this.params.name = form.instanceName;
+        this.params.help = form.help;
+        this.data.rows = this.functions.retrieveUpdatedRows();
+        this.data.columns = this.functions.retrieveUpdatedColumns();
     }
 
-    validateModel(widget) {
+    validateModel() {
         var keys = [];
-        if (!Utils.hasNameInParams(widget)) keys.push("common.name.invalid");
-        if (!widget.data.columns.length) keys.push("Table.empty");
+        if (!Utils.hasNameInParams(this)) keys.push("common.name.invalid");
+        if (!this.data.columns.length) keys.push("Table.empty");
         return keys;
     }
 

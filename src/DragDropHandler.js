@@ -66,11 +66,11 @@ export default class DragDropHandler {
         // 2 - Specific cases
         if (targetType == 'specific-container' || targetType == 'specific-element-container') {
             // 2.1 - specific containers has inside the allow configuration value the widget  
-            var containersAllowed = ModelManager.getWidget(targetWidget).config.allow;
+            var containersAllowed = ModelManager.get(targetWidget).allow;
             return (Utils.stringIsInArray(itemWidget, containersAllowed));
         } else if (targetType == 'element-container' || targetType == 'layout' || targetType == 'simple-container') {
             // 2.2 - layout or element containers has inside the allow configuration value the types of elements that can be placed inside
-            var typesAllowed = ModelManager.getWidget(targetWidget).config.allow;
+            var typesAllowed = ModelManager.get(targetWidget).allow;
             return (Utils.stringIsInArray(itemType, typesAllowed));
         }
     }
@@ -179,7 +179,7 @@ export default class DragDropHandler {
                 position: containerPosition,
                 index: containerIndex
             },
-            element: $.extend({}, element)
+            element
         }));
 
         // Move
@@ -192,14 +192,13 @@ export default class DragDropHandler {
         var parentContainerIndex = -1; // Parent container index (only for layout)
         if (parentType == 'layout') parentContainerIndex = target.dataset.index;
         var parentContainerId = $(target).closest('[data-id]')[0].dataset.id;
-        var dataElementId = Utils.generate_uuid();
         var inPositionElementId = sibling != null ? $(sibling).children('div').first().data('id') : -1;
-        const elementToBeAppended = ModelManager.getWidget(widget).createElement({ id: dataElementId });
+        const modelObject = ModelManager.create(widget);
+        const elementToBeAppended = modelObject.createElement();
         $(el).replaceWith(elementToBeAppended);
-        const modelObject = this.model.createWidget(widget, dataElementId);
         this.model.appendObject(modelObject, inPositionElementId, parentContainerId, parentContainerIndex);
         this.undoredo.pushCommand(new ActionAddElement(this.model, {
-            element: $.extend({}, modelObject),
+            element: modelObject,
             parentType, parentContainerIndex, parentContainerId, inPositionElementId
         }));
     }

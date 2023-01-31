@@ -3,40 +3,34 @@ import form from "./form.hbs";
 import RichTextEditorElement from "../mixings/RichTextEditorElement";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
-import Utils from "../../../Utils";
 
 export default class WidgetTextBlock extends WidgetItemElement {
 
-    constructor() {
-        super();
+    static widget = "TextBlock";
+    static type = "element";
+    static label = "Text Block";
+    static category = "simpleElements";
+    static toolbar = { edit: true };
+    static icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAwCAYAAABuZUjcAAAACXBIWXMAAAsSAAALEgHS3X78AAACPElEQVRogWMYqoAR2d1y5mEFDAwM+QwMDAoD7J8NDAwMhY9OrnqASwHc4XLmYfMZGBgSkiK8GNztTOnmQnTw5PlrhrkrtzFcu/XgAwMDg+Ojk6su4FQsZx7mIGce9n/nwVP/BwP4+PnLf4/Ysv9y5mH7cbmZCUrHu9mbMrgNYEgjAz4ebobe2kyQCChAsSZbmMMVtFUHOlmjAi2Ee/A6fMiBUYfTG7AQY9/f9vUMf9vX0cxpbJ8W45SzM9fvlwlwAZXnEzsq0w7AxIlyOKOcCAOTrSaVnEkaYGNlMWBgYADhgIr2WYkdlWkLiHY4U7QtGA8C0M/AwAB2+FBL4wIV7bMcGEZLlQEAow6nNxj05TguMOjLcVxgqJXjcDCaOekNRh1ObzBajuMDoKKUZWsVFZyLAHQpxxl15cjWiwuMluP0BqMOpzcYdTi9wajD6Q1GHU5vMPQd/vHL14F1CRoAzQXhAzCHb1yz9SDDp0HkeJB72FhZGMREBLHKwxy+4NPnrx/Cs5oI+pQeYN7KbQz9c1Yz6Goo4bQNeboQNJQLmjI00FJTYODj4RoQR1+7/ZDh0+evYEfjcLgjaJwc3qyFzicagqYOr9164ICsUk5a3J6fl9sBmynUBqBJK3ERQQZuLg68JmO0xx+dXAUa9T+ALBbVPgs040wXhxMBQBO3RBeHG2AaBhg86KhMu0C0wzsq00BzMIUD7GhQwAXCOIz41aKCivZZoMnSBNq6DysAOXpBR2XaYIh1CgADAwMAv3EUkQX/fccAAAAASUVORK5CYII=";
+    static cssClass = "widget-textblock";
+
+    constructor(values) {
+        super(values);
         // Add the behaviour of a RichTextEditorElement to the current object
         Object.assign(this, RichTextEditorElement);
-    }
-    
-    config = {
-        widget: "TextBlock",
-        type: "element",
-        label: "Text Block",
-        category: "simpleElements",
-        toolbar: { edit: true },
-        icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAwCAYAAABuZUjcAAAACXBIWXMAAAsSAAALEgHS3X78AAACPElEQVRogWMYqoAR2d1y5mEFDAwM+QwMDAoD7J8NDAwMhY9OrnqASwHc4XLmYfMZGBgSkiK8GNztTOnmQnTw5PlrhrkrtzFcu/XgAwMDg+Ojk6su4FQsZx7mIGce9n/nwVP/BwP4+PnLf4/Ysv9y5mH7cbmZCUrHu9mbMrgNYEgjAz4ebobe2kyQCChAsSZbmMMVtFUHOlmjAi2Ee/A6fMiBUYfTG7AQY9/f9vUMf9vX0cxpbJ8W45SzM9fvlwlwAZXnEzsq0w7AxIlyOKOcCAOTrSaVnEkaYGNlMWBgYADhgIr2WYkdlWkLiHY4U7QtGA8C0M/AwAB2+FBL4wIV7bMcGEZLlQEAow6nNxj05TguMOjLcVxgqJXjcDCaOekNRh1ObzBajuMDoKKUZWsVFZyLAHQpxxl15cjWiwuMluP0BqMOpzcYdTi9wajD6Q1GHU5vMPQd/vHL14F1CRoAzQXhAzCHb1yz9SDDp0HkeJB72FhZGMREBLHKwxy+4NPnrx/Cs5oI+pQeYN7KbQz9c1Yz6Goo4bQNeboQNJQLmjI00FJTYODj4RoQR1+7/ZDh0+evYEfjcLgjaJwc3qyFzicagqYOr9164ICsUk5a3J6fl9sBmynUBqBJK3ERQQZuLg68JmO0xx+dXAUa9T+ALBbVPgs040wXhxMBQBO3RBeHG2AaBhg86KhMu0C0wzsq00BzMIUD7GhQwAXCOIz41aKCivZZoMnSBNq6DysAOXpBR2XaYIh1CgADAwMAv3EUkQX/fccAAAAASUVORK5CYII=",
-        cssClass: "widget-textblock"
+        this.data = values?.data ?? { style: "default", text: "" };
     }
 
-    emptyData(id) {
-        return { 
-            id: id ?? Utils.generate_uuid(),
-            type: this.config.type,
-            widget: this.config.widget,
-            data: { style: "default", text: "" } };
+    clone() {
+        return new WidgetTextBlock(this);
     }
 
-    getInputs(model) {
+    getInputs() {
         const data = {
-            instanceId: model.id,
-            label: "widgets." + this.config.widget + ".form.label",
-            help: "widgets." + this.config.widget + ".form.help",
-            style: model.data.style
+            instanceId: this.id,
+            label: "widgets." + WidgetTextBlock.widget + ".form.label",
+            help: "widgets." + WidgetTextBlock.widget + ".form.help",
+            style: this.data.style
         }
 
         return {
@@ -45,22 +39,22 @@ export default class WidgetTextBlock extends WidgetItemElement {
         };
     }
 
-    settingsOpened(model) {
-        var editorElement = $('#f-' + model.id + ' .texteditor');
-        this.initTextEditor(model.data.text, editorElement);
+    settingsOpened() {
+        var editorElement = $('#f-' + this.id + ' .texteditor');
+        this.initTextEditor(this.data.text, editorElement);
     }
 
-    preview(model) {
-        return model?.data?.text?.length ? model.data.text : this.translate("widgets.TextBlock.prev");
+    preview() {
+        return this?.data?.text?.length ? this.data.text : this.translate("widgets.TextBlock.prev");
     }
 
-    updateModelFromForm(model, form) {
-        model.data.text = this.clearAndSanitizeHtml(form.textblockText);
-        model.data.style = form.style;
+    updateModelFromForm(form) {
+        this.data.text = this.clearAndSanitizeHtml(form.textblockText);
+        this.data.style = form.style;
     }
 
-    validateModel(widget) {
-        if (widget.data.text.length == 0 || this.isEmptyText(widget.data.text))
+    validateModel() {
+        if (this.data.text.length == 0 || this.isEmptyText(this.data.text))
             return ["TextBlock.text.invalid"];
         return [];
     }

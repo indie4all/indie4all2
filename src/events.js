@@ -71,10 +71,7 @@ export function init(api) {
         const id = $(this).closest('[data-id]').data('id');
         api.swap(id, 0);
     });
-    $('body').on('click', '.author-edit-section', function() {
-        const id = $(this).closest('[data-id]').data('id');
-        api.editSection(id);
-    });
+    
     $('body').on('click', '.author-remove-section', function() {
         const id = $(this).closest('[data-id]').data('id');
         api.removeSection(id);

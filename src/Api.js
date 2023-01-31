@@ -3,6 +3,7 @@
 import CryptoJS from 'crypto-js';
 import Author from "./Author";
 import I18n from "./I18n";
+import ModelManager from './model/ModelManager';
 import UndoRedo from "./Undoredo";
 import Utils from "./Utils";
 import downloadTemplate from "./views/download.hbs"
@@ -125,18 +126,9 @@ export default class Api {
         let form = document.getElementById('f-unit-settings');
         $(form).off('submit').on('submit', function (e) {
             e.preventDefault();
-            const formData = Utils.toJSON(form);
-            // Overwrite indieauthor.model with the specified data
-            $.extend(model, formData);
-            // Generate a new resourceId
-            model.resourceId = Utils.generate_uuid();
-            // Deep copy of the indieauthor model
-            const myModel = $.extend(true, {}, model);
-            // Remove unnecessary fields for the exported model
-            delete myModel.currentErrors;
-            delete myModel.i18n;
-            $("#modal-settings").modal('hide');
-            onSubmit && onSubmit(myModel);
+            model.update(Utils.toJSON(form));   // Overwrite indieauthor.model with the specified data
+            $("#modal-settings").modal('hide'); // Hide the modal
+            onSubmit && onSubmit(model);
         });
 
         $("#modal-settings .btn-submit").on('click', function () {
@@ -159,13 +151,8 @@ export default class Api {
 
         if (this.#options['requestAdditionalDataOnPopulate'])
             this.#openUnitSettings(this.#i18n.value(`common.unit.settings`), onSubmit);
-        else {
-            const myModel = $.extend(true, {}, this.#author.model);
-            // Remove unnecessary fields for the exported model
-            delete myModel.currentErrors;
-            delete myModel.i18n;
-            onSubmit && onSubmit(myModel);
-        }
+        else
+            onSubmit && onSubmit(this.#author.model);
     }
 
     /**
@@ -242,7 +229,9 @@ export default class Api {
             const encrypted = localStorage.getItem('copied-element');
             const json = this.#decrypt(encrypted);
             if (json) {
-                this.#author.copyModelElement(JSON.parse(json), id);
+                const elementJSON = JSON.parse(json);
+                const modelElement = ModelManager.create(elementJSON.widget, elementJSON);
+                this.#author.copyModelElement(modelElement, id);
                 Utils.notifySuccess(this.#i18n.translate("messages.importedElement"));
                 return;
             }
@@ -262,7 +251,9 @@ export default class Api {
             const encrypted = localStorage.getItem('copied-section');
             const json = this.#decrypt(encrypted);
             if (json) {
-                this.#author.copyModelSection(JSON.parse(json));
+                const sectionJSON = JSON.parse(json);
+                const sectionElement = ModelManager.create(sectionJSON.widget, sectionJSON);
+                this.#author.copyModelSection(sectionElement);
                 Utils.notifySuccess(this.#i18n.translate("messages.importedSection"));
                 return;
             }
@@ -291,12 +282,6 @@ export default class Api {
      * @param {string} id - Model element ID
      */
     editElement(id) { this.#author.openSettings(id); }
-
-    /**
-     * Opens a modal to edit the given section fields
-     * @param {string} id - Section ID
-     */
-    editSection(id) { this.#author.openSettings(id, "section"); }
 
     /**
      * Stores the given model element encrypted in LocalStorage using the user's cookie

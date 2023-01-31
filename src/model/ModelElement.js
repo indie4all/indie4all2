@@ -1,30 +1,41 @@
 import I18n from "../I18n";
+import Utils from "../Utils";
 
 export default class ModelElement {
 
-    config = {};
+    constructor(values) {
+        this.id = values?.id ?? Utils.generate_uuid();
+        this.widget = this.constructor.widget;
+        this.type = this.constructor.type;
+    }
 
-    createElement(data) {}
+    createElement() {}
     
-    emptyData(index) {}
-
-    getInputs(data) {}
+    getInputs() {}
 
     hasChildren() { return false; }
 
-    preview(model) {}
+    preview() {}
 
-    settingsClosed(model) {}
+    settingsClosed() {}
 
-    settingsOpened(model) {}
+    settingsOpened() {}
 
     translate(query) {
         return I18n.getInstance().translate(query);
     }
     
-    updateModelFromForm(model, form) {}
+    updateModelFromForm(form) {}
 
-    validateModel(model) {}
+    validateModel() {}
 
     validateForm(form) {}
+
+    clone() {}
+
+    regenerateIDs() {
+        this.id = Utils.generate_uuid();
+    }
+
+    toJSON(key) { return { id: this.id, widget: this.widget } }
 }

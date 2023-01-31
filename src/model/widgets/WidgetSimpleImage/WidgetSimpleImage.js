@@ -6,40 +6,38 @@ import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 
 export default class WidgetSimpleImage extends WidgetItemElement {
 
-    config = {
-        widget: "SimpleImage",
-        type: "element",
-        label: "Simple image",
-        category: "simpleElements",
-        toolbar: { edit: true},
-        icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAYAAAB30kORAAAACXBIWXMAAAsSAAALEgHS3X78AAAC80lEQVRoBe2ZS2gTURSG/0wTrWltUqjWgoy1XUgXiiAyIGrrRkVFK8iAL6yb4GOTbmTqyk1NdtVNhQFxU1GyUBdVLC5a0YURKoWCWdoG3Ck1VgLSJCNn7MQ0uTedvO4EyQ8DM/cx58vJufee5LiQI1lR9wIYhLNaAPAiHo384FFkoWVFHQMQ3N61BXQ5pQ+fPmMV/Gw8GpnjYsiKekdWVGPq7UfDaSWWfxnHL98yZEVdkhXVXwx66eHTl44DWyLwA4M3CTzI4pVkRR0A4D93st/hUP6nttYWHO3fT89nWP2SdUMD60m+IjxSXZHaVAO62tq4wePXQvqAFtLX7CJFoY34N6RDz7MXPYuUv62VDrtpAF+0kD5kmXZzgecXsXLiLpBIZtvS46/heRKE62CfaKeTpx9pIX0hPBKY4Xo6df7eGmBTiSRS13QBjFxdAS88yMu8UKB2433MAV5T3fivdg/X7h2Az8ue4fNWHNOVflNcT7sfBNjt4UsVGUxd180Fnnn8rux3cHcP6dQ+eF7dRnp86u+C9HnRdONYRV4mYAuW7sm4dPFQ9aBJBOiu0vaWC5zbVg64kIXIArbTx1PNoe1AlQpeU+hSYEoZWzPocr52u3OKJ0zzi0hdYBznVTJe7lwuNB3X5n46OVuQOFVq1NY7Jme5/WxoSoxyEiZWxlcrYEtkk6dC6ETSBMyftB54NYHXUwF0SpvgfkoeuEhg5EPbMZ4PLhoYucc45Rh2jVvgrj2ycGCsgdYmSppo/lAoslhqqcZfCKLUgBalBrQoNaBFSVotyiDaYtQV2JvNGbR4NzH7pHg0QtAzo50p/GwSzsbUM38GsWYDPXIXs986xodjzcb06Z4V/9B3CX2/nYmaZckwPUzQu3plbO1oZ44zoaleJyvqzq8eY2x0W3oASHeLBrbU2dGOw71y0VpmNmFarZBeZQ3SQnpdBbzdOOBXTsVqrhTo4ToApki4D7vQVDKgWrW1PTogsn8kPBJwyn6FAvAHxnVfJg4KZGkAAAAASUVORK5CYII=",
-        cssClass: "widget-simple-image"
+    static widget = "SimpleImage";
+    static type = "element";
+    static label = "Simple image";
+    static category = "simpleElements";
+    static toolbar = { edit: true};
+    static icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAYAAAB30kORAAAACXBIWXMAAAsSAAALEgHS3X78AAAC80lEQVRoBe2ZS2gTURSG/0wTrWltUqjWgoy1XUgXiiAyIGrrRkVFK8iAL6yb4GOTbmTqyk1NdtVNhQFxU1GyUBdVLC5a0YURKoWCWdoG3Ck1VgLSJCNn7MQ0uTedvO4EyQ8DM/cx58vJufee5LiQI1lR9wIYhLNaAPAiHo384FFkoWVFHQMQ3N61BXQ5pQ+fPmMV/Gw8GpnjYsiKekdWVGPq7UfDaSWWfxnHL98yZEVdkhXVXwx66eHTl44DWyLwA4M3CTzI4pVkRR0A4D93st/hUP6nttYWHO3fT89nWP2SdUMD60m+IjxSXZHaVAO62tq4wePXQvqAFtLX7CJFoY34N6RDz7MXPYuUv62VDrtpAF+0kD5kmXZzgecXsXLiLpBIZtvS46/heRKE62CfaKeTpx9pIX0hPBKY4Xo6df7eGmBTiSRS13QBjFxdAS88yMu8UKB2433MAV5T3fivdg/X7h2Az8ue4fNWHNOVflNcT7sfBNjt4UsVGUxd180Fnnn8rux3cHcP6dQ+eF7dRnp86u+C9HnRdONYRV4mYAuW7sm4dPFQ9aBJBOiu0vaWC5zbVg64kIXIArbTx1PNoe1AlQpeU+hSYEoZWzPocr52u3OKJ0zzi0hdYBznVTJe7lwuNB3X5n46OVuQOFVq1NY7Jme5/WxoSoxyEiZWxlcrYEtkk6dC6ETSBMyftB54NYHXUwF0SpvgfkoeuEhg5EPbMZ4PLhoYucc45Rh2jVvgrj2ycGCsgdYmSppo/lAoslhqqcZfCKLUgBalBrQoNaBFSVotyiDaYtQV2JvNGbR4NzH7pHg0QtAzo50p/GwSzsbUM38GsWYDPXIXs986xodjzcb06Z4V/9B3CX2/nYmaZckwPUzQu3plbO1oZ44zoaleJyvqzq8eY2x0W3oASHeLBrbU2dGOw71y0VpmNmFarZBeZQ3SQnpdBbzdOOBXTsVqrhTo4ToApki4D7vQVDKgWrW1PTogsn8kPBJwyn6FAvAHxnVfJg4KZGkAAAAASUVORK5CYII=";
+    static cssClass = "widget-simple-image";
+
+    constructor(values) {
+        super(values);
+        this.params = values?.params ?? {
+            name: WidgetSimpleImage.label + "-" + Utils.generate_uuid(),
+            aspect: "original",
+            align: "left",
+        };
+        this.data = values?.data ?? { blob: "", alt: "", width: 0, height: 0 };
     }
 
-    emptyData(id) {
-        return {
-            id: id ?? Utils.generate_uuid(),
-            type: this.config.type,
-            widget: this.config.widget,
-            params: {
-                name: this.config.label + "-" + Utils.generate_uuid(),
-                aspect: "original",
-				align: "left",
-            },
-            data: { blob: "", alt: "", width: 0, height: 0 }
-        }
+    clone() {
+        return new WidgetSimpleImage(this);
     }
 
-    getInputs(model) {
+    getInputs() {
         var data = {
-            instanceId: model.id,
-            instanceName: model.params.name,
-            blob: model.data.blob,
-            alt: model.data.alt,
-            aspect: model.params.aspect,
-            align: model.params.align,
-            width: model.data.width,
-            height: model.data.height
+            instanceId: this.id,
+            instanceName: this.params.name,
+            blob: this.data.blob,
+            alt: this.data.alt,
+            aspect: this.params.aspect,
+            align: this.params.align,
+            width: this.data.width,
+            height: this.data.height
         }
 
         return {
@@ -48,14 +46,19 @@ export default class WidgetSimpleImage extends WidgetItemElement {
         };
     }
 
-    preview(model) {
-        return model.params?.name ?? this.translate("widgets.SimpleImage.prev");
+    preview() {
+        return this.params?.name ?? this.translate("widgets.SimpleImage.prev");
     }
 
-    settingsOpened(model) {
+    regenerateIDs() {
+        super.regenerateIDs();
+        this.params.name = WidgetSimpleImage.label + "-" + Utils.generate_uuid();
+    }
+
+    settingsOpened() {
         let ratio = 1;
         let imgChanged = false;
-        let $form = $('#f-' + model.id);
+        let $form = $('#f-' + this.id);
         let $preview = $form.find('.image-preview');
         let $size = $form.find('.size');
         let $img = $preview.find('img');
@@ -69,7 +72,7 @@ export default class WidgetSimpleImage extends WidgetItemElement {
         $size.toggle($aspect.val() === 'custom');
         $img.width($aspect.val() === 'custom' ? $imgWidth.val() : '');
         $img.height($aspect.val() === 'custom' ? $imgHeight.val() : '');       
-        $iImg.prop('required', !model.data.blob);
+        $iImg.prop('required', !this.data.blob);
         $aspect.on('change', function () {
             let aspect = $(this).val();
             $size.toggle(aspect === 'custom');
@@ -131,23 +134,23 @@ export default class WidgetSimpleImage extends WidgetItemElement {
         });
     }
 
-    updateModelFromForm(model, form) {
-        model.params.name = form.instanceName;
-        model.params.aspect = form.aspect;
-		model.params.align = form.align;
-        model.data.alt = form.alt;
-		model.data.width = form.width;
-        model.data.height = form.height;
-        model.data.blob = form.blob;
+    updateModelFromForm(form) {
+        this.params.name = form.instanceName;
+        this.params.aspect = form.aspect;
+		this.params.align = form.align;
+        this.data.alt = form.alt;
+		this.data.width = form.width;
+        this.data.height = form.height;
+        this.data.blob = form.blob;
     }
 
-    validateModel(widget) {
+    validateModel() {
         var keys = [];
-        if (!Utils.isValidBase64DataUrl(widget.data.blob))
+        if (!Utils.isValidBase64DataUrl(this.data.blob))
             keys.push("common.imageblob.invalid");
-        if (!Utils.hasNameInParams(widget)) keys.push("common.name.invalid");
-        if (Utils.isStringEmptyOrWhitespace(widget.data.alt)) keys.push("common.alt.invalid")
-		if ( widget.params.aspect === 'custom' && (!widget.data.width || !widget.data.height))
+        if (!Utils.hasNameInParams(this)) keys.push("common.name.invalid");
+        if (Utils.isStringEmptyOrWhitespace(this.data.alt)) keys.push("common.alt.invalid")
+		if ( this.params.aspect === 'custom' && (!this.data.width || !this.data.height))
             keys.push("SimpleImage.image.sizeNotSet");
         return keys;
     }

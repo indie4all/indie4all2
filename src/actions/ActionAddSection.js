@@ -1,5 +1,4 @@
 /* global $ */
-import ModelManager from "../model/ModelManager";
 import ActionElement from "./ActionElement";
 import ActionRemoveSection from "./ActionRemoveSection";
 
@@ -7,7 +6,7 @@ export default class ActionAddSection extends ActionElement {
 
     do() {
         const element = this.data.element;
-        const view = ModelManager.getSection().createElement(element);
+        const view = element.createElement();
         const position = this.data.position;
         if (position == this.model.sections.length) {
             $(this.data.container).append(view);

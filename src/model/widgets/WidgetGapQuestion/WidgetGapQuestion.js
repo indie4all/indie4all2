@@ -12,6 +12,7 @@ export default class WidgetGapQuestion extends WidgetItemElement {
     static toolbar = { edit: true };
     static icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAYAAAB30kORAAAACXBIWXMAAAsSAAALEgHS3X78AAACYUlEQVRoBe2ZT2gTQRSHfwmxYlqaLUSloGNRRBQEL7IgQtOL+OdgBVlEKCpCRLykl7rxpKfk1npRWBARFCV48JJDTk3sxVgQoRKhF+OehRqtPUjbkVkzaaKzZaXtzEbmg4XMy7DzzcvsbHZfBG0Q0zoGYBRqqQN45VYLX/0sWtLEtCYBZPYM7gQ7VPHmXQ1N8QtutfDeV4OY1l1iWrRUeUtV0/i+SE+PTVBiWgvEtIz1pBcevSgqF+Yw8ROjt5h4RuQbJaaVAmBcPDeseCmv0d/Xi1PDx1n7vOj7KP/AOoaJxDo+0VCZBkRLbzbbe7YZds5J2TmnYxcJtbTR38dudtMAPtk55yqPd8vyYJl+zLKOLlzTV9CF0kPQu4dEtLQs/jPpxhKWbzr4ufeGd6zYT71YGIj5OSxfnsLqzMdWe+VBCbSxhNjDtHJtoTR1v3QIc1afzQB/SLNfgM65Gxcp3gneVxht/Ah8AiYsmuBWIpSOHN2HCEl6Ge+Ik+Tfs/6HDG0Wvhdi7HkGSMTXAon471gI8L0QWbZ7PkyCzn1utTsmoRBfaZ7dyMnDoRBtR98RZaGlZaGlZaGlZaGlZaGlZRFtFmV4gSY0lF7Poje+Q5xpt1pg0uV7U0/wbTH4E8tW8rJYQW2+jv1kUDgK/2s6XpuvT58Zu21cv3QWRw4OKZFlSStVZj3pQwcIdiUHhP3a64jsdSqrJab4iz4V7E4OeMI+tcxyPpseaT0ENCuk10Q97ZxDVU1CRNDdw79yKhfPI6j0eAiE2Uq4j6DS+Wy6zGrVfHtUABt/JJ9Nqxp/gwD4BRpSrRtKNuT5AAAAAElFTkSuQmCC";
     static cssClass = "widget-question";
+    static paletteHidden = true;
 
     static MAX_ANSWERS = 4;
 

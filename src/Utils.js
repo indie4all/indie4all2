@@ -182,4 +182,11 @@ export default class Utils {
         return Utils.findAllElements(model)
             .filter(elem => Array.isArray(type) ? type.includes(elem.widget) : (type === elem.widget));                
     }
+
+    static groupBy(collection, key) {
+        return collection.reduce(function(accumulator, value) {
+            (accumulator[value[key]] = accumulator[value[key]] || []).push(value);
+            return accumulator;
+        }, {});
+    }
 }

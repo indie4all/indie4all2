@@ -11,7 +11,6 @@ import ActionAddSection from "./actions/ActionAddSection"
 import ActionRemoveElement from "./actions/ActionRemoveElement"
 import ActionRemoveSection from "./actions/ActionRemoveSection"
 import ActionSwapSections from "./actions/ActionSwapSections"
-import widgetsJson from "./model/widgets/widgets.json"
 import alertErrorTemplate from "./views/alertError.hbs";
 import categoryTemplate from "./views/category.hbs"
 import loadingTemplate from "./views/loading.hbs"
@@ -22,7 +21,7 @@ import "./styles/common-styles.scss";
 export default class Author {
 
     constructor(palette, container) {
-        this.version = "1.12.2";
+        this.version = "1.12.3";
         this.widgets = {};
         this.model = new Model({});
         this.undoredo = UndoRedo.getInstance();
@@ -33,7 +32,7 @@ export default class Author {
         this.icons = {};
         this.dragDropHandler = new DragDropHandler(palette, container, this.model);
         this.i18n = I18n.getInstance();
-        this.loadWidgets(palette);
+        this.initPalette(palette);
         this.palette = palette;
         this.container = container;
         !$('#modal-loading').length && $(this.container).after(loadingTemplate());
@@ -292,21 +291,21 @@ export default class Author {
     }
 
     /**
-     * Initializes the widgets palette with the elements contained in widgets.json
+     * Initializes the widgets palette
      * @param {HTMLElement} palette - Container for the widgets palette
      */
-    loadWidgets(palette) {
+    initPalette(palette) {
+
         try {
-            Object.entries(widgetsJson).forEach(entry => {
-                const [category, widgets] = entry;
-                const widgetsPalette = widgets
-                    .map(widget => ModelManager.get(widget))
-                    .filter(proto => !proto.paletteHidden)
-                    .map(proto => proto.createPaletteItem());
-                const categoryView = categoryTemplate({ title: "palette." + category, 
-                    category: category, numWidgets: widgetsPalette.length});
-                $(palette).append(categoryView);
-                $(palette).append(widgetsPalette);
+            Object.entries(ModelManager.getAllWidgetsByCategory()).forEach(
+                ([category, widgets]) => {
+                    const widgetsPalette = widgets
+                        .filter(proto => !proto.paletteHidden)
+                        .map(proto => proto.createPaletteItem());
+                    const categoryView = categoryTemplate({ title: "palette." + category, 
+                        category: category, numWidgets: widgetsPalette.length});
+                    $(palette).append(categoryView);
+                    $(palette).append(widgetsPalette);                
             });
         } catch (err) {
             console.error(err);

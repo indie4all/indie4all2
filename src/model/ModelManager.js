@@ -48,6 +48,8 @@ import WidgetTrueFalseContainer from "./widgets/WidgetTrueFalseContainer/WidgetT
 import WidgetTrueFalseItem from "./widgets/WidgetTrueFalseItem/WidgetTrueFalseItem.js";
 import WidgetTrueFalseQuestion from "./widgets/WidgetTrueFalseQuestion/WidgetTrueFalseQuestion.js";
 import WidgetVideo from "./widgets/WidgetVideo/WidgetVideo.js";
+import WidgetElement from "./widgets/WidgetElement/WidgetElement.js";
+import Utils from "../Utils.js";
 
 export default class ModelManager {
 
@@ -58,24 +60,35 @@ export default class ModelManager {
         'section-container' ];
 
     static {
-        const elements = [ Section, WidgetAcordionContainer, WidgetAcordionContent, WidgetAnimation,
-          WidgetAnimationContainer, WidgetAnimationItem, WidgetAudioTermContainer,
-          WidgetAudioTermItem, WidgetBlockquote, WidgetButtonTextContainer,
-          WidgetButtonTextItem, WidgetChooseOption, WidgetTwoColumnsLayout,
-          WidgetThreeColumnsLayout, WidgetFourColumnsLayout,  WidgetCorrectWordContainer, 
-          WidgetCorrectWordItem, WidgetCouplesContainer, WidgetCouplesItem, 
-          WidgetDragdropContainer, WidgetDragdropItem, WidgetGapQuestion, 
-          WidgetGuessWord, WidgetImage, WidgetImageAndSoundContainer, 
-          WidgetImageAndSoundItem, WidgetImageAndText, WidgetInteractiveVideo, 
-          WidgetLatexFormula, WidgetMissingwordsContainer, WidgetMissingwordsItem, 
-          WidgetModal, WidgetPuzzle, WidgetSchemaContainer, WidgetSchemaItem, 
-          WidgetSentenceorderContainer, WidgetSentenceorderItem, WidgetSimpleImage, 
-          WidgetSimpleQuestion, WidgetTabContent, WidgetTable, WidgetTabsContainer, 
-          WidgetTermClassifcation, WidgetTermClassificationItem, WidgetTestContainer, 
-          WidgetTextBlock, WidgetTrueFalseContainer, WidgetTrueFalseItem, 
-          WidgetTrueFalseQuestion, WidgetVideo]
+        const elements = [ 
+            // Section element
+            Section, 
+            // Elements
+            WidgetTextBlock, WidgetBlockquote, WidgetLatexFormula, WidgetVideo, WidgetSimpleImage, WidgetTable,
+            // Layouts
+            WidgetTwoColumnsLayout, WidgetThreeColumnsLayout, WidgetFourColumnsLayout,
+            // Containers
+            WidgetTabsContainer, WidgetTabContent, WidgetAcordionContainer, WidgetAcordionContent, WidgetModal,
+            // Interactive elements
+            WidgetImageAndText, WidgetImage, WidgetChooseOption, WidgetDragdropContainer, WidgetDragdropItem,
+            WidgetTrueFalseContainer, WidgetTrueFalseItem, WidgetAudioTermContainer, WidgetAudioTermItem,
+            WidgetImageAndSoundContainer, WidgetImageAndSoundItem, WidgetCouplesContainer, WidgetCouplesItem,
+            WidgetSchemaContainer, WidgetSchemaItem, WidgetInteractiveVideo, WidgetPuzzle, WidgetCorrectWordContainer,
+            WidgetCorrectWordItem, WidgetMissingwordsContainer, WidgetMissingwordsItem, WidgetSentenceorderContainer,
+            WidgetSentenceorderItem, WidgetGuessWord, WidgetButtonTextContainer, WidgetButtonTextItem, WidgetAnimation,
+            WidgetAnimationContainer, WidgetAnimationItem, WidgetTermClassifcation, WidgetTermClassificationItem,
+            // Tests
+            WidgetTestContainer, WidgetGapQuestion, WidgetSimpleQuestion, WidgetTrueFalseQuestion ]
           
         this.#elements = Object.fromEntries(elements.map(elem => [elem.widget, elem]));
+    }
+
+    static getAllWidgets() {
+        return Object.values(this.#elements).filter(elem => WidgetElement.isPrototypeOf(elem) );
+    }
+
+    static getAllWidgetsByCategory() {
+        return Utils.groupBy(this.getAllWidgets(), "category");
     }
 
     static get(widget = "Section") {

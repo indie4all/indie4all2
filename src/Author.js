@@ -12,11 +12,11 @@ import ActionRemoveElement from "./actions/ActionRemoveElement"
 import ActionRemoveSection from "./actions/ActionRemoveSection"
 import ActionSwapSections from "./actions/ActionSwapSections"
 import alertErrorTemplate from "./views/alertError.hbs";
-import categoryTemplate from "./views/category.hbs"
 import loadingTemplate from "./views/loading.hbs"
 import settingsTemplate from "./views/modal-settings.hbs"
 import previewGeneratedTemplate from "./views/preview-generated.hbs"
 import "./styles/common-styles.scss";
+import Category from "./category/Category";
 
 export default class Author {
 
@@ -32,9 +32,12 @@ export default class Author {
         this.icons = {};
         this.dragDropHandler = new DragDropHandler(palette, container, this.model);
         this.i18n = I18n.getInstance();
-        this.initPalette(palette);
-        this.palette = palette;
+        this.categories = Object.entries(
+            ModelManager.getAllWidgetsByCategory()).map(
+                ([name, widgets]) => new Category(name, widgets));
         this.container = container;
+        // Initialize the widgets palette
+        $(palette).append(this.categories.map(cat => cat.render()));
         !$('#modal-loading').length && $(this.container).after(loadingTemplate());
         !$('#modal-settings').length && $(this.container).after(settingsTemplate());
         !$('#modal-preview-generated').length && $(this.container).after(previewGeneratedTemplate());
@@ -281,35 +284,7 @@ export default class Author {
      * @param {string} category - Category ID
      */
     toggleCategory(category) {
-        var divCategory = document.querySelector("[data-category-header='" + category + "']");
-        var icon = divCategory.querySelector("[data-icon]");
-        var isHidden = divCategory.dataset.hidden === 'true';
-        $(icon).toggleClass("fa-caret-down", !isHidden);
-        $(icon).toggleClass("fa-caret-up", isHidden);
-        $("[data-category=" + category + "]").toggle(isHidden);
-        divCategory.dataset.hidden = !isHidden;
-    }
-
-    /**
-     * Initializes the widgets palette
-     * @param {HTMLElement} palette - Container for the widgets palette
-     */
-    initPalette(palette) {
-
-        try {
-            Object.entries(ModelManager.getAllWidgetsByCategory()).forEach(
-                ([category, widgets]) => {
-                    const widgetsPalette = widgets
-                        .filter(proto => !proto.paletteHidden)
-                        .map(proto => proto.createPaletteItem());
-                    const categoryView = categoryTemplate({ title: "palette." + category, 
-                        category: category, numWidgets: widgetsPalette.length});
-                    $(palette).append(categoryView);
-                    $(palette).append(widgetsPalette);                
-            });
-        } catch (err) {
-            console.error(err);
-        }
+        this.categories.find(cat => cat.name === category).toggle();
     }
 
     /**

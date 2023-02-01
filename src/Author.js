@@ -148,58 +148,47 @@ export default class Author {
 
         const self = this;
         // 0 Clear older values
-        document.getElementById('modal-settings-body').innerHTML = ''; // clear the body
+        $('#modal-settings-body').empty(); // clear the body
         $("#modal-settings .btn-submit").off('click'); // Unbind button submit click event 
 
         // 1  get model from object
-        var modelElem = this.model.findObject(dataElementId);
+        const modelElem = this.model.findObject(dataElementId);
         if (!modelElem) throw new Error('Could not locate the given element id');
 
         // 2 Populate the modal with the inputs of the widget
-        var modalContent = modelElem.getInputs();
+        const modalContent = modelElem.getInputs();
         // 3 Open the modal with values put
-        document.getElementById('modal-settings-body').innerHTML = modalContent.inputs;
-        document.getElementById('modal-settings-tittle').innerHTML = modalContent.title;
+        $('#modal-settings-body').html(modalContent.inputs);
+        $('#modal-settings-tittle').html(modalContent.title);
         $("#modal-settings").modal({ show: true, keyboard: false, focus: true, backdrop: 'static' });
         // 4 Associate functions to the modal
-        var form = document.getElementById('f-' + dataElementId);
-        var input = document.createElement('input');
-        input.type = 'submit';
-        input.classList.add('hide');
-        form.appendChild(input);
+        const $form = $("#f-" + dataElementId);
+        $form.append("<input type='submit' class='hide' />");
+        $("#modal-settings-body").prepend('<div class="errors"></div>');
 
-        $(form).off('submit').on('submit', function (e) {
+        $form.off('submit').on('submit', function (e) {
             e.preventDefault();
-            var formData = Utils.toJSON(form);
-            var errors = self.model.validateFormElement(modelElem, formData);
+            const formData = Utils.toJSON(this);
+            const errors = self.model.validateFormElement(modelElem, formData);
             if (errors.length > 0) {
                 $("#modal-settings").animate({ scrollTop: 0 }, "slow");
                 const errorText = errors.map(error => self.i18n.translate("errors." + error)).join(". ")
-                if ($("#modal-settings-body .errors").length == 0) {
-                    $("#modal-settings-body").prepend('<div class="errors">' + alertErrorTemplate({errorText}) + '</div>');
-                } else {
-                    $("#modal-settings-body .errors").html(alertErrorTemplate({errorText}));
-                }
+                $("#modal-settings-body .errors").html(alertErrorTemplate({errorText}));
+                return;
+            } 
 
-            } else {
-                modelElem.settingsClosed();
-                $("#modal-settings").modal('hide');
-                $("#modal-settings-body .errors").remove();
-                modelElem.updateModelFromForm(formData);
-                const previewElement = document.querySelector('[data-id="' + modelElem.id + '"]').querySelector('[data-prev]');
-                previewElement.innerHTML = modelElem.preview();
-                // Clear modal values
-                document.getElementById('modal-settings-body').innerHTML = '';
-                document.getElementById('modal-settings-tittle').innerHTML = '';
-                // Clean errors
-                previewElement && self.deleteToolTipError(previewElement);
-                $(document.querySelector("[data-id='" + modelElem.id + "']").parentNode).removeClass('editor-error', 200);
-                $(form).remove();
-            }
+            modelElem.settingsClosed();
+            $("#modal-settings").modal('hide');
+            modelElem.updateModelFromForm(formData);
+            const previewElement = document.querySelector('[data-id="' + modelElem.id + '"]').querySelector('[data-prev]');
+            previewElement.innerHTML = modelElem.preview();
+            // Clean errors
+            previewElement && self.deleteToolTipError(previewElement);
+            $(document.querySelector("[data-id='" + modelElem.id + "']").parentNode).removeClass('editor-error', 200);
         });
 
         $("#modal-settings .btn-submit").on('click', function () {
-            input.click();
+            $form.find('input[type="submit"]').trigger('click');
         });
 
         // 5 Run when settings are opened

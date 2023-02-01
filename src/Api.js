@@ -119,14 +119,12 @@ export default class Api {
             license: model.license ?? ''
         };
         // Create the form
-        document.getElementById('modal-settings-tittle').innerHTML = title;
-        document.getElementById('modal-settings-body').innerHTML = downloadTemplate(data);
+        $('#modal-settings-tittle').html(title);
+        $('#modal-settings-body').html(downloadTemplate(data));
         $("#modal-settings").modal({ show: true, keyboard: false, focus: true, backdrop: 'static' });
-
-        let form = document.getElementById('f-unit-settings');
-        $(form).off('submit').on('submit', function (e) {
+        $('#f-unit-settings').off('submit').on('submit', function (e) {
             e.preventDefault();
-            model.update(Utils.toJSON(form));   // Overwrite indieauthor.model with the specified data
+            model.update(Utils.toJSON(this));   // Overwrite indieauthor.model with the specified data
             $("#modal-settings").modal('hide'); // Hide the modal
             onSubmit && onSubmit(model);
         });

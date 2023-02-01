@@ -15,8 +15,12 @@ import 'datatables.net-keytable-dt/css/keyTable.dataTables.css';
 import 'datatables.net-select-dt';
 import 'datatables.net-select-dt/css/select.dataTables.css';
 import 'katex/dist/katex.css'
-import "@fortawesome/fontawesome-free/js/all.js";
-import "@fortawesome/fontawesome-free/css/all.css";
+import { dom, library } from '@fortawesome/fontawesome-svg-core'
+import { 
+    faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle, 
+    faCloudDownloadAlt, faCloudUploadAlt, faCopy, faEdit, faEye, faGlobe, faFileExport, 
+    faFileImport, faPlusCircle, faTimes, faTimesCircle, faRedo, faSpinner, faTrashAlt, faUndo
+} from '@fortawesome/free-solid-svg-icons'
 import "./styles/overrides.css"
 import './vendor/trumbowyg/trumbowyg.template'
 import './vendor/trumbowyg/trumbowyg.whitespace'
@@ -27,5 +31,12 @@ const domContainer = document.getElementById('main-container');
 // Initialize the IndieAuthor api
 const api = new Api(domPalette, domContainer);
 init_events(api);
+
+// Enable FontAwesome icons
+library.add(faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle, 
+    faCloudDownloadAlt, faCloudUploadAlt, faCopy, faEdit, faEye, faGlobe, faFileExport, 
+    faFileImport, faPlusCircle, faTimes, faTimesCircle, faRedo, faSpinner, faTrashAlt, faUndo);
+// Watch for changes to replace icons
+dom.watch();
 export { api };
 

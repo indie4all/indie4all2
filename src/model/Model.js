@@ -1,4 +1,3 @@
-/* global $ */
 import I18n from "../I18n.js";
 import Utils from "../Utils.js";
 import Migrator from "./migration/Migrator.js";

@@ -1,6 +1,5 @@
 /* global $ */
 /* global bootprompt */
-import CryptoJS from 'crypto-js';
 import Author from "./Author";
 import I18n from "./I18n";
 import ModelManager from './model/ModelManager';
@@ -162,10 +161,13 @@ export default class Api {
     #encrypt(text) {
         const encOption = this.#options['encryptionKey'];
         if (encOption === null)
-            return text;
-        
-        const key = typeof encOption === 'function' ? encOption() : encOption;
-        return CryptoJS.AES.encrypt(text, key).toString();
+            return new Promise(resolve => resolve(text));
+
+        import('crypto-js')
+        .then(({default: CryptoJS}) => {
+            const key = typeof encOption === 'function' ? encOption() : encOption;
+            return CryptoJS.AES.encrypt(text, key).toString();
+        });    
     }
 
     /**
@@ -176,10 +178,13 @@ export default class Api {
     #decrypt(encrypted) {
         const encOption = this.#options['encryptionKey'];
         if (encOption === null)
-            return encrypted;
-        
-        const key = typeof encOption === 'function' ? encOption() : encOption;
-        return CryptoJS.AES.decrypt(encrypted, key).toString(CryptoJS.enc.Utf8);
+            return new Promise(resolve => resolve(encrypted));
+
+        import('crypto-js')
+        .then(({default: CryptoJS}) => {
+            const key = typeof encOption === 'function' ? encOption() : encOption;
+            return CryptoJS.AES.decrypt(encrypted, key).toString(CryptoJS.enc.Utf8);
+        });
     }
 
     /**
@@ -226,16 +231,17 @@ export default class Api {
     importElement(id) { 
         try {
             const encrypted = localStorage.getItem('copied-element');
-            const json = this.#decrypt(encrypted);
-            if (json) {
-                const elementJSON = JSON.parse(json);
-                const modelElement = ModelManager.create(elementJSON.widget, elementJSON);
-                this.#author.copyModelElement(modelElement, id);
-                Utils.notifySuccess(this.#i18n.translate("messages.importedElement"));
-                return;
-            }
-            localStorage.removeItem('copied-element');
-            Utils.notifyWarning(this.#i18n.translate("messages.noElement"));
+            this.#decrypt(encrypted).then(json => {
+                if (json) {
+                    const elementJSON = JSON.parse(json);
+                    const modelElement = ModelManager.create(elementJSON.widget, elementJSON);
+                    this.#author.copyModelElement(modelElement, id);
+                    Utils.notifySuccess(this.#i18n.translate("messages.importedElement"));
+                    return;
+                }
+                localStorage.removeItem('copied-element');
+                Utils.notifyWarning(this.#i18n.translate("messages.noElement"));
+            });
         } catch (err) {
             localStorage.removeItem('copied-element');
             Utils.notifyWarning(this.#i18n.translate("messages.noElement"));    
@@ -248,16 +254,17 @@ export default class Api {
     importSection() { 
         try {
             const encrypted = localStorage.getItem('copied-section');
-            const json = this.#decrypt(encrypted);
-            if (json) {
-                const sectionJSON = JSON.parse(json);
-                const sectionElement = ModelManager.create(sectionJSON.widget, sectionJSON);
-                this.#author.copyModelSection(sectionElement);
-                Utils.notifySuccess(this.#i18n.translate("messages.importedSection"));
-                return;
-            }
-            localStorage.removeItem('copied-section');
-            Utils.notifyWarning(this.#i18n.translate("messages.noSection"));
+            this.#decrypt(encrypted).then(json => {
+                if (json) {
+                    const sectionJSON = JSON.parse(json);
+                    const sectionElement = ModelManager.create(sectionJSON.widget, sectionJSON);
+                    this.#author.copyModelSection(sectionElement);
+                    Utils.notifySuccess(this.#i18n.translate("messages.importedSection"));
+                    return;
+                }
+                localStorage.removeItem('copied-section');
+                Utils.notifyWarning(this.#i18n.translate("messages.noSection"));
+            });
         } catch (err) {
             localStorage.removeItem('copied-section');
             Utils.notifyWarning(this.#i18n.translate("messages.noSection"));
@@ -289,9 +296,10 @@ export default class Api {
     exportElement(id) {
         try {
             const original = this.#author.getModelElement(id);
-            const encrypted = this.#encrypt(JSON.stringify(original));
-            localStorage.setItem('copied-element', encrypted);
-            Utils.notifySuccess(this.#i18n.translate("messages.exportedElement"));
+            this.#encrypt(JSON.stringify(original)).then(encrypted => {
+                localStorage.setItem('copied-element', encrypted);
+                Utils.notifySuccess(this.#i18n.translate("messages.exportedElement"));
+            });
         } catch (err) {
             Utils.notifyWarning(this.#i18n.translate("messages.couldNotExportElement"));
         }
@@ -304,9 +312,10 @@ export default class Api {
     exportSection(id) { 
         try {
             const original = this.#author.getModelElement(id);
-            const encrypted = this.#encrypt(JSON.stringify(original));
-            localStorage.setItem('copied-section', encrypted);
-            Utils.notifySuccess(this.#i18n.translate("messages.exportedSection"));
+            this.#encrypt(JSON.stringify(original)).then(encrypted => {
+                localStorage.setItem('copied-section', encrypted);
+                Utils.notifySuccess(this.#i18n.translate("messages.exportedSection"));
+            });
         } catch (err) {
             Utils.notifyWarning(this.#i18n.translate("messages.couldNotExportSection"));
         }        

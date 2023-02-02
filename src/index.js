@@ -25,12 +25,7 @@ import "./styles/overrides.css"
 import './vendor/trumbowyg/trumbowyg.template'
 import './vendor/trumbowyg/trumbowyg.whitespace'
 import { init as init_events } from './events'
-
-const domPalette = document.getElementById('palette');
-const domContainer = document.getElementById('main-container');
-// Initialize the IndieAuthor api
-const api = new Api(domPalette, domContainer);
-init_events(api);
+import I18n from './I18n';
 
 // Enable FontAwesome icons
 library.add(faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle, 
@@ -38,5 +33,15 @@ library.add(faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, 
     faFileImport, faPlusCircle, faTimes, faTimesCircle, faRedo, faSpinner, faTrashAlt, faUndo);
 // Watch for changes to replace icons
 dom.watch();
+
+let api;
+I18n.init().then(() => {
+    const domPalette = document.getElementById('palette');
+    const domContainer = document.getElementById('main-container');
+    // Initialize the IndieAuthor api
+    api = new Api(domPalette, domContainer);
+    init_events(api);
+});
+
 export { api };
 

@@ -1,6 +1,5 @@
 import './styles.scss';
 import WidgetColumnsLayout from "../WidgetColumnsLayout/WidgetColumnsLayout";
-import { value } from 'jsonpath';
 import ModelManager from '../../ModelManager';
 
 export default class WidgetFourColumnsLayout extends WidgetColumnsLayout {

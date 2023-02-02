@@ -1,55 +1,47 @@
-import LANG_EL from "./lang/el.json";
-import LANG_EN from "./lang/en.json";
-import LANG_ES from "./lang/es.json";
-import LANG_FR from "./lang/fr.json";
-import LANG_LT from "./lang/lt.json";
 import jsonpath from "jsonpath/jsonpath.min.js";
 
 export default class I18n {
 
     static #INSTANCE = null;
-    #locale = 'EN';
-    #LANGUAGES = ["EL", "ES", "EN", "FR", "LT"];
+    static #LANGUAGES = {
+        "el": () => import("./lang/el.json"), 
+        "es": () => import("./lang/es.json"), 
+        "en": () => import("./lang/es.json"), 
+        "fr": () => import("./lang/fr.json"),
+        "lt": () => import("./lang/lt.json")};
 
-    constructor() {
-        let lang = navigator && navigator.language ? navigator.language.substring(0,2) : 'en';
-        this.#locale = this.#LANGUAGES.find(elem => elem === lang.toUpperCase()) ?? "EN";
+
+    #corpus = {}
+
+    constructor() {}
+
+    static init() {
+        const lang = navigator && navigator.language ? navigator.language.substring(0,2).toLowerCase() : 'en';
+        return I18n.#LANGUAGES[lang in I18n.#LANGUAGES ? lang : "en"]().then(({ default: corpus}) => {
+            I18n.#INSTANCE = new I18n();
+            I18n.#INSTANCE.#corpus = corpus;
+            return I18n.#INSTANCE;
+        });
     }
 
     static getInstance() {
-        if (!this.#INSTANCE) {
-            this.#INSTANCE = new I18n();
-        }
-        return this.#INSTANCE;
+        if (!I18n.#INSTANCE)
+            throw new Error("I18n must be initialised first");
+            
+        return I18n.#INSTANCE;
     }
 
     hasKey(query) {
         return this.translate(query).length > 0;
     }
 
-    translate(query) {
-        return this.translateLang(query, this.#locale);
-    }
 
-    translateLang(query, lang) {
-        const upperLang = lang.toUpperCase();
-        const realLang = this.#LANGUAGES.includes(upperLang) ? upperLang : LANG_EN;
-        switch (realLang) {
-            case "EL": return jsonpath.query(LANG_EL, "$."+query);
-            case "ES": return jsonpath.query(LANG_ES, "$."+query);
-            case "FR": return jsonpath.query(LANG_FR, "$."+query);
-            case "LT": return jsonpath.query(LANG_LT, "$."+query);
-            default: return jsonpath.query(LANG_EN, "$."+query);
-        }
+    translate(query) {
+        return jsonpath.query(this.#corpus, "$."+query);
     }
 
     value(query) {
         const translations = this.translate(query);
-        return translations.length ? translations[0] : "";
-    }
-
-    valueLang(query, lang) {
-        const translations = this.translateLang(query, lang);
         return translations.length ? translations[0] : "";
     }
 }

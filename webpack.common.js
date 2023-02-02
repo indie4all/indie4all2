@@ -37,7 +37,7 @@ const config = {
   ],
   entry: './src/index.js',
   output: {
-    filename: 'main.js',
+    filename: '[name].js',
     assetModuleFilename: 'assets/[hash][ext][query]',
     clean: true
   }

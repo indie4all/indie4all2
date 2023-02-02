@@ -1,15 +1,6 @@
-/* global $ */
 import 'bootstrap/dist/css/bootstrap.css';
 import 'toastr/build/toastr.css'; 
 import Api from "./Api"
-import 'datatables.net-dt';
-import 'datatables.net-dt/css/jquery.dataTables.css';
-import 'datatables.net-buttons-dt';
-import 'datatables.net-buttons-dt/css/buttons.dataTables.css';
-import 'datatables.net-keytable-dt';
-import 'datatables.net-keytable-dt/css/keyTable.dataTables.css';
-import 'datatables.net-select-dt';
-import 'datatables.net-select-dt/css/select.dataTables.css';
 import { dom, library } from '@fortawesome/fontawesome-svg-core'
 import { 
     faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle, 

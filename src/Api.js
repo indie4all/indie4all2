@@ -6,7 +6,6 @@ import I18n from "./I18n";
 import ModelManager from './model/ModelManager';
 import UndoRedo from "./Undoredo";
 import Utils from "./Utils";
-import downloadTemplate from "./views/download.hbs"
 
 export default class Api {
 
@@ -96,41 +95,43 @@ export default class Api {
      */
     #openUnitSettings(title, onSubmit) {
 
-        $("#modal-settings .btn-submit").off('click'); // Unbind button submit click event 
-        const themes = ["GeneralTheme1", "GeneralTheme2", "GeneralTheme3", "GeneralTheme4", "GeneralTheme5",
-        "GeneralTheme6", "GeneralTheme7", "GeneralTheme8", "GeneralTheme9", "GeneralTheme10", "GeneralTheme11",
-        "GeneralTheme12", "GeneralTheme13", "GeneralTheme14", "GeneralTheme15", "GeneralTheme16", "GeneralTheme17",
-        "GeneralTheme18"];
-        const languages = ["EN", "ES", "FR", "EL", "LT"];
-        const licenses = ["PRIVATE", "BY", "BYSA", "BYND", "BYNC", "BYNCSA", "BYNCND"];
+        import("./views/download.hbs").then(({default: downloadTemplate}) => {
+            $("#modal-settings .btn-submit").off('click'); // Unbind button submit click event 
+            const themes = ["GeneralTheme1", "GeneralTheme2", "GeneralTheme3", "GeneralTheme4", "GeneralTheme5",
+            "GeneralTheme6", "GeneralTheme7", "GeneralTheme8", "GeneralTheme9", "GeneralTheme10", "GeneralTheme11",
+            "GeneralTheme12", "GeneralTheme13", "GeneralTheme14", "GeneralTheme15", "GeneralTheme16", "GeneralTheme17",
+            "GeneralTheme18"];
+            const languages = ["EN", "ES", "FR", "EL", "LT"];
+            const licenses = ["PRIVATE", "BY", "BYSA", "BYND", "BYNC", "BYNCSA", "BYNCND"];
 
-        const model = this.#author.model;
+            const model = this.#author.model;
 
-        const data = {
-            themes, 
-            languages, 
-            licenses, 
-            title: model.title ?? '',
-            user: model.user ?? '',
-            email: model.email ?? '',
-            institution: model.institution ?? '',
-            language: model.language ?? '',
-            theme: model.theme ?? '',
-            license: model.license ?? ''
-        };
-        // Create the form
-        $('#modal-settings-tittle').html(title);
-        $('#modal-settings-body').html(downloadTemplate(data));
-        $("#modal-settings").modal({ show: true, keyboard: false, focus: true, backdrop: 'static' });
-        $('#f-unit-settings').off('submit').on('submit', function (e) {
-            e.preventDefault();
-            model.update(Utils.toJSON(this));   // Overwrite indieauthor.model with the specified data
-            $("#modal-settings").modal('hide'); // Hide the modal
-            onSubmit && onSubmit(model);
-        });
+            const data = {
+                themes, 
+                languages, 
+                licenses, 
+                title: model.title ?? '',
+                user: model.user ?? '',
+                email: model.email ?? '',
+                institution: model.institution ?? '',
+                language: model.language ?? '',
+                theme: model.theme ?? '',
+                license: model.license ?? ''
+            };
+            // Create the form
+            $('#modal-settings-tittle').html(title);
+            $('#modal-settings-body').html(downloadTemplate(data));
+            $("#modal-settings").modal({ show: true, keyboard: false, focus: true, backdrop: 'static' });
+            $('#f-unit-settings').off('submit').on('submit', function (e) {
+                e.preventDefault();
+                model.update(Utils.toJSON(this));   // Overwrite indieauthor.model with the specified data
+                $("#modal-settings").modal('hide'); // Hide the modal
+                onSubmit && onSubmit(model);
+            });
 
-        $("#modal-settings .btn-submit").on('click', function () {
-            $("#modal-settings input[type='submit']").trigger('click');
+            $("#modal-settings .btn-submit").on('click', function () {
+                $("#modal-settings input[type='submit']").trigger('click');
+            });
         });
     }
 

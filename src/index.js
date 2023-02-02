@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.css';
-import 'toastr/build/toastr.css'; 
 import Api from "./Api"
 import { dom, library } from '@fortawesome/fontawesome-svg-core'
 import { 

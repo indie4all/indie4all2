@@ -1,11 +1,7 @@
 /* global $ */
 import 'bootstrap/dist/css/bootstrap.css';
 import 'toastr/build/toastr.css'; 
-import icons from "trumbowyg/dist/ui/icons.svg"
-$.trumbowyg.svgPath = icons; // './vendor/trumbowyg/ui/icons.svg';
 import Api from "./Api"
-import "trumbowyg"
-import "trumbowyg/dist/ui/trumbowyg.css"
 import 'datatables.net-dt';
 import 'datatables.net-dt/css/jquery.dataTables.css';
 import 'datatables.net-buttons-dt';
@@ -21,8 +17,6 @@ import {
     faFileImport, faPlusCircle, faTimes, faTimesCircle, faRedo, faSpinner, faTrashAlt, faUndo
 } from '@fortawesome/free-solid-svg-icons'
 import "./styles/overrides.css"
-import './vendor/trumbowyg/trumbowyg.template'
-import './vendor/trumbowyg/trumbowyg.whitespace'
 import { init as init_events } from './events'
 import I18n from './I18n';
 

@@ -10,50 +10,59 @@ export default {
      * @param {string} origin String that indicates the widget origin that requested the editor
      */
     initTextEditor: function(content, element) {
-        $(element).trumbowyg({
-            btns: [
-                ['undo', 'redo'], // Only supported in Blink browsers
-                ["Format"],
-                ['strong', 'em', 'del'],
-                ['link'],
-                ['unorderedList', 'orderedList'],
-                ['removeformat'],
-                ['justifyLeft', 'justifyCenter', 'justifyRight'],
-                ['whitespace'],
-                ['template'],
-                ['fullscreen']
-            ],
-            btnsDef: {
-                Format: {
-                    dropdown: ['p', 'h1', 'h2', 'h3', 'h4'],
-                    ico: 'p'
-                }
-            },
-            minimalLinks: true,
-            removeformatPasted: true,
-            tagsToRemove: ['script', 'link', 'style', 'img', 'applet', 'embed', 'noframes', 'iframe', 'noscript'],
-            plugins: {
-                table: {
-                    styler: "table"
-                },
-                templates: [
-                    {
-                        name: I18n.getInstance().translate("plugins.trumbowyg.templates.code"),
-                        html: "\\begin[language]{}Code\\end"
-                    },
-                    {
-                        name: I18n.getInstance().translate("plugins.trumbowyg.templates.screenReader"),
-                        html: "\\begin[hidden]{}Help text\\end"
+        import("trumbowyg")
+        .then(() => import("trumbowyg/dist/ui/trumbowyg.css"))
+        .then(() => import("../../../vendor/trumbowyg/trumbowyg.template"))
+        .then(() => import("../../../vendor/trumbowyg/trumbowyg.whitespace"))
+        .then(() => import("trumbowyg/dist/ui/icons.svg"))
+        .then(({default: icons}) => {
+            if (!$.trumbowyg.svgPath)
+                $.trumbowyg.svgPath = icons;
+            $(element).trumbowyg({
+                btns: [
+                    ['undo', 'redo'], // Only supported in Blink browsers
+                    ["Format"],
+                    ['strong', 'em', 'del'],
+                    ['link'],
+                    ['unorderedList', 'orderedList'],
+                    ['removeformat'],
+                    ['justifyLeft', 'justifyCenter', 'justifyRight'],
+                    ['whitespace'],
+                    ['template'],
+                    ['fullscreen']
+                ],
+                btnsDef: {
+                    Format: {
+                        dropdown: ['p', 'h1', 'h2', 'h3', 'h4'],
+                        ico: 'p'
                     }
-                ]
-            }
+                },
+                minimalLinks: true,
+                removeformatPasted: true,
+                tagsToRemove: ['script', 'link', 'style', 'img', 'applet', 'embed', 'noframes', 'iframe', 'noscript'],
+                plugins: {
+                    table: {
+                        styler: "table"
+                    },
+                    templates: [
+                        {
+                            name: I18n.getInstance().translate("plugins.trumbowyg.templates.code"),
+                            html: "\\begin[language]{}Code\\end"
+                        },
+                        {
+                            name: I18n.getInstance().translate("plugins.trumbowyg.templates.screenReader"),
+                            html: "\\begin[hidden]{}Help text\\end"
+                        }
+                    ]
+                }
+            });
+            
+            // Fix: allow the edition of the trumbowyg link modal
+            $('.trumbowyg-createLink-dropdown-button').on('mousedown', function () {
+                $('.trumbowyg-modal-box input, .trumbowyg-modal-box button').off('focusin').on('focusin', function(e) { e.stopPropagation(); });     
+            });
+            if (content) $(element).trumbowyg('html', content);
         });
-        
-        // Fix: allow the edition of the trumbowyg link modal
-        $('.trumbowyg-createLink-dropdown-button').on('mousedown', function () {
-            $('.trumbowyg-modal-box input, .trumbowyg-modal-box button').off('focusin').on('focusin', function(e) { e.stopPropagation(); });     
-        });
-        if (content) $(element).trumbowyg('html', content);
     },
 
     /**

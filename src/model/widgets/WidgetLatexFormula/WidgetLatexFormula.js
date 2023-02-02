@@ -1,4 +1,3 @@
-import katex from 'katex';
 import preview from "./preview.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
@@ -30,8 +29,12 @@ export default class WidgetLatexFormula extends WidgetItemElement {
      * @param {Element} domElement DOM element where the formula will be displayed
      */
     #showFormula(formula, domElement) {
-        katex.render(formula, domElement, {
-            throwOnError: false
+        import ('katex/dist/katex.css').then(() => {
+            import('katex').then(({default: katex}) => {
+                katex.render(formula, domElement, {
+                    throwOnError: false
+                });
+            });
         });
     }
 

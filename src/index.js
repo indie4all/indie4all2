@@ -14,7 +14,6 @@ import 'datatables.net-keytable-dt';
 import 'datatables.net-keytable-dt/css/keyTable.dataTables.css';
 import 'datatables.net-select-dt';
 import 'datatables.net-select-dt/css/select.dataTables.css';
-import 'katex/dist/katex.css'
 import { dom, library } from '@fortawesome/fontawesome-svg-core'
 import { 
     faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle, 

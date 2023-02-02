@@ -1,5 +1,4 @@
 /* global $ */
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import RichTextEditorElement from "../mixings/RichTextEditorElement";
 import "./styles.scss";
@@ -29,16 +28,18 @@ export default class WidgetButtonTextItem extends WidgetItemElement {
     }
 
     getInputs() {
-        const data = {
-            instanceId: this.id,
-            blob: this.data.blob,
-            alt: this.data.alt,
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            const data = {
+                instanceId: this.id,
+                blob: this.data.blob,
+                alt: this.data.alt,
+            }
 
-        return {
-            inputs: form(data),
-            title: this.translate("strings.widgets.ButtonTextItem.label")
-        };
+            return {
+                inputs: form(data),
+                title: this.translate("strings.widgets.ButtonTextItem.label")
+            };
+        });
     }
 
     preview() {

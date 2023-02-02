@@ -1,5 +1,4 @@
 /* global $ */
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import RichTextEditorElement from "../mixings/RichTextEditorElement";
 import "./styles.scss";
@@ -31,18 +30,20 @@ export default class WidgetImageAndText extends WidgetItemElement {
     }
 
     getInputs() {
-        var data = {
-            instanceId: this.id,
-            blob: this.data.blob,
-            instanceName: this.params.name,
-            help: this.params.help,
-            alt: this.data.alt
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            var data = {
+                instanceId: this.id,
+                blob: this.data.blob,
+                instanceName: this.params.name,
+                help: this.params.help,
+                alt: this.data.alt
+            }
 
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.ImageAndText.label")
-        };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.ImageAndText.label")
+            };
+        });
     }
 
     regenerateIDs() {

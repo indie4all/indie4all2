@@ -1,5 +1,4 @@
 /* global $ */
-import form from "./form.hbs"
 import './styles.scss';
 import WidgetColumnsLayout from "../WidgetColumnsLayout/WidgetColumnsLayout";
 import ModelManager from "../../ModelManager";
@@ -25,15 +24,17 @@ export default class WidgetTwoColumnsLayout extends WidgetColumnsLayout {
     }
 
     getInputs() {
-        const data = {
-            instanceId: this.id,
-            width: this.params.firstColumnWidth
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            const data = {
+                instanceId: this.id,
+                width: this.params.firstColumnWidth
+            }
 
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.ColumnLayout.label")
-        }
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.ColumnLayout.label")
+            }
+        });
     }
 
     settingsClosed() {

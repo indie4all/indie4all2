@@ -1,4 +1,3 @@
-import form from './form.hbs'
 import './styles.scss';
 import WidgetContainerElement from '../WidgetContainerElement/WidgetContainerElement';
 import ModelManager from '../../ModelManager';
@@ -26,11 +25,13 @@ export default class WidgetAcordionContent extends WidgetContainerElement {
     }
 
     getInputs() {
-        var data = { instanceId: this.id, title: this.params.title ?? '' };
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.AcordionContent.label")
-        };
+        return import('./form.hbs').then(({default: form}) => {
+            var data = { instanceId: this.id, title: this.params.title ?? '' };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.AcordionContent.label")
+            };
+        });
     }
 
     preview() {

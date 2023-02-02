@@ -1,5 +1,4 @@
 /* global $ */
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
@@ -29,16 +28,18 @@ export default class WidgetTrueFalseItem extends WidgetItemElement {
     }
 
     getInputs() {
-        const data = {
-            instanceId: this.id,
-            question: this.data.question,
-            feedback: this.data.feedback
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            const data = {
+                instanceId: this.id,
+                question: this.data.question,
+                feedback: this.data.feedback
+            }
 
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.TrueFalseItem.label")
-        };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.TrueFalseItem.label")
+            };
+        });
     }
 
     settingsOpened() {

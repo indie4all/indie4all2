@@ -1,5 +1,4 @@
 /* global $ */
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
@@ -26,18 +25,20 @@ export default class WidgetImageAndSoundItem extends WidgetItemElement {
 
 
     getInputs() {
-        var data = {
-            instanceId: this.id,
-            text: this.data.text,
-            alt: this.data.alt,
-            blob: this.data.blob,
-            audioblob: this.data.audioblob,
-            captionsblob: this.data.captionsblob
-        }
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.ImageAndSoundItem.label")
-        };
+        return import('./form.hbs').then(({default: form}) => {
+            var data = {
+                instanceId: this.id,
+                text: this.data.text,
+                alt: this.data.alt,
+                blob: this.data.blob,
+                audioblob: this.data.audioblob,
+                captionsblob: this.data.captionsblob
+            }
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.ImageAndSoundItem.label")
+            };
+        });
     }
 
     preview() {

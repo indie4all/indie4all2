@@ -1,5 +1,4 @@
 /* global $ */
-import form from "./form.hbs"
 import Utils from "../../../Utils";
 import './styles.scss';
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
@@ -25,18 +24,20 @@ export default class WidgetAudioTermItem extends WidgetItemElement {
     }
 
     getInputs() {
-        var data = {
-            instanceId: this.id,
-            term: this.data.term,
-            definition: this.data.definition,
-            audioblob: this.data.audioblob,
-            captionsblob: this.data.captionsblob
-        }
-        
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.AudioTermItem.label")
-        };
+        return import('./form.hbs').then(({default: form}) => {
+            var data = {
+                instanceId: this.id,
+                term: this.data.term,
+                definition: this.data.definition,
+                audioblob: this.data.audioblob,
+                captionsblob: this.data.captionsblob
+            }
+            
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.AudioTermItem.label")
+            };
+        });
     }
 
     settingsOpened() {

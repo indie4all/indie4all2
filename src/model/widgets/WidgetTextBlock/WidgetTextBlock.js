@@ -1,5 +1,4 @@
 /* global $ */
-import form from "./form.hbs";
 import RichTextEditorElement from "../mixings/RichTextEditorElement";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
@@ -26,17 +25,19 @@ export default class WidgetTextBlock extends WidgetItemElement {
     }
 
     getInputs() {
-        const data = {
-            instanceId: this.id,
-            label: "widgets." + WidgetTextBlock.widget + ".form.label",
-            help: "widgets." + WidgetTextBlock.widget + ".form.help",
-            style: this.data.style
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            const data = {
+                instanceId: this.id,
+                label: "widgets." + WidgetTextBlock.widget + ".form.label",
+                help: "widgets." + WidgetTextBlock.widget + ".form.help",
+                style: this.data.style
+            }
 
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.TextBlock.label")
-        };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.TextBlock.label")
+            };
+        });
     }
 
     settingsOpened() {

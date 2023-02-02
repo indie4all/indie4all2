@@ -1,7 +1,6 @@
 import I18n from "../../I18n";
 import ModelElement from "../ModelElement";
 import ModelManager from "../ModelManager";
-import formTemplate from "./form.hbs";
 import prevTemplate from "./prev.hbs";
 import sectionTemplate from "./template.hbs"
 
@@ -23,14 +22,16 @@ export default class Section extends ModelElement {
     }
 
     getInputs() {
-        return {
-            title: "Section " + this.name,
-            inputs: formTemplate({
-                id: this.id,
-                name: this.name,
-                bookmark: this.bookmark
-            })
-        };
+        return import('./form.hbs').then(({default: form}) => {
+            return {
+                title: "Section " + this.name,
+                inputs: form({
+                    id: this.id,
+                    name: this.name,
+                    bookmark: this.bookmark
+                })
+            };
+        });
     }
 
     hasChildren() { return true; }

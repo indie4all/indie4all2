@@ -1,5 +1,4 @@
 /* global $ */
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
@@ -25,18 +24,20 @@ export default class WidgetCorrectWordItem extends WidgetItemElement {
     }
 
     getInputs() {
-        var data = {
-            instanceId: this.id,
-            question: this.data.question,
-            word: this.data.word,
-            blob: this.data.blob,
-            alt: this.data.alt
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            var data = {
+                instanceId: this.id,
+                question: this.data.question,
+                word: this.data.word,
+                blob: this.data.blob,
+                alt: this.data.alt
+            }
 
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.CorrectWordItem.label")
-        };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.CorrectWordItem.label")
+            };
+        });
     }
 
     settingsOpened() {

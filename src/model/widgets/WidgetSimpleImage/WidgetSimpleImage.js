@@ -1,5 +1,4 @@
 /* global $ */
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
@@ -29,21 +28,23 @@ export default class WidgetSimpleImage extends WidgetItemElement {
     }
 
     getInputs() {
-        var data = {
-            instanceId: this.id,
-            instanceName: this.params.name,
-            blob: this.data.blob,
-            alt: this.data.alt,
-            aspect: this.params.aspect,
-            align: this.params.align,
-            width: this.data.width,
-            height: this.data.height
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            var data = {
+                instanceId: this.id,
+                instanceName: this.params.name,
+                blob: this.data.blob,
+                alt: this.data.alt,
+                aspect: this.params.aspect,
+                align: this.params.align,
+                width: this.data.width,
+                height: this.data.height
+            }
 
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.SimpleImage.label")
-        };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.SimpleImage.label")
+            };
+        });
     }
 
     preview() {

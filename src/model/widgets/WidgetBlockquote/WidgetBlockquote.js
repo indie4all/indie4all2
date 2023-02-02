@@ -1,6 +1,4 @@
-import form from "./form.hbs";
 import "./styles.scss";
-
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 
 export default class WidgetBlockquote extends WidgetItemElement {
@@ -23,17 +21,18 @@ export default class WidgetBlockquote extends WidgetItemElement {
     }
 
     getInputs() {
-        return {
-            inputs: form({
-                instanceId: this.id,
-                caption: this.data.caption,
-                quote: this.data.quote,
-                alignment: this.data.alignment,
-                source: this.data.source
-            }),
-            title: this.translate("widgets.Blockquote.label")
-        };
-
+        return import('./form.hbs').then(({default: form}) => {
+            return {
+                inputs: form({
+                    instanceId: this.id,
+                    caption: this.data.caption,
+                    quote: this.data.quote,
+                    alignment: this.data.alignment,
+                    source: this.data.source
+                }),
+                title: this.translate("widgets.Blockquote.label")
+            };
+        });
     }
 
     preview() {

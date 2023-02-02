@@ -1,5 +1,4 @@
 /* global $ */
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
@@ -29,16 +28,18 @@ export default class WidgetTrueFalseQuestion extends WidgetItemElement {
     }
 
     getInputs() {
-        var templateValues = {
-            instanceId: this.id,
-            question: this.data.question,
-            feedback: this.data.feedback
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            var templateValues = {
+                instanceId: this.id,
+                question: this.data.question,
+                feedback: this.data.feedback
+            }
 
-        return {
-            inputs: form(templateValues),
-            title: this.translate("widgets.TrueFalseQuestion.label")
-        };
+            return {
+                inputs: form(templateValues),
+                title: this.translate("widgets.TrueFalseQuestion.label")
+            };
+        });
     }
 
     preview() {

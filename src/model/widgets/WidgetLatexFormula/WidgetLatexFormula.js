@@ -1,5 +1,4 @@
 import katex from 'katex';
-import form from "./form.hbs";
 import preview from "./preview.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
@@ -37,16 +36,18 @@ export default class WidgetLatexFormula extends WidgetItemElement {
     }
 
     getInputs() {
-        var data = {
-            instanceId: this.id,
-            formula: this.data.formula,
-            caption: this.data.caption
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            var data = {
+                instanceId: this.id,
+                formula: this.data.formula,
+                caption: this.data.caption
+            }
 
-        return {
-            inputs: form(data),
-            title: 'Latex Formula' // TODO: i18n
-        };
+            return {
+                inputs: form(data),
+                title: 'Latex Formula' // TODO: i18n
+            };
+        });
     }
 
     preview() {

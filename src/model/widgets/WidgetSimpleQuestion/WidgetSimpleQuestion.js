@@ -1,4 +1,3 @@
-import form from "./form.hbs";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 
@@ -36,28 +35,30 @@ export default class WidgetSimpleQuestion extends WidgetItemElement {
     }
 
     getInputs() {
-        const data = {
-            instanceId: this.id,
-            answers: [],
-            question: this.data.question,
-            feedback: this.data.feedback
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            const data = {
+                instanceId: this.id,
+                answers: [],
+                question: this.data.question,
+                feedback: this.data.feedback
+            }
 
-        // Set the answer model
-        for (var i = 0; i < this.extensions.maxAnswers; i++) {
-            var answer = this.data.answers[i];
-            if (answer)
-                data.answers.push(answer)
-            else
-                data.answers.push({
-                    text: "",
-                    correct: false
-                })
-        }
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.SimpleQuestion.label")
-        };
+            // Set the answer model
+            for (var i = 0; i < this.extensions.maxAnswers; i++) {
+                var answer = this.data.answers[i];
+                if (answer)
+                    data.answers.push(answer)
+                else
+                    data.answers.push({
+                        text: "",
+                        correct: false
+                    })
+            }
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.SimpleQuestion.label")
+            };
+        });
     }
 
     preview() {

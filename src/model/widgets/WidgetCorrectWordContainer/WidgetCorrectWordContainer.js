@@ -1,4 +1,3 @@
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
@@ -34,16 +33,18 @@ export default class WidgetCorrectWordContainer extends WidgetContainerElement {
     }
 
     getInputs() {
-        var data = {
-            instanceId: this.id,
-            instanceName: this.params.name,
-            help: this.params.help
-        }
-        
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.CorrectWord.label")
-        };
+        return import('./form.hbs').then(({default: form}) => {
+            var data = {
+                instanceId: this.id,
+                instanceName: this.params.name,
+                help: this.params.help
+            }
+            
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.CorrectWord.label")
+            };
+        });
     }
 
     preview() {

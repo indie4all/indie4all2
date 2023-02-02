@@ -1,6 +1,5 @@
 /* global $ */
 import DataTable from 'datatables.net';
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import I18n from "../../../I18n";
 import "./styles.scss";
@@ -59,16 +58,18 @@ export default class WidgetTable extends WidgetItemElement {
     }
 
     getInputs() {
-        const data = {
-            instanceId: this.id,
-            instanceName: this.params.name,
-            help: this.params.help,
-            numColumns: this.data.columns.length
-        };
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.Table.label")
-        };
+        return import('./form.hbs').then(({default: form}) => {
+            const data = {
+                instanceId: this.id,
+                instanceName: this.params.name,
+                help: this.params.help,
+                numColumns: this.data.columns.length
+            };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.Table.label")
+            };
+        });
     }
 
     settingsClosed() {

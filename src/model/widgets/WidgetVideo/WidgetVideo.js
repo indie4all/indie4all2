@@ -1,5 +1,4 @@
 /* global $ */
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
@@ -48,17 +47,19 @@ export default class WidgetVideo extends WidgetItemElement {
     }
 
     getInputs() {
-        return {
-            inputs: form({
-                instanceId: this.id,
-                videourl: this.data.videourl,
-                captions: this.data.captions,
-                descriptions: this.data.descriptions,
-                defaultCaptions: this.data.defaultCaptions,
-                instanceName: this.params.name
-            }),
-            title: this.translate("widgets.Video.label")
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            return {
+                inputs: form({
+                    instanceId: this.id,
+                    videourl: this.data.videourl,
+                    captions: this.data.captions,
+                    descriptions: this.data.descriptions,
+                    defaultCaptions: this.data.defaultCaptions,
+                    instanceName: this.params.name
+                }),
+                title: this.translate("widgets.Video.label")
+            }
+        });
     }
 
     preview() {

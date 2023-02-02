@@ -1,5 +1,4 @@
 /* global $ */
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
@@ -27,20 +26,22 @@ export default class WidgetChooseOption extends WidgetItemElement {
     }
 
     getInputs() {
-        var data = {
-            instanceId: this.id,
-            text: this.data.text,
-            blob: this.data.blob,
-            options: this.data.options,
-            instanceName: this.params.name,
-            help: this.params.help,
-            alt: this.data.alt
-        };
+        return import('./form.hbs').then(({default: form}) => {
+            var data = {
+                instanceId: this.id,
+                text: this.data.text,
+                blob: this.data.blob,
+                options: this.data.options,
+                instanceName: this.params.name,
+                help: this.params.help,
+                alt: this.data.alt
+            };
 
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.ChooseOption.label")
-        };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.ChooseOption.label")
+            };
+        });
     }
 
     constructor(values) {

@@ -1,4 +1,3 @@
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
@@ -30,16 +29,18 @@ export default class WidgetButtonTextContainer extends WidgetContainerElement {
 
     getInputs() {
 
-        const data = {
-            instanceId: this.id,
-            instanceName: this.params.name,
-            help: this.params.help
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            const data = {
+                instanceId: this.id,
+                instanceName: this.params.name,
+                help: this.params.help
+            }
 
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.ButtonTextContainer.label")
-        }
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.ButtonTextContainer.label")
+            }
+        });
     }
 
     preview() {

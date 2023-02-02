@@ -1,4 +1,3 @@
-import form from "./form.hbs";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 
@@ -23,16 +22,18 @@ export default class WidgetDragdropItem extends WidgetItemElement {
     }
 
     getInputs() {
-        var data = {
-            instanceId: this.id,
-            term: this.data ? this.data.term : '',
-            definition: this.data ? this.data.definition : ''
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            var data = {
+                instanceId: this.id,
+                term: this.data ? this.data.term : '',
+                definition: this.data ? this.data.definition : ''
+            }
 
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.DragdropItem.label")
-        };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.DragdropItem.label")
+            };
+        });
     }
 
     preview() {

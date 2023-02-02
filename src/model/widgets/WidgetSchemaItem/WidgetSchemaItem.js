@@ -1,5 +1,4 @@
 /* global $ */
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
@@ -25,16 +24,18 @@ export default class WidgetSchemaItem extends WidgetItemElement {
     }
 
     getInputs() {
-        const data = {
-            instanceId: this.id,
-            alt: this.data.alt,
-            blob: this.data.blob
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            const data = {
+                instanceId: this.id,
+                alt: this.data.alt,
+                blob: this.data.blob
+            }
 
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.SchemaItem.label")
-        };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.SchemaItem.label")
+            };
+        });
     }
 
     preview() {

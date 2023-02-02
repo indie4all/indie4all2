@@ -1,4 +1,3 @@
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
@@ -38,19 +37,21 @@ export default class WidgetGuessWord extends WidgetItemElement {
     }
 
     getInputs() {
-        var data = {
-            instanceId: this.id,
-            instanceName: this.params.name,
-            help: this.params.help,
-            question: this.data.question,
-            answer: this.data.answer,
-            attempts: this.data.attempts
-        };
+        return import('./form.hbs').then(({default: form}) => {
+            var data = {
+                instanceId: this.id,
+                instanceName: this.params.name,
+                help: this.params.help,
+                question: this.data.question,
+                answer: this.data.answer,
+                attempts: this.data.attempts
+            };
 
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.GuessWord.label")
-        };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.GuessWord.label")
+            };
+        });
     }
 
     preview() {

@@ -1,4 +1,3 @@
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import './styles.scss';
 import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
@@ -29,15 +28,17 @@ export default class WidgetTabContent extends WidgetContainerElement {
 
 
     getInputs() {
-        const data = {
-            instanceId: this.id,
-            name: this.params ? this.params.name : ''
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            const data = {
+                instanceId: this.id,
+                name: this.params ? this.params.name : ''
+            }
 
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.TabContent.label")
-        };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.TabContent.label")
+            };
+        });
     }
 
     preview() {

@@ -1,4 +1,3 @@
-import form from "./form.hbs";
 import prev from "./prev.hbs";
 import Utils from "../../../Utils";
 import './styles.scss';
@@ -25,15 +24,17 @@ export default class WidgetAnimationItem extends WidgetItemElement {
     }
 
     getInputs() {
-        var data = {
-            instanceId: this.id,
-            image: this.data?.image ?? ''
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            var data = {
+                instanceId: this.id,
+                image: this.data?.image ?? ''
+            }
 
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.AnimationItem.label")
-        };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.AnimationItem.label")
+            };
+        });
     }
 
     preview() {

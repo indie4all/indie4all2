@@ -1,4 +1,3 @@
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import './styles.scss';
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
@@ -56,16 +55,18 @@ export default class WidgetTermClassificationItem extends WidgetItemElement {
     }
 
     getInputs() {
-        const data = {
-            instanceId: this.id,
-            column: this.data.column,
-            terms: this.data.terms.length > 0 ? this.functions.reduceTerms(this.data.terms) : ""
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            const data = {
+                instanceId: this.id,
+                column: this.data.column,
+                terms: this.data.terms.length > 0 ? this.functions.reduceTerms(this.data.terms) : ""
+            }
 
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.TermClassificationItem.label")
-        };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.TermClassificationItem.label")
+            };
+        });
     }
 
     preview() {

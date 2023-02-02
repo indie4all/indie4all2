@@ -1,6 +1,5 @@
 /* global $ */
 import answer from "./answer.hbs"
-import form from "./form.hbs";
 import word from "./word.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
@@ -45,11 +44,13 @@ export default class WidgetSentenceOrderItem extends WidgetItemElement {
     }
 
     getInputs() {
-        var data = { instanceId: this.id }
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.SentenceOrderItem.label")
-        };
+        return import('./form.hbs').then(({default: form}) => {
+            var data = { instanceId: this.id }
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.SentenceOrderItem.label")
+            };
+        });
     }
 
     preview() {

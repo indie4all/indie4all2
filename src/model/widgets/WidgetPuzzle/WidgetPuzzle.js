@@ -1,5 +1,4 @@
 /* global $ */
-import form from "./form.hbs";
 import piece from './piece.hbs'
 import Utils from "../../../Utils";
 import "./styles.scss";
@@ -190,19 +189,21 @@ export default class WidgetPuzzle extends WidgetItemElement {
     }
 
     getInputs() {
-        var data = {
-            instanceId: this.id,
-            blob: this.data.blob,
-            pieces: this.data.pieces,
-            instanceName: this.params.name,
-            help: this.params.help,
-            alt: this.data.alt
-        };
+        return import('./form.hbs').then(({default: form}) => {
+            var data = {
+                instanceId: this.id,
+                blob: this.data.blob,
+                pieces: this.data.pieces,
+                instanceName: this.params.name,
+                help: this.params.help,
+                alt: this.data.alt
+            };
 
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.Puzzle.label")
-        }
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.Puzzle.label")
+            }
+        });
     }
 
     regenerateIDs() {

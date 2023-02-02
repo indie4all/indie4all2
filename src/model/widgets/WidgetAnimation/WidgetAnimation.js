@@ -1,7 +1,5 @@
 /* global $ */
 import Utils from "../../../Utils"
-
-import form from './form.hbs'
 import piece from './piece.hbs'
 import './styles.scss';
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement"
@@ -189,18 +187,20 @@ export default class WidgetAnimation extends WidgetItemElement {
     }
 
     getInputs() {
-        var data = {
-            instanceId: this.id,
-            blob: this.data.blob,
-            pieces: this.data.pieces,
-            instanceName: this.params.name,
-            help: this.params.help,
-            alt: this.data.alt
-        };
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.Animation.label")
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            var data = {
+                instanceId: this.id,
+                blob: this.data.blob,
+                pieces: this.data.pieces,
+                instanceName: this.params.name,
+                help: this.params.help,
+                alt: this.data.alt
+            };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.Animation.label")
+            }
+        });
     }
 
     preview() {

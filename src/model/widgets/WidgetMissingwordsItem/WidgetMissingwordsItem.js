@@ -1,6 +1,5 @@
 /* global $ */
 import combination from "./combination.hbs";
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import './styles.scss';
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
@@ -36,16 +35,18 @@ export default class WidgetMissingWordsItem extends WidgetItemElement {
     }
 
     getInputs() {
-        const data = {
-            instanceId: this.id,
-            sentence: this.data.sentence,
-            preview: this.data.sentence.replace('[blank]', '____')
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            const data = {
+                instanceId: this.id,
+                sentence: this.data.sentence,
+                preview: this.data.sentence.replace('[blank]', '____')
+            }
 
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.MissingWordsItem.label")
-        };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.MissingWordsItem.label")
+            };
+        });
     }
 
     settingsClosed() {

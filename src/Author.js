@@ -21,7 +21,7 @@ import Category from "./category/Category";
 export default class Author {
 
     constructor(palette, container) {
-        this.version = "1.12.3";
+        this.version = "1.12.4";
         this.widgets = {};
         this.model = new Model({});
         this.undoredo = UndoRedo.getInstance();
@@ -156,43 +156,44 @@ export default class Author {
         if (!modelElem) throw new Error('Could not locate the given element id');
 
         // 2 Populate the modal with the inputs of the widget
-        const modalContent = modelElem.getInputs();
-        // 3 Open the modal with values put
-        $('#modal-settings-body').html(modalContent.inputs);
-        $('#modal-settings-tittle').html(modalContent.title);
-        $("#modal-settings").modal({ show: true, keyboard: false, focus: true, backdrop: 'static' });
-        // 4 Associate functions to the modal
-        const $form = $("#f-" + dataElementId);
-        $form.append("<input type='submit' class='hide' />");
-        $("#modal-settings-body").prepend('<div class="errors"></div>');
+        modelElem.getInputs().then(modalContent => {
+            // 3 Open the modal with values put
+            $('#modal-settings-body').html(modalContent.inputs);
+            $('#modal-settings-tittle').html(modalContent.title);
+            $("#modal-settings").modal({ show: true, keyboard: false, focus: true, backdrop: 'static' });
+            // 4 Associate functions to the modal
+            const $form = $("#f-" + dataElementId);
+            $form.append("<input type='submit' class='hide' />");
+            $("#modal-settings-body").prepend('<div class="errors"></div>');
 
-        $form.off('submit').on('submit', function (e) {
-            e.preventDefault();
-            const formData = Utils.toJSON(this);
-            const errors = self.model.validateFormElement(modelElem, formData);
-            if (errors.length > 0) {
-                $("#modal-settings").animate({ scrollTop: 0 }, "slow");
-                const errorText = errors.map(error => self.i18n.translate("errors." + error)).join(". ")
-                $("#modal-settings-body .errors").html(alertErrorTemplate({errorText}));
-                return;
-            } 
+            $form.off('submit').on('submit', function (e) {
+                e.preventDefault();
+                const formData = Utils.toJSON(this);
+                const errors = self.model.validateFormElement(modelElem, formData);
+                if (errors.length > 0) {
+                    $("#modal-settings").animate({ scrollTop: 0 }, "slow");
+                    const errorText = errors.map(error => self.i18n.translate("errors." + error)).join(". ")
+                    $("#modal-settings-body .errors").html(alertErrorTemplate({errorText}));
+                    return;
+                } 
 
-            modelElem.settingsClosed();
-            $("#modal-settings").modal('hide');
-            modelElem.updateModelFromForm(formData);
-            const previewElement = document.querySelector('[data-id="' + modelElem.id + '"]').querySelector('[data-prev]');
-            previewElement.innerHTML = modelElem.preview();
-            // Clean errors
-            previewElement && self.deleteToolTipError(previewElement);
-            $(document.querySelector("[data-id='" + modelElem.id + "']").parentNode).removeClass('editor-error', 200);
+                modelElem.settingsClosed();
+                $("#modal-settings").modal('hide');
+                modelElem.updateModelFromForm(formData);
+                const previewElement = document.querySelector('[data-id="' + modelElem.id + '"]').querySelector('[data-prev]');
+                previewElement.innerHTML = modelElem.preview();
+                // Clean errors
+                previewElement && self.deleteToolTipError(previewElement);
+                $(document.querySelector("[data-id='" + modelElem.id + "']").parentNode).removeClass('editor-error', 200);
+            });
+
+            $("#modal-settings .btn-submit").on('click', function () {
+                $form.find('input[type="submit"]').trigger('click');
+            });
+
+            // 5 Run when settings are opened
+            modelElem.settingsOpened();
         });
-
-        $("#modal-settings .btn-submit").on('click', function () {
-            $form.find('input[type="submit"]').trigger('click');
-        });
-
-        // 5 Run when settings are opened
-        modelElem.settingsOpened();
     }
 
     /**

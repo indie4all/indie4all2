@@ -1,5 +1,4 @@
 /* global $ */
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import RichTextEditorElement from "../mixings/RichTextEditorElement";
 import "./styles.scss";
@@ -34,15 +33,17 @@ export default class WidgetCouplesItem extends WidgetItemElement {
     }
 
     getInputs() {
-        var data = {
-            instanceId: this.id,
-            couples: this.data.couples
-        }
+        return import('./form.hbs').then(({default: form}) => {
+            var data = {
+                instanceId: this.id,
+                couples: this.data.couples
+            }
 
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.CouplesItem.label")
-        };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.CouplesItem.label")
+            };
+        });
     }
 
     settingsClosed() {

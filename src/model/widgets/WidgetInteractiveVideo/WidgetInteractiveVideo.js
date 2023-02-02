@@ -1,4 +1,3 @@
-import form from "./form.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
@@ -24,17 +23,18 @@ export default class WidgetInteractiveVideo extends WidgetItemElement {
     }
 
     getInputs() {
+        return import('./form.hbs').then(({default: form}) => {
+            const data = {
+                instanceId: this.id,
+                videourl: this.data.videourl,
+                instanceName: this.params.name
+            };
 
-        const data = {
-            instanceId: this.id,
-            videourl: this.data.videourl,
-            instanceName: this.params.name
-        };
-
-        return {
-            inputs: form(data),
-            title: this.translate("widgets.InteractiveVideo.label")
-        };
+            return {
+                inputs: form(data),
+                title: this.translate("widgets.InteractiveVideo.label")
+            };
+        });
     }
 
     preview() {

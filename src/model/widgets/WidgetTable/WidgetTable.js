@@ -1,5 +1,4 @@
 /* global $ */
-import DataTable from 'datatables.net';
 import Utils from "../../../Utils";
 import I18n from "../../../I18n";
 import "./styles.scss";
@@ -77,6 +76,7 @@ export default class WidgetTable extends WidgetItemElement {
     }
 
     settingsOpened() {
+        
         import("datatables.net-dt")
             .then(() => import('datatables.net-dt/css/jquery.dataTables.css'))
             .then(() => import('datatables.net-buttons-dt'))
@@ -85,7 +85,8 @@ export default class WidgetTable extends WidgetItemElement {
             .then(() => import('datatables.net-keytable-dt/css/keyTable.dataTables.css'))
             .then(() => import('datatables.net-select-dt'))
             .then(() => import('datatables.net-select-dt/css/select.dataTables.css'))
-            .then(() => {
+            .then(() => import('datatables.net'))
+            .then(({default: DataTable}) => {
                 let $form = $('#f-' + this.id);
                 const $table = $('#table');
                 const deleteColumnStr = I18n.getInstance().translate("widgets.Table.form.deleteColumn");

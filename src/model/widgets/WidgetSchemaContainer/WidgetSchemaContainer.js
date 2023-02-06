@@ -57,7 +57,7 @@ export default class WidgetSchemaContainer extends WidgetContainerElement {
 
     validateModel() {
         var keys = [];
-        if (this.data.length == 0) keys.push(" SchemaContainer.data.empty");
+        if (this.data.length == 0) keys.push("SchemaContainer.data.empty");
         if (!Utils.hasNameInParams(this)) keys.push("common.name.invalid");
         return keys;
     }

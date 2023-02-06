@@ -58,7 +58,7 @@ export default class WidgetTrueFalseContainer extends WidgetContainerElement {
 
     validateModel() {
         var keys = [];
-        if (this.data.length == 0) keys.push(" TrueFalseContainer.data.empty");
+        if (this.data.length == 0) keys.push("TrueFalseContainer.data.empty");
         if (!Utils.hasNameInParams(this)) keys.push("common.name.invalid");
         return keys;
     }

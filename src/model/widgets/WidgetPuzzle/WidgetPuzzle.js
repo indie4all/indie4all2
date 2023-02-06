@@ -1,5 +1,4 @@
 /* global $ */
-import piece from './piece.hbs'
 import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
@@ -248,7 +247,8 @@ export default class WidgetPuzzle extends WidgetItemElement {
         }
 
         let canvasHandler = this.canvas.handler.apply(canvas, [this]);
-        rects.forEach((rect, idx) => $piecesContainer.append(piece({ ...rect, pos: idx })));
+        rects.forEach((rect, idx) => 
+            import('./piece.hbs').then(({default: piece}) => $piecesContainer.append(piece({ ...rect, pos: idx }))));
 
         $(window).on('resize.puzzle', function () {
             canvasHandler.refreshPieces(rects); 
@@ -284,7 +284,8 @@ export default class WidgetPuzzle extends WidgetItemElement {
             let idx = rects.length;
             let rect = { x: 10, y: 10, w: 100, h: 100 };
             rects.push(rect)
-            $form.find('.pieces').append(piece({...rect, pos: idx }));
+            import('./piece.hbs').then(({default: piece}) =>
+                $form.find('.pieces').append(piece({...rect, pos: idx })));
             canvasHandler.refreshPieces(rects);
         });
         $form.on('change.puzzle', 'input[name="image"]', function () {

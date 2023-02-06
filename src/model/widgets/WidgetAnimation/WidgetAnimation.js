@@ -1,6 +1,5 @@
 /* global $ */
 import Utils from "../../../Utils"
-import piece from './piece.hbs'
 import './styles.scss';
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement"
 
@@ -245,7 +244,8 @@ export default class WidgetAnimation extends WidgetItemElement {
         }
 
         let canvasHandler = this.canvas.handler.apply(canvas, [this]);
-        rects.forEach((rect, idx) => $piecesContainer.append(piece({ ...rect, pos: idx })));
+        rects.forEach((rect, idx) => 
+            import('./piece.hbs').then(({default: piece}) => $piecesContainer.append(piece({ ...rect, pos: idx }))));
 
         $(window).on('resize.animation', function () {
             canvasHandler.refreshPieces(rects); 
@@ -282,7 +282,8 @@ export default class WidgetAnimation extends WidgetItemElement {
             let idx = rects.length;
             let rect = { x: 10, y: 10, w: 100, h: 100 };
             rects.push(rect)
-            $form.find('.pieces').append(piece({...rect, pos: idx }));
+            import('./piece.hbs').then(({default: piece}) =>
+                $form.find('.pieces').append(piece({...rect, pos: idx })));
             canvasHandler.refreshPieces(rects);
         });
 

@@ -46,7 +46,7 @@ const config = {
 const webConfig = merge(config, {
   name: "web",
   plugins: [ 
-    new HtmlWebpackPlugin({ template: './src/views/index.hbs' }),
+    new HtmlWebpackPlugin({ template: './src/views/index.hbs', inject: 'head', scriptLoading: 'blocking' }),
     new CopyPlugin({patterns: [
       { from: "./src/manifest.json", to: "."}, 
       { from: "./src/favicon.ico", to: "."}]}) ],

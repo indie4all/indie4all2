@@ -10,21 +10,23 @@ import "./styles/overrides.css"
 import { init as init_events } from './events'
 import I18n from './I18n';
 
-// Enable FontAwesome icons
-library.add(faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle, 
-    faCloudDownloadAlt, faCloudUploadAlt, faCopy, faEdit, faEye, faGlobe, faFileExport, 
-    faFileImport, faPlusCircle, faTimes, faTimesCircle, faRedo, faSave, faSpinner, faTrashAlt, faUndo);
-// Watch for changes to replace icons
-dom.watch();
+const start = (options) => {
+    // Enable FontAwesome icons
+    library.add(faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle, 
+        faCloudDownloadAlt, faCloudUploadAlt, faCopy, faEdit, faEye, faGlobe, faFileExport, 
+        faFileImport, faPlusCircle, faTimes, faTimesCircle, faRedo, faSave, faSpinner, faTrashAlt, faUndo);
+    // Watch for changes to replace icons
+    dom.watch();
 
-let api;
-I18n.init().then(() => {
-    const domPalette = document.getElementById('palette');
-    const domContainer = document.getElementById('main-container');
-    // Initialize the IndieAuthor api
-    api = new Api(domPalette, domContainer);
-    init_events(api);
-});
+    return I18n.init().then(() => {
+        const domPalette = document.getElementById('palette');
+        const domContainer = document.getElementById('main-container');
+        // Initialize the IndieAuthor api
+        const api = new Api(domPalette, domContainer);
+        api.setOptions(options);
+        init_events(api);
+        return api;
+    });
+}
 
-export { api };
-
+export { start };

@@ -7,7 +7,6 @@ export default class WidgetAcordionContainer extends WidgetContainerElement {
 
     static widget = "AcordionContainer";
     static type = "specific-container";
-    static label = "Acordion";
     static allow = ["AcordionContent"];
     static category = "containers";
     static toolbar = { edit: true };
@@ -17,7 +16,7 @@ export default class WidgetAcordionContainer extends WidgetContainerElement {
     constructor(values) {
         super(values);
         this.params = values?.params ?? {
-            name: WidgetAcordionContainer.label + "-" + Utils.generate_uuid(),
+            name: "Acordion-" + Utils.generate_uuid(),
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
@@ -48,7 +47,7 @@ export default class WidgetAcordionContainer extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = WidgetAcordionContainer.label + "-" + Utils.generate_uuid();
+        this.params.name = "Acordion-" + Utils.generate_uuid();
     }
 
     updateModelFromForm(form) {

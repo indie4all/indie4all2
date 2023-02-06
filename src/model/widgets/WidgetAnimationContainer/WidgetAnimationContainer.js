@@ -7,7 +7,6 @@ export default class WidgetAnimationContainer extends WidgetContainerElement {
 
     static widget = "AnimationContainer";
     static type = "specific-element-container";
-    static label = "Animation";
     static allow = ["AnimationItem"];
     static category = "interactiveElements";
     static toolbar = { edit: true };
@@ -18,7 +17,7 @@ export default class WidgetAnimationContainer extends WidgetContainerElement {
     constructor(values) {
         super(values);
         this.params = values?.params ?? {
-            name: WidgetAnimationContainer.label + "-" + Utils.generate_uuid(),
+            name: "Animation-" + Utils.generate_uuid(),
             width: 0,
             height: 0,
             image: "",
@@ -53,7 +52,7 @@ export default class WidgetAnimationContainer extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = WidgetAnimationContainer.label + "-" + Utils.generate_uuid();
+        this.params.name = "Animation-" + Utils.generate_uuid();
     }
 
     updateModelFromForm(form) {

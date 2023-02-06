@@ -7,7 +7,6 @@ export default class WidgetTrueFalseContainer extends WidgetContainerElement {
     
     static widget = "TrueFalseContainer";
     static type = "specific-element-container";
-    static label = "True false";
     static allow = ["TrueFalseItem"];
     static category = "interactiveElements";
     static toolbar = { edit: true };
@@ -17,7 +16,7 @@ export default class WidgetTrueFalseContainer extends WidgetContainerElement {
     constructor(values) {
         super(values);
         this.params = values?.params ?? {
-            name: WidgetTrueFalseContainer.label + "-" + Utils.generate_uuid(),
+            name: "True false-" + Utils.generate_uuid(),
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
@@ -48,7 +47,7 @@ export default class WidgetTrueFalseContainer extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = WidgetTrueFalseContainer.label + "-" + Utils.generate_uuid();
+        this.params.name = "True false-" + Utils.generate_uuid();
     }
 
     updateModelFromForm(form) {

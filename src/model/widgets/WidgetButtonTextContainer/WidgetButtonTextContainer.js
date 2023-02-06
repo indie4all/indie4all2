@@ -7,7 +7,6 @@ export default class WidgetButtonTextContainer extends WidgetContainerElement {
 
     static widget = "ButtonTextContainer";
     static type = "specific-element-container";
-    static label = "Buttons with text";
     static allow = ["ButtonTextItem"];
     static category = "interactiveElements";
     static toolbar = { edit: true };
@@ -17,7 +16,7 @@ export default class WidgetButtonTextContainer extends WidgetContainerElement {
     constructor(values) {
         super(values);
         this.params = values?.params ?? {
-            name: WidgetButtonTextContainer.label + "-" + Utils.generate_uuid(),
+            name: "Buttons with text-" + Utils.generate_uuid(),
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
@@ -49,7 +48,7 @@ export default class WidgetButtonTextContainer extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = WidgetButtonTextContainer.label + "-" + Utils.generate_uuid();
+        this.params.name = "Buttons with text-" + Utils.generate_uuid();
     }
 
     updateModelFromForm(form) {

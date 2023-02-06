@@ -7,7 +7,6 @@ export default class WidgetMissingWords extends WidgetContainerElement {
 
     static widget = "MissingWords";
     static type = "specific-element-container";
-    static label = "Missing Words";
     static allow = ["MissingWordsItem"];
     static category = "interactiveElements";
     static toolbar = { edit: true };
@@ -17,7 +16,7 @@ export default class WidgetMissingWords extends WidgetContainerElement {
     constructor(values) {
         super(values);
         this.params = values?.params ?? { 
-            name: WidgetMissingWords.label + "-" + Utils.generate_uuid(), 
+            name: "Missing Words-" + Utils.generate_uuid(), 
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
@@ -48,7 +47,7 @@ export default class WidgetMissingWords extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = WidgetMissingWords.label + "-" + Utils.generate_uuid();
+        this.params.name = "Missing Words-" + Utils.generate_uuid();
     }
 
     updateModelFromForm(form) {

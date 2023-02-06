@@ -6,7 +6,6 @@ export default class WidgetAcordionContent extends WidgetContainerElement {
     
     static widget = "AcordionContent";
     static type = "element-container";
-    static label = "Acordion content";
     static allow = ["element", "layout", "specific-element-container"];
     static category = "containers";
     static toolbar = { edit: true };

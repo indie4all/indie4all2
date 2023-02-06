@@ -7,7 +7,6 @@ export default class WidgetTermClassification extends WidgetContainerElement {
     
     static widget = "TermClassification";
     static type = "specific-element-container";
-    static label = "Terms and Classification";
     static allow = ["TermClassificationItem"];
     static category = "interactiveElements";
     static toolbar = { edit: true };
@@ -49,7 +48,7 @@ export default class WidgetTermClassification extends WidgetContainerElement {
     constructor(values) {
         super(values);
         this.params = values?.params ?? {
-            name: `${WidgetTermClassification.label}-${Utils.generate_uuid()}`,
+            name: `Terms and Classification-${Utils.generate_uuid()}`,
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
@@ -82,7 +81,7 @@ export default class WidgetTermClassification extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = WidgetTermClassification.label + "-" + Utils.generate_uuid();
+        this.params.name = "Terms and Classification-" + Utils.generate_uuid();
     }
 
     updateModelFromForm(form) {

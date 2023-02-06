@@ -7,7 +7,6 @@ export default class WidgetTabContent extends WidgetContainerElement {
     
     static widget = "TabContent";
     static type = "element-container";
-    static label = "Tab content";
     static allow = ["element", "layout", "specific-element-container"];
     static category = "containers";
     static toolbar = { edit: true };

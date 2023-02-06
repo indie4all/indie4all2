@@ -9,7 +9,6 @@ export default class WidgetElement extends ModelElement {
 
     constructor(values) {
         super(values);
-        this.label = this.constructor.label;
     }
 
     static createPaletteItem() {

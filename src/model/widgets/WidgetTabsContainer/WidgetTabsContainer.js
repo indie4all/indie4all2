@@ -7,7 +7,6 @@ export default class WidgetTabsContainer extends WidgetContainerElement{
 
     static widget = "TabsContainer";
     static type = "specific-container";
-    static label = "Tabs menu";
     static allow = ["TabContent"];
     static category = "containers";
     static toolbar = { edit: true };
@@ -17,7 +16,7 @@ export default class WidgetTabsContainer extends WidgetContainerElement{
     constructor(values) {
         super(values);
         this.params = values?.params ?? {
-            name: WidgetTabsContainer.label + "-" + Utils.generate_uuid(),
+            name: "Tabs menu-" + Utils.generate_uuid(),
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
@@ -48,7 +47,7 @@ export default class WidgetTabsContainer extends WidgetContainerElement{
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = WidgetTabsContainer.label + "-" + Utils.generate_uuid();
+        this.params.name = "Tabs menu-" + Utils.generate_uuid();
     }
 
     updateModelFromForm(form) {

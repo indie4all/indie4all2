@@ -7,7 +7,6 @@ export default class WidgetSentenceOrderContainer extends WidgetContainerElement
 
     static widget = "SentenceOrderContainer";
     static type = "specific-element-container";
-    static label = "Sentence Order";
     static allow = ["SentenceOrderItem"];
     static category = "interactiveElements";
     static toolbar = { edit: true };
@@ -17,7 +16,7 @@ export default class WidgetSentenceOrderContainer extends WidgetContainerElement
     constructor(values) {
         super(values);
         this.params = values?.params ?? {
-            name: WidgetSentenceOrderContainer.label + "-" + Utils.generate_uuid(),
+            name: "Sentence Order-" + Utils.generate_uuid(),
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
@@ -48,7 +47,7 @@ export default class WidgetSentenceOrderContainer extends WidgetContainerElement
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = WidgetSentenceOrderContainer.label + "-" + Utils.generate_uuid();
+        this.params.name = "Sentence Order-" + Utils.generate_uuid();
     }
 
     updateModelFromForm(form) {

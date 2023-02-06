@@ -7,7 +7,6 @@ export default class WidgetCouplesContainer extends WidgetContainerElement {
 
     static widget = "CouplesContainer";
     static type = "specific-element-container";
-    static label = "Couples";
     static allow = ["CouplesItem"];
     static category = "interactiveElements";
     static toolbar = { edit: true };
@@ -17,7 +16,7 @@ export default class WidgetCouplesContainer extends WidgetContainerElement {
     constructor(values) {
         super(values);
         this.params = values?.params ?? {
-            name: WidgetCouplesContainer.label + "-" + Utils.generate_uuid(),
+            name: "Couples-" + Utils.generate_uuid(),
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
@@ -29,7 +28,7 @@ export default class WidgetCouplesContainer extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = WidgetCouplesContainer.label + "-" + Utils.generate_uuid();
+        this.params.name = "Couples-" + Utils.generate_uuid();
     }
 
     getInputs() {

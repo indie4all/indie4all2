@@ -7,7 +7,6 @@ export default class WidgetSchemaContainer extends WidgetContainerElement {
 
     static widget = "SchemaContainer";
     static type = "specific-element-container";
-    static label = "Schema";
     static allow = ["SchemaItem"];
     static category = "interactiveElements";
     static toolbar = { edit: true };
@@ -17,7 +16,7 @@ export default class WidgetSchemaContainer extends WidgetContainerElement {
     constructor(values) {
         super(values);
         this.params = values?.params ?? {
-            name: WidgetSchemaContainer.label + "-" + Utils.generate_uuid(),
+            name: "Schema-" + Utils.generate_uuid(),
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
@@ -47,7 +46,7 @@ export default class WidgetSchemaContainer extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = WidgetSchemaContainer.label + "-" + Utils.generate_uuid();
+        this.params.name = "Schema-" + Utils.generate_uuid();
     }
 
     updateModelFromForm(form) {

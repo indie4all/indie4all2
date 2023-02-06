@@ -7,7 +7,6 @@ export default class WidgetCorrectWordContainer extends WidgetContainerElement {
 
     static widget = "CorrectWord";
     static type = "specific-element-container";
-    static label = "Correct word";
     static allow = ["CorrectWordItem"];
     static category = "interactiveElements";
     static toolbar = { edit: true };
@@ -17,7 +16,7 @@ export default class WidgetCorrectWordContainer extends WidgetContainerElement {
     constructor(values) {
         super(values);
         this.params = values?.params ?? {
-            name: WidgetCorrectWordContainer.label + "-" + Utils.generate_uuid(),
+            name: "Correct word-" + Utils.generate_uuid(),
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
@@ -29,7 +28,7 @@ export default class WidgetCorrectWordContainer extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = WidgetCorrectWordContainer.label + "-" + Utils.generate_uuid();
+        this.params.name = "Correct word-" + Utils.generate_uuid();
     }
 
     getInputs() {

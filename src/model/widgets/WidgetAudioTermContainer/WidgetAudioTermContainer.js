@@ -7,7 +7,6 @@ export default class WidgetAudioTermContainer extends WidgetContainerElement {
 
     static widget = "AudioTermContainer";
     static type = "specific-element-container";
-    static label = "Audio Term Container";
     static allow = ["AudioTermItem"];
     static category = "interactiveElements";
     static toolbar = { edit: true };
@@ -16,7 +15,7 @@ export default class WidgetAudioTermContainer extends WidgetContainerElement {
     constructor(values) {
         super(values);
         this.params = values?.params ?? {
-            name: WidgetAudioTermContainer.label + "-" + Utils.generate_uuid(),
+            name: "Audio Term Container-" + Utils.generate_uuid(),
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
@@ -47,7 +46,7 @@ export default class WidgetAudioTermContainer extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = WidgetAudioTermContainer.label + "-" + Utils.generate_uuid();
+        this.params.name = "Audio Term Container-" + Utils.generate_uuid();
     }
 
     updateModelFromForm(form) {

@@ -7,7 +7,6 @@ export default class WidgetTestContainer extends WidgetContainerElement {
 
     static widget = "Test";
     static type = "specific-element-container";
-    static label = "Test";
     static allow = ["GapQuestion", "SimpleQuestion", "TrueFalseQuestion"];
     static category = "exerciseElement";
     static toolbar = { edit: true };
@@ -17,7 +16,7 @@ export default class WidgetTestContainer extends WidgetContainerElement {
     constructor(values) {
         super(values);
         this.params = values?.params ?? {
-            name: WidgetTestContainer.label + "-" + Utils.generate_uuid(),
+            name: WidgetTestContainer.widget + "-" + Utils.generate_uuid(),
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
@@ -48,7 +47,7 @@ export default class WidgetTestContainer extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = WidgetTestContainer.label + "-" + Utils.generate_uuid();
+        this.params.name = WidgetTestContainer.widget + "-" + Utils.generate_uuid();
     }
 
     updateModelFromForm(form) {

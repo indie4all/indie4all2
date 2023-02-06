@@ -42,7 +42,7 @@ export default class WidgetImageAndSoundItem extends WidgetItemElement {
     }
 
     preview() {
-        return this.data?.text ?? this.translate("widgets.ImageAndSoundItem.prev");
+        return this.data?.text ? this.data.text : this.translate("widgets.ImageAndSoundItem.prev");
     }
 
     settingsOpened() {

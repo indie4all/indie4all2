@@ -104,23 +104,11 @@
       .prev-container {
         text-align: center;
         height: 38px;
-
-       /* span {
-          font-size: 1.5em;
-          color: white;
-          background-color: $mainColor;
-          border-radius: 2px;
-        }*/
       }
     }
 
     .b3 {
       text-align: center;
-
-      button {
-        margin-left: 3px;
-        margin-right: 3px;
-      }
     }
   }
 
@@ -249,15 +237,11 @@
     text-align: left;
     max-height: 62px;
     margin-bottom: 10px;
+    word-break: break-word;
   }
 
   .b3 {
     text-align: right;
-
-    button {
-      margin-left: 3px;
-      margin-right: 3px;
-    }
   }
 }
 

@@ -1,36 +1,36 @@
 <div class="form-row piece">
     <div class="form-group col-12 col-md-4">
-        <label for="piece[{{pos}}][altImg]">{{translate "widgets.Animation.form.pieces.altImg"}}</label>
+        <label for="piece[{{pos}}][altImg]">{{translate (concat "widgets." widget ".form.pieces.altImg") }}</label>
         <input type="text" class="form-control" id="piece[{{pos}}][altImg]" name="piece[{{pos}}][altImg]"
             value="{{altImg}}" step="any" required />
     </div>
     <div class="form-group col-12 col-md-4">
-        <label for="piece[{{pos}}][altRec]">{{translate "widgets.Animation.form.pieces.altRec"}}</label>
+        <label for="piece[{{pos}}][altRec]">{{translate (concat "widgets." widget ".form.pieces.altRec") }}</label>
         <input type="text" class="form-control" id="piece[{{pos}}][altRec]" name="piece[{{pos}}][altRec]"
             value="{{altRec}}" step="any" required />
     </div>
     <div class="form-group col-6 col-md-2">
-        <label for="piece[{{pos}}][x]">{{translate "widgets.Animation.form.pieces.x"}}</label>
+        <label for="piece[{{pos}}][x]">{{translate (concat "widgets." widget ".form.pieces.x") }}</label>
         <input type="number" class="form-control" id="piece[{{pos}}][x]" name="piece[{{pos}}][x]" value="{{x}}" min="0"
             step="any" required />
     </div>
     <div class="form-group col-6 col-md-2">
-        <label for="piece[{{pos}}][y]">{{translate "widgets.Animation.form.pieces.y"}}</label>
+        <label for="piece[{{pos}}][y]">{{translate (concat "widgets." widget ".form.pieces.y") }}</label>
         <input type="number" class="form-control" id="piece[{{pos}}][y]" name="piece[{{pos}}][y]" value="{{y}}" min="0"
             step="any" required />
     </div>
     <div class="form-group col-6 col-md-2">
-        <label for="piece[{{pos}}][w]">{{translate "widgets.Animation.form.pieces.w"}}</label>
+        <label for="piece[{{pos}}][w]">{{translate (concat "widgets." widget ".form.pieces.w") }}</label>
         <input type="number" class="form-control" id="piece[{{pos}}][w]" name="piece[{{pos}}][w]" value="{{w}}" min="0"
             step="any" required />
     </div>
     <div class="form-group col-6 col-md-2">
-        <label for="piece[{{pos}}][h]">{{translate "widgets.Animation.form.pieces.h"}}</label>
+        <label for="piece[{{pos}}][h]">{{translate (concat "widgets." widget ".form.pieces.h") }}</label>
         <input type="number" class="form-control" id="piece[{{pos}}][h]" name="piece[{{pos}}][h]" value="{{h}}" min="0"
             step="any" required />
     </div>
     <div class="form-group col-12 col-md-auto">
-        <label for="delete-piece-{{pos}}">{{translate "widgets.Animation.form.pieces.delete"}} &nbsp;</label>
+        <label for="delete-piece-{{pos}}">{{translate (concat "widgets." widget ".form.pieces.delete") }} &nbsp;</label>
         <button class="btn btn-block btn-danger btn-delete" id="delete-piece-{{pos}}"><i
                 class="fa fa-times"></i></button>
     </div>

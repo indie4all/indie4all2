@@ -2,7 +2,7 @@
     <div class="form-group">
         <label for="instanceName">{{translate "common.name.label"}}</label>
         <input type="text" name="instanceName" class="form-control" value="{{instanceName}}" 
-        placeholder="{{translate "common.name.placeholder"}}" autocomplete="off" required />
+            placeholder="{{translate "common.name.placeholder"}}" autocomplete="off" required />
         <small class="form-text text-muted">{{translate "common.name.help"}}</small>
     </div>
     <div class="form-group">
@@ -19,9 +19,9 @@
         <small class="form-text text-muted">{{{translate "common.help.help"}}}</small>
     </div>
     <div class="form-group">
-        <label for="image">{{translate "widgets.Animation.form.image.label"}}</label>
+        <label for="image">{{translate (concat "widgets." widget ".form.image.label") }}</label>
         <input type="file" class="form-control" name="image" accept="image/png, image/jpeg" />
-        <small class="form-text text-muted">{{translate "widgets.Animation.form.image.help"}}</small>
+        <small class="form-text text-muted">{{translate (concat "widgets." widget ".form.image.help")}}</small>
         <input type="hidden" name="blob" value="{{blob}}" />
     </div>
     <div class="form-group">
@@ -32,12 +32,13 @@
     </div>
     <div class="pieces-wrapper d-none">
         <div class="form-group">
-            <p>{{translate "widgets.Animation.form.image.preview"}}</p>
+            <p>{{translate (concat "widgets." widget ".form.image.preview")}}</p>
             <canvas class="img-preview img-fluid"></canvas>
         </div>
         <div class="form-group">
-            <button class="btn btn-block btn-indie btn-add-piece" type="button">{{translate
-                "widgets.Animation.form.pieces.new"}}</button>
+            <button class="btn btn-block btn-indie btn-add-piece" type="button">
+                {{translate (concat "widgets." widget ".form.pieces.new")}}
+            </button>
         </div>
         <div class="pieces"></div>
     </div>

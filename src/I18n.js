@@ -1,4 +1,4 @@
-import jsonpath from "jsonpath/jsonpath.min.js";
+import jsonpath from "jsonpath";
 
 export default class I18n {
 

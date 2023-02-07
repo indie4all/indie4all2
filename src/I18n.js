@@ -1,5 +1,3 @@
-import jsonpath from "jsonpath";
-
 export default class I18n {
 
     static #INSTANCE = null;
@@ -37,7 +35,7 @@ export default class I18n {
 
 
     translate(query) {
-        return jsonpath.query(this.#corpus, "$."+query);
+        return [query.split('.').reduce((acc, current) => acc[current], this.#corpus)];
     }
 
     value(query) {

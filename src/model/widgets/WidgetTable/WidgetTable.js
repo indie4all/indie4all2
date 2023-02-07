@@ -3,6 +3,7 @@ import Utils from "../../../Utils";
 import I18n from "../../../I18n";
 import "./styles.scss";
 import WidgetItemElement from '../WidgetItemElement/WidgetItemElement';
+import icon from "./icon.png";
 
 export default class WidgetTable extends WidgetItemElement {
     
@@ -10,7 +11,7 @@ export default class WidgetTable extends WidgetItemElement {
     static type = "element";
     static category = "simpleElements";
     static toolbar = { edit: true };
-    static icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAvCAMAAACvztidAAAArlBMVEUAAAB4h5oeN1YwR2MeN1Z4h5oqQl91hJgpQV94h5ooQF0wR2MuRWIeN1YeN1Z4h5oeN1Z4h5p4h5pUZ394h5p4h5p4h5r///94h5oeN1b8hq1hc4n9wtaOm6r8lbdIXHX6SYT5DVzCGFr6MnX6Pn36Onr6J278daL7Z5n7WI/6I2vj5urV2d+qtL/6UYtneI1cboX6LnL5GmQvRmP9pMLgfKJ6iJv7ZpjRRnvCI2JyIpDoAAAAF3RSTlMAQEDQEBD++Ozg2b+sYFAwMNDAoJBwYF3JWpEAAAETSURBVEjH1ZXJbsIwEEADJQVKW7rHSwhpE5wFSAt0/f8fa/AMRkKObS4ovMuTo3eYyJLHq+l1zdx5it41tTG49ZCry2VgZsEp1jd0EVjhA4hHPLAzpzD3xSRwgHbbFy+nDXxjzIfPKp7QBqa7mJCnY2LiHxN3MP56Q/5Ail9NzBh8DGfgKMZzfNI4qyLJjwBX6CzVxEWZSlYCLNbgJGnvDxYikYgSXKJXupnzPJREM3CGjtLTXkpTrBsjfkXWIIVo76WwmEnyBFwJPOvikAF5Ac7Q7PMwNnL28ajv9PK/y9htp2yIjB221ZzTD4hd9uCmbiHGDfvIG9nOizHyQqyMVez3be2Dt2c8NLf3PnRIx0gd/ANxY7W2IhchaQAAAABJRU5ErkJggg==";
+    static icon = icon;
     static cssClass = "widget-table";
 
     functions = {

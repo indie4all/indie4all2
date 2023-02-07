@@ -3,6 +3,7 @@ import combination from "./combination.hbs";
 import Utils from "../../../Utils";
 import './styles.scss';
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
+import icon from "./icon.png";
 
 export default class WidgetMissingWordsItem extends WidgetItemElement {
 
@@ -10,7 +11,7 @@ export default class WidgetMissingWordsItem extends WidgetItemElement {
     static type = "specific-element";
     static category = "interactiveElements";
     static toolbar = { edit: true };
-    static icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAvCAMAAACvztidAAAAdVBMVEUAAAB4h5oeN1YeN1YoQF54h5okPFt4h5p4h5oeN1YeN1YqQl8mPlx4h5opQF54h5pEWXMeN1b///94h5oeN1ZWaIBhc4n8hq35DVzx8vT9wtaqtL+Om6qAjqD6SYRPY3tHXHX+4evj5urHzdW4wMqcp7X6KnCKJge2AAAAEnRSTlMAQECA/jD34NBgELqmoJeAcDCW+Nc0AAAAs0lEQVRIx+3U2w6CMAyA4To3QDxvBUXAs77/I4rQCTeuI/FCDf/Nbr4sTZoUngl3a2gbB8gUTKydyVumnZ1LJC3wqtmKIG6GOGq+DEWDE+3RT+I0XPbAxsz7YKP64NE/4I3t5IG3ZO87H0zv/mM4qSs7OE+aXNj2wt+/lAEP2GLPy09Y4IXHhTQ1hqnMM+bfAg+EYYFcsrKEIRZVq/R9xhC2KcPWYog4G0KbihiroNvIWQUekq6Fpx6q0IMAAAAASUVORK5CYII=";
+    static icon = icon;
     static cssClass = "widget-missing-words-item";
     static paletteHidden = true;
     

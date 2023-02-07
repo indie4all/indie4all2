@@ -15,7 +15,7 @@ export default class WidgetImageAndSoundItem extends WidgetItemElement {
     
     constructor(values) {
         super(values);
-        this.data = values?.data ?? { text: "", alt: "", blob: "", audioblob: "", captionsblob: "" };
+        this.data = values?.data ? structuredClone(values.data) : { text: "", alt: "", blob: "", audioblob: "", captionsblob: "" };
     }
 
     clone() {

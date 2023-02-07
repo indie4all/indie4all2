@@ -15,7 +15,7 @@ export default class WidgetCouplesContainer extends WidgetContainerElement {
 
     constructor(values) {
         super(values);
-        this.params = values?.params ?? {
+        this.params = values?.params ? structuredClone(values.params) : {
             name: "Couples-" + Utils.generate_uuid(),
             help: ""
         };
@@ -28,7 +28,7 @@ export default class WidgetCouplesContainer extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = "Couples-" + Utils.generate_uuid();
+        this.params.name = "Couples-" + this.id;
     }
 
     getInputs() {

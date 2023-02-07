@@ -15,7 +15,7 @@ export default class WidgetTwoColumnsLayout extends WidgetColumnsLayout {
 
     constructor(values) {
         super(values);
-        this.params = values?.params ?? { firstColumnWidth: 6};
+        this.params = values?.params ? structuredClone(values.params) : { firstColumnWidth: 6};
         this.data = values?.data ? values.data.map(arr => arr.map(elem => ModelManager.create(elem.widget, elem))) : [[],[]];
     }
 

@@ -24,11 +24,11 @@ export default class WidgetGuessWord extends WidgetItemElement {
 
     constructor(values) {
         super(values);
-        this.params = values?.params ?? {
+        this.params = values?.params ? structuredClone(values.params) : {
             name: "Guess the word-" + Utils.generate_uuid(),
             help: ""
         };
-        this.data = values?.data ?? { question: "", answer: "", attempts: 1 };
+        this.data = values?.data ? structuredClone(values.data) : { question: "", answer: "", attempts: 1 };
     }
 
     clone() {
@@ -61,7 +61,7 @@ export default class WidgetGuessWord extends WidgetItemElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = "Guess the word-" + Utils.generate_uuid();
+        this.params.name = "Guess the word-" + this.id;
     }
 
     updateModelFromForm(form) {

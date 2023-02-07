@@ -17,11 +17,11 @@ export default class WidgetImage extends WidgetItemElement {
         super(values);
         // Add the behaviour of a RichTextEditorElement to the current object
         Object.assign(this, RichTextEditorElement);
-        this.params = values?.params ?? {
+        this.params = values?.params ? structuredClone(values.params) : {
             name: WidgetImage.widget + "-" + Utils.generate_uuid(),
             help: "",
         };
-        this.data = values?.data ?? { text: "", blob: "", alt: "" };
+        this.data = values?.data ? structuredClone(values.data) : { text: "", blob: "", alt: "" };
     }
 
     clone() {
@@ -48,7 +48,7 @@ export default class WidgetImage extends WidgetItemElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = WidgetImage.widget + "-" + Utils.generate_uuid();
+        this.params.name = WidgetImage.widget + "-" + this.id;
     }
 
     settingsOpened() {

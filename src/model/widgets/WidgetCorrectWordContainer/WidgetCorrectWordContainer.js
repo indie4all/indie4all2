@@ -15,7 +15,7 @@ export default class WidgetCorrectWordContainer extends WidgetContainerElement {
 
     constructor(values) {
         super(values);
-        this.params = values?.params ?? {
+        this.params = values?.params ? structuredClone(values.params) : {
             name: "Correct word-" + Utils.generate_uuid(),
             help: ""
         };
@@ -28,7 +28,7 @@ export default class WidgetCorrectWordContainer extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = "Correct word-" + Utils.generate_uuid();
+        this.params.name = "Correct word-" + this.id;
     }
 
     getInputs() {

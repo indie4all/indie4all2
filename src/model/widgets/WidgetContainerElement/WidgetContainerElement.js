@@ -19,7 +19,7 @@ export default class WidgetContainerElement extends WidgetElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.data ?? this.data.forEach(child => child.regenerateIDs());
+        this.data && this.data.forEach(child => child.regenerateIDs());
     }
 
 }

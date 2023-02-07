@@ -36,7 +36,7 @@ export default class WidgetGapQuestion extends WidgetItemElement {
 
     constructor(values) {
         super(values);
-        this.data = values?.data ?? {
+        this.data = values?.data ? structuredClone(values.data) : {
             question: "",
             answers: [],
             feedback: { positive: "", negative: ""}

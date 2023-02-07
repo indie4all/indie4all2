@@ -50,6 +50,11 @@ export default class Section extends ModelElement {
         });
     }
 
+    regenerateIDs() {
+        super.regenerateIDs();
+        this.data && this.data.forEach(child => child.regenerateIDs());
+    }
+
     updateModelFromForm(form) {
         this.name = form.name;
         this.bookmark = form.bookmark;

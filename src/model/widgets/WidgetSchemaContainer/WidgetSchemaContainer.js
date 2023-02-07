@@ -15,7 +15,7 @@ export default class WidgetSchemaContainer extends WidgetContainerElement {
 
     constructor(values) {
         super(values);
-        this.params = values?.params ?? {
+        this.params = values?.params ? structuredClone(values.params) : {
             name: "Schema-" + Utils.generate_uuid(),
             help: ""
         };
@@ -46,7 +46,7 @@ export default class WidgetSchemaContainer extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = "Schema-" + Utils.generate_uuid();
+        this.params.name = "Schema-" + this.id;
     }
 
     updateModelFromForm(form) {

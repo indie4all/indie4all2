@@ -15,7 +15,7 @@ export default class WidgetAudioTermItem extends WidgetItemElement {
 
     constructor(values) {
         super(values);
-        this.data = values?.data ?? { term: "", definition: "", audioblob: "", captionsblob: "" };
+        this.data = values?.data ? structuredClone(values.data) : { term: "", definition: "", audioblob: "", captionsblob: "" };
     }
 
     clone() {

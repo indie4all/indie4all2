@@ -45,11 +45,11 @@ export default class WidgetChooseOption extends WidgetItemElement {
 
     constructor(values) {
         super(values);
-        this.params = values?.params ?? {
+        this.params = values?.params ? structuredClone(values.params) : {
             name: "Choose option-" + Utils.generate_uuid(),
             help: "",
         };
-        this.data = values?.data ?? {
+        this.data = values?.data ? structuredClone(values.data) : {
             text: "", blob: "", alt: "",
             options: [
                 {text: "", correct: false}, {text: "", correct: false},
@@ -64,7 +64,7 @@ export default class WidgetChooseOption extends WidgetItemElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name ="Choose option-" + Utils.generate_uuid();
+        this.params.name ="Choose option-" + this.id;
     }
 
     settingsOpened() {

@@ -15,7 +15,7 @@ export default class WidgetCorrectWordItem extends WidgetItemElement {
 
     constructor(values) {
         super(values);
-        this.data = values?.data ?? { question: "", word: "", blob: "", alt: "" };
+        this.data = values?.data ? structuredClone(values.data) : { question: "", word: "", blob: "", alt: "" };
     }
 
     clone() {

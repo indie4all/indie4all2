@@ -168,10 +168,10 @@ export default class WidgetPiecesElement extends WidgetItemElement {
 
     constructor(values) { 
         super(values);
-            this.params = values?.params ?? {
+        this.params = values?.params ? structuredClone(values.params) : {
             name: this.constructor.widget + "-" + Utils.generate_uuid(),
         };
-        this.data = values?.data ?? { blob: "", alt: "", pieces: [] };
+        this.data = values?.data ? structuredClone(values.data) : { blob: "", alt: "", pieces: [] };
     }
 
     getInputs() {
@@ -315,7 +315,7 @@ export default class WidgetPiecesElement extends WidgetItemElement {
     }
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = this.constructor.widget + "-" + Utils.generate_uuid();
+        this.params.name = this.constructor.widget + "-" + this.id;
     }  
 
     validateModel() {

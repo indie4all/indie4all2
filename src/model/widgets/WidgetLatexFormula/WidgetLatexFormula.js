@@ -14,7 +14,7 @@ export default class WidgetLatexFormula extends WidgetItemElement {
 
     constructor(values) {
         super(values);
-        this.data = values?.data ?? { formula: "", caption: "" };
+        this.data = values?.data ? structuredClone(values.data) : { formula: "", caption: "" };
     }
 
     clone() {

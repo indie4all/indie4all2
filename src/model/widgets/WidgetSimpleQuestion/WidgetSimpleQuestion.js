@@ -26,7 +26,7 @@ export default class WidgetSimpleQuestion extends WidgetItemElement {
 
     constructor(values) {
         super(values);
-        this.data = values?.data ?? { question: "", answers: [], feedback: { positive: "", negative: "" } };
+        this.data = values?.data ? structuredClone(values.data) : { question: "", answers: [], feedback: { positive: "", negative: "" } };
     }
 
     clone() {

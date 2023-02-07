@@ -15,7 +15,7 @@ export default class WidgetAcordionContent extends WidgetContainerElement {
 
     constructor(values) {
         super(values);
-        this.params = values?.params ?? { title: ""};
+        this.params = values?.params ? structuredClone(values.params) : { title: ""};
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
     }
 

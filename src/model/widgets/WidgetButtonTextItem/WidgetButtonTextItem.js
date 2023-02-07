@@ -19,7 +19,7 @@ export default class WidgetButtonTextItem extends WidgetItemElement {
         super(values);
         // Add the behaviour of a RichTextEditorElement to the current object
         Object.assign(this, RichTextEditorElement);
-        this.data = values?.data ?? { text: "", blob: "", alt: "" };
+        this.data = values?.data ? structuredClone(values.data) : { text: "", blob: "", alt: "" };
     }
 
     clone() {

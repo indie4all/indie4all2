@@ -33,11 +33,11 @@ export default class WidgetVideo extends WidgetItemElement {
 
     constructor(values) {
         super(values);
-        this.params = values?.params ?? {
+        this.params = values?.params ? structuredClone(values.params) : {
             name: WidgetVideo.widget + "-" + Utils.generate_uuid(),
         };
 
-        this.data = values?.data ?? { videourl: "", captions: "", descriptions: "", defaultCaptions: "0" };
+        this.data = values?.data ? structuredClone(values.data) : { videourl: "", captions: "", descriptions: "", defaultCaptions: "0" };
     }
 
     clone() {
@@ -66,7 +66,7 @@ export default class WidgetVideo extends WidgetItemElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = WidgetVideo.widget + "-" + Utils.generate_uuid();
+        this.params.name = WidgetVideo.widget + "-" + this.id;
     }
 
     settingsClosed() {

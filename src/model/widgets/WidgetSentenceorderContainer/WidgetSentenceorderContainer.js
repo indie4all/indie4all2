@@ -15,7 +15,7 @@ export default class WidgetSentenceOrderContainer extends WidgetContainerElement
 
     constructor(values) {
         super(values);
-        this.params = values?.params ?? {
+        this.params = values?.params ? structuredClone(values.params) : {
             name: "Sentence Order-" + Utils.generate_uuid(),
             help: ""
         };
@@ -47,7 +47,7 @@ export default class WidgetSentenceOrderContainer extends WidgetContainerElement
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = "Sentence Order-" + Utils.generate_uuid();
+        this.params.name = "Sentence Order-" + this.id;
     }
 
     updateModelFromForm(form) {

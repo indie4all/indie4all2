@@ -12,7 +12,7 @@ export default class WidgetBlockquote extends WidgetItemElement {
 
     constructor(values) {
         super(values);
-        this.data = values?.data ?? { quote: "", caption: "", alignment: "", source: "" };
+        this.data = values?.data ? structuredClone(values.data) : { quote: "", caption: "", alignment: "", source: "" };
     }
 
     clone() {

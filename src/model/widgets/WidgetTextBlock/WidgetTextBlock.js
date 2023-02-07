@@ -16,7 +16,7 @@ export default class WidgetTextBlock extends WidgetItemElement {
         super(values);
         // Add the behaviour of a RichTextEditorElement to the current object
         Object.assign(this, RichTextEditorElement);
-        this.data = values?.data ?? { style: "default", text: "" };
+        this.data = values?.data ? structuredClone(values.data) : { style: "default", text: "" };
     }
 
     clone() {

@@ -46,7 +46,7 @@ export default class WidgetTermClassificationItem extends WidgetItemElement {
 
     constructor(values) {
         super(values);
-        this.data = values?.data ?? { column: "", terms: [] };
+        this.data = values?.data ? structuredClone(values.data) : { column: "", terms: [] };
     }
 
     clone() {

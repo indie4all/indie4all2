@@ -15,7 +15,7 @@ export default class WidgetModal extends WidgetContainerElement {
 
     constructor(values) {
         super(values);
-        this.params = values?.params ?? {
+        this.params = values?.params ? structuredClone(values.params) : {
             name: WidgetModal.widget + "-" + Utils.generate_uuid(),
             text: "",
             help: ""
@@ -49,7 +49,7 @@ export default class WidgetModal extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = WidgetModal.widget + "-" + Utils.generate_uuid();
+        this.params.name = WidgetModal.widget + "-" + this.id;
     }
 
 

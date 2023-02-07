@@ -13,8 +13,8 @@ export default class WidgetInteractiveVideo extends WidgetItemElement {
     
     constructor(values) {
         super(values);
-        this.params = values?.params ?? { name: "Interactive Video-" + Utils.generate_uuid() }
-        this.data = values?.data ?? { videourl: "" };
+        this.params = values?.params ? structuredClone(values.params) : { name: "Interactive Video-" + Utils.generate_uuid() }
+        this.data = values?.data ? structuredClone(values.data) : { videourl: "" };
     }
 
     clone() {
@@ -43,7 +43,7 @@ export default class WidgetInteractiveVideo extends WidgetItemElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = "Interactive Video-" + Utils.generate_uuid();
+        this.params.name = "Interactive Video-" + this.id;
     }
 
     updateModelFromForm(form) {

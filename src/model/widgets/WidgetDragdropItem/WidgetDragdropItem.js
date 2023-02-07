@@ -13,7 +13,7 @@ export default class WidgetDragdropItem extends WidgetItemElement {
 
     constructor(values) {
         super(values);
-        this.data = values?.data ?? { term: "", definition: "" };
+        this.data = values?.data ? structuredClone(values.data) : { term: "", definition: "" };
     }
 
     clone() {

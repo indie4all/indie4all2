@@ -15,7 +15,7 @@ export default class WidgetSchemaItem extends WidgetItemElement {
 
     constructor(values) {
         super(values);
-        this.data = values?.data ?? { blob: "", alt: "" };
+        this.data = values?.data ? structuredClone(values.data) : { blob: "", alt: "" };
     }
 
     clone() {

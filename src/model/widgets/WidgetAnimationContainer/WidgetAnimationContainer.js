@@ -16,7 +16,7 @@ export default class WidgetAnimationContainer extends WidgetContainerElement {
 
     constructor(values) {
         super(values);
-        this.params = values?.params ?? {
+        this.params = values?.params ? structuredClone(values.params) : {
             name: "Animation-" + Utils.generate_uuid(),
             width: 0,
             height: 0,
@@ -52,7 +52,7 @@ export default class WidgetAnimationContainer extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = "Animation-" + Utils.generate_uuid();
+        this.params.name = "Animation-" + this.id;
     }
 
     updateModelFromForm(form) {

@@ -15,7 +15,7 @@ export default class WidgetAnimationItem extends WidgetItemElement {
 
     constructor(values) {
         super(values);
-        this.data = values?.data ?? { image: ""};
+        this.data = values?.data ? structuredClone(values.data) : { image: ""};
     }
 
     clone() {

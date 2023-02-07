@@ -26,7 +26,7 @@ export default class WidgetMissingWordsItem extends WidgetItemElement {
 
     constructor(values) {
         super(values);
-        this.data = values?.data ?? { sentence: "", combinations: [] };
+        this.data = values?.data ? structuredClone(values.data) : { sentence: "", combinations: [] };
     }
 
     clone() {

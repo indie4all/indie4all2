@@ -15,7 +15,7 @@ export default class WidgetAcordionContainer extends WidgetContainerElement {
 
     constructor(values) {
         super(values);
-        this.params = values?.params ?? {
+        this.params = values?.params ? structuredClone(values.params) : {
             name: "Acordion-" + Utils.generate_uuid(),
             help: ""
         };
@@ -47,7 +47,7 @@ export default class WidgetAcordionContainer extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = "Acordion-" + Utils.generate_uuid();
+        this.params.name = "Acordion-" + this.id;
     }
 
     updateModelFromForm(form) {

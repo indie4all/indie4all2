@@ -15,7 +15,7 @@ export default class WidgetTrueFalseItem extends WidgetItemElement {
 
     constructor(values) {
         super(values);
-        this.data = values?.data ?? {
+        this.data = values?.data ? structuredClone(values.data) : {
             question: "",
             answer: true,
             feedback: { positive: "", negative: "" }

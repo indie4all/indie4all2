@@ -44,11 +44,11 @@ export default class WidgetTable extends WidgetItemElement {
 
     constructor(values) {
         super(values);
-        this.params = values?.params ?? {
+        this.params = values?.params ? structuredClone(values.params) : {
             name: WidgetTable.widget + "-" + Utils.generate_uuid(),
             help: ''
         };
-        this.data = values?.data ?? { columns: [], rows: [] };
+        this.data = values?.data ? structuredClone(values.data) : { columns: [], rows: [] };
     }
 
     clone() {
@@ -251,6 +251,11 @@ export default class WidgetTable extends WidgetItemElement {
         return (this?.data?.columns?.length) ? 
             this.data.columns.map(col => col.replaceAll(/<br\s*\/?>/g, ' ')).join(' | ') : 
             this.translate("widgets.Table.prev");
+    }
+
+    regenerateIDs() {
+        super.regenerateIDs();
+        this.params.name = WidgetTable.widget + "-" + this.id;
     }
 
     updateModelFromForm(form) {

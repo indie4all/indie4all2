@@ -35,7 +35,7 @@ export default class WidgetSentenceOrderItem extends WidgetItemElement {
 
     constructor(values) {
         super(values);
-        this.data = values?.data ?? { answers: [], words: [] };
+        this.data = values?.data ? structuredClone(values.data) : { answers: [], words: [] };
     }
 
     clone() {

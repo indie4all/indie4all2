@@ -14,7 +14,7 @@ export default class WidgetAudioTermContainer extends WidgetContainerElement {
 
     constructor(values) {
         super(values);
-        this.params = values?.params ?? {
+        this.params = values?.params ? structuredClone(values.params) : {
             name: "Audio Term Container-" + Utils.generate_uuid(),
             help: ""
         };
@@ -46,7 +46,7 @@ export default class WidgetAudioTermContainer extends WidgetContainerElement {
 
     regenerateIDs() {
         super.regenerateIDs();
-        this.params.name = "Audio Term Container-" + Utils.generate_uuid();
+        this.params.name = "Audio Term Container-" + this.id;
     }
 
     updateModelFromForm(form) {

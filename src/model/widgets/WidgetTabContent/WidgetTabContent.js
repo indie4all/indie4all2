@@ -16,7 +16,7 @@ export default class WidgetTabContent extends WidgetContainerElement {
 
     constructor(values) {
         super(values);
-        this.params = values?.params ?? { name: "" };
+        this.params = values?.params ? structuredClone(values.params) : { name: "" };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
         this.skipNameValidation = true;
     }

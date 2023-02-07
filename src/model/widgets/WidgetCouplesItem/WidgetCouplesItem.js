@@ -18,7 +18,7 @@ export default class WidgetCouplesItem extends WidgetItemElement {
         super(values);
         // Add the behaviour of a RichTextEditorElement to the current object
         Object.assign(this, RichTextEditorElement);
-        this.data = values?.data ?? {
+        this.data = values?.data ? structuredClone(values.data) : {
             couples: [
                 { type: "", text: "", alt: "", blob: "" },
                 { type: "", text: "", alt: "", blob: ""}

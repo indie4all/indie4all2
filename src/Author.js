@@ -1,5 +1,4 @@
 /* global $ */
-/* global bootprompt */
 import DragDropHandler from "./DragDropHandler";
 import I18n from "./I18n";
 import { Model } from "./model/Model";
@@ -245,15 +244,17 @@ export default class Author {
                 text: this.i18n.translate(`widgets.${allowed}.label`),
                 value: allowed
             }));
-            bootprompt.prompt({
-                title: this.i18n.translate("common.selectType"),
-                inputType: 'select',
-                inputOptions: options,
-                value: allowed[0], // Default option
-                closeButton: false,
-                callback: function (result) {
-                    result && self.addSpecificContent(containerId, result);
-                }
+            import('bootprompt').then(bootprompt => {
+                bootprompt.prompt({
+                    title: this.i18n.translate("common.selectType"),
+                    inputType: 'select',
+                    inputOptions: options,
+                    value: allowed[0], // Default option
+                    closeButton: false,
+                    callback: function (result) {
+                        result && self.addSpecificContent(containerId, result);
+                    }
+                });
             });
         } else {
             self.addSpecificContent(containerId, allowed[0]);

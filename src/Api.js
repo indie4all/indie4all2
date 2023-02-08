@@ -1,5 +1,4 @@
 /* global $ */
-/* global bootprompt */
 import Author from "./Author";
 import I18n from "./I18n";
 import ModelManager from './model/ModelManager';
@@ -345,29 +344,31 @@ export default class Api {
      */
     clear() {
         const self = this;
-        bootprompt.confirm({
-            title: this.#i18n.translate("general.areYouSure"),
-            message: this.#i18n.translate("messages.confirmClearContent"),
-            buttons: {
-                confirm: {
-                    label: this.#i18n.translate("general.delete"),
-                    className: 'btn-danger'
+        import('bootprompt').then(bootprompt => {
+            bootprompt.confirm({
+                title: this.#i18n.translate("general.areYouSure"),
+                message: this.#i18n.translate("messages.confirmClearContent"),
+                buttons: {
+                    confirm: {
+                        label: this.#i18n.translate("general.delete"),
+                        className: 'btn-danger'
+                    },
+                    cancel: {
+                        label: this.#i18n.translate("general.cancel"),
+                        className: 'btn-indie'
+                    }
                 },
-                cancel: {
-                    label: this.#i18n.translate("general.cancel"),
-                    className: 'btn-indie'
-                }
-            },
-            callback: function (result) {
-                if (result) {
-                    $(self.#container).children().fadeOut(500, function () {
-                        $(self.#container).empty();
-                        Utils.notifySuccess(this.#i18n.translate("messages.contentCleared"));
-                        this.#author.clearModelSections();
-                    });
-                }
-            },
-            closeButton: false,
+                callback: function (result) {
+                    if (result) {
+                        $(self.#container).children().fadeOut(500, function () {
+                            $(self.#container).empty();
+                            Utils.notifySuccess(this.#i18n.translate("messages.contentCleared"));
+                            this.#author.clearModelSections();
+                        });
+                    }
+                },
+                closeButton: false,
+            });
         });
     }
 

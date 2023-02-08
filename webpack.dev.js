@@ -6,7 +6,7 @@ const devConfig = {
   mode: 'development',
   watch: true,
   devtool: 'inline-source-map',
-  plugins: [ new BundleAnalyzerPlugin({analyzerMode: 'static'}) ]
+  //plugins: [ new BundleAnalyzerPlugin({analyzerMode: 'static'}) ]
 };
 
 module.exports = common.map(config => merge(config, devConfig))

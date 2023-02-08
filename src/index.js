@@ -18,14 +18,16 @@ const start = (options) => {
     // Watch for changes to replace icons
     dom.watch();
 
-    return I18n.init().then(() => {
-        const domPalette = document.getElementById('palette');
-        const domContainer = document.getElementById('main-container');
-        // Initialize the IndieAuthor api
-        const api = new Api(domPalette, domContainer);
-        api.setOptions(options);
-        init_events(api);
-        return api;
+    return I18n.init()
+        .then(() => import('bootstrap'))
+        .then(() => {
+            const domPalette = document.getElementById('palette');
+            const domContainer = document.getElementById('main-container');
+            // Initialize the IndieAuthor api
+            const api = new Api(domPalette, domContainer);
+            api.setOptions(options);
+            init_events(api);
+            return api;
     });
 }
 

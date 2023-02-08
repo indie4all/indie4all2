@@ -34,8 +34,6 @@ const config = {
     new MiniCssExtractPlugin(),
     new webpack.ProvidePlugin({
       $: "jquery",
-      bootstrap: "bootstrap",
-      bootprompt: "bootprompt",
       jQuery: "jquery"
     })
   ],

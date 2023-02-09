@@ -3,6 +3,7 @@ const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const webpack = require('webpack');
 
 const config = {
@@ -50,8 +51,15 @@ const webConfig = merge(config, {
   plugins: [ 
     new HtmlWebpackPlugin({ template: './src/views/index.hbs', inject: 'head', scriptLoading: 'blocking' }),
     new CopyPlugin({patterns: [
-      { from: "./src/manifest.json", to: "."}, 
-      { from: "./src/favicon.ico", to: "."}]}) ],
+      { from: "./src/manifest.json", to: "."},
+      { from: "./src/icon-192.png", to: "."}, 
+      { from: "./src/icon-512.png", to: "."}, 
+      { from: "./src/favicon.ico", to: "."}]}),
+      new WorkboxPlugin.GenerateSW({
+       clientsClaim: true,
+       skipWaiting: true,
+     }),
+    ],
   output: { 
     path: path.resolve(__dirname, 'web'),
     library: "IndieAuthor" 

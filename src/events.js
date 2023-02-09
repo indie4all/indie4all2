@@ -102,11 +102,26 @@ export function init(api) {
         api.removeElement(id);
     });
 
-
     $('body').on('click', '.author-toggle-category', function() {
         const category = $(this).closest('[data-category-header]').data('category-header');
         api.toggleCategory(category);
     });
+
+    // Enable PWA application support
+    window.addEventListener('beforeinstallprompt', (event) => {
+        // Prevent the mini-infobar from appearing on mobile.
+        event.preventDefault();
+        const btn = document.querySelector('.author-install');
+        btn.parentElement.classList.toggle("d-none", false);
+        btn.dataset.title = i18n.value('header.install');
+        $(btn).find('.btn-text').text(i18n.value('header.install'));
+        btn.addEventListener('click', async () => {
+            event.prompt();
+            await event.userChoice;
+            btn.parentElement.classList.toggle("d-none", true);
+        });
+    });
+    //    
 
     $('#editor-footer .alert')[0].innerHTML = i18n.value('footer.content');
 

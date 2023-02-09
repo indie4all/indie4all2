@@ -1,4 +1,25 @@
 {
+    "name": "Indie4all2",
+    "short_name": "Indie4all2",
+    "description": "A powerful tool to create, import, export and preview accessible learning units with an easy-to-use interface.",
     "display": "standalone",
-    "orientation": "landscape"
+    "orientation": "landscape",
+    "icons": [
+        {
+        "src": "/icon-192.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "any maskable"
+        },
+        {
+        "src": "/icon-512.png",
+        "type": "image/png",
+        "sizes": "192x192",
+        "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/",
+    "scope": "/",
+    "background_color": "white",
+    "theme_color": "#FF055F"
 }

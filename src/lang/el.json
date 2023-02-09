@@ -502,7 +502,8 @@
         "addSection": "Add section",
         "importSection": "Import section",
         "clear": "Clear content",
-        "save": "Save content"
+        "save": "Save content",
+        "install": "Install application"
     },
     "items": {
         "add": "Add content",

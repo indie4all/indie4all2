@@ -502,7 +502,8 @@
         "addSection": "Añadir sección",
         "importSection": "Importar sección",
         "clear": "Limpiar contenido",
-        "save": "Guardar contenido"
+        "save": "Guardar contenido",
+        "install": "Instalar aplicación"
     },
     "items": {
         "add": "Añadir contenido",

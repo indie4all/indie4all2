@@ -3,7 +3,7 @@
     "short_name": "Indie4all2",
     "description": "A powerful tool to create, import, export and preview accessible learning units with an easy-to-use interface.",
     "display": "standalone",
-    "orientation": "landscape",
+    "orientation": "any",
     "icons": [
         {
         "src": "/icon-192.png",

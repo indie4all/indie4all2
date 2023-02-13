@@ -53,35 +53,68 @@ import Utils from "../Utils.js";
 
 export default class ModelManager {
 
-    static #elements = {};
+    static #elements = {
+        // Section element
+        [Section.widget]: Section, 
+        // Elements
+        [WidgetTextBlock.widget]: WidgetTextBlock,
+        [WidgetBlockquote.widget]: WidgetBlockquote, 
+        [WidgetLatexFormula.widget]: WidgetLatexFormula,
+        [WidgetVideo.widget]: WidgetVideo,
+        [WidgetSimpleImage.widget]: WidgetSimpleImage,
+        [WidgetTable.widget]: WidgetTable,
+        // Layouts
+        [WidgetTwoColumnsLayout.widget]: WidgetTwoColumnsLayout,
+        [WidgetThreeColumnsLayout.widget]: WidgetThreeColumnsLayout,
+        [WidgetFourColumnsLayout.widget]: WidgetFourColumnsLayout,
+        // Containers
+        [WidgetTabsContainer.widget]: WidgetTabsContainer,
+        [WidgetTabContent.widget]: WidgetTabContent,
+        [WidgetAcordionContainer.widget]: WidgetAcordionContainer,
+        [WidgetAcordionContent.widget]: WidgetAcordionContent,
+        [WidgetModal.widget]: WidgetModal,
+        // Interactive elements
+        [WidgetImageAndText.widget]: WidgetImageAndText,
+        [WidgetImage.widget]: WidgetImage,
+        [WidgetChooseOption.widget]: WidgetChooseOption,
+        [WidgetDragdropContainer.widget]: WidgetDragdropContainer,
+        [WidgetDragdropItem.widget]: WidgetDragdropItem,
+        [WidgetTrueFalseContainer.widget]: WidgetTrueFalseContainer,
+        [WidgetTrueFalseItem.widget]: WidgetTrueFalseItem,
+        [WidgetAudioTermContainer.widget]: WidgetAudioTermContainer,
+        [WidgetAudioTermItem.widget]: WidgetAudioTermItem,
+        [WidgetImageAndSoundContainer.widget]: WidgetImageAndSoundContainer,
+        [WidgetImageAndSoundItem.widget]: WidgetImageAndSoundItem,
+        [WidgetCouplesContainer.widget]: WidgetCouplesContainer,
+        [WidgetCouplesItem.widget]: WidgetCouplesItem,
+        [WidgetSchemaContainer.widget]: WidgetSchemaContainer, 
+        [WidgetSchemaItem.widget]: WidgetSchemaItem, 
+        [WidgetInteractiveVideo.widget]: WidgetInteractiveVideo, 
+        [WidgetPuzzle.widget]: WidgetPuzzle, 
+        [WidgetCorrectWordContainer.widget]: WidgetCorrectWordContainer,
+        [WidgetCorrectWordItem.widget]: WidgetCorrectWordItem, 
+        [WidgetMissingwordsContainer.widget]: WidgetMissingwordsContainer, 
+        [WidgetMissingwordsItem.widget]: WidgetMissingwordsItem, 
+        [WidgetSentenceorderContainer.widget]: WidgetSentenceorderContainer,
+        [WidgetSentenceorderItem.widget]: WidgetSentenceorderItem, 
+        [WidgetGuessWord.widget]: WidgetGuessWord, 
+        [WidgetButtonTextContainer.widget]: WidgetButtonTextContainer, 
+        [WidgetButtonTextItem.widget]: WidgetButtonTextItem, 
+        [WidgetAnimation.widget]: WidgetAnimation,
+        [WidgetAnimationContainer.widget]: WidgetAnimationContainer, 
+        [WidgetAnimationItem.widget]: WidgetAnimationItem, 
+        [WidgetTermClassifcation.widget]: WidgetTermClassifcation, 
+        [WidgetTermClassificationItem.widget]: WidgetTermClassificationItem,
+        // Tests
+        [WidgetTestContainer.widget]: WidgetTestContainer, 
+        [WidgetGapQuestion.widget]: WidgetGapQuestion, 
+        [WidgetSimpleQuestion.widget]: WidgetSimpleQuestion, 
+        [WidgetTrueFalseQuestion.widget]: WidgetTrueFalseQuestion 
+    };
 
     static #containerTypes = ['specific-container', 'simple-container', 
         'specific-element-container', 'element-container','layout',
         'section-container' ];
-
-    static {
-        const elements = [ 
-            // Section element
-            Section, 
-            // Elements
-            WidgetTextBlock, WidgetBlockquote, WidgetLatexFormula, WidgetVideo, WidgetSimpleImage, WidgetTable,
-            // Layouts
-            WidgetTwoColumnsLayout, WidgetThreeColumnsLayout, WidgetFourColumnsLayout,
-            // Containers
-            WidgetTabsContainer, WidgetTabContent, WidgetAcordionContainer, WidgetAcordionContent, WidgetModal,
-            // Interactive elements
-            WidgetImageAndText, WidgetImage, WidgetChooseOption, WidgetDragdropContainer, WidgetDragdropItem,
-            WidgetTrueFalseContainer, WidgetTrueFalseItem, WidgetAudioTermContainer, WidgetAudioTermItem,
-            WidgetImageAndSoundContainer, WidgetImageAndSoundItem, WidgetCouplesContainer, WidgetCouplesItem,
-            WidgetSchemaContainer, WidgetSchemaItem, WidgetInteractiveVideo, WidgetPuzzle, WidgetCorrectWordContainer,
-            WidgetCorrectWordItem, WidgetMissingwordsContainer, WidgetMissingwordsItem, WidgetSentenceorderContainer,
-            WidgetSentenceorderItem, WidgetGuessWord, WidgetButtonTextContainer, WidgetButtonTextItem, WidgetAnimation,
-            WidgetAnimationContainer, WidgetAnimationItem, WidgetTermClassifcation, WidgetTermClassificationItem,
-            // Tests
-            WidgetTestContainer, WidgetGapQuestion, WidgetSimpleQuestion, WidgetTrueFalseQuestion ]
-          
-        this.#elements = Object.fromEntries(elements.map(elem => [elem.widget, elem]));
-    }
 
     static getAllWidgets() {
         return Object.values(this.#elements).filter(elem => WidgetElement.isPrototypeOf(elem) );

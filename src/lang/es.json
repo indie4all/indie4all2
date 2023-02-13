@@ -82,7 +82,7 @@
                 "empty": "El acordeón está vacío. Debes añadir contenido usando el botón de añadir a la derecha."
             }
         },
-        "AcordoinContent": {
+        "AcordionContent": {
             "data": {
                 "empty": "El contenedor está vacío. Debes añadir al menos un elemento al contenedor."
             },

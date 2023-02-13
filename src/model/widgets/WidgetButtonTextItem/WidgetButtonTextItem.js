@@ -36,7 +36,7 @@ export default class WidgetButtonTextItem extends WidgetItemElement {
 
             return {
                 inputs: form(data),
-                title: this.translate("strings.widgets.ButtonTextItem.label")
+                title: this.translate("widgets.ButtonTextItem.label")
             };
         });
     }

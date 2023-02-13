@@ -10,13 +10,18 @@ import "./styles/overrides.css"
 import { init as init_events } from './events'
 import I18n from './I18n';
 
-if ('serviceWorker' in navigator) {
-   window.addEventListener('load', () => {
-     navigator.serviceWorker.register('/service-worker.js');
-   });
-}
-
 const start = (options) => {
+    // Start PWA serviceWorker
+    // `enablePWA`: (boolean) Enable service worker for Progressive Web Applications
+    if ((!options || options['enablePWA'] !== false) && 'serviceWorker' in navigator) {
+        window.addEventListener('load', async () => {
+            try {
+                await navigator.serviceWorker.register('/service-worker.js');
+            } catch(error) {
+                console.warn("The ServiceWorker could not be registered")
+            }
+        });
+    }
     // Enable FontAwesome icons
     library.add(faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle, 
         faCloudDownloadAlt, faCloudUploadAlt, faCopy, faDownload, faEdit, faEye, faGlobe, faFileExport, 

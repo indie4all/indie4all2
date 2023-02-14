@@ -360,10 +360,10 @@ export default class Api {
                 },
                 callback: function (result) {
                     if (result) {
-                        $(self.#container).children().fadeOut(500, function () {
+                        $(self.#container).children().fadeOut(500).promise().done(() => {
                             $(self.#container).empty();
-                            Utils.notifySuccess(this.#i18n.translate("messages.contentCleared"));
-                            this.#author.clearModelSections();
+                            Utils.notifySuccess(self.#i18n.translate("messages.contentCleared"));
+                            self.#author.clearModelSections();
                         });
                     }
                 },

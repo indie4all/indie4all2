@@ -9,11 +9,10 @@ import {
 import "./styles/overrides.css"
 import { init as init_events } from './events'
 import I18n from './I18n';
+import { ConfigOptions } from './types';
 
-const start = (options) => {
-    // Start PWA serviceWorker
-    // `enablePWA`: (boolean) Enable service worker for Progressive Web Applications
-    if ((!options || options['enablePWA'] !== false) && 'serviceWorker' in navigator) {
+const start = (options?: ConfigOptions) => {
+    if ((!options || options.enablePWA !== false) && 'serviceWorker' in navigator) {
         window.addEventListener('load', async () => {
             try {
                 await navigator.serviceWorker.register('/service-worker.js');

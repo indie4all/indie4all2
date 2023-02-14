@@ -10,6 +10,11 @@ const config = {
   module: {
     rules: [
         {
+          test: /\.tsx?$/,
+          use: 'ts-loader',
+          exclude: /node_modules/,
+        },
+        {
             test: /\.hbs$/i,
             loader: "handlebars-loader",
             options: {
@@ -38,7 +43,7 @@ const config = {
       jQuery: "jquery"
     })
   ],
-  entry: './src/index.js',
+  entry: './src/index.ts',
   output: {
     filename: '[name].js',
     assetModuleFilename: 'assets/[hash][ext][query]',

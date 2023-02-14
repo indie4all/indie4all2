@@ -2,30 +2,22 @@
 import Author from "./Author";
 import I18n from "./I18n";
 import ModelManager from './model/ModelManager';
+import { ConfigOptions } from "./types";
 import UndoRedo from "./Undoredo";
 import Utils from "./Utils";
 
 export default class Api {
 
-    #container;
-    #i18n;
-    #author;
-    #undoredo;
-    /**
-     * API configuration options. Values:
-     * - `requestAdditionalDataOnPopulate`: (boolean) sets if the API should show a modal asking for additional information when publishing a unit. Default value: true.
-     * - `previewBackendURL`: (string) server URL to preview the current unit. Default value: '/model/preview'.
-     * - `publishBackendURL`: (string) server URL to publish the current unit. Default value: '/model/publish'.
-     * - `saveBackendURL`: (string) server URL to store the contents of the unit. Default value: '/model/save'.
-     * - `scormBackendURL`: (string) server URL to generate a scorm package with the contents of the unit. Default value: '/model/scorm'.
-     * - `encryptionKey`: (function|string|null) key to encrypt sensitive data. If null, no encryption is done.
-     */
-    #options;
+    private container;
+    private i18n;
+    private author;
+    private undoredo;
+    private options: ConfigOptions;
 
-    constructor(palette, container) {
-        this.#container = container;
-        this.#i18n = I18n.getInstance();
-        this.#options = {
+    constructor(palette: HTMLElement, container: HTMLElement) {
+        this.container = container;
+        this.i18n = I18n.getInstance();
+        this.options = {
             'requestAdditionalDataOnPopulate': true,
             'previewBackendURL': '/model/preview',
             'publishBackendURL': '/model/publish',
@@ -33,8 +25,8 @@ export default class Api {
             'scormBackendURL': '/model/scorm',
             'encryptionKey': null
         }
-        this.#author = new Author(palette, container);
-        this.#undoredo = UndoRedo.getInstance();
+        this.author = new Author(palette, container);
+        this.undoredo = UndoRedo.getInstance();
         
     }
 
@@ -42,7 +34,7 @@ export default class Api {
      * Downloads a given file
      * @param {File} file - Blob with the contents of the compressed unit file
      */
-    #downloadFile(file) {
+    private downloadFile(file: File) {
         const link = document.createElement('a');
         const url = URL.createObjectURL(file)
         link.href = url;
@@ -59,12 +51,12 @@ export default class Api {
      * @param {} response 
      * @returns 
      */
-    #onPublishModel(response) {
+    private onPublishModel(response) {
         const self = this;
         if (!response.ok) {
             // Wait until the modal is fully loaded (1 sec)
-            setTimeout(() => self.#author.hideLoading(), 1000);
-            Utils.notifyError(this.#i18n.translate("messages.publishError"));
+            setTimeout(() => self.author.hideLoading(), 1000);
+            Utils.notifyError(this.i18n.translate("messages.publishError"));
             return;
         }
         
@@ -79,8 +71,8 @@ export default class Api {
 
             response.blob().then(blob => {
                 const zip = new File([blob], filename, { type });
-                self.#downloadFile(zip);
-                self.#author.hideLoading();
+                self.downloadFile(zip);
+                self.author.hideLoading();
                 resolve();
             });
         });
@@ -91,7 +83,7 @@ export default class Api {
      * @param {string} title - Title of the modal window
      * @param {function} onSubmit - Action to perform when the user submits the form
      */
-    #openUnitSettings(title, onSubmit) {
+    private openUnitSettings(title, onSubmit) {
 
         import("./views/download.hbs").then(({default: downloadTemplate}) => {
             $("#modal-settings .btn-submit").off('click'); // Unbind button submit click event 
@@ -138,7 +130,7 @@ export default class Api {
      * @param {string} title - Title of the modal window
      * @param {function} onSubmit - Action to perform when the model is ready to be populated
      */
-    #populateModel(onSubmit) {
+    populateModel(onSubmit) {
         
         // Check if the model is valid before trying to download
         if (!this.validate()) {
@@ -157,7 +149,7 @@ export default class Api {
      * @param {string} text - Text to be encrypted
      * @returns string - Encrypted text
      */
-    #encrypt(text) {
+    private encrypt(text) {
         const encOption = this.#options['encryptionKey'];
         if (encOption === null)
             return new Promise(resolve => resolve(text));
@@ -174,8 +166,8 @@ export default class Api {
      * @param {string} text - Text to be decrypted
      * @returns string - Decrypted text
      */
-    #decrypt(encrypted) {
-        const encOption = this.#options['encryptionKey'];
+    private decrypt(encrypted) {
+        const encOption = this.options['encryptionKey'];
         if (encOption === null)
             return new Promise(resolve => resolve(encrypted));
 
@@ -191,20 +183,20 @@ export default class Api {
      * @param {object} options - set of options to update
      */
     setOptions(options) {
-        $.extend(this.#options, options);
+        $.extend(this.options, options);
     }
 
     /**
      * Adds an empty section
      */
-    addSection() { this.#author.addSection(); }
+    addSection() { this.author.addSection(); }
 
     /**
      * Adds an empty model element into a container
      * @param {string} id - Container ID
      * @param {string} widget - Type of model element
      */
-    addContent(id, widget) { this.#author.addContent(id, widget)}
+    addContent(id, widget) { this.author.addContent(id, widget)}
 
     /**
      * Duplicates a given model element
@@ -212,7 +204,7 @@ export default class Api {
      */
     copyElement(id) { 
         let sectionId = $(`[data-id=${id}]`).closest('.section-elements').attr('id').split('-').at(-1);
-        this.#author.copyModelElement(this.#author.getModelElement(id), sectionId);
+        this.author.copyModelElement(this.author.getModelElement(id), sectionId);
     }
 
     /**
@@ -220,7 +212,7 @@ export default class Api {
      * @param {string} id - SectionID
      */
     copySection(id) { 
-        this.#author.copyModelSection(this.#author.getModelElement(id));    
+        this.author.copyModelSection(this.author.getModelElement(id));    
     }
 
     /**
@@ -234,16 +226,16 @@ export default class Api {
                 if (json) {
                     const elementJSON = JSON.parse(json);
                     const modelElement = ModelManager.create(elementJSON.widget, elementJSON);
-                    this.#author.copyModelElement(modelElement, id);
-                    Utils.notifySuccess(this.#i18n.translate("messages.importedElement"));
+                    this.author.copyModelElement(modelElement, id);
+                    Utils.notifySuccess(this.i18n.translate("messages.importedElement"));
                     return;
                 }
                 localStorage.removeItem('copied-element');
-                Utils.notifyWarning(this.#i18n.translate("messages.noElement"));
+                Utils.notifyWarning(this.i18n.translate("messages.noElement"));
             });
         } catch (err) {
             localStorage.removeItem('copied-element');
-            Utils.notifyWarning(this.#i18n.translate("messages.noElement"));    
+            Utils.notifyWarning(this.i18n.translate("messages.noElement"));    
         }    
     }
 
@@ -257,16 +249,16 @@ export default class Api {
                 if (json) {
                     const sectionJSON = JSON.parse(json);
                     const sectionElement = ModelManager.create(sectionJSON.widget, sectionJSON);
-                    this.#author.copyModelSection(sectionElement);
-                    Utils.notifySuccess(this.#i18n.translate("messages.importedSection"));
+                    this.author.copyModelSection(sectionElement);
+                    Utils.notifySuccess(this.i18n.translate("messages.importedSection"));
                     return;
                 }
                 localStorage.removeItem('copied-section');
-                Utils.notifyWarning(this.#i18n.translate("messages.noSection"));
+                Utils.notifyWarning(this.i18n.translate("messages.noSection"));
             });
         } catch (err) {
             localStorage.removeItem('copied-section');
-            Utils.notifyWarning(this.#i18n.translate("messages.noSection"));
+            Utils.notifyWarning(this.i18n.translate("messages.noSection"));
         } 
     }
 
@@ -274,19 +266,19 @@ export default class Api {
      * Removes a given model element
      * @param {string} id - Model element ID
      */
-    removeElement(id)  { this.#author.removeElement(id); }
+    removeElement(id)  { this.author.removeElement(id); }
 
     /**
      * Removes a given section
      * @param {String} id - Section ID
      */
-    removeSection(id) { this.#author.removeSection(id); }
+    removeSection(id) { this.author.removeSection(id); }
 
     /**
      * Opens a modal to edit the given element fields
      * @param {string} id - Model element ID
      */
-    editElement(id) { this.#author.openSettings(id); }
+    editElement(id) { this.author.openSettings(id); }
 
     /**
      * Stores the given model element encrypted in LocalStorage using the user's cookie
@@ -294,13 +286,13 @@ export default class Api {
      */
     exportElement(id) {
         try {
-            const original = this.#author.getModelElement(id);
+            const original = this.author.getModelElement(id);
             this.#encrypt(JSON.stringify(original)).then(encrypted => {
                 localStorage.setItem('copied-element', encrypted);
-                Utils.notifySuccess(this.#i18n.translate("messages.exportedElement"));
+                Utils.notifySuccess(this.i18n.translate("messages.exportedElement"));
             });
         } catch (err) {
-            Utils.notifyWarning(this.#i18n.translate("messages.couldNotExportElement"));
+            Utils.notifyWarning(this.i18n.translate("messages.couldNotExportElement"));
         }
     }
 
@@ -310,13 +302,13 @@ export default class Api {
      */
     exportSection(id) { 
         try {
-            const original = this.#author.getModelElement(id);
+            const original = this.author.getModelElement(id);
             this.#encrypt(JSON.stringify(original)).then(encrypted => {
                 localStorage.setItem('copied-section', encrypted);
-                Utils.notifySuccess(this.#i18n.translate("messages.exportedSection"));
+                Utils.notifySuccess(this.i18n.translate("messages.exportedSection"));
             });
         } catch (err) {
-            Utils.notifyWarning(this.#i18n.translate("messages.couldNotExportSection"));
+            Utils.notifyWarning(this.i18n.translate("messages.couldNotExportSection"));
         }        
     }
 
@@ -325,19 +317,19 @@ export default class Api {
      * @param {string} id - Section ID
      * @param {0,1} direction - Down (0) or Up (1)
      */
-    swap(id, direction) { this.#author.swap(id, direction); }
+    swap(id, direction) { this.author.swap(id, direction); }
 
     /**
      * Expands/Collapses the given category
      * @param {string} category - Category ID
      */
-    toggleCategory(category) { this.#author.toggleCategory(category); }
+    toggleCategory(category) { this.author.toggleCategory(category); }
 
     /**
      * Validates the current state of the model and shows its errors
      * @returns True if the model is valid, false otherwise
      */
-    validate() {  return this.#author.validateContent(true); }
+    validate() {  return this.author.validateContent(true); }
 
     /**
      * Clears the content of the editor
@@ -346,24 +338,24 @@ export default class Api {
         const self = this;
         import('bootprompt').then(bootprompt => {
             bootprompt.confirm({
-                title: this.#i18n.translate("general.areYouSure"),
-                message: this.#i18n.translate("messages.confirmClearContent"),
+                title: this.i18n.translate("general.areYouSure"),
+                message: this.i18n.translate("messages.confirmClearContent"),
                 buttons: {
                     confirm: {
-                        label: this.#i18n.translate("general.delete"),
+                        label: this.i18n.translate("general.delete"),
                         className: 'btn-danger'
                     },
                     cancel: {
-                        label: this.#i18n.translate("general.cancel"),
+                        label: this.i18n.translate("general.cancel"),
                         className: 'btn-indie'
                     }
                 },
                 callback: function (result) {
                     if (result) {
-                        $(self.#container).children().fadeOut(500, function () {
-                            $(self.#container).empty();
-                            Utils.notifySuccess(this.#i18n.translate("messages.contentCleared"));
-                            this.#author.clearModelSections();
+                        $(self.container).children().fadeOut(500, function () {
+                            $(self.container).empty();
+                            Utils.notifySuccess(self.i18n.translate("messages.contentCleared"));
+                            self.author.clearModelSections();
                         });
                     }
                 },
@@ -375,12 +367,12 @@ export default class Api {
     /**
      * Undoes an action
      */
-    undo() { this.#undoredo.undo(); }
+    undo() { this.undoredo.undo(); }
 
     /**
      * Repeats a previously undone action
      */
-    redo() { this.#undoredo.redo(); }
+    redo() { this.undoredo.redo(); }
 
     /**
      * Loads a model into the application
@@ -391,18 +383,18 @@ export default class Api {
     load(model, onLoaded, onError) {
         const self = this;
         try {
-            self.#author.showLoading();
-            $(self.#container).toggle(1000, function() {
-                $(self.#container).empty();
-                self.#author.loadModelIntoPlugin(model);
-                $(self.#container).toggle(1000, () => {
-                    self.#author.hideLoading();
+            self.author.showLoading();
+            $(self.container).toggle(1000, function() {
+                $(self.container).empty();
+                self.author.loadModelIntoPlugin(model);
+                $(self.container).toggle(1000, () => {
+                    self.author.hideLoading();
                     onLoaded && onLoaded();
                 });
             });
         } catch (err) {
-            $(self.#container).empty();
-            self.#author.resetModel();
+            $(self.container).empty();
+            self.author.resetModel();
             onError && onError(err);
         }
     }
@@ -413,31 +405,31 @@ export default class Api {
     save() {
         const self = this;
         const onSubmit = (model) => {
-            const title = this.#i18n.value("common.save.title");
-            const description = this.#i18n.value("common.save.description");
-            self.#author.showLoading(title, description);
+            const title = this.i18n.value("common.save.title");
+            const description = this.i18n.value("common.save.description");
+            self.author.showLoading(title, description);
             const onGenerated = async (response) => {
                 // Wait until the modal is fully loaded (1 sec)
-                setTimeout(() => self.#author.hideLoading(), 1000);
+                setTimeout(() => self.author.hideLoading(), 1000);
                 if (!response.ok) {
-                    Utils.notifyError(this.#i18n.translate("messages.saveError"));
+                    Utils.notifyError(this.i18n.translate("messages.saveError"));
                     return;
                 }
                 const json = await response.json();
                 if (json.success)
-                    Utils.notifySuccess(this.#i18n.translate("messages.savedUnit"));
+                    Utils.notifySuccess(this.i18n.translate("messages.savedUnit"));
                 else
-                    Utils.notifyError(this.#i18n.translate("messages.saveError"));
+                    Utils.notifyError(this.i18n.translate("messages.saveError"));
             };
             // Download the generated files
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
-            const requestOptions = { method: 'POST', body: JSON.stringify(model), redirect: 'follow', headers };
-            fetch(this.#options['saveBackendURL'], requestOptions)
+            const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
+            fetch(this.options['saveBackendURL'], requestOptions)
                 .then(onGenerated)
                 .catch(error => {
                     console.log('error', error);
-                    self.#author.hideLoading(); 
+                    self.author.hideLoading(); 
                 });
         };
         this.#populateModel(onSubmit);
@@ -450,7 +442,7 @@ export default class Api {
         const self = this;
         const onSubmit = (model) => {
             const file = new File([JSON.stringify(model, null, 2)], "model.json", { type: "application/json" });
-            self.#downloadFile(file);
+            self.downloadFile(file);
         };
         this.#populateModel(onSubmit);
     }
@@ -461,14 +453,14 @@ export default class Api {
     preview() {
         const self = this;
         const onSubmit = (model) => {
-            const title = this.#i18n.value("common.preview.title");
-            const description = this.#i18n.value("common.preview.description");
-            self.#author.showLoading(title, description);
+            const title = this.i18n.value("common.preview.title");
+            const description = this.i18n.value("common.preview.description");
+            self.author.showLoading(title, description);
             const onGenerated = async (response) => {
                 // Wait until the modal is fully loaded (1 sec)
-                setTimeout(() => self.#author.hideLoading(), 1000);
+                setTimeout(() => self.author.hideLoading(), 1000);
                 if (!response.ok) {
-                    Utils.notifyError(this.#i18n.translate("messages.previewError"));
+                    Utils.notifyError(this.i18n.translate("messages.previewError"));
                     return;
                 }
                 const json = await response.json();
@@ -480,12 +472,12 @@ export default class Api {
             // Download the generated files
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
-            const requestOptions = { method: 'POST', body: JSON.stringify(model), redirect: 'follow', headers };
-            fetch(this.#options['previewBackendURL'], requestOptions)
+            const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
+            fetch(this.options['previewBackendURL'], requestOptions)
                 .then(onGenerated)
                 .catch(error => {
                     console.log('error', error);
-                    self.#author.hideLoading(); 
+                    self.author.hideLoading(); 
                 });
         }
         self.#populateModel(onSubmit);
@@ -497,18 +489,18 @@ export default class Api {
     scorm() {
         const self = this;
         const onSubmit = (model) => {
-            const title = this.#i18n.value("common.scorm.title");
-            const description = this.#i18n.value("common.scorm.description");
-            self.#author.showLoading(title, description);
+            const title = this.i18n.value("common.scorm.title");
+            const description = this.i18n.value("common.scorm.description");
+            self.author.showLoading(title, description);
             // Download the generated files
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
-            const requestOptions = { method: 'POST', body: JSON.stringify(model), redirect: 'follow', headers };
-            fetch(this.#options['scormBackendURL'], requestOptions)
-                .then(self.#onPublishModel.bind(self))
+            const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
+            fetch(this.options['scormBackendURL'], requestOptions)
+                .then(self.onPublishModel.bind(self))
                 .catch(error => {
                     console.log('error', error);
-                    self.#author.hideLoading(); 
+                    self.author.hideLoading(); 
                 });
         }
         this.#populateModel(onSubmit);
@@ -520,18 +512,18 @@ export default class Api {
     publish() {
         const self = this;
         const onSubmit = (model) => {
-            const title = this.#i18n.value("common.publish.title");
-            const description = this.#i18n.value("common.publish.description");
-            self.#author.showLoading(title, description);
+            const title = this.i18n.value("common.publish.title");
+            const description = this.i18n.value("common.publish.description");
+            self.author.showLoading(title, description);
             // Download the generated files
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
-            const requestOptions = { method: 'POST', body: JSON.stringify(model), redirect: 'follow', headers };
-            fetch(this.#options['publishBackendURL'], requestOptions)
-                .then(self.#onPublishModel.bind(self))
+            const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
+            fetch(this.options['publishBackendURL'], requestOptions)
+                .then(self.onPublishModel.bind(self))
                 .catch(error => {
                     console.log('error', error);
-                    self.#author.hideLoading(); 
+                    self.author.hideLoading(); 
                 });
         }
         this.#populateModel(onSubmit);        

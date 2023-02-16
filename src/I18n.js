@@ -4,7 +4,7 @@ export default class I18n {
     static #LANGUAGES = {
         "el": () => import("./lang/el.json"), 
         "es": () => import("./lang/es.json"), 
-        "en": () => import("./lang/es.json"), 
+        "en": () => import("./lang/en.json"), 
         "fr": () => import("./lang/fr.json"),
         "lt": () => import("./lang/lt.json")};
 

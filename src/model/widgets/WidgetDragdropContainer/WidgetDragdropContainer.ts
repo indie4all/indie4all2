@@ -1,0 +1,73 @@
+import Utils from "../../../Utils";
+import "./styles.scss";
+import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
+import ModelManager from "../../ModelManager";
+import icon from "./icon.png";
+import WidgetDragdropItem from "../WidgetDragdropItem/WidgetDragdropItem";
+import { FormEditData } from "../../../types";
+
+export default class WidgetDragdropContainer extends WidgetContainerElement {
+
+    static widget = "DragdropContainer";
+    static type = "specific-element-container";
+    static allow = ["DragdropItem"];
+    static category = "interactiveElements";
+    static icon = icon;
+    static cssClass = "widget-dragdrop-container";
+
+    params: { name: string, help: string }
+    data: WidgetDragdropItem[]
+
+    constructor(values: any) {
+        super(values);
+        this.params = values?.params ? structuredClone(values.params) : {
+            name: "Drag And Drop-" + Utils.generate_uuid(),
+            help: ""
+        };
+        this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
+    }
+
+    clone(): WidgetDragdropContainer {
+        return new WidgetDragdropContainer(this);
+    }
+
+    async getInputs(): Promise<FormEditData> {
+        const { default: form } = await import('./form.hbs');
+        var data = {
+            instanceId: this.id,
+            instanceName: this.params.name,
+            help: this.params.help
+        };
+        return {
+            inputs: form(data),
+            title: this.translate("widgets.DragdropContainer.label")
+        };
+    }
+
+    preview(): string {
+        return this.params?.name ?? this.translate("widgets.DragdropContainer.label");
+    }
+
+    regenerateIDs(): void {
+        super.regenerateIDs();
+        this.params.name = "Drag And Drop-" + this.id;
+    }
+
+    updateModelFromForm(form: any): void {
+        this.params.name = form.instanceName;
+        this.params.help = form.help;
+    }
+
+    validateModel(): string[] {
+        var keys: string[] = [];
+        if (this.data.length == 0) keys.push("DragdropContainer.data.empty");
+        if (!Utils.hasNameInParams(this)) keys.push("common.name.invalid");
+        return keys;
+    }
+
+    validateForm(form: any): string[] {
+        var keys: string[] = [];
+        if (form.instanceName.length == 0) keys.push("common.name.invalid");
+        return keys;
+    }
+}

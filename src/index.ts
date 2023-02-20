@@ -1,9 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import Api from "./Api"
 import { dom, library } from '@fortawesome/fontawesome-svg-core'
-import { 
-    faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle, 
-    faCloudDownloadAlt, faCloudUploadAlt, faCopy, faDownload, faEdit, faEye, faGlobe, faFileExport, 
+import {
+    faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle,
+    faCloudDownloadAlt, faCloudUploadAlt, faCopy, faDownload, faEdit, faEye, faGlobe, faFileExport,
     faFileImport, faPlusCircle, faTimes, faTimesCircle, faRedo, faSave, faSpinner, faTrashAlt, faUndo
 } from '@fortawesome/free-solid-svg-icons'
 import "./styles/overrides.css"
@@ -16,21 +16,21 @@ const start = (options?: ConfigOptions) => {
         window.addEventListener('load', async () => {
             try {
                 await navigator.serviceWorker.register('/service-worker.js');
-            } catch(error) {
+            } catch (error) {
                 console.warn("The ServiceWorker could not be registered")
             }
         });
     }
     // Enable FontAwesome icons
-    library.add(faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle, 
-        faCloudDownloadAlt, faCloudUploadAlt, faCopy, faDownload, faEdit, faEye, faGlobe, faFileExport, 
+    library.add(faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle,
+        faCloudDownloadAlt, faCloudUploadAlt, faCopy, faDownload, faEdit, faEye, faGlobe, faFileExport,
         faFileImport, faPlusCircle, faTimes, faTimesCircle, faRedo, faSave, faSpinner, faTrashAlt, faUndo);
     // Watch for changes to replace icons
     dom.watch();
-
     return I18n.init()
         .then(() => import('bootstrap'))
         .then(() => {
+
             const domPalette = document.getElementById('palette');
             const domContainer = document.getElementById('main-container');
             // Initialize the IndieAuthor api
@@ -38,7 +38,8 @@ const start = (options?: ConfigOptions) => {
             api.setOptions(options);
             init_events(api);
             return api;
-    });
+
+        });
 }
 
 export { start };

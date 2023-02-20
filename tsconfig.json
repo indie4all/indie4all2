@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "es2022",
+    "target": "es6",
+    "outDir": "./dist",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "lib": ["ES2022", "dom"],
+    "paths": {"./*": ["src/*"]}
+  },
+  "include": [
+    "src/**/*",
+    "custom.d.ts"
+  ]
+}

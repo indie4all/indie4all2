@@ -48,6 +48,9 @@ const config = {
     filename: '[name].js',
     assetModuleFilename: 'assets/[hash][ext][query]',
     clean: true
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   }
 };
 

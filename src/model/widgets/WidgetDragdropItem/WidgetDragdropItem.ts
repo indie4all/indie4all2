@@ -1,0 +1,63 @@
+import "./styles.scss";
+import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
+import icon from "./icon.png";
+import { FormEditData } from "../../../types";
+
+export default class WidgetDragdropItem extends WidgetItemElement {
+
+    static widget = "DragdropItem";
+    static type = "specific-element";
+    static category = "interactiveElements";
+    static icon = icon;
+    static cssClass = "widget-dragdrop-item";
+    static paletteHidden = true;
+
+    data: { term: string, definition: string }
+
+    constructor(values: any) {
+        super(values);
+        this.data = values?.data ? structuredClone(values.data) : { term: "", definition: "" };
+    }
+
+    clone(): WidgetDragdropItem {
+        return new WidgetDragdropItem(this);
+    }
+
+    async getInputs(): Promise<FormEditData> {
+        const { default: form } = await import('./form.hbs');
+        var data = {
+            instanceId: this.id,
+            term: this.data ? this.data.term : '',
+            definition: this.data ? this.data.definition : ''
+        };
+        return {
+            inputs: form(data),
+            title: this.translate("widgets.DragdropItem.label")
+        };
+    }
+
+    preview(): string {
+        return this.data?.term && this.data?.definition ?
+            `<p><b>${this.data.term}</b><span> -> ${this.data.definition}</span></p>` :
+            this.translate("widgets.DragdropItem.prev");
+    }
+
+    updateModelFromForm(form: any): void {
+        this.data.term = form.term;
+        this.data.definition = form.definition;
+    }
+
+    validateModel(): string[] {
+        var errors: string[] = [];
+        if (this.data.term.length == 0) errors.push("DragpdropItem.term.invalid");
+        if (this.data.definition.length == 0) errors.push("DragpdropItem.definition.invalid");
+        return errors;
+    }
+
+    validateForm(form: any): string[] {
+        var errors: string[] = [];
+        if (form.term.length == 0) errors.push("DragpdropItem.term.invalid");
+        if (form.definition.length == 0) errors.push("DragpdropItem.definition.invalid");
+        return errors;
+    }
+}

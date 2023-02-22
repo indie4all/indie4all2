@@ -11,18 +11,16 @@ export default abstract class WidgetColumnsLayout extends WidgetElement {
     constructor(values: any) { super(values); }
 
     createElement(): string {
-
         const children = this.data ?
             this.data.map(child => child.map((subchild: WidgetElement) => subchild.createElement()).join("")) :
             Array.from(" ".repeat(WidgetColumnsLayout.columns.length));
-
-        const constructor = <typeof WidgetElement>this.constructor;
+        const constructor = <typeof WidgetColumnsLayout>this.constructor;
         return template({
             id: this.id,
             type: constructor.type,
             widget: constructor.widget,
             icon: constructor.icon,
-            columns: WidgetColumnsLayout.columns,
+            columns: constructor.columns,
             canEdit: constructor.editable,
             children
         });

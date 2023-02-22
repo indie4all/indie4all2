@@ -182,8 +182,9 @@ export default abstract class WidgetPiecesElement extends WidgetItemElement {
 
     constructor(values: any) {
         super(values);
+        const constructor = <typeof WidgetPiecesElement>this.constructor;
         this.params = values?.params ? structuredClone(values.params) : {
-            name: WidgetPiecesElement.widget + "-" + Utils.generate_uuid(),
+            name: constructor.widget + "-" + Utils.generate_uuid(),
             help: ""
         };
         this.data = values?.data ? structuredClone(values.data) : { blob: "", alt: "", pieces: [] };
@@ -191,6 +192,7 @@ export default abstract class WidgetPiecesElement extends WidgetItemElement {
 
     async getInputs(): Promise<FormEditData> {
         const { default: form } = await import('./form.hbs');
+        const constructor = <typeof WidgetPiecesElement>this.constructor;
         var data = {
             instanceId: this.id,
             blob: this.data.blob,
@@ -198,20 +200,22 @@ export default abstract class WidgetPiecesElement extends WidgetItemElement {
             instanceName: this.params.name,
             help: this.params.help,
             alt: this.data.alt,
-            widget: WidgetPiecesElement.widget
+            widget: constructor.widget
         };
         return {
             inputs: form(data),
-            title: this.translate("widgets." + WidgetPiecesElement.widget + ".label")
+            title: this.translate("widgets." + constructor.widget + ".label")
         };
     }
 
     preview(): string {
-        return this.params?.name ?? this.translate("widgets." + WidgetPiecesElement.widget + ".label");
+        const constructor = <typeof WidgetPiecesElement>this.constructor;
+        return this.params?.name ?? this.translate("widgets." + constructor.widget + ".label");
     }
 
     settingsOpened() {
         const self = this;
+        const constructor = <typeof WidgetPiecesElement>this.constructor;
         let $form = $('#f-' + this.id);
         let $piecesContainer = $form.find('.pieces');
         const $iImg = $('input[name=image]');
@@ -244,7 +248,7 @@ export default abstract class WidgetPiecesElement extends WidgetItemElement {
         let canvasHandler = this.canvas.handler.apply(canvas, [this]);
         rects.forEach((rect, idx) =>
             import('./piece.hbs').then(({ default: piece }) =>
-                $piecesContainer.append(piece({ ...rect, pos: idx, widget: WidgetPiecesElement.widget }))));
+                $piecesContainer.append(piece({ ...rect, pos: idx, widget: constructor.widget }))));
 
         $(window).on('resize.pieces', function () {
             canvasHandler.refreshPieces(rects);
@@ -288,7 +292,7 @@ export default abstract class WidgetPiecesElement extends WidgetItemElement {
             let rect = { x: 10, y: 10, w: 100, h: 100 };
             rects.push(rect)
             import('./piece.hbs').then(({ default: piece }) =>
-                $form.find('.pieces').append(piece({ ...rect, pos: idx, widget: WidgetPiecesElement.widget })));
+                $form.find('.pieces').append(piece({ ...rect, pos: idx, widget: constructor.widget })));
             canvasHandler.refreshPieces(rects);
         });
         $form.on('change.pieces', 'input[name="image"]', function () {
@@ -339,10 +343,12 @@ export default abstract class WidgetPiecesElement extends WidgetItemElement {
     }
     regenerateIDs(): void {
         super.regenerateIDs();
-        this.params.name = WidgetPiecesElement.widget + "-" + this.id;
+        const constructor = <typeof WidgetPiecesElement>this.constructor;
+        this.params.name = constructor.widget + "-" + this.id;
     }
 
     validateModel(): string[] {
+        const constructor = <typeof WidgetPiecesElement>this.constructor;
         let errors: string[] = [];
         if (!Utils.hasNameInParams(this)) errors.push("common.name.invalid");
         if (Utils.isStringEmptyOrWhitespace(this.data.alt))
@@ -350,15 +356,15 @@ export default abstract class WidgetPiecesElement extends WidgetItemElement {
         if (!Utils.isValidBase64DataUrl(this.data.blob))
             errors.push("common.imageblob.invalid");
         if (this.data.pieces.length == 0)
-            errors.push(WidgetPiecesElement.widget + ".piece.empty");
+            errors.push(constructor.widget + ".piece.empty");
         if (this.data.pieces.length > 1) {
             this.data.pieces.forEach(piece => {
-                Utils.isStringEmptyOrWhitespace(<string>piece.altImg) && errors.push(WidgetPiecesElement.widget + ".piece.altImg.invalid");
-                Utils.isStringEmptyOrWhitespace(<string>piece.altRec) && errors.push(WidgetPiecesElement.widget + ".piece.altRec.invalid");
-                isNaN(parseFloat(piece['x'].toString())) && errors.push(WidgetPiecesElement.widget + ".piece.x.invalid");
-                isNaN(parseFloat(piece['y'].toString())) && errors.push(WidgetPiecesElement.widget + ".piece.y.invalid");
-                isNaN(parseFloat(piece['w'].toString())) && errors.push(WidgetPiecesElement.widget + ".piece.w.invalid");
-                isNaN(parseFloat(piece['h'].toString())) && errors.push(WidgetPiecesElement.widget + ".piece.h.invalid");
+                Utils.isStringEmptyOrWhitespace(<string>piece.altImg) && errors.push(constructor.widget + ".piece.altImg.invalid");
+                Utils.isStringEmptyOrWhitespace(<string>piece.altRec) && errors.push(constructor.widget + ".piece.altRec.invalid");
+                isNaN(parseFloat(piece['x'].toString())) && errors.push(constructor.widget + ".piece.x.invalid");
+                isNaN(parseFloat(piece['y'].toString())) && errors.push(constructor.widget + ".piece.y.invalid");
+                isNaN(parseFloat(piece['w'].toString())) && errors.push(constructor.widget + ".piece.w.invalid");
+                isNaN(parseFloat(piece['h'].toString())) && errors.push(constructor.widget + ".piece.h.invalid");
             })
         }
         return errors;
@@ -366,25 +372,26 @@ export default abstract class WidgetPiecesElement extends WidgetItemElement {
 
     validateForm(form: any): string[] {
         let errors: string[] = [];
+        const constructor = <typeof WidgetPiecesElement>this.constructor;
         Utils.isStringEmptyOrWhitespace(form.alt) && errors.push("common.alt.invalid");
         !Utils.isValidBase64DataUrl(form.blob) && errors.push("common.imageblob.invalid");
         form.instanceName.length == 0 && errors.push("common.name.invalid");
         (!form['piece'] || !Array.isArray(form['piece']) || form['piece'].length == 0) &&
-            errors.push(WidgetPiecesElement.widget + ".piece.empty");
+            errors.push(constructor.widget + ".piece.empty");
         if (form['piece'] && Array.isArray(form['piece'])) {
             form['piece'].forEach(piece => {
                 Utils.isStringEmptyOrWhitespace(piece.altImg) &&
-                    errors.push(WidgetPiecesElement.widget + ".piece.altImg.invalid");
+                    errors.push(constructor.widget + ".piece.altImg.invalid");
                 Utils.isStringEmptyOrWhitespace(piece.altRec) &&
-                    errors.push(WidgetPiecesElement.widget + ".piece.altRec.invalid");
+                    errors.push(constructor.widget + ".piece.altRec.invalid");
                 isNaN(parseFloat(piece['x'])) &&
-                    errors.push(WidgetPiecesElement.widget + ".piece.x.invalid");
+                    errors.push(constructor.widget + ".piece.x.invalid");
                 isNaN(parseFloat(piece['y'])) &&
-                    errors.push(WidgetPiecesElement.widget + ".piece.y.invalid");
+                    errors.push(constructor.widget + ".piece.y.invalid");
                 isNaN(parseFloat(piece['w'])) &&
-                    errors.push(WidgetPiecesElement.widget + ".piece.w.invalid");
+                    errors.push(constructor.widget + ".piece.w.invalid");
                 isNaN(parseFloat(piece['h'])) &&
-                    errors.push(WidgetPiecesElement.widget + ".piece.h.invalid");
+                    errors.push(constructor.widget + ".piece.h.invalid");
             });
         }
         return errors;

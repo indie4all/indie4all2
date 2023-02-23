@@ -18,17 +18,21 @@ export default class WidgetDragdropContainer extends WidgetContainerElement {
     params: { name: string, help: string }
     data: WidgetDragdropItem[]
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "Drag And Drop-" + Utils.generate_uuid(),
+            name: "Drag And Drop-" + this.id,
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetDragdropContainer {
-        return new WidgetDragdropContainer(this);
+        const widget = new WidgetDragdropContainer();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "Drag And Drop-" + widget.id;
+        widget.data = this.data.map(elem => elem.clone());
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -46,11 +50,6 @@ export default class WidgetDragdropContainer extends WidgetContainerElement {
 
     preview(): string {
         return this.params?.name ?? this.translate("widgets.DragdropContainer.label");
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = "Drag And Drop-" + this.id;
     }
 
     updateModelFromForm(form: any): void {

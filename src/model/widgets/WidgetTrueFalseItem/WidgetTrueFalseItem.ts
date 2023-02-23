@@ -16,7 +16,7 @@ export default class WidgetTrueFalseItem extends WidgetItemElement {
 
     data: { question: string, answer: boolean, feedback: { positive: string, negative: string } }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : {
             question: "",
@@ -26,7 +26,9 @@ export default class WidgetTrueFalseItem extends WidgetItemElement {
     }
 
     clone(): WidgetTrueFalseItem {
-        return new WidgetTrueFalseItem(this);
+        const widget = new WidgetTrueFalseItem();
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {

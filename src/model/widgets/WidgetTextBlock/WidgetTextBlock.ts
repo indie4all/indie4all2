@@ -15,13 +15,15 @@ export default class WidgetTextBlock extends RichTextEditorMixin(WidgetItemEleme
 
     data: { style: string, text: string }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { style: "default", text: "" };
     }
 
     clone(): WidgetTextBlock {
-        return new WidgetTextBlock(this);
+        const widget = new WidgetTextBlock();
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {

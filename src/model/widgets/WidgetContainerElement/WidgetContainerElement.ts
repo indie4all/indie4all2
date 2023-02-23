@@ -6,7 +6,7 @@ export default abstract class WidgetContainerElement extends WidgetElement {
     data: WidgetElement[];
     static allow: string[];
 
-    constructor(values: any) { super(values); }
+    constructor(values?: any) { super(values); }
 
     createElement(): string {
         const constructor = <typeof WidgetElement>this.constructor;
@@ -26,10 +26,5 @@ export default abstract class WidgetContainerElement extends WidgetElement {
     }
 
     static hasChildren(): boolean { return true; }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.data && this.data.forEach(child => child.regenerateIDs());
-    }
 
 }

@@ -16,17 +16,21 @@ export default class WidgetAudioTermContainer extends WidgetContainerElement {
     params: { name: string, help: string };
     data: WidgetAudioTermItem[];
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "Audio Term Container-" + Utils.generate_uuid(),
+            name: "Audio Term Container-" + this.id,
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetAudioTermContainer {
-        return new WidgetAudioTermContainer(this);
+        const widget = new WidgetAudioTermContainer();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "Audio Term Container-" + widget.id;
+        widget.data = this.data.map(elem => elem.clone());
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -44,11 +48,6 @@ export default class WidgetAudioTermContainer extends WidgetContainerElement {
 
     preview(): string {
         return this.params?.name ?? this.translate("widgets.AudioTermContainer.label");
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = "Audio Term Container-" + this.id;
     }
 
     updateModelFromForm(form: any): void {

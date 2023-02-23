@@ -18,17 +18,21 @@ export default class WidgetTrueFalseContainer extends WidgetContainerElement {
     params: { name: string, help: string }
     data: WidgetTrueFalseItem[]
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "True false-" + Utils.generate_uuid(),
+            name: "True false-" + this.id,
             help: ""
         };
         this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetTrueFalseContainer {
-        return new WidgetTrueFalseContainer(this);
+        const widget = new WidgetTrueFalseContainer();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "True false-" + widget.id;
+        widget.data = this.data.map(elem => elem.clone());
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -46,11 +50,6 @@ export default class WidgetTrueFalseContainer extends WidgetContainerElement {
 
     preview(): string {
         return this.params?.name ?? this.translate("widgets.TrueFalseContainer.label");
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = "True false-" + this.id;
     }
 
     updateModelFromForm(form: any): void {

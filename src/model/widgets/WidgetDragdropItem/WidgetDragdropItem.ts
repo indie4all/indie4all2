@@ -14,13 +14,15 @@ export default class WidgetDragdropItem extends WidgetItemElement {
 
     data: { term: string, definition: string }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { term: "", definition: "" };
     }
 
     clone(): WidgetDragdropItem {
-        return new WidgetDragdropItem(this);
+        const widget = new WidgetDragdropItem();
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {

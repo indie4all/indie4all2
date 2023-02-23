@@ -17,7 +17,7 @@ export default class Section extends ModelElement {
     bookmark: string;
     data: WidgetElement[]
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.name = values?.name ?? I18n.getInstance().translate("sections.label") + " " + values?.index ?? 0;
         this.bookmark = values?.bookmark ?? "";
@@ -25,7 +25,11 @@ export default class Section extends ModelElement {
     }
 
     clone(): Section {
-        return new Section(this);
+        const section = new Section();
+        section.name = this.name;
+        section.bookmark = this.bookmark;
+        section.data = this.data.map(elem => elem.clone());
+        return section;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -54,11 +58,6 @@ export default class Section extends ModelElement {
             icon: Section.icon,
             children: this.data ? this.data.map(child => child.createElement()).join('') : ""
         });
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.data && this.data.forEach(child => child.regenerateIDs());
     }
 
     updateModelFromForm(form: any): void {

@@ -5,6 +5,7 @@ import "./styles.scss";
 import WidgetItemElement from '../WidgetItemElement/WidgetItemElement';
 import icon from "./icon.png";
 import { ApiColumnsMethods } from "datatables.net-dt";
+import { FormEditData } from "../../../types";
 
 export default class WidgetTable extends WidgetItemElement {
 
@@ -43,39 +44,42 @@ export default class WidgetTable extends WidgetItemElement {
         }
     }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: WidgetTable.widget + "-" + Utils.generate_uuid(),
+            name: WidgetTable.widget + "-" + this.id,
             help: ''
         };
         this.data = values?.data ? structuredClone(values.data) : { columns: [], rows: [] };
     }
 
-    clone() {
-        return new WidgetTable(this);
+    clone(): WidgetTable {
+        const widget = new WidgetTable();
+        widget.params = structuredClone(this.params);
+        widget.params.name = WidgetTable.widget + "-" + widget.id;
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
-    getInputs() {
-        return import('./form.hbs').then(({ default: form }) => {
-            const data = {
-                instanceId: this.id,
-                instanceName: this.params.name,
-                help: this.params.help,
-                numColumns: this.data.columns.length
-            };
-            return {
-                inputs: form(data),
-                title: this.translate("widgets.Table.label")
-            };
-        });
+    async getInputs(): Promise<FormEditData> {
+        const { default: form } = await import('./form.hbs');
+        const data = {
+            instanceId: this.id,
+            instanceName: this.params.name,
+            help: this.params.help,
+            numColumns: this.data.columns.length
+        };
+        return {
+            inputs: form(data),
+            title: this.translate("widgets.Table.label")
+        };
     }
 
-    settingsClosed() {
+    settingsClosed(): void {
         $(`#f-${this.id} input[name="videourl"]`).off('change');
     }
 
-    settingsOpened() {
+    settingsOpened(): void {
 
         import("datatables.net-dt")
             .then(() => import('datatables.net-dt/css/jquery.dataTables.css'))
@@ -254,11 +258,6 @@ export default class WidgetTable extends WidgetItemElement {
         return (this?.data?.columns?.length) ?
             this.data.columns.map((col: any) => col.replaceAll(/<br\s*\/?>/g, ' ')).join(' | ') :
             this.translate("widgets.Table.prev");
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = WidgetTable.widget + "-" + this.id;
     }
 
     updateModelFromForm(form: any): void {

@@ -29,10 +29,10 @@ export default class WidgetChooseOption extends WidgetItemElement {
         options: ChooseOption[]
     }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "Choose option-" + Utils.generate_uuid(),
+            name: "Choose option-" + this.id,
             help: "",
         };
         this.data = values?.data ? structuredClone(values.data) : {
@@ -45,7 +45,11 @@ export default class WidgetChooseOption extends WidgetItemElement {
     }
 
     clone(): WidgetChooseOption {
-        return new WidgetChooseOption(this);
+        const widget = new WidgetChooseOption();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "Choose option-" + widget.id;
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -63,11 +67,6 @@ export default class WidgetChooseOption extends WidgetItemElement {
             inputs: form(data),
             title: this.translate("widgets.ChooseOption.label")
         };
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = "Choose option-" + this.id;
     }
 
     settingsOpened(): void {

@@ -3,8 +3,8 @@ import Utils from "../../Utils";
 export default class Migration9to10 {
 
     static run(model: any) {
-        const columns = Utils.findElementsOfType(model, "ColumnLayout");
-        const texts = Utils.findElementsOfType(model, "TextBlock");
+        const columns = Utils.findObjectsOfType(model, "ColumnLayout");
+        const texts = Utils.findObjectsOfType(model, "TextBlock");
         texts.filter(text => !text.data?.style).forEach(text => text.data.style = 'default');
         // Cast ColumnLayout to TwoColumnsLayout / ThreeColumnsLayout / FourColumnsLayout depending on the 
         // number of columns

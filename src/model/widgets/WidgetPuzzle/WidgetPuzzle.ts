@@ -10,7 +10,13 @@ export default class WidgetPuzzle extends WidgetPiecesElement {
     static icon = icon;
     static cssClass = "widget-puzzle";
 
-    constructor(values: any) { super(values); }
+    constructor(values?: any) { super(values); }
 
-    clone(): WidgetPuzzle { return new WidgetPuzzle(this); }
+    clone(): WidgetPuzzle {
+        const widget = new WidgetPuzzle();
+        widget.params = structuredClone(this.params);
+        widget.params.name = WidgetPuzzle.widget + "-" + widget.id;
+        widget.data = structuredClone(this.data);
+        return widget;
+    }
 }

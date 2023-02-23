@@ -18,17 +18,21 @@ export default class WidgetMissingWords extends WidgetContainerElement {
     params: { name: string, help: string }
     data: WidgetMissingWordsItem[]
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "Missing Words-" + Utils.generate_uuid(),
+            name: "Missing Words-" + this.id,
             help: ""
         };
         this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetMissingWords {
-        return new WidgetMissingWords(this);
+        const widget = new WidgetMissingWords();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "Missing Words-" + widget.id;
+        widget.data = this.data.map(elem => elem.clone());
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -46,11 +50,6 @@ export default class WidgetMissingWords extends WidgetContainerElement {
 
     preview(): string {
         return this.params?.name ?? this.translate("widgets.MissingWords.label");
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = "Missing Words-" + this.id;
     }
 
     updateModelFromForm(form: any): void {

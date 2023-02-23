@@ -18,17 +18,21 @@ export default class WidgetImageAndSoundContainer extends WidgetContainerElement
     params: { name: string, help: string };
     data: WidgetImageAndSoundItem[];
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "Image and Sound-" + Utils.generate_uuid(),
+            name: "Image and Sound-" + this.id,
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetImageAndSoundContainer {
-        return new WidgetImageAndSoundContainer(this);
+        const widget = new WidgetImageAndSoundContainer();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "Image and Sound-" + widget.id;
+        widget.data = this.data.map(elem => elem.clone());
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -46,11 +50,6 @@ export default class WidgetImageAndSoundContainer extends WidgetContainerElement
 
     preview(): string {
         return this.params?.name ?? this.translate("widgets.ImageAndSoundContainer.label");
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = "Image and Sound-" + this.id;
     }
 
     updateModelFromForm(form: any): void {

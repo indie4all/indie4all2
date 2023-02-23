@@ -14,14 +14,16 @@ export default class WidgetTwoColumnsLayout extends WidgetColumnsLayout {
     static icon = icon;
     static columns = [6, 6];
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : { firstColumnWidth: 6 };
         this.data = values?.data ? values.data.map((arr: any[]) => arr.map(elem => ModelManager.create(elem.widget, elem))) : [[], []];
     }
 
     clone(): WidgetTwoColumnsLayout {
-        return new WidgetTwoColumnsLayout(this);
+        const widget = new WidgetTwoColumnsLayout();
+        widget.data = this.data.map(col => col.map(elem => elem.clone()));
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {

@@ -113,8 +113,8 @@ export default class ModelManager {
         [WidgetTrueFalseQuestion.widget]: WidgetTrueFalseQuestion
     };
 
-    static getAllWidgets() {
-        return Object.values(this.elements).filter(elem => WidgetElement.isPrototypeOf(elem));
+    static getAllWidgets(): typeof WidgetElement[] {
+        return Object.values(this.elements).filter(elem => WidgetElement.isPrototypeOf(elem)).map(elem => elem as typeof WidgetElement);
     }
 
     static getAllWidgetsByCategory() {

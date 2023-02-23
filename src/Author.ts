@@ -93,7 +93,7 @@ export default class Author {
      * @param {string} sectionId - Section ID
      */
     copyModelElement(element: ModelElement, sectionId: string) {
-        this.addModelElement(this.model.copyElement(element), sectionId);
+        this.addModelElement(element.clone(), sectionId);
     }
 
     /**
@@ -101,7 +101,7 @@ export default class Author {
      * @param {object} section - section data
      */
     copyModelSection(section: Section) {
-        this.addSection(<Section>this.model.copyElement(section));
+        this.addSection(section.clone());
     }
 
     /**
@@ -218,7 +218,7 @@ export default class Author {
         var parentContainerIndex = -1;
         var inPositionElementId = -1;
         let container: any[];
-        if (WidgetColumnsLayout.isPrototypeOf(parent)) {
+        if (parent instanceof WidgetColumnsLayout) {
             parentContainerIndex = (<WidgetColumnsLayout>parent)
                 .data.findIndex(elemArr => elemArr.findIndex(elem => elem.id === id) !== -1);
             container = parent.data[parentContainerIndex];

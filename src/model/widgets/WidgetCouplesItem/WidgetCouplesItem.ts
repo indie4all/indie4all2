@@ -17,7 +17,7 @@ export default class WidgetCouplesItem extends RichTextEditorMixin(WidgetItemEle
 
     data: { couples: Couple[] }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : {
             couples: [
@@ -29,7 +29,9 @@ export default class WidgetCouplesItem extends RichTextEditorMixin(WidgetItemEle
     }
 
     clone(): WidgetCouplesItem {
-        return new WidgetCouplesItem(this);
+        const widget = new WidgetCouplesItem();
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {

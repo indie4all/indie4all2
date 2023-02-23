@@ -43,13 +43,15 @@ export default class WidgetTermClassificationItem extends WidgetItemElement {
 
     data: { column: string, terms: string[] }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { column: "", terms: [] };
     }
 
     clone(): WidgetTermClassificationItem {
-        return new WidgetTermClassificationItem(this);
+        const widget = new WidgetTermClassificationItem();
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {

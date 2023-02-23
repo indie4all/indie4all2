@@ -41,17 +41,6 @@ export class Model {
         this.currentErrors = [];
     }
 
-    /**
-     * Returns a copy of the model with its keys changed
-     * @param {ModelElement} original 
-     * @returns ModelElement
-     */
-    copyElement(original: ModelElement): ModelElement {
-        let copy = original.clone();
-        copy.regenerateIDs();
-        return copy;
-    }
-
     appendObject(modelObject: ModelElement, inPositionElementId: number, parentContainerId: string, parentContainerIndex: number) {
         const parent = this.findObject(parentContainerId);
         const container = (<typeof ModelElement>parent.constructor).type == 'layout' ? parent.data[parentContainerIndex] : parent.data;
@@ -71,8 +60,8 @@ export class Model {
         elementsArray.forEach((elem, idx, arr) => {
             if (elem.id == dataElementId) arr.splice(idx, 1);
             if ((<typeof ModelElement>elem.constructor).hasChildren()) {
-                if (WidgetColumnsLayout.isPrototypeOf(elem))
-                    (<WidgetColumnsLayout>elem).data.forEach(subArr => this.removeElementInModel(subArr, dataElementId));
+                if (elem instanceof WidgetColumnsLayout)
+                    elem.data.forEach(subArr => this.removeElementInModel(subArr, dataElementId));
                 else
                     this.removeElementInModel(elem.data, dataElementId);
             }
@@ -87,9 +76,7 @@ export class Model {
         return <ModelElement>Utils.findAllElements(this)
             .filter(elem => (<typeof ModelElement>elem.constructor).hasChildren())
             .find((elem: ModelElement) => {
-                const children: ModelElement[] = WidgetColumnsLayout.isPrototypeOf(elem) ?
-                    [].concat.apply([], elem.data) : elem.data;
-                return children.find(child => child.id == dataElementId);
+                return elem.data.flat().find((child: ModelElement) => child.id == dataElementId);
             });
     }
 
@@ -148,8 +135,7 @@ export class Model {
             errors.push({ element: element.id, keys: validationErrors });
 
         if ((<typeof ModelElement>element.constructor).hasChildren()) {
-            var elementsArray = WidgetColumnsLayout.isPrototypeOf(element) ? [].concat.apply([], element.data) : element.data;
-            elementsArray.forEach((elem: WidgetElement) => this.validateElement(elem, errors));
+            element.data.flat().forEach((elem: WidgetElement) => this.validateElement(elem, errors));
         }
     }
 
@@ -161,11 +147,10 @@ export class Model {
             if (element.params?.name && (element.params.name == name && element.id != currentElementId))
                 return false;
 
-            if ((<typeof ModelElement>element.constructor).hasChildren()) {
-                const elementsArray = WidgetColumnsLayout.isPrototypeOf(element) ? [].concat.apply([], element.data) : element.data;
-                return elementsArray.every((elem: ModelElement) => recursiveIsUnique(elem, name, currentElementId));
-            }
-            return true;
+            if (!(<typeof ModelElement>element.constructor).hasChildren())
+                return true;
+
+            return element.data.flat().every((elem: ModelElement) => recursiveIsUnique(elem, name, currentElementId));
         }
 
         return sections.every(section => recursiveIsUnique(section, name, currentElementId));

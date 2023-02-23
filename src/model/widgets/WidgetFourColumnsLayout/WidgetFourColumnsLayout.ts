@@ -17,14 +17,16 @@ export default class WidgetFourColumnsLayout extends WidgetColumnsLayout {
 
     data: WidgetElement[][]
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.data = values?.data ?
             values.data.map((arr: any[]) => arr.map(elem => ModelManager.create(elem.widget, elem))) : [[], [], [], []];
     }
 
     clone(): WidgetFourColumnsLayout {
-        return new WidgetFourColumnsLayout(this);
+        const widget = new WidgetFourColumnsLayout();
+        widget.data = this.data.map(col => col.map(elem => elem.clone()));
+        return widget;
     }
 
     getInputs(): Promise<FormEditData> {

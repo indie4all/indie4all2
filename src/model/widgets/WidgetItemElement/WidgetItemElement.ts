@@ -3,7 +3,7 @@ import template from "./template.hbs";
 
 export default abstract class WidgetItemElement extends WidgetElement {
 
-    constructor(values: any) { super(values); }
+    constructor(values?: any) { super(values); }
 
     createElement(): string {
         const constructor = <typeof WidgetElement>this.constructor;

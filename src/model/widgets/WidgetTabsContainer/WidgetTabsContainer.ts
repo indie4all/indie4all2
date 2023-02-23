@@ -17,17 +17,21 @@ export default class WidgetTabsContainer extends WidgetContainerElement {
     params: { name: string, help: string }
     data: WidgetTabContent[]
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "Tabs menu-" + Utils.generate_uuid(),
+            name: "Tabs menu-" + this.id,
             help: ""
         };
         this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetTabsContainer {
-        return new WidgetTabsContainer(this);
+        const widget = new WidgetTabsContainer();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "Tabs menu-" + widget.id;
+        widget.data = this.data.map(elem => elem.clone());
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -45,11 +49,6 @@ export default class WidgetTabsContainer extends WidgetContainerElement {
 
     preview(): string {
         return this.params?.name ?? this.translate("widgets.TabsContainer.label");
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = "Tabs menu-" + this.id;
     }
 
     updateModelFromForm(form: any): void {

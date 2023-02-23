@@ -18,22 +18,21 @@ export default class WidgetCouplesContainer extends WidgetContainerElement {
     data: WidgetCouplesItem[]
     params: { name: string, help: string }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "Couples-" + Utils.generate_uuid(),
+            name: "Couples-" + this.id,
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetCouplesContainer {
-        return new WidgetCouplesContainer(this);
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = "Couples-" + this.id;
+        const widget = new WidgetCouplesContainer();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "Couples-" + widget.id;
+        widget.data = this.data.map(elem => elem.clone());
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {

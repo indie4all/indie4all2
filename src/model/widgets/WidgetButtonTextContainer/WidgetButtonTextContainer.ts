@@ -17,17 +17,21 @@ export default class WidgetButtonTextContainer extends WidgetContainerElement {
 
     data: WidgetButtonTextItem[]
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "Buttons with text-" + Utils.generate_uuid(),
+            name: "Buttons with text-" + this.id,
             help: ""
         };
         this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetButtonTextContainer {
-        return new WidgetButtonTextContainer(this);
+        const widget = new WidgetButtonTextContainer();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "Buttons with text-" + widget.id;
+        widget.data = this.data.map(elem => elem.clone());
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -46,11 +50,6 @@ export default class WidgetButtonTextContainer extends WidgetContainerElement {
 
     preview(): string {
         return this.params?.name ?? this.translate("widgets.ButtonTextContainer.label");
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = "Buttons with text-" + this.id;
     }
 
     updateModelFromForm(form: any): void {

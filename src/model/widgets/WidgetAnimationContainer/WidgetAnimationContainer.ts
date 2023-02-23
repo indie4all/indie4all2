@@ -18,10 +18,10 @@ export default class WidgetAnimationContainer extends WidgetContainerElement {
     params: { name: string, width: number, height: number, image: string, help: string };
     data: WidgetAnimationItem[];
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "Animation-" + Utils.generate_uuid(),
+            name: "Animation-" + this.id,
             width: 0,
             height: 0,
             image: "",
@@ -31,7 +31,11 @@ export default class WidgetAnimationContainer extends WidgetContainerElement {
     }
 
     clone(): WidgetAnimationContainer {
-        return new WidgetAnimationContainer(this);
+        const widget = new WidgetAnimationContainer();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "Animation-" + widget.id;
+        widget.data = this.data.map(elem => elem.clone());
+        return widget;
     }
 
     getInputs(): Promise<FormEditData> {
@@ -52,11 +56,6 @@ export default class WidgetAnimationContainer extends WidgetContainerElement {
 
     preview(): string {
         return this.params?.name ?? this.translate("widgets.AnimationContainer.label");
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = "Animation-" + this.id;
     }
 
     updateModelFromForm(form: any): void {

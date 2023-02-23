@@ -16,13 +16,15 @@ export default class WidgetCorrectWordItem extends WidgetItemElement {
 
     data: { question: string, word: string, blob: string, alt: string }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { question: "", word: "", blob: "", alt: "" };
     }
 
     clone(): WidgetCorrectWordItem {
-        return new WidgetCorrectWordItem(this);
+        const widget = new WidgetCorrectWordItem();
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {

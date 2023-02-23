@@ -24,17 +24,21 @@ export default class WidgetGuessWord extends WidgetItemElement {
     params: { name: string, help: string }
     data: { question: string, answer: string, attempts: number }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "Guess the word-" + Utils.generate_uuid(),
+            name: "Guess the word-" + this.id,
             help: ""
         };
         this.data = values?.data ? structuredClone(values.data) : { question: "", answer: "", attempts: 1 };
     }
 
     clone(): WidgetGuessWord {
-        return new WidgetGuessWord(this);
+        const widget = new WidgetGuessWord();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "Guess the word-" + widget.id;
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -57,11 +61,6 @@ export default class WidgetGuessWord extends WidgetItemElement {
         return this.params?.name && this.data?.question ?
             this.params.name + " | " + this.data.question :
             this.translate("widgets.GuessWord.prev");
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = "Guess the word-" + this.id;
     }
 
     updateModelFromForm(form: any): void {

@@ -180,11 +180,11 @@ export default abstract class WidgetPiecesElement extends WidgetItemElement {
         }
     }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         const constructor = <typeof WidgetPiecesElement>this.constructor;
         this.params = values?.params ? structuredClone(values.params) : {
-            name: constructor.widget + "-" + Utils.generate_uuid(),
+            name: constructor.widget + "-" + this.id,
             help: ""
         };
         this.data = values?.data ? structuredClone(values.data) : { blob: "", alt: "", pieces: [] };
@@ -340,11 +340,6 @@ export default abstract class WidgetPiecesElement extends WidgetItemElement {
         this.data.blob = form.blob;
         this.data.alt = form.alt;
         this.data.pieces = form.piece;
-    }
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        const constructor = <typeof WidgetPiecesElement>this.constructor;
-        this.params.name = constructor.widget + "-" + this.id;
     }
 
     validateModel(): string[] {

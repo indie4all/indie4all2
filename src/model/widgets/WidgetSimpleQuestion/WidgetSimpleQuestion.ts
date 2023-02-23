@@ -26,13 +26,15 @@ export default class WidgetSimpleQuestion extends WidgetItemElement {
 
     data: { question: string, answers: { text: string, correct: boolean }[], feedback: { positive: string, negative: string } }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { question: "", answers: [], feedback: { positive: "", negative: "" } };
     }
 
     clone(): WidgetSimpleQuestion {
-        return new WidgetSimpleQuestion(this);
+        const widget = new WidgetSimpleQuestion();
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {

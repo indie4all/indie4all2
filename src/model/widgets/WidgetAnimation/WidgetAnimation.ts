@@ -10,7 +10,13 @@ export default class WidgetAnimation extends WidgetPiecesElement {
     static icon = icon;
     static cssClass = "widget-animation";
 
-    constructor(values: any) { super(values); }
+    constructor(values?: any) { super(values); }
 
-    clone(): WidgetAnimation { return new WidgetAnimation(this); }
+    clone(): WidgetAnimation {
+        const widget = new WidgetAnimation();
+        widget.params = structuredClone(this.params);
+        widget.params.name = WidgetAnimation.widget + "-" + widget.id;
+        widget.data = structuredClone(this.data);
+        return widget;
+    }
 }

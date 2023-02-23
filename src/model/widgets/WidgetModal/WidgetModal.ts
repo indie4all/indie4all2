@@ -18,10 +18,10 @@ export default class WidgetModal extends WidgetContainerElement {
     params: { name: string, text: string, help: string }
     data: WidgetElement[]
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: WidgetModal.widget + "-" + Utils.generate_uuid(),
+            name: WidgetModal.widget + "-" + this.id,
             text: "",
             help: ""
         };
@@ -29,7 +29,11 @@ export default class WidgetModal extends WidgetContainerElement {
     }
 
     clone(): WidgetModal {
-        return new WidgetModal(this);
+        const widget = new WidgetModal();
+        widget.params = structuredClone(this.params);
+        widget.params.name = WidgetModal.widget + "-" + widget.id;
+        widget.data = this.data.map(elem => elem.clone());
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -49,12 +53,6 @@ export default class WidgetModal extends WidgetContainerElement {
     preview(): string {
         return this.params?.name ?? this.translate("widgets.Modal.label");
     }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = WidgetModal.widget + "-" + this.id;
-    }
-
 
     updateModelFromForm(form: any): void {
         this.params.name = form.instanceName;

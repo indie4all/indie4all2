@@ -13,7 +13,7 @@ export default abstract class ModelElement {
     data: any;
     skipNameValidation: boolean = false;
 
-    constructor(values: any) {
+    constructor(values?: any) {
         this.id = values?.id ?? Utils.generate_uuid();
     }
 
@@ -26,7 +26,6 @@ export default abstract class ModelElement {
     abstract validateModel(): string[];
 
     static hasChildren() { return false; }
-    regenerateIDs() { this.id = Utils.generate_uuid(); }
     settingsClosed(): void { }
     settingsOpened(): void { }
     toJSON(): any { return { id: this.id, widget: ModelElement.widget } }

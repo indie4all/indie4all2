@@ -48,17 +48,21 @@ export default class WidgetTermClassification extends WidgetContainerElement {
     params: { name: string, help: string }
     data: WidgetTermClassificationItem[]
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: `Terms and Classification-${Utils.generate_uuid()}`,
+            name: `Terms and Classification-${this.id}`,
             help: ""
         };
         this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetTermClassification {
-        return new WidgetTermClassification(this);
+        const widget = new WidgetTermClassification();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "Terms and Classification-" + widget.id;
+        widget.data = this.data.map(elem => elem.clone());
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -76,11 +80,6 @@ export default class WidgetTermClassification extends WidgetContainerElement {
 
     preview(): string {
         return this.params?.name ?? this.translate("widgets.TermClassification.prev");
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = "Terms and Classification-" + this.id;
     }
 
     updateModelFromForm(form: any): void {

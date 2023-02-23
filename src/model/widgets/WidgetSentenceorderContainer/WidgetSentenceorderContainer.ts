@@ -18,17 +18,21 @@ export default class WidgetSentenceOrderContainer extends WidgetContainerElement
     params: { name: string, help: string }
     data: WidgetSentenceOrderItem[]
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "Sentence Order-" + Utils.generate_uuid(),
+            name: "Sentence Order-" + this.id,
             help: ""
         };
         this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetSentenceOrderContainer {
-        return new WidgetSentenceOrderContainer(this);
+        const widget = new WidgetSentenceOrderContainer();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "Sentence Order-" + widget.id;
+        widget.data = this.data.map(elem => elem.clone());
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -46,11 +50,6 @@ export default class WidgetSentenceOrderContainer extends WidgetContainerElement
 
     preview(): string {
         return this.params?.name ?? this.translate("widgets.SentenceOrderContainer.label");
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = "Sentence Order-" + this.id;
     }
 
     updateModelFromForm(form: any): void {

@@ -159,24 +159,45 @@ export default class Utils {
         return await this.encodeBlobAsBase64DataURL(blob);
     }
 
-    static findAllElements(model: any) {
+    static findAllElements(model: Model): ModelElement[] {
 
         let result: any[] = [...model.sections];
         let children: any[] = [...model.sections];
         do {
             children = children
                 .filter(elem => ModelManager.hasChildren(elem))
-                .flatMap(elem => WidgetColumnsLayout.isPrototypeOf(ModelManager.get(elem.widget)) ? elem.data.flat() : elem.data);
+                .flatMap(elem => elem.data.flat());
             result = result.concat(children);
         } while (children.length);
         return result;
     }
 
-    static findElementsOfType(model: any, type: string | string[]): any[] {
-        return Utils.findAllElements(model)
-            .filter(elem => Array.isArray(type) ?
-                type.includes((<typeof ModelElement>elem.constructor).widget) :
-                (type === (<typeof ModelElement>elem.constructor).widget));
+    static findElementsOfType<T extends ModelElement>(model: Model, typeT: new () => T): T[] {
+        return Utils.findAllElements(model).filter(elem => elem instanceof typeT).map(elem => elem as T);
+    }
+
+    static findAllObjects(model: any): any[] {
+
+        const hasChildren = (obj: any): boolean => {
+            if (!obj.data) return false;
+            if (!Array.isArray(obj.data)) return false;
+            return obj.data.every((elem: any) => elem.widget) ||
+                obj.data.every((arr: any) => Array.isArray(arr) &&
+                    arr.every(elem => elem.widget))
+        };
+
+        let result: any[] = [...model.sections];
+        let children: any[] = [...model.sections];
+        do {
+            children = children.filter(elem => hasChildren(elem)).flatMap(elem => elem.data.flat());
+            result = result.concat(children);
+        } while (children.length);
+        return result;
+    }
+
+    static findObjectsOfType(model: any, type: string | string[]): any[] {
+        return this.findAllObjects(model).filter(obj => Array.isArray(type) ?
+            type.includes(obj.widget) : type === obj.widget);
     }
 
     static groupBy({ collection, key }: { collection: any[]; key: string; }): { [key: string]: any[] } {

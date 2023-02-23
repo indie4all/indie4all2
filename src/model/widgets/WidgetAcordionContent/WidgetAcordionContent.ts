@@ -17,14 +17,17 @@ export default class WidgetAcordionContent extends WidgetContainerElement {
     params: { title: string };
     data: WidgetItemElement[];
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : { title: "" };
         this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetAcordionContent {
-        return new WidgetAcordionContent(this);
+        const widget = new WidgetAcordionContent();
+        widget.params = structuredClone(this.params);
+        widget.data = this.data.map(elem => elem.clone());
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {

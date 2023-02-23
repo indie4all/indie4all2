@@ -13,13 +13,15 @@ export default class WidgetBlockquote extends WidgetItemElement {
 
     data: { quote: string, caption: string, alignment: string, source: string }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { quote: "", caption: "", alignment: "", source: "" };
     }
 
     clone(): WidgetBlockquote {
-        return new WidgetBlockquote(this);
+        const widget = new WidgetBlockquote();
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {

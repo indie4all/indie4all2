@@ -17,17 +17,21 @@ export default class WidgetImage extends RichTextEditorMixin(WidgetItemElement) 
     params: { name: string, help: string }
     data: { text: string, blob: string, alt: string }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: WidgetImage.widget + "-" + Utils.generate_uuid(),
+            name: WidgetImage.widget + "-" + this.id,
             help: "",
         };
         this.data = values?.data ? structuredClone(values.data) : { text: "", blob: "", alt: "" };
     }
 
     clone(): WidgetImage {
-        return new WidgetImage(this);
+        const widget = new WidgetImage();
+        widget.params = structuredClone(this.params);
+        widget.params.name = WidgetImage.widget + "-" + widget.id;
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -44,11 +48,6 @@ export default class WidgetImage extends RichTextEditorMixin(WidgetItemElement) 
             inputs: form(data),
             title: this.translate("widgets.Image.label")
         };
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = WidgetImage.widget + "-" + this.id;
     }
 
     settingsOpened(): void {

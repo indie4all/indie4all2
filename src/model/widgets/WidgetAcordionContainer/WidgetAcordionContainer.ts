@@ -18,17 +18,21 @@ export default class WidgetAcordionContainer extends WidgetContainerElement {
     params: { name: string, help: string };
     data!: WidgetElement[]
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "Acordion-" + Utils.generate_uuid(),
+            name: "Acordion-" + this.id,
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetAcordionContainer {
-        return new WidgetAcordionContainer(this);
+        const widget = new WidgetAcordionContainer();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "Acordion-" + widget.id;
+        widget.data = this.data.map(elem => elem.clone());
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -46,11 +50,6 @@ export default class WidgetAcordionContainer extends WidgetContainerElement {
 
     preview(): string {
         return this.params?.name ?? this.translate("widgets.AcordionContainer.label");
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = "Acordion-" + this.id;
     }
 
     updateModelFromForm(form: any): void {

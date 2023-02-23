@@ -14,17 +14,21 @@ export default class WidgetTestContainer extends WidgetContainerElement {
     static icon = icon;
     static cssClass = "widget-test";
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: WidgetTestContainer.widget + "-" + Utils.generate_uuid(),
+            name: WidgetTestContainer.widget + "-" + this.id,
             help: ""
         };
         this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetTestContainer {
-        return new WidgetTestContainer(this);
+        const widget = new WidgetTestContainer();
+        widget.params = structuredClone(this.params);
+        widget.params.name = WidgetTestContainer.widget + "-" + widget.id;
+        widget.data = this.data.map(elem => elem.clone());
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -42,11 +46,6 @@ export default class WidgetTestContainer extends WidgetContainerElement {
 
     preview(): string {
         return this.params?.name ?? this.translate("widgets.Test.label");
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = WidgetTestContainer.widget + "-" + this.id;
     }
 
     updateModelFromForm(form: any): void {

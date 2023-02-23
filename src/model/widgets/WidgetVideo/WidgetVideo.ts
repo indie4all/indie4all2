@@ -34,17 +34,21 @@ export default class WidgetVideo extends WidgetItemElement {
     params: { name: string }
     data: { videourl: string, captions: string, descriptions: string, defaultCaptions: string }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: WidgetVideo.widget + "-" + Utils.generate_uuid(),
+            name: WidgetVideo.widget + "-" + this.id,
         };
 
         this.data = values?.data ? structuredClone(values.data) : { videourl: "", captions: "", descriptions: "", defaultCaptions: "0" };
     }
 
     clone(): WidgetVideo {
-        return new WidgetVideo(this);
+        const widget = new WidgetVideo();
+        widget.params = structuredClone(this.params);
+        widget.params.name = WidgetVideo.widget + "-" + widget.id;
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -64,11 +68,6 @@ export default class WidgetVideo extends WidgetItemElement {
 
     preview(): string {
         return (this?.data?.videourl) ? this.params.name + ": " + this.data.videourl : this.translate("widgets.Video.prev");
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = WidgetVideo.widget + "-" + this.id;
     }
 
     settingsClosed(): void {

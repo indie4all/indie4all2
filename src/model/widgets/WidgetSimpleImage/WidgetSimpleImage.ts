@@ -16,10 +16,10 @@ export default class WidgetSimpleImage extends WidgetItemElement {
     data: { blob: string, alt: string, width: number, height: number }
     params: { name: string, aspect: string, align: string }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "Simple image-" + Utils.generate_uuid(),
+            name: "Simple image-" + this.id,
             aspect: "original",
             align: "left",
         };
@@ -27,7 +27,11 @@ export default class WidgetSimpleImage extends WidgetItemElement {
     }
 
     clone(): WidgetSimpleImage {
-        return new WidgetSimpleImage(this);
+        const widget = new WidgetSimpleImage();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "Simple image-" + widget.id;
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -50,11 +54,6 @@ export default class WidgetSimpleImage extends WidgetItemElement {
 
     preview(): string {
         return this.params?.name ?? this.translate("widgets.SimpleImage.prev");
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = "Simple image-" + this.id;
     }
 
     settingsOpened(): void {

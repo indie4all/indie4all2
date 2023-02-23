@@ -16,15 +16,16 @@ export default class WidgetImageAndSoundItem extends WidgetItemElement {
 
     data: { text: string, alt: string, blob: string, audioblob: string, captionsblob: string }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { text: "", alt: "", blob: "", audioblob: "", captionsblob: "" };
     }
 
     clone(): WidgetImageAndSoundItem {
-        return new WidgetImageAndSoundItem(this);
+        const widget = new WidgetImageAndSoundItem();
+        widget.data = structuredClone(this.data);
+        return widget;
     }
-
 
     async getInputs(): Promise<FormEditData> {
         const { default: form } = await import('./form.hbs');

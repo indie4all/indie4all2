@@ -15,13 +15,15 @@ export default class WidgetAudioTermItem extends WidgetItemElement {
     static paletteHidden = true;
     data: { term: string, definition: string, audioblob: string, captionsblob: string };
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { term: "", definition: "", audioblob: "", captionsblob: "" };
     }
 
     clone(): WidgetAudioTermItem {
-        return new WidgetAudioTermItem(this);
+        const widget = new WidgetAudioTermItem();
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {

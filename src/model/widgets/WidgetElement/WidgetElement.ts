@@ -12,7 +12,7 @@ export default abstract class WidgetElement extends ModelElement {
     protected static editable: boolean = true;
     protected static icon: string;
 
-    constructor(values: any) { super(values); }
+    constructor(values?: any) { super(values); }
 
     static createPaletteItem() {
         const label = I18n.getInstance().translate(`widgets.${this.widget ?? "GenericWidget"}.label`);

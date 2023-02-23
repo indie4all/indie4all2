@@ -26,7 +26,7 @@ export default class ActionAddElement extends ActionElement {
         const parentElement = this.model.findObject(this.parentContainerId);
         const view = this.element.createElement();
         let target: HTMLElement;
-        if (WidgetColumnsLayout.isPrototypeOf(parentElement)) {
+        if (parentElement instanceof WidgetColumnsLayout) {
             target = <HTMLElement>parentContainer.querySelector('[data-index="' + this.parentContainerIndex + '"');
             this.model.appendObject(this.element, this.inPositionElementId, this.parentContainerId, this.parentContainerIndex);
         } else {

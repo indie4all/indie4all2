@@ -15,13 +15,15 @@ export default class WidgetLatexFormula extends WidgetItemElement {
 
     data: { formula: string, caption: string }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { formula: "", caption: "" };
     }
 
     clone(): WidgetLatexFormula {
-        return new WidgetLatexFormula(this);
+        const widget = new WidgetLatexFormula();
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     /**
@@ -30,7 +32,7 @@ export default class WidgetLatexFormula extends WidgetItemElement {
      * @param {string} formula Latex formula
      * @param {Element} domElement DOM element where the formula will be displayed
      */
-    private showFormula(formula, domElement) {
+    private showFormula(formula: string, domElement: Element) {
         import('katex/dist/katex.css').then(() => {
             import('katex').then(({ default: katex }) => {
                 katex.render(formula, domElement, {

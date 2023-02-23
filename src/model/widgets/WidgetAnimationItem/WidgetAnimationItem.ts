@@ -15,13 +15,15 @@ export default class WidgetAnimationItem extends WidgetItemElement {
     static paletteHidden = true;
     data: { image: string };
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { image: "" };
     }
 
     clone(): WidgetAnimationItem {
-        return new WidgetAnimationItem(this);
+        const widget = new WidgetAnimationItem();
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {

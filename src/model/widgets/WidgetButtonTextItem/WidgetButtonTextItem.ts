@@ -18,15 +18,15 @@ export default class WidgetButtonTextItem extends RichTextEditorMixin(WidgetItem
 
     data: { text: string, blob: string, alt: string }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
-        // Add the behaviour of a RichTextEditorElement to the current object
-        Object.assign(this, RichTextEditorElement);
         this.data = values?.data ? structuredClone(values.data) : { text: "", blob: "", alt: "" };
     }
 
     clone(): WidgetButtonTextItem {
-        return new WidgetButtonTextItem(this);
+        const widget = new WidgetButtonTextItem();
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {

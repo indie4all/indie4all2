@@ -18,22 +18,21 @@ export default class WidgetCorrectWordContainer extends WidgetContainerElement {
     data: WidgetCorrectWordItem[]
     params: { name: string, help: string }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "Correct word-" + Utils.generate_uuid(),
+            name: "Correct word-" + this.id,
             help: ""
         };
         this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetCorrectWordContainer {
-        return new WidgetCorrectWordContainer(this);
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = "Correct word-" + this.id;
+        const widget = new WidgetCorrectWordContainer();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "Correct word-" + widget.id;
+        widget.data = this.data.map(elem => elem.clone());
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {

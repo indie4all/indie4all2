@@ -25,13 +25,15 @@ export default class WidgetMissingWordsItem extends WidgetItemElement {
 
     data: { sentence: string, combinations: string[] }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { sentence: "", combinations: [] };
     }
 
     clone(): WidgetMissingWordsItem {
-        return new WidgetMissingWordsItem(this);
+        const widget = new WidgetMissingWordsItem();
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {

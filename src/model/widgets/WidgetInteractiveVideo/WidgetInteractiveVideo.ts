@@ -14,14 +14,18 @@ export default class WidgetInteractiveVideo extends WidgetItemElement {
     params: { name: string }
     data: { videourl: string }
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
-        this.params = values?.params ? structuredClone(values.params) : { name: "Interactive Video-" + Utils.generate_uuid() }
+        this.params = values?.params ? structuredClone(values.params) : { name: "Interactive Video-" + this.id }
         this.data = values?.data ? structuredClone(values.data) : { videourl: "" };
     }
 
     clone(): WidgetInteractiveVideo {
-        return new WidgetInteractiveVideo(this);
+        const widget = new WidgetInteractiveVideo();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "Interactive Video-" + widget.id;
+        widget.data = structuredClone(this.data);
+        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {
@@ -40,11 +44,6 @@ export default class WidgetInteractiveVideo extends WidgetItemElement {
     preview(): string {
         return this.params?.name && this.data?.videourl ?
             this.params.name + ": " + this.data.videourl : this.translate("widgets.InteractiveVideo.prev");
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.params.name = "Interactive Video-" + this.id;
     }
 
     updateModelFromForm(form: any): void {

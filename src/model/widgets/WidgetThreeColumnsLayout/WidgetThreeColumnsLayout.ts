@@ -14,13 +14,15 @@ export default class WidgetThreeColumnsLayout extends WidgetColumnsLayout {
     static icon = icon;
     static columns = [4, 4, 4];
 
-    constructor(values: any) {
+    constructor(values?: any) {
         super(values);
         this.data = values?.data ? values.data.map((arr: any[]) => arr.map(elem => ModelManager.create(elem.widget, elem))) : [[], [], []];
     }
 
     clone(): WidgetThreeColumnsLayout {
-        return new WidgetThreeColumnsLayout(this);
+        const widget = new WidgetThreeColumnsLayout();
+        widget.data = this.data.map(col => col.map(elem => elem.clone()));
+        return widget;
     }
 
     getInputs(): Promise<FormEditData> {

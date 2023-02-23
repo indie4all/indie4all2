@@ -8,7 +8,7 @@ export default abstract class WidgetColumnsLayout extends WidgetElement {
 
     data: WidgetElement[][];
 
-    constructor(values: any) { super(values); }
+    constructor(values?: any) { super(values); }
 
     createElement(): string {
         const children = this.data ?
@@ -30,11 +30,6 @@ export default abstract class WidgetColumnsLayout extends WidgetElement {
 
     preview(): string {
         return this.translate("widgets.ColumnLayout.label")
-    }
-
-    regenerateIDs(): void {
-        super.regenerateIDs();
-        this.data.flat().forEach(child => child.regenerateIDs());
     }
 
     validateForm(form: any): string[] { return []; }

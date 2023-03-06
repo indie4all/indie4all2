@@ -1,9 +1,9 @@
 import "./styles.scss";
-import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
+import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 import icon from "./icon.png";
 import { FormEditData } from "../../../types";
 
-export default class WidgetDragdropItem extends WidgetItemElement {
+export default class WidgetDragdropItem extends WidgetSpecificItemElement {
 
     static widget = "DragdropItem";
     static type = "specific-element";

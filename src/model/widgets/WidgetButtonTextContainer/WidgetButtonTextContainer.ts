@@ -1,16 +1,16 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetButtonTextItem from "../WidgetButtonTextItem/WidgetButtonTextItem";
 import { FormEditData } from "../../../types";
+import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
-export default class WidgetButtonTextContainer extends WidgetContainerElement {
+export default class WidgetButtonTextContainer extends WidgetContainerSpecificElement {
 
     static widget = "ButtonTextContainer";
     static type = "specific-element-container";
-    static allow = ["ButtonTextItem"];
+    static allows() { return [WidgetButtonTextItem] };
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-button-text";

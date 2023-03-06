@@ -2,11 +2,11 @@
 import combination from "./combination.hbs";
 import Utils from "../../../Utils";
 import './styles.scss';
-import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
+import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 import icon from "./icon.png";
 import { FormEditData } from "../../../types";
 
-export default class WidgetMissingWordsItem extends WidgetItemElement {
+export default class WidgetMissingWordsItem extends WidgetSpecificItemElement {
 
     static widget = "MissingWordsItem";
     static type = "specific-element";

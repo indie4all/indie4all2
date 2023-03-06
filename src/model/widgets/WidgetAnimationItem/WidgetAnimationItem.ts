@@ -1,11 +1,11 @@
 import prev from "./prev.hbs";
 import Utils from "../../../Utils";
 import './styles.scss';
-import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 import icon from "./icon.png";
 import { FormEditData } from "../../../types";
+import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 
-export default class WidgetAnimationItem extends WidgetItemElement {
+export default class WidgetAnimationItem extends WidgetSpecificItemElement {
 
     static widget = "AnimationItem";
     static type = "specific-element";

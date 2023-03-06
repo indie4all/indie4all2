@@ -3,11 +3,11 @@ import answer from "./answer.hbs"
 import word from "./word.hbs";
 import Utils from "../../../Utils";
 import "./styles.scss";
-import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
+import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 import icon from "./icon.png";
 import { FormEditData } from "../../../types";
 
-export default class WidgetSentenceOrderItem extends WidgetItemElement {
+export default class WidgetSentenceOrderItem extends WidgetSpecificItemElement {
 
     static widget = "SentenceOrderItem";
     static type = "specific-element";

@@ -2,11 +2,11 @@
 import Utils from "../../../Utils";
 import RichTextEditorMixin from "../mixings/RichTextEditorElement";
 import "./styles.scss";
-import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
+import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 import icon from "./icon.png";
 import { Couple, FormEditData } from "../../../types";
 
-export default class WidgetCouplesItem extends RichTextEditorMixin(WidgetItemElement) {
+export default class WidgetCouplesItem extends RichTextEditorMixin(WidgetSpecificItemElement) {
 
     static widget = "CouplesItem";
     static type = "specific-element";

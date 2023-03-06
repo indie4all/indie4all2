@@ -1,19 +1,19 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetCorrectWordItem from "../WidgetCorrectWordItem/WidgetCorrectWordItem";
 import { FormEditData } from "../../../types";
+import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
-export default class WidgetCorrectWordContainer extends WidgetContainerElement {
+export default class WidgetCorrectWordContainer extends WidgetContainerSpecificElement {
 
     static widget = "CorrectWord";
-    static type = "specific-element-container";
-    static allow = ["CorrectWordItem"];
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-correct-word";
+
+    static allows() { return [WidgetCorrectWordItem]; }
 
     data: WidgetCorrectWordItem[]
     params: { name: string, help: string }

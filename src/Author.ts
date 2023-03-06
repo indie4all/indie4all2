@@ -19,7 +19,6 @@ import Category from "./category/Category";
 import ModelElement from "./model/ModelElement";
 import Section from "./model/section/Section";
 import WidgetColumnsLayout from "./model/widgets/WidgetColumnsLayout/WidgetColumnsLayout";
-import WidgetContainerElement from "./model/widgets/WidgetContainerElement/WidgetContainerElement";
 
 export default class Author {
 
@@ -82,7 +81,7 @@ export default class Author {
             parentContainerIndex: -1,
             parentContainerId,
             // Add the element at the end of its container
-            inPositionElementId: -1
+            inPositionElementId: null
         });
         this.undoredo.pushAndExecuteCommand(action);
     }
@@ -216,7 +215,7 @@ export default class Author {
         var parent = this.model.findParentOfObject(id);
         var parentContainerId = parent.id;
         var parentContainerIndex = -1;
-        var inPositionElementId = -1;
+        var inPositionElementId = null;
         let container: any[];
         if (parent instanceof WidgetColumnsLayout) {
             parentContainerIndex = (<WidgetColumnsLayout>parent)
@@ -246,41 +245,41 @@ export default class Author {
      */
     addContent(containerId: string, widget: string) {
         const self = this;
-        const widgetProto = ModelManager.get(widget);
-        const type = widgetProto.type;
-        if (type != 'specific-container' && type != 'specific-element-container')
+        const widgetProto: any = ModelManager.get(widget);
+        const allowed = widgetProto.allows();
+        if (allowed.length === 0)
             throw new Error('Cannot create content for non-specific container');
 
-        const allowed = widgetProto.allow;
-        if (allowed.length > 1) {
-            const options = allowed.map(allowed => ({
-                text: this.i18n.value(`widgets.${allowed}.label`),
-                value: allowed
-            }));
-            import('bootprompt').then(bootprompt => {
-                bootprompt.prompt({
-                    title: this.i18n.value("common.selectType"),
-                    inputType: 'select',
-                    inputOptions: options,
-                    value: allowed[0], // Default option
-                    closeButton: false,
-                    callback: function (result) {
-                        result && self.addSpecificContent(containerId, result);
-                    }
-                });
-            });
-        } else {
+        if (allowed.length === 1)
             self.addSpecificContent(containerId, allowed[0]);
-        }
+
+        const options = allowed.map(proto => ({
+            text: this.i18n.value(`widgets.${proto.widget}.label`),
+            value: proto.widget
+        }));
+
+        import('bootprompt').then(bootprompt => {
+            bootprompt.prompt({
+                title: this.i18n.value("common.selectType"),
+                inputType: 'select',
+                inputOptions: options,
+                value: allowed[0], // Default option
+                closeButton: false,
+                callback: function (result) {
+                    result && self.addSpecificContent(containerId, result);
+                }
+            });
+        });
+
     }
 
     /**
      * Creates a new child for the given container
      * @param {string} containerId - Container ID
-     * @param {string} widgetTypeToCreate - Type of widget
+     * @param {string} type - Type of widget
      */
-    addSpecificContent(containerId: string, widgetTypeToCreate: string) {
-        this.addModelElement(ModelManager.create(widgetTypeToCreate), containerId);
+    addSpecificContent(containerId: string, type: string) {
+        this.addModelElement(ModelManager.create(type), containerId);
     }
 
     /**

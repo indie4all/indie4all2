@@ -7,6 +7,9 @@ import ActionMoveContainer from './actions/ActionMoveContainer';
 import UndoRedo from './Undoredo';
 import ActionAddElement from './actions/ActionAddElement';
 import { Model } from './model/Model';
+import WidgetColumnsLayout from './model/widgets/WidgetColumnsLayout/WidgetColumnsLayout';
+import WidgetContainerElement from './model/widgets/WidgetContainerElement/WidgetContainerElement';
+import Section from './model/section/Section';
 import ModelElement from './model/ModelElement';
 
 export default class DragDropHandler {
@@ -31,11 +34,14 @@ export default class DragDropHandler {
         });
 
         // Event associated with the drop of the element inside a DOM Container
-        this.drake.on('drop', (el, target, source, sibling) => this.drop(el, target, source, sibling));
+        this.drake.on('drop', (el, target, source, sibling) => this.drop(el as HTMLElement, target as HTMLElement,
+            source as HTMLElement, sibling as HTMLElement));
 
     }
 
     allowGenerate(source: HTMLElement, target: HTMLElement) {
+        const targetElement = ModelManager.get(target.dataset.widget);
+        return source == this.palette && (targetElement instanceof Section || this.container.contains(target));
         return (source == this.palette && (target.dataset.type == 'section-container' || Utils.contains(this.container, target)));
     }
 
@@ -45,13 +51,11 @@ export default class DragDropHandler {
         if (!originElement) return false;
 
         // Extract the info
-        const itemType: string | undefined = originElement.dataset.type;
-        const itemWidget: string | undefined = originElement.dataset.widget;
-        const targetType: string | undefined = target.dataset.type;
-        const targetWidget: string | undefined = target.dataset.widget;
+        const source: any = ModelManager.get(originElement.dataset.widget);
+        const container: any = ModelManager.get(target.dataset.widget);
 
         // We ask the widgets if the target is not the palette
-        if (target != this.palette && (!this.canDrop(itemType, itemWidget, targetType, targetWidget)))
+        if (target !== this.palette && !(<typeof ModelElement>container).canHave(source))
             return false;
 
         /* We must not accept the movement if
@@ -59,32 +63,10 @@ export default class DragDropHandler {
             -- If the target container is, in fact, the palette 
             -- If the target container is the element itself  
         */
-        return (!Utils.contains(this.palette, target) && (target !== this.palette) && !Utils.contains(element, target));
+        return !this.palette.contains(target) && !element.contains(target);
     }
 
-    canDrop(itemType: string | undefined, itemWidget: string | undefined, targetType: string | undefined, targetWidget: string | undefined) {
-        // 0 - If the item has the same type as the target, the item won't be dropped   
-        if (itemType == targetType)
-            return false;
-
-        // 1 - If the item is an element-container it can not be dropped in the main container. 
-        if (targetType == 'section-container' && (itemType != 'element-container' && itemType != 'specific-element'))
-            return true;
-
-        // 2 - Specific cases
-        if (targetType == 'specific-container' || targetType == 'specific-element-container') {
-            // 2.1 - specific containers has inside the allow configuration value the widget  
-            const containersAllowed = ModelManager.get(targetWidget).allow;
-            return (Utils.stringIsInArray(itemWidget, containersAllowed));
-        } else if (targetType == 'element-container' || targetType == 'layout' || targetType == 'simple-container') {
-            // 2.2 - layout or element containers has inside the allow configuration value the types of elements that can be placed inside
-            var typesAllowed = ModelManager.get(targetWidget).allow;
-            return (Utils.stringIsInArray(itemType, typesAllowed));
-        }
-    }
-
-
-    drop(el, target, source, sibling) {
+    drop(el: HTMLElement, target: HTMLElement, source: HTMLElement, sibling: HTMLElement) {
         if (!target) return;
         if (this.allowGenerate(source, target)) {
             // Add a new element to the container
@@ -98,116 +80,99 @@ export default class DragDropHandler {
         }
     }
 
-    setModel(model) {
+    setModel(model: Model) {
         this.model = model;
     }
 
-    onMoveElement(el, target) {
+    onMoveElement(el: HTMLElement, target: HTMLElement) {
 
         const origin = $(el).children('div')[0];
-        var elementId = origin.dataset.id;
-        var element = this.model.findObject(elementId);
-        var containerType = target.dataset.type;
-        // New order of the elements inside the target
-        var targetChildren = [].slice.call(target.children).map(function (ch) {
-            return $(ch).children('div')[0].dataset.id;
-        });
+        const elementId = origin.dataset.id;
+        const element = this.model.findObject(elementId);
+        const newPosition = [].findIndex.call(target.children,
+            (ch: HTMLElement) => origin.dataset.id === $(ch).children('div').get(0).dataset.id);
+        const containerId = $(target).closest('[data-id]')[0].dataset.id;
+        const parentContainer = this.model.findObject(containerId);
 
-        var newPosition = targetChildren.indexOf(origin.dataset.id, 0);
-
-        let containerId, containerIndex = -1, parentContainer, initialPosition;
-        if (containerType == 'layout') {
-            containerId = target.parentNode.parentNode.parentNode.dataset.id; // 3 nesting levels 
-            containerIndex = target.dataset.index;
-            parentContainer = this.model.findObject(containerId);
-            initialPosition = Utils.findIndexObjectInArray(parentContainer.data[containerIndex], 'id', elementId);
-        } else {
-            containerId = target.parentNode.dataset.id;
-            parentContainer = this.model.findObject(containerId);
-            initialPosition = Utils.findIndexObjectInArray(parentContainer.data, 'id', elementId);
+        let containerIndex = -1, initialPosition: number;
+        if (parentContainer instanceof WidgetColumnsLayout) {
+            containerIndex = parseInt(target.dataset.index);
+            initialPosition = parentContainer.data[containerIndex].findIndex(elem => elem.id == elementId);
+        } else if (parentContainer instanceof WidgetContainerElement || parentContainer instanceof Section) {
+            initialPosition = parentContainer.data.findIndex(elem => elem.id == elementId);
         }
         const action = new ActionMoveElement(this.model, {
-            containerId, containerType, containerIndex, initialPosition, finalPosition: newPosition, element
+            containerId, containerIndex, initialPosition, finalPosition: newPosition, element
         });
         this.undoredo.pushCommand(action);
         this.model.moveElementWithinContainer(elementId, newPosition, containerId, containerIndex == -1 ? null : containerIndex);
     }
 
-    onMoveElementIntoContainer(el, target, sibling) {
+    onMoveElementIntoContainer(el: HTMLElement, target: HTMLElement, sibling: HTMLElement) {
         // Get the source container and source element position
         const origin = $(el).children('div')[0];
-        var elementId = origin.dataset.id;
-        var element = this.model.findObject(elementId);
-        var parentElement = this.model.findParentOfObject(elementId);
-        var sourceContainerIndex = -1;
-        var sourcePosition;
+        const elementId = origin.dataset.id;
+        const element = this.model.findObject(elementId);
+        const sourceParent = this.model.findParentOfObject(elementId);
+        const targetParentId = $(target).closest('[data-id]')[0].dataset.id;
+        const targetParent = this.model.findObject(targetParentId);
+        const inPositionElementId = sibling ? $(sibling).children('div')[0].dataset.id : null;
+        let sourceContainerIndex = -1, targetContainerIndex = -1;
+        let sourcePosition: number, targetPosition: number;
 
-        if ((<typeof ModelElement>parentElement.constructor).type == 'layout') {
-            for (var i = 0; i < parentElement.data.length; i++) {
-                var sourceelementIndex = Utils.findIndexObjectInArray(parentElement.data[i], 'id', elementId);
-                if (sourceelementIndex != -1) {
+        if (sourceParent instanceof WidgetColumnsLayout) {
+            for (let i = 0; i < sourceParent.data.length; i++) {
+                const sourceelementIndex = sourceParent.data[i].findIndex(elem => elem.id == elementId);
+                if (sourceelementIndex !== -1) {
                     sourcePosition = sourceelementIndex;
                     sourceContainerIndex = i;
                 }
             }
-        } else {
-            sourcePosition = Utils.findIndexObjectInArray(parentElement.data, 'id', elementId);
+        } else if (sourceParent instanceof WidgetContainerElement || sourceParent instanceof Section) {
+            sourcePosition = sourceParent.data.findIndex(elem => elem.id == elementId);
         }
 
         // Get target
-        var inPositionElementId = sibling != null ? parseInt($(sibling).children('div')[0].dataset.id) : -1;
-        var containerType = target.dataset.type;
-        var containerId;
-        var containerIndex = -1;
-        var containerPosition;
-        let targetContainer;
-        if (containerType == 'layout') {
-            containerId = target.parentNode.parentNode.parentNode.dataset.id;
-            containerIndex = target.dataset.index;
-            targetContainer = this.model.findObject(containerId);
-            containerPosition = Utils.findIndexObjectInArray(targetContainer.data[containerIndex], 'id', inPositionElementId);
-        } else {
-            containerId = target.parentNode.dataset.id;
-            targetContainer = this.model.findObject(containerId);
-            containerPosition = Utils.findIndexObjectInArray(targetContainer.data, 'id', inPositionElementId);
+        if (targetParent instanceof WidgetColumnsLayout) {
+            targetContainerIndex = parseInt(target.dataset.index);
+            targetPosition = targetParent.data[targetContainerIndex].findIndex(elem => elem.id == inPositionElementId);
+        } else if (targetParent instanceof WidgetContainerElement || targetParent instanceof Section) {
+            targetPosition = targetParent.data.findIndex(elem => elem.id == inPositionElementId);
         }
 
         // For command
-
         this.undoredo.pushCommand(new ActionMoveContainer(this.model, {
             source: {
-                id: parentElement.id,
-                type: (<typeof ModelElement>parentElement.constructor).type,
+                id: sourceParent.id,
                 position: sourcePosition,
                 index: sourceContainerIndex
             },
             target: {
-                id: containerId,
-                type: containerType,
-                position: containerPosition,
-                index: containerIndex
+                id: targetParentId,
+                position: targetPosition,
+                index: targetContainerIndex
             },
             element
         }));
 
         // Move
-        this.model.moveElementFromContainerToAnother(elementId, inPositionElementId, containerId, containerIndex);
+        this.model.moveElementFromContainerToAnother(elementId, inPositionElementId, targetParentId, targetContainerIndex);
     }
 
-    onCreateElement(el, target, sibling) {
-        var widget = el.dataset.widget; // Widget type (TextBlock, Image...etc)
-        var parentType = target.dataset.type; // Parent type
-        var parentContainerIndex = -1; // Parent container index (only for layout)
-        if (parentType == 'layout') parentContainerIndex = target.dataset.index;
-        var parentContainerId = $(target).closest('[data-id]')[0].dataset.id;
-        var inPositionElementId = sibling != null ? $(sibling).children('div').first().data('id') : -1;
-        const modelObject = ModelManager.create(widget);
-        const elementToBeAppended = modelObject.createElement();
+    onCreateElement(el: HTMLElement, target: HTMLElement, sibling: HTMLElement) {
+        const widget = ModelManager.create(el.dataset.widget); // Widget type (TextBlock, Image...etc)
+        const parentContainerId = $(target).closest('[data-id]')[0].dataset.id;
+        const inPositionElementId = sibling ? $(sibling).children('div').first().data('id') : null;
+        let parentContainerIndex = -1; // Parent container index (only for layout)
+        const parent = this.model.findObject(parentContainerId);
+        const elementToBeAppended = widget.createElement();
         $(el).replaceWith(elementToBeAppended);
-        this.model.appendObject(modelObject, inPositionElementId, parentContainerId, parentContainerIndex);
+        if (parent instanceof WidgetColumnsLayout)
+            parentContainerIndex = parseInt(target.dataset.index);
+        this.model.appendObject(widget, inPositionElementId, parentContainerId, parentContainerIndex);
         this.undoredo.pushCommand(new ActionAddElement(this.model, {
-            element: modelObject,
-            parentType, parentContainerIndex, parentContainerId, inPositionElementId
+            element: widget,
+            parentContainerIndex, parentContainerId, inPositionElementId
         }));
     }
 }

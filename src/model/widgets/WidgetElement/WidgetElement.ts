@@ -9,14 +9,13 @@ export default abstract class WidgetElement extends ModelElement {
 
     protected static category: string;
     protected static cssClass: string;
-    protected static editable: boolean = true;
     protected static icon: string;
 
     constructor(values?: any) { super(values); }
 
     static createPaletteItem() {
         const label = I18n.getInstance().translate(`widgets.${this.widget ?? "GenericWidget"}.label`);
-        return palette({ category: this.category, type: this.type, widget: this.widget, icon: this.icon, label });
+        return palette({ category: this.category, widget: this.widget, icon: this.icon, label });
     }
 
     toJSON(): any {

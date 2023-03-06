@@ -1,19 +1,20 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetSentenceOrderItem from "../WidgetSentenceorderItem/WidgetSentenceorderItem";
 import { FormEditData } from "../../../types";
+import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
-export default class WidgetSentenceOrderContainer extends WidgetContainerElement {
+export default class WidgetSentenceOrderContainer extends WidgetContainerSpecificElement {
 
     static widget = "SentenceOrderContainer";
     static type = "specific-element-container";
-    static allow = ["SentenceOrderItem"];
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-sentence-order";
+
+    static allows() { return [WidgetSentenceOrderItem]; }
 
     params: { name: string, help: string }
     data: WidgetSentenceOrderItem[]

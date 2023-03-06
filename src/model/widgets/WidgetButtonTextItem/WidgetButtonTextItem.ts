@@ -1,13 +1,12 @@
 /* global $ */
 import Utils from "../../../Utils";
-import RichTextEditorElement from "../mixings/RichTextEditorElement";
 import "./styles.scss";
-import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
+import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 import icon from "./icon.png";
 import { FormEditData } from "../../../types";
 import RichTextEditorMixin from "../mixings/RichTextEditorElement";
 
-export default class WidgetButtonTextItem extends RichTextEditorMixin(WidgetItemElement) {
+export default class WidgetButtonTextItem extends RichTextEditorMixin(WidgetSpecificItemElement) {
 
     static widget = "ButtonTextItem";
     static type = "specific-element";

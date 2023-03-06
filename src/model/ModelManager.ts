@@ -51,6 +51,10 @@ import WidgetVideo from "./widgets/WidgetVideo/WidgetVideo";
 import WidgetElement from "./widgets/WidgetElement/WidgetElement";
 import Utils from "../Utils";
 import ModelElement from "./ModelElement";
+import WidgetItemElement from "./widgets/WidgetItemElement/WidgetItemElement";
+import WidgetColumnsLayout from "./widgets/WidgetColumnsLayout/WidgetColumnsLayout";
+import WidgetContainerSpecificElement from "./widgets/WidgetContainerSpecificElement/WidgetContainerSpecificElement";
+import WidgetSpecificItemElement from "./widgets/WidgetSpecificItemElement/WidgetSpecificItemElement";
 
 export default class ModelManager {
 
@@ -113,6 +117,48 @@ export default class ModelManager {
         [WidgetTrueFalseQuestion.widget]: WidgetTrueFalseQuestion
     };
 
+    private static rules = {
+        // Section element
+        [Section.widget]: { "allows": [WidgetElement], "refuses": [WidgetSpecificItemElement, WidgetAcordionContent, WidgetTabContent] },
+        [WidgetTwoColumnsLayout.widget]: { "allows": [WidgetItemElement, WidgetContainerSpecificElement] },
+        [WidgetThreeColumnsLayout.widget]: { "allows": [WidgetItemElement, WidgetContainerSpecificElement] },
+        [WidgetFourColumnsLayout.widget]: { "allows": [WidgetItemElement, WidgetContainerSpecificElement] },
+        [WidgetTabsContainer.widget]: { "allows": [WidgetTabContent] },
+        [WidgetTabContent.widget]: {
+            "allows": [WidgetItemElement, WidgetColumnsLayout, WidgetContainerSpecificElement],
+            "refuses": [WidgetSpecificItemElement, WidgetContainerSpecificElement]
+        },
+        [WidgetAcordionContainer.widget]: { "allows": [WidgetAcordionContent] },
+        [WidgetAcordionContent.widget]: {
+            "allows": [WidgetItemElement, WidgetColumnsLayout, WidgetContainerSpecificElement],
+            "refuses": [WidgetSpecificItemElement, WidgetContainerSpecificElement]
+        },
+        [WidgetModal.widget]: { "allows": [WidgetItemElement] },
+        [WidgetDragdropContainer.widget]: { "allows": [WidgetDragdropItem] },
+        [WidgetTrueFalseContainer.widget]: { "allows": [WidgetTrueFalseItem] },
+        [WidgetAudioTermContainer.widget]: { "allows": [WidgetAudioTermItem] },
+        [WidgetImageAndSoundContainer.widget]: { "allows": [WidgetImageAndSoundItem] },
+        [WidgetCouplesContainer.widget]: { "allows": [WidgetCouplesItem] },
+        [WidgetSchemaContainer.widget]: { "allows": [WidgetSchemaItem] },
+        [WidgetCorrectWordContainer.widget]: { "allows": [WidgetCorrectWordItem] },
+        [WidgetMissingwordsContainer.widget]: { "allows": [WidgetMissingwordsItem] },
+        [WidgetSentenceorderContainer.widget]: { "allows": [WidgetSentenceorderItem] },
+        [WidgetButtonTextContainer.widget]: { "allows": [WidgetButtonTextItem] },
+        [WidgetAnimationContainer.widget]: { "allows": [WidgetAnimationItem] },
+        [WidgetTermClassifcation.widget]: { "allows": [WidgetTermClassificationItem] },
+        [WidgetTestContainer.widget]: { "allows": [WidgetGapQuestion, WidgetSimpleQuestion, WidgetTrueFalseQuestion] },
+    }
+
+    static canHave(parent: any, child: any) {
+
+        const parentRules = this.rules[(<typeof ModelElement>parent).widget];
+        if (parentRules.refuses && parentRules.refuses.some(elem => child instanceof elem))
+            return false;
+        if (parentRules.allows && parentRules.allows.some(elem => child instanceof elem))
+            return true;
+        return false;
+    }
+
     static getAllWidgets(): typeof WidgetElement[] {
         return Object.values(this.elements).filter(elem => WidgetElement.isPrototypeOf(elem)).map(elem => elem as typeof WidgetElement);
     }
@@ -121,7 +167,7 @@ export default class ModelManager {
         return Utils.groupBy({ collection: this.getAllWidgets(), key: "category" });
     }
 
-    static get(widget = "Section"): typeof ModelElement {
+    static get(widget = "Section"): { new(): ModelElement } {
         return this.elements[widget];
     }
 

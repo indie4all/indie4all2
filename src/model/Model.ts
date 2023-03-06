@@ -41,10 +41,10 @@ export class Model {
         this.currentErrors = [];
     }
 
-    appendObject(modelObject: ModelElement, inPositionElementId: number, parentContainerId: string, parentContainerIndex: number) {
+    appendObject(modelObject: ModelElement, inPositionElementId: string, parentContainerId: string, parentContainerIndex: number) {
         const parent = this.findObject(parentContainerId);
-        const container = (<typeof ModelElement>parent.constructor).type == 'layout' ? parent.data[parentContainerIndex] : parent.data;
-        if (inPositionElementId == -1)
+        const container = modelObject instanceof WidgetColumnsLayout ? parent.data[parentContainerIndex] : parent.data;
+        if (!inPositionElementId)
             container.push(modelObject);
         else {
             const index = Utils.findIndexObjectInArray(container, 'id', inPositionElementId);
@@ -87,7 +87,7 @@ export class Model {
         Utils.array_move(elementsArray, currentPosition, newPosition);
     }
 
-    moveElementFromContainerToAnother(elementId: string, inPositionElementId: number, targetContainerId: string, targetContainerIndex: number) {
+    moveElementFromContainerToAnother(elementId: string, inPositionElementId: string, targetContainerId: string, targetContainerIndex: number) {
         var originalObject = this.findObject(elementId);
         var copyOfObject = originalObject.clone();
         this.removeElement(originalObject.id);

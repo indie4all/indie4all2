@@ -1,19 +1,20 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetTrueFalseItem from "../WidgetTrueFalseItem/WidgetTrueFalseItem";
 import { FormEditData } from "../../../types";
+import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
-export default class WidgetTrueFalseContainer extends WidgetContainerElement {
+export default class WidgetTrueFalseContainer extends WidgetContainerSpecificElement {
 
     static widget = "TrueFalseContainer";
     static type = "specific-element-container";
-    static allow = ["TrueFalseItem"];
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-true-false";
+
+    static allows() { return [WidgetTrueFalseItem]; }
 
     params: { name: string, help: string }
     data: WidgetTrueFalseItem[]

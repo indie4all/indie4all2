@@ -6,7 +6,18 @@ export default abstract class ModelElement {
 
     static type: string;
     static widget: string;
-    static allow: string[];
+    static allows(): (abstract new (...args: any[]) => ModelElement)[] { return [] }
+    static refuses(): (abstract new (...args: any[]) => ModelElement)[] { return [] }
+
+    protected static addable: boolean = false;
+    protected static copyable: boolean = true;
+    protected static editable: boolean = true;
+
+    static canHave(proto: typeof ModelElement) {
+        const constructor = <typeof ModelElement>this.constructor;
+        return !constructor.refuses().some(elem => proto instanceof elem) &&
+            constructor.allows().some(elem => proto instanceof elem);
+    }
 
     id: string;
     params: any;
@@ -28,6 +39,6 @@ export default abstract class ModelElement {
     static hasChildren() { return false; }
     settingsClosed(): void { }
     settingsOpened(): void { }
-    toJSON(): any { return { id: this.id, widget: ModelElement.widget } }
+    toJSON(): any { return { id: this.id, widget: (<typeof ModelElement>this.constructor).widget } }
     translate(query: string) { return I18n.getInstance().value(query); }
 }

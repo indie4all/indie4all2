@@ -1,10 +1,10 @@
 import Utils from "../../../Utils";
 import './styles.scss';
-import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
+import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 import icon from "./icon.png";
 import { FormEditData } from "../../../types";
 
-export default class WidgetTermClassificationItem extends WidgetItemElement {
+export default class WidgetTermClassificationItem extends WidgetSpecificItemElement {
 
     static widget = "TermClassificationItem";
     static type = "specific-element";

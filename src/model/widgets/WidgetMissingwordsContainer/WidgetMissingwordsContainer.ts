@@ -1,19 +1,20 @@
 import Utils from "../../../Utils";
 import './styles.scss';
-import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetMissingWordsItem from "../WidgetMissingwordsItem/WidgetMissingwordsItem";
 import { FormEditData } from "../../../types";
+import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
-export default class WidgetMissingWords extends WidgetContainerElement {
+export default class WidgetMissingWords extends WidgetContainerSpecificElement {
 
     static widget = "MissingWords";
     static type = "specific-element-container";
-    static allow = ["MissingWordsItem"];
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-missing-words";
+
+    static allows() { return [WidgetMissingWordsItem]; }
 
     params: { name: string, help: string }
     data: WidgetMissingWordsItem[]

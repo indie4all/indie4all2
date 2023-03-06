@@ -1,16 +1,16 @@
 import Utils from "../../../Utils";
 import './styles.scss';
-import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetAnimationItem from "../WidgetAnimationItem/WidgetAnimationItem";
 import { FormEditData } from "../../../types";
+import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
-export default class WidgetAnimationContainer extends WidgetContainerElement {
+export default class WidgetAnimationContainer extends WidgetContainerSpecificElement {
 
     static widget = "AnimationContainer";
     static type = "specific-element-container";
-    static allow = ["AnimationItem"];
+    static allows() { return [WidgetAnimationItem]; };
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-animation-container";

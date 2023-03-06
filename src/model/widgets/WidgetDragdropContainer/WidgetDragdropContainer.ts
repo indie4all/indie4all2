@@ -1,19 +1,20 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetDragdropItem from "../WidgetDragdropItem/WidgetDragdropItem";
 import { FormEditData } from "../../../types";
+import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
-export default class WidgetDragdropContainer extends WidgetContainerElement {
+export default class WidgetDragdropContainer extends WidgetContainerSpecificElement {
 
     static widget = "DragdropContainer";
     static type = "specific-element-container";
-    static allow = ["DragdropItem"];
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-dragdrop-container";
+
+    static allows() { return [WidgetDragdropItem]; }
 
     params: { name: string, help: string }
     data: WidgetDragdropItem[]

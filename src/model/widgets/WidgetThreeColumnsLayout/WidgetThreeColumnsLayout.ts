@@ -8,7 +8,6 @@ export default class WidgetThreeColumnsLayout extends WidgetColumnsLayout {
 
     static widget = "ThreeColumnsLayout";
     static type = "layout";
-    static allow = ["element", "specific-element-container"];
     static category = "layouts";
     static editable = false;
     static icon = icon;

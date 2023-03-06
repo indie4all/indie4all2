@@ -1,16 +1,16 @@
 import Utils from '../../../Utils';
 import './styles.scss';
-import WidgetContainerElement from '../WidgetContainerElement/WidgetContainerElement';
 import ModelManager from '../../ModelManager';
 import icon from "./icon.png";
 import WidgetAudioTermItem from '../WidgetAudioTermItem/WidgetAudioTermItem';
 import { FormEditData } from '../../../types';
+import WidgetContainerSpecificElement from '../WidgetContainerSpecificElement/WidgetContainerSpecificElement';
 
-export default class WidgetAudioTermContainer extends WidgetContainerElement {
+export default class WidgetAudioTermContainer extends WidgetContainerSpecificElement {
 
     static widget = "AudioTermContainer";
     static type = "specific-element-container";
-    static allow = ["AudioTermItem"];
+    static allows() { return [WidgetAudioTermItem]; }
     static category = "interactiveElements";
     static icon = icon;
     params: { name: string, help: string };

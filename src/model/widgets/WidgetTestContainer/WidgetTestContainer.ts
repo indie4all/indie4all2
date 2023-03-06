@@ -1,18 +1,22 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import { FormEditData } from "../../../types";
+import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
+import WidgetGapQuestion from "../WidgetGapQuestion/WidgetGapQuestion";
+import WidgetSimpleQuestion from "../WidgetSimpleQuestion/WidgetSimpleQuestion";
+import WidgetTrueFalseQuestion from "../WidgetTrueFalseQuestion/WidgetTrueFalseQuestion";
 
-export default class WidgetTestContainer extends WidgetContainerElement {
+export default class WidgetTestContainer extends WidgetContainerSpecificElement {
 
     static widget = "Test";
     static type = "specific-element-container";
-    static allow = ["GapQuestion", "SimpleQuestion", "TrueFalseQuestion"];
     static category = "exerciseElement";
     static icon = icon;
     static cssClass = "widget-test";
+
+    static allows() { return [WidgetGapQuestion, WidgetSimpleQuestion, WidgetTrueFalseQuestion]; }
 
     constructor(values?: any) {
         super(values);

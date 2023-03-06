@@ -1,16 +1,16 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetCouplesItem from "../WidgetCouplesItem/WidgetCouplesItem";
 import { FormEditData } from "../../../types";
+import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
-export default class WidgetCouplesContainer extends WidgetContainerElement {
+export default class WidgetCouplesContainer extends WidgetContainerSpecificElement {
 
     static widget = "CouplesContainer";
     static type = "specific-element-container";
-    static allow = ["CouplesItem"];
+    static allows() { return [WidgetCouplesItem] };
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-couples-container";

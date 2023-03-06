@@ -6,12 +6,16 @@ import sectionTemplate from "./template.hbs";
 import icon from "./icon.png";
 import WidgetElement from "../widgets/WidgetElement/WidgetElement";
 import { FormEditData } from "../../types";
+import WidgetSpecificItemElement from "../widgets/WidgetSpecificItemElement/WidgetSpecificItemElement";
+import WidgetAcordionContent from "../widgets/WidgetAcordionContent/WidgetAcordionContent";
+import WidgetTabContent from "../widgets/WidgetTabContent/WidgetTabContent";
 
 export default class Section extends ModelElement {
 
     static widget = "Section";
     static icon = icon;
-    static type = "section-container";
+    static allows() { return [WidgetElement] }
+    static refuses() { return [WidgetSpecificItemElement, WidgetAcordionContent, WidgetTabContent] }
 
     name: string;
     bookmark: string;

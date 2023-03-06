@@ -8,9 +8,10 @@ import { FormEditData } from "../../../types";
 
 export default class WidgetTabContent extends WidgetContainerElement {
 
+    protected static copyable: boolean = false;
+
     static widget = "TabContent";
     static type = "element-container";
-    static allow = ["element", "layout", "specific-element-container"];
     static category = "containers";
     static icon = icon;
     static cssClass = "widget-tab-content";

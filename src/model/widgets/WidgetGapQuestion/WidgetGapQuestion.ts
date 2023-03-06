@@ -1,10 +1,10 @@
 /* global $ */
 import "./styles.scss";
-import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
+import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 import icon from "./icon.png";
 import { FormEditData } from "../../../types";
 
-export default class WidgetGapQuestion extends WidgetItemElement {
+export default class WidgetGapQuestion extends WidgetSpecificItemElement {
 
     static widget = "GapQuestion";
     static type = "specific-element";

@@ -1,19 +1,20 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetTermClassificationItem from "../WidgetTermClassificationItem/WidgetTermClassificationItem";
 import { FormEditData } from "../../../types";
+import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
-export default class WidgetTermClassification extends WidgetContainerElement {
+export default class WidgetTermClassification extends WidgetContainerSpecificElement {
 
     static widget = "TermClassification";
     static type = "specific-element-container";
-    static allow = ["TermClassificationItem"];
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-term-classification";
+
+    static allows() { return [WidgetTermClassificationItem]; }
 
     /**
      * 

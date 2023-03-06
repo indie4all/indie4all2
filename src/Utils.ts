@@ -3,7 +3,6 @@ import I18n from "./I18n";
 import { Model } from "./model/Model";
 import ModelElement from "./model/ModelElement";
 import ModelManager from "./model/ModelManager";
-import WidgetColumnsLayout from "./model/widgets/WidgetColumnsLayout/WidgetColumnsLayout";
 
 export default class Utils {
 

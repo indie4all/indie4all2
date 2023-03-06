@@ -1,19 +1,20 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetImageAndSoundItem from "../WidgetImageAndSoundItem/WidgetImageAndSoundItem";
 import { FormEditData } from "../../../types";
+import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
-export default class WidgetImageAndSoundContainer extends WidgetContainerElement {
+export default class WidgetImageAndSoundContainer extends WidgetContainerSpecificElement {
 
     static widget = "ImageAndSoundContainer";
     static type = "specific-element-container";
-    static allow = ["ImageAndSoundItem"];
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-image-and-sound-container";
+
+    static allows() { return [WidgetImageAndSoundItem]; }
 
     params: { name: string, help: string };
     data: WidgetImageAndSoundItem[];

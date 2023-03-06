@@ -1,19 +1,21 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetTabContent from "../WidgetTabContent/WidgetTabContent";
 import { FormEditData } from "../../../types";
+import WidgetSpecificContainerElement from "../WidgetSpecificContainerElement/WidgetSpecificContainerElement";
 
-export default class WidgetTabsContainer extends WidgetContainerElement {
+export default class WidgetTabsContainer extends WidgetSpecificContainerElement {
 
     static widget = "TabsContainer";
     static type = "specific-container";
-    static allow = ["TabContent"];
     static category = "containers";
     static icon = icon;
     static cssClass = "widget-tabs-container";
+
+    static allows() { return [WidgetTabContent]; }
+
     params: { name: string, help: string }
     data: WidgetTabContent[]
 

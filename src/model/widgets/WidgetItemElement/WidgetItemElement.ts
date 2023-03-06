@@ -1,4 +1,5 @@
 import WidgetElement from "../WidgetElement/WidgetElement";
+import ModelElement from "../../ModelElement";
 import template from "./template.hbs";
 
 export default abstract class WidgetItemElement extends WidgetElement {
@@ -7,16 +8,14 @@ export default abstract class WidgetItemElement extends WidgetElement {
 
     createElement(): string {
         const constructor = <typeof WidgetElement>this.constructor;
-        const canCopy = WidgetItemElement.type !== 'specific-element';
         return template({
             id: this.id,
-            type: constructor.type,
             cssClass: constructor.cssClass,
             widget: constructor.widget,
             icon: constructor.icon,
+            canCopy: constructor.copyable,
             canEdit: constructor.editable,
-            label: this.preview(),
-            canCopy
+            label: this.preview()
         });
     }
 }

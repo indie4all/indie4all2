@@ -1,19 +1,20 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetSchemaItem from "../WidgetSchemaItem/WidgetSchemaItem";
 import { FormEditData } from "../../../types";
+import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
-export default class WidgetSchemaContainer extends WidgetContainerElement {
+export default class WidgetSchemaContainer extends WidgetContainerSpecificElement {
 
     static widget = "SchemaContainer";
     static type = "specific-element-container";
-    static allow = ["SchemaItem"];
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-schema-container";
+
+    static allows() { return [WidgetSchemaItem]; }
 
     params: { name: string, help: string }
     data: WidgetSchemaItem[]

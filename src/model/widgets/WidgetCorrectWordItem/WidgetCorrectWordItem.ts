@@ -1,11 +1,11 @@
 /* global $ */
 import Utils from "../../../Utils";
 import "./styles.scss";
-import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
+import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 import icon from "./icon.png";
 import { FormEditData } from "../../../types";
 
-export default class WidgetCorrectWordItem extends WidgetItemElement {
+export default class WidgetCorrectWordItem extends WidgetSpecificItemElement {
 
     static widget = "CorrectWordItem";
     static type = "specific-element";

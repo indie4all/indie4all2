@@ -4,15 +4,18 @@ import WidgetColumnsLayout from "../WidgetColumnsLayout/WidgetColumnsLayout";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import { FormEditData } from '../../../types';
+import WidgetItemElement from '../WidgetItemElement/WidgetItemElement';
+import WidgetContainerSpecificElement from '../WidgetContainerSpecificElement/WidgetContainerSpecificElement';
 
 export default class WidgetTwoColumnsLayout extends WidgetColumnsLayout {
 
     static widget = "TwoColumnsLayout";
     static type = "layout";
-    static allow = ["element", "specific-element-container"];
     static category = "layouts";
     static icon = icon;
     static columns = [6, 6];
+
+    static allows() { return [WidgetItemElement, WidgetContainerSpecificElement]; }
 
     constructor(values?: any) {
         super(values);

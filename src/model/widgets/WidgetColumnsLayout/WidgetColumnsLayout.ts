@@ -1,9 +1,12 @@
 import template from "./template.hbs"
 import WidgetElement from "../WidgetElement/WidgetElement";
 import "./styles.scss"
+import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
+import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
 export default abstract class WidgetColumnsLayout extends WidgetElement {
 
+    static allows() { return [WidgetItemElement, WidgetContainerSpecificElement]; }
     protected static columns: number[];
 
     data: WidgetElement[][];
@@ -11,13 +14,13 @@ export default abstract class WidgetColumnsLayout extends WidgetElement {
     constructor(values?: any) { super(values); }
 
     createElement(): string {
+        const constructor = <typeof WidgetColumnsLayout>this.constructor;
         const children = this.data ?
             this.data.map(child => child.map((subchild: WidgetElement) => subchild.createElement()).join("")) :
-            Array.from(" ".repeat(WidgetColumnsLayout.columns.length));
-        const constructor = <typeof WidgetColumnsLayout>this.constructor;
+            Array.from(" ".repeat(constructor.columns.length));
+
         return template({
             id: this.id,
-            type: constructor.type,
             widget: constructor.widget,
             icon: constructor.icon,
             columns: constructor.columns,

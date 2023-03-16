@@ -8,7 +8,6 @@ import { FormEditData } from "../../../types";
 export default class WidgetTextBlock extends RichTextEditorMixin(WidgetItemElement) {
 
     static widget = "TextBlock";
-    static type = "element";
     static category = "simpleElements";
     static icon = icon;
     static cssClass = "widget-textblock";

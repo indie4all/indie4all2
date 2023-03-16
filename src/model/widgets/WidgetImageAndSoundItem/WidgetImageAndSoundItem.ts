@@ -8,7 +8,6 @@ import { FormEditData } from "../../../types";
 export default class WidgetImageAndSoundItem extends WidgetSpecificItemElement {
 
     static widget = "ImageAndSoundItem";
-    static type = "specific-element";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-image-and-sound-item";

@@ -8,7 +8,6 @@ import { ChooseOption, FormEditData } from "../../../types";
 export default class WidgetChooseOption extends WidgetItemElement {
 
     static widget = "ChooseOption";
-    static type = "element";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-choose-option";

@@ -9,12 +9,9 @@ import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/Wi
 export default class WidgetMissingWords extends WidgetContainerSpecificElement {
 
     static widget = "MissingWords";
-    static type = "specific-element-container";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-missing-words";
-
-    static allows() { return [WidgetMissingWordsItem]; }
 
     params: { name: string, help: string }
     data: WidgetMissingWordsItem[]

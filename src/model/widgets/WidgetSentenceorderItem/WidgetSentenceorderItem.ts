@@ -10,7 +10,6 @@ import { FormEditData } from "../../../types";
 export default class WidgetSentenceOrderItem extends WidgetSpecificItemElement {
 
     static widget = "SentenceOrderItem";
-    static type = "specific-element";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-sentence-order-item";

@@ -10,12 +10,9 @@ import WidgetContainerSpecificElement from '../WidgetContainerSpecificElement/Wi
 export default class WidgetTwoColumnsLayout extends WidgetColumnsLayout {
 
     static widget = "TwoColumnsLayout";
-    static type = "layout";
     static category = "layouts";
     static icon = icon;
     static columns = [6, 6];
-
-    static allows() { return [WidgetItemElement, WidgetContainerSpecificElement]; }
 
     constructor(values?: any) {
         super(values);

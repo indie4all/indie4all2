@@ -8,7 +8,6 @@ import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecif
 export default class WidgetAudioTermItem extends WidgetSpecificItemElement {
 
     static widget = "AudioTermItem";
-    static type = "specific-element";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-audio-term-item";

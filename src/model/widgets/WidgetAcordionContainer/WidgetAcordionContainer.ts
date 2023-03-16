@@ -4,14 +4,11 @@ import ModelManager from '../../ModelManager';
 import icon from "./icon.png";
 import WidgetElement from "../WidgetElement/WidgetElement";
 import { FormEditData } from "../../../types";
-import WidgetAcordionContent from "../WidgetAcordionContent/WidgetAcordionContent";
 import WidgetSpecificContainerElement from "../WidgetSpecificContainerElement/WidgetSpecificContainerElement";
 
 export default class WidgetAcordionContainer extends WidgetSpecificContainerElement {
 
     static widget = "AcordionContainer";
-    static type = "specific-container";
-    static allows() { return [WidgetAcordionContent]; }
     static category = "containers";
     static icon = icon;
     static cssClass = "widget-acordeon-container";

@@ -10,7 +10,6 @@ import { Model } from './model/Model';
 import WidgetColumnsLayout from './model/widgets/WidgetColumnsLayout/WidgetColumnsLayout';
 import WidgetContainerElement from './model/widgets/WidgetContainerElement/WidgetContainerElement';
 import Section from './model/section/Section';
-import ModelElement from './model/ModelElement';
 
 export default class DragDropHandler {
     private palette: HTMLElement;
@@ -55,7 +54,7 @@ export default class DragDropHandler {
         const container: any = ModelManager.get(target.dataset.widget);
 
         // We ask the widgets if the target is not the palette
-        if (target !== this.palette && !(<typeof ModelElement>container).canHave(source))
+        if (target !== this.palette && !ModelManager.canHave(container, source))
             return false;
 
         /* We must not accept the movement if

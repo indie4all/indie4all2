@@ -9,12 +9,9 @@ import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/Wi
 export default class WidgetTermClassification extends WidgetContainerSpecificElement {
 
     static widget = "TermClassification";
-    static type = "specific-element-container";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-term-classification";
-
-    static allows() { return [WidgetTermClassificationItem]; }
 
     /**
      * 

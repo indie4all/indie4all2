@@ -6,7 +6,6 @@ import { FormEditData } from "../../../types";
 export default class WidgetDragdropItem extends WidgetSpecificItemElement {
 
     static widget = "DragdropItem";
-    static type = "specific-element";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-dragdrop-item";

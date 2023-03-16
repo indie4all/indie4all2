@@ -9,12 +9,9 @@ import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/Wi
 export default class WidgetDragdropContainer extends WidgetContainerSpecificElement {
 
     static widget = "DragdropContainer";
-    static type = "specific-element-container";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-dragdrop-container";
-
-    static allows() { return [WidgetDragdropItem]; }
 
     params: { name: string, help: string }
     data: WidgetDragdropItem[]

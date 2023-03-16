@@ -245,13 +245,14 @@ export default class Author {
      */
     addContent(containerId: string, widget: string) {
         const self = this;
-        const widgetProto: any = ModelManager.get(widget);
-        const allowed = widgetProto.allows();
+        const allowed = ModelManager.allowed(widget);
         if (allowed.length === 0)
             throw new Error('Cannot create content for non-specific container');
 
-        if (allowed.length === 1)
-            self.addSpecificContent(containerId, allowed[0]);
+        if (allowed.length === 1) {
+            self.addSpecificContent(containerId, allowed[0].widget);
+            return;
+        }
 
         const options = allowed.map(proto => ({
             text: this.i18n.value(`widgets.${proto.widget}.label`),
@@ -263,7 +264,7 @@ export default class Author {
                 title: this.i18n.value("common.selectType"),
                 inputType: 'select',
                 inputOptions: options,
-                value: allowed[0], // Default option
+                value: allowed[0].widget, // Default option
                 closeButton: false,
                 callback: function (result) {
                     result && self.addSpecificContent(containerId, result);

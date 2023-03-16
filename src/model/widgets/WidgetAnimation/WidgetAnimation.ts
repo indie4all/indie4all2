@@ -5,7 +5,6 @@ import icon from "./icon.png";
 export default class WidgetAnimation extends WidgetPiecesElement {
 
     static widget = "Animation";
-    static type = "element";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-animation";

@@ -9,12 +9,9 @@ import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/Wi
 export default class WidgetSchemaContainer extends WidgetContainerSpecificElement {
 
     static widget = "SchemaContainer";
-    static type = "specific-element-container";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-schema-container";
-
-    static allows() { return [WidgetSchemaItem]; }
 
     params: { name: string, help: string }
     data: WidgetSchemaItem[]

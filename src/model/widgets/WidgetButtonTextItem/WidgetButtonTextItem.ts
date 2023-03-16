@@ -9,7 +9,6 @@ import RichTextEditorMixin from "../mixings/RichTextEditorElement";
 export default class WidgetButtonTextItem extends RichTextEditorMixin(WidgetSpecificItemElement) {
 
     static widget = "ButtonTextItem";
-    static type = "specific-element";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-button-text-item";

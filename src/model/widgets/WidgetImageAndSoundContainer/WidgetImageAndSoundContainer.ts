@@ -9,12 +9,9 @@ import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/Wi
 export default class WidgetImageAndSoundContainer extends WidgetContainerSpecificElement {
 
     static widget = "ImageAndSoundContainer";
-    static type = "specific-element-container";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-image-and-sound-container";
-
-    static allows() { return [WidgetImageAndSoundItem]; }
 
     params: { name: string, help: string };
     data: WidgetImageAndSoundItem[];

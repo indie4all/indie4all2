@@ -8,7 +8,6 @@ import { FormEditData } from "../../../types";
 export default class WidgetTrueFalseQuestion extends WidgetSpecificItemElement {
 
     static widget = "TrueFalseQuestion";
-    static type = "specific-element";
     static category = "exerciseElement";
     static icon = icon;
     static cssClass = "widget-question";

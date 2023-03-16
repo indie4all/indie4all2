@@ -8,7 +8,6 @@ import { FormEditData } from '../../../types';
 export default class WidgetFourColumnsLayout extends WidgetColumnsLayout {
 
     static widget = "FourColumnsLayout";
-    static type = "layout";
     static category = "layouts";
     static editable = false;
     static icon = icon;

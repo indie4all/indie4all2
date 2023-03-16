@@ -6,7 +6,6 @@ import { FormEditData } from "../../../types";
 export default class WidgetBlockquote extends WidgetItemElement {
 
     static widget = "Blockquote";
-    static type = "element";
     static category = "simpleElements";
     static icon = icon;
     static cssClass = "widget-blockquote";

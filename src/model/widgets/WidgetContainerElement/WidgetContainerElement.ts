@@ -1,18 +1,7 @@
-import WidgetColumnsLayout from "../WidgetColumnsLayout/WidgetColumnsLayout";
-import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 import WidgetElement from "../WidgetElement/WidgetElement";
-import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
-import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
-import ModelElement from "../../ModelElement";
 import template from "./template.hbs";
 
 export default abstract class WidgetContainerElement extends WidgetElement {
-
-    static allows(): (abstract new (...args: any[]) => ModelElement)[] {
-        return [WidgetItemElement, WidgetColumnsLayout, WidgetContainerSpecificElement];
-    }
-
-    static refuses() { return [WidgetSpecificItemElement, WidgetContainerSpecificElement]; }
 
     data: WidgetElement[];
     constructor(values?: any) { super(values); }

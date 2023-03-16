@@ -11,8 +11,8 @@ export default class ActionMoveContainer extends ActionElement {
         // Add element to the target location   
         const targetParent = this.model.findObject(target.id);
         const siblings = (targetParent instanceof WidgetColumnsLayout) ? targetParent.data[target.index] : targetParent.data;
-        const inPosition = (target.position == -1 || siblings.length == 0 || target.position >= siblings.length) ?
-            -1 : siblings[target.position].id;
+        const inPosition: string = (target.position == -1 || siblings.length == 0 || target.position >= siblings.length) ?
+            null : siblings[target.position].id;
 
         (new ActionAddElement(this.model,
             {

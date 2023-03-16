@@ -8,7 +8,6 @@ import { FormEditData } from "../../../types";
 export default class WidgetTrueFalseItem extends WidgetSpecificItemElement {
 
     static widget = "TrueFalseItem";
-    static type = "specific-element";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-true-false-item";

@@ -34,7 +34,7 @@ export default class ActionAddElement extends ActionElement {
             this.model.appendObject(this.element, this.inPositionElementId, this.parentContainerId, this.parentContainerIndex);
         }
 
-        if (!this.inPositionElementId) {
+        if (this.inPositionElementId) {
             const targetItem = $(target).find('.container-item [data-id="' + this.inPositionElementId + '"]');
             const closestItemContent = $(targetItem).parent();
             $(closestItemContent).before(view);

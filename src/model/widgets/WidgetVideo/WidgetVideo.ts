@@ -8,7 +8,6 @@ import { FormEditData } from "../../../types";
 export default class WidgetVideo extends WidgetItemElement {
 
     static widget = "Video";
-    static type = "element";
     static category = "simpleElements";
     static icon = icon;
     static cssClass = "widget-video";

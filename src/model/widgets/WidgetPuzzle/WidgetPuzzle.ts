@@ -5,7 +5,6 @@ import icon from "./icon.png";
 export default class WidgetPuzzle extends WidgetPiecesElement {
 
     static widget = "Puzzle";
-    static type = "element";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-puzzle";

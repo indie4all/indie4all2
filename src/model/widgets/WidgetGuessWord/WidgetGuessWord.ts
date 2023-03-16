@@ -7,7 +7,6 @@ import { FormEditData } from "../../../types";
 export default class WidgetGuessWord extends WidgetItemElement {
 
     static widget = "GuessWord";
-    static type = "element";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-guess-word";

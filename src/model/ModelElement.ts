@@ -4,20 +4,10 @@ import Utils from "../Utils";
 
 export default abstract class ModelElement {
 
-    static type: string;
     static widget: string;
-    static allows(): (abstract new (...args: any[]) => ModelElement)[] { return [] }
-    static refuses(): (abstract new (...args: any[]) => ModelElement)[] { return [] }
-
     protected static addable: boolean = false;
     protected static copyable: boolean = true;
     protected static editable: boolean = true;
-
-    static canHave(proto: typeof ModelElement) {
-        const constructor = <typeof ModelElement>this.constructor;
-        return !constructor.refuses().some(elem => proto instanceof elem) &&
-            constructor.allows().some(elem => proto instanceof elem);
-    }
 
     id: string;
     params: any;

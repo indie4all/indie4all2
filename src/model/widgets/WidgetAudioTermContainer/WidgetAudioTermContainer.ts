@@ -9,8 +9,6 @@ import WidgetContainerSpecificElement from '../WidgetContainerSpecificElement/Wi
 export default class WidgetAudioTermContainer extends WidgetContainerSpecificElement {
 
     static widget = "AudioTermContainer";
-    static type = "specific-element-container";
-    static allows() { return [WidgetAudioTermItem]; }
     static category = "interactiveElements";
     static icon = icon;
     params: { name: string, help: string };

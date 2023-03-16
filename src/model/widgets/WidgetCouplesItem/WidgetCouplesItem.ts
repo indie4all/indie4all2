@@ -9,7 +9,6 @@ import { Couple, FormEditData } from "../../../types";
 export default class WidgetCouplesItem extends RichTextEditorMixin(WidgetSpecificItemElement) {
 
     static widget = "CouplesItem";
-    static type = "specific-element";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-couple-item";

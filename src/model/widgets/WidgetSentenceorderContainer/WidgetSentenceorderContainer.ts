@@ -9,12 +9,9 @@ import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/Wi
 export default class WidgetSentenceOrderContainer extends WidgetContainerSpecificElement {
 
     static widget = "SentenceOrderContainer";
-    static type = "specific-element-container";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-sentence-order";
-
-    static allows() { return [WidgetSentenceOrderItem]; }
 
     params: { name: string, help: string }
     data: WidgetSentenceOrderItem[]

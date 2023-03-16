@@ -9,7 +9,6 @@ import { FormEditData } from "../../../types";
 export default class WidgetMissingWordsItem extends WidgetSpecificItemElement {
 
     static widget = "MissingWordsItem";
-    static type = "specific-element";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-missing-words-item";

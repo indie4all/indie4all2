@@ -8,7 +8,6 @@ import { FormEditData } from "../../../types";
 export default class WidgetLatexFormula extends WidgetItemElement {
 
     static widget = "LatexFormula";
-    static type = "element";
     static category = "simpleElements";
     static icon = icon;
     static cssClass = "widget-latexformula";

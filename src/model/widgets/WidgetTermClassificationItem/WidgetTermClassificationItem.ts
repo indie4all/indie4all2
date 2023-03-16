@@ -7,7 +7,6 @@ import { FormEditData } from "../../../types";
 export default class WidgetTermClassificationItem extends WidgetSpecificItemElement {
 
     static widget = "TermClassificationItem";
-    static type = "specific-element";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-column-classificacion-item";

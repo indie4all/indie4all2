@@ -9,8 +9,6 @@ import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/Wi
 export default class WidgetCouplesContainer extends WidgetContainerSpecificElement {
 
     static widget = "CouplesContainer";
-    static type = "specific-element-container";
-    static allows() { return [WidgetCouplesItem] };
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-couples-container";

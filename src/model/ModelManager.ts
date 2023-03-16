@@ -126,14 +126,17 @@ export default class ModelManager {
         [WidgetTabsContainer.widget]: { "allows": [WidgetTabContent] },
         [WidgetTabContent.widget]: {
             "allows": [WidgetItemElement, WidgetColumnsLayout, WidgetContainerSpecificElement],
-            "refuses": [WidgetSpecificItemElement, WidgetContainerSpecificElement]
+            "refuses": [WidgetSpecificItemElement]
         },
         [WidgetAcordionContainer.widget]: { "allows": [WidgetAcordionContent] },
         [WidgetAcordionContent.widget]: {
             "allows": [WidgetItemElement, WidgetColumnsLayout, WidgetContainerSpecificElement],
-            "refuses": [WidgetSpecificItemElement, WidgetContainerSpecificElement]
+            "refuses": [WidgetSpecificItemElement]
         },
-        [WidgetModal.widget]: { "allows": [WidgetItemElement] },
+        [WidgetModal.widget]: {
+            "allows": [WidgetItemElement],
+            "refuses": [WidgetSpecificItemElement]
+        },
         [WidgetDragdropContainer.widget]: { "allows": [WidgetDragdropItem] },
         [WidgetTrueFalseContainer.widget]: { "allows": [WidgetTrueFalseItem] },
         [WidgetAudioTermContainer.widget]: { "allows": [WidgetAudioTermItem] },
@@ -149,14 +152,18 @@ export default class ModelManager {
         [WidgetTestContainer.widget]: { "allows": [WidgetGapQuestion, WidgetSimpleQuestion, WidgetTrueFalseQuestion] },
     }
 
-    static canHave(parent: any, child: any) {
+    static canHave(parent: typeof ModelElement, child: typeof ModelElement) {
 
-        const parentRules = this.rules[(<typeof ModelElement>parent).widget];
-        if (parentRules.refuses && parentRules.refuses.some(elem => child instanceof elem))
+        const parentRules = this.rules[parent.widget];
+        if (parentRules.refuses && parentRules.refuses.some((elem: any) => elem.isPrototypeOf(child) || elem === child))
             return false;
-        if (parentRules.allows && parentRules.allows.some(elem => child instanceof elem))
+        if (parentRules.allows && parentRules.allows.some((elem: any) => elem.isPrototypeOf(child) || elem === child))
             return true;
         return false;
+    }
+
+    static allowed(widget: string): any[] {
+        return this.rules[widget].allows;
     }
 
     static getAllWidgets(): typeof WidgetElement[] {

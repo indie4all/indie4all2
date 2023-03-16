@@ -13,8 +13,6 @@ export default class WidgetCorrectWordContainer extends WidgetContainerSpecificE
     static icon = icon;
     static cssClass = "widget-correct-word";
 
-    static allows() { return [WidgetCorrectWordItem]; }
-
     data: WidgetCorrectWordItem[]
     params: { name: string, help: string }
 

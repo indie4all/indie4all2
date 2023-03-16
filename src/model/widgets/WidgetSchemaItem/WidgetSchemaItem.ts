@@ -8,7 +8,6 @@ import { FormEditData } from "../../../types";
 export default class WidgetSchemaItem extends WidgetSpecificItemElement {
 
     static widget = "SchemaItem";
-    static type = "specific-element";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-schema-item";

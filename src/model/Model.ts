@@ -43,7 +43,7 @@ export class Model {
 
     appendObject(modelObject: ModelElement, inPositionElementId: string, parentContainerId: string, parentContainerIndex: number) {
         const parent = this.findObject(parentContainerId);
-        const container = modelObject instanceof WidgetColumnsLayout ? parent.data[parentContainerIndex] : parent.data;
+        const container = parent instanceof WidgetColumnsLayout ? parent.data[parentContainerIndex] : parent.data;
         if (!inPositionElementId)
             container.push(modelObject);
         else {
@@ -88,16 +88,15 @@ export class Model {
     }
 
     moveElementFromContainerToAnother(elementId: string, inPositionElementId: string, targetContainerId: string, targetContainerIndex: number) {
-        var originalObject = this.findObject(elementId);
-        var copyOfObject = originalObject.clone();
-        this.removeElement(originalObject.id);
-        this.appendObject(copyOfObject, inPositionElementId, targetContainerId, targetContainerIndex);
+        const modelObject = this.findObject(elementId);
+        this.removeElement(modelObject.id);
+        this.appendObject(modelObject, inPositionElementId, targetContainerId, targetContainerIndex);
     }
 
     swap(originId: string, targetId: string) {
         var secArray = this.sections;
-        var old_index = Utils.findIndexObjectInArray(secArray, 'id', originId);
-        var new_index = Utils.findIndexObjectInArray(secArray, 'id', targetId);
+        const old_index = secArray.findIndex(elem => elem['id'] == originId);
+        const new_index = secArray.findIndex(elem => elem['id'] == targetId);
         Utils.array_move(secArray, old_index, new_index);
     }
 

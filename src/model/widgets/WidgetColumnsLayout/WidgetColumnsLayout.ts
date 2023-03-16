@@ -1,12 +1,9 @@
 import template from "./template.hbs"
 import WidgetElement from "../WidgetElement/WidgetElement";
-import "./styles.scss"
-import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
-import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
+import "./styles.scss";
 
 export default abstract class WidgetColumnsLayout extends WidgetElement {
 
-    static allows() { return [WidgetItemElement, WidgetContainerSpecificElement]; }
     protected static columns: number[];
 
     data: WidgetElement[][];

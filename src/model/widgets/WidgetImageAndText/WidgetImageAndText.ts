@@ -9,7 +9,6 @@ import { FormEditData } from "../../../types";
 export default class WidgetImageAndText extends RichTextEditorMixin(WidgetItemElement) {
 
     static widget = "ImageAndText";
-    static type = "element";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-imageandtext";

@@ -8,7 +8,6 @@ import { FormEditData } from "../../../types";
 export default class WidgetCorrectWordItem extends WidgetSpecificItemElement {
 
     static widget = "CorrectWordItem";
-    static type = "specific-element";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-correct-word-item";

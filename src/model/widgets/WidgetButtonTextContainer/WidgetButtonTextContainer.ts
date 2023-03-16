@@ -9,8 +9,6 @@ import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/Wi
 export default class WidgetButtonTextContainer extends WidgetContainerSpecificElement {
 
     static widget = "ButtonTextContainer";
-    static type = "specific-element-container";
-    static allows() { return [WidgetButtonTextItem] };
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-button-text";

@@ -9,12 +9,9 @@ import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/Wi
 export default class WidgetTrueFalseContainer extends WidgetContainerSpecificElement {
 
     static widget = "TrueFalseContainer";
-    static type = "specific-element-container";
     static category = "interactiveElements";
     static icon = icon;
     static cssClass = "widget-true-false";
-
-    static allows() { return [WidgetTrueFalseItem]; }
 
     params: { name: string, help: string }
     data: WidgetTrueFalseItem[]

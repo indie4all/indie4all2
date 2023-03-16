@@ -10,7 +10,6 @@ import { FormEditData } from "../../../types";
 export default class WidgetTable extends WidgetItemElement {
 
     static widget = "Table";
-    static type = "element";
     static category = "simpleElements";
     static icon = icon;
     static cssClass = "widget-table";

@@ -5,17 +5,13 @@ import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetElement from "../WidgetElement/WidgetElement";
 import { FormEditData } from "../../../types";
-import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 
 export default class WidgetModal extends WidgetContainerElement {
 
     static widget = "Modal";
-    static type = "simple-container";
     static category = "containers";
     static icon = icon;
     static cssClass = "widget-modal-container";
-
-    static allows() { return [WidgetItemElement]; }
 
     params: { name: string, text: string, help: string }
     data: WidgetElement[]

@@ -13,27 +13,32 @@ export default class I18n {
 
 
     private corpus: any = {}
+    private lang!: string;
 
     constructor() { }
 
-    static init() {
+    static async init(): Promise<I18n> {
         const lang = navigator && navigator.language ? navigator.language.substring(0, 2).toLowerCase() : 'en';
         const currLang = lang in I18n.LANGUAGES ? lang : "en";
-        return I18n.LANGUAGES[currLang]().then(({ default: corpus }) => {
-            I18n.INSTANCE = new I18n();
-            I18n.INSTANCE.corpus = corpus;
-            return I18n.INSTANCE;
-        });
+        const { default: corpus } = await I18n.LANGUAGES[currLang]();
+        I18n.INSTANCE = new I18n();
+        I18n.INSTANCE.corpus = corpus;
+        I18n.INSTANCE.lang = currLang;
+        return I18n.INSTANCE;
     }
 
-    static getInstance() {
+    static getInstance(): I18n {
         if (!I18n.INSTANCE)
             throw new Error("I18n must be initialised first");
 
         return I18n.INSTANCE;
     }
 
-    hasKey(query: string) {
+    getLang(): string {
+        return this.lang;
+    }
+
+    hasKey(query: string): boolean {
         return this.translate(query).length > 0;
     }
 

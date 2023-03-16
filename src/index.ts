@@ -30,7 +30,8 @@ const start = (options?: ConfigOptions) => {
     return I18n.init()
         .then(() => import('bootstrap'))
         .then(() => {
-
+            // Set the tool language
+            document.documentElement.lang = I18n.getInstance().getLang();
             const domPalette = document.getElementById('palette');
             const domContainer = document.getElementById('main-container');
             // Initialize the IndieAuthor api

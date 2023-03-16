@@ -11,7 +11,6 @@ export default class WidgetCouplesContainer extends WidgetContainerSpecificEleme
     static widget = "CouplesContainer";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-couples-container";
 
     data: WidgetCouplesItem[]
     params: { name: string, help: string }

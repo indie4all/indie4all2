@@ -11,7 +11,6 @@ export default class WidgetAcordionContainer extends WidgetSpecificContainerElem
     static widget = "AcordionContainer";
     static category = "containers";
     static icon = icon;
-    static cssClass = "widget-acordeon-container";
 
     params: { name: string, help: string };
     data!: WidgetElement[]

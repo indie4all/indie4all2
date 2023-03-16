@@ -10,7 +10,6 @@ export default class WidgetTextBlock extends RichTextEditorMixin(WidgetItemEleme
     static widget = "TextBlock";
     static category = "simpleElements";
     static icon = icon;
-    static cssClass = "widget-textblock";
 
     data: { style: string, text: string }
 

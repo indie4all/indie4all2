@@ -9,7 +9,6 @@ export default class WidgetGuessWord extends WidgetItemElement {
     static widget = "GuessWord";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-guess-word";
 
     private static validateAttempts(attempts) {
         const MAX_ATTEMPTS = 9;

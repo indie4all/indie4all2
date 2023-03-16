@@ -11,7 +11,6 @@ export default class WidgetTrueFalseContainer extends WidgetContainerSpecificEle
     static widget = "TrueFalseContainer";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-true-false";
 
     params: { name: string, help: string }
     data: WidgetTrueFalseItem[]

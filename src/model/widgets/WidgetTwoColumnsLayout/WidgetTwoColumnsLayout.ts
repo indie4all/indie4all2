@@ -4,8 +4,6 @@ import WidgetColumnsLayout from "../WidgetColumnsLayout/WidgetColumnsLayout";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import { FormEditData } from '../../../types';
-import WidgetItemElement from '../WidgetItemElement/WidgetItemElement';
-import WidgetContainerSpecificElement from '../WidgetContainerSpecificElement/WidgetContainerSpecificElement';
 
 export default class WidgetTwoColumnsLayout extends WidgetColumnsLayout {
 

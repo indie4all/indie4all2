@@ -11,7 +11,6 @@ export default class WidgetDragdropContainer extends WidgetContainerSpecificElem
     static widget = "DragdropContainer";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-dragdrop-container";
 
     params: { name: string, help: string }
     data: WidgetDragdropItem[]

@@ -10,7 +10,6 @@ export default class WidgetLatexFormula extends WidgetItemElement {
     static widget = "LatexFormula";
     static category = "simpleElements";
     static icon = icon;
-    static cssClass = "widget-latexformula";
 
     data: { formula: string, caption: string }
 

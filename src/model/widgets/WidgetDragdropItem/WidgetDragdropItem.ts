@@ -8,7 +8,6 @@ export default class WidgetDragdropItem extends WidgetSpecificItemElement {
     static widget = "DragdropItem";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-dragdrop-item";
     static paletteHidden = true;
 
     data: { term: string, definition: string }

@@ -11,7 +11,6 @@ export default class WidgetImageAndSoundContainer extends WidgetContainerSpecifi
     static widget = "ImageAndSoundContainer";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-image-and-sound-container";
 
     params: { name: string, help: string };
     data: WidgetImageAndSoundItem[];

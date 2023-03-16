@@ -11,7 +11,6 @@ export default class WidgetCorrectWordContainer extends WidgetContainerSpecificE
     static widget = "CorrectWord";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-correct-word";
 
     data: WidgetCorrectWordItem[]
     params: { name: string, help: string }

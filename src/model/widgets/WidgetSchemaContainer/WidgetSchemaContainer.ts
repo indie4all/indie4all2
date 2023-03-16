@@ -11,7 +11,6 @@ export default class WidgetSchemaContainer extends WidgetContainerSpecificElemen
     static widget = "SchemaContainer";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-schema-container";
 
     params: { name: string, help: string }
     data: WidgetSchemaItem[]

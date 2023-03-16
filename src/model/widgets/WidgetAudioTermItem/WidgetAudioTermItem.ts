@@ -10,7 +10,6 @@ export default class WidgetAudioTermItem extends WidgetSpecificItemElement {
     static widget = "AudioTermItem";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-audio-term-item";
     static paletteHidden = true;
     data: { term: string, definition: string, audioblob: string, captionsblob: string };
 

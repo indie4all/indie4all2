@@ -10,7 +10,6 @@ export default class WidgetVideo extends WidgetItemElement {
     static widget = "Video";
     static category = "simpleElements";
     static icon = icon;
-    static cssClass = "widget-video";
 
     private toggleCaptionAndDescriptions(videourl: string) {
         if (Utils.isIndieResource(videourl)) {

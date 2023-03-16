@@ -10,7 +10,6 @@ export default class WidgetAnimationItem extends WidgetSpecificItemElement {
     static widget = "AnimationItem";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-animation-item";
     static paletteHidden = true;
     data: { image: string };
 

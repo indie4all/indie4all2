@@ -8,7 +8,6 @@ export default abstract class WidgetElement extends ModelElement {
     static paletteHidden: boolean = false;
 
     protected static category: string;
-    protected static cssClass: string;
     protected static icon: string;
 
     constructor(values?: any) { super(values); }

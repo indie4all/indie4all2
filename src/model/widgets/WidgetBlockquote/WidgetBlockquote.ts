@@ -8,8 +8,6 @@ export default class WidgetBlockquote extends WidgetItemElement {
     static widget = "Blockquote";
     static category = "simpleElements";
     static icon = icon;
-    static cssClass = "widget-blockquote";
-
     data: { quote: string, caption: string, alignment: string, source: string }
 
     constructor(values?: any) {

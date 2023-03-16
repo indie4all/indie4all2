@@ -1,5 +1,6 @@
 import WidgetElement from "../WidgetElement/WidgetElement";
 import template from "./template.hbs";
+import Utils from "../../../Utils";
 
 export default abstract class WidgetContainerElement extends WidgetElement {
 
@@ -17,7 +18,8 @@ export default abstract class WidgetContainerElement extends WidgetElement {
             canAdd: constructor.addable,
             canEdit: constructor.editable,
             canCopy: constructor.copyable,
-            children
+            children,
+            cssClass: Utils.toKebabCase(constructor.name)
         });
     }
 

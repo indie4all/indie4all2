@@ -11,7 +11,6 @@ export default class WidgetAnimationContainer extends WidgetContainerSpecificEle
     static widget = "AnimationContainer";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-animation-container";
     static paletteHidden = true;
     params: { name: string, width: number, height: number, image: string, help: string };
     data: WidgetAnimationItem[];

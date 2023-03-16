@@ -8,7 +8,6 @@ export default class WidgetSimpleQuestion extends WidgetSpecificItemElement {
     static widget = "SimpleQuestion";
     static category = "exerciseElement";
     static icon = icon;
-    static cssClass = "widget-question";
     static paletteHidden = true;
 
     private static MAX_ANSWERS = 4;

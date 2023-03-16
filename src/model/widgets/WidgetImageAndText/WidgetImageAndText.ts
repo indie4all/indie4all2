@@ -11,7 +11,6 @@ export default class WidgetImageAndText extends RichTextEditorMixin(WidgetItemEl
     static widget = "ImageAndText";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-imageandtext";
 
     params: { name: string, help: string }
     data: { text: string, blob: string, layout: number, alt: string }

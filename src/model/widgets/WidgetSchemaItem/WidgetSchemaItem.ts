@@ -10,7 +10,6 @@ export default class WidgetSchemaItem extends WidgetSpecificItemElement {
     static widget = "SchemaItem";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-schema-item";
     static paletteHidden = true;
 
     data: { blob: string, alt: string }

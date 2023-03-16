@@ -11,7 +11,6 @@ export default class WidgetSentenceOrderContainer extends WidgetContainerSpecifi
     static widget = "SentenceOrderContainer";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-sentence-order";
 
     params: { name: string, help: string }
     data: WidgetSentenceOrderItem[]

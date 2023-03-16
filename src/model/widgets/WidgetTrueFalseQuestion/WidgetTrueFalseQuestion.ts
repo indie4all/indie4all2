@@ -10,7 +10,6 @@ export default class WidgetTrueFalseQuestion extends WidgetSpecificItemElement {
     static widget = "TrueFalseQuestion";
     static category = "exerciseElement";
     static icon = icon;
-    static cssClass = "widget-question";
     static paletteHidden = true;
 
     data: { question: string, answer: boolean, feedback: { positive: string, negative: string } }

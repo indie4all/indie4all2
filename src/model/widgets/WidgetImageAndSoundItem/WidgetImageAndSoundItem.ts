@@ -10,7 +10,6 @@ export default class WidgetImageAndSoundItem extends WidgetSpecificItemElement {
     static widget = "ImageAndSoundItem";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-image-and-sound-item";
     static paletteHidden = true;
 
     data: { text: string, alt: string, blob: string, audioblob: string, captionsblob: string }

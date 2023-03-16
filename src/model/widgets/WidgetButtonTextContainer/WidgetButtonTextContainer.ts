@@ -11,7 +11,6 @@ export default class WidgetButtonTextContainer extends WidgetContainerSpecificEl
     static widget = "ButtonTextContainer";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-button-text";
 
     data: WidgetButtonTextItem[]
 

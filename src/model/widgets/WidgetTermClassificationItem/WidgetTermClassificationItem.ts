@@ -9,7 +9,6 @@ export default class WidgetTermClassificationItem extends WidgetSpecificItemElem
     static widget = "TermClassificationItem";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-column-classificacion-item";
     static paletteHidden = true;
 
     /**

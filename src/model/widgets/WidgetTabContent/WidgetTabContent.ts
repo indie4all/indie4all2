@@ -13,7 +13,6 @@ export default class WidgetTabContent extends WidgetContainerElement {
     static widget = "TabContent";
     static category = "containers";
     static icon = icon;
-    static cssClass = "widget-tab-content";
     static paletteHidden = true;
 
     data: WidgetElement[];

@@ -7,7 +7,6 @@ export default class WidgetPuzzle extends WidgetPiecesElement {
     static widget = "Puzzle";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-puzzle";
 
     constructor(values?: any) { super(values); }
 

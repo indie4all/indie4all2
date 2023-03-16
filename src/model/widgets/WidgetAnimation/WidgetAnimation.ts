@@ -7,7 +7,6 @@ export default class WidgetAnimation extends WidgetPiecesElement {
     static widget = "Animation";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-animation";
 
     constructor(values?: any) { super(values); }
 

@@ -12,7 +12,6 @@ export default class WidgetAcordionContent extends WidgetContainerElement {
     static widget = "AcordionContent";
     static category = "containers";
     static icon = icon;
-    static cssClass = "widget-acordion-content";
     static paletteHidden = true;
     params: { title: string };
     data: WidgetItemElement[];

@@ -10,7 +10,6 @@ export default class WidgetChooseOption extends WidgetItemElement {
     static widget = "ChooseOption";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-choose-option";
 
     private static optionsNumber: number = 4;
     private static optionsWithoutCorrect(options) {

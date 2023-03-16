@@ -10,7 +10,6 @@ export default class WidgetSimpleImage extends WidgetItemElement {
     static widget = "SimpleImage";
     static category = "simpleElements";
     static icon = icon;
-    static cssClass = "widget-simple-image";
 
     data: { blob: string, alt: string, width: number, height: number }
     params: { name: string, aspect: string, align: string }

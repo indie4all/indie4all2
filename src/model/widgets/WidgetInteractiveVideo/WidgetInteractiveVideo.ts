@@ -9,7 +9,6 @@ export default class WidgetInteractiveVideo extends WidgetItemElement {
     static widget = "InteractiveVideo";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-interactive-video";
     params: { name: string }
     data: { videourl: string }
 

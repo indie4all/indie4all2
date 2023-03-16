@@ -11,7 +11,6 @@ export default class WidgetMissingWords extends WidgetContainerSpecificElement {
     static widget = "MissingWords";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-missing-words";
 
     params: { name: string, help: string }
     data: WidgetMissingWordsItem[]

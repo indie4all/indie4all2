@@ -10,7 +10,6 @@ export default class WidgetTrueFalseItem extends WidgetSpecificItemElement {
     static widget = "TrueFalseItem";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-true-false-item";
     static paletteHidden = true;
 
     data: { question: string, answer: boolean, feedback: { positive: string, negative: string } }

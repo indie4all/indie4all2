@@ -11,7 +11,6 @@ export default class WidgetModal extends WidgetContainerElement {
     static widget = "Modal";
     static category = "containers";
     static icon = icon;
-    static cssClass = "widget-modal-container";
 
     params: { name: string, text: string, help: string }
     data: WidgetElement[]

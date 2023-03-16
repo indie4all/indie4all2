@@ -205,4 +205,8 @@ export default class Utils {
             return accumulator;
         }, {});
     }
+
+    static toKebabCase(text: string): string {
+        return text.split(/(?=[A-Z])/).join('-').toLowerCase();
+    }
 }

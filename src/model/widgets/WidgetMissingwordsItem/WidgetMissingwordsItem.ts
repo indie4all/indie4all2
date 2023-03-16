@@ -11,7 +11,6 @@ export default class WidgetMissingWordsItem extends WidgetSpecificItemElement {
     static widget = "MissingWordsItem";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-missing-words-item";
     static paletteHidden = true;
 
     private static validateQuestionBlankSpots(questionText: string) {

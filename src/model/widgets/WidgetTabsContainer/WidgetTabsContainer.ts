@@ -11,7 +11,6 @@ export default class WidgetTabsContainer extends WidgetSpecificContainerElement 
     static widget = "TabsContainer";
     static category = "containers";
     static icon = icon;
-    static cssClass = "widget-tabs-container";
 
     params: { name: string, help: string }
     data: WidgetTabContent[]

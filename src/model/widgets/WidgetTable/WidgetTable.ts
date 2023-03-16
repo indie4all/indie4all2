@@ -12,7 +12,6 @@ export default class WidgetTable extends WidgetItemElement {
     static widget = "Table";
     static category = "simpleElements";
     static icon = icon;
-    static cssClass = "widget-table";
 
     functions = {
         retrieveUpdatedColumns: function () {

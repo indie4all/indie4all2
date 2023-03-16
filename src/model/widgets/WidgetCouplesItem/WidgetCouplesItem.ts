@@ -11,7 +11,6 @@ export default class WidgetCouplesItem extends RichTextEditorMixin(WidgetSpecifi
     static widget = "CouplesItem";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-couple-item";
     static paletteHidden = true;
 
     data: { couples: Couple[] }

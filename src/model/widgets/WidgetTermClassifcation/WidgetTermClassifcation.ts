@@ -11,7 +11,6 @@ export default class WidgetTermClassification extends WidgetContainerSpecificEle
     static widget = "TermClassification";
     static category = "interactiveElements";
     static icon = icon;
-    static cssClass = "widget-term-classification";
 
     /**
      * 

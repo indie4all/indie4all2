@@ -10,7 +10,6 @@ export default class WidgetTestContainer extends WidgetContainerSpecificElement 
     static widget = "Test";
     static category = "exerciseElement";
     static icon = icon;
-    static cssClass = "widget-test";
 
     constructor(values?: any) {
         super(values);

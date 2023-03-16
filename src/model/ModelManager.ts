@@ -181,8 +181,4 @@ export default class ModelManager {
     static create(widget = "Section", values?: any): ModelElement {
         return new this.elements[widget](values);
     }
-
-    static hasChildren(elem: ModelElement): boolean {
-        return (<typeof ModelElement>elem.constructor).hasChildren();
-    }
 }

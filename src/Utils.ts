@@ -160,11 +160,11 @@ export default class Utils {
 
     static findAllElements(model: Model): ModelElement[] {
 
-        let result: any[] = [...model.sections];
-        let children: any[] = [...model.sections];
+        let result: ModelElement[] = [...model.sections];
+        let children: ModelElement[] = [...model.sections];
         do {
             children = children
-                .filter(elem => ModelManager.hasChildren(elem))
+                .filter(elem => (<typeof ModelElement>elem.constructor).hasChildren())
                 .flatMap(elem => elem.data.flat());
             result = result.concat(children);
         } while (children.length);

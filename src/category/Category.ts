@@ -15,12 +15,11 @@ export default class Category {
     }
 
     render(): string {
-        const filtered = this.widgets.filter(widget => !widget.paletteHidden);
         return template({
             title: "palette." + this.name,
             name: this.name,
-            numWidgets: filtered.length,
-            widgets: filtered.map(widget => widget.createPaletteItem()).join('')
+            numWidgets: this.widgets.length,
+            widgets: this.widgets.map(widget => widget.createPaletteItem()).join('')
         });
     }
 

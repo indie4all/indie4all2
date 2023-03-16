@@ -171,7 +171,7 @@ export default class ModelManager {
     }
 
     static getAllWidgetsByCategory() {
-        return Utils.groupBy({ collection: this.getAllWidgets(), key: "category" });
+        return Utils.groupBy({ collection: this.getAllWidgets().filter(widget => widget.category), key: "category" });
     }
 
     static get(widget = "Section"): { new(): ModelElement } {

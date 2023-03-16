@@ -8,9 +8,7 @@ import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecif
 export default class WidgetAudioTermItem extends WidgetSpecificItemElement {
 
     static widget = "AudioTermItem";
-    static category = "interactiveElements";
     static icon = icon;
-    static paletteHidden = true;
     data: { term: string, definition: string, audioblob: string, captionsblob: string };
 
     constructor(values?: any) {

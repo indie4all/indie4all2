@@ -8,9 +8,7 @@ import { FormEditData } from "../../../types";
 export default class WidgetCorrectWordItem extends WidgetSpecificItemElement {
 
     static widget = "CorrectWordItem";
-    static category = "interactiveElements";
     static icon = icon;
-    static paletteHidden = true;
 
     data: { question: string, word: string, blob: string, alt: string }
 

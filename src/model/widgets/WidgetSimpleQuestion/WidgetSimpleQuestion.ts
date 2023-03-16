@@ -6,9 +6,7 @@ import { FormEditData } from "../../../types";
 export default class WidgetSimpleQuestion extends WidgetSpecificItemElement {
 
     static widget = "SimpleQuestion";
-    static category = "exerciseElement";
     static icon = icon;
-    static paletteHidden = true;
 
     private static MAX_ANSWERS = 4;
 

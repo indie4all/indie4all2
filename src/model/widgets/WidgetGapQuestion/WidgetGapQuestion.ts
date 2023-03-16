@@ -7,9 +7,7 @@ import { FormEditData } from "../../../types";
 export default class WidgetGapQuestion extends WidgetSpecificItemElement {
 
     static widget = "GapQuestion";
-    static category = "exerciseElement";
     static icon = icon;
-    static paletteHidden = true;
 
     static MAX_ANSWERS = 4;
 

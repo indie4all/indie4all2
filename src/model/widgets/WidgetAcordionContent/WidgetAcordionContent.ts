@@ -10,9 +10,7 @@ export default class WidgetAcordionContent extends WidgetContainerElement {
     protected static copyable: boolean = false;
 
     static widget = "AcordionContent";
-    static category = "containers";
     static icon = icon;
-    static paletteHidden = true;
     params: { title: string };
     data: WidgetItemElement[];
 

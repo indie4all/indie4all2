@@ -9,9 +9,7 @@ import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/Wi
 export default class WidgetAnimationContainer extends WidgetContainerSpecificElement {
 
     static widget = "AnimationContainer";
-    static category = "interactiveElements";
     static icon = icon;
-    static paletteHidden = true;
     params: { name: string, width: number, height: number, image: string, help: string };
     data: WidgetAnimationItem[];
 

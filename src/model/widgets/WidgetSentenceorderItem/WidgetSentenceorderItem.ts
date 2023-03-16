@@ -10,9 +10,7 @@ import { FormEditData } from "../../../types";
 export default class WidgetSentenceOrderItem extends WidgetSpecificItemElement {
 
     static widget = "SentenceOrderItem";
-    static category = "interactiveElements";
     static icon = icon;
-    static paletteHidden = true;
 
     private static validateAnswersWithWords(answers: string[], words: string[]): boolean {
         if (!answers.length || !words.length)

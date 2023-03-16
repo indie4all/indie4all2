@@ -7,9 +7,7 @@ import { FormEditData } from "../../../types";
 export default class WidgetTermClassificationItem extends WidgetSpecificItemElement {
 
     static widget = "TermClassificationItem";
-    static category = "interactiveElements";
     static icon = icon;
-    static paletteHidden = true;
 
     /**
      * Parse a string with terms separated with semicolon and returns an array of terms

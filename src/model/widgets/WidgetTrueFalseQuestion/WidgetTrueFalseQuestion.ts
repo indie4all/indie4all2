@@ -8,9 +8,7 @@ import { FormEditData } from "../../../types";
 export default class WidgetTrueFalseQuestion extends WidgetSpecificItemElement {
 
     static widget = "TrueFalseQuestion";
-    static category = "exerciseElement";
     static icon = icon;
-    static paletteHidden = true;
 
     data: { question: string, answer: boolean, feedback: { positive: string, negative: string } }
 

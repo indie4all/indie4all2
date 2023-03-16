@@ -8,9 +8,7 @@ import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecif
 export default class WidgetAnimationItem extends WidgetSpecificItemElement {
 
     static widget = "AnimationItem";
-    static category = "interactiveElements";
     static icon = icon;
-    static paletteHidden = true;
     data: { image: string };
 
     constructor(values?: any) {

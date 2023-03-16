@@ -5,9 +5,8 @@ import './styles.scss';
 
 export default abstract class WidgetElement extends ModelElement {
 
-    static paletteHidden: boolean = false;
-
-    protected static category: string;
+    // Category - Category of the palette to include the widget in. Hidden if not set
+    static category: string;
     protected static icon: string;
 
     constructor(values?: any) { super(values); }

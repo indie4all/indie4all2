@@ -11,9 +11,7 @@ export default class WidgetTabContent extends WidgetContainerElement {
     protected static copyable: boolean = false;
 
     static widget = "TabContent";
-    static category = "containers";
     static icon = icon;
-    static paletteHidden = true;
 
     data: WidgetElement[];
     params: { name: string };

@@ -606,6 +606,15 @@
                 "label": "Institution",
                 "placeholder": "Write the name of the institution"
             },
+            "color": {
+                "help": "Hex format #FFFFFFFF required",
+                "label": "Theme color",
+                "placeholder": "Type the color of the theme here"
+            },
+            "background": {
+                "label": "Image of the theme",
+                "help": "The image should be about 1900 x 550 pixels."
+            },
             "language": {
                 "help": "Language of the unit.",
                 "label": "Language",

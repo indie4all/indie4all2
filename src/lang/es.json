@@ -606,6 +606,15 @@
                 "label": "Institución",
                 "placeholder": "Escribe el nombre de la institución"
             },
+            "color": {
+                "help": "Formato hexadecimal #FFFFFF requerido",
+                "label": "Color del tema",
+                "placeholder": "Introduce aquí el color del tema"
+            },
+            "background": {
+                "label": "Imagen del tema",
+                "help": "La imagen debería ser aproximadamente de 1900 x 550 píxeles."
+            },
             "language": {
                 "help": "Idioma de la unidad.",
                 "label": "Idioma",

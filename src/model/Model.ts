@@ -21,6 +21,8 @@ export class Model {
     theme: string;
     license: string;
     analytics: string;
+    color: string;
+    cover: string;
     currentErrors: { element: string, keys: string[] }[];
 
     constructor(model: any) {
@@ -38,6 +40,8 @@ export class Model {
         this.theme = model.theme;
         this.license = model.license;
         this.analytics = model.analytics;
+        this.color = model.color;
+        this.cover = model.cover;
         this.currentErrors = [];
     }
 
@@ -163,6 +167,8 @@ export class Model {
         this.language = form.language;
         this.theme = form.theme;
         this.license = form.license;
+        this.color = form.color;
+        this.cover = form.cover;
     }
 
     toJSON() {
@@ -190,6 +196,8 @@ export class Model {
         if (this.language) result["language"] = this.language;
         if (this.theme) result["theme"] = this.theme;
         if (this.license) result["license"] = this.license;
+        if (this.color) result["color"] = this.color;
+        if (this.cover) result["cover"] = this.cover;
         return result;
     }
 }

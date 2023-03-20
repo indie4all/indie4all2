@@ -3,21 +3,24 @@ const { StatusCodes } = require('http-status-codes');
 const exec = require('child_process').exec;
 const fs = require('fs-extra');
 const AdmZip = require("adm-zip");
-const glob = require('glob');
 const { LoggerModes, JetLogger } = require('jet-logger');
 const logger = JetLogger(LoggerModes.Console);
 const config = require('config');
+const sass = require('node-sass');
 
+const VALID_COVER_PATTERN = /^data:([-\w.]+\/[-\w.+]+)?;base64,([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$/;
+const VALID_COLOR_PATTERN = /^#[0-9a-fA-F]{6}$/;
 
-const copyAssets = async function(folder, theme, mode) {
+const copyAssets = async function(folder, color, cover, mode) {
     await fs.copy(config.get("folder.assets"), folder, {overwrite: true})
-    // Remove files not related to the current theme
-    glob(folder + '/**/*theme*', {nocase: true}, async (err, files) => {
-        for (let file in files) {
-            if (file.toLowerCase().includes(theme.toLowerCase() + "."))
-                await fs.unlink(file);
-        }
-    });
+    // Generate the css of the current theme
+    const themeTemplate = './templates/theme.scss';
+    const realColor = VALID_COLOR_PATTERN.test(color) ? color : '#000000';
+    const realCover = VALID_COVER_PATTERN.test(cover) ? cover : 'data:null';
+    const data = `$base-color: ${realColor}; $base-url: "${realCover}"; @import '${themeTemplate}';`
+    const css = await new Promise((resolve) => 
+        sass.render({data, includePaths: [themeTemplate], outputStyle: 'compressed'}, (err, result) => { resolve(result.css)}));
+    await fs.writeFile(folder + '/generator/content/v4-7-1/css/stylesCustom.min.css', css);
     // Remove scorm libraries if the unit is not of SCORM type
     if (mode !== "SCORM")
         await fs.rm(folder + '/scorm/', {recursive: true, force: true});
@@ -29,6 +32,8 @@ const generate = function(req, res, onGenerated, mode = "Local") {
         return res.status(StatusCodes.NO_CONTENT).send();
     // Set unit mode to local
     model.mode = mode;
+    // Set unit theme to Custom
+    model.theme = "Custom";
     // Disable analytics by default
     model.analytics = "0";
     const timestamp = (new Date(Date.now() + 600000)).getTime();
@@ -54,7 +59,7 @@ const generate = function(req, res, onGenerated, mode = "Local") {
 }
 
 const onPublishUnit = async function(res, output, folder, model) {
-    await copyAssets(`${folder}/${config.get("folder.assets")}`, model.theme, model.mode);
+    await copyAssets(`${folder}/${config.get("folder.assets")}`, model.color, model.cover, model.mode);
     const zip = new AdmZip();
     zip.addLocalFolder(folder);
     const binary = zip.toBuffer();
@@ -71,7 +76,7 @@ exports.save = (req, res) => {
 
 exports.preview = (req, res) => {
     const onGenerated = async (folder) => {
-        await copyAssets(`${folder}/${config.get("folder.assets")}`, req.body.theme, "Local");
+        await copyAssets(`${folder}/${config.get("folder.assets")}`, req.body.color, req.body.cover, "Local");
         return res.status(StatusCodes.OK).json({success: true, url: config.get("url.units") + "/" + folder });
     };          
     generate(req, res, onGenerated); 

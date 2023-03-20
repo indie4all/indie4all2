@@ -28,15 +28,6 @@
         <small class="form-text text-muted">{{translate "units.form.license.help"}}</small>
     </div>
     <div class="form-group">
-        <label for="unit-theme">{{translate "units.form.theme.label"}}</label>
-        <select id="unit-theme" name="theme" class="form-control" required>
-            {{#each themes}}
-            <option value="{{this}}" {{#ifeq this ../theme}} selected {{/ifeq}}>{{this}}</option>
-            {{/each}}
-        </select>
-        <small class="form-text text-muted">{{translate "units.form.theme.help"}}</small>
-    </div>
-    <div class="form-group">
         <label for="unit-author">{{translate "units.form.author.label"}}</label>
         <input type="text" id="unit-author" name="user" class="form-control" value="{{user}}" 
             placeholder="{{translate "units.form.author.placeholder"}}" autocomplete="off" required />
@@ -53,6 +44,32 @@
         <input type="text" id="unit-institution" name="institution" class="form-control" value="{{institution}}"
             placeholder="{{translate "units.form.institution.placeholder"}}" autocomplete="off" required />
         <small class="form-text text-muted">{{translate "units.form.institution.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label for="unit-theme">{{translate "units.form.theme.label"}}</label>
+        <select id="unit-theme" name="theme" class="form-control" required>
+            {{#each themes}}
+            <option value="{{this}}" {{#ifeq this ../theme}} selected {{/ifeq}}>{{this}}</option>
+            {{/each}}
+        </select>
+        <small class="form-text text-muted">{{translate "units.form.theme.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label for="custom-theme-color-picker">{{translate "units.form.color.label"}}</label>
+        <div>
+            <input class="custom-theme form-control" 
+                placeholder="{{translate "units.form.color.placeholder"}}"
+                name="color" type="text" id="custom-theme-color-picker"
+                required pattern="#[0-9a-fA-F]{6}">
+            <small class="form-text text-muted">{{translate "units.form.color.help"}}</small>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="custom-theme-background">{{translate "units.form.background.label"}}</label>
+        <input class="custom-theme form-control" type="file" id="custom-theme-background" accept="image/png, image/jpeg">
+        <small class="form-text text-muted">{{translate "units.form.background.help"}}</small>
+        <input type="hidden" id="img-cover-blob" name="cover" value="{{blob}}" />
+        <img class="mt-4 img-fluid" id="img-cover-preview" />
     </div>
     <input type="submit" class="hide" />
 </form>

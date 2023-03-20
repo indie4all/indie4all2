@@ -83,45 +83,92 @@ export default class Api {
      * @param {string} title - Title of the modal window
      * @param {Function} onSubmit - Action to perform when the user submits the form
      */
-    private openUnitSettings(title: string, onSubmit: Function) {
+    private async openUnitSettings(title: string, onSubmit: Function) {
 
-        import("./views/download.hbs").then(({ default: downloadTemplate }) => {
-            $("#modal-settings .btn-submit").off('click'); // Unbind button submit click event 
-            const themes = ["GeneralTheme1", "GeneralTheme2", "GeneralTheme3", "GeneralTheme4", "GeneralTheme5",
-                "GeneralTheme6", "GeneralTheme7", "GeneralTheme8", "GeneralTheme9", "GeneralTheme10", "GeneralTheme11",
-                "GeneralTheme12", "GeneralTheme13", "GeneralTheme14", "GeneralTheme15", "GeneralTheme16", "GeneralTheme17",
-                "GeneralTheme18"];
-            const languages = ["EN", "ES", "FR", "EL", "LT"];
-            const licenses = ["PRIVATE", "BY", "BYSA", "BYND", "BYNC", "BYNCSA", "BYNCND"];
+        await import("@melloware/coloris/dist/coloris.css");
+        const { default: downloadTemplate } = await import("./views/download.hbs");
+        const { default: Coloris } = await import("@melloware/coloris");
+        const { default: themeManager } = await import('./themes/ThemeManager');
+        const themes = themeManager.getThemes();
+        themes.unshift("Custom");
+        $("#modal-settings .btn-submit").off('click'); // Unbind button submit click event 
+        const languages = ["EN", "ES", "FR", "EL", "LT"];
+        const licenses = ["PRIVATE", "BY", "BYSA", "BYND", "BYNC", "BYNCSA", "BYNCND"];
+        const model = this.author.model;
+        const data = {
+            themes,
+            languages,
+            licenses,
+            title: model.title ?? '',
+            user: model.user ?? '',
+            email: model.email ?? '',
+            institution: model.institution ?? '',
+            language: model.language ?? '',
+            theme: model.theme ?? '',
+            license: model.license ?? ''
+        };
+        Coloris.init();
+        // Create the form
+        $('#modal-settings-tittle').html(title);
+        $('#modal-settings-body').html(downloadTemplate(data));
+        const $coverPicker = $("#custom-theme-background");
+        const $colorPicker = $("#custom-theme-color-picker");
+        const $preview = $("#img-cover-preview");
+        const $blob = $('#img-cover-blob');
+        const updateThemeOptions = function (e) {
+            const theme: string = $(this).val() as string;
+            const isCustom = theme === 'Custom';
+            $coverPicker.add($colorPicker)
+                .prop("disabled", !isCustom)
+                .css('pointer-events', isCustom ? 'auto' : 'none')
+                .val('');
+            $preview.toggleClass('d-none', true).attr('src', '');
+            $colorPicker.closest(".clr-field").css('color', '');
+            $colorPicker.find('button').prop('disabled', !isCustom);
+            $blob.val('');
+            if (isCustom) {
+                $blob.val(model.cover ?? '');
+                $colorPicker.val(model.color ?? '').closest(".clr-field").css('color', model.color ?? '');
+                $preview.toggleClass('d-none', !model.cover).attr('src', model.cover ?? '');
+                return;
+            }
 
-            const model = this.author.model;
-
-            const data = {
-                themes,
-                languages,
-                licenses,
-                title: model.title ?? '',
-                user: model.user ?? '',
-                email: model.email ?? '',
-                institution: model.institution ?? '',
-                language: model.language ?? '',
-                theme: model.theme ?? '',
-                license: model.license ?? ''
-            };
-            // Create the form
-            $('#modal-settings-tittle').html(title);
-            $('#modal-settings-body').html(downloadTemplate(data));
-            $("#modal-settings").modal({ keyboard: false, focus: true, backdrop: 'static' });
-            $('#f-unit-settings').off('submit').on('submit', function (e) {
-                e.preventDefault();
-                model.update(Utils.toJSON(this));   // Overwrite indieauthor.model with the specified data
-                $("#modal-settings").modal('hide'); // Hide the modal
-                onSubmit && onSubmit(model);
+            // Disable automatically added color button
+            themeManager.load(theme).then(info => {
+                const blob = info.cover as string;
+                $("#custom-theme-color-picker").val(info.color);
+                $colorPicker.closest(".clr-field").css('color', info.color);
+                $preview.toggleClass('d-none', false).attr("src", blob);
+                $blob.val(blob);
             });
+        }
 
-            $("#modal-settings .btn-submit").on('click', function () {
-                $("#modal-settings input[type='submit']").trigger('click');
-            });
+        $coverPicker.off('change').on('change', function () {
+            const self = <HTMLInputElement>this;
+            $blob.val('');
+            $preview.toggleClass('d-none', true).attr('src', '');
+            if (self.files) {
+                Utils.encodeBlobAsBase64DataURL(self.files[0]).then(value => {
+                    $blob.val(<string>value);
+                    $preview.toggleClass('d-none', false).attr('src', <string>value);
+                });
+            }
+        });
+
+        Coloris.coloris({ el: '#custom-theme-color-picker', parent: '#modal-settings-body', alpha: false, formatToggle: false });
+        $("#modal-settings").on('show.bs.modal', updateThemeOptions.bind(document.getElementById('unit-theme')));
+        $("#modal-settings").modal({ keyboard: false, focus: true, backdrop: 'static' });
+        $("#modal-settings").find('#unit-theme').off('change').on('change', updateThemeOptions);
+
+        $('#f-unit-settings').off('submit').on('submit', function (e) {
+            e.preventDefault();
+            model.update(Utils.toJSON(this));   // Overwrite indieauthor.model with the specified data
+            $("#modal-settings").modal('hide'); // Hide the modal
+            onSubmit && onSubmit(model);
+        });
+
+        $("#modal-settings .btn-submit").on('click', function () {
+            $("#modal-settings input[type='submit']").trigger('click');
         });
     }
 

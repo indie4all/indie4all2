@@ -120,9 +120,18 @@ export default class ModelManager {
     private static rules = {
         // Section element
         [Section.widget]: { "allows": [WidgetElement], "refuses": [WidgetSpecificItemElement, WidgetAcordionContent, WidgetTabContent] },
-        [WidgetTwoColumnsLayout.widget]: { "allows": [WidgetItemElement, WidgetContainerSpecificElement] },
-        [WidgetThreeColumnsLayout.widget]: { "allows": [WidgetItemElement, WidgetContainerSpecificElement] },
-        [WidgetFourColumnsLayout.widget]: { "allows": [WidgetItemElement, WidgetContainerSpecificElement] },
+        [WidgetTwoColumnsLayout.widget]: {
+            "allows": [WidgetItemElement, WidgetContainerSpecificElement],
+            "refuses": [WidgetSpecificItemElement]
+        },
+        [WidgetThreeColumnsLayout.widget]: {
+            "allows": [WidgetItemElement, WidgetContainerSpecificElement],
+            "refuses": [WidgetSpecificItemElement]
+        },
+        [WidgetFourColumnsLayout.widget]: {
+            "allows": [WidgetItemElement, WidgetContainerSpecificElement],
+            "refuses": [WidgetSpecificItemElement]
+        },
         [WidgetTabsContainer.widget]: { "allows": [WidgetTabContent] },
         [WidgetTabContent.widget]: {
             "allows": [WidgetItemElement, WidgetColumnsLayout, WidgetContainerSpecificElement],

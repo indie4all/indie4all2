@@ -42,18 +42,13 @@ export default class WidgetSimpleQuestion extends WidgetSpecificItemElement {
             feedback: { positive: string, negative: string }
         } = {
             instanceId: this.id,
-            answers: [],
+            // Initialize the possible answers
+            answers: [...Array(WidgetSimpleQuestion.MAX_ANSWERS)].map((ans, idx) =>
+                this.data.answers[idx] ?? { text: "", correct: false }),
             question: this.data.question,
             feedback: this.data.feedback
         };
-        // Set the answer model
-        for (var i = 0; i < WidgetSimpleQuestion.MAX_ANSWERS; i++) {
-            const answer: { text: string, correct: boolean } = this.data.answers[i];
-            if (answer)
-                this.data.answers.push(answer);
-            else
-                this.data.answers.push({ text: "", correct: false });
-        }
+
         return {
             inputs: form(data),
             title: this.translate("widgets.SimpleQuestion.label")

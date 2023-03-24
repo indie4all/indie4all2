@@ -12,16 +12,16 @@ const app = express();
 app.use(compression());
 
 // Protect the app against well known vulnerabilities
-app.use(helmet({
-    crossOriginEmbedderPolicy: false,
-    contentSecurityPolicy: {
-      directives: {
-        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-        "default-src": ["'self'", "data:", "https://www.youtube.com"],
-        "script-src": ["'self'", "'unsafe-inline'", "https://www.youtube.com"],
-      },
-    }
-}));
+// app.use(helmet({
+//     crossOriginEmbedderPolicy: false,
+//     contentSecurityPolicy: {
+//       directives: {
+//         ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+//         "default-src": "*"["'self'", "data:", "https://www.youtube.com"],
+//         "script-src": ["'self'", "'unsafe-inline'", "https://www.youtube.com"],
+//       },
+//     }
+// }));
 // Parse JSON in requests with a size limit of 500 mb
 app.use(express.json({limit: '500mb'}));
 // Access to the tool resources

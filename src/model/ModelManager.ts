@@ -55,6 +55,31 @@ import WidgetItemElement from "./widgets/WidgetItemElement/WidgetItemElement";
 import WidgetColumnsLayout from "./widgets/WidgetColumnsLayout/WidgetColumnsLayout";
 import WidgetContainerSpecificElement from "./widgets/WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 import WidgetSpecificItemElement from "./widgets/WidgetSpecificItemElement/WidgetSpecificItemElement";
+import Config from "../Config";
+import WidgetLocalAnimation from "./widgets/WidgetAnimation/WidgetLocalAnimation";
+import WidgetRemoteAnimation from "./widgets/WidgetAnimation/WidgetRemoteAnimation";
+import WidgetLocalAudioTermItem from "./widgets/WidgetAudioTermItem/WidgetLocalAudioTermItem";
+import WidgetRemoteAudioTermItem from "./widgets/WidgetAudioTermItem/WidgetRemoteAudioTermItem";
+import WidgetLocalButtonTextItem from "./widgets/WidgetButtonTextItem/WidgetLocalButtonTextItem";
+import WidgetRemoteButtonTextItem from "./widgets/WidgetButtonTextItem/WidgetRemoteButtonTextItem";
+import WidgetLocalChooseOption from "./widgets/WidgetChooseOption/WidgetLocalChooseOption";
+import WidgetRemoteChooseOption from "./widgets/WidgetChooseOption/WidgetRemoteChooseOption";
+import WidgetLocalCorrectWordItem from "./widgets/WidgetCorrectWordItem/WidgetLocalCorrectWordItem";
+import WidgetRemoteCorrectWordItem from "./widgets/WidgetCorrectWordItem/WidgetRemoteCorrectWordItem";
+import WidgetLocalCouplesItem from "./widgets/WidgetCouplesItem/WidgetLocalCouplesItem";
+import WidgetRemoteCouplesItem from "./widgets/WidgetCouplesItem/WidgetRemoteCouplesItem";
+import WidgetLocalImage from "./widgets/WidgetImage/WidgetLocalImage";
+import WidgetRemoteImage from "./widgets/WidgetImage/WidgetRemoteImage";
+import WidgetLocalImageAndSoundItem from "./widgets/WidgetImageAndSoundItem/WidgetLocalImageAndSoundItem";
+import WidgetRemoteImageAndSoundItem from "./widgets/WidgetImageAndSoundItem/WidgetRemoteImageAndSoundItem";
+import WidgetLocalImageAndText from "./widgets/WidgetImageAndText/WidgetLocalImageAndText";
+import WidgetRemoteImageAndText from "./widgets/WidgetImageAndText/WidgetRemoteImageAndText";
+import WidgetLocalPuzzle from "./widgets/WidgetPuzzle/WidgetLocalPuzzle";
+import WidgetRemotePuzzle from "./widgets/WidgetPuzzle/WidgetRemotePuzzle";
+import WidgetLocalSchemaItem from "./widgets/WidgetSchemaItem/WidgetLocalSchemaItem";
+import WidgetRemoteSchemaItem from "./widgets/WidgetSchemaItem/WidgetRemoteSchemaItem";
+import WidgetLocalSimpleImage from "./widgets/WidgetSimpleImage/WidgetLocalSimpleImage";
+import WidgetRemoteSimpleImage from "./widgets/WidgetSimpleImage/WidgetRemoteSimpleImage";
 
 export default class ModelManager {
 
@@ -66,7 +91,7 @@ export default class ModelManager {
         [WidgetBlockquote.widget]: WidgetBlockquote,
         [WidgetLatexFormula.widget]: WidgetLatexFormula,
         [WidgetVideo.widget]: WidgetVideo,
-        [WidgetSimpleImage.widget]: WidgetSimpleImage,
+        [WidgetSimpleImage.widget]: () => Config.isLocal() ? WidgetLocalSimpleImage : WidgetRemoteSimpleImage,
         [WidgetTable.widget]: WidgetTable,
         // Layouts
         [WidgetTwoColumnsLayout.widget]: WidgetTwoColumnsLayout,
@@ -79,33 +104,33 @@ export default class ModelManager {
         [WidgetAcordionContent.widget]: WidgetAcordionContent,
         [WidgetModal.widget]: WidgetModal,
         // Interactive elements
-        [WidgetImageAndText.widget]: WidgetImageAndText,
-        [WidgetImage.widget]: WidgetImage,
-        [WidgetChooseOption.widget]: WidgetChooseOption,
+        [WidgetImageAndText.widget]: () => Config.isLocal() ? WidgetLocalImageAndText : WidgetRemoteImageAndText,
+        [WidgetImage.widget]: () => Config.isLocal() ? WidgetLocalImage : WidgetRemoteImage,
+        [WidgetChooseOption.widget]: () => Config.isLocal() ? WidgetLocalChooseOption : WidgetRemoteChooseOption,
         [WidgetDragdropContainer.widget]: WidgetDragdropContainer,
         [WidgetDragdropItem.widget]: WidgetDragdropItem,
         [WidgetTrueFalseContainer.widget]: WidgetTrueFalseContainer,
         [WidgetTrueFalseItem.widget]: WidgetTrueFalseItem,
         [WidgetAudioTermContainer.widget]: WidgetAudioTermContainer,
-        [WidgetAudioTermItem.widget]: WidgetAudioTermItem,
+        [WidgetAudioTermItem.widget]: () => Config.isLocal() ? WidgetLocalAudioTermItem : WidgetRemoteAudioTermItem,
         [WidgetImageAndSoundContainer.widget]: WidgetImageAndSoundContainer,
-        [WidgetImageAndSoundItem.widget]: WidgetImageAndSoundItem,
+        [WidgetImageAndSoundItem.widget]: () => Config.isLocal() ? WidgetLocalImageAndSoundItem : WidgetRemoteImageAndSoundItem,
         [WidgetCouplesContainer.widget]: WidgetCouplesContainer,
-        [WidgetCouplesItem.widget]: WidgetCouplesItem,
+        [WidgetCouplesItem.widget]: () => Config.isLocal() ? WidgetLocalCouplesItem : WidgetRemoteCouplesItem,
         [WidgetSchemaContainer.widget]: WidgetSchemaContainer,
-        [WidgetSchemaItem.widget]: WidgetSchemaItem,
+        [WidgetSchemaItem.widget]: () => Config.isLocal() ? WidgetLocalSchemaItem : WidgetRemoteSchemaItem,
         [WidgetInteractiveVideo.widget]: WidgetInteractiveVideo,
-        [WidgetPuzzle.widget]: WidgetPuzzle,
+        [WidgetPuzzle.widget]: () => Config.isLocal() ? WidgetLocalPuzzle : WidgetRemotePuzzle,
         [WidgetCorrectWordContainer.widget]: WidgetCorrectWordContainer,
-        [WidgetCorrectWordItem.widget]: WidgetCorrectWordItem,
+        [WidgetCorrectWordItem.widget]: () => Config.isLocal() ? WidgetLocalCorrectWordItem : WidgetRemoteCorrectWordItem,
         [WidgetMissingwordsContainer.widget]: WidgetMissingwordsContainer,
         [WidgetMissingwordsItem.widget]: WidgetMissingwordsItem,
         [WidgetSentenceorderContainer.widget]: WidgetSentenceorderContainer,
         [WidgetSentenceorderItem.widget]: WidgetSentenceorderItem,
         [WidgetGuessWord.widget]: WidgetGuessWord,
         [WidgetButtonTextContainer.widget]: WidgetButtonTextContainer,
-        [WidgetButtonTextItem.widget]: WidgetButtonTextItem,
-        [WidgetAnimation.widget]: WidgetAnimation,
+        [WidgetButtonTextItem.widget]: () => Config.isLocal() ? WidgetLocalButtonTextItem : WidgetRemoteButtonTextItem,
+        [WidgetAnimation.widget]: () => Config.isLocal() ? WidgetLocalAnimation : WidgetRemoteAnimation,
         [WidgetAnimationContainer.widget]: WidgetAnimationContainer,
         [WidgetAnimationItem.widget]: WidgetAnimationItem,
         [WidgetTermClassifcation.widget]: WidgetTermClassifcation,
@@ -176,18 +201,25 @@ export default class ModelManager {
     }
 
     static getAllWidgets(): typeof WidgetElement[] {
-        return Object.values(this.elements).filter(elem => WidgetElement.isPrototypeOf(elem)).map(elem => elem as typeof WidgetElement);
+        return Object
+            .values(this.elements)
+            .map(elem => ModelElement.isPrototypeOf(elem) ? elem : (elem as Function)())
+            .filter(elem => WidgetElement.isPrototypeOf(elem))
+            .map(elem => elem as typeof WidgetElement);
     }
 
     static getAllWidgetsByCategory() {
         return Utils.groupBy({ collection: this.getAllWidgets().filter(widget => widget.category), key: "category" });
     }
 
-    static get(widget = "Section"): { new(): ModelElement } {
-        return this.elements[widget];
+    static get(widget = "Section"): typeof ModelElement {
+        const value: any = this.elements[widget];
+        if (ModelElement.isPrototypeOf(value))
+            return value;
+        return (value as Function)();
     }
 
-    static create(widget = "Section", values?: any): ModelElement {
-        return new this.elements[widget](values);
+    static async create(widget = "Section", values?: any): Promise<ModelElement> {
+        return this.get(widget).create(values);
     }
 }

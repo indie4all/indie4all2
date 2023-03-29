@@ -1,9 +1,8 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetTrueFalseItem from "../WidgetTrueFalseItem/WidgetTrueFalseItem";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetTrueFalseContainer, WidgetTrueFalseContainerParams } from "../../../types";
 import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
 export default class WidgetTrueFalseContainer extends WidgetContainerSpecificElement {
@@ -12,16 +11,21 @@ export default class WidgetTrueFalseContainer extends WidgetContainerSpecificEle
     static category = "interactiveElements";
     static icon = icon;
 
-    params: { name: string, help: string }
+    params: WidgetTrueFalseContainerParams;
     data: WidgetTrueFalseItem[]
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetTrueFalseContainer): Promise<WidgetTrueFalseContainer> {
+        const container = new WidgetTrueFalseContainer(values);
+        container.data = values?.data ? await Promise.all(values.data.map(elem => WidgetTrueFalseItem.create(elem))) : [];
+        return container;
+    }
+
+    constructor(values?: InputWidgetTrueFalseContainer) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: "True false-" + this.id,
             help: ""
         };
-        this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetTrueFalseContainer {

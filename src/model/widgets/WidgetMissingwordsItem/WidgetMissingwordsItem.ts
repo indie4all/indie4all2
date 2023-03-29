@@ -4,7 +4,7 @@ import Utils from "../../../Utils";
 import './styles.scss';
 import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 import icon from "./icon.png";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetMissingwordsItemData, WidgetMissingwordsItemData } from "../../../types";
 
 export default class WidgetMissingWordsItem extends WidgetSpecificItemElement {
 
@@ -19,9 +19,13 @@ export default class WidgetMissingWordsItem extends WidgetSpecificItemElement {
         return (count == 1);
     }
 
-    data: { sentence: string, combinations: string[] }
+    data: WidgetMissingwordsItemData;
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetMissingwordsItemData): Promise<WidgetMissingWordsItem> {
+        return new WidgetMissingWordsItem(values);
+    }
+
+    constructor(values?: InputWidgetMissingwordsItemData) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { sentence: "", combinations: [] };
     }
@@ -81,8 +85,6 @@ export default class WidgetMissingWordsItem extends WidgetSpecificItemElement {
             });
         });
         $form.on('click.missingwords', '.btn-add-combination', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
             $combinationsContainer.append(combination({ combination: "", pos: combinations.length }));
             combinations.push("");
         });

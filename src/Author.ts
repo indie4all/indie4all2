@@ -27,15 +27,18 @@ export default class Author {
     private dragDropHandler: DragDropHandler;
     private i18n: I18n;
     private undoredo: UndoRedo;
-    private version: string;
 
     model: Model;
 
+    static async create(palette: HTMLElement, container: HTMLElement): Promise<Author> {
+        const result = new Author(palette, container);
+        result.model = await Model.create({});
+        result.dragDropHandler = new DragDropHandler(palette, container, result.model);
+        return result;
+    }
+
     constructor(palette: HTMLElement, container: HTMLElement) {
-        this.version = "1.12.4";
-        this.model = new Model({});
         this.undoredo = UndoRedo.getInstance();
-        this.dragDropHandler = new DragDropHandler(palette, container, this.model);
         this.i18n = I18n.getInstance();
         this.categories = Object.entries(
             ModelManager.getAllWidgetsByCategory()).map(
@@ -106,9 +109,9 @@ export default class Author {
     /**
      * Adds a new empty section
      */
-    addSection(modelSection?: Section) {
+    async addSection(modelSection?: Section) {
         const index = this.model.sections.length + 1;
-        const section = modelSection ?? ModelManager.create("Section", { index });
+        const section = modelSection ?? await ModelManager.create("Section", { index });
         const action = new ActionAddSection(this.model, {
             element: section,
             position: this.model.sections.length,
@@ -279,8 +282,8 @@ export default class Author {
      * @param {string} containerId - Container ID
      * @param {string} type - Type of widget
      */
-    addSpecificContent(containerId: string, type: string) {
-        this.addModelElement(ModelManager.create(type), containerId);
+    async addSpecificContent(containerId: string, type: string) {
+        this.addModelElement(await ModelManager.create(type), containerId);
     }
 
     /**
@@ -379,13 +382,13 @@ export default class Author {
      * 
      * @param {*} model Model to be loaded in the plugin
      */
-    loadModelIntoPlugin(model: any) {
-        this.model = new Model(model);
+    async loadModelIntoPlugin(model: any) {
+        this.model = await Model.create(model);
         this.dragDropHandler.setModel(this.model);
         $(this.container).append(this.model.sections.map(section => section.createElement()).join(''));
     }
 
-    resetModel() {
-        this.model = new Model({});
+    async resetModel() {
+        this.model = await Model.create({});
     }
 }

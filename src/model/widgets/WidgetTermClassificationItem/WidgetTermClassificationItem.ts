@@ -2,7 +2,7 @@ import Utils from "../../../Utils";
 import './styles.scss';
 import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 import icon from "./icon.png";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetTermClassificationItemData, WidgetTermClassificationItemData } from "../../../types";
 
 export default class WidgetTermClassificationItem extends WidgetSpecificItemElement {
 
@@ -12,10 +12,10 @@ export default class WidgetTermClassificationItem extends WidgetSpecificItemElem
     /**
      * Parse a string with terms separated with semicolon and returns an array of terms
      * 
-     * @param terms {String} Semicolon separated terms
-     * @returns {String[]} Array of terms
+     * @param terms {string} Semicolon separated terms
+     * @returns {string[]} Array of terms
      */
-    private static parseTerms(terms: string) {
+    private static parseTerms(terms: string): string[] {
         let termsArray: string[] = [];
         let termsCopy: string;
 
@@ -37,9 +37,13 @@ export default class WidgetTermClassificationItem extends WidgetSpecificItemElem
         return regex.test(terms);
     }
 
-    data: { column: string, terms: string[] }
+    data: WidgetTermClassificationItemData;
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetTermClassificationItemData): Promise<WidgetTermClassificationItem> {
+        return new WidgetTermClassificationItem(values);
+    }
+
+    constructor(values?: InputWidgetTermClassificationItemData) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { column: "", terms: [] };
     }

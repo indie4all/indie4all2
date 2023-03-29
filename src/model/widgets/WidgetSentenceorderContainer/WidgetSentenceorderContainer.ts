@@ -1,9 +1,8 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetSentenceOrderItem from "../WidgetSentenceorderItem/WidgetSentenceorderItem";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetSentenceorderContainerData, WidgetSentenceorderContainerParms } from "../../../types";
 import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
 export default class WidgetSentenceOrderContainer extends WidgetContainerSpecificElement {
@@ -12,16 +11,21 @@ export default class WidgetSentenceOrderContainer extends WidgetContainerSpecifi
     static category = "interactiveElements";
     static icon = icon;
 
-    params: { name: string, help: string }
-    data: WidgetSentenceOrderItem[]
+    params: WidgetSentenceorderContainerParms;
+    data: WidgetSentenceOrderItem[];
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetSentenceorderContainerData): Promise<WidgetSentenceOrderContainer> {
+        const container = new WidgetSentenceOrderContainer(values);
+        container.data = values?.data ? await Promise.all(values.data.map(elem => WidgetSentenceOrderItem.create(elem))) : [];
+        return container;
+    }
+
+    constructor(values?: InputWidgetSentenceorderContainerData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: "Sentence Order-" + this.id,
             help: ""
         };
-        this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetSentenceOrderContainer {

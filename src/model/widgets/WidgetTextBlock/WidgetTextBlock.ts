@@ -3,7 +3,7 @@ import RichTextEditorMixin from "../mixings/RichTextEditorElement";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 import icon from "./icon.png";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputTextBlockData, TextBlockData } from "../../../types";
 
 export default class WidgetTextBlock extends RichTextEditorMixin(WidgetItemElement) {
 
@@ -11,9 +11,13 @@ export default class WidgetTextBlock extends RichTextEditorMixin(WidgetItemEleme
     static category = "simpleElements";
     static icon = icon;
 
-    data: { style: string, text: string }
+    data: TextBlockData;
 
-    constructor(values?: any) {
+    static async create(values?: InputTextBlockData): Promise<WidgetTextBlock> {
+        return new WidgetTextBlock(values);
+    }
+
+    constructor(values?: InputTextBlockData) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { style: "default", text: "" };
     }

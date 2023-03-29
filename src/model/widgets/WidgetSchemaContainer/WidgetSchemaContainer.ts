@@ -3,7 +3,7 @@ import "./styles.scss";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetSchemaItem from "../WidgetSchemaItem/WidgetSchemaItem";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetSchemaContainerData, WidgetSchemaContainerParams } from "../../../types";
 import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
 export default class WidgetSchemaContainer extends WidgetContainerSpecificElement {
@@ -12,16 +12,21 @@ export default class WidgetSchemaContainer extends WidgetContainerSpecificElemen
     static category = "interactiveElements";
     static icon = icon;
 
-    params: { name: string, help: string }
+    params: WidgetSchemaContainerParams;
     data: WidgetSchemaItem[]
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetSchemaContainerData): Promise<WidgetSchemaContainer> {
+        const container = new WidgetSchemaContainer(values);
+        container.data = values?.data ? await Promise.all(values.data.map(elem => ModelManager.create(elem.widget, elem))) : [];
+        return container;
+    }
+
+    constructor(values?: InputWidgetSchemaContainerData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: "Schema-" + this.id,
             help: ""
         };
-        this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetSchemaContainer {

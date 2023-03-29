@@ -158,8 +158,8 @@ export default class DragDropHandler {
         this.model.moveElementFromContainerToAnother(elementId, inPositionElementId, targetParentId, targetContainerIndex);
     }
 
-    onCreateElement(el: HTMLElement, target: HTMLElement, sibling: HTMLElement) {
-        const widget = ModelManager.create(el.dataset.widget); // Widget type (TextBlock, Image...etc)
+    async onCreateElement(el: HTMLElement, target: HTMLElement, sibling: HTMLElement) {
+        const widget = await ModelManager.create(el.dataset.widget); // Widget type (TextBlock, Image...etc)
         const parentContainerId = $(target).closest('[data-id]')[0].dataset.id;
         const inPositionElementId = sibling ? $(sibling).children('div').first().data('id') : null;
         let parentContainerIndex = -1; // Parent container index (only for layout)

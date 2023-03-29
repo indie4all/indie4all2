@@ -14,6 +14,8 @@ export default abstract class ModelElement {
     data: any;
     skipNameValidation: boolean = false;
 
+    static async create(values?: any): Promise<ModelElement> { return null; }
+
     constructor(values?: any) {
         this.id = values?.id ?? Utils.generate_uuid();
     }

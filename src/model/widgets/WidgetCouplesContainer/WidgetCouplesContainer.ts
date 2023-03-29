@@ -1,10 +1,10 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetCouplesItem from "../WidgetCouplesItem/WidgetCouplesItem";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetCouplesContainerData, WidgetCouplesContainerParams } from "../../../types";
 import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
+import ModelManager from "../../../model/ModelManager";
 
 export default class WidgetCouplesContainer extends WidgetContainerSpecificElement {
 
@@ -13,15 +13,21 @@ export default class WidgetCouplesContainer extends WidgetContainerSpecificEleme
     static icon = icon;
 
     data: WidgetCouplesItem[]
-    params: { name: string, help: string }
+    params: WidgetCouplesContainerParams;
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetCouplesContainerData): Promise<WidgetCouplesContainer> {
+        const container = new WidgetCouplesContainer(values);
+        container.data = values?.data ? await Promise.all(
+            values.data.map(elem => ModelManager.create(elem.widget, elem))) as WidgetCouplesItem[] : [];
+        return container;
+    }
+
+    constructor(values?: InputWidgetCouplesContainerData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: "Couples-" + this.id,
             help: ""
         };
-        this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetCouplesContainer {

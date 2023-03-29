@@ -2,8 +2,7 @@ import './styles.scss';
 import WidgetColumnsLayout from "../WidgetColumnsLayout/WidgetColumnsLayout";
 import ModelManager from '../../ModelManager';
 import icon from "./icon.png";
-import WidgetElement from '../WidgetElement/WidgetElement';
-import { FormEditData } from '../../../types';
+import { FormEditData, InputWidgetFourColumnsLayoutData } from '../../../types';
 
 export default class WidgetFourColumnsLayout extends WidgetColumnsLayout {
 
@@ -13,12 +12,14 @@ export default class WidgetFourColumnsLayout extends WidgetColumnsLayout {
     static icon = icon;
     static columns = [3, 3, 3, 3];
 
-    data: WidgetElement[][]
+    static async create(values?: InputWidgetFourColumnsLayoutData): Promise<WidgetFourColumnsLayout> {
+        const columns = new WidgetFourColumnsLayout(values);
+        columns.data = values?.data ? await Promise.all(values.data.map(arr => Promise.all(arr.map(elem => ModelManager.create(elem.widget, elem))))) : [[], [], [], []];
+        return columns;
+    }
 
-    constructor(values?: any) {
+    constructor(values?: InputWidgetFourColumnsLayoutData) {
         super(values);
-        this.data = values?.data ?
-            values.data.map((arr: any[]) => arr.map(elem => ModelManager.create(elem.widget, elem))) : [[], [], [], []];
     }
 
     clone(): WidgetFourColumnsLayout {

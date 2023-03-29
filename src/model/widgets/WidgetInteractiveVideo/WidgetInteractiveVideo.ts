@@ -2,17 +2,21 @@ import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 import icon from "./icon.png";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetInteractiveVideoData, WidgetInteractiveVideoData, WidgetInteractiveVideoParams } from "../../../types";
 
 export default class WidgetInteractiveVideo extends WidgetItemElement {
 
     static widget = "InteractiveVideo";
     static category = "interactiveElements";
     static icon = icon;
-    params: { name: string }
-    data: { videourl: string }
+    params: WidgetInteractiveVideoParams;
+    data: WidgetInteractiveVideoData;
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetInteractiveVideoData): Promise<WidgetInteractiveVideo> {
+        return new WidgetInteractiveVideo(values);
+    }
+
+    constructor(values?: InputWidgetInteractiveVideoData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : { name: "Interactive Video-" + this.id }
         this.data = values?.data ? structuredClone(values.data) : { videourl: "" };

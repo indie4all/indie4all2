@@ -1,19 +1,24 @@
 import Utils from "../../../Utils";
 import './styles.scss';
-import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetAnimationItem from "../WidgetAnimationItem/WidgetAnimationItem";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetAnimationContainerData, WidgetAnimationContainerParams } from "../../../types";
 import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
 export default class WidgetAnimationContainer extends WidgetContainerSpecificElement {
 
     static widget = "AnimationContainer";
     static icon = icon;
-    params: { name: string, width: number, height: number, image: string, help: string };
+    params: WidgetAnimationContainerParams;
     data: WidgetAnimationItem[];
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetAnimationContainerData): Promise<WidgetAnimationContainer> {
+        const container = new WidgetAnimationContainer(values);
+        container.data = values?.data ? await Promise.all(values.data.map(elem => WidgetAnimationItem.create(elem))) : [];
+        return container;
+    }
+
+    constructor(values?: InputWidgetAnimationContainerData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: "Animation-" + this.id,
@@ -22,7 +27,6 @@ export default class WidgetAnimationContainer extends WidgetContainerSpecificEle
             image: "",
             help: ""
         };
-        this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetAnimationContainer {

@@ -3,7 +3,7 @@ import './styles.scss';
 import ModelManager from '../../ModelManager';
 import icon from "./icon.png";
 import WidgetElement from "../WidgetElement/WidgetElement";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetAcordionContainerData, WidgetAcordionContainerParams } from "../../../types";
 import WidgetSpecificContainerElement from "../WidgetSpecificContainerElement/WidgetSpecificContainerElement";
 
 export default class WidgetAcordionContainer extends WidgetSpecificContainerElement {
@@ -12,16 +12,21 @@ export default class WidgetAcordionContainer extends WidgetSpecificContainerElem
     static category = "containers";
     static icon = icon;
 
-    params: { name: string, help: string };
-    data!: WidgetElement[]
+    params: WidgetAcordionContainerParams;
+    data: WidgetElement[];
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetAcordionContainerData): Promise<WidgetAcordionContainer> {
+        const container = new WidgetAcordionContainer(values);
+        container.data = values?.data ? await Promise.all(values.data.map(elem => ModelManager.create(elem.widget, elem))) : [];
+        return container;
+    }
+
+    constructor(values?: InputWidgetAcordionContainerData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: "Acordion-" + this.id,
             help: ""
         };
-        this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetAcordionContainer {

@@ -4,9 +4,9 @@ import I18n from "./I18n";
 import { Model } from "./model/Model";
 import ModelManager from './model/ModelManager';
 import Section from "./model/section/Section";
-import { ConfigOptions } from "./types";
 import UndoRedo from "./Undoredo";
 import Utils from "./Utils";
+import Config from "./Config";
 
 export default class Api {
 
@@ -14,22 +14,17 @@ export default class Api {
     private i18n: I18n;
     private author: Author;
     private undoredo: UndoRedo;
-    private options: ConfigOptions;
 
-    constructor(palette: HTMLElement, container: HTMLElement) {
+    static async create(palette: HTMLElement, container: HTMLElement): Promise<Api> {
+        const result = new Api(container);
+        result.author = await Author.create(palette, container);
+        return result;
+    }
+
+    constructor(container: HTMLElement) {
         this.container = container;
         this.i18n = I18n.getInstance();
-        this.options = {
-            'requestAdditionalDataOnPopulate': true,
-            'previewBackendURL': '/model/preview',
-            'publishBackendURL': '/model/publish',
-            'saveBackendURL': '/model/save',
-            'scormBackendURL': '/model/scorm',
-            'encryptionKey': null
-        }
-        this.author = new Author(palette, container);
         this.undoredo = UndoRedo.getInstance();
-
     }
 
     /**
@@ -185,7 +180,7 @@ export default class Api {
             return;
         }
 
-        if (this.options['requestAdditionalDataOnPopulate'])
+        if (Config.isRequestAdditionalDataOnPopulate())
             this.openUnitSettings(this.i18n.value(`common.unit.settings`), onSubmit);
         else
             onSubmit && onSubmit(this.author.model);
@@ -197,7 +192,7 @@ export default class Api {
      * @returns string - Encrypted text
      */
     private async encrypt(text: string): Promise<string> {
-        const encOption = this.options['encryptionKey'];
+        const encOption = Config.getEncryptionKey();
         if (encOption === null)
             return new Promise(resolve => resolve(text));
 
@@ -212,21 +207,13 @@ export default class Api {
      * @returns string - Decrypted text
      */
     private async decrypt(encrypted: string): Promise<string> {
-        const encOption = this.options['encryptionKey'];
+        const encOption = Config.getEncryptionKey();
         if (encOption === null)
             return new Promise(resolve => resolve(encrypted));
 
         const { default: CryptoJS } = await import('crypto-js');
         const key = typeof encOption === 'function' ? encOption() : encOption;
         return CryptoJS.AES.decrypt(encrypted, key).toString(CryptoJS.enc.Utf8);
-    }
-
-    /**
-     * Updates the current options of the API
-     * @param {object} options - set of options to update
-     */
-    setOptions(options: ConfigOptions) {
-        $.extend(this.options, options);
     }
 
     /**
@@ -262,7 +249,7 @@ export default class Api {
      * Loads a model element from LocalStorage into a given section
      * @param {string} id - Section ID
      */
-    importElement(id: string) {
+    async importElement(id: string) {
         try {
             const encrypted: string | null = localStorage.getItem('copied-element');
             if (!encrypted) {
@@ -271,12 +258,11 @@ export default class Api {
                 return;
             }
 
-            this.decrypt(encrypted).then(json => {
-                const elementJSON = JSON.parse(json);
-                const modelElement = ModelManager.create(elementJSON.widget, elementJSON);
-                this.author.copyModelElement(modelElement, id);
-                Utils.notifySuccess(this.i18n.value("messages.importedElement"));
-            });
+            const decrypted = await this.decrypt(encrypted);
+            const elementJSON = JSON.parse(decrypted);
+            const modelElement = await ModelManager.create(elementJSON.widget, elementJSON);
+            this.author.copyModelElement(modelElement, id);
+            Utils.notifySuccess(this.i18n.value("messages.importedElement"));
 
         } catch (err) {
             localStorage.removeItem('copied-element');
@@ -287,7 +273,7 @@ export default class Api {
     /**
      * Loads a given section from LocalStorage
      */
-    importSection() {
+    async importSection() {
         try {
             const encrypted: string | null = localStorage.getItem('copied-section');
             if (!encrypted) {
@@ -295,12 +281,11 @@ export default class Api {
                 Utils.notifyWarning(this.i18n.value("messages.noSection"));
                 return;
             }
-            this.decrypt(encrypted).then(json => {
-                const sectionJSON = JSON.parse(json);
-                const sectionElement = ModelManager.create(sectionJSON.widget, sectionJSON);
-                this.author.copyModelSection(<Section>sectionElement);
-                Utils.notifySuccess(this.i18n.value("messages.importedSection"));
-            });
+            const decrypted = await this.decrypt(encrypted);
+            const sectionJSON = JSON.parse(decrypted);
+            const sectionElement = await ModelManager.create(sectionJSON.widget, sectionJSON);
+            this.author.copyModelSection(<Section>sectionElement);
+            Utils.notifySuccess(this.i18n.value("messages.importedSection"));
         } catch (err) {
             localStorage.removeItem('copied-section');
             Utils.notifyWarning(this.i18n.value("messages.noSection"));
@@ -467,17 +452,15 @@ export default class Api {
                     Utils.notifyError(this.i18n.value("messages.saveError"));
             };
             // Download the generated files
-            if (this.options.saveBackendURL) {
-                const headers = new Headers();
-                headers.append("Content-Type", "application/json");
-                const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
-                fetch(this.options.saveBackendURL, requestOptions)
-                    .then(onGenerated)
-                    .catch(error => {
-                        console.log('error', error);
-                        self.author.hideLoading();
-                    });
-            }
+            const headers = new Headers();
+            headers.append("Content-Type", "application/json");
+            const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
+            fetch(Config.getSaveBackendURL(), requestOptions)
+                .then(onGenerated)
+                .catch(error => {
+                    console.log('error', error);
+                    self.author.hideLoading();
+                });
         };
         this.populateModel(onSubmit);
     }
@@ -517,17 +500,15 @@ export default class Api {
                 $('#modal-preview-generated').modal({ backdrop: true });
             };
             // Download the generated files
-            if (this.options.previewBackendURL) {
-                const headers = new Headers();
-                headers.append("Content-Type", "application/json");
-                const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
-                fetch(this.options.previewBackendURL, requestOptions)
-                    .then(onGenerated)
-                    .catch(error => {
-                        console.log('error', error);
-                        self.author.hideLoading();
-                    });
-            }
+            const headers = new Headers();
+            headers.append("Content-Type", "application/json");
+            const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
+            fetch(Config.getPreviewBackendURL(), requestOptions)
+                .then(onGenerated)
+                .catch(error => {
+                    console.log('error', error);
+                    self.author.hideLoading();
+                });
         }
         self.populateModel(onSubmit);
     }
@@ -541,18 +522,16 @@ export default class Api {
             const title = this.i18n.value("common.scorm.title");
             const description = this.i18n.value("common.scorm.description");
             self.author.showLoading(title, description);
-            if (this.options.scormBackendURL) {
-                // Download the generated files
-                const headers = new Headers();
-                headers.append("Content-Type", "application/json");
-                const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
-                fetch(this.options.scormBackendURL, requestOptions)
-                    .then(self.onPublishModel.bind(self))
-                    .catch(error => {
-                        console.log('error', error);
-                        self.author.hideLoading();
-                    });
-            }
+            // Download the generated files
+            const headers = new Headers();
+            headers.append("Content-Type", "application/json");
+            const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
+            fetch(Config.getScormBackendURL(), requestOptions)
+                .then(self.onPublishModel.bind(self))
+                .catch(error => {
+                    console.log('error', error);
+                    self.author.hideLoading();
+                });
         }
         this.populateModel(onSubmit);
     }
@@ -566,18 +545,16 @@ export default class Api {
             const title = this.i18n.value("common.publish.title");
             const description = this.i18n.value("common.publish.description");
             self.author.showLoading(title, description);
-            if (this.options.publishBackendURL) {
-                // Download the generated files
-                const headers = new Headers();
-                headers.append("Content-Type", "application/json");
-                const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
-                fetch(this.options.publishBackendURL, requestOptions)
-                    .then(self.onPublishModel.bind(self))
-                    .catch(error => {
-                        console.log('error', error);
-                        self.author.hideLoading();
-                    });
-            }
+            // Download the generated files
+            const headers = new Headers();
+            headers.append("Content-Type", "application/json");
+            const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
+            fetch(Config.getPublishBackendURL(), requestOptions)
+                .then(self.onPublishModel.bind(self))
+                .catch(error => {
+                    console.log('error', error);
+                    self.author.hideLoading();
+                });
         }
         this.populateModel(onSubmit);
     }

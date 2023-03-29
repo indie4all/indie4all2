@@ -3,13 +3,17 @@ import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 import icon from "./icon.png";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetVideoData, WidgetVideoData, WidgetVideoParams } from "../../../types";
 
 export default class WidgetVideo extends WidgetItemElement {
 
     static widget = "Video";
     static category = "simpleElements";
     static icon = icon;
+
+    static async create(values?: InputWidgetVideoData): Promise<WidgetVideo> {
+        return new WidgetVideo(values);
+    }
 
     private toggleCaptionAndDescriptions(videourl: string) {
         if (Utils.isIndieResource(videourl)) {
@@ -29,10 +33,10 @@ export default class WidgetVideo extends WidgetItemElement {
         }
     }
 
-    params: { name: string }
-    data: { videourl: string, captions: string, descriptions: string, defaultCaptions: string }
+    params: WidgetVideoParams;
+    data: WidgetVideoData;
 
-    constructor(values?: any) {
+    constructor(values?: InputWidgetVideoData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: WidgetVideo.widget + "-" + this.id,

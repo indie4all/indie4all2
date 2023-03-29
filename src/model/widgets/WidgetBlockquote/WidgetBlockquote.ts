@@ -1,16 +1,20 @@
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 import icon from "./icon.png";
-import { FormEditData } from "../../../types";
+import { BlockquoteData, FormEditData, InputBlockquoteData } from "../../../types";
 
 export default class WidgetBlockquote extends WidgetItemElement {
 
     static widget = "Blockquote";
     static category = "simpleElements";
     static icon = icon;
-    data: { quote: string, caption: string, alignment: string, source: string }
+    data: BlockquoteData;
 
-    constructor(values?: any) {
+    static async create(values?: InputBlockquoteData): Promise<WidgetBlockquote> {
+        return new WidgetBlockquote(values);
+    }
+
+    constructor(values?: InputBlockquoteData) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { quote: "", caption: "", alignment: "", source: "" };
     }

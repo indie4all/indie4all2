@@ -3,7 +3,7 @@ import "./styles.scss";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetTermClassificationItem from "../WidgetTermClassificationItem/WidgetTermClassificationItem";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetTermClassificationContainerData, WidgetTermClassificationContainerParams } from "../../../types";
 import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
 export default class WidgetTermClassification extends WidgetContainerSpecificElement {
@@ -42,16 +42,21 @@ export default class WidgetTermClassification extends WidgetContainerSpecificEle
         return [];
     }
 
-    params: { name: string, help: string }
+    params: WidgetTermClassificationContainerParams;
     data: WidgetTermClassificationItem[]
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetTermClassificationContainerData): Promise<WidgetTermClassification> {
+        const container = new WidgetTermClassification(values);
+        container.data = values?.data ? await Promise.all(values.data.map(elem => WidgetTermClassificationItem.create(elem))) : [];
+        return container;
+    }
+
+    constructor(values?: InputWidgetTermClassificationContainerData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: `Terms and Classification-${this.id}`,
             help: ""
         };
-        this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetTermClassification {

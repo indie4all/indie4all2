@@ -3,7 +3,7 @@ import "./styles.scss";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetCorrectWordItem from "../WidgetCorrectWordItem/WidgetCorrectWordItem";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetCorrectWordContainerData, WidgetCorrectWordContainerParams } from "../../../types";
 import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
 export default class WidgetCorrectWordContainer extends WidgetContainerSpecificElement {
@@ -13,15 +13,20 @@ export default class WidgetCorrectWordContainer extends WidgetContainerSpecificE
     static icon = icon;
 
     data: WidgetCorrectWordItem[]
-    params: { name: string, help: string }
+    params: WidgetCorrectWordContainerParams;
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetCorrectWordContainerData): Promise<WidgetCorrectWordContainer> {
+        const container = new WidgetCorrectWordContainer(values);
+        container.data = values?.data ? await Promise.all(values.data.map((elem: any) => ModelManager.create(elem.widget, elem))) : [];
+        return container;
+    }
+
+    constructor(values?: InputWidgetCorrectWordContainerData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: "Correct word-" + this.id,
             help: ""
         };
-        this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetCorrectWordContainer {

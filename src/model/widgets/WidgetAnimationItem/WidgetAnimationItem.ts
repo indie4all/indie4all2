@@ -2,16 +2,20 @@ import prev from "./prev.hbs";
 import Utils from "../../../Utils";
 import './styles.scss';
 import icon from "./icon.png";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetAnimationItemData, WidgetAnimationItemData } from "../../../types";
 import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 
 export default class WidgetAnimationItem extends WidgetSpecificItemElement {
 
     static widget = "AnimationItem";
     static icon = icon;
-    data: { image: string };
+    data: WidgetAnimationItemData;
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetAnimationItemData): Promise<WidgetAnimationItem> {
+        return new WidgetAnimationItem(values);
+    }
+
+    constructor(values?: InputWidgetAnimationItemData) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { image: "" };
     }

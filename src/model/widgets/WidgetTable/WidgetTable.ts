@@ -5,7 +5,7 @@ import "./styles.scss";
 import WidgetItemElement from '../WidgetItemElement/WidgetItemElement';
 import icon from "./icon.png";
 import { ApiColumnsMethods } from "datatables.net-dt";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetTableData, WidgetTableData, WidgetTableParams } from "../../../types";
 
 export default class WidgetTable extends WidgetItemElement {
 
@@ -13,33 +13,39 @@ export default class WidgetTable extends WidgetItemElement {
     static category = "simpleElements";
     static icon = icon;
 
-    functions = {
-        retrieveUpdatedColumns: function () {
-            let $ths = $('#table').find('th').clone();
-            $ths.find('.btn-delete-column').remove();
-            return $ths.map(function () { return $(this).html() }).toArray();
-        },
-        retrieveUpdatedRows: function () {
-            let $table = $('#table');
-            let oldColumns = (<ApiColumnsMethods>$table.DataTable().columns()).dataSrc().toArray();
-            let $ths = $('#table').find('th').clone();
-            $ths.find('.btn-delete-column').remove();
-            let newColumns = $ths.map(function () { return $(this).html() }).toArray();
-            // Rename fields and add new field
-            let result: any[] = [];
-            for (let idx = 0; idx < $table.DataTable().rows().count(); idx++) {
-                let res = { ...$table.DataTable().row(idx).data() };
-                delete res["DT_RowId"];
-                for (let i = 0; i < newColumns.length; i++) {
-                    if (newColumns[i] !== oldColumns[i]) {
-                        res[newColumns[i]] = res[oldColumns[i]];
-                        delete res[oldColumns[i]];
-                    }
+    data: WidgetTableData;
+    params: WidgetTableParams;
+
+    static async create(values?: InputWidgetTableData): Promise<WidgetTable> {
+        return new WidgetTable(values);
+    }
+
+    private retrieveUpdatedColumns() {
+        let $ths = $('#table').find('th').clone();
+        $ths.find('.btn-delete-column').remove();
+        return $ths.map(function () { return $(this).html() }).toArray();
+    }
+
+    private retrieveUpdatedRows() {
+        let $table = $('#table');
+        let oldColumns = (<ApiColumnsMethods>$table.DataTable().columns()).dataSrc().toArray();
+        let $ths = $('#table').find('th').clone();
+        $ths.find('.btn-delete-column').remove();
+        let newColumns = $ths.map(function () { return $(this).html() }).toArray();
+        // Rename fields and add new field
+        let result: any[] = [];
+        for (let idx = 0; idx < $table.DataTable().rows().count(); idx++) {
+            let res = { ...$table.DataTable().row(idx).data() };
+            delete res["DT_RowId"];
+            for (let i = 0; i < newColumns.length; i++) {
+                if (newColumns[i] !== oldColumns[i]) {
+                    res[newColumns[i]] = res[oldColumns[i]];
+                    delete res[oldColumns[i]];
                 }
-                result.push(res);
             }
-            return result;
+            result.push(res);
         }
+        return result;
     }
 
     constructor(values?: any) {
@@ -92,7 +98,7 @@ export default class WidgetTable extends WidgetItemElement {
                 let $form = $('#f-' + this.id);
                 const $table = $('#table');
                 const deleteColumnStr = I18n.getInstance().translate("widgets.Table.form.deleteColumn");
-                const deleteColumnIcon = "<button title='" + deleteColumnStr + "' class='btn btn-danger btn-delete-column'><i class='fa fa-times'></i></button>";
+                const deleteColumnIcon = "<button type='button' title='" + deleteColumnStr + "' class='btn btn-danger btn-delete-column'><i class='fa fa-times'></i></button>";
                 let toColumn = (column: string) => { return { title: column + deleteColumnIcon, data: column } };
                 let toRow = (row: any, idx: number) => { return { ...row, "DT_RowId": idx } }
                 let obj = this;
@@ -104,10 +110,9 @@ export default class WidgetTable extends WidgetItemElement {
                     $table.DataTable().row($table.find('tr.selected')[0]).remove().draw();
                 };
                 let addColumn = function (e: any) {
-                    e.preventDefault();
                     const $inputName = $form.find('input[name="column-name"]');
                     const $inputPosition = $form.find('input[name="column-position"]');
-                    const columns = obj.functions.retrieveUpdatedColumns();
+                    const columns = obj.retrieveUpdatedColumns();
                     const name = <string>$inputName.val();
                     const pos = parseInt(<string>$inputPosition.val());
                     const invalidName = !name || columns.includes(name);
@@ -119,7 +124,7 @@ export default class WidgetTable extends WidgetItemElement {
                     $inputPosition.val('0');
                     let data: any[] = [];
                     if (DataTable.isDataTable($table)) {
-                        data = obj.functions.retrieveUpdatedRows();            // Retrieve the table's contents
+                        data = obj.retrieveUpdatedRows();                        // Retrieve the table's contents
                         data.forEach((row) => row[name] = "");                  // Add the new column
                         $table.DataTable().destroy();                           // Destroy previous table instance
                         $table.empty();
@@ -130,9 +135,10 @@ export default class WidgetTable extends WidgetItemElement {
                 }
                 let deleteColumn = function (e: any) {
                     e.preventDefault();
+                    e.stopPropagation();
                     const pos = $table.find('th').index($(this).closest('th'));
-                    let data = obj.functions.retrieveUpdatedRows();  // Retrieve the table's contents
-                    let newColumns = obj.functions.retrieveUpdatedColumns();
+                    let data = obj.retrieveUpdatedRows();  // Retrieve the table's contents
+                    let newColumns = obj.retrieveUpdatedColumns();
                     let column = newColumns[pos];
                     newColumns.splice(pos, 1);                  // Remove the column from headings
                     data.forEach((row) => delete row[column]);  // Remove the column from data
@@ -238,7 +244,7 @@ export default class WidgetTable extends WidgetItemElement {
                 $('.btn-add-column').on('click', addColumn);
                 $table.on('click', 'th, td:not(.dataTables_empty)', editCell);
                 $table.on('keypress', 'th', function (e) {
-                    if (e.key === "Enter") {
+                    if (e.key === "Enter" && !$(e.target).is('button')) {
                         e.preventDefault();
                         editCell.apply(this, [e]);
                         return false;
@@ -261,8 +267,8 @@ export default class WidgetTable extends WidgetItemElement {
     updateModelFromForm(form: any): void {
         this.params.name = form.instanceName;
         this.params.help = form.help;
-        this.data.rows = this.functions.retrieveUpdatedRows();
-        this.data.columns = this.functions.retrieveUpdatedColumns();
+        this.data.rows = this.retrieveUpdatedRows();
+        this.data.columns = this.retrieveUpdatedColumns();
     }
 
     validateModel(): string[] {
@@ -275,7 +281,7 @@ export default class WidgetTable extends WidgetItemElement {
     validateForm(form: any): string[] {
         var keys: string[] = [];
         form.instanceName.length == 0 && keys.push("common.name.invalid");
-        if (!this.functions.retrieveUpdatedColumns().length)
+        if (!this.retrieveUpdatedColumns().length)
             keys.push("Table.empty");
         return keys;
     }

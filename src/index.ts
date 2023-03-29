@@ -10,9 +10,11 @@ import "./styles/overrides.css"
 import { init as init_events } from './events'
 import I18n from './I18n';
 import { ConfigOptions } from './types';
+import Config from './Config';
 
-const start = (options?: ConfigOptions) => {
-    if ((!options || options.enablePWA !== false) && 'serviceWorker' in navigator) {
+const start = async (options?: ConfigOptions) => {
+    options && Config.setOptions(options);
+    if (Config.isPWAEnabled() && 'serviceWorker' in navigator) {
         window.addEventListener('load', async () => {
             try {
                 await navigator.serviceWorker.register('/service-worker.js');
@@ -27,20 +29,16 @@ const start = (options?: ConfigOptions) => {
         faFileImport, faPlusCircle, faTimes, faTimesCircle, faRedo, faSave, faSpinner, faTrashAlt, faUndo);
     // Watch for changes to replace icons
     dom.watch();
-    return I18n.init()
-        .then(() => import('bootstrap'))
-        .then(() => {
-            // Set the tool language
-            document.documentElement.lang = I18n.getInstance().getLang();
-            const domPalette = document.getElementById('palette');
-            const domContainer = document.getElementById('main-container');
-            // Initialize the IndieAuthor api
-            const api = new Api(domPalette, domContainer);
-            api.setOptions(options);
-            init_events(api);
-            return api;
-
-        });
+    await I18n.init();
+    await import('bootstrap');
+    // Set the tool language
+    document.documentElement.lang = I18n.getInstance().getLang();
+    const domPalette = document.getElementById('palette');
+    const domContainer = document.getElementById('main-container');
+    // Initialize the IndieAuthor api
+    const api = await Api.create(domPalette, domContainer);
+    init_events(api);
+    return api;
 }
 
 export { start };

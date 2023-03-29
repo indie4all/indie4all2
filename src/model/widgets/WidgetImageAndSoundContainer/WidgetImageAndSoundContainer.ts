@@ -1,10 +1,10 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetImageAndSoundItem from "../WidgetImageAndSoundItem/WidgetImageAndSoundItem";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetImageAndSoundContainerData, WidgetImageAndSoundContainerParams } from "../../../types";
 import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
+import ModelManager from "../../../model/ModelManager";
 
 export default class WidgetImageAndSoundContainer extends WidgetContainerSpecificElement {
 
@@ -12,16 +12,22 @@ export default class WidgetImageAndSoundContainer extends WidgetContainerSpecifi
     static category = "interactiveElements";
     static icon = icon;
 
-    params: { name: string, help: string };
+    params: WidgetImageAndSoundContainerParams;
     data: WidgetImageAndSoundItem[];
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetImageAndSoundContainerData): Promise<WidgetImageAndSoundContainer> {
+        const container = new WidgetImageAndSoundContainer(values);
+        container.data = values?.data ? await Promise.all(
+            values.data.map(elem => ModelManager.create(elem.widget, elem))) as WidgetImageAndSoundItem[] : [];
+        return container;
+    }
+
+    constructor(values?: InputWidgetImageAndSoundContainerData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: "Image and Sound-" + this.id,
             help: ""
         };
-        this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetImageAndSoundContainer {

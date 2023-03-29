@@ -1,16 +1,20 @@
 import "./styles.scss";
 import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 import icon from "./icon.png";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetDragDropItemData, WidgetDragDropItemData } from "../../../types";
 
 export default class WidgetDragdropItem extends WidgetSpecificItemElement {
 
     static widget = "DragdropItem";
     static icon = icon;
 
-    data: { term: string, definition: string }
+    data: WidgetDragDropItemData;
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetDragDropItemData): Promise<WidgetDragdropItem> {
+        return new WidgetDragdropItem(values);
+    }
+
+    constructor(values?: InputWidgetDragDropItemData) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { term: "", definition: "" };
     }

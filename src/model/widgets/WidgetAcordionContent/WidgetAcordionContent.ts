@@ -3,7 +3,7 @@ import WidgetContainerElement from '../WidgetContainerElement/WidgetContainerEle
 import ModelManager from '../../ModelManager';
 import icon from "./icon.png";
 import WidgetItemElement from '../WidgetItemElement/WidgetItemElement';
-import { FormEditData } from '../../../types';
+import { FormEditData, InputWidgetAcordionContentData, WidgetAcordionContentParams } from '../../../types';
 
 export default class WidgetAcordionContent extends WidgetContainerElement {
 
@@ -11,13 +11,18 @@ export default class WidgetAcordionContent extends WidgetContainerElement {
 
     static widget = "AcordionContent";
     static icon = icon;
-    params: { title: string };
+    params: WidgetAcordionContentParams;
     data: WidgetItemElement[];
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetAcordionContentData): Promise<WidgetAcordionContent> {
+        const container = new WidgetAcordionContent(values);
+        container.data = values?.data ? await Promise.all(values.data.map(elem => ModelManager.create(elem.widget, elem))) : [];
+        return container;
+    }
+
+    constructor(values?: InputWidgetAcordionContentData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : { title: "" };
-        this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetAcordionContent {

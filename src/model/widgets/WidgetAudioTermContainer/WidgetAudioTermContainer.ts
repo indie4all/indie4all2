@@ -1,26 +1,31 @@
 import Utils from '../../../Utils';
 import './styles.scss';
-import ModelManager from '../../ModelManager';
 import icon from "./icon.png";
 import WidgetAudioTermItem from '../WidgetAudioTermItem/WidgetAudioTermItem';
-import { FormEditData } from '../../../types';
+import { FormEditData, InputWidgetAudioTermContainerData, WidgetAudioTermContainerParams } from '../../../types';
 import WidgetContainerSpecificElement from '../WidgetContainerSpecificElement/WidgetContainerSpecificElement';
+import ModelManager from "../../../model/ModelManager";
 
 export default class WidgetAudioTermContainer extends WidgetContainerSpecificElement {
 
     static widget = "AudioTermContainer";
     static category = "interactiveElements";
     static icon = icon;
-    params: { name: string, help: string };
+    params: WidgetAudioTermContainerParams;
     data: WidgetAudioTermItem[];
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetAudioTermContainerData): Promise<WidgetAudioTermContainer> {
+        const container = new WidgetAudioTermContainer(values);
+        container.data = values?.data ? await Promise.all(values.data.map(elem => ModelManager.create(elem.widget, elem))) as WidgetAudioTermItem[] : [];
+        return container;
+    }
+
+    constructor(values?: InputWidgetAudioTermContainerData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: "Audio Term Container-" + this.id,
             help: ""
         };
-        this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetAudioTermContainer {

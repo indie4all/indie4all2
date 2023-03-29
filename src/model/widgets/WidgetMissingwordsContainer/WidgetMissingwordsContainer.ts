@@ -1,9 +1,8 @@
 import Utils from "../../../Utils";
 import './styles.scss';
-import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetMissingWordsItem from "../WidgetMissingwordsItem/WidgetMissingwordsItem";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetMissingwordsContainerData, WidgetMissingwordsContainerParams } from "../../../types";
 import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
 export default class WidgetMissingWords extends WidgetContainerSpecificElement {
@@ -12,16 +11,21 @@ export default class WidgetMissingWords extends WidgetContainerSpecificElement {
     static category = "interactiveElements";
     static icon = icon;
 
-    params: { name: string, help: string }
+    params: WidgetMissingwordsContainerParams;
     data: WidgetMissingWordsItem[]
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetMissingwordsContainerData): Promise<WidgetMissingWords> {
+        const container = new WidgetMissingWords(values);
+        container.data = values?.data ? await Promise.all(values.data.map(elem => WidgetMissingWordsItem.create(elem))) : [];
+        return container;
+    }
+
+    constructor(values?: InputWidgetMissingwordsContainerData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: "Missing Words-" + this.id,
             help: ""
         };
-        this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetMissingWords {

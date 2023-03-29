@@ -3,16 +3,20 @@ import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 import icon from "./icon.png";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetTrueFalseItem, WidgetTrueFalseItemData } from "../../../types";
 
 export default class WidgetTrueFalseItem extends WidgetSpecificItemElement {
 
     static widget = "TrueFalseItem";
     static icon = icon;
 
-    data: { question: string, answer: boolean, feedback: { positive: string, negative: string } }
+    data: WidgetTrueFalseItemData;
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetTrueFalseItem): Promise<WidgetTrueFalseItem> {
+        return new WidgetTrueFalseItem(values);
+    }
+
+    constructor(values?: InputWidgetTrueFalseItem) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : {
             question: "",

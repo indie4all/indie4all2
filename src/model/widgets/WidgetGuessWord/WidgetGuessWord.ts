@@ -2,7 +2,7 @@ import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 import icon from "./icon.png";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetGuessWordData, WidgetGuessWordData, WidgetGuessWordParams } from "../../../types";
 
 export default class WidgetGuessWord extends WidgetItemElement {
 
@@ -19,10 +19,14 @@ export default class WidgetGuessWord extends WidgetItemElement {
             parseInt(attempts) >= MIN_ATTEMPTS;
     }
 
-    params: { name: string, help: string }
-    data: { question: string, answer: string, attempts: number }
+    params: WidgetGuessWordParams;
+    data: WidgetGuessWordData;
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetGuessWordData): Promise<WidgetGuessWord> {
+        return new WidgetGuessWord(values);
+    }
+
+    constructor(values?: InputWidgetGuessWordData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: "Guess the word-" + this.id,

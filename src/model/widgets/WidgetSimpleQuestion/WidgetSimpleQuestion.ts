@@ -1,7 +1,7 @@
 import "./styles.scss";
 import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 import icon from "./icon.png";
-import { FormEditData } from "../../../types";
+import { Feedback, FormEditData, InputWidgetSimpleQuestionData, WidgetSimpleQuestionData } from "../../../types";
 
 export default class WidgetSimpleQuestion extends WidgetSpecificItemElement {
 
@@ -20,9 +20,13 @@ export default class WidgetSimpleQuestion extends WidgetSpecificItemElement {
         return true;
     }
 
-    data: { question: string, answers: { text: string, correct: boolean }[], feedback: { positive: string, negative: string } }
+    data: WidgetSimpleQuestionData;
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetSimpleQuestionData): Promise<WidgetSimpleQuestion> {
+        return new WidgetSimpleQuestion(values);
+    }
+
+    constructor(values?: InputWidgetSimpleQuestionData) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { question: "", answers: [], feedback: { positive: "", negative: "" } };
     }
@@ -39,7 +43,7 @@ export default class WidgetSimpleQuestion extends WidgetSpecificItemElement {
             instanceId: string,
             answers: { text: string, correct: boolean }[],
             question: string,
-            feedback: { positive: string, negative: string }
+            feedback: Feedback
         } = {
             instanceId: this.id,
             // Initialize the possible answers

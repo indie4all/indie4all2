@@ -5,7 +5,7 @@ import prevTemplate from "./prev.hbs";
 import sectionTemplate from "./template.hbs";
 import icon from "./icon.png";
 import WidgetElement from "../widgets/WidgetElement/WidgetElement";
-import { FormEditData } from "../../types";
+import { FormEditData, InputSectionData } from "../../types";
 
 export default class Section extends ModelElement {
 
@@ -16,11 +16,16 @@ export default class Section extends ModelElement {
     bookmark: string;
     data: WidgetElement[]
 
-    constructor(values?: any) {
+    static async create(values?: InputSectionData): Promise<Section> {
+        const section = new Section(values);
+        section.data = values.data ? await Promise.all(values.data.map((elem: any) => ModelManager.create(elem.widget, elem))) : [];
+        return section;
+    }
+
+    constructor(values?: InputSectionData) {
         super(values);
-        this.name = values?.name ?? I18n.getInstance().translate("sections.label") + " " + values?.index ?? 0;
+        this.name = values?.name ?? (I18n.getInstance().translate("sections.label") + " " + (values?.index ?? 0));
         this.bookmark = values?.bookmark ?? "";
-        this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): Section {

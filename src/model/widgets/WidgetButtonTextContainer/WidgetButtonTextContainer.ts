@@ -1,10 +1,10 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetButtonTextItem from "../WidgetButtonTextItem/WidgetButtonTextItem";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetButtonTextContainerData } from "../../../types";
 import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
+import ModelManager from "../../../model/ModelManager";
 
 export default class WidgetButtonTextContainer extends WidgetContainerSpecificElement {
 
@@ -12,15 +12,21 @@ export default class WidgetButtonTextContainer extends WidgetContainerSpecificEl
     static category = "interactiveElements";
     static icon = icon;
 
-    data: WidgetButtonTextItem[]
+    data: WidgetButtonTextItem[];
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetButtonTextContainerData): Promise<WidgetButtonTextContainer> {
+        const container = new WidgetButtonTextContainer(values);
+        container.data = values?.data ? await Promise.all(
+            values.data.map(elem => ModelManager.create(elem.widget, elem))) as WidgetButtonTextItem[] : [];
+        return container;
+    }
+
+    constructor(values?: InputWidgetButtonTextContainerData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: "Buttons with text-" + this.id,
             help: ""
         };
-        this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetButtonTextContainer {

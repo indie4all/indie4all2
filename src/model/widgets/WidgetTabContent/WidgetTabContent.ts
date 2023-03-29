@@ -4,7 +4,7 @@ import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerEle
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetElement from "../WidgetElement/WidgetElement";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetTabContentData, WidgetTabContentParams } from "../../../types";
 
 export default class WidgetTabContent extends WidgetContainerElement {
 
@@ -14,12 +14,17 @@ export default class WidgetTabContent extends WidgetContainerElement {
     static icon = icon;
 
     data: WidgetElement[];
-    params: { name: string };
+    params: WidgetTabContentParams;
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetTabContentData): Promise<WidgetTabContent> {
+        const container = new WidgetTabContent(values);
+        container.data = values?.data ? await Promise.all(values.data.map(elem => ModelManager.create(elem.widget, elem))) : [];
+        return container;
+    }
+
+    constructor(values?: InputWidgetTabContentData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : { name: "" };
-        this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
         this.skipNameValidation = true;
     }
 

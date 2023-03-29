@@ -3,7 +3,7 @@ import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetItemElement from '../WidgetItemElement/WidgetItemElement';
 import icon from "./icon.png";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputLatexFormulaData, WidgetLatexFormulaData } from "../../../types";
 
 export default class WidgetLatexFormula extends WidgetItemElement {
 
@@ -11,7 +11,11 @@ export default class WidgetLatexFormula extends WidgetItemElement {
     static category = "simpleElements";
     static icon = icon;
 
-    data: { formula: string, caption: string }
+    data: WidgetLatexFormulaData;
+
+    static async create(values?: InputLatexFormulaData): Promise<WidgetLatexFormula> {
+        return new WidgetLatexFormula(values);
+    }
 
     constructor(values?: any) {
         super(values);

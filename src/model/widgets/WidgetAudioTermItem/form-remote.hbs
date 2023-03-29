@@ -1,0 +1,27 @@
+<form id="f-{{instanceId}}">
+    <div class="form-group">
+        <label>{{translate "widgets.AudioTermItem.form.term.label"}}</label>
+        <input type="text" class="form-control" name="term" value="{{term}}" 
+            placeholder="{{translate "widgets.AudioTermItem.form.term.placeholder"}}" autocomplete="off" required />
+        <small class="form-text text-muted">{{translate "widgets.AudioTermItem.form.term.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label>{{translate "widgets.AudioTermItem.form.definition.label"}}</label>
+        <textarea class="form-control" name="definition" placeholder="{{translate "widgets.AudioTermItem.form.definition.placeholder"}}" 
+        required>{{definition}}</textarea>
+        <small class="form-text text-muted">{{translate "widgets.AudioTermItem.form.definition.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label>{{translate "widgets.AudioTermItem.form.audio.label"}}</label>
+        <input type="url" class="form-control" name="audio" 
+            placeholder="{{translate "widgets.AudioTermItem.form.audio.placeholder"}}" 
+            value="{{audio}}" autocomplete="off" required />
+        <small class="form-text text-muted">{{translate "widgets.AudioTermItem.form.audio.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label for="text">{{translate "common.captions.label"}}</label>
+        <input type="url" class="form-control" name="captions" placeholder="{{translate "common.captions.placeholder"}}"
+            value="{{{captions}}}" autocomplete="off"></input>
+        <small class="form-text text-muted">{{translate "common.captions.help"}}</small>
+    </div>
+</form>

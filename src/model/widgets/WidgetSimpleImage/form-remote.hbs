@@ -1,0 +1,74 @@
+<form id="f-{{instanceId}}">
+    <div class="form-group">
+        <label for="instanceName">{{translate "common.name.label"}}</label>
+        <input type="text" name="instanceName" class="form-control" value="{{instanceName}}" 
+            placeholder="{{translate "common.name.placeholder"}}" autocomplete="off" required />
+        <small class="form-text text-muted">{{translate "common.name.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label for="image">{{translate "widgets.SimpleImage.form.image.label"}}</label>
+        <input type="url" class="form-control" name="image" required 
+            placeholder="{{translate "widgets.SimpleImage.form.image.placeholder"}}" value="{{image}}" autocomplete="off" />
+        <small class="form-text text-muted">{{translate "widgets.SimpleImage.form.image.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label for="alt">{{translate "common.alt.label"}}</label>
+        <input type="text" class="form-control" name="alt" required autocomplete="off" 
+            placeholder="{{translate "common.alt.placeholder"}}" value="{{alt}}" />
+        <small class="form-text text-muted">{{translate "common.alt.help"}}</small>
+    </div>
+    <div class="form-group">
+        <label for="simple-image-aspect">{{translate "widgets.SimpleImage.form.aspect.label"}}</label>
+        <select id="simple-image-aspect" name="aspect" class="form-control" required>
+            <option value="original" {{#ifeq aspect "original" }} selected {{/ifeq}}>
+                {{translate "widgets.SimpleImage.form.aspect.values.original"}}
+            </option>
+            <option value="fit" {{#ifeq aspect "fit" }} selected {{/ifeq}}>
+                {{translate "widgets.SimpleImage.form.aspect.values.fit"}}
+            </option>
+            <option value="custom" {{#ifeq aspect "custom" }} selected {{/ifeq}}>
+                {{translate "widgets.SimpleImage.form.aspect.values.custom"}}
+            </option>
+        </select>
+        <small class="form-text text-muted">{{translate "widgets.SimpleImage.form.aspect.help"}}</small>
+    </div>
+    <div class="form-row size">
+        <div class="form-group col-6">
+            <label for="simple-image-width">{{translate "widgets.SimpleImage.form.size.width"}}</label>
+            <input type="number" min="1" class="form-control" id="simple-image-width" name="width" value="{{width}}"
+                placeholder="{{translate "widgets.SimpleImage.form.size.widthPlaceholder" }}" />
+        </div>
+        <div class="form-group col-6">
+            <label for="simple-image-height">{{translate "widgets.SimpleImage.form.size.height"}}</label>
+            <input type="number" min="1" class="form-control" id="simple-image-height" name="height" value="{{height}}"
+                placeholder="{{translate "widgets.SimpleImage.form.size.heightPlaceholder"}} " />
+        </div>
+        <div class=" form-group col-12">
+            <div class="form-check">
+                <input name="keep-ratio" class="form-check-input" type="checkbox" id="simple-image-keep-ratio">
+                <label class="form-check-label" for="simple-image-keep-ratio">
+                    {{translate "widgets.SimpleImage.form.size.keepRatio"}}
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="simple-image-align">{{translate "widgets.SimpleImage.form.align.label"}}</label>
+        <select id="simple-image-align" name="align" class="form-control" required>
+            <option value="left" {{#ifeq align "left" }} selected {{/ifeq}}>
+                {{translate "widgets.SimpleImage.form.align.values.left"}}
+            </option>
+            <option value="right" {{#ifeq align "right" }} selected {{/ifeq}}>
+                {{translate "widgets.SimpleImage.form.align.values.right"}}
+            </option>
+            <option value="center" {{#ifeq align "center" }} selected {{/ifeq}}>
+                {{translate "widgets.SimpleImage.form.align.values.center"}}
+            </option>
+        </select>
+        <small class="form-text text-muted">{{translate "widgets.SimpleImage.form.align.help"}}</small>
+    </div>
+    <div class="form-group image-preview">
+        <p>{{translate "widgets.SimpleImage.form.preview"}}</p>
+        <img class="img-fluid" src="{{image}}" />
+    </div>
+</form>

@@ -5,7 +5,7 @@ import Utils from "../../../Utils";
 import "./styles.scss";
 import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 import icon from "./icon.png";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetSentenceorderItemData, WidgetSentenceorderItemData } from "../../../types";
 
 export default class WidgetSentenceOrderItem extends WidgetSpecificItemElement {
 
@@ -28,9 +28,13 @@ export default class WidgetSentenceOrderItem extends WidgetSpecificItemElement {
         });
     }
 
-    data: { answers: string[], words: string[] }
+    data: WidgetSentenceorderItemData;
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetSentenceorderItemData): Promise<WidgetSentenceOrderItem> {
+        return new WidgetSentenceOrderItem(values);
+    }
+
+    constructor(values?: InputWidgetSentenceorderItemData) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : { answers: [], words: [] };
     }
@@ -91,8 +95,6 @@ export default class WidgetSentenceOrderItem extends WidgetSpecificItemElement {
             });
         });
         $form.on('click.sentenceorder', '.btn-add-word', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
             $wordsContainer.append(word({ word: "", pos: words.length }));
             words.push("")
         });
@@ -103,8 +105,6 @@ export default class WidgetSentenceOrderItem extends WidgetSpecificItemElement {
         });
 
         $form.on('click.sentenceorder', '.btn-add-answer', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
             $answersContainer.append(answer({ answer: "", pos: answers.length }));
             answers.push("")
         });

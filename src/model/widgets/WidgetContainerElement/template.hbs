@@ -7,29 +7,29 @@
             <div class="b2 col-12 col-md-auto" data-prev>{{{label}}}</div>
             <div class="b3 col-12 col-md-auto ml-auto" data-toolbar>
                 {{#if canAdd}}
-                <button class="author-add-content btn btn-sm btn-success" data-toggle="tooltip" 
-                    title="{{translate "items.add"}}">
+                <button type="button" class="author-add-content btn btn-sm btn-success" 
+                    data-toggle="tooltip" title="{{translate "items.add"}}">
                     <i class="fa fa-plus-circle"></i>
                 </button>
                 {{/if}}
                 {{#if canEdit}}
-                <button class="author-edit-element btn btn-sm btn-success" data-toggle="tooltip"
-                    title="{{translate "items.edit"}}">
+                <button type="button" class="author-edit-element btn btn-sm btn-success" 
+                    data-toggle="tooltip" title="{{translate "items.edit"}}">
                     <i class="fa fa-edit"></i>
                 </button>
                 {{/if}}
                 {{#if canCopy}}
-                <button class="author-copy-element btn btn-sm btn-success" data-toggle="tooltip"
-                    title="{{translate "items.duplicate"}}">
+                <button type="button" class="author-copy-element btn btn-sm btn-success" 
+                    data-toggle="tooltip" title="{{translate "items.duplicate"}}">
                     <i class="fa fa-copy"></i>
                 </button>
-                <button class="author-export-element btn btn-sm btn-success" data-toggle="tooltip"
-                    title="{{translate "items.export"}}">
+                <button type="button" class="author-export-element btn btn-sm btn-success" 
+                    data-toggle="tooltip" title="{{translate "items.export"}}">
                     <i class="fa fa-file-export"></i>
                 </button>
                 {{/if}}
-                <button class="author-remove-element btn btn-sm btn-danger" data-toggle="tooltip"
-                    title="{{translate "items.delete"}}">
+                <button type="button" class="author-remove-element btn btn-sm btn-danger" 
+                    data-toggle="tooltip" title="{{translate "items.delete"}}">
                     <i class="fa fa-times"></i>
                 </button>
             </div>

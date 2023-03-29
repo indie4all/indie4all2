@@ -2,7 +2,7 @@
 import "./styles.scss";
 import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 import icon from "./icon.png";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetGapQuestionData, WidgetGapQuestionData } from "../../../types";
 
 export default class WidgetGapQuestion extends WidgetSpecificItemElement {
 
@@ -29,9 +29,13 @@ export default class WidgetGapQuestion extends WidgetSpecificItemElement {
         return true;
     }
 
-    data: { question: string, answers: { text: string, correct: boolean }[], feedback: { positive: string, negative: string } }
+    data: WidgetGapQuestionData;
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetGapQuestionData): Promise<WidgetGapQuestion> {
+        return new WidgetGapQuestion(values);
+    }
+
+    constructor(values?: InputWidgetGapQuestionData) {
         super(values);
         this.data = values?.data ? structuredClone(values.data) : {
             question: "",

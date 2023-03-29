@@ -2,7 +2,7 @@ import ModelManager from "../../ModelManager";
 import WidgetColumnsLayout from "../WidgetColumnsLayout/WidgetColumnsLayout";
 import './styles.scss';
 import icon from "./icon.png";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetThreeColumnsLayoutData } from "../../../types";
 
 export default class WidgetThreeColumnsLayout extends WidgetColumnsLayout {
 
@@ -12,9 +12,14 @@ export default class WidgetThreeColumnsLayout extends WidgetColumnsLayout {
     static icon = icon;
     static columns = [4, 4, 4];
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetThreeColumnsLayoutData): Promise<WidgetThreeColumnsLayout> {
+        const columns = new WidgetThreeColumnsLayout(values);
+        columns.data = values?.data ? await Promise.all(values.data.map(arr => Promise.all(arr.map(elem => ModelManager.create(elem.widget, elem))))) : [[], [], []];
+        return columns;
+    }
+
+    constructor(values?: InputWidgetThreeColumnsLayoutData) {
         super(values);
-        this.data = values?.data ? values.data.map((arr: any[]) => arr.map(elem => ModelManager.create(elem.widget, elem))) : [[], [], []];
     }
 
     clone(): WidgetThreeColumnsLayout {

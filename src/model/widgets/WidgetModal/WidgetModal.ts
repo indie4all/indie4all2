@@ -4,7 +4,7 @@ import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerEle
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetElement from "../WidgetElement/WidgetElement";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetModalData, WidgetModalParams } from "../../../types";
 
 export default class WidgetModal extends WidgetContainerElement {
 
@@ -12,17 +12,22 @@ export default class WidgetModal extends WidgetContainerElement {
     static category = "containers";
     static icon = icon;
 
-    params: { name: string, text: string, help: string }
+    params: WidgetModalParams;
     data: WidgetElement[]
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetModalData): Promise<WidgetModal> {
+        const container = new WidgetModal(values);
+        container.data = values?.data ? await Promise.all(values.data.map(elem => ModelManager.create(elem.widget, elem))) : [];
+        return container;
+    }
+
+    constructor(values?: InputWidgetModalData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: WidgetModal.widget + "-" + this.id,
             text: "",
             help: ""
         };
-        this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetModal {

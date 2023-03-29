@@ -3,25 +3,30 @@ import "./styles.scss";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetTabContent from "../WidgetTabContent/WidgetTabContent";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetTabsContainerData, WidgetTabsContainerParams } from "../../../types";
 import WidgetSpecificContainerElement from "../WidgetSpecificContainerElement/WidgetSpecificContainerElement";
 
-export default class WidgetTabsContainer extends WidgetSpecificContainerElement {
 
+export default class WidgetTabsContainer extends WidgetSpecificContainerElement {
     static widget = "TabsContainer";
     static category = "containers";
     static icon = icon;
 
-    params: { name: string, help: string }
-    data: WidgetTabContent[]
+    params: WidgetTabsContainerParams;
+    data: WidgetTabContent[];
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetTabsContainerData): Promise<WidgetTabsContainer> {
+        const container = new WidgetTabsContainer(values);
+        container.data = values?.data ? await Promise.all(values.data.map(elem => ModelManager.create(elem.widget, elem))) : [];
+        return container;
+    }
+
+    constructor(values?: InputWidgetTabsContainerData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: "Tabs menu-" + this.id,
             help: ""
         };
-        this.data = values?.data ? values.data.map((elem: any) => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetTabsContainer {

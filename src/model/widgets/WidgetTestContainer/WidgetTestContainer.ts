@@ -2,7 +2,7 @@ import Utils from "../../../Utils";
 import "./styles.scss";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetTestContainerData } from "../../../types";
 import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
 export default class WidgetTestContainer extends WidgetContainerSpecificElement {
@@ -11,13 +11,18 @@ export default class WidgetTestContainer extends WidgetContainerSpecificElement 
     static category = "exerciseElement";
     static icon = icon;
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetTestContainerData): Promise<WidgetTestContainer> {
+        const container = new WidgetTestContainer(values);
+        container.data = values?.data ? await Promise.all(values.data.map(elem => ModelManager.create(elem.widget, elem))) : [];
+        return container;
+    }
+
+    constructor(values?: InputWidgetTestContainerData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: WidgetTestContainer.widget + "-" + this.id,
             help: ""
         };
-        this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetTestContainer {

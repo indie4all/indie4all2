@@ -1,9 +1,8 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetDragdropItem from "../WidgetDragdropItem/WidgetDragdropItem";
-import { FormEditData } from "../../../types";
+import { FormEditData, InputWidgetDragDropContainerData, WidgetDragDropContainerParams } from "../../../types";
 import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 
 export default class WidgetDragdropContainer extends WidgetContainerSpecificElement {
@@ -12,16 +11,21 @@ export default class WidgetDragdropContainer extends WidgetContainerSpecificElem
     static category = "interactiveElements";
     static icon = icon;
 
-    params: { name: string, help: string }
-    data: WidgetDragdropItem[]
+    params: WidgetDragDropContainerParams;
+    data: WidgetDragdropItem[];
 
-    constructor(values?: any) {
+    static async create(values?: InputWidgetDragDropContainerData): Promise<WidgetDragdropContainer> {
+        const dragDrop = new WidgetDragdropContainer(values);
+        dragDrop.data = values?.data ? await Promise.all(values.data.map(elem => WidgetDragdropItem.create(elem))) : [];
+        return dragDrop;
+    }
+
+    constructor(values?: InputWidgetDragDropContainerData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             name: "Drag And Drop-" + this.id,
             help: ""
         };
-        this.data = values?.data ? values.data.map(elem => ModelManager.create(elem.widget, elem)) : [];
     }
 
     clone(): WidgetDragdropContainer {

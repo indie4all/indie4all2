@@ -3,7 +3,7 @@ import './styles.scss';
 import WidgetColumnsLayout from "../WidgetColumnsLayout/WidgetColumnsLayout";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
-import { FormEditData } from '../../../types';
+import { FormEditData, InputWidgetTwoColumnsLayoutData, WidgetTwoColumnsLayoutParams } from '../../../types';
 
 export default class WidgetTwoColumnsLayout extends WidgetColumnsLayout {
 
@@ -12,10 +12,17 @@ export default class WidgetTwoColumnsLayout extends WidgetColumnsLayout {
     static icon = icon;
     static columns = [6, 6];
 
-    constructor(values?: any) {
+    params: WidgetTwoColumnsLayoutParams;
+
+    static async create(values?: InputWidgetTwoColumnsLayoutData): Promise<WidgetTwoColumnsLayout> {
+        const columns = new WidgetTwoColumnsLayout(values);
+        columns.data = values?.data ? await Promise.all(values.data.map(arr => Promise.all(arr.map(elem => ModelManager.create(elem.widget, elem))))) : [[], []];
+        return columns;
+    }
+
+    constructor(values?: InputWidgetTwoColumnsLayoutData) {
         super(values);
-        this.params = values?.params ? structuredClone(values.params) : { firstColumnWidth: 6 };
-        this.data = values?.data ? values.data.map((arr: any[]) => arr.map(elem => ModelManager.create(elem.widget, elem))) : [[], []];
+        this.params = values?.params ? structuredClone(values.params) : { firstColumnWidth: "6" };
     }
 
     clone(): WidgetTwoColumnsLayout {

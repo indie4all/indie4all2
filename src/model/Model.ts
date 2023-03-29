@@ -26,13 +26,13 @@ export class Model {
     currentErrors: { element: string, keys: string[] }[];
 
     static async create(model: any): Promise<Model> {
+        Migrator.migrate(model);
         const result = new Model(model);
         result.sections = model.sections ? await Promise.all(model.sections.map((sectionData: any) => Section.create(sectionData))) : [];
         return result;
     }
 
     constructor(model: any) {
-        Migrator.migrate(model);
         this.version = model.version;
         this.i18n = I18n.getInstance();
         this.title = model.title;

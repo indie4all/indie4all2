@@ -8,15 +8,18 @@ export default class WidgetLocalImageAndSoundItem extends WidgetImageAndSoundIte
 
     static async create(values?: InputWidgetImageAndSoundItemData): Promise<WidgetLocalImageAndSoundItem> {
         if (!values?.data?.audioblob && values?.data?.audio) {
-            values.data.audioblob = await Utils.encodeURLAsBase64DataURL(values.data.audio) as string;
+            const url = Utils.resourceURL(values.data.audio);
+            values.data.audioblob = await Utils.encodeURLAsBase64DataURL(url) as string;
             delete values.data.audio;
         }
         if (!values?.data?.captionsblob && values?.data?.captions) {
-            values.data.captionsblob = await Utils.encodeURLAsBase64DataURL(values.data.captions) as string;
+            const url = Utils.resourceURL(values.data.captions);
+            values.data.captionsblob = await Utils.encodeURLAsBase64DataURL(url) as string;
             delete values.data.captions;
         }
         if (!values?.data?.blob && values?.data?.image) {
-            values.data.blob = await Utils.encodeURLAsBase64DataURL(values?.data?.image) as string;
+            const url = Utils.resourceURL(values.data.image);
+            values.data.blob = await Utils.encodeURLAsBase64DataURL(url) as string;
             delete values.data.image;
         }
         return new WidgetLocalImageAndSoundItem(values);

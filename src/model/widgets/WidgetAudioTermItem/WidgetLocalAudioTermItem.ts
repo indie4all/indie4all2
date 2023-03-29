@@ -9,11 +9,13 @@ export default class WidgetLocalAudioTermItem extends WidgetAudioTermItem {
 
     static async create(values?: InputWidgetAudioTermItemData): Promise<WidgetLocalAudioTermItem> {
         if (!values?.data?.audioblob && values?.data?.audio) {
-            values.data.audioblob = await Utils.encodeURLAsBase64DataURL(values.data.audio) as string;
+            const url = Utils.resourceURL(values.data.audio);
+            values.data.audioblob = await Utils.encodeURLAsBase64DataURL(url) as string;
             delete values.data.audio;
         }
         if (!values?.data?.captionsblob && values?.data?.captions) {
-            values.data.captionsblob = await Utils.encodeURLAsBase64DataURL(values.data.captions) as string;
+            const url = Utils.resourceURL(values.data.captions);
+            values.data.captionsblob = await Utils.encodeURLAsBase64DataURL(url) as string;
             delete values.data.captions;
         }
         return new WidgetLocalAudioTermItem(values);

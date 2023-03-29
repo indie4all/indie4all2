@@ -4,6 +4,7 @@ const express = require('express');
 const helmet = require('helmet');
 const config = require("config");
 const modelRouter = require("./routes/model");
+const resourceRouter = require("./routes/resource")
 const cleanPreviewsCron = require("./cron/cleanPreviews");
 const logger = JetLogger(LoggerModes.Console);
 const app = express();
@@ -28,8 +29,9 @@ app.use(express.json({limit: '500mb'}));
 app.use(express.static(config.get("folder.web")));
 // Enable access to preview units
 app.use(config.get("url.previews"), express.static(config.get("folder.previews")));
-// Parse JSON from POST body (for future validation)
+// Map root paths to their corresponding routes
 app.use("/model", modelRouter);
+app.use("/resource", resourceRouter);
 
 app.listen(config.get("server.port"), function() {
     logger.imp("---------------");

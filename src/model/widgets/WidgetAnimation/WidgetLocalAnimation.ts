@@ -7,7 +7,8 @@ export default class WidgetLocalAnimation extends WidgetAnimation {
 
     static async create(values?: InputWidgetPiecesElementData): Promise<WidgetLocalAnimation> {
         if (!values?.data?.blob && values?.data?.image) {
-            values.data.blob = await Utils.encodeURLAsBase64DataURL(values.data.image) as string;
+            const url = Utils.resourceURL(values.data.image);
+            values.data.blob = await Utils.encodeURLAsBase64DataURL(url) as string;
             delete values.data.image;
         }
         return new WidgetLocalAnimation(values);

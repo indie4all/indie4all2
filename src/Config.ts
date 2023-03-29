@@ -17,6 +17,8 @@ export default class Config {
     private static saveBackendURL: string = '/model/save';
     // Server URL to generate a scorm package with the contents of the unit. Default value: '/model/scorm'.
     private static scormBackendURL: string = '/model/scorm';
+    // Server URL to retrieve a remote resource
+    private static resourceBackendURL: string = null;
 
     public static setOptions(options: ConfigOptions) {
         if (typeof options.enablePWA === 'boolean')
@@ -35,6 +37,8 @@ export default class Config {
             this.setSaveBackendURL(options.saveBackendURL);
         if (typeof options.scormBackendURL === 'string')
             this.setScormBackendURL(options.scormBackendURL);
+        if (typeof options.resourceBackendURL === 'string')
+            this.setResourceBackendURL(options.resourceBackendURL);
     }
 
     public static setPWAEnabled(value: boolean) {
@@ -99,6 +103,14 @@ export default class Config {
 
     public static getScormBackendURL(): string {
         return this.scormBackendURL;
+    }
+
+    public static setResourceBackendURL(value: string) {
+        this.resourceBackendURL = value;
+    }
+
+    public static getResourceBackendURL() {
+        return this.resourceBackendURL;
     }
 
 }

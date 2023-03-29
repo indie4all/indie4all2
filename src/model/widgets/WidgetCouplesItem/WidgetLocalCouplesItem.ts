@@ -9,7 +9,8 @@ export default class WidgetLocalCouplesItem extends WidgetCouplesItem {
     static async create(values?: InputWidgetCouplesItemData): Promise<WidgetLocalCouplesItem> {
         for (let idx in [0, 1]) {
             if (!values?.data?.couples[idx]?.blob && values?.data?.couples[idx]?.image) {
-                values.data.couples[idx].blob = await Utils.encodeURLAsBase64DataURL(values.data.couples[idx].image) as string;
+                const url = Utils.resourceURL(values.data.couples[idx].image);
+                values.data.couples[idx].blob = await Utils.encodeURLAsBase64DataURL(url) as string;
                 delete values.data.couples[idx].image;
             }
         }

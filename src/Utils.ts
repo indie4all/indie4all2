@@ -1,8 +1,8 @@
 /* global $ */
+import Config from "./Config";
 import I18n from "./I18n";
 import { Model } from "./model/Model";
 import ModelElement from "./model/ModelElement";
-import ModelManager from "./model/ModelManager";
 
 export default class Utils {
 
@@ -208,5 +208,12 @@ export default class Utils {
 
     static toKebabCase(text: string): string {
         return text.split(/(?=[A-Z])/).join('-').toLowerCase();
+    }
+
+    static resourceURL(resource: string): string {
+        let url = resource;
+        if (Config.getResourceBackendURL())
+            url = Config.getResourceBackendURL() + "?resource=" + url;
+        return url;
     }
 }

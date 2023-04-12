@@ -20,6 +20,8 @@ export interface ConfigOptions {
     scormBackendURL?: string,
     // Server URL to retrieve a remote resource
     resourceBackendURL?: string
+    // List of permitted origins for hosting resources
+    allowedResourceOrigins?: []
 }
 
 /** Edit form data **/

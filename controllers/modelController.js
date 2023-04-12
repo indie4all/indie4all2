@@ -76,14 +76,14 @@ exports.save = (req, res) => {
 
 exports.preview = (req, res) => {
     const onGenerated = async (folder) => {
-        await copyAssets(`${folder}/${config.get("folder.assets")}`, req.body.color, req.body.cover, "Local");
+        await copyAssets(`${folder}/${config.get("folder.assets")}`, req.body.color, req.body.cover, req.body.mode);
         return res.status(StatusCodes.OK).json({success: true, url: config.get("url.units") + "/" + folder });
     };          
-    generate(req, res, onGenerated); 
+    generate(req, res, onGenerated, req.body.mode); 
 }
 
 exports.publish = (req, res) => {
-    generate(req, res, onPublishUnit.bind(this, res, config.get("file.zip")));
+    generate(req, res, onPublishUnit.bind(this, res, config.get("file.zip")), req.body.mode);
 }
 
 exports.scorm = (req, res) => {

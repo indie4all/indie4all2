@@ -7,8 +7,12 @@ export default class WidgetRemoteAnimation extends WidgetAnimationDelegate {
 
     static async create(values?: InputWidgetPiecesElementData): Promise<WidgetRemoteAnimation> {
         // TODO Local to remote resources
-        if (!values?.data?.image && values?.data?.blob)
-            throw new Error("Conversion from Local to Remote is not currently supported");
+        if (!values?.data?.image && values?.data?.blob) {
+            const url = await Utils.base64DataURLToURL(values.data.blob);
+            values.data.image = url;
+            delete values.data.blob;
+            //throw new Error("Conversion from Local to Remote is not currently supported");
+        }
         return new WidgetRemoteAnimation(values);
     }
 
@@ -45,7 +49,7 @@ export default class WidgetRemoteAnimation extends WidgetAnimationDelegate {
         const $form = $('#f-' + self.id);
         $form.on('change.pieces', 'input[name="image"]', function (e) {
             $form.find('.pieces-wrapper').addClass('d-none');
-            if (Utils.isIndieResource(e.target.value))
+            if (Utils.isValidResource(e.target.value))
                 self.loadImage(e.target.value);
         });
         this.data.image && self.loadImage(this.data.image);
@@ -64,14 +68,14 @@ export default class WidgetRemoteAnimation extends WidgetAnimationDelegate {
 
     validateModel(): string[] {
         const errors = super.validateModel();
-        if (!Utils.isIndieResource(this.data.image))
+        if (!Utils.isValidResource(this.data.image))
             errors.push(WidgetRemoteAnimation.widget + ".image.invalid");
         return errors;
     }
 
     validateForm(form: any): string[] {
         const errors = super.validateForm(form);
-        !Utils.isIndieResource(this.data.image) && errors.push(WidgetRemoteAnimation + ".image.invalid");
+        !Utils.isValidResource(this.data.image) && errors.push(WidgetRemoteAnimation + ".image.invalid");
         return errors;
     }
 }

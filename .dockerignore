@@ -2,6 +2,7 @@
 dist
 node_modules
 preview
+media
 spec
 src
 .dockerignore

@@ -8,7 +8,9 @@ export default class WidgetRemoteCorrectWordItem extends WidgetCorrectWordItem {
 
     static async create(values?: InputWidgetCorrectWordItemData): Promise<WidgetRemoteCorrectWordItem> {
         if (values?.data?.blob && !values?.data?.image) {
-            throw new Error("Conversion from Local to Remote is not currently supported");
+            const url = await Utils.base64DataURLToURL(values.data.blob);
+            values.data.image = url;
+            delete values.data.blob;
         }
         return new WidgetRemoteCorrectWordItem(values);
     }
@@ -49,7 +51,7 @@ export default class WidgetRemoteCorrectWordItem extends WidgetCorrectWordItem {
             $preview.attr('src', '');
             $sectionPreview.toggleClass('d-none', true);
             const value = (e.target as HTMLInputElement).value;
-            if (Utils.isIndieResource(value)) {
+            if (Utils.isValidResource(value)) {
                 $preview.attr('src', value);
                 $sectionPreview.toggleClass('d-none', false);
             }
@@ -63,13 +65,13 @@ export default class WidgetRemoteCorrectWordItem extends WidgetCorrectWordItem {
 
     validateModel(): string[] {
         const errors = super.validateModel();
-        if (!Utils.isIndieResource(this.data.image)) errors.push("CorrectWordItem.image.invalid");
+        if (!Utils.isValidResource(this.data.image)) errors.push("CorrectWordItem.image.invalid");
         return errors;
     }
 
     validateForm(form: any): string[] {
         const errors = super.validateForm(form);
-        if (!Utils.isIndieResource(form.image)) errors.push("CorrectWordItem.image.invalid");
+        if (!Utils.isValidResource(form.image)) errors.push("CorrectWordItem.image.invalid");
         return errors;
     }
 }

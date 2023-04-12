@@ -18,7 +18,9 @@ export default class Config {
     // Server URL to generate a scorm package with the contents of the unit. Default value: '/model/scorm'.
     private static scormBackendURL: string = '/model/scorm';
     // Server URL to retrieve a remote resource
-    private static resourceBackendURL: string = null;
+    private static resourceBackendURL: string = '/resource';
+    // List of allowed origins for media data
+    private static allowedResourceOrigins: string[] = ["http://localhost:8000", "https://indiemedia.upct.es", "http://indieopen.upct.es", "https://multimediarepository.blob.core.windows.net"];
 
     public static setOptions(options: ConfigOptions) {
         if (typeof options.enablePWA === 'boolean')
@@ -39,6 +41,8 @@ export default class Config {
             this.setScormBackendURL(options.scormBackendURL);
         if (typeof options.resourceBackendURL === 'string')
             this.setResourceBackendURL(options.resourceBackendURL);
+        if (Array.isArray(options.allowedResourceOrigins))
+            this.setAllowedResourceOrigins(options.allowedResourceOrigins);
     }
 
     public static setPWAEnabled(value: boolean) {
@@ -111,6 +115,14 @@ export default class Config {
 
     public static getResourceBackendURL() {
         return this.resourceBackendURL;
+    }
+
+    public static setAllowedResourceOrigins(value: string[]) {
+        this.allowedResourceOrigins = value;
+    }
+
+    public static getAllowedResourceOrigins(): string[] {
+        return this.allowedResourceOrigins;
     }
 
 }

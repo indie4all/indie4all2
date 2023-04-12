@@ -69,7 +69,7 @@ export default class WidgetAnimationContainer extends WidgetContainerSpecificEle
         var errors: string[] = [];
         if (form.width <= 0) errors.push("AnimationContainer.width.invalid");
         if (form.height <= 0) errors.push("AnimationContainer.height.invalid");
-        if (!Utils.isIndieResource(form.image)) errors.push("AnimationContainer.image.invalid");
+        if (!Utils.isValidResource(form.image)) errors.push("AnimationContainer.image.invalid");
         if (form.instanceName.length == 0) errors.push("common.name.invalid");
         return errors;
     }
@@ -78,7 +78,7 @@ export default class WidgetAnimationContainer extends WidgetContainerSpecificEle
         var errors: string[] = [];
         if (this.params.width <= 0) errors.push("AnimationContainer.width.invalid");
         if (this.params.height <= 0) errors.push("AnimationContainer.height.invalid");
-        if (!Utils.isIndieResource(this.params.image)) errors.push("AnimationContainer.image.invalid");
+        if (!Utils.isValidResource(this.params.image)) errors.push("AnimationContainer.image.invalid");
         if (this.data.length == 0) errors.push("AnimationContainer.data.empty");
         if (!Utils.hasNameInParams(this)) errors.push("common.name.invalid");
         return errors;

@@ -16,7 +16,7 @@ export default class WidgetVideo extends WidgetItemElement {
     }
 
     private toggleCaptionAndDescriptions(videourl: string) {
-        if (Utils.isIndieResource(videourl)) {
+        if (Utils.isValidResource(videourl)) {
             $('#f-' + this.id + ' input[name="captions"]').parent().show();
             $('#f-' + this.id + ' input[name="descriptions"]').parent().show();
         } else {
@@ -27,7 +27,7 @@ export default class WidgetVideo extends WidgetItemElement {
     }
 
     private putOrDeleteCaptionAndDescriptions() {
-        if (!Utils.isIndieResource(this.data.videourl)) {
+        if (!Utils.isValidResource(this.data.videourl)) {
             this.data.captions = "";
             this.data.descriptions = "";
         }
@@ -99,10 +99,10 @@ export default class WidgetVideo extends WidgetItemElement {
         var keys: string[] = [];
         if (!Utils.isYoutubeVideoURL(this.data.videourl)) keys.push("Video.videourl.invalid");
         if (!Utils.isStringEmptyOrWhitespace(this.data.captions) &&
-            !Utils.isIndieResource(this.data.captions))
+            !Utils.isValidResource(this.data.captions))
             keys.push("common.captions.invalid");
         if (!Utils.isStringEmptyOrWhitespace(this.data.descriptions) &&
-            !Utils.isIndieResource(this.data.descriptions))
+            !Utils.isValidResource(this.data.descriptions))
             keys.push("common.descriptions.invalid");
         if (!Utils.hasNameInParams(this)) keys.push("common.name.invalid");
         return keys;
@@ -111,9 +111,9 @@ export default class WidgetVideo extends WidgetItemElement {
     validateForm(form: any): string[] {
         var keys: string[] = [];
         if (!Utils.isYoutubeVideoURL(form.videourl)) keys.push("Video.videourl.invalid");
-        if (!Utils.isStringEmptyOrWhitespace(form.captions) && !Utils.isIndieResource(form.captions))
+        if (!Utils.isStringEmptyOrWhitespace(form.captions) && !Utils.isValidResource(form.captions))
             keys.push("common.captions.invalid");
-        if (!Utils.isStringEmptyOrWhitespace(form.descriptions) && !Utils.isIndieResource(form.descriptions))
+        if (!Utils.isStringEmptyOrWhitespace(form.descriptions) && !Utils.isValidResource(form.descriptions))
             keys.push("common.descriptions.invalid");
         if (form.instanceName.length == 0) keys.push("common.name.invalid");
         return keys;

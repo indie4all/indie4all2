@@ -25,10 +25,15 @@ app.use(compression());
 // }));
 // Parse JSON in requests with a size limit of 500 mb
 app.use(express.json({limit: '500mb'}));
+// Text/plain handler
+app.use(express.text({ type: 'text/plain', limit: '50mb' }));
+// Binary data handler
+app.use(express.raw({ type: 'application/octet-stream', limit: '50mb' }));
 // Access to the tool resources
 app.use(express.static(config.get("folder.web")));
 // Enable access to preview units
 app.use(config.get("url.previews"), express.static(config.get("folder.previews")));
+app.use(config.get("url.media"), express.static(config.get("folder.media")));
 // Map root paths to their corresponding routes
 app.use("/model", modelRouter);
 app.use("/resource", resourceRouter);

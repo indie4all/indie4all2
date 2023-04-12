@@ -8,10 +8,18 @@ export default class WidgetRemoteAudioTermItem extends WidgetAudioTermItem {
 
     static async create(values?: InputWidgetAudioTermItemData): Promise<WidgetRemoteAudioTermItem> {
         // TODO Local to remote resources
-        if (!values?.data?.captions && values?.data?.captionsblob)
-            throw new Error("Conversion from Local to Remote is not currently supported");
-        if (!values?.data?.audio && values?.data?.audioblob)
-            throw new Error("Conversion from Local to Remote is not currently supported");
+        if (!values?.data?.captions && values?.data?.captionsblob) {
+            const url = await Utils.base64DataURLToURL(values.data.captionsblob);
+            values.data.captions = url;
+            delete values.data.captionsblob;
+            //throw new Error("Conversion from Local to Remote is not currently supported");
+        }
+        if (!values?.data?.audio && values?.data?.audioblob) {
+            const url = await Utils.base64DataURLToURL(values.data.audioblob);
+            values.data.audio = url;
+            delete values.data.audioblob;
+            //throw new Error("Conversion from Local to Remote is not currently supported");
+        }
 
         return new WidgetRemoteAudioTermItem(values);
     }
@@ -49,18 +57,18 @@ export default class WidgetRemoteAudioTermItem extends WidgetAudioTermItem {
 
     validateModel(): string[] {
         const errors = super.validateModel();
-        if (!Utils.isStringEmptyOrWhitespace(this.data.captions) && !Utils.isIndieResource(this.data.captions))
+        if (!Utils.isStringEmptyOrWhitespace(this.data.captions) && !Utils.isValidResource(this.data.captions))
             errors.push("common.captions.invalid");
-        if (!Utils.isIndieResource(this.data.audio))
+        if (!Utils.isValidResource(this.data.audio))
             errors.push("AudioTermItem.audio.invalid");
         return errors;
     }
 
     validateForm(form: any): string[] {
         const errors: string[] = super.validateForm(form);
-        if (!Utils.isStringEmptyOrWhitespace(form.captions) && !Utils.isIndieResource(form.captions))
+        if (!Utils.isStringEmptyOrWhitespace(form.captions) && !Utils.isValidResource(form.captions))
             errors.push("common.captions.invalid");
-        if (!Utils.isIndieResource(form.audio))
+        if (!Utils.isValidResource(form.audio))
             errors.push("AudioTermItem.audio.invalid");
         return errors;
     }

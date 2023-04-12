@@ -48,13 +48,13 @@ export default class WidgetAnimationItem extends WidgetSpecificItemElement {
 
     validateModel(): string[] {
         var errors: string[] = [];
-        if (!Utils.isIndieResource(this.data.image)) errors.push("AnimationItem.image.invalid");
+        if (!Utils.isValidResource(this.data.image)) errors.push("AnimationItem.image.invalid");
         return errors;
     }
 
     validateForm(form: any): string[] {
         var errors: string[] = [];
-        if (!Utils.isIndieResource(form.image)) errors.push("AnimationItem.image.invalid");
+        if (!Utils.isValidResource(form.image)) errors.push("AnimationItem.image.invalid");
         return errors;
     }
 }

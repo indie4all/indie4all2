@@ -1,5 +1,6 @@
 import I18n from "../I18n";
 import Utils from "../Utils";
+import Config from "../Config";
 import Migrator from "./migration/Migrator";
 import ModelElement from "./ModelElement";
 import Section from "./section/Section";
@@ -40,7 +41,6 @@ export class Model {
         this.email = model.email;
         this.institution = model.institution;
         this.resourceId = model.resourceId;
-        this.mode = model.mode;
         this.language = model.language;
         this.theme = model.theme;
         this.license = model.license;
@@ -203,6 +203,7 @@ export class Model {
         if (this.license) result["license"] = this.license;
         if (this.color) result["color"] = this.color;
         if (this.cover) result["cover"] = this.cover;
+        result['mode'] = Config.isLocal() ? 'Local' : 'Open';
         return result;
     }
 }

@@ -10,13 +10,15 @@
     "folder": {
         "assets": "assets",
         "previews": "preview",
-        "web": "web"
+        "web": "web",
+        "media": "web/media"
     }, 
     "server": {
         "port": 8000
     },
     "url": {
         "previews": "/units/preview",
-        "units": "/units"
+        "units": "/units",
+        "media": "/web/media"
     }
 }

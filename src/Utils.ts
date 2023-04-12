@@ -126,13 +126,13 @@ export default class Utils {
         return allowedDomains.some(dom => url.startsWith(dom));
     }
 
-    static isIndieResource(url: string): boolean {
-        return this.isUrlWithinDomains(url, ["https://indiemedia.upct.es", "http://indieopen.upct.es", "https://multimediarepository.blob.core.windows.net"]);
+    static isValidResource(url: string): boolean {
+        return this.isUrlWithinDomains(url, Config.getAllowedResourceOrigins());
     }
 
     static isValidBase64DataUrl(data: any): boolean {
-        const pattern = /^data:([-\w.]+\/[-\w.+]+)?;base64,([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$/;
-        return typeof data === 'string' && !!data.match(pattern);
+        const pattern = /^data:([-\w.]+\/[-\w.+]+)?;base64,[A-Za-z0-9+/]*={0,2}?$/;
+        return typeof data === 'string' && new RegExp(pattern).test(data);
     }
 
     static hasNameInParams(widgetInstance: any): boolean {
@@ -156,6 +156,17 @@ export default class Utils {
         const res = await fetch(url);
         const blob = await res.blob();
         return await this.encodeBlobAsBase64DataURL(blob);
+    }
+
+    static async base64DataURLToURL(base64: string): Promise<string> {
+        const resourceBackend = Config.getResourceBackendURL();
+        if (!resourceBackend)
+            throw new Error("Conversion from base64 to remote url is not supported");
+
+        const blob = await fetch(base64).then(res => res.blob());
+        const headers = new Headers();
+        headers.append("Content-Type", "application/octet-stream");
+        return await fetch(resourceBackend, { method: 'POST', headers, body: blob, redirect: 'follow' }).then(response => response.text());
     }
 
     static findAllElements(model: Model): ModelElement[] {

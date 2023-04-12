@@ -8,7 +8,9 @@ export default class WidgetRemoteChooseOption extends WidgetChooseOption {
 
     static async create(values?: InputWidgetChooseOptionData): Promise<WidgetRemoteChooseOption> {
         if (values?.data?.blob && !values?.data?.image) {
-            throw new Error("Conversion from Local to Remote is not currently supported");
+            const url = await Utils.base64DataURLToURL(values.data.blob);
+            values.data.image = url;
+            delete values.data.blob;
         }
         return new WidgetRemoteChooseOption(values);
     }
@@ -62,7 +64,7 @@ export default class WidgetRemoteChooseOption extends WidgetChooseOption {
         $iImg.on('change', function (e) {
             $sectionPreview.toggleClass('d-none', true);
             const value = (e.target as HTMLInputElement).value;
-            if (Utils.isIndieResource(value)) {
+            if (Utils.isValidResource(value)) {
                 $preview.attr('src', value);
                 $sectionPreview.toggleClass('d-none', false);
             }
@@ -76,13 +78,13 @@ export default class WidgetRemoteChooseOption extends WidgetChooseOption {
 
     validateModel(): string[] {
         const errors = super.validateModel();
-        if (!Utils.isIndieResource(this.data.image)) errors.push("ChooseOption.image.invalid");
+        if (!Utils.isValidResource(this.data.image)) errors.push("ChooseOption.image.invalid");
         return errors;
     }
 
     validateForm(form: any): string[] {
         const errors = super.validateForm(form);
-        if (!Utils.isIndieResource(form.image)) errors.push("ChooseOption.image.invalid");
+        if (!Utils.isValidResource(form.image)) errors.push("ChooseOption.image.invalid");
         return errors;
     }
 }

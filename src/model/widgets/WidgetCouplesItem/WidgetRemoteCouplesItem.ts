@@ -9,7 +9,9 @@ export default class WidgetRemoteCouplesItem extends WidgetCouplesItem {
     static async create(values?: InputWidgetCouplesItemData): Promise<WidgetRemoteCouplesItem> {
         for (let idx in [0, 1]) {
             if (values?.data?.couples[idx]?.blob && !values?.data?.couples[idx]?.image) {
-                throw new Error("Conversion from Local to Remote is not currently supported");
+                const url = await Utils.base64DataURLToURL(values.data.couples[idx].blob);
+                values.data.couples[idx].image = url;
+                delete values.data.couples[idx].blob;
             }
         }
         return new WidgetRemoteCouplesItem(values);
@@ -77,7 +79,7 @@ export default class WidgetRemoteCouplesItem extends WidgetCouplesItem {
             const $sectionPreview = $preview.closest('.form-group');
             $preview.attr('src', '');
             $sectionPreview.toggleClass('d-none', true);
-            if (Utils.isIndieResource(e.target.value)) {
+            if (Utils.isValidResource(e.target.value)) {
                 $preview.attr('src', e.target.value);
                 $sectionPreview.toggleClass('d-none', false);
             }
@@ -94,7 +96,7 @@ export default class WidgetRemoteCouplesItem extends WidgetCouplesItem {
 
         const errors = super.validateModel();
         this.data.couples.forEach(couple => {
-            if (couple.type === 'image' && !Utils.isIndieResource(couple.image))
+            if (couple.type === 'image' && !Utils.isValidResource(couple.image))
                 errors.push("CouplesItem.image.invalid");
         });
         return errors;
@@ -103,7 +105,7 @@ export default class WidgetRemoteCouplesItem extends WidgetCouplesItem {
     validateForm(form: any): string[] {
         const errors = super.validateForm(form);
         form.couple.forEach(couple => {
-            if (couple.type === 'image' && !Utils.isIndieResource(couple.image))
+            if (couple.type === 'image' && !Utils.isValidResource(couple.image))
                 errors.push("CouplesItem.image.invalid");
         });
         return errors;

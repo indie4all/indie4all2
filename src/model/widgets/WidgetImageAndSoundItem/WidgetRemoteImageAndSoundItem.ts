@@ -8,12 +8,25 @@ export default class WidgetRemoteImageAndSoundItem extends WidgetImageAndSoundIt
 
     static async create(values?: InputWidgetImageAndSoundItemData): Promise<WidgetRemoteImageAndSoundItem> {
         // TODO Local to remote resources
-        if (!values?.data?.captions && values?.data?.captionsblob)
-            throw new Error("Conversion from Local to Remote is not currently supported");
-        if (!values?.data?.audio && values?.data?.audioblob)
-            throw new Error("Conversion from Local to Remote is not currently supported");
-        if (!values?.data?.image && values?.data?.blob)
-            throw new Error("Conversion from Local to Remote is not currently supported");
+        if (!values?.data?.captions && values?.data?.captionsblob) {
+            const url = await Utils.base64DataURLToURL(values.data.captionsblob);
+            values.data.captions = url;
+            delete values.data.captionsblob;
+            //throw new Error("Conversion from Local to Remote is not currently supported");
+        }
+
+        if (!values?.data?.audio && values?.data?.audioblob) {
+            const url = await Utils.base64DataURLToURL(values.data.audioblob);
+            values.data.audio = url;
+            delete values.data.audioblob;
+            //throw new Error("Conversion from Local to Remote is not currently supported");
+        }
+        if (!values?.data?.image && values?.data?.blob) {
+            const url = await Utils.base64DataURLToURL(values.data.blob);
+            values.data.image = url;
+            delete values.data.blob;
+            // throw new Error("Conversion from Local to Remote is not currently supported");
+        }
         return new WidgetRemoteImageAndSoundItem(values);
     }
 
@@ -54,7 +67,7 @@ export default class WidgetRemoteImageAndSoundItem extends WidgetImageAndSoundIt
             $preview.attr('src', '');
             $sectionPreview.toggleClass('d-none', true);
             const value = (e.target as HTMLInputElement).value;
-            if (Utils.isIndieResource(value)) {
+            if (Utils.isValidResource(value)) {
                 $preview.attr('src', value);
                 $sectionPreview.toggleClass('d-none', false);
             }
@@ -69,22 +82,22 @@ export default class WidgetRemoteImageAndSoundItem extends WidgetImageAndSoundIt
 
     validateModel(): string[] {
         const errors = super.validateModel();
-        if (!Utils.isIndieResource(this.data.audio))
+        if (!Utils.isValidResource(this.data.audio))
             errors.push("ImageAndSoundItem.audio.invalid");
-        if (!Utils.isIndieResource(this.data.image))
+        if (!Utils.isValidResource(this.data.image))
             errors.push("ImageAndSoundItem.image.invalid");
-        if (!Utils.isStringEmptyOrWhitespace(this.data.captions) && !Utils.isIndieResource(this.data.captions))
+        if (!Utils.isStringEmptyOrWhitespace(this.data.captions) && !Utils.isValidResource(this.data.captions))
             errors.push("common.captions.invalid");
         return errors;
     }
 
     validateForm(form: any) {
         const errors = super.validateForm(form);
-        if (!Utils.isIndieResource(form.audio))
+        if (!Utils.isValidResource(form.audio))
             errors.push("ImageAndSoundItem.audio.invalid");
-        if (!Utils.isIndieResource(form.image))
+        if (!Utils.isValidResource(form.image))
             errors.push("ImageAndSoundItem.image.invalid");
-        if (!Utils.isStringEmptyOrWhitespace(form.captions) && !Utils.isIndieResource(form.captions))
+        if (!Utils.isStringEmptyOrWhitespace(form.captions) && !Utils.isValidResource(form.captions))
             errors.push("common.captions.invalid");
         return errors;
     }

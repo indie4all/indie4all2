@@ -16,8 +16,11 @@ export default class WidgetRemoteImageAndText extends WidgetImageAndText {
 
     static async create(values?: InputWidgetImageAndTextData): Promise<WidgetRemoteImageAndText> {
         // TODO Local to remote resources
-        if (values?.data?.blob && !values?.data?.image)
-            throw new Error("Conversion from Local to Remote is not currently supported");
+        if (values?.data?.blob && !values?.data?.image) {
+            const url = await Utils.base64DataURLToURL(values.data.blob);
+            values.data.image = url;
+            delete values.data.blob;
+        }
         return new WidgetRemoteImageAndText(values);
     }
 
@@ -66,7 +69,7 @@ export default class WidgetRemoteImageAndText extends WidgetImageAndText {
             $preview.attr('src', '');
             $sectionPreview.toggleClass('d-none', true);
             const value = (e.target as HTMLInputElement).value;
-            if (Utils.isIndieResource(value)) {
+            if (Utils.isValidResource(value)) {
                 $preview.attr('src', value);
                 $sectionPreview.toggleClass('d-none', false);
             }
@@ -80,13 +83,13 @@ export default class WidgetRemoteImageAndText extends WidgetImageAndText {
 
     validateModel(): string[] {
         const errors = super.validateModel();
-        if (!Utils.isIndieResource(this.data.image)) errors.push("ImageAndText.image.invalid");
+        if (!Utils.isValidResource(this.data.image)) errors.push("ImageAndText.image.invalid");
         return errors;
     }
 
     validateForm(form: any): string[] {
         const errors = super.validateForm(form);
-        if (!Utils.isIndieResource(form.image)) errors.push("ImageAndText.image.invalid");
+        if (!Utils.isValidResource(form.image)) errors.push("ImageAndText.image.invalid");
         return errors;
     }
 }

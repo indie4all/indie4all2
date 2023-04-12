@@ -8,8 +8,11 @@ export default class WidgetRemoteSchemaItem extends WidgetSchemaItem {
 
     static async create(values?: InputWidgetSchemaItemData): Promise<WidgetRemoteSchemaItem> {
         // TODO Local to remote resources
-        if (values?.data?.blob && !values?.data?.image)
-            throw new Error("Conversion from Local to Remote is not currently supported");
+        if (values?.data?.blob && !values?.data?.image) {
+            const url = await Utils.base64DataURLToURL(values.data.blob);
+            values.data.image = url;
+            delete values.data.blob;
+        }
         return new WidgetRemoteSchemaItem(values);
     }
 
@@ -48,7 +51,7 @@ export default class WidgetRemoteSchemaItem extends WidgetSchemaItem {
             $preview.attr('src', '');
             $sectionPreview.toggleClass('d-none', true);
             const value = (e.target as HTMLInputElement).value;
-            if (Utils.isIndieResource(value)) {
+            if (Utils.isValidResource(value)) {
                 $preview.attr('src', value);
                 $sectionPreview.toggleClass('d-none', false);
             }
@@ -62,14 +65,14 @@ export default class WidgetRemoteSchemaItem extends WidgetSchemaItem {
 
     validateModel(): string[] {
         const errors = super.validateModel();
-        if (!Utils.isIndieResource(this.data.image))
+        if (!Utils.isValidResource(this.data.image))
             errors.push("SchemaItem.image.invalid");
         return errors;
     }
 
     validateForm(form: any): string[] {
         const errors = super.validateForm(form);
-        if (!Utils.isIndieResource(form.image))
+        if (!Utils.isValidResource(form.image))
             errors.push("SchemaItem.image.invalid");
         return errors;
     }

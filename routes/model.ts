@@ -1,6 +1,6 @@
-const express = require("express");
+import express, { Request, Response } from "express";
 const router = express.Router();
-const model_controller = require("../controllers/modelController");
+import model_controller from "../controllers/modelController";
 
 // Save a given model
 router.post('/save', model_controller.save);
@@ -14,4 +14,4 @@ router.post('/publish', model_controller.publish);
 // Export a given model as a SCORM package
 router.post('/scorm', model_controller.scorm);
 
-module.exports = router;
+export default router;

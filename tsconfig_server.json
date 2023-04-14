@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "removeComments": true,
+    "target": "es2016",
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "outDir": "./backend",
+    "paths": {
+      "*": ["node_modules/*"]
+    }
+  },
+  "include": ["server.ts"]
+}

@@ -8,6 +8,7 @@ RUN npm install pm2 -y -g
 WORKDIR /usr/src/app
 COPY . .
 RUN mkdir preview
+RUN mkdir media
 RUN npm install --silent
 RUN mv node_modules ../
 RUN chown -R node /usr/src/app

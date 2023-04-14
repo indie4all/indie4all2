@@ -1,10 +1,10 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const resource_controller = require("../controllers/resourceController");
+import resource_controller from "../controllers/resourceController";
 
 // Get a remote resource
 router.get('/', resource_controller.get);
 
 router.post('/', resource_controller.post);
 
-module.exports = router;
+export default router;

@@ -1,12 +1,12 @@
-const cron = require('node-cron');
-const fs = require('fs-extra');
-const config = require('config');
-const { LoggerModes, JetLogger } = require('jet-logger');
+import cron from 'node-cron';
+import fs from 'fs-extra';
+import config from 'config';
+import { LoggerModes, JetLogger } from 'jet-logger';
 const logger = JetLogger(LoggerModes.Console);
 
-const cleanOldPreviews = function() {
-    const previewsFolder = config.get("folder.previews");
-    fs.readdir(previewsFolder, {withFileTypes: true}, (err, files) => {
+const cleanOldPreviews = function () {
+    const previewsFolder = config.get<string>("folder.previews");
+    fs.readdir(previewsFolder, { withFileTypes: true }, (err, files) => {
         logger.imp("Cleaning old previews...");
         if (err) {
             logger.err("Could not read directory: " + previewsFolder);
@@ -22,11 +22,13 @@ const cleanOldPreviews = function() {
             // And whose timestamp is lesser than now
             .filter(dir => parseInt(dir.name) <= Date.now())
             // Delete them
-            .forEach(dir => fs.rm(previewsFolder + "/" + dir.name, {recursive: true, force: true}));
+            .forEach(dir => fs.rm(previewsFolder + "/" + dir.name, { recursive: true, force: true }));
     });
 }
 
-exports.start = () => {
-    const scheduled = cron.schedule('*/10 * * * *', cleanOldPreviews);
-    scheduled.start();
+export default {
+    start: () => {
+        const scheduled = cron.schedule('*/10 * * * *', cleanOldPreviews);
+        scheduled.start();
+    }
 }

@@ -1,14 +1,13 @@
-.git
-dist
-node_modules
-preview
-media
-spec
-src
-.dockerignore
-.gitignore
-Dockerfile
-gulpfile.js
-README.md
-npm-debug.log
-webpack.*
+# Ignore everything
+*
+# Allow the following files and directories
+!/assets
+!/backend
+!/config/production.json
+!/templates
+!/web
+!/contentgenerator.jar
+!/LICENSE
+!/package.json
+!/package-lock.json
+!/pm2.config.js

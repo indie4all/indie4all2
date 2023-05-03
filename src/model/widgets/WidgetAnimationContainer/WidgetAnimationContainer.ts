@@ -37,24 +37,30 @@ export default class WidgetAnimationContainer extends WidgetContainerSpecificEle
         return widget;
     }
 
-    getInputs(): Promise<FormEditData> {
-        return import('./form.hbs').then(({ default: form }) => {
-            return {
-                inputs: form({
-                    width: this.params.width,
-                    height: this.params.height,
-                    image: this.params.image,
-                    id: this.id,
-                    instanceName: this.params.name,
-                    help: this.params.help
-                }),
-                title: this.translate("widgets.AnimationContainer.label")
-            };
-        });
+    async getInputs(): Promise<FormEditData> {
+        const { default: form } = await import('./form.hbs');
+        return {
+            inputs: form({
+                width: this.params.width,
+                height: this.params.height,
+                image: this.params.image,
+                id: this.id,
+                instanceName: this.params.name,
+                help: this.params.help
+            }),
+            title: this.translate("widgets.AnimationContainer.label")
+        };
     }
 
     preview(): string {
         return this.params?.name ?? this.translate("widgets.AnimationContainer.label");
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.params) result["params"] = structuredClone(this.params);
+        if (this.data) result["data"] = this.data.map(elem => elem.toJSON());
+        return result;
     }
 
     updateModelFromForm(form: any): void {

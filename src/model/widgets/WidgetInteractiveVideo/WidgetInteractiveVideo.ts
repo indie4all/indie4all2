@@ -43,6 +43,10 @@ export default class WidgetInteractiveVideo extends WidgetItemElement {
         };
     }
 
+    getTexts() {
+        return {}
+    }
+
     preview(): string {
         return this.params?.name && this.data?.videourl ?
             this.params.name + ": " + this.data.videourl : this.translate("widgets.InteractiveVideo.prev");
@@ -52,6 +56,8 @@ export default class WidgetInteractiveVideo extends WidgetItemElement {
         this.data.videourl = form.videourl;
         this.params.name = form.instanceName;
     }
+
+    updateTexts(texts: any): void { }
 
     validateModel(): string[] {
         var keys: string[] = [];

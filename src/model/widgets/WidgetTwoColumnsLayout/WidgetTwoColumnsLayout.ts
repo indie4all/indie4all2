@@ -52,6 +52,12 @@ export default class WidgetTwoColumnsLayout extends WidgetColumnsLayout {
         $secondColumn.removeClass().addClass(`col-md-${12 - width}`);
     }
 
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = this.data.map(col => col.map(elem => elem.toJSON()));
+        return result;
+    }
+
     updateModelFromForm(form: any): void {
         this.params.firstColumnWidth = form.width;
     }

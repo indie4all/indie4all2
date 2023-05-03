@@ -47,6 +47,13 @@
             "title": "Generating",
             "description": "Generating, please wait"
         },
+        "language": {
+            "EN": "English",
+            "FR": "French",
+            "EL": "Greek",
+            "ES": "Spanish",
+            "LT": "Lithuanian"
+        },
         "loading": {
             "title": "Loading",
             "description": "Loading, please wait"
@@ -75,6 +82,9 @@
             "settings": "Enter unit data"
         },
         "selectType": "Select a type from the following options"
+    },
+    "dialog": {
+        "translate": "Translate unit"
     },
     "errors": {
         "AcordionContainer": {
@@ -503,7 +513,8 @@
         "importSection": "Import section",
         "clear": "Clear content",
         "save": "Save content",
-        "install": "Install application"
+        "install": "Install application",
+        "translate": "Translate unit"
     },
     "items": {
         "add": "Add content",
@@ -611,18 +622,13 @@
                 "label": "Theme color",
                 "placeholder": "Type the color of the theme here"
             },
+            "language": {
+                "help": "Language of the unit.",
+                "label": "Language"
+            },
             "background": {
                 "label": "Image of the theme",
                 "help": "The image should be about 1900 x 550 pixels."
-            },
-            "language": {
-                "help": "Language of the unit.",
-                "label": "Language",
-                "EN": "English",
-                "FR": "French",
-                "EL": "Greek",
-                "ES": "Spanish",
-                "LT": "Lithuanian"
             },
             "license": {
                 "help": "License of the unit.",
@@ -654,6 +660,16 @@
                 "label": "Unit type",
                 "open": "Open",
                 "interoperability": "Interoperability"
+            }
+        },
+        "translate": {
+            "source": {
+                "help": "This is the source language of the unit",
+                "label": "Source language"
+            },
+            "target": {
+                "help": "The target language into which the unit is to be translated",
+                "label": "Target language"
             }
         }
     },

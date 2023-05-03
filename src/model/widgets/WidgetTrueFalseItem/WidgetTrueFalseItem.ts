@@ -44,6 +44,24 @@ export default class WidgetTrueFalseItem extends WidgetSpecificItemElement {
         };
     }
 
+    getTexts() {
+        return {
+            "question": this.data.question,
+            "feedback": this.data.feedback
+        }
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
+
+    updateTexts(texts: any): void {
+        this.data.question = texts.question;
+        this.data.feedback = texts.feedback;
+    }
+
     settingsOpened(): void {
         $("#modal-settings [name='correctAnswer']").val(this.data.answer.toString());
     }

@@ -61,6 +61,14 @@ export class Model {
         }
     }
 
+    getTexts(): any {
+        return { "sections": this.sections.map(section => section.getTexts()) };
+    }
+
+    updateTexts(texts: any): any {
+        (texts.sections as any[]).map((text, idx) => this.sections[idx].updateTexts(text));
+    }
+
     removeElement(dataElementId: string) {
         this.removeElementInModel(this.sections, dataElementId);
     }
@@ -190,7 +198,7 @@ export class Model {
             license?: string
         } = {
             version: this.version,
-            sections: this.sections,
+            sections: this.sections.map(section => section.toJSON()),
             // Regenerate resourceId every time the model is serialized
             resourceId: Utils.generate_uuid()
         }

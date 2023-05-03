@@ -47,6 +47,13 @@
             "title": "Generando",
             "description": "Generando, por favor espere"
         },
+        "language": {
+            "EN": "Inglés",
+            "FR": "Francés",
+            "EL": "Griego",
+            "ES": "Español",
+            "LT": "Lituano"
+        },
         "loading": {
             "title": "Cargando",
             "description": "Cargando, por favor espere"
@@ -75,6 +82,9 @@
             "settings": "Introduce los datos de la unidad"
         },
         "selectType": "Selecciona un tipo de las siguientes opciones"
+    },
+    "dialog": {
+        "translate": "Traducir unidad"
     },
     "errors": {
         "AcordionContainer": {
@@ -503,7 +513,8 @@
         "importSection": "Importar sección",
         "clear": "Limpiar contenido",
         "save": "Guardar contenido",
-        "install": "Instalar aplicación"
+        "install": "Instalar aplicación",
+        "translate": "Traducir unidad"
     },
     "items": {
         "add": "Añadir contenido",
@@ -611,18 +622,13 @@
                 "label": "Color del tema",
                 "placeholder": "Introduce aquí el color del tema"
             },
+            "language": {
+                "help": "Idioma de la unidad.",
+                "label": "Idioma"
+            },
             "background": {
                 "label": "Imagen del tema",
                 "help": "La imagen debería ser aproximadamente de 1900 x 550 píxeles."
-            },
-            "language": {
-                "help": "Idioma de la unidad.",
-                "label": "Idioma",
-                "EN": "Inglés",
-                "FR": "Francés",
-                "EL": "Griego",
-                "ES": "Español",
-                "LT": "Lituano"
             },
             "license": {
                 "help": "Licencia de la unidad",
@@ -654,6 +660,16 @@
                 "label": "Tipo de unidad",
                 "open": "Abierta",
                 "interoperability": "Interoperabilidad"
+            }
+        },
+        "translate": {
+            "source": {
+                "help": "Este es el idioma origen de la unidad",
+                "label": "Idioma origen"
+            },
+            "target": {
+                "help": "El idioma destino al que será traducida la unidad",
+                "label": "Idioma destino"
             }
         }
     },

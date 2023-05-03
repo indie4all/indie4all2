@@ -63,9 +63,23 @@ export default class Section extends ModelElement {
         });
     }
 
+    getTexts() {
+        return {
+            "name": this.name,
+            "bookmark": this.bookmark,
+            "children": this.data.map(e => e.getTexts())
+        };
+    }
+
     updateModelFromForm(form: any): void {
         this.name = form.name;
         this.bookmark = form.bookmark;
+    }
+
+    updateTexts(texts: any): void {
+        this.name = texts.name;
+        this.bookmark = texts.bookmark;
+        (texts.children as any[]).forEach((child, idx) => this.data[idx].updateTexts(child));
     }
 
     validateModel(): string[] {
@@ -89,6 +103,6 @@ export default class Section extends ModelElement {
 
     toJSON() {
         const result = super.toJSON();
-        return { ...result, name: this.name, bookmark: this.bookmark, data: this.data }
+        return { ...result, name: this.name, bookmark: this.bookmark, data: this.data.map(elem => elem.toJSON()) }
     }
 }

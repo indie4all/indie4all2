@@ -25,4 +25,16 @@ export default abstract class WidgetContainerElement extends WidgetElement {
 
     static hasChildren(): boolean { return true; }
 
+    getTexts(): any {
+        return {
+            "help": this.params.help,
+            "children": this.data.map(child => child.getTexts())
+        }
+    }
+
+    updateTexts(texts: any): void {
+        this.params.help = texts.help;
+        (texts.children as any[]).forEach((text, idx) => this.data[idx].updateTexts(text));
+    }
+
 }

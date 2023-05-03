@@ -59,6 +59,13 @@ export default class WidgetCorrectWordContainer extends WidgetContainerSpecificE
         this.params.help = form.help;
     }
 
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.params) result["params"] = structuredClone(this.params);
+        if (this.data) result["data"] = this.data.map(elem => elem.toJSON());
+        return result;
+    }
+
     validateModel(): string[] {
         var errors: string[] = [];
         if (this.data.length == 0) errors.push("CorrectWord.data.empty");

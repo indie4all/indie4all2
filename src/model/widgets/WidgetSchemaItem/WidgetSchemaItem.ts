@@ -18,12 +18,26 @@ export default abstract class WidgetSchemaItem extends WidgetSpecificItemElement
         super(values);
     }
 
+    getTexts() {
+        return { "alt": this.data.alt }
+    }
+
     preview(): string {
         return this.data?.alt ? this.data.alt : this.translate("widgets.SchemaItem.prev");
     }
 
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
+
     updateModelFromForm(form: any): void {
         this.data.alt = form.alt;
+    }
+
+    updateTexts(texts: any): void {
+        this.data.alt = texts.alt;
     }
 
     validateModel(): string[] {

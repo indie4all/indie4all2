@@ -22,9 +22,34 @@ export default abstract class WidgetPiecesElement extends WidgetItemElement {
         this.data = values?.data ? structuredClone(values.data) : { blob: "", alt: "", pieces: [] };
     }
 
+
+    getTexts() {
+        return {
+            "help": this.params.help,
+            "alt": this.data.alt,
+            "pieces": this.data.pieces.map(piece => ({ "altImg": piece.altImg, "altRec": piece.altRec }))
+        }
+    }
+
     preview(): string {
         const constructor = <typeof WidgetPiecesElement>this.constructor;
         return this.params?.name ?? this.translate("widgets." + constructor.widget + ".label");
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.params) result["params"] = structuredClone(this.params);
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
+
+    updateTexts(texts: any): void {
+        this.params.help = texts.help;
+        this.data.alt = texts.alt;
+        (texts.pieces as any[]).map((text, idx) => {
+            this.data.pieces[idx].altImg = text.altImg;
+            this.data.pieces[idx].altRec = text.altRec;
+        });
     }
 
     protected onActionRect(position: number) {

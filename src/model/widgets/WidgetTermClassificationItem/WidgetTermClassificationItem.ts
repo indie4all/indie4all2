@@ -67,6 +67,10 @@ export default class WidgetTermClassificationItem extends WidgetSpecificItemElem
         };
     }
 
+    getTexts() {
+        return { "column": this.data.column, "terms": this.data.terms }
+    }
+
     preview(): string {
         let prev = this.translate("widgets.TermClassificationItem.prev");
         if (this.data.column && this.data.terms.length > 0) {
@@ -76,9 +80,20 @@ export default class WidgetTermClassificationItem extends WidgetSpecificItemElem
         return prev;
     }
 
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
+
     updateModelFromForm(form: any): void {
         this.data.column = form.column;
         this.data.terms = WidgetTermClassificationItem.parseTerms(form.terms);
+    }
+
+    updateTexts(texts: any): void {
+        this.data.column = texts.column;
+        this.data.terms = texts.terms;
     }
 
     validateModel(): string[] {

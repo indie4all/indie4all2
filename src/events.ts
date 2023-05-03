@@ -1,27 +1,31 @@
 /* global $ */
+import Api from './Api';
 import I18n from './I18n';
 
-export function init(api) {
+export function init(api: Api) {
     const i18n = I18n.getInstance();
     // Bind interface action events
-    $('#upload-model').on('click', function() {
+    $('#upload-model').on('click', function () {
         $('#upload-file-model').trigger('click');
     });
-    $('#upload-file-model').on('change', function() {
-        
+    $('#upload-file-model').on('change', function () {
+
+        const fileInput = this as HTMLInputElement;
         // Do not upload the model if the user has cancelled the selection
-        if (this.files.length === 0)
+        if (fileInput.files.length === 0)
             return;
 
         const reader = new FileReader();
         reader.onload = (event) => {
-            const model = JSON.parse(event.target.result);
-            api.load(model, function() {
+            const model = JSON.parse(event.target.result as string);
+            api.load(model, function () {
                 $('#main-container').css('width', '').css('height', '');
             });
         }
-        reader.readAsText(this.files[0]);
+        reader.readAsText(fileInput.files[0]);
     });
+    $('.author-translate').on('click', () => api.translate()).data('title', i18n.value('header.translate'));
+    $('.author-translate').find('.btn-text').text(i18n.value('header.translate'));
     $('.author-publish').on('click', () => api.publish()).data('title', i18n.value('header.publish'));
     $('.author-publish').find('.btn-text').text(i18n.value('header.publish'));
     $('.author-scorm').on('click', () => api.scorm()).data('title', i18n.value('header.scorm'));
@@ -51,77 +55,84 @@ export function init(api) {
         .data('title', i18n.value('common.navbar.options'))
         .attr('aria-label', i18n.value('common.navbar.options'));
 
-    $('body').on('click', '.author-export-section', function() {
+    $('body').on('click', '.author-export-section', function () {
         const id = $(this).closest('[data-id]').data('id');
         api.exportSection(id);
     });
-    $('body').on('click', '.author-import-element', function() {
+    $('body').on('click', '.author-import-element', function () {
         const id = $(this).closest('[data-id]').data('id');
-        api.importElement(id, true);
+        api.importElement(id);
     });
-    $('body').on('click', '.author-copy-section', function() {
+    $('body').on('click', '.author-copy-section', function () {
         const id = $(this).closest('[data-id]').data('id');
         api.copySection(id);
     });
-    $('body').on('click', '.author-swap-up', function() {
+    $('body').on('click', '.author-swap-up', function () {
         const id = $(this).closest('[data-id]').data('id');
         api.swap(id, 1);
     });
-    $('body').on('click', '.author-swap-down', function() {
+    $('body').on('click', '.author-swap-down', function () {
         const id = $(this).closest('[data-id]').data('id');
         api.swap(id, 0);
     });
-    
-    $('body').on('click', '.author-remove-section', function() {
+
+    $('body').on('click', '.author-remove-section', function () {
         const id = $(this).closest('[data-id]').data('id');
         api.removeSection(id);
     });
 
-    $('body').on('click', '.author-add-content', function() {
+    $('body').on('click', '.author-add-content', function () {
         const $ancestor = $(this).closest('[data-id]');
         api.addContent($ancestor.data('id'), $ancestor.data('widget'));
     });
 
-    $('body').on('click', '.author-edit-element', function() {
+    $('body').on('click', '.author-edit-element', function () {
         const id = $(this).closest('[data-id]').data('id');
         api.editElement(id);
     });
 
-    $('body').on('click', '.author-copy-element', function() {
+    $('body').on('click', '.author-copy-element', function () {
         const id = $(this).closest('[data-id]').data('id');
-        api.copyElement(id, true);
+        api.copyElement(id);
     });
 
-    $('body').on('click', '.author-export-element', function() {
+    $('body').on('click', '.author-export-element', function () {
         const id = $(this).closest('[data-id]').data('id');
         api.exportElement(id);
     });
 
-    $('body').on('click', '.author-remove-element', function() {
+    $('body').on('click', '.author-remove-element', function () {
         const id = $(this).closest('[data-id]').data('id');
         api.removeElement(id);
     });
 
-    $('body').on('click', '.author-toggle-category', function() {
+    $('body').on('click', '.author-toggle-category', function () {
         const category = $(this).closest('[data-category-header]').data('category-header');
         api.toggleCategory(category);
     });
 
-    // Enable PWA application support
+    // Enable PWA application support if available in the browser
     window.addEventListener('beforeinstallprompt', (event) => {
         // Prevent the mini-infobar from appearing on mobile.
         event.preventDefault();
-        const btn = document.querySelector('.author-install');
+        const btn = document.querySelector('.author-install') as HTMLElement;
         btn.parentElement.classList.toggle("d-none", false);
         btn.dataset.title = i18n.value('header.install');
         $(btn).find('.btn-text').text(i18n.value('header.install'));
         btn.addEventListener('click', async () => {
-            event.prompt();
-            await event.userChoice;
+            // BeforeInstallPrompt is (for now) a non-standard event
+            const beforeInstallPromptEvent = event as any;
+            beforeInstallPromptEvent.prompt();
+            await beforeInstallPromptEvent.userChoice;
             btn.parentElement.classList.toggle("d-none", true);
         });
     });
-    //    
+
+    // Check if units can be translated and show/hide button
+    i18n.canTranslateUnits().then((canTranslateUnits) => {
+        const btn = document.querySelector('.author-translate') as HTMLElement;
+        btn.parentElement.classList.toggle("d-none", !canTranslateUnits);
+    });
 
     $('#editor-footer .alert')[0].innerHTML = i18n.value('footer.content');
 
@@ -131,12 +142,12 @@ export function init(api) {
     });
 
     // Tooltips
-    $("body").tooltip({ selector: "[data-toggle='tooltip']", trigger: 'hover', placement: 'left'});
+    $("body").tooltip({ selector: "[data-toggle='tooltip']", trigger: 'hover', placement: 'left' });
     // Activate navbar toggler collapse
-    $("body").on('click', '[data-author-toggle="collapse"]', function() { $($(this).data('target')).collapse('toggle') });
+    $("body").on('click', '[data-author-toggle="collapse"]', function () { $($(this).data('target')).collapse('toggle') });
 
     // Change caret-down / caret-up icon
-    $('.editor-container').on('click', '[data-toggle="collapse"]', function() {
+    $('.editor-container').on('click', '[data-toggle="collapse"]', function () {
         let $icon = $(this).find('i');
         let show = $($(this).attr('data-target')).is('.collapse.show');
         $icon.toggleClass('fa-caret-down', !show);

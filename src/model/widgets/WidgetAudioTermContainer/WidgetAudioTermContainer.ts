@@ -49,13 +49,32 @@ export default class WidgetAudioTermContainer extends WidgetContainerSpecificEle
         };
     }
 
+    getTexts() {
+        return {
+            "help": this.params.help,
+            "children": this.data.map(child => child.getTexts())
+        }
+    }
+
     preview(): string {
         return this.params?.name ?? this.translate("widgets.AudioTermContainer.label");
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.params) result["params"] = structuredClone(this.params);
+        if (this.data) result["data"] = this.data.map(elem => elem.toJSON());
+        return result;
     }
 
     updateModelFromForm(form: any): void {
         this.params.name = form.instanceName;
         this.params.help = form.help;
+    }
+
+    updateTexts(texts: any): void {
+        this.params.help = texts.help;
+        (texts.children as any[]).forEach((text, idx) => this.data[idx].updateTexts(text));
     }
 
     validateModel(): string[] {

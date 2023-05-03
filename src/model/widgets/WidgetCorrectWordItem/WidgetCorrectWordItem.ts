@@ -13,15 +13,35 @@ export default abstract class WidgetCorrectWordItem extends WidgetSpecificItemEl
 
     static async create(values?: InputWidgetCorrectWordItemData): Promise<WidgetCorrectWordItem> { return null; }
 
+    getTexts() {
+        return {
+            "question": this.data.question,
+            "word": this.data.word,
+            "alt": this.data.alt
+        }
+    }
+
     preview(): string {
         return (this.data?.question && this.data?.word) ?
             (this.data.question + " -> " + this.data.word) : this.translate("widgets.CorrectWordItem.prev");
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
     }
 
     updateModelFromForm(form: any): void {
         this.data.question = form.question;
         this.data.word = form.word;
         this.data.alt = form.alt;
+    }
+
+    updateTexts(texts: any): void {
+        this.data.question = texts.question;
+        this.data.word = texts.word;
+        this.data.alt = texts.alt;
     }
 
     validateModel(): string[] {

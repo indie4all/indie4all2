@@ -15,11 +15,4 @@ export default abstract class WidgetElement extends ModelElement {
         const label = I18n.getInstance().translate(`widgets.${this.widget ?? "GenericWidget"}.label`);
         return palette({ category: this.category, widget: this.widget, icon: this.icon, label });
     }
-
-    toJSON(): any {
-        const result = super.toJSON();
-        if (this.params) result["params"] = this.params;
-        if (this.data) result["data"] = this.data;
-        return result;
-    }
 }

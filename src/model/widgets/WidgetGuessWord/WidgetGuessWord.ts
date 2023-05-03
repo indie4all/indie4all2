@@ -59,10 +59,21 @@ export default class WidgetGuessWord extends WidgetItemElement {
         };
     }
 
+    getTexts() {
+        return { "help": this.params.help, "question": this.data.question, "answer": this.data.answer }
+    }
+
     preview(): string {
         return this.params?.name && this.data?.question ?
             this.params.name + " | " + this.data.question :
             this.translate("widgets.GuessWord.prev");
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.params) result["params"] = structuredClone(this.params);
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
     }
 
     updateModelFromForm(form: any): void {
@@ -71,6 +82,12 @@ export default class WidgetGuessWord extends WidgetItemElement {
         this.data.question = form.question;
         this.data.answer = form.answer;
         this.data.attempts = form.attempts;
+    }
+
+    updateTexts(texts: any): void {
+        this.params.help = texts.help;
+        this.data.question = texts.question;
+        this.data.answer = texts.answer;
     }
 
     validateModel(): string[] {

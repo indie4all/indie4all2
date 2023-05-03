@@ -1,6 +1,5 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
-import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetTermClassificationItem from "../WidgetTermClassificationItem/WidgetTermClassificationItem";
 import { FormEditData, InputWidgetTermClassificationContainerData, WidgetTermClassificationContainerParams } from "../../../types";
@@ -82,6 +81,13 @@ export default class WidgetTermClassification extends WidgetContainerSpecificEle
 
     preview(): string {
         return this.params?.name ?? this.translate("widgets.TermClassification.prev");
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.params) result["params"] = structuredClone(this.params);
+        if (this.data) result["data"] = this.data.map(elem => elem.toJSON());
+        return result;
     }
 
     updateModelFromForm(form: any): void {

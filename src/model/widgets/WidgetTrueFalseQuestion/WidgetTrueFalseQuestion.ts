@@ -44,6 +44,10 @@ export default class WidgetTrueFalseQuestion extends WidgetSpecificItemElement {
         };
     }
 
+    getTexts() {
+        return { "question": this.data.question, "feedback": this.data.feedback }
+    }
+
     preview(): string {
         return this.data?.question ? this.data.question : this.translate("widgets.TrueFalseQuestion.prev");
     }
@@ -52,11 +56,22 @@ export default class WidgetTrueFalseQuestion extends WidgetSpecificItemElement {
         $("#modal-settings [name='correctAnswer']").val(this.data.answer.toString());
     }
 
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
+
     updateModelFromForm(form: any): void {
         this.data.answer = Utils.parseBoolean(form.correctAnswer);
         this.data.question = form.question;
         this.data.feedback.positive = form.feedbackPositive;
         this.data.feedback.negative = form.feedbackNegative;
+    }
+
+    updateTexts(texts: any): void {
+        this.data.question = texts.question;
+        this.data.feedback = texts.feedback;
     }
 
     validateModel(): string[] {

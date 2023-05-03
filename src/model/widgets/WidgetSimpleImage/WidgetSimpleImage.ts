@@ -16,8 +16,19 @@ export default abstract class WidgetSimpleImage extends WidgetItemElement {
 
     static async create(values?: InputWidgetSimpleImageData): Promise<WidgetSimpleImage> { return null; }
 
+    getTexts() {
+        return { "alt": this.data.alt }
+    }
+
     preview(): string {
         return this.params?.name ?? this.translate("widgets.SimpleImage.prev");
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.params) result["params"] = structuredClone(this.params);
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
     }
 
     updateModelFromForm(form: any): void {
@@ -27,6 +38,10 @@ export default abstract class WidgetSimpleImage extends WidgetItemElement {
         this.data.alt = form.alt;
         this.data.width = form.width;
         this.data.height = form.height;
+    }
+
+    updateTexts(texts: any): void {
+        this.data.alt = texts.alt;
     }
 
     validateModel(): string[] {

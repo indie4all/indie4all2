@@ -16,15 +16,33 @@ export default abstract class WidgetAudioTermItem extends WidgetSpecificItemElem
         super(values);
     }
 
+    getTexts() {
+        return {
+            "term": this.data.term,
+            "definition": this.data.definition
+        }
+    }
+
     preview(): string {
         return this.data?.term && this.data?.definition ?
             this.data.term + " -> " + this.data.definition :
             this.translate("widgets.AudioTermItem.prev");
     }
 
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
+
     updateModelFromForm(form: any): void {
         this.data.term = form.term;
         this.data.definition = form.definition;
+    }
+
+    updateTexts(texts: any): void {
+        this.data.term = texts.term;
+        this.data.definition = texts.definition;
     }
 
     validateModel(): string[] {

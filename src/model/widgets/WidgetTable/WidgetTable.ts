@@ -79,6 +79,15 @@ export default class WidgetTable extends WidgetItemElement {
         };
     }
 
+    getTexts() {
+        return {
+            "help": this.params.help,
+            "columns": this.data.columns,
+            "rows": this.data.rows
+        }
+    }
+
+
     settingsClosed(): void {
         $(`#f-${this.id} input[name="videourl"]`).off('change');
     }
@@ -264,11 +273,30 @@ export default class WidgetTable extends WidgetItemElement {
             this.translate("widgets.Table.prev");
     }
 
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.params) result["params"] = structuredClone(this.params);
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
+
     updateModelFromForm(form: any): void {
         this.params.name = form.instanceName;
         this.params.help = form.help;
         this.data.rows = this.retrieveUpdatedRows();
         this.data.columns = this.retrieveUpdatedColumns();
+    }
+
+    updateTexts(texts: any): void {
+        this.params.help = texts.help;
+        const columnTranslations = (texts.columns as any[]).map((col, idx) => [this.data.columns, col]);
+        this.data.columns = texts.columns;
+        this.data.rows = texts.rows;
+        // Replace row headings with their translated column version
+        this.data.rows.forEach(row => columnTranslations.forEach(translation => {
+            row[translation[1]] = row[translation[0]]
+            delete row[translation[0]];
+        }));
     }
 
     validateModel(): string[] {

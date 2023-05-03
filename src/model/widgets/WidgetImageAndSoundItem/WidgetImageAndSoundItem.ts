@@ -14,13 +14,28 @@ export default abstract class WidgetImageAndSoundItem extends WidgetSpecificItem
 
     static async create(values?: InputWidgetImageAndSoundItemData): Promise<WidgetImageAndSoundItem> { return null; }
 
+    getTexts() {
+        return { "text": this.data.text, "alt": this.data.alt }
+    }
+
     preview(): string {
         return this.data?.text ? this.data.text : this.translate("widgets.ImageAndSoundItem.prev");
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
     }
 
     updateModelFromForm(form: any): void {
         this.data.text = form.text;
         this.data.alt = form.alt;
+    }
+
+    updateTexts(texts: any): void {
+        this.data.text = texts.text;
+        this.data.alt = texts.alt;
     }
 
     validateModel(): string[] {

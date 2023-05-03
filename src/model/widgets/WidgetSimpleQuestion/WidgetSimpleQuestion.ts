@@ -59,8 +59,22 @@ export default class WidgetSimpleQuestion extends WidgetSpecificItemElement {
         };
     }
 
+    getTexts() {
+        return {
+            "answers": this.data.answers.map(ans => ({ "text": ans.text })),
+            "question": this.data.question,
+            "feedback": this.data.feedback
+        }
+    }
+
     preview(): string {
         return this.data?.question ? this.data.question : this.translate("widgets.SimpleQuestion.prev");
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
     }
 
     updateModelFromForm(form: any): void {
@@ -78,6 +92,12 @@ export default class WidgetSimpleQuestion extends WidgetSpecificItemElement {
                 })
             }
         }
+    }
+
+    updateTexts(texts: any): void {
+        this.data.question = texts.question;
+        (texts.answers as any[]).forEach((ans, idx) => this.data.answers[idx].text = ans.text);
+        this.data.feedback = texts.feedback;
     }
 
     validateModel(): string[] {

@@ -47,12 +47,27 @@ export default class WidgetTabContent extends WidgetContainerElement {
         };
     }
 
+    getTexts() {
+        return { "name": this.params.name }
+    }
+
     preview(): string {
         return this.translate("widgets.TabContent.label") + " " + (this.params?.name ?? "");
     }
 
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.params) result["params"] = structuredClone(this.params);
+        if (this.data) result["data"] = this.data.map(elem => elem.toJSON());
+        return result;
+    }
+
     updateModelFromForm(form: any): void {
         this.params.name = form.name;
+    }
+
+    updateTexts(texts: any): void {
+        this.params.name = texts.name;
     }
 
     validateModel(): string[] {

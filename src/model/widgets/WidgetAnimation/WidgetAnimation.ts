@@ -11,5 +11,12 @@ export default abstract class WidgetAnimation extends WidgetPiecesElement {
 
     constructor(values?: any) { super(values); }
 
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.params) result["params"] = structuredClone(this.params);
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
+
     static async create(values?: InputWidgetPiecesElementData): Promise<WidgetAnimation> { return null; }
 }

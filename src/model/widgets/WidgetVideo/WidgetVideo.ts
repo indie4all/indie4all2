@@ -68,6 +68,10 @@ export default class WidgetVideo extends WidgetItemElement {
         };
     }
 
+    getTexts() {
+        return {}
+    }
+
     preview(): string {
         return (this?.data?.videourl) ? this.params.name + ": " + this.data.videourl : this.translate("widgets.Video.prev");
     }
@@ -86,6 +90,13 @@ export default class WidgetVideo extends WidgetItemElement {
         });
     }
 
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.params) result["params"] = structuredClone(this.params);
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
+
     updateModelFromForm(form: any): void {
         this.data.videourl = form.videourl;
         this.params.name = form.instanceName;
@@ -94,6 +105,8 @@ export default class WidgetVideo extends WidgetItemElement {
         this.data.defaultCaptions = form.defaultCaptions;
         this.putOrDeleteCaptionAndDescriptions()
     }
+
+    updateTexts(texts: any): void { }
 
     validateModel(): string[] {
         var keys: string[] = [];

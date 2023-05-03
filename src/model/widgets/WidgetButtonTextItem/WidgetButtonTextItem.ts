@@ -16,13 +16,28 @@ export default abstract class WidgetButtonTextItem extends RichTextEditorMixin(W
 
     abstract clone(): WidgetButtonTextItem;
 
+    getTexts() {
+        return { "text": this.data.text, "alt": this.data.alt };
+    }
+
     preview(): string {
         return this.data?.alt ? this.data.alt : this.translate("widgets.ButtonTextItem.prev");
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
     }
 
     updateModelFromForm(form: any): void {
         this.data.text = this.clearAndSanitizeHtml(form.text);
         this.data.alt = form.alt;
+    }
+
+    updateTexts(texts: any): void {
+        this.data.text = texts.text;
+        this.data.alt = texts.alt;
     }
 
     validateModel(): string[] {

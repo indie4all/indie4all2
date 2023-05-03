@@ -44,6 +44,20 @@ export default class WidgetGapQuestion extends WidgetSpecificItemElement {
         };
     }
 
+    getTexts() {
+        return {
+            "question": this.data.question,
+            "answers": this.data.answers.map(answer => ({ "text": answer.text })),
+            "feedback": this.data.feedback
+        }
+    }
+
+    updateTexts(texts: any): void {
+        this.data.question = texts.question;
+        (texts.answers as any[]).forEach((text, idx) => this.data.answers[idx].text = text);
+        this.data.feedback = texts.feedback;
+    }
+
     clone(): WidgetGapQuestion {
         const widget = new WidgetGapQuestion();
         widget.data = structuredClone(this.data);
@@ -75,6 +89,12 @@ export default class WidgetGapQuestion extends WidgetSpecificItemElement {
 
     preview(): string {
         return this.data?.question ? this.data.question : this.translate("widgets.GapQuestion.prev");
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
     }
 
     settingsClosed(): void {

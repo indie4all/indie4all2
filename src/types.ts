@@ -16,6 +16,8 @@ export interface ConfigOptions {
     requestAdditionalDataOnPopulate?: boolean,
     // Server URL to store the contents of the unit. Default value: '/model/save'.
     saveBackendURL?: string,
+    // Server URL used for translating models into languages on demand
+    translationBackendURL?: string,
     // Server URL to generate a scorm package with the contents of the unit. Default value: '/model/scorm'.
     scormBackendURL?: string,
     // Server URL to retrieve a remote resource

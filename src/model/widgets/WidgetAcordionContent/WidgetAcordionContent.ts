@@ -41,12 +41,28 @@ export default class WidgetAcordionContent extends WidgetContainerElement {
         };
     }
 
+    getTexts(): any {
+        return { "title": this.params.title, "children": this.data.map(child => child.getTexts()) };
+    }
+
     preview(): string {
         return this.translate("widgets.AcordionContent.label") + " " + (this.params?.title ?? "");
     }
 
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.params) result["params"] = structuredClone(this.params);
+        if (this.data) result["data"] = this.data.map(elem => elem.toJSON());
+        return result;
+    }
+
     updateModelFromForm(form: any): void {
         this.params.title = form.title;
+    }
+
+    updateTexts(texts: any): void {
+        this.params.title = texts.title;
+        (texts.children as any[]).forEach((text, idx) => this.data[idx].updateTexts(text));
     }
 
     validateModel(): string[] {

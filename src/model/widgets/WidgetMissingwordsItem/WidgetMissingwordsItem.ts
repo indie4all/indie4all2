@@ -49,6 +49,16 @@ export default class WidgetMissingWordsItem extends WidgetSpecificItemElement {
         };
     }
 
+    getTexts() {
+        return { "sentence": this.data.sentence, "combinations": this.data.combinations }
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
+
     settingsClosed(): void {
         $("#f-" + this.id + " [name=question]").off('missingwords');
     }
@@ -102,6 +112,11 @@ export default class WidgetMissingWordsItem extends WidgetSpecificItemElement {
     updateModelFromForm(form: any): void {
         this.data.combinations = form.combination;
         this.data.sentence = form.sentence;
+    }
+
+    updateTexts(texts: any): void {
+        this.data.sentence = texts.sentence;
+        this.data.combinations = texts.combinations;
     }
 
     validateModel(): string[] {

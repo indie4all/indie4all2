@@ -10,7 +10,7 @@
         <select id="unit-language" name="language" class="form-control" required>
             {{#each languages}}
             <option value="{{this}}" {{#ifeq this ../language}} selected {{/ifeq}}>
-                {{translate (concat "units.form.language." this) }}
+                {{translate (concat "common.language." this) }}
             </option>
             {{/each}}
         </select>

@@ -57,6 +57,10 @@ export default class WidgetLatexFormula extends WidgetItemElement {
         };
     }
 
+    getTexts() {
+        return { "caption": this.data.caption }
+    }
+
     preview(): string {
         return this.data?.caption && this.data?.formula ? preview(this.data) : this.translate("widgets.LatexFormula.prev");
     }
@@ -78,9 +82,19 @@ export default class WidgetLatexFormula extends WidgetItemElement {
         };
     }
 
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
+
     updateModelFromForm(form: any): void {
         this.data.formula = form.formula;
         this.data.caption = form.caption;
+    }
+
+    updateTexts(texts: any): void {
+        this.data.caption = texts.caption;
     }
 
     validateModel(): string[] {

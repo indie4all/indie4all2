@@ -17,11 +17,26 @@ export default abstract class WidgetCouplesItem extends RichTextEditorMixin(Widg
 
     abstract clone(): WidgetCouplesItem;
 
+    getTexts() {
+        return {
+            "couples": [
+                { "text": this.data.couples[0].text, "alt": this.data.couples[0].alt },
+                { "text": this.data.couples[1].text, "alt": this.data.couples[1].alt }
+            ]
+        }
+    }
+
     preview(): string {
         const couples = this.data.couples.filter(couple => ["image", "text"].includes(couple.type));
         return couples.length === 2 ?
             couples.map(couple => couple.type === "image" ? `<div>${couple.alt}</div>` : `<div>${couple.text}</div>`).join(' -> ') :
             this.translate("widgets.CouplesItem.prev");
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
     }
 
     updateModelFromForm(form: any): void {
@@ -31,6 +46,14 @@ export default abstract class WidgetCouplesItem extends RichTextEditorMixin(Widg
         this.data.couples[1].text = form.couple[1].text;
         this.data.couples[0].alt = form.couple[0].alt;
         this.data.couples[1].alt = form.couple[1].alt;
+    }
+
+    updateTexts(texts: any): void {
+        const couples = texts.couples as any[];
+        [0, 1].forEach(idx => {
+            this.data.couples[idx].text = couples[idx].text;
+            this.data.couples[idx].alt = couples[idx].alt;
+        });
     }
 
     validateModel(): string[] {

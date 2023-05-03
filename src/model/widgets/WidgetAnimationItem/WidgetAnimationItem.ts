@@ -38,6 +38,10 @@ export default class WidgetAnimationItem extends WidgetSpecificItemElement {
         };
     }
 
+    getTexts() {
+        return {};
+    }
+
     preview(): string {
         return this.data?.image ? prev(this.data) : this.translate("widgets.AnimationItem.prev");
     }
@@ -45,6 +49,14 @@ export default class WidgetAnimationItem extends WidgetSpecificItemElement {
     updateModelFromForm(form: any): void {
         this.data.image = form.image;
     }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
+
+    updateTexts(texts: any): void { }
 
     validateModel(): string[] {
         var errors: string[] = [];

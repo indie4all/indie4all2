@@ -55,6 +55,13 @@ export default class WidgetCouplesContainer extends WidgetContainerSpecificEleme
         return this.params?.name ?? this.translate("widgets.CouplesContainer.label");
     }
 
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.params) result["params"] = structuredClone(this.params);
+        if (this.data) result["data"] = this.data.map(elem => elem.toJSON());
+        return result;
+    }
+
     updateModelFromForm(form: any): void {
         this.params.name = form.instanceName;
         this.params.help = form.help;

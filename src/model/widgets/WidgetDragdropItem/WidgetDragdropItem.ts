@@ -38,15 +38,30 @@ export default class WidgetDragdropItem extends WidgetSpecificItemElement {
         };
     }
 
+    getTexts() {
+        return { "term": this.data.term, "definition": this.data.definition };
+    }
+
     preview(): string {
         return this.data?.term && this.data?.definition ?
             `<p><b>${this.data.term}</b><span> -> ${this.data.definition}</span></p>` :
             this.translate("widgets.DragdropItem.prev");
     }
 
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
+
     updateModelFromForm(form: any): void {
         this.data.term = form.term;
         this.data.definition = form.definition;
+    }
+
+    updateTexts(texts: any): void {
+        this.data.term = texts.term;
+        this.data.definition = texts.definition;
     }
 
     validateModel(): string[] {

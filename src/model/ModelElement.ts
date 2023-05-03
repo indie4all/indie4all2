@@ -23,8 +23,10 @@ export default abstract class ModelElement {
     abstract clone(): ModelElement;
     abstract createElement(): string;
     abstract getInputs(): Promise<FormEditData>
+    abstract getTexts(): any;
     abstract preview(): string
     abstract updateModelFromForm(form: any): void;
+    abstract updateTexts(texts: any): void;
     abstract validateForm(form: any): string[];
     abstract validateModel(): string[];
 

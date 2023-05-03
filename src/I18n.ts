@@ -1,3 +1,5 @@
+import Config from "./Config";
+
 export default class I18n {
 
     private static INSTANCE: I18n;
@@ -50,5 +52,32 @@ export default class I18n {
     value(query: string): string {
         const translations = this.translate(query);
         return translations.length ? translations[0] : "";
+    }
+
+    async translateOnDemand(query: any, from: string, to: string): Promise<any> {
+
+        const translationBackend = Config.getTranslationBackendURL();
+        if (!translationBackend)
+            throw new Error("Dynamic translation is not configured");
+
+        const url = translationBackend + "?" + new URLSearchParams({ from, to });
+        const headers = new Headers();
+        headers.append("Content-Type", "application/json");
+        return await fetch(url, { method: 'POST', headers, body: query, redirect: 'follow' }).then(response => response.json());
+
+    }
+
+    canTranslateUnits(): Promise<boolean> {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const translationBackend = Config.getTranslationBackendURL();
+                if (!translationBackend)
+                    resolve(false);
+                const url = translationBackend + "/status";
+                await fetch(url).then(response => resolve(response.ok));
+            } catch (error) {
+                resolve(false);
+            }
+        });
     }
 }

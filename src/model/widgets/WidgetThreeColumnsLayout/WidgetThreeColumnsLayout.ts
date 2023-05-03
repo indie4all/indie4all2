@@ -32,6 +32,12 @@ export default class WidgetThreeColumnsLayout extends WidgetColumnsLayout {
         throw new Error("Method not implemented.");
     }
 
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = this.data.map(col => col.map(elem => elem.toJSON()));
+        return result;
+    }
+
     updateModelFromForm(form: any): void {
         throw new Error("Method not implemented.");
     }

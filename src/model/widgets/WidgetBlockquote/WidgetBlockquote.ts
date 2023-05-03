@@ -39,6 +39,10 @@ export default class WidgetBlockquote extends WidgetItemElement {
         };
     }
 
+    getTexts() {
+        return { quote: this.data.quote }
+    }
+
     preview(): string {
         return this.data?.quote ? this.data.quote : this.translate("widgets.Blockquote.prev");
     }
@@ -48,6 +52,16 @@ export default class WidgetBlockquote extends WidgetItemElement {
         this.data.caption = form.caption;
         this.data.alignment = form.alignment;
         this.data.source = form.source;
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
+
+    updateTexts(texts: any): void {
+        this.data.quote = texts.quote;
     }
 
     validateModel(): string[] {

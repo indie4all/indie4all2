@@ -17,8 +17,19 @@ export default abstract class WidgetImageAndText extends RichTextEditorMixin(Wid
 
     static async create(values?: InputWidgetImageAndTextData): Promise<WidgetImageAndText> { return null; }
 
+    getTexts() {
+        return { "help": this.params.help, "alt": this.data.alt, "text": this.data.text }
+    }
+
     preview(): string {
         return this.params?.name ?? this.translate("widgets.ImageAndText.prev");
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.params) result["params"] = structuredClone(this.params);
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
     }
 
     updateModelFromForm(form: any): void {
@@ -26,6 +37,12 @@ export default abstract class WidgetImageAndText extends RichTextEditorMixin(Wid
         this.params.name = form.instanceName;
         this.params.help = form.help;
         this.data.alt = form.alt;
+    }
+
+    updateTexts(texts: any): void {
+        this.params.help = texts.help;
+        this.data.alt = texts.alt;
+        this.data.text = texts.text;
     }
 
     validateModel(): string[] {

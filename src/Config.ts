@@ -17,6 +17,8 @@ export default class Config {
     private static saveBackendURL: string = '/model/save';
     // Server URL to generate a scorm package with the contents of the unit. Default value: '/model/scorm'.
     private static scormBackendURL: string = '/model/scorm';
+    // Server URL to translate models
+    private static translationBackendURL: string = '/translation'
     // Server URL to retrieve a remote resource
     private static resourceBackendURL: string = '/resource';
     // List of allowed origins for media data
@@ -39,6 +41,8 @@ export default class Config {
             this.setSaveBackendURL(options.saveBackendURL);
         if (typeof options.scormBackendURL === 'string')
             this.setScormBackendURL(options.scormBackendURL);
+        if (typeof options.translationBackendURL === 'string')
+            this.setTranslationBackendURL(options.translationBackendURL);
         if (typeof options.resourceBackendURL === 'string')
             this.setResourceBackendURL(options.resourceBackendURL);
         if (Array.isArray(options.allowedResourceOrigins))
@@ -115,6 +119,14 @@ export default class Config {
 
     public static getResourceBackendURL() {
         return this.resourceBackendURL;
+    }
+
+    public static getTranslationBackendURL(): string {
+        return this.translationBackendURL;
+    }
+
+    public static setTranslationBackendURL(value: string) {
+        this.translationBackendURL = value;
     }
 
     public static setAllowedResourceOrigins(value: string[]) {

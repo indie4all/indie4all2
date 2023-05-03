@@ -54,6 +54,10 @@ export default class WidgetSentenceOrderItem extends WidgetSpecificItemElement {
         };
     }
 
+    getTexts() {
+        return { "answers": this.data.answers, "words": this.data.words }
+    }
+
     preview(): string {
         return this.data.answers.length ? this.data.answers[0] : this.translate("widgets.SentenceOrderItem.prev");
     }
@@ -116,9 +120,20 @@ export default class WidgetSentenceOrderItem extends WidgetSpecificItemElement {
 
     }
 
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
+
     updateModelFromForm(form: any) {
         this.data.answers = form.answer;
         this.data.words = form.word;
+    }
+
+    updateTexts(texts: any): void {
+        this.data.answers = texts.answers;
+        this.data.words = texts.words;
     }
 
     validateModel(): string[] {

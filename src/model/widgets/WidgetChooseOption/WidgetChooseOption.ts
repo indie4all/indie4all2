@@ -31,6 +31,22 @@ export default abstract class WidgetChooseOption extends WidgetItemElement {
             this.params.name + " | " + this.data.text : this.translate("widgets.ChooseOption.prev");
     }
 
+    getTexts() {
+        return {
+            "help": this.params.help,
+            "alt": this.data.alt,
+            "text": this.data.text,
+            "options": this.data.options.map(opt => ({ "text": opt.text }))
+        }
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.params) result["params"] = structuredClone(this.params);
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
+
     updateModelFromForm(form: any): void {
         var options: WidgetChooseOptionItem[] = [];
         for (var i = 0; i < WidgetChooseOption.optionsNumber; i++) {
@@ -45,6 +61,13 @@ export default abstract class WidgetChooseOption extends WidgetItemElement {
         this.params.name = form.instanceName;
         this.params.help = form.help;
         this.data.alt = form.alt;
+    }
+
+    updateTexts(texts: any): void {
+        this.params.help = texts.help;
+        this.data.alt = texts.alt;
+        this.data.text = texts.text;
+        (texts.options as any[]).forEach((text, idx) => this.data.options[idx].text = text.text);
     }
 
     validateModel(): string[] {

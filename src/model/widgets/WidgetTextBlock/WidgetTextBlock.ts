@@ -42,18 +42,32 @@ export default class WidgetTextBlock extends RichTextEditorMixin(WidgetItemEleme
         };
     }
 
-    settingsOpened(): void {
-        var editorElement = $('#f-' + this.id + ' .texteditor');
-        this.initTextEditor(this.data.text, editorElement);
+    getTexts() {
+        return { "text": this.data.text }
     }
 
     preview(): string {
         return this?.data?.text?.length ? this.data.text : this.translate("widgets.TextBlock.prev");
     }
 
+    settingsOpened(): void {
+        var editorElement = $('#f-' + this.id + ' .texteditor');
+        this.initTextEditor(this.data.text, editorElement);
+    }
+
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
+
     updateModelFromForm(form: any): void {
         this.data.text = this.clearAndSanitizeHtml(form.textblockText);
         this.data.style = form.style;
+    }
+
+    updateTexts(texts: any): void {
+        this.data.text = texts.text;
     }
 
     validateModel(): string[] {

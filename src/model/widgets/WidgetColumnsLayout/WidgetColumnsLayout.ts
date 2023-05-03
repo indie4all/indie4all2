@@ -26,10 +26,19 @@ export default abstract class WidgetColumnsLayout extends WidgetElement {
         });
     }
 
+    getTexts() {
+        return { "columns": this.data.map(column => ({ "children": column.map(child => child.getTexts()) })) };
+    }
+
     static hasChildren(): boolean { return true; }
 
     preview(): string {
         return this.translate("widgets.ColumnLayout.label")
+    }
+
+    updateTexts(texts: any): void {
+        (texts.columns as any[]).forEach(
+            (textCol, idxCol) => (textCol.children as any[]).forEach((text, idx) => this.data[idxCol][idx].updateTexts(text)));
     }
 
     validateForm(form: any): string[] { return []; }

@@ -10,6 +10,7 @@ import Config from "./Config";
 
 export default class Api {
 
+    private static ALLOWED_LANGUAGES = ["EN", "ES", "FR", "EL", "LT"];
     private container: HTMLElement;
     private i18n: I18n;
     private author: Author;
@@ -87,12 +88,11 @@ export default class Api {
         const themes = themeManager.getThemes();
         themes.unshift("Custom");
         $("#modal-settings .btn-submit").off('click'); // Unbind button submit click event 
-        const languages = ["EN", "ES", "FR", "EL", "LT"];
         const licenses = ["PRIVATE", "BY", "BYSA", "BYND", "BYNC", "BYNCSA", "BYNCND"];
         const model = this.author.model;
         const data = {
             themes,
-            languages,
+            languages: Api.ALLOWED_LANGUAGES,
             licenses,
             title: model.title ?? '',
             user: model.user ?? '',
@@ -410,7 +410,7 @@ export default class Api {
      * @param {Function} onLoaded - Event to trigger when the model has been loaded
      * @param {Function} onError - Event to trigger when there has been an error
      */
-    load(model: object, onLoaded: Function, onError: Function) {
+    load(model: object, onLoaded?: Function, onError?: Function) {
         const self = this;
         try {
             self.author.showLoading();
@@ -557,5 +557,45 @@ export default class Api {
                 });
         }
         this.populateModel(onSubmit);
+    }
+
+    async translate() {
+        // Check if the model is valid before trying to download
+        if (!this.validate()) {
+            console.error(this.i18n.translate("messages.contentErrors"));
+            return;
+        }
+
+        const api = this;
+        const { default: chooseLanguageTemplate } = await import("./views/translate.hbs");
+        const model = this.author.model;
+        const data = {
+            languages: Api.ALLOWED_LANGUAGES,
+            language: model.language ?? '',
+        };
+        // Create the form
+        $('#modal-settings-tittle').html(this.i18n.value('dialog.translate'));
+        $('#modal-settings-body').html(chooseLanguageTemplate(data));
+        $("#modal-settings").modal({ keyboard: false, focus: true, backdrop: 'static' });
+
+        $('#f-translate-unit').off('submit').on('submit', async function (e) {
+            // Translate texts
+            const srcInput = this.querySelector('#source-unit-language') as HTMLInputElement;
+            const srcLang = srcInput.value;
+            const tgtInput = this.querySelector('#target-unit-language') as HTMLInputElement;
+            const tgtLang = tgtInput.value;
+            e.preventDefault();
+            $("#modal-settings").modal('hide');                    // Hide the modal
+            api.author.showLoading();                              // Show loading modal
+            const translated = await I18n.getInstance().translateOnDemand(JSON.stringify(model.getTexts()), srcLang ?? "EN", tgtLang);
+            model.updateTexts(translated);
+            // Update the language of the model
+            model.language = tgtLang;           // Overwrite indieauthor.model with the specified data
+            api.load(model.toJSON());           // Reload the model
+        });
+
+        $("#modal-settings .btn-submit").off('click').on('click', function () {
+            $("#modal-settings input[type='submit']").trigger('click');
+        });
     }
 }

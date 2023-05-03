@@ -223,8 +223,8 @@ export default class Utils {
 
     static resourceURL(resource: string): string {
         let url = resource;
-        if (Config.getResourceBackendURL())
-            url = Config.getResourceBackendURL() + "?resource=" + url;
+        if (Config.getResourceProxyBackendURL())
+            url = Config.getResourceProxyBackendURL() + "?resource=" + url;
         return url;
     }
 }

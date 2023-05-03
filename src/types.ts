@@ -21,6 +21,8 @@ export interface ConfigOptions {
     // Server URL to generate a scorm package with the contents of the unit. Default value: '/model/scorm'.
     scormBackendURL?: string,
     // Server URL to retrieve a remote resource
+    resourceProxyBackendURL?: string
+    // Server URL to remotely create a local resource and get its corresponding URL
     resourceBackendURL?: string
     // List of permitted origins for hosting resources
     allowedResourceOrigins?: []

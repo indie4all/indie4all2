@@ -20,6 +20,8 @@ export default class Config {
     // Server URL to translate models
     private static translationBackendURL: string = '/translation'
     // Server URL to retrieve a remote resource
+    private static resourceProxyBackendURL: string = '/resource';
+    // Server URL to create a remote resource and get its URL
     private static resourceBackendURL: string = '/resource';
     // List of allowed origins for media data
     private static allowedResourceOrigins: string[] = ["http://localhost:8000", "https://indiemedia.upct.es", "http://indieopen.upct.es", "https://multimediarepository.blob.core.windows.net"];
@@ -45,6 +47,8 @@ export default class Config {
             this.setTranslationBackendURL(options.translationBackendURL);
         if (typeof options.resourceBackendURL === 'string')
             this.setResourceBackendURL(options.resourceBackendURL);
+        if (typeof options.resourceProxyBackendURL === 'string')
+            this.setResourceProxyBackendURL(options.resourceProxyBackendURL);
         if (Array.isArray(options.allowedResourceOrigins))
             this.setAllowedResourceOrigins(options.allowedResourceOrigins);
     }
@@ -119,6 +123,14 @@ export default class Config {
 
     public static getResourceBackendURL() {
         return this.resourceBackendURL;
+    }
+
+    public static setResourceProxyBackendURL(value: string) {
+        this.resourceProxyBackendURL = value;
+    }
+
+    public static getResourceProxyBackendURL() {
+        return this.resourceProxyBackendURL;
     }
 
     public static getTranslationBackendURL(): string {

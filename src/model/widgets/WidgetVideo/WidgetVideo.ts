@@ -15,24 +15,6 @@ export default class WidgetVideo extends WidgetItemElement {
         return new WidgetVideo(values);
     }
 
-    private toggleCaptionAndDescriptions(videourl: string) {
-        if (Utils.isValidResource(videourl)) {
-            $('#f-' + this.id + ' input[name="captions"]').parent().show();
-            $('#f-' + this.id + ' input[name="descriptions"]').parent().show();
-        } else {
-            $('#f-' + this.id + ' input[name="captions"]').parent().hide();
-            $('#f-' + this.id + ' input[name="descriptions"]').parent().hide();
-
-        }
-    }
-
-    private putOrDeleteCaptionAndDescriptions() {
-        if (!Utils.isValidResource(this.data.videourl)) {
-            this.data.captions = "";
-            this.data.descriptions = "";
-        }
-    }
-
     params: WidgetVideoParams;
     data: WidgetVideoData;
 
@@ -76,19 +58,9 @@ export default class WidgetVideo extends WidgetItemElement {
         return (this?.data?.videourl) ? this.params.name + ": " + this.data.videourl : this.translate("widgets.Video.prev");
     }
 
-    settingsClosed(): void {
-        $(`#f-${this.id} input[name="videourl"]`).off('change');
-    }
+    settingsClosed(): void { }
 
-    settingsOpened(): void {
-        const model = this;
-        model.toggleCaptionAndDescriptions(this.data.videourl);
-        $('#f-' + model.id + ' input[name="videourl"]').on('change', function (e) {
-            const videourl = (<HTMLInputElement>e.target).value;
-            model.toggleCaptionAndDescriptions(videourl);
-            $("#modal-settings-body .errors").html('');
-        });
-    }
+    settingsOpened(): void { }
 
     toJSON(): any {
         const result = super.toJSON();
@@ -103,14 +75,12 @@ export default class WidgetVideo extends WidgetItemElement {
         this.data.captions = form.captions;
         this.data.descriptions = form.descriptions;
         this.data.defaultCaptions = form.defaultCaptions;
-        this.putOrDeleteCaptionAndDescriptions()
     }
 
     updateTexts(texts: any): void { }
 
     validateModel(): string[] {
         var keys: string[] = [];
-        if (!Utils.isYoutubeVideoURL(this.data.videourl)) keys.push("Video.videourl.invalid");
         if (!Utils.isStringEmptyOrWhitespace(this.data.captions) &&
             !Utils.isValidResource(this.data.captions))
             keys.push("common.captions.invalid");
@@ -123,7 +93,6 @@ export default class WidgetVideo extends WidgetItemElement {
 
     validateForm(form: any): string[] {
         var keys: string[] = [];
-        if (!Utils.isYoutubeVideoURL(form.videourl)) keys.push("Video.videourl.invalid");
         if (!Utils.isStringEmptyOrWhitespace(form.captions) && !Utils.isValidResource(form.captions))
             keys.push("common.captions.invalid");
         if (!Utils.isStringEmptyOrWhitespace(form.descriptions) && !Utils.isValidResource(form.descriptions))

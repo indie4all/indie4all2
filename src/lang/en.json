@@ -447,7 +447,8 @@
         },
         "Video": {
             "videourl": {
-                "invalid": "The URL set for the video is not valid. You must make sure to provide a valid youtube or indiemedia URL."
+                "invalid": "The URL set for the video is not valid. You must make sure to provide a valid YouTube or IndieMedia URL.",
+                "localInvalid": "The URL set for the video is not valid. You must make sure to provide a valid YouTube URL."
             }
         },
 		"Table": {

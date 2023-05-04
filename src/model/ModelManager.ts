@@ -80,6 +80,8 @@ import WidgetLocalSchemaItem from "./widgets/WidgetSchemaItem/WidgetLocalSchemaI
 import WidgetRemoteSchemaItem from "./widgets/WidgetSchemaItem/WidgetRemoteSchemaItem";
 import WidgetLocalSimpleImage from "./widgets/WidgetSimpleImage/WidgetLocalSimpleImage";
 import WidgetRemoteSimpleImage from "./widgets/WidgetSimpleImage/WidgetRemoteSimpleImage";
+import WidgetLocalVideo from "./widgets/WidgetVideo/WidgetLocalVideo";
+import WidgetRemoteVideo from "./widgets/WidgetVideo/WidgetRemoteVideo";
 
 export default class ModelManager {
 
@@ -90,7 +92,7 @@ export default class ModelManager {
         [WidgetTextBlock.widget]: WidgetTextBlock,
         [WidgetBlockquote.widget]: WidgetBlockquote,
         [WidgetLatexFormula.widget]: WidgetLatexFormula,
-        [WidgetVideo.widget]: WidgetVideo,
+        [WidgetVideo.widget]: () => Config.isLocal() ? WidgetLocalVideo : WidgetRemoteVideo,
         [WidgetSimpleImage.widget]: () => Config.isLocal() ? WidgetLocalSimpleImage : WidgetRemoteSimpleImage,
         [WidgetTable.widget]: WidgetTable,
         // Layouts

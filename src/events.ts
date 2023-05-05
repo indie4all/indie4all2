@@ -156,4 +156,9 @@ export function init(api: Api) {
         $icon.toggleClass('fa-caret-down', !show);
         $icon.toggleClass('fa-caret-up', show);
     });
+
+    // Set default text in edit modals
+    $('body').on('click', '.js-set-default-text', function () {
+        $(this).closest('form').find('input[name="help"]').val('');
+    });
 }

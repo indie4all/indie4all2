@@ -28,6 +28,7 @@ export default class WidgetTwoColumnsLayout extends WidgetColumnsLayout {
     clone(): WidgetTwoColumnsLayout {
         const widget = new WidgetTwoColumnsLayout();
         widget.data = this.data.map(col => col.map(elem => elem.clone()));
+        widget.params = structuredClone(this.params);
         return widget;
     }
 
@@ -55,6 +56,7 @@ export default class WidgetTwoColumnsLayout extends WidgetColumnsLayout {
     toJSON(): any {
         const result = super.toJSON();
         if (this.data) result["data"] = this.data.map(col => col.map(elem => elem.toJSON()));
+        if (this.params) result["params"] = structuredClone(this.params);
         return result;
     }
 

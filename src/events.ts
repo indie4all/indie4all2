@@ -24,8 +24,17 @@ export function init(api: Api) {
         }
         reader.readAsText(fileInput.files[0]);
     });
-    $('.author-translate').on('click', () => api.translate()).data('title', i18n.value('header.translate'));
-    $('.author-translate').find('.btn-text').text(i18n.value('header.translate'));
+
+    // Check if units can be translated and show/hide the button
+    const translateBtn = document.querySelector('.author-translate') as HTMLElement;
+    if (translateBtn) {
+        i18n.canTranslateUnits().then((canTranslateUnits) => {
+            translateBtn.parentElement.classList.toggle("d-none", !canTranslateUnits);
+        });
+        $('.author-translate').on('click', () => api.translate()).data('title', i18n.value('header.translate'));
+        $('.author-translate').find('.btn-text').text(i18n.value('header.translate'));
+    }
+
     $('.author-publish').on('click', () => api.publish()).data('title', i18n.value('header.publish'));
     $('.author-publish').find('.btn-text').text(i18n.value('header.publish'));
     $('.author-scorm').on('click', () => api.scorm()).data('title', i18n.value('header.scorm'));
@@ -126,12 +135,6 @@ export function init(api: Api) {
             await beforeInstallPromptEvent.userChoice;
             btn.parentElement.classList.toggle("d-none", true);
         });
-    });
-
-    // Check if units can be translated and show/hide button
-    i18n.canTranslateUnits().then((canTranslateUnits) => {
-        const btn = document.querySelector('.author-translate') as HTMLElement;
-        btn.parentElement.classList.toggle("d-none", !canTranslateUnits);
     });
 
     $('#editor-footer .alert')[0].innerHTML = i18n.value('footer.content');

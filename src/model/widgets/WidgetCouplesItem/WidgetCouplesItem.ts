@@ -29,7 +29,7 @@ export default abstract class WidgetCouplesItem extends RichTextEditorMixin(Widg
     preview(): string {
         const couples = this.data.couples.filter(couple => ["image", "text"].includes(couple.type));
         return couples.length === 2 ?
-            couples.map(couple => couple.type === "image" ? `<div>${couple.alt}</div>` : `<div>${couple.text}</div>`).join(' -> ') :
+            couples.map(couple => `<div class="couple-item-preview">${couple.type === "image" ? couple.alt : couple.text}</div>`).join(' -> ') :
             this.translate("widgets.CouplesItem.prev");
     }
 

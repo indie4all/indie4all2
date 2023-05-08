@@ -1,8 +1,26 @@
-.widget-couples-item {
+.widget-local-couples-item, .widget-remote-couples-item {
     .b2 {
         display: flex;
         overflow: hidden;
         text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 80%;
+        justify-content: space-between;
+
+        @media (max-width: 767.98px) {
+            width: 100%
+        }
+
+        .couple-item-preview {
+            max-width: 40%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            & > p {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
 
         .sub1 {
             width: 30%;

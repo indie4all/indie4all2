@@ -48,7 +48,7 @@ export default class WidgetTabContent extends WidgetContainerElement {
     }
 
     getTexts() {
-        return { "name": this.params.name }
+        return { "name": this.params.name, "children": this.data.map(child => child.getTexts()) }
     }
 
     preview(): string {
@@ -68,6 +68,7 @@ export default class WidgetTabContent extends WidgetContainerElement {
 
     updateTexts(texts: any): void {
         this.params.name = texts.name;
+        (texts.children as any[]).forEach((text, idx) => this.data[idx].updateTexts(text));
     }
 
     validateModel(): string[] {

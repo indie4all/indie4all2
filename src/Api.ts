@@ -454,6 +454,7 @@ export default class Api {
             // Download the generated files
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
+            headers.append("Accept", "application/json");
             const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
             fetch(Config.getSaveBackendURL(), requestOptions)
                 .then(onGenerated)
@@ -502,6 +503,7 @@ export default class Api {
             // Download the generated files
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
+            headers.append("Accept", "application/json");
             const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
             fetch(Config.getPreviewBackendURL(), requestOptions)
                 .then(onGenerated)
@@ -525,6 +527,7 @@ export default class Api {
             // Download the generated files
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
+            headers.append("Accept", "application/json, application/octet-stream");
             const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
             fetch(Config.getScormBackendURL(), requestOptions)
                 .then(self.onPublishModel.bind(self))
@@ -548,6 +551,7 @@ export default class Api {
             // Download the generated files
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
+            headers.append("Accept", "application/json, application/octet-stream");
             const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
             fetch(Config.getPublishBackendURL(), requestOptions)
                 .then(self.onPublishModel.bind(self))

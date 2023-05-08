@@ -166,6 +166,7 @@ export default class Utils {
         const blob = await fetch(base64).then(res => res.blob());
         const headers = new Headers();
         headers.append("Content-Type", "application/octet-stream");
+        headers.append("Accept", "application/json, application/octet-stream");
         return await fetch(resourceBackend, { method: 'POST', headers, body: blob, redirect: 'follow' }).then(response => response.text());
     }
 

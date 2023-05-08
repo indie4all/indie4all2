@@ -63,6 +63,7 @@ export default class I18n {
         const url = translationBackend + "?" + new URLSearchParams({ from, to });
         const headers = new Headers();
         headers.append("Content-Type", "application/json");
+        headers.append("Accept", "application/json");
         return await fetch(url, { method: 'POST', headers, body: query, redirect: 'follow' }).then(response => response.json());
 
     }

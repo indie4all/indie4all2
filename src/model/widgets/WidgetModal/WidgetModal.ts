@@ -53,7 +53,10 @@ export default class WidgetModal extends WidgetContainerElement {
     }
 
     getTexts() {
-        return { "help": this.params.help, "name": this.params.name, "text": this.params.text }
+        return {
+            "help": this.params.help, "name": this.params.name, "text": this.params.text,
+            "children": this.data.map(child => child.getTexts())
+        }
     }
 
     preview(): string {
@@ -77,6 +80,7 @@ export default class WidgetModal extends WidgetContainerElement {
         this.params.text = texts.text;
         this.params.help = texts.help;
         this.params.name = texts.name;
+        (texts.children as any[]).forEach((text, idx) => this.data[idx].updateTexts(text));
     }
 
     validateModel(): string[] {

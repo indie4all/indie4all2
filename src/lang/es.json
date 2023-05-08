@@ -548,6 +548,7 @@
         "publishError": "No se pudo publicar la unidad",
         "saveError": "No se pudo guardar la unidad",
         "successMessage": "Ok",
+        "translateError": "No se ha podido traducir la unidad",
         "warningMessage": "Atención",
         "savedUnit": "Unidad guardada con éxito"
     },

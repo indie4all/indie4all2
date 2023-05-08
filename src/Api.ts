@@ -591,11 +591,17 @@ export default class Api {
             e.preventDefault();
             $("#modal-settings").modal('hide');                    // Hide the modal
             api.author.showLoading();                              // Show loading modal
-            const translated = await I18n.getInstance().translateOnDemand(JSON.stringify(model.getTexts()), srcLang ?? "EN", tgtLang);
-            model.updateTexts(translated);
-            // Update the language of the model
-            model.language = tgtLang;           // Overwrite indieauthor.model with the specified data
-            api.load(model.toJSON());           // Reload the model
+            try {
+                const translated = await I18n.getInstance().translateOnDemand(JSON.stringify(model.getTexts()), srcLang ?? "EN", tgtLang);
+                model.updateTexts(translated);
+                // Update the language of the model
+                model.language = tgtLang;           // Overwrite indieauthor.model with the specified data
+                api.load(model.toJSON());           // Reload the model
+            } catch (error) {
+                console.error(error);
+                Utils.notifyError(error.message);
+                setTimeout(() => api.author.hideLoading(), 1000);
+            }
         });
 
         $("#modal-settings .btn-submit").off('click').on('click', function () {

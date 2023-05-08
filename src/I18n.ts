@@ -64,8 +64,10 @@ export default class I18n {
         const headers = new Headers();
         headers.append("Content-Type", "application/json");
         headers.append("Accept", "application/json");
-        return await fetch(url, { method: 'POST', headers, body: query, redirect: 'follow' }).then(response => response.json());
-
+        const response = await fetch(url, { method: 'POST', headers, body: query, redirect: 'follow' });
+        if (!response.ok)
+            throw new Error(this.value("messages.translateError"));
+        return await response.json();
     }
 
     canTranslateUnits(): Promise<boolean> {

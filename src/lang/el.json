@@ -548,6 +548,7 @@
         "publishError": "The unit could not be published",
         "saveError": "The unit could not be saved",
         "successMessage": "Ok",
+        "translateError": "The unit could not be translated",
         "warningMessage": "Atention",
         "savedUnit": "Unit successfully saved"
     },

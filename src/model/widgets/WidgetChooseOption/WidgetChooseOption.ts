@@ -34,6 +34,7 @@ export default abstract class WidgetChooseOption extends WidgetItemElement {
     getTexts() {
         return {
             "help": this.params.help,
+            "name": this.params.name,
             "alt": this.data.alt,
             "text": this.data.text,
             "options": this.data.options.map(opt => ({ "text": opt.text }))
@@ -65,6 +66,7 @@ export default abstract class WidgetChooseOption extends WidgetItemElement {
 
     updateTexts(texts: any): void {
         this.params.help = texts.help;
+        this.params.name = texts.name;
         this.data.alt = texts.alt;
         this.data.text = texts.text;
         (texts.options as any[]).forEach((text, idx) => this.data.options[idx].text = text.text);

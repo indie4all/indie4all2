@@ -18,7 +18,7 @@ export default abstract class WidgetImage extends RichTextEditorMixin(WidgetItem
     static async create(values?: InputWidgetImageData): Promise<WidgetImage> { return null; }
 
     getTexts() {
-        return { "help": this.params.help, "text": this.data.text, "alt": this.data.alt }
+        return { "help": this.params.help, "name": this.params.name, "text": this.data.text, "alt": this.data.alt }
     }
 
     preview(): string {
@@ -34,6 +34,7 @@ export default abstract class WidgetImage extends RichTextEditorMixin(WidgetItem
 
     updateTexts(texts: any): void {
         this.params.help = texts.help;
+        this.params.name = texts.name;
         this.data.text = texts.text;
         this.data.alt = texts.alt;
     }

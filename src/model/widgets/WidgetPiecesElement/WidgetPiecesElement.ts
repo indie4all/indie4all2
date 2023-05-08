@@ -26,6 +26,7 @@ export default abstract class WidgetPiecesElement extends WidgetItemElement {
     getTexts() {
         return {
             "help": this.params.help,
+            "name": this.params.name,
             "alt": this.data.alt,
             "pieces": this.data.pieces.map(piece => ({ "altImg": piece.altImg, "altRec": piece.altRec }))
         }
@@ -45,6 +46,7 @@ export default abstract class WidgetPiecesElement extends WidgetItemElement {
 
     updateTexts(texts: any): void {
         this.params.help = texts.help;
+        this.params.name = texts.name;
         this.data.alt = texts.alt;
         (texts.pieces as any[]).map((text, idx) => {
             this.data.pieces[idx].altImg = text.altImg;

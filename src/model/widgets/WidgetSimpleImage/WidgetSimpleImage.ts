@@ -17,7 +17,7 @@ export default abstract class WidgetSimpleImage extends WidgetItemElement {
     static async create(values?: InputWidgetSimpleImageData): Promise<WidgetSimpleImage> { return null; }
 
     getTexts() {
-        return { "alt": this.data.alt }
+        return { "alt": this.data.alt, "name": this.params.name }
     }
 
     preview(): string {
@@ -42,6 +42,7 @@ export default abstract class WidgetSimpleImage extends WidgetItemElement {
 
     updateTexts(texts: any): void {
         this.data.alt = texts.alt;
+        this.params.name = texts.name;
     }
 
     validateModel(): string[] {

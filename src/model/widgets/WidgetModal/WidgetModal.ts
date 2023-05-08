@@ -53,7 +53,7 @@ export default class WidgetModal extends WidgetContainerElement {
     }
 
     getTexts() {
-        return { "help": this.params.help, "text": this.params.text }
+        return { "help": this.params.help, "name": this.params.name, "text": this.params.text }
     }
 
     preview(): string {
@@ -76,6 +76,7 @@ export default class WidgetModal extends WidgetContainerElement {
     updateTexts(texts: any): void {
         this.params.text = texts.text;
         this.params.help = texts.help;
+        this.params.name = texts.name;
     }
 
     validateModel(): string[] {

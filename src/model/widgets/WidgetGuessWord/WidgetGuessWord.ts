@@ -60,7 +60,7 @@ export default class WidgetGuessWord extends WidgetItemElement {
     }
 
     getTexts() {
-        return { "help": this.params.help, "question": this.data.question, "answer": this.data.answer }
+        return { "help": this.params.help, "name": this.params.name, "question": this.data.question, "answer": this.data.answer }
     }
 
     preview(): string {
@@ -86,6 +86,7 @@ export default class WidgetGuessWord extends WidgetItemElement {
 
     updateTexts(texts: any): void {
         this.params.help = texts.help;
+        this.params.name = texts.name;
         this.data.question = texts.question;
         this.data.answer = texts.answer;
     }

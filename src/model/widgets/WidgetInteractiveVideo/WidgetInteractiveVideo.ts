@@ -44,7 +44,7 @@ export default class WidgetInteractiveVideo extends WidgetItemElement {
     }
 
     getTexts() {
-        return {}
+        return { name: this.params.name }
     }
 
     preview(): string {
@@ -57,7 +57,7 @@ export default class WidgetInteractiveVideo extends WidgetItemElement {
         this.params.name = form.instanceName;
     }
 
-    updateTexts(texts: any): void { }
+    updateTexts(texts: any): void { this.params.name = texts.name; }
 
     validateModel(): string[] {
         var keys: string[] = [];

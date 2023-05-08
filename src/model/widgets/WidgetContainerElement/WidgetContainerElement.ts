@@ -28,12 +28,14 @@ export default abstract class WidgetContainerElement extends WidgetElement {
     getTexts(): any {
         return {
             "help": this.params.help,
+            "name": this.params.name,
             "children": this.data.map(child => child.getTexts())
         }
     }
 
     updateTexts(texts: any): void {
         this.params.help = texts.help;
+        this.params.name = texts.name;
         (texts.children as any[]).forEach((text, idx) => this.data[idx].updateTexts(text));
     }
 

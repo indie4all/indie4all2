@@ -412,21 +412,24 @@ export default class Api {
      */
     load(model: object, onLoaded?: Function, onError?: Function) {
         const self = this;
-        try {
-            self.author.showLoading();
-            $(self.container).toggle(1000, function () {
+        self.author.showLoading();
+        $(self.container).toggle(1000, async function () {
+            try {
                 $(self.container).empty();
-                self.author.loadModelIntoPlugin(model);
+                await self.author.loadModelIntoPlugin(model);
                 $(self.container).toggle(1000, () => {
                     self.author.hideLoading();
                     onLoaded && onLoaded();
                 });
-            });
-        } catch (err) {
-            $(self.container).empty();
-            self.author.resetModel();
-            onError && onError(err);
-        }
+            } catch (err) {
+                console.error(err);
+                $(self.container).empty();
+                setTimeout(() => self.author.hideLoading(), 1000);
+                self.author.resetModel();
+                Utils.notifyError(self.i18n.value("messages.loadError"));
+                onError && onError(err);
+            }
+        });
     }
 
     /**

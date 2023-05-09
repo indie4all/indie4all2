@@ -539,6 +539,7 @@
         "exportedSection": "Sección exportada con éxito",
         "importedElement": "Elemento importado con éxito",
         "importedSection": "Sección importada con éxito",
+        "loadError": "No se pudo cargar la unidad",
         "noElement": "No hay elementos que importar",
         "noErrors": "¡Bien! No hay errores. Puedes proceder a guardar el contenido.",
         "noRedo": "Nada que rehacer",

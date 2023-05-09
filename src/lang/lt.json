@@ -539,6 +539,7 @@
         "exportedSection": "Section successfully exported",
         "importedElement": "Element successfully imported",
         "importedSection": "Section successfully imported",
+        "loadError": "The unit could not be loaded",
         "noElement": "There are no elements to import",
         "noErrors": "Good! There are no errors in your content.",
         "noRedo": "Nothing to redo",

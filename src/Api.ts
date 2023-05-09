@@ -98,7 +98,7 @@ export default class Api {
             user: model.user ?? '',
             email: model.email ?? '',
             institution: model.institution ?? '',
-            language: model.language ?? '',
+            language: model.language?.toUpperCase() ?? '',
             theme: model.theme ?? '',
             license: model.license ?? ''
         };
@@ -575,7 +575,7 @@ export default class Api {
         const model = this.author.model;
         const data = {
             languages: Api.ALLOWED_LANGUAGES,
-            language: model.language ?? '',
+            language: model.language?.toUpperCase() ?? '',
         };
         // Create the form
         $('#modal-settings-tittle').html(this.i18n.value('dialog.translate'));

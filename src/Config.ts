@@ -45,9 +45,9 @@ export default class Config {
             this.setScormBackendURL(options.scormBackendURL);
         if (typeof options.translationBackendURL === 'string')
             this.setTranslationBackendURL(options.translationBackendURL);
-        if (typeof options.resourceBackendURL === 'string')
+        if (typeof options.resourceBackendURL === 'string' || options.resourceBackendURL === null)
             this.setResourceBackendURL(options.resourceBackendURL);
-        if (typeof options.resourceProxyBackendURL === 'string')
+        if (typeof options.resourceProxyBackendURL === 'string' || options.resourceProxyBackendURL === null)
             this.setResourceProxyBackendURL(options.resourceProxyBackendURL);
         if (Array.isArray(options.allowedResourceOrigins))
             this.setAllowedResourceOrigins(options.allowedResourceOrigins);

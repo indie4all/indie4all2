@@ -291,7 +291,7 @@ export default class WidgetTable extends WidgetItemElement {
     updateTexts(texts: any): void {
         this.params.help = texts.help;
         this.params.name = texts.name;
-        const columnTranslations = (texts.columns as any[]).map((col, idx) => [this.data.columns, col]);
+        const columnTranslations = (texts.columns as any[]).map((col, idx) => [this.data.columns[idx], col]);
         this.data.columns = texts.columns;
         this.data.rows = texts.rows;
         // Replace row headings with their translated column version

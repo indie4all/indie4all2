@@ -108,6 +108,7 @@
     "watch": [
       "backend/controllers",
       "backend/routes",
+      "backend/services",
       "backend/config",
       "backend/server.js"
     ]

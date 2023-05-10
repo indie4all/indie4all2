@@ -1,13 +1,17 @@
 import express from "express";
 const router = express.Router();
 import translation_controller from "../controllers/translationController";
+import { AzureTranslationService } from "../services/translation/AzureTranslationService";
+
 
 // Check if the translation service is available
-router.use((req, res, next) => {
-    if (!process.env.TRANSLATION_ACCESS_TOKEN) {
+router.use((req: any, res: any, next) => {
+
+    if (process.env.TRANSLATION_TYPE !== "AZURE") {
         res.status(500).send("Translation service not available");
         return;
     }
+    req.translator = new AzureTranslationService();
     next();
 });
 

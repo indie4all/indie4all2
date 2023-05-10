@@ -413,11 +413,11 @@ export default class Api {
     load(model: object, onLoaded?: Function, onError?: Function) {
         const self = this;
         self.author.showLoading();
-        $(self.container).toggle(1000, async function () {
+        $(self.container).hide(1000, async function () {
             try {
                 $(self.container).empty();
                 await self.author.loadModelIntoPlugin(model);
-                $(self.container).toggle(1000, () => {
+                $(self.container).show(1000, () => {
                     self.author.hideLoading();
                     onLoaded && onLoaded();
                 });

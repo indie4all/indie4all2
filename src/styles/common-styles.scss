@@ -241,6 +241,9 @@
     max-height: 62px;
     margin-bottom: 10px;
     word-break: break-word;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   .b3 {
@@ -460,6 +463,10 @@
   .clr-field {
     width: 100%;
   }
+}
+
+#modal-preview-generated-url {
+  word-break: break-all;
 }
 
 @media all and (min-width: 768px) {

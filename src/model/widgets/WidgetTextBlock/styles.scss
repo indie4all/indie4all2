@@ -7,5 +7,7 @@
     .b2 * {
         vertical-align: middle;
         margin-bottom: 0;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 }

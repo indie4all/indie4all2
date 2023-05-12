@@ -321,6 +321,7 @@
             }
         },
         "RelatedUnitsContainer": {
+            "moreThanOne": "You must provide at most one Related Units item.",
             "data": {
                 "empty": "The element is empty. You must add at least one entry item using the add button on the right."
             }

@@ -320,6 +320,19 @@
                 "onlyOneBlank": "Debes incluir solamente un marcador de hueco en la frase"
             }
         },
+        "RelatedUnitsContainer": {
+            "data": {
+                "empty": "El elemento está vacío. Debes añadir al menos una entrada utilizando el botón de añadir a la derecha."
+            }
+        },
+        "RelatedUnitsItem": {
+            "title": {
+                "invalid": "El campo título está vacío. Debes escribir un título."
+            },
+            "url": {
+                "invalid": "El campo URL está vacío. Debes escribir una URL."
+            }
+        },
         "SentenceOrderContainer": {
             "data": {
                 "empty": "Debes proporcionar al menos un elemento de ordenamiento de frases."
@@ -1086,6 +1099,25 @@
             },
             "label": "Elemento de palabras faltantes",
             "prev": "El elemento de palabras faltantes no ha sido establecido todavía..."
+        },
+        "RelatedUnitsContainer": {
+            "label": "Unidades relacionadas"
+        },
+        "RelatedUnitsItem": {
+            "form": {
+                "title": {
+                    "help": "Título de la unidad relacionada",
+                    "label": "Título",
+                    "placeholder": "Ejemplo: Derechos humanos"
+                },
+                "url": {
+                    "help": "Destino al que serás redirigido cuando hagas clic en el título",
+                    "label": "URL",
+                    "placeholder": "Ejemplo: https://opencontent.upct.es/21b10fbb6fdb4368b05ce36baf921801/78961bfc19b240b4ba84fea62da0e128/"
+                }
+            },
+            "label": "Unidad relacionada",
+            "prev": "Entrada no establecida todavía ..."
         },
         "SentenceOrderContainer": {
             "label": "Ordenamiento de frases"

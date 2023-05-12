@@ -628,3 +628,22 @@ export interface WidgetTrueFalseQuestionData {
 export interface InputWidgetTrueFalseQuestionData extends InputWidgetElementData {
     data?: WidgetTrueFalseQuestionData
 }
+
+export interface WidgetRelatedUnitsContainerParams {
+    help?: string,
+    name?: string
+}
+
+export interface InputWidgetRelatedUnitsContainerData extends InputWidgetElementData {
+    data?: InputWidgetRelatedUnitsItemData[],
+    params?: WidgetRelatedUnitsContainerParams
+}
+
+export interface WidgetRelatedUnitsItemData {
+    title?: string,
+    url?: string
+}
+
+export interface InputWidgetRelatedUnitsItemData extends InputWidgetElementData {
+    data?: WidgetRelatedUnitsItemData
+}

@@ -82,6 +82,8 @@ import WidgetLocalSimpleImage from "./widgets/WidgetSimpleImage/WidgetLocalSimpl
 import WidgetRemoteSimpleImage from "./widgets/WidgetSimpleImage/WidgetRemoteSimpleImage";
 import WidgetLocalVideo from "./widgets/WidgetVideo/WidgetLocalVideo";
 import WidgetRemoteVideo from "./widgets/WidgetVideo/WidgetRemoteVideo";
+import WidgetRelatedUnitsContainer from "./widgets/WidgetRelatedUnitsContainer/WidgetRelatedUnitsContainer";
+import WidgetRelatedUnitsItem from "./widgets/WidgetRelatedUnitsItem/WidgetRelatedUnitsItem";
 
 export default class ModelManager {
 
@@ -105,6 +107,8 @@ export default class ModelManager {
         [WidgetAcordionContainer.widget]: WidgetAcordionContainer,
         [WidgetAcordionContent.widget]: WidgetAcordionContent,
         [WidgetModal.widget]: WidgetModal,
+        [WidgetRelatedUnitsContainer.widget]: WidgetRelatedUnitsContainer,
+        [WidgetRelatedUnitsItem.widget]: WidgetRelatedUnitsItem,
         // Interactive elements
         [WidgetImageAndText.widget]: () => Config.isLocal() ? WidgetLocalImageAndText : WidgetRemoteImageAndText,
         [WidgetImage.widget]: () => Config.isLocal() ? WidgetLocalImage : WidgetRemoteImage,
@@ -185,6 +189,7 @@ export default class ModelManager {
         [WidgetButtonTextContainer.widget]: { "allows": [WidgetButtonTextItem] },
         [WidgetAnimationContainer.widget]: { "allows": [WidgetAnimationItem] },
         [WidgetTermClassifcation.widget]: { "allows": [WidgetTermClassificationItem] },
+        [WidgetRelatedUnitsContainer.widget]: { "allows": [WidgetRelatedUnitsItem] },
         [WidgetTestContainer.widget]: { "allows": [WidgetGapQuestion, WidgetSimpleQuestion, WidgetTrueFalseQuestion] },
     }
 

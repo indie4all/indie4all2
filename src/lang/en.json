@@ -242,7 +242,7 @@
         },
         "InteractiveVideo": {
             "videourl": {
-                "invalid": "The URL set for the video is not valid. You must make sure to provide a valid indieuathor URL."
+                "invalid": "The URL set for the video is not valid. You must make sure to provide a valid indieauthor URL."
             }
         },
         "LatexFormula": {
@@ -318,6 +318,19 @@
             "sentence": {
                 "empty": "The sentence must not be empty",
                 "onlyOneBlank": "You must include only one blank spot in the sentence"
+            }
+        },
+        "RelatedUnitsContainer": {
+            "data": {
+                "empty": "The element is empty. You must add at least one entry item using the add button on the right."
+            }
+        },
+        "RelatedUnitsItem": {
+            "title": {
+                "invalid": "The title field is empty. You must write a title."
+            },
+            "url": {
+                "invalid": "The url field is empty. You must write a url."
             }
         },
         "SentenceOrderContainer": {
@@ -1086,6 +1099,25 @@
             },
             "label": "Missing words item",
             "prev": "Missing words item has not been set yet..."
+        },
+        "RelatedUnitsContainer": {
+            "label": "Related Units"
+        },
+        "RelatedUnitsItem": {
+            "form": {
+                "title": {
+                    "help": "Title of the related unit",
+                    "label": "Title",
+                    "placeholder": "Example: Human rights"
+                },
+                "url": {
+                    "help": "Destination to which you will be redirected when you click on the title.",
+                    "label": "URL",
+                    "placeholder": "Example: https://opencontent.upct.es/21b10fbb6fdb4368b05ce36baf921801/78961bfc19b240b4ba84fea62da0e128/"
+                }
+            },
+            "label": "Related Unit",
+            "prev": "Entry not set yet ..."
         },
         "SentenceOrderContainer": {
             "label": "Sentence ordering"

@@ -21,7 +21,7 @@ const copyAssets = async function (folder: string, color: string, cover: string,
     const data = `$base-color: ${realColor}; $base-url: "${realCover}"; @import '${themeTemplate}';`
     const css = await new Promise((resolve) =>
         sass.render({ data, includePaths: [themeTemplate], outputStyle: 'compressed' }, (err, result) => { resolve(result.css) }));
-    await fs.writeFile(folder + '/generator/content/v4-7-1/css/stylesCustom.min.css', css as string);
+    await fs.writeFile(folder + '/generator/content/v4-7-2/css/stylesCustom.min.css', css as string);
     // Remove scorm libraries if the unit is not of SCORM type
     if (mode !== "SCORM")
         await fs.rm(folder + '/scorm/', { recursive: true, force: true });

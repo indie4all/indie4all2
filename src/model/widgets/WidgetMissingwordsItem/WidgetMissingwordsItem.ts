@@ -50,7 +50,10 @@ export default class WidgetMissingWordsItem extends WidgetSpecificItemElement {
     }
 
     getTexts() {
-        return { "sentence": this.data.sentence, "combinations": this.data.combinations }
+        return {
+            "sentence": this.data.sentence.replaceAll('[blank]', '<span class="notranslate">[blank]</span>'),
+            "combinations": this.data.combinations
+        }
     }
 
     toJSON(): any {
@@ -115,7 +118,9 @@ export default class WidgetMissingWordsItem extends WidgetSpecificItemElement {
     }
 
     updateTexts(texts: any): void {
-        this.data.sentence = texts.sentence;
+        // It shouldn't but it may happen that the translator translates the [blank] placeholder
+        // Then, replace it with the original term
+        this.data.sentence = texts.sentence.replaceAll(/<span class="notranslate">.*?<\/span>/gms, '[blank]');
         this.data.combinations = texts.combinations;
     }
 

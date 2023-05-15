@@ -57,7 +57,7 @@ export default class WidgetGapQuestion extends WidgetSpecificItemElement {
         // It shouldn't but it may happen that the translator translates the [blank] placeholder
         // Then, replace it with the original term
         this.data.question = texts.question.replace(/<span class="notranslate">.*?<\/span>/gms, '[blank]');
-        (texts.answers as any[]).forEach((text, idx) => this.data.answers[idx].text = text);
+        (texts.answers as any[]).forEach((ans, idx) => this.data.answers[idx].text = ans.text);
         this.data.feedback = texts.feedback;
     }
 

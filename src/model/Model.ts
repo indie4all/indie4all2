@@ -223,6 +223,7 @@ export class Model {
         if (this.color) result["color"] = this.color;
         if (this.cover) result["cover"] = this.cover;
         result['mode'] = Config.isLocal() ? 'Local' : 'Open';
+        result['analytics'] = 0;
         return result;
     }
 }

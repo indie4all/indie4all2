@@ -320,10 +320,20 @@
                 "onlyOneBlank": "You must include only one blank spot in the sentence"
             }
         },
+        "RelatedUnitsAssociation": {
+            "title": {
+                "invalid": "The title field is empty. You must write a title."
+            },
+            "data": {
+                "empty": "The element is empty. You must add at least one entry item using the add button on the right."
+            }
+        },
         "RelatedUnitsContainer": {
             "moreThanOne": "You must provide at most one Related Units item.",
             "data": {
-                "empty": "The element is empty. You must add at least one entry item using the add button on the right."
+                "empty": "The element is empty. You must add at least one entry item using the add button on the right.",
+                "duplicated": "There are at least a duplicated link. You must provide a unique link for each entry item.",
+                "multipleCurrent": "There are at least two current entries. You must provide only one current entry."
             }
         },
         "RelatedUnitsItem": {
@@ -331,7 +341,7 @@
                 "invalid": "The title field is empty. You must write a title."
             },
             "url": {
-                "invalid": "The url field is empty. You must write a url."
+                "invalid": "The url field must be set with the following format: https://[origin]/[author]/[unit]"
             }
         },
         "SentenceOrderContainer": {
@@ -1101,20 +1111,35 @@
             "label": "Missing words item",
             "prev": "Missing words item has not been set yet..."
         },
+        "RelatedUnitsAssociation": {
+            "form": {
+                "title": {
+                    "help": "Title of the group of units",
+                    "label": "Title",
+                    "placeholder": "Example: Module of law"
+                }
+            },
+            "label": "Group of Related Units",
+            "prev": "Group not set yet ..."
+        },
         "RelatedUnitsContainer": {
             "label": "Related Units"
         },
         "RelatedUnitsItem": {
+            "current": "Current unit",
             "form": {
+                "current": {
+                    "title": "This is the current unit"
+                },
                 "title": {
                     "help": "Title of the related unit",
                     "label": "Title",
                     "placeholder": "Example: Human rights"
                 },
                 "url": {
-                    "help": "Destination to which you will be redirected when you click on the title.",
+                    "help": "Destination URL with the following format: https://[origin]/[author]/[unit]/",
                     "label": "URL",
-                    "placeholder": "Example: https://opencontent.upct.es/21b10fbb6fdb4368b05ce36baf921801/78961bfc19b240b4ba84fea62da0e128/"
+                    "placeholder": "Example: https://opencontent.upct.es/21801/7896/"
                 }
             },
             "label": "Related Unit",

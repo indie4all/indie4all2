@@ -635,15 +635,31 @@ export interface WidgetRelatedUnitsContainerParams {
 }
 
 export interface InputWidgetRelatedUnitsContainerData extends InputWidgetElementData {
-    data?: InputWidgetRelatedUnitsItemData[],
+    data?: (InputWidgetRelatedUnitsItemData | InputWidgetRelatedUnitsAssociationData)[],
     params?: WidgetRelatedUnitsContainerParams
 }
 
+export interface WidgetRelatedUnitsItemParams {
+    help?: string,
+    name?: string
+}
+
 export interface WidgetRelatedUnitsItemData {
-    title?: string,
-    url?: string
+    url?: string,
+    current?: boolean
 }
 
 export interface InputWidgetRelatedUnitsItemData extends InputWidgetElementData {
     data?: WidgetRelatedUnitsItemData
+}
+
+
+export interface WidgetRelatedUnitsAssociationParams {
+    help?: string,
+    name?: string
+}
+
+export interface InputWidgetRelatedUnitsAssociationData extends InputWidgetElementData {
+    data?: InputWidgetRelatedUnitsItemData[],
+    params?: WidgetRelatedUnitsAssociationParams
 }

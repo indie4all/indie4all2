@@ -320,10 +320,20 @@
                 "onlyOneBlank": "Debes incluir solamente un marcador de hueco en la frase"
             }
         },
+        "RelatedUnitsAssociation": {
+            "title": {
+                "invalid": "El campo título está vacío. Debes escribir un título."
+            },
+            "data": {
+                "empty": "El elemento está vacío. Debes añadir al menos una entrada utilizando el botón de añadir a la derecha."
+            }
+        },
         "RelatedUnitsContainer": {
             "moreThanOne": "Debes proporcionar como mucho un elemento de Unidades Relacionadas.",
             "data": {
-                "empty": "El elemento está vacío. Debes añadir al menos una entrada utilizando el botón de añadir a la derecha."
+                "empty": "El elemento está vacío. Debes añadir al menos una entrada utilizando el botón de añadir a la derecha.",
+                "duplicated": "Hay al menos un enlace duplicado. Debes proporcionar un enlace único para cada entrada.",
+                "multipleCurrent": "Hay al menos dos entradas actuales. Debes proporcionar solamente una entrada actual."
             }
         },
         "RelatedUnitsItem": {
@@ -331,7 +341,7 @@
                 "invalid": "El campo título está vacío. Debes escribir un título."
             },
             "url": {
-                "invalid": "El campo URL está vacío. Debes escribir una URL."
+                "invalid": "El campo url debe estar establecido con el siguiente formato: https://[origen]/[autor]/[unidad]"
             }
         },
         "SentenceOrderContainer": {
@@ -1101,20 +1111,35 @@
             "label": "Elemento de palabras faltantes",
             "prev": "El elemento de palabras faltantes no ha sido establecido todavía..."
         },
+        "RelatedUnitsAssociation": {
+            "form": {
+                "title": {
+                    "help": "Título del grupo de unidades",
+                    "label": "Título",
+                    "placeholder": "Ejemplo: Módulo de Derecho"
+                }
+            },
+            "label": "Grupo de Unidades Relacionadas",
+            "prev": "Grupo no estabecido todavía ..."
+        },
         "RelatedUnitsContainer": {
             "label": "Unidades relacionadas"
         },
         "RelatedUnitsItem": {
+            "current": "Unidad actual",
             "form": {
+                "current": {
+                    "title": "Esta es la unidad actual"
+                },
                 "title": {
                     "help": "Título de la unidad relacionada",
                     "label": "Título",
                     "placeholder": "Ejemplo: Derechos humanos"
                 },
                 "url": {
-                    "help": "Destino al que serás redirigido cuando hagas clic en el título",
+                    "help": "URL de destino con el siguiente formato: https://[origen]/[autor]/[unidad]/",
                     "label": "URL",
-                    "placeholder": "Ejemplo: https://opencontent.upct.es/21b10fbb6fdb4368b05ce36baf921801/78961bfc19b240b4ba84fea62da0e128/"
+                    "placeholder": "Ejemplo: https://opencontent.upct.es/21801/7896/"
                 }
             },
             "label": "Unidad relacionada",

@@ -1,13 +1,16 @@
 import "./styles.scss";
 import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 import icon from "./icon.png";
-import { FormEditData, InputWidgetRelatedUnitsItemData, WidgetRelatedUnitsItemData } from "../../../types";
+import { FormEditData, InputWidgetRelatedUnitsItemData, WidgetRelatedUnitsItemData, WidgetRelatedUnitsItemParams } from "../../../types";
 
 export default class WidgetRelatedUnitsItem extends WidgetSpecificItemElement {
+
+    private static LINK_PATTERN = /^(https?:\/\/[\w.]{1,256})\/(\w+)\/(\w+)\/?$/;
 
     static widget = "RelatedUnitsItem";
     static icon = icon;
 
+    params: WidgetRelatedUnitsItemParams;
     data: WidgetRelatedUnitsItemData;
 
     static async create(values?: InputWidgetRelatedUnitsItemData): Promise<WidgetRelatedUnitsItem> {
@@ -16,11 +19,17 @@ export default class WidgetRelatedUnitsItem extends WidgetSpecificItemElement {
 
     constructor(values?: InputWidgetRelatedUnitsItemData) {
         super(values);
-        this.data = values?.data ? structuredClone(values.data) : { title: "", url: "" };
+        this.params = values?.params ? structuredClone(values.params) : {
+            name: "Related Units Item-" + this.id,
+            help: ""
+        };
+        this.data = values?.data ? structuredClone(values.data) : { url: "", current: false };
     }
 
     clone(): WidgetRelatedUnitsItem {
         const widget = new WidgetRelatedUnitsItem();
+        widget.params = structuredClone(this.params);
+        widget.params.name = "Related Units Item-" + widget.id;
         widget.data = structuredClone(this.data);
         return widget;
     }
@@ -29,8 +38,9 @@ export default class WidgetRelatedUnitsItem extends WidgetSpecificItemElement {
         const { default: form } = await import('./form.hbs');
         var data = {
             instanceId: this.id,
-            title: this.data ? this.data.title : '',
-            url: this.data ? this.data.url : ''
+            help: this.params ? this.params.help : '',
+            url: this.data ? this.data.url : '',
+            current: this.data ? this.data.current : false
         };
         return {
             inputs: form(data),
@@ -43,35 +53,54 @@ export default class WidgetRelatedUnitsItem extends WidgetSpecificItemElement {
     }
 
     preview(): string {
-        return this.data?.title && this.data?.url ?
-            `<p><b>${this.data.title}</b><span> -> ${this.data.url}</span></p>` :
+        return this.params?.help && (this.data?.url || this.data?.current) ?
+            `<p><b>${this.params.help}</b>
+                <span> -> 
+                ${this.data?.current ? this.translate("widgets.RelatedUnitsItem.current") : this.data.url}
+                </span></p>` :
             this.translate("widgets.RelatedUnitsItem.prev");
+    }
+
+    settingsOpened(): void {
+        $('#related-units-current').on('change', function () {
+            const current = $(this).is(':checked');
+            $('#related-units-url').prop('disabled', current).prop('required', !current);
+            if (current) $('#related-units-url').val('');
+        });
+    }
+
+    settingsClosed(): void {
+        $('#related-units-current').off('change');
     }
 
     toJSON(): any {
         const result = super.toJSON();
+        if (this.params) result["params"] = structuredClone(this.params);
         if (this.data) result["data"] = structuredClone(this.data);
         return result;
     }
 
     updateModelFromForm(form: any): void {
-        this.data.title = form.title;
+        this.params.help = form.help;
         this.data.url = form.url;
+        this.data.current = form.current;
     }
 
     updateTexts(texts: any): void { }
 
     validateModel(): string[] {
         var errors: string[] = [];
-        if (this.data.title.length == 0) errors.push("RelatedUnitsItem.title.invalid");
-        if (this.data.url.length == 0) errors.push("RelatedUnitsItem.url.invalid");
+        if (this.params.help.length == 0) errors.push("RelatedUnitsItem.title.invalid");
+        if (!this.data.current && (this.data.url.length == 0 || !WidgetRelatedUnitsItem.LINK_PATTERN.test(this.data.url)))
+            errors.push("RelatedUnitsItem.url.invalid");
         return errors;
     }
 
     validateForm(form: any): string[] {
         var errors: string[] = [];
-        if (form.title.length == 0) errors.push("RelatedUnitsItem.title.invalid");
-        if (form.url.length == 0) errors.push("RelatedUnitsItem.url.invalid");
+        if (form.help.length == 0) errors.push("RelatedUnitsItem.title.invalid");
+        if (!form.current && (form.url.length == 0 || !WidgetRelatedUnitsItem.LINK_PATTERN.test(form.url)))
+            errors.push("RelatedUnitsItem.url.invalid");
         return errors;
     }
 }

@@ -1,14 +1,20 @@
 <form id="f-{{instanceId}}">
     <div class="form-group">
         <label for="related-units-title">{{translate "widgets.RelatedUnitsItem.form.title.label"}}</label>
-        <input id="related-units-title" type="title" class="form-control" name="title" required 
-            placeholder="{{translate "widgets.RelatedUnitsItem.form.title.placeholder"}}" value="{{title}}" autocomplete="off" />
+        <input id="related-units-title" type="text" class="form-control" name="help" required 
+            placeholder="{{translate "widgets.RelatedUnitsItem.form.title.placeholder"}}" value="{{help}}" autocomplete="off" />
         <small class="form-text text-muted">{{translate "widgets.RelatedUnitsItem.form.title.help"}}</small>
     </div>
     <div class="form-group">
         <label for="related-units-url">{{translate "widgets.RelatedUnitsItem.form.url.label"}}</label>
-        <input id="related-units-url" type="url" class="form-control" name="url" required 
-            placeholder="{{translate "widgets.RelatedUnitsItem.form.url.placeholder"}}" value="{{url}}" autocomplete="off" />
+        <input id="related-units-url" type="url" class="form-control" name="url" required pattern="^$|https?:\/\/[\w.]{1,256}\/\w+\/\w+\/?$"
+            placeholder="{{translate "widgets.RelatedUnitsItem.form.url.placeholder"}}" value="{{url}}" autocomplete="off"
+            title="{{translate "widgets.RelatedUnitsItem.form.url.help"}}"
+            {{#if current}} disabled {{/if}} />
         <small class="form-text text-muted">{{translate "widgets.RelatedUnitsItem.form.url.help"}}</small>
+    </div>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="related-units-current" name="current" {{#if current}} checked {{/if}}>
+        <label class="form-check-label" for="related-units-current">{{translate "widgets.RelatedUnitsItem.form.current.title"}}</label>
     </div>
 </form>

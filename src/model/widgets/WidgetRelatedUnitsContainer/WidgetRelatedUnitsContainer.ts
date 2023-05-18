@@ -1,9 +1,9 @@
-import Utils from "../../../Utils";
 import "./styles.scss";
 import icon from "./icon.png";
-import { FormEditData, InputWidgetRelatedUnitsContainerData, WidgetRelatedUnitsContainerParams } from "../../../types";
+import { FormEditData, InputWidgetRelatedUnitsAssociationData, InputWidgetRelatedUnitsContainerData, InputWidgetRelatedUnitsItemData, WidgetRelatedUnitsContainerParams } from "../../../types";
 import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 import WidgetRelatedUnitsItem from "../WidgetRelatedUnitsItem/WidgetRelatedUnitsItem";
+import WidgetRelatedUnitsAssociation from "../WidgetRelatedUnitsAssociation/WidgetRelatedUnitsAssociation";
 
 export default class WidgetRelatedUnitsContainer extends WidgetContainerSpecificElement {
 
@@ -12,11 +12,15 @@ export default class WidgetRelatedUnitsContainer extends WidgetContainerSpecific
     static icon = icon;
 
     params: WidgetRelatedUnitsContainerParams;
-    data: WidgetRelatedUnitsItem[];
+    data: (WidgetRelatedUnitsItem | WidgetRelatedUnitsAssociation)[];
 
     static async create(values?: InputWidgetRelatedUnitsContainerData): Promise<WidgetRelatedUnitsContainer> {
         const relatedUnits = new WidgetRelatedUnitsContainer(values);
-        relatedUnits.data = values?.data ? await Promise.all(values.data.map(elem => WidgetRelatedUnitsItem.create(elem))) : [];
+        relatedUnits.data = values?.data ? await Promise.all(values.data.map(elem => {
+            if (elem.widget === "RelatedUnitsAssociation")
+                return WidgetRelatedUnitsAssociation.create(elem as InputWidgetRelatedUnitsAssociationData);
+            return WidgetRelatedUnitsItem.create(elem as InputWidgetRelatedUnitsItemData);
+        })) : [];
         return relatedUnits;
     }
 
@@ -40,7 +44,6 @@ export default class WidgetRelatedUnitsContainer extends WidgetContainerSpecific
         const { default: form } = await import('./form.hbs');
         var data = {
             instanceId: this.id,
-            instanceName: this.params.name,
             help: this.params.help
         };
         return {
@@ -50,7 +53,7 @@ export default class WidgetRelatedUnitsContainer extends WidgetContainerSpecific
     }
 
     preview(): string {
-        return this.params?.name ?? this.translate("widgets.RelatedUnitsContainer.label");
+        return this.params?.help ? this.params.help : this.translate("widgets.RelatedUnitsContainer.label");
     }
 
     toJSON(): any {
@@ -61,20 +64,22 @@ export default class WidgetRelatedUnitsContainer extends WidgetContainerSpecific
     }
 
     updateModelFromForm(form: any): void {
-        this.params.name = form.instanceName;
         this.params.help = form.help;
     }
 
     validateModel(): string[] {
         var keys: string[] = [];
         if (this.data.length == 0) keys.push("RelatedUnitsContainer.data.empty");
-        if (!Utils.hasNameInParams(this)) keys.push("common.name.invalid");
+        const entries = this.data.flatMap(elem => elem instanceof WidgetRelatedUnitsAssociation ? elem.data : [elem]);
+        const currentUnits = entries.filter(elem => elem.data.current).length;
+        if (currentUnits > 1) keys.push("RelatedUnitsContainer.data.multipleCurrent");
+        const links = entries.filter(elem => elem.data.url).map(elem => elem.data.url);
+        if (new Set(links).size !== links.length)
+            keys.push("RelatedUnitsContainer.data.duplicated");
         return keys;
     }
 
     validateForm(form: any): string[] {
-        var keys: string[] = [];
-        if (form.instanceName.length == 0) keys.push("common.name.invalid");
-        return keys;
+        return [];
     }
 }

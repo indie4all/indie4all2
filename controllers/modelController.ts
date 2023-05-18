@@ -79,7 +79,7 @@ export default {
         const model = req.body as any;
         const onGenerated = async (folder) => {
             await copyAssets(`${folder}/${config.get("folder.assets")}`, model.color, model.cover, model.mode);
-            return res.status(StatusCodes.OK).json({ success: true, url: config.get("url.units") + "/" + folder });
+            return res.status(StatusCodes.OK).json({ success: true, url: folder });
         };
         generate(req, res, onGenerated, model.mode);
     },

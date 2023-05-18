@@ -8714,14 +8714,19 @@ var DragDropTouch;
 (async function () {
     // Get the author and unit of the referer unit
     const params = new URLSearchParams(window.location.search);
+    const paramOrigin = params.get('ref-origin');
     const paramAuthor = params.get('ref-author');
     const paramUnit = params.get('ref-unit');
     let content;
+    let refererUnit = false;
     // Get the related units from the author/unit of the referer unit
-    if (paramAuthor && paramUnit) {
-        const url = `${window.location.origin}/${paramAuthor}/${paramUnit}/related_units.json`;
+    if (paramOrigin && paramAuthor && paramUnit) {
+        const url = `${paramOrigin}/${paramAuthor}/${paramUnit}/related_units.json`;
         const response = await fetch(url);
-        if (response.ok) content = await response.json();
+        if (response.ok) {
+            content = await response.json();
+            refererUnit = true;
+        }
     }
     // If we couldn't get the related units from the referer unit, get the related units from the current unit
     if (!content) {
@@ -8733,27 +8738,68 @@ var DragDropTouch;
     // The related units have been loaded, so we can show the related units menu
     const myUnit = window.location.pathname.split('/')[2]; // document.body.dataset.unit;
     const myAuthor = window.location.pathname.split('/')[1]; // TODO
+    const myOrigin = window.location.origin;
+
     // If we come from a related unit, we want to show the related units of the referer unit
     const refAuthor = paramAuthor || myAuthor;
     const refUnit = paramUnit || myUnit;
+    const refOrigin = paramOrigin || myOrigin;
 
-    // Build the list items for the related units menu
-    const relatedUnits = content.entries.map(unit => {
-        const unitURL = new URL(unit.url);
-        const unitAuthor = unitURL.pathname.split('/')[1];
-        const unitId = unitURL.pathname.split('/')[2];
-        const current = unitAuthor === myAuthor && unitId === myUnit;    
+    const parseRelatedGroup = (group) => {
+        return `<li>
+          <h3 class="related-entry related-group">${group.title}</h3>
+          <ol class="related-group-content">
+            ${group.entries.map(entry => parseRelatedUnit(entry, 4)).join('')}
+          </ol>
+        </li>`
+    }
+
+    const parseRelatedUnit = (unit, level = 3) => {
+        
+        let current, unitOrigin, unitAuthor, unitId;
+        // # is a placeholder to mark the current unit of the loaded JSON file
+        if (unit.url === '#') {
+            if (refererUnit) {
+                // The JSON file comes from the referer unit, we get the url from the query parameters
+                unitOrigin = refOrigin;
+                unitAuthor = refAuthor;
+                unitId = refUnit;                
+            } else {
+                // The JSON file comes from the current unit, we get the url from the window.location
+                unitOrigin = window.location.origin;
+                unitAuthor = window.location.pathname.split('/')[1];
+                unitId = window.location.pathname.split('/')[2];
+            }
+        } else {
+            // We know the url of the unit, we can parse it
+            const unitURL = new URL(unit.url);
+            unitOrigin = unitURL.origin;
+            unitAuthor = unitURL.pathname.split('/')[1];
+            unitId = unitURL.pathname.split('/')[2];
+        }
+        current = unitOrigin === myOrigin && unitAuthor === myAuthor && unitId === myUnit;
+        
         // If the unit is the current unit, change its attributes properly
         return `<li>
-            <a class="nav-element text-decoration-underline ${current ? "current" : ""}" 
-              href="${ current ? '#' : (unit.url + "?ref-author="+refAuthor+"&ref-unit="+refUnit)}"
-              ${current ? 'data-bs-dismiss="offcanvas"' : ''}
-              ${current ? 'aria-current="page"' : ''}>
-                ${unit.title}
-            </a>
+            <h${level} class="related-entry related-unit">
+                <a class="nav-element ${current ? "current" : ""}" 
+                  href="${ current ? '#' : (unitOrigin + "/" + unitAuthor + "/" + unitId + "?ref-origin="+refOrigin+"&ref-author="+refAuthor+"&ref-unit="+refUnit)}"
+                  ${current ? 'data-bs-dismiss="offcanvas"' : ''}
+                  ${current ? 'aria-current="page"' : ''}>
+                    ${current ? '<i class="fa-solid fa-location-dot"></i>' : '' }
+                    ${unit.title}
+                </a>
+            </h${level}>
           </li>`
+    }
+
+    // Build the list items for the related units menu
+    const relatedUnits = content.entries.map(entry => {
+        if (!entry.entries) return parseRelatedUnit(entry);
+        else return parseRelatedGroup(entry);
     }).join('');
-    $('#related-units-heading').text(content.help);
+    $('#related-units .offcanvas-title').text(content.help);
+    $('#related-units-button').attr('title', content.help);
     $('#related-units-list').html(relatedUnits);
     $('#related-units').removeClass('d-none');
 })();

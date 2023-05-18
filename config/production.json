@@ -17,8 +17,7 @@
         "port": 8000
     },
     "url": {
-        "previews": "/units/preview",
-        "units": "/units",
+        "previews": "/preview",
         "media": "/web/media"
     }
 }

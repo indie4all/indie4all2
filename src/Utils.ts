@@ -28,26 +28,29 @@ export default class Utils {
 
     static toJSON(form: HTMLElement): any {
 
+        const setInputValue = (object: any, element: HTMLInputElement, field: string): void => {
+            const { name, value, type } = element;
+            if (type == 'checkbox') object[field] = element.checked
+            else if (type != 'radio' || element.checked)
+                object[field] = value;
+        }
+
         var obj: any = {};
         var elements = <NodeListOf<HTMLInputElement>>form.querySelectorAll("input, select, textarea");
         elements.forEach(element => {
-            const { name, value, type } = element;
+            const { name, ...other } = element;
             let matchedArray = name.match(/^([^[]*)\[(\d+)\](?:\[([^\]]+)\])?$/);
             if (matchedArray) {
                 const [, field, position, subField] = matchedArray;
                 if (!obj[field]) obj[field] = [];
                 if (subField) {
                     if (!obj[field][position]) obj[field][position] = {};
-                    if (type != 'radio' || element.checked)
-                        obj[field][position][subField] = value;
+                    setInputValue(obj[field][position], element, subField);
                 } else
-                    if (type != 'radio' || element.checked)
-                        obj[field][position] = value;
+                    setInputValue(obj[field], element, position);
             }
-            else {
-                if (name && (type != 'radio' || element.checked))
-                    obj[name] = value;
-            }
+            else
+                name && setInputValue(obj, element, name);
         });
         return obj;
     }

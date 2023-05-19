@@ -8798,8 +8798,19 @@ var DragDropTouch;
         if (!entry.entries) return parseRelatedUnit(entry);
         else return parseRelatedGroup(entry);
     }).join('');
-    $('#related-units .offcanvas-title').text(content.help);
+    $('#related-units-text').text(content.help); // Change the text of the offcanvas title
     $('#related-units-button').attr('title', content.help);
     $('#related-units-list').html(relatedUnits);
     $('#related-units').removeClass('d-none');
+
+    const tableContentsOffcanvas = document.getElementById('offcanvas-related-units');
+    tableContentsOffcanvas.addEventListener('show.bs.offcanvas', function () {
+        document.body.classList.add('related-units-offcanvas-open');
+    });
+    tableContentsOffcanvas.addEventListener('hide.bs.offcanvas', function () {
+        document.body.classList.remove('related-units-offcanvas-open');
+    });
+
+    document.getElementById('offcanvas-related-units').classList.add('show');
+
 })();

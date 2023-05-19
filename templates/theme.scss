@@ -11819,6 +11819,17 @@ border: 0px solid transparent;
     letter-spacing: 0.2rem;
   }
 }
+
+// Handle the offcanvas menu of the table of contents 
+body {
+  margin-left: 0;
+  transition: margin-left 0.3s ease-in-out;
+  &.related-units-offcanvas-open {
+    @media (min-width: 768px) {
+      margin-left: 400px;
+    }
+  }
+}
 .top{
   margin-top: -300px;
 }
@@ -13428,13 +13439,15 @@ a.list-group-item:hover{
 .analytics-button-wrapper
 {
 	position: absolute;
-	top: 0.625rem;
-	right: 5.2rem;
+	top: calc(36px - 1rem);
+	right: 4.25rem;
 }
 
 @media (max-width: 575.98px) {
 	.analytics-button-wrapper {
-		position: static;
+		position: relative;
+		top: 0;
+		right: 0.625rem;
 		i {
 			font-size: 1.5rem;
 		}
@@ -13448,13 +13461,15 @@ a.list-group-item:hover{
 .accessibility-button-wrapper
 {
 	position: absolute;
-	top: 0.625rem;
-	right: 0;
+	top: calc(36px - 1rem);
+	right: 5px;
 }
 
 @media (max-width: 575.98px) {
 	.accessibility-button-wrapper {
-		position: static;
+		position: relative;
+		right: 0.625rem;
+		top: 0;
 		i {
 			font-size: 1.5rem;
 		}
@@ -13465,17 +13480,15 @@ a.list-group-item:hover{
 /***************************** BOTÓN OPCIONES ADICIONALES ****************************/
 #additional-options {
     position: fixed;
-    right: 0;
+    right: 5px;
     z-index: 1001;
-    top: 6.063rem;
+    top: 5.9375rem;
+	width: 3.875rem;
 }
 
 @media (max-width: 575.98px) {
 	#additional-options {
 		top: 6.863rem;
-		i {
-			font-size: 1.5rem;
-		}
 	}
 }
 /***************************** FIN BOTÓN OPCIONES ADICIONALES ****************************/
@@ -13501,10 +13514,18 @@ a.list-group-item:hover{
 	
 	#related-units-button {
 		position: fixed;
-		right: 0;
+		right: 5px;
 		z-index: 1001;
-		top: 11.063rem;
-		width: 5rem;
+		top: 9.1875rem;
+		width: 3.875rem;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	@media (max-width: 575.98px) {
+		#related-units-button {
+			top: 10.156rem;
+		}
 	}
 
 	#related-units-list {

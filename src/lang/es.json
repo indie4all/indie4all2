@@ -329,7 +329,7 @@
             }
         },
         "RelatedUnitsContainer": {
-            "moreThanOne": "Debes proporcionar como mucho un elemento de Unidades Relacionadas.",
+            "moreThanOne": "Debes proporcionar como mucho un elemento de tabla de contenido.",
             "data": {
                 "empty": "El elemento está vacío. Debes añadir al menos una entrada utilizando el botón de añadir a la derecha.",
                 "duplicated": "Hay al menos un enlace duplicado. Debes proporcionar un enlace único para cada entrada.",
@@ -1114,16 +1114,16 @@
         "RelatedUnitsAssociation": {
             "form": {
                 "title": {
-                    "help": "Título del grupo de unidades",
+                    "help": "Título del grupo",
                     "label": "Título",
                     "placeholder": "Ejemplo: Módulo de Derecho"
                 }
             },
-            "label": "Grupo de Unidades Relacionadas",
+            "label": "Grupo",
             "prev": "Grupo no estabecido todavía ..."
         },
         "RelatedUnitsContainer": {
-            "label": "Unidades relacionadas"
+            "label": "Tabla de contenido"
         },
         "RelatedUnitsItem": {
             "current": "Unidad actual",
@@ -1132,7 +1132,7 @@
                     "title": "Esta es la unidad actual"
                 },
                 "title": {
-                    "help": "Título de la unidad relacionada",
+                    "help": "Título de la entrada",
                     "label": "Título",
                     "placeholder": "Ejemplo: Derechos humanos"
                 },
@@ -1142,7 +1142,7 @@
                     "placeholder": "Ejemplo: https://opencontent.upct.es/21801/7896/"
                 }
             },
-            "label": "Unidad relacionada",
+            "label": "Entrada",
             "prev": "Entrada no establecida todavía ..."
         },
         "SentenceOrderContainer": {

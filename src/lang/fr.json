@@ -242,7 +242,7 @@
         },
         "InteractiveVideo": {
             "videourl": {
-                "invalid": "The URL set for the video is not valid. You must make sure to provide a valid indieuathor URL."
+                "invalid": "The URL set for the video is not valid. You must make sure to provide a valid indieauthor URL."
             }
         },
         "LatexFormula": {
@@ -329,7 +329,7 @@
             }
         },
         "RelatedUnitsContainer": {
-            "moreThanOne": "You must provide at most one Related Units item.",
+            "moreThanOne": "You must provide at most one table of contents item.",
             "data": {
                 "empty": "The element is empty. You must add at least one entry item using the add button on the right.",
                 "duplicated": "There are at least a duplicated link. You must provide a unique link for each entry item.",
@@ -1114,16 +1114,16 @@
         "RelatedUnitsAssociation": {
             "form": {
                 "title": {
-                    "help": "Title of the group of units",
+                    "help": "Title of the group",
                     "label": "Title",
                     "placeholder": "Example: Module of law"
                 }
             },
-            "label": "Group of Related Units",
+            "label": "Group",
             "prev": "Group not set yet ..."
         },
         "RelatedUnitsContainer": {
-            "label": "Related Units"
+            "label": "Table of contents"
         },
         "RelatedUnitsItem": {
             "current": "Current unit",
@@ -1132,7 +1132,7 @@
                     "title": "This is the current unit"
                 },
                 "title": {
-                    "help": "Title of the related unit",
+                    "help": "Title of the entry",
                     "label": "Title",
                     "placeholder": "Example: Human rights"
                 },
@@ -1142,7 +1142,7 @@
                     "placeholder": "Example: https://opencontent.upct.es/21801/7896/"
                 }
             },
-            "label": "Related Unit",
+            "label": "Entry",
             "prev": "Entry not set yet ..."
         },
         "SentenceOrderContainer": {

@@ -21,7 +21,7 @@ export default class WidgetRelatedUnitsAssociation extends WidgetContainerSpecif
     constructor(values?: InputWidgetRelatedUnitsAssociationData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "Related Units Association-" + this.id,
+            name: "Table Group-" + this.id,
             help: ""
         };
     }
@@ -29,7 +29,7 @@ export default class WidgetRelatedUnitsAssociation extends WidgetContainerSpecif
     clone(): WidgetRelatedUnitsAssociation {
         const widget = new WidgetRelatedUnitsAssociation();
         widget.params = structuredClone(this.params);
-        widget.params.name = "Related Units Association-" + widget.id;
+        widget.params.name = "Table Group-" + widget.id;
         widget.data = this.data.map(elem => elem.clone());
         return widget;
     }

@@ -20,7 +20,7 @@ export default class WidgetRelatedUnitsItem extends WidgetSpecificItemElement {
     constructor(values?: InputWidgetRelatedUnitsItemData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "Related Units Item-" + this.id,
+            name: "Table Entry-" + this.id,
             help: ""
         };
         this.data = values?.data ? structuredClone(values.data) : { url: "", current: false };
@@ -29,7 +29,7 @@ export default class WidgetRelatedUnitsItem extends WidgetSpecificItemElement {
     clone(): WidgetRelatedUnitsItem {
         const widget = new WidgetRelatedUnitsItem();
         widget.params = structuredClone(this.params);
-        widget.params.name = "Related Units Item-" + widget.id;
+        widget.params.name = "Table Entry-" + widget.id;
         widget.data = structuredClone(this.data);
         return widget;
     }

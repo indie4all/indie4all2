@@ -27,7 +27,7 @@ export default class WidgetRelatedUnitsContainer extends WidgetContainerSpecific
     constructor(values?: InputWidgetRelatedUnitsContainerData) {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
-            name: "Related Units-" + this.id,
+            name: "Table Content-" + this.id,
             help: ""
         };
     }
@@ -35,7 +35,7 @@ export default class WidgetRelatedUnitsContainer extends WidgetContainerSpecific
     clone(): WidgetRelatedUnitsContainer {
         const widget = new WidgetRelatedUnitsContainer();
         widget.params = structuredClone(this.params);
-        widget.params.name = "Related Units-" + widget.id;
+        widget.params.name = "Table Content-" + widget.id;
         widget.data = this.data.map(elem => elem.clone());
         return widget;
     }

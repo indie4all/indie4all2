@@ -133,6 +133,12 @@ export default class Utils {
         return this.isUrlWithinDomains(url, Config.getAllowedResourceOrigins());
     }
 
+    static isValidVideoResource(url: string): boolean {
+        const additionalRules = Config.getAdditionalVideoResourceRules();
+        // The url belongs to an allowed origin and all the additional rules are fulfilled
+        return this.isUrlWithinDomains(url, Config.getAllowedResourceOrigins()) && additionalRules.every(rule => rule(url));
+    }
+
     static isValidBase64DataUrl(data: any): boolean {
         const pattern = /^data:([-\w.]+\/[-\w.+]+)?;base64,[A-Za-z0-9+/]*={0,2}?$/;
         return typeof data === 'string' && new RegExp(pattern).test(data);

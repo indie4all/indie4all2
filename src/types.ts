@@ -26,6 +26,8 @@ export interface ConfigOptions {
     resourceBackendURL?: string
     // List of permitted origins for hosting resources
     allowedResourceOrigins?: []
+    // Additional rules to validate video resources
+    additionalVideoResourceRules?: []
 }
 
 /** Edit form data **/

@@ -25,6 +25,8 @@ export default class Config {
     private static resourceBackendURL: string = '/resource';
     // List of allowed origins for media data
     private static allowedResourceOrigins: string[] = ["http://localhost:8000", "https://indiemedia.upct.es", "http://indieopen.upct.es", "https://multimediarepository.blob.core.windows.net"];
+    // Additional rules to check if a video URL is allowed
+    private static additionalVideoResourceRules: ((url: string) => boolean)[] = [];
 
     public static setOptions(options: ConfigOptions) {
         if (typeof options.enablePWA === 'boolean')
@@ -51,6 +53,8 @@ export default class Config {
             this.setResourceProxyBackendURL(options.resourceProxyBackendURL);
         if (Array.isArray(options.allowedResourceOrigins))
             this.setAllowedResourceOrigins(options.allowedResourceOrigins);
+        if (Array.isArray(options.additionalVideoResourceRules))
+            this.setAdditionalVideoResourceRules(options.additionalVideoResourceRules);
     }
 
     public static setPWAEnabled(value: boolean) {
@@ -147,6 +151,14 @@ export default class Config {
 
     public static getAllowedResourceOrigins(): string[] {
         return this.allowedResourceOrigins;
+    }
+
+    public static setAdditionalVideoResourceRules(value: ((url: string) => boolean)[]) {
+        this.additionalVideoResourceRules = value;
+    }
+
+    public static getAdditionalVideoResourceRules(): ((url: string) => boolean)[] {
+        return this.additionalVideoResourceRules;
     }
 
 }

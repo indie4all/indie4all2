@@ -1,6 +1,7 @@
 # syntax=docker/dockerfile:1
 FROM node:18
 ENV NODE_ENV production
+ENV PIDUSAGE_USE_PS true
 RUN apt-get -y update
 RUN apt-get -y install openjdk-11-jre-headless
 RUN npm install -g npm@8.19.3

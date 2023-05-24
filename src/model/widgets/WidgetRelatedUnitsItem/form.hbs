@@ -7,7 +7,7 @@
     </div>
     <div class="form-group">
         <label for="related-units-url">{{translate "widgets.RelatedUnitsItem.form.url.label"}}</label>
-        <input id="related-units-url" type="url" class="form-control" name="url" required pattern="^$|https?:\/\/[\w.]{1,256}\/\w+\/\w+\/?$"
+        <input id="related-units-url" type="url" class="form-control" name="url" required 
             placeholder="{{translate "widgets.RelatedUnitsItem.form.url.placeholder"}}" value="{{url}}" autocomplete="off"
             title="{{translate "widgets.RelatedUnitsItem.form.url.help"}}"
             {{#if current}} disabled {{/if}} />

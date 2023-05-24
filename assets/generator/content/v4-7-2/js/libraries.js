@@ -8710,22 +8710,29 @@ var DragDropTouch;
 })();
 
 /* global $ */
-// WARNING: This functionality requires the url format of the unit to be strict. It must be: /author/unit
 (async function () {
     // Get the author and unit of the referer unit
     const params = new URLSearchParams(window.location.search);
-    const paramOrigin = params.get('ref-origin');
-    const paramAuthor = params.get('ref-author');
-    const paramUnit = params.get('ref-unit');
+    const paramReferer = params.get('ref');
     let content;
     let refererUnit = false;
     // Get the related units from the author/unit of the referer unit
-    if (paramOrigin && paramAuthor && paramUnit) {
-        const url = `${paramOrigin}/${paramAuthor}/${paramUnit}/related_units.json`;
-        const response = await fetch(url);
-        if (response.ok) {
-            content = await response.json();
-            refererUnit = true;
+    if (paramReferer) {
+        try {
+            const url = `${paramReferer.replace(/\/$/, "")}/related_units.json`;
+            // Check if the referer is a valid URL
+            const parsed = new URL(url);
+            // Check if the referer unit is in the same domain to avoid CORS issues
+            if (parsed && parsed.hostname === window.location.hostname) {
+                const response = await fetch(url);
+                if (response.ok) {
+                    content = await response.json();
+                    refererUnit = true;
+                }
+            }
+        } catch (e) {
+            content = null;
+            console.error(e);
         }
     }
     // If we couldn't get the related units from the referer unit, get the related units from the current unit
@@ -8735,15 +8742,10 @@ var DragDropTouch;
     }
 
     if (!content) return;
-    // The related units have been loaded, so we can show the related units menu
-    const myUnit = window.location.pathname.split('/')[2]; // document.body.dataset.unit;
-    const myAuthor = window.location.pathname.split('/')[1]; // TODO
-    const myOrigin = window.location.origin;
 
     // If we come from a related unit, we want to show the related units of the referer unit
-    const refAuthor = paramAuthor || myAuthor;
-    const refUnit = paramUnit || myUnit;
-    const refOrigin = paramOrigin || myOrigin;
+    const refererURL = new URL(refererUnit ? paramReferer : (window.location.origin + window.location.pathname));
+    const referer = refererURL.origin + refererURL.pathname;
 
     const parseRelatedGroup = (group) => {
         return `<li>
@@ -8756,34 +8758,21 @@ var DragDropTouch;
 
     const parseRelatedUnit = (unit, level = 3) => {
         
-        let current, unitOrigin, unitAuthor, unitId;
+        let current, url;
         // # is a placeholder to mark the current unit of the loaded JSON file
-        if (unit.url === '#') {
-            if (refererUnit) {
-                // The JSON file comes from the referer unit, we get the url from the query parameters
-                unitOrigin = refOrigin;
-                unitAuthor = refAuthor;
-                unitId = refUnit;                
-            } else {
-                // The JSON file comes from the current unit, we get the url from the window.location
-                unitOrigin = window.location.origin;
-                unitAuthor = window.location.pathname.split('/')[1];
-                unitId = window.location.pathname.split('/')[2];
-            }
-        } else {
-            // We know the url of the unit, we can parse it
-            const unitURL = new URL(unit.url);
-            unitOrigin = unitURL.origin;
-            unitAuthor = unitURL.pathname.split('/')[1];
-            unitId = unitURL.pathname.split('/')[2];
+        if (unit.url === '#')
+            url = referer;
+        else {
+            const parsed = new URL(unit.url);
+            url = parsed.origin + parsed.pathname;
         }
-        current = unitOrigin === myOrigin && unitAuthor === myAuthor && unitId === myUnit;
+        current = url === (window.location.origin + window.location.pathname);
         
         // If the unit is the current unit, change its attributes properly
         return `<li>
             <h${level} class="related-entry related-unit">
                 <a class="nav-element ${current ? "current" : ""}" 
-                  href="${ current ? '#' : (unitOrigin + "/" + unitAuthor + "/" + unitId + "?ref-origin="+refOrigin+"&ref-author="+refAuthor+"&ref-unit="+refUnit)}"
+                  href="${ current ? '#' : (url + "?ref="+referer)}"
                   ${current ? 'data-bs-dismiss="offcanvas"' : ''}
                   ${current ? 'aria-current="page"' : ''}>
                     ${current ? '<i class="fa-solid fa-location-dot"></i>' : '' }

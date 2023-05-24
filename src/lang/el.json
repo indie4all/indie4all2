@@ -1137,7 +1137,7 @@
                     "placeholder": "Example: Human rights"
                 },
                 "url": {
-                    "help": "Destination URL with the following format: https://[origin]/[author]/[unit]/",
+                    "help": "Target URL",
                     "label": "URL",
                     "placeholder": "Example: https://opencontent.upct.es/21801/7896/"
                 }

@@ -2,10 +2,9 @@ import "./styles.scss";
 import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 import icon from "./icon.png";
 import { FormEditData, InputWidgetRelatedUnitsItemData, WidgetRelatedUnitsItemData, WidgetRelatedUnitsItemParams } from "../../../types";
+import Utils from "../../../Utils";
 
 export default class WidgetRelatedUnitsItem extends WidgetSpecificItemElement {
-
-    private static LINK_PATTERN = /^(https?:\/\/[\w.]{1,256})\/(\w+)\/(\w+)\/?$/;
 
     static widget = "RelatedUnitsItem";
     static icon = icon;
@@ -91,7 +90,7 @@ export default class WidgetRelatedUnitsItem extends WidgetSpecificItemElement {
     validateModel(): string[] {
         var errors: string[] = [];
         if (this.params.help.length == 0) errors.push("RelatedUnitsItem.title.invalid");
-        if (!this.data.current && (this.data.url.length == 0 || !WidgetRelatedUnitsItem.LINK_PATTERN.test(this.data.url)))
+        if (!this.data.current && (this.data.url.length == 0 || !Utils.isValidUrl(this.data.url)))
             errors.push("RelatedUnitsItem.url.invalid");
         return errors;
     }
@@ -99,7 +98,7 @@ export default class WidgetRelatedUnitsItem extends WidgetSpecificItemElement {
     validateForm(form: any): string[] {
         var errors: string[] = [];
         if (form.help.length == 0) errors.push("RelatedUnitsItem.title.invalid");
-        if (!form.current && (form.url.length == 0 || !WidgetRelatedUnitsItem.LINK_PATTERN.test(form.url)))
+        if (!form.current && (form.url.length == 0 || !Utils.isValidUrl(form.url)))
             errors.push("RelatedUnitsItem.url.invalid");
         return errors;
     }

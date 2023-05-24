@@ -237,4 +237,13 @@ export default class Utils {
             url = Config.getResourceProxyBackendURL() + "?resource=" + url;
         return url;
     }
+
+    static isValidUrl(url: string): boolean {
+        try {
+            new URL(url);
+            return true;
+        } catch (_) {
+            return false;
+        }
+    }
 }

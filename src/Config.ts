@@ -11,6 +11,8 @@ export default class Config {
     private static previewBackendURL: string = '/model/preview';
     // Server URL to publish the current unit. Default value: '/model/publish'.
     private static publishBackendURL: string = '/model/publish';
+    // Server URL to publish the current unit in Netlify. Default value: '/model/publishToNetlify'.
+    private static publishToNetlifyBackendURL: string = '/model/publishToNetlify';
     // Sets if the API should show a modal asking for additional information when publishing a unit. Default value: true.
     private static requestAdditionalDataOnPopulate: boolean = true;
     // Server URL to store the contents of the unit. Default value: '/model/save'.
@@ -25,6 +27,8 @@ export default class Config {
     private static resourceBackendURL: string = '/resource';
     // List of allowed origins for media data
     private static allowedResourceOrigins: string[] = ["http://localhost:8000", "https://indiemedia.upct.es", "http://indieopen.upct.es", "https://multimediarepository.blob.core.windows.net"];
+    // Additional rules to check if a video URL is allowed
+    private static additionalVideoResourceRules: ((url: string) => boolean)[] = [];
 
     public static setOptions(options: ConfigOptions) {
         if (typeof options.enablePWA === 'boolean')
@@ -51,6 +55,8 @@ export default class Config {
             this.setResourceProxyBackendURL(options.resourceProxyBackendURL);
         if (Array.isArray(options.allowedResourceOrigins))
             this.setAllowedResourceOrigins(options.allowedResourceOrigins);
+        if (Array.isArray(options.additionalVideoResourceRules))
+            this.setAdditionalVideoResourceRules(options.additionalVideoResourceRules);
     }
 
     public static setPWAEnabled(value: boolean) {
@@ -91,6 +97,14 @@ export default class Config {
 
     public static getPublishBackendURL(): string {
         return this.publishBackendURL;
+    }
+
+    public static setPublishToNetlifyBackendURL(value: string) {
+        this.publishToNetlifyBackendURL = value;
+    }
+
+    public static getPublishToNetlifyBackendURL(): string {
+        return this.publishToNetlifyBackendURL;
     }
 
     public static setRequestAdditionalDataOnPopulate(value: boolean) {
@@ -147,6 +161,14 @@ export default class Config {
 
     public static getAllowedResourceOrigins(): string[] {
         return this.allowedResourceOrigins;
+    }
+
+    public static setAdditionalVideoResourceRules(value: ((url: string) => boolean)[]) {
+        this.additionalVideoResourceRules = value;
+    }
+
+    public static getAdditionalVideoResourceRules(): ((url: string) => boolean)[] {
+        return this.additionalVideoResourceRules;
     }
 
 }

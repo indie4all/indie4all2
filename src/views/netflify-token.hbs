@@ -1,0 +1,22 @@
+<form id="f-unit-settings">
+    <div class="form-group">
+        <label for="token-netlify">{{translate "netlify.config.token.label"}}</label>
+        <input type="text" id="token-netlify" name="token-netlify" class="form-control" value="{{token}}"
+            placeholder="{{translate "netlify.config.token.placeholder"}}" autocomplete="off" required />
+        <small class="form-text text-muted">{{translate "netlify.config.token.help"}}</small>
+    </div>
+    {{#if validateToken}}
+    <div class="form-group">
+        <label for="unit-language">{{translate "netlify.config.chooseSite.label"}}</label>
+        <select id="unit-language" name="language" class="form-control" required>
+            {{#each sites}}
+            <option value="{{this}}" {{#ifeq this ../site}} selected {{/ifeq}}>
+                {{this}}
+            </option>
+            {{/each}}
+        </select>
+        <small class="form-text text-muted">{{translate "netlify.config.chooseSite.help"}}</small>
+    </div>
+    {{/if}}
+    <input type="submit" class="hide" />
+</form>

@@ -8,6 +8,8 @@ import UndoRedo from "./Undoredo";
 import Utils from "./Utils";
 import Config from "./Config";
 
+import netlifyUrlTemplate from "./views/netlify-url.hbs";
+
 export default class Api {
 
     private static ALLOWED_LANGUAGES = ["EN", "ES", "FR", "EL", "LT"];
@@ -26,6 +28,7 @@ export default class Api {
         this.container = container;
         this.i18n = I18n.getInstance();
         this.undoredo = UndoRedo.getInstance();
+        !$('#modal-netlify-generated').length && $(this.container).after(netlifyUrlTemplate());
     }
 
     /**
@@ -72,6 +75,28 @@ export default class Api {
                 resolve();
             });
         });
+    }
+
+    private async onPublishModelToNetlify(response: Response){
+        const self = this;
+        if (!response.ok) {
+            // Wait until the modal is fully loaded (1 sec)
+            setTimeout(() => self.author.hideLoading(), 1000);
+            Utils.notifyError(this.i18n.value("messages.publishError"));
+            return;
+        }
+
+        // Wait until the modal is fully loaded (1 sec)
+        setTimeout(() => self.author.hideLoading(), 1000);
+        if (!response.ok) {
+            Utils.notifyError(this.i18n.value("messages.previewError"));
+            return;
+        }
+        const json = await response.json();
+        window.open(json.url, '_blank');
+        $('#modal-netlify-generated-url').html(json.url);
+        $('#modal-netlify-generated-url').attr('href', json.url);
+        $('#modal-netlify-generated').modal({ backdrop: true });
     }
 
     /**
@@ -167,6 +192,40 @@ export default class Api {
         });
     }
 
+    private async openTokenNetlifySettings(title: string, onSubmit : Function) {
+        const { default: downloadTemplate } = await import("./views/netlify-token.hbs");
+        $("#modal-settings .btn-submit").off('click'); // Unbind button submit click event
+        $('#modal-settings-tittle').html(title);
+
+        const data = {
+            token: '',
+            validateToken: false
+        }
+        $('#modal-settings-body').html(downloadTemplate(data));
+        const $tokenNetlify = $("#token-netlify");
+        $tokenNetlify.on('change', function(){
+            setTimeout(function(){ 
+                const token = $tokenNetlify.val;
+                fetch('https://api.netlify.com/api/v1/sites', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) return response.json();
+                        else return Promise.reject(response);
+                    })
+                    .then(response => {
+                        //res.status(StatusCodes.OK).json(response);
+                    })
+                    .catch( error => {
+                        console.error("error");
+                    })
+            }, 10000);
+        });
+    }
+
     /**
      * Populates a model to a server, optionally showing a modal for requesting additional information
      * @param {string} title - Title of the modal window
@@ -184,6 +243,20 @@ export default class Api {
             this.openUnitSettings(this.i18n.value(`common.unit.settings`), onSubmit);
         else
             onSubmit && onSubmit(this.author.model);
+    }
+
+    populateModelToNetlify(onSubmit: Function){
+          // Check if the model is valid before trying to download
+          if (!this.validate()) {
+            console.error(this.i18n.translate("messages.contentErrors"));
+            return;
+        }
+
+        if (Config.isRequestAdditionalDataOnPopulate())
+            this.openTokenNetlifySettings(this.i18n.value(`netlify.config.title`), onSubmit);
+            this.openUnitSettings(this.i18n.value(`common.unit.settings`), onSubmit);
+        //else
+           // onSubmit && onSubmit(this.author.model);
     }
 
     /**
@@ -558,6 +631,28 @@ export default class Api {
             const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
             fetch(Config.getPublishBackendURL(), requestOptions)
                 .then(self.onPublishModel.bind(self))
+                .catch(error => {
+                    console.log('error', error);
+                    self.author.hideLoading();
+                });
+        }
+        this.populateModel(onSubmit);
+    }
+
+    publishToNetlify() {
+        const self = this;
+
+        const onSubmit = (model: Model) => {
+            const title = this.i18n.value("common.publishToNetlify.title");
+            const description = this.i18n.value("common.publishToNetlify.description");
+            self.author.showLoading(title, description);            
+            // Download the generated files
+            const headers = new Headers();
+            headers.append("Content-Type", "application/json");
+            headers.append("Accept", "application/json");
+            const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
+            fetch(Config.getPublishToNetlifyBackendURL(), requestOptions)
+                .then(self.onPublishModelToNetlify.bind(self))
                 .catch(error => {
                     console.log('error', error);
                     self.author.hideLoading();

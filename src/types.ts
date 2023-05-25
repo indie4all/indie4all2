@@ -26,6 +26,8 @@ export interface ConfigOptions {
     resourceBackendURL?: string
     // List of permitted origins for hosting resources
     allowedResourceOrigins?: []
+    // Additional rules to validate video resources
+    additionalVideoResourceRules?: []
 }
 
 /** Edit form data **/
@@ -627,4 +629,39 @@ export interface WidgetTrueFalseQuestionData {
 
 export interface InputWidgetTrueFalseQuestionData extends InputWidgetElementData {
     data?: WidgetTrueFalseQuestionData
+}
+
+export interface WidgetRelatedUnitsContainerParams {
+    help?: string,
+    name?: string
+}
+
+export interface InputWidgetRelatedUnitsContainerData extends InputWidgetElementData {
+    data?: (InputWidgetRelatedUnitsItemData | InputWidgetRelatedUnitsAssociationData)[],
+    params?: WidgetRelatedUnitsContainerParams
+}
+
+export interface WidgetRelatedUnitsItemParams {
+    help?: string,
+    name?: string
+}
+
+export interface WidgetRelatedUnitsItemData {
+    url?: string,
+    current?: boolean
+}
+
+export interface InputWidgetRelatedUnitsItemData extends InputWidgetElementData {
+    data?: WidgetRelatedUnitsItemData
+}
+
+
+export interface WidgetRelatedUnitsAssociationParams {
+    help?: string,
+    name?: string
+}
+
+export interface InputWidgetRelatedUnitsAssociationData extends InputWidgetElementData {
+    data?: InputWidgetRelatedUnitsItemData[],
+    params?: WidgetRelatedUnitsAssociationParams
 }

@@ -8708,3 +8708,98 @@ var DragDropTouch;
         $download.parent().removeClass('d-none');
     });
 })();
+
+/* global $ */
+(async function () {
+    // Get the author and unit of the referer unit
+    const params = new URLSearchParams(window.location.search);
+    const paramReferer = params.get('ref');
+    let content;
+    let refererUnit = false;
+    // Get the related units from the author/unit of the referer unit
+    if (paramReferer) {
+        try {
+            const url = `${paramReferer.replace(/\/$/, "")}/related_units.json`;
+            // Check if the referer is a valid URL
+            const parsed = new URL(url);
+            // Check if the referer unit is in the same domain to avoid CORS issues
+            if (parsed && parsed.hostname === window.location.hostname) {
+                const response = await fetch(url);
+                if (response.ok) {
+                    content = await response.json();
+                    refererUnit = true;
+                }
+            }
+        } catch (e) {
+            content = null;
+            console.error(e);
+        }
+    }
+    // If we couldn't get the related units from the referer unit, get the related units from the current unit
+    if (!content) {
+        const response = await fetch('related_units.json');
+        if (response.ok) content = await response.json();
+    }
+
+    if (!content) return;
+
+    // If we come from a related unit, we want to show the related units of the referer unit
+    const refererURL = new URL(refererUnit ? paramReferer : (window.location.origin + window.location.pathname));
+    const referer = refererURL.origin + refererURL.pathname;
+
+    const parseRelatedGroup = (group) => {
+        return `<li>
+          <h3 class="related-entry related-group">${group.title}</h3>
+          <ol class="related-group-content">
+            ${group.entries.map(entry => parseRelatedUnit(entry, 4)).join('')}
+          </ol>
+        </li>`
+    }
+
+    const parseRelatedUnit = (unit, level = 3) => {
+        
+        let current, url;
+        // # is a placeholder to mark the current unit of the loaded JSON file
+        if (unit.url === '#')
+            url = referer;
+        else {
+            const parsed = new URL(unit.url);
+            url = parsed.origin + parsed.pathname;
+        }
+        current = url === (window.location.origin + window.location.pathname);
+        
+        // If the unit is the current unit, change its attributes properly
+        return `<li>
+            <h${level} class="related-entry related-unit">
+                <a class="nav-element ${current ? "current" : ""}" 
+                  href="${ current ? '#' : (url + "?ref="+referer)}"
+                  ${current ? 'data-bs-dismiss="offcanvas"' : ''}
+                  ${current ? 'aria-current="page"' : ''}>
+                    ${current ? '<i class="fa-solid fa-location-dot"></i>' : '' }
+                    ${unit.title}
+                </a>
+            </h${level}>
+          </li>`
+    }
+
+    // Build the list items for the related units menu
+    const relatedUnits = content.entries.map(entry => {
+        if (!entry.entries) return parseRelatedUnit(entry);
+        else return parseRelatedGroup(entry);
+    }).join('');
+    $('#related-units-text').text(content.help); // Change the text of the offcanvas title
+    $('#related-units-button').attr('title', content.help);
+    $('#related-units-list').html(relatedUnits);
+    $('#related-units').removeClass('d-none');
+
+    const tableContentsOffcanvas = document.getElementById('offcanvas-related-units');
+    tableContentsOffcanvas.addEventListener('show.bs.offcanvas', function () {
+        document.body.classList.add('related-units-offcanvas-open');
+    });
+    tableContentsOffcanvas.addEventListener('hide.bs.offcanvas', function () {
+        document.body.classList.remove('related-units-offcanvas-open');
+    });
+
+    document.getElementById('offcanvas-related-units').classList.add('show');
+
+})();

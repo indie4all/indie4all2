@@ -70,6 +70,10 @@
             "title": "Publicando unidad",
             "description": "Tu unidad está siendo generada para su descarga, por favor espere"
         },
+        "publishToNetlify": {
+            "title": "Publicando unidad en Netlify",
+            "description": "Tu unidad está siendo subida a Netlify, por favor espere"
+        },
         "save": {
             "title": "Guardando",
             "description": "Guardando, por favor espere"
@@ -320,6 +324,30 @@
                 "onlyOneBlank": "Debes incluir solamente un marcador de hueco en la frase"
             }
         },
+        "RelatedUnitsAssociation": {
+            "title": {
+                "invalid": "El campo título está vacío. Debes escribir un título."
+            },
+            "data": {
+                "empty": "El elemento está vacío. Debes añadir al menos una entrada utilizando el botón de añadir a la derecha."
+            }
+        },
+        "RelatedUnitsContainer": {
+            "moreThanOne": "Debes proporcionar como mucho un elemento de tabla de contenido.",
+            "data": {
+                "empty": "El elemento está vacío. Debes añadir al menos una entrada utilizando el botón de añadir a la derecha.",
+                "duplicated": "Hay al menos un enlace duplicado. Debes proporcionar un enlace único para cada entrada.",
+                "multipleCurrent": "Hay al menos dos entradas actuales. Debes proporcionar solamente una entrada actual."
+            }
+        },
+        "RelatedUnitsItem": {
+            "title": {
+                "invalid": "El campo título está vacío. Debes escribir un título."
+            },
+            "url": {
+                "invalid": "El campo url debe estar establecido con el siguiente formato: https://[origen]/[autor]/[unidad]"
+            }
+        },
         "SentenceOrderContainer": {
             "data": {
                 "empty": "Debes proporcionar al menos un elemento de ordenamiento de frases."
@@ -503,6 +531,7 @@
     },
     "header": {
         "publish": "Publicar contenido",
+        "publishToNetlify": "Publicar contenido en Netlify",
         "scorm": "Exportar en formato SCORM",
         "preview": "Previsualizar contenido",
         "validate": "Validar unidad",
@@ -596,6 +625,24 @@
         "label": "Sección",
         "moveDown": "Desplazar sección hacia abajo",
         "moveUp": "Desplazar sección hacia arriba"
+    },
+    "netlify": {
+        "success" : {
+            "title" : "Unida subida a Netlify",
+            "message": "La unidad ha sido subida a Netlify con exito, accede a ella haciendo clic en el siguiente enlace: "
+        },
+        "config" : {
+            "title": "Rellena los campos para conectar con Netlify ",
+            "token": {
+                "label": "Inserta el token de acceso personal:",
+                "placeholder": "Inserte aquí su token de acceso personal de Netlify",
+                "help": "Escriba su token de acceso personal de Netlify, puede encontrarlo en la sección de Applications de la configuración de cuenta de Netlify"
+            },
+            "chooseSite":{
+                "label": "Por favor, seleccione un sitio disponible de su Netlify para subir la Unidad",
+                "help": "Seleccione uno de los sitios disponibles en su cuenta Netlify"
+            }
+        }
     },
     "units": {
         "form": {
@@ -1086,6 +1133,40 @@
             },
             "label": "Elemento de palabras faltantes",
             "prev": "El elemento de palabras faltantes no ha sido establecido todavía..."
+        },
+        "RelatedUnitsAssociation": {
+            "form": {
+                "title": {
+                    "help": "Título del grupo",
+                    "label": "Título",
+                    "placeholder": "Ejemplo: Módulo de Derecho"
+                }
+            },
+            "label": "Grupo",
+            "prev": "Grupo no estabecido todavía ..."
+        },
+        "RelatedUnitsContainer": {
+            "label": "Tabla de contenido"
+        },
+        "RelatedUnitsItem": {
+            "current": "Unidad actual",
+            "form": {
+                "current": {
+                    "title": "Esta es la unidad actual"
+                },
+                "title": {
+                    "help": "Título de la entrada",
+                    "label": "Título",
+                    "placeholder": "Ejemplo: Derechos humanos"
+                },
+                "url": {
+                    "help": "URL de destino",
+                    "label": "URL",
+                    "placeholder": "Ejemplo: https://opencontent.upct.es/21801/7896/"
+                }
+            },
+            "label": "Entrada",
+            "prev": "Entrada no establecida todavía ..."
         },
         "SentenceOrderContainer": {
             "label": "Ordenamiento de frases"

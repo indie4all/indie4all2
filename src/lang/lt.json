@@ -242,7 +242,7 @@
         },
         "InteractiveVideo": {
             "videourl": {
-                "invalid": "The URL set for the video is not valid. You must make sure to provide a valid indieuathor URL."
+                "invalid": "The URL set for the video is not valid. You must make sure to provide a valid indieauthor URL."
             }
         },
         "LatexFormula": {
@@ -307,7 +307,7 @@
         },
         "MissingWords": {
             "data": {
-                "empty": "You must provide at least one Missing words item."
+                "empty": "You must provide at least one missing words item."
             }
         },
         "MissingWordsItem": {
@@ -318,6 +318,30 @@
             "sentence": {
                 "empty": "The sentence must not be empty",
                 "onlyOneBlank": "You must include only one blank spot in the sentence"
+            }
+        },
+        "RelatedUnitsAssociation": {
+            "title": {
+                "invalid": "The title field is empty. You must write a title."
+            },
+            "data": {
+                "empty": "The element is empty. You must add at least one entry item using the add button on the right."
+            }
+        },
+        "RelatedUnitsContainer": {
+            "moreThanOne": "You must provide at most one table of contents item.",
+            "data": {
+                "empty": "The element is empty. You must add at least one entry item using the add button on the right.",
+                "duplicated": "There are at least a duplicated link. You must provide a unique link for each entry item.",
+                "multipleCurrent": "There are at least two current entries. You must provide only one current entry."
+            }
+        },
+        "RelatedUnitsItem": {
+            "title": {
+                "invalid": "The title field is empty. You must write a title."
+            },
+            "url": {
+                "invalid": "The url field must be set with the following format: https://[origin]/[author]/[unit]"
             }
         },
         "SentenceOrderContainer": {
@@ -616,7 +640,7 @@
                 "placeholder": "Write the author's email"
             },
             "institution": {
-                "help": "Name of hte institution",
+                "help": "Name of the institution",
                 "label": "Institution",
                 "placeholder": "Write the name of the institution"
             },
@@ -995,7 +1019,7 @@
         },
         "Puzzle": {
             "label": "Puzzle",
-            "prev": "The puzzle has not yet been set...",
+            "prev": "The puzzle has not been set yet ...",
             "form": {
                 "image": {
                     "help": "This will be the image that appears as the background of the puzzle. You can choose one of your uploaded images.",
@@ -1086,6 +1110,40 @@
             },
             "label": "Missing words item",
             "prev": "Missing words item has not been set yet..."
+        },
+        "RelatedUnitsAssociation": {
+            "form": {
+                "title": {
+                    "help": "Title of the group",
+                    "label": "Title",
+                    "placeholder": "Example: Module of law"
+                }
+            },
+            "label": "Group",
+            "prev": "Group not set yet ..."
+        },
+        "RelatedUnitsContainer": {
+            "label": "Table of contents"
+        },
+        "RelatedUnitsItem": {
+            "current": "Current unit",
+            "form": {
+                "current": {
+                    "title": "This is the current unit"
+                },
+                "title": {
+                    "help": "Title of the entry",
+                    "label": "Title",
+                    "placeholder": "Example: Human rights"
+                },
+                "url": {
+                    "help": "Target URL",
+                    "label": "URL",
+                    "placeholder": "Example: https://opencontent.upct.es/21801/7896/"
+                }
+            },
+            "label": "Entry",
+            "prev": "Entry not set yet ..."
         },
         "SentenceOrderContainer": {
             "label": "Sentence ordering"

@@ -45,7 +45,7 @@ export default class WidgetRemoteVideo extends WidgetVideo {
     validateModel(): string[] {
         const errors = super.validateModel();
         if (!Utils.isYoutubeVideoURL(this.data.videourl) &&
-            !Utils.isValidResource(this.data.videourl))
+            !Utils.isValidVideoResource(this.data.videourl))
             errors.push("Video.videourl.invalid");
         return errors;
     }
@@ -53,7 +53,7 @@ export default class WidgetRemoteVideo extends WidgetVideo {
     validateForm(form: any): string[] {
         const errors: string[] = super.validateForm(form);
         if (!Utils.isYoutubeVideoURL(form.videourl) &&
-            !Utils.isValidResource(form.videourl))
+            !Utils.isValidVideoResource(form.videourl))
             errors.push("Video.videourl.invalid");
         return errors;
     }

@@ -6,6 +6,7 @@ import ModelElement from "./ModelElement";
 import Section from "./section/Section";
 import WidgetColumnsLayout from "./widgets/WidgetColumnsLayout/WidgetColumnsLayout";
 import WidgetElement from "./widgets/WidgetElement/WidgetElement";
+import WidgetRelatedUnitsContainer from "./widgets/WidgetRelatedUnitsContainer/WidgetRelatedUnitsContainer";
 
 export class Model {
 
@@ -126,6 +127,16 @@ export class Model {
                 errors.push({ element: section.id, keys });
             section.data.forEach(element => self.validateElement(element, errors));
         });
+        // At most one RelatedUnits widget is allowed
+        const relatedUnitsWidgets = Utils.findElementsOfType(this, WidgetRelatedUnitsContainer);
+        if (relatedUnitsWidgets.length > 1) {
+            relatedUnitsWidgets.forEach(widget => {
+                const error = errors.find(error => error.element == widget.id);
+                if (error) error.keys.push('RelatedUnitsContainer.moreThanOne');
+                else errors.push({ element: widget.id, keys: ['RelatedUnitsContainer.moreThanOne'] });
+            });
+        }
+
         // Save the errors   
         this.currentErrors = errors;
         return errors;
@@ -212,6 +223,7 @@ export class Model {
         if (this.color) result["color"] = this.color;
         if (this.cover) result["cover"] = this.cover;
         result['mode'] = Config.isLocal() ? 'Local' : 'Open';
+        result['analytics'] = 0;
         return result;
     }
 }

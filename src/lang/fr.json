@@ -70,6 +70,10 @@
             "title": "Publishing unit",
             "description": "Your unit is being generated for its download, please wait"
         },
+        "publishToNetlify": {
+            "title": "Uploading unit to Netlify",
+            "description": "Your unit is uploading to Netlify, please wait"
+        },
         "save": {
             "title": "Saving",
             "description": "Saving, please wait"
@@ -625,7 +629,8 @@
     "netlify": {
         "success" : {
             "title" : "Uploaded unit to Netlify",
-            "message": "The unit has been uploaded to netlify successfully, you can access by clicking this url: "
+            "message": "The unit has been uploaded to netlify successfully, you can access by clicking this url: ",
+            "message_2": "Please note that if the unit is very large, it may take a few minutes to publish."
         },
         "config" : {
             "title": "Fill the gaps to connect to Netlify",

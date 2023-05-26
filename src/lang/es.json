@@ -629,7 +629,8 @@
     "netlify": {
         "success" : {
             "title" : "Unida subida a Netlify",
-            "message": "La unidad ha sido subida a Netlify con exito, accede a ella haciendo clic en el siguiente enlace: "
+            "message": "La unidad ha sido subida a Netlify con éxito, accede a ella haciendo clic en el siguiente enlace: ",
+            "message_2": "Ten en cuenta que, si la unidad tiene mucho contenido, la publicación puede tardar unos minutos."
         },
         "config" : {
             "title": "Rellena los campos para conectar con Netlify ",

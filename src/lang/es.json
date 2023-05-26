@@ -639,9 +639,13 @@
                 "help": "Escriba su token de acceso personal de Netlify, puede encontrarlo en la sección de Applications de la configuración de cuenta de Netlify"
             },
             "chooseSite":{
+                "default" : "Crear sitio",
                 "label": "Por favor, seleccione un sitio disponible de su Netlify para subir la Unidad",
                 "help": "Seleccione uno de los sitios disponibles en su cuenta Netlify"
             }
+        },
+        "error" : {
+            "message": "Token inválido"
         }
     },
     "units": {

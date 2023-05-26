@@ -639,9 +639,13 @@
                 "help": "Write your personal access token from Netlify, you can find it in the Applications section from your Netlify Account Settings"
             },
             "chooseSite":{
+                "default" : "Create a site",
                 "label": "Please, choose a site available from your Netlify to upload the Unit",
                 "help": "Choose one of the sites available in your Netlify Account"
             }
+        },
+        "error" : {
+            "message": "Token invalid"
         }
     },
     "units": {

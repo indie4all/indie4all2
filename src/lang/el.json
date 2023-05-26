@@ -531,6 +531,7 @@
     },
     "header": {
         "publish": "Publish content",
+        "publishToNetlify": "Publish content to Netlify",
         "scorm": "Export as SCORM",
         "preview": "Preview content",
         "validate": "Validate unit",
@@ -624,6 +625,28 @@
         "label": "Section",
         "moveDown": "Move section down",
         "moveUp": "Move section up"
+    },
+    "netlify": {
+        "success" : {
+            "title" : "Uploaded unit to Netlify",
+            "message": "The unit has been uploaded to netlify successfully, you can access by clicking this url: "
+        },
+        "config" : {
+            "title": "Fill the gaps to connect to Netlify",
+            "token": {
+                "label": "Insert the personal access token:",
+                "placeholder": "Insert here your personal access token from Netlify",
+                "help": "Write your personal access token from Netlify, you can find it in the Applications section from your Netlify Account Settings"
+            },
+            "chooseSite":{
+                "default" : "Create a site",
+                "label": "Please, choose a site available from your Netlify to upload the Unit",
+                "help": "Choose one of the sites available in your Netlify Account"
+            }
+        },
+        "error" : {
+            "message": "Token invalid"
+        }
     },
     "units": {
         "form": {

@@ -9,7 +9,7 @@ import config from 'config';
 import sass from 'node-sass';
 import { Request, Response } from 'express';
 
-const VALID_COVER_PATTERN = /^data:([-\w.]+\/[-\w.+]+)?;base64,([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$/;
+const VALID_COVER_PATTERN = /^data:([-\w.]+\/[-\w.+]+)?;base64,[A-Za-z0-9+/]*={0,2}$/;
 const VALID_COLOR_PATTERN = /^#[0-9a-fA-F]{6}$/;
 
 const copyAssets = async function (folder: string, color: string, cover: string, mode: string) {
@@ -62,7 +62,7 @@ const generate = function (req: Request, res: Response, onGenerated: Function, m
                 logger.err(err);
                 return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send(err);
             }
-            logger.imp(stdout);
+            logger.imp("\n" + stdout);
             onGenerated(outputFolder, model);
         });
     });

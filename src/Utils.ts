@@ -140,7 +140,7 @@ export default class Utils {
     }
 
     static isValidBase64DataUrl(data: any): boolean {
-        const pattern = /^data:([-\w.]+\/[-\w.+]+)?;base64,[A-Za-z0-9+/]*={0,2}?$/;
+        const pattern = /^data:([-\w.]+\/[-\w.+]+)?;base64,[A-Za-z0-9+/]*={0,2}$/;
         return typeof data === 'string' && new RegExp(pattern).test(data);
     }
 

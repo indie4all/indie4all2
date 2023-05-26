@@ -69,20 +69,19 @@ const generate = function (model: any, res: Response, onGenerated: Function, mod
 }
 
 const onPublishUnit = async function (res: Response, output: string, folder: string, model: any) {
-    const zip : Buffer = await packModel(folder, model);
+    const zip: Buffer = await packModel(folder, model);
     return res.attachment(output).type("application/zip").status(StatusCodes.CREATED).send(zip);
 }
 
 const onPublishToNetlify = async function (req: Request, res: Response, output: string, folder: string, model: any) {
-    const token : string = req.body.token;
-    console.log(token);
-    const site_id : string = req.body.site;
-    const zip : Buffer = await packModel(folder, model);
+    const token: string = req.body.token;
+    const site_id: string = req.body.site;
+    const zip: Buffer = await packModel(folder, model);
     if (site_id == "0") createNetlifySite(token, zip, res);
     else updateNetlifySite(token, site_id, zip, res);
 }
 
-const packModel = async function(folder: string, model: any) {
+const packModel = async function (folder: string, model: any) {
     await copyAssets(`${folder}/${config.get("folder.assets")}`, model.color, model.cover, model.mode);
     logger.info("Zipping the generated unit folder");
     const binary = generateZip(folder);
@@ -90,14 +89,14 @@ const packModel = async function(folder: string, model: any) {
     return binary;
 }
 
-const generateZip = function(folder : string) : Buffer{
+const generateZip = function (folder: string): Buffer {
     const zip = new AdmZip();
     zip.addLocalFolder(folder);
     const binary = zip.toBuffer();
     return binary;
 }
 
-const createNetlifySite = function(token : String, zip: Buffer, res: Response) {
+const createNetlifySite = function (token: String, zip: Buffer, res: Response) {
     fetch('https://api.netlify.com/api/v1/sites', {
         method: 'POST',
         headers: {
@@ -105,7 +104,7 @@ const createNetlifySite = function(token : String, zip: Buffer, res: Response) {
             'Authorization': `Bearer ${token}`
         },
         body: zip
-        })
+    })
         .then(response => {
             if (response.ok) return response.json();
             else return Promise.reject(response);
@@ -113,12 +112,12 @@ const createNetlifySite = function(token : String, zip: Buffer, res: Response) {
         .then(response => {
             res.status(StatusCodes.OK).json(response);
         })
-        .catch( error => {
-            error.json().then(error =>   res.json(error));
+        .catch(error => {
+            error.json().then(error => res.json(error));
         })
 }
 
-const updateNetlifySite = function(token: String, site_id: String, zip: Buffer, res: Response) {
+const updateNetlifySite = function (token: String, site_id: String, zip: Buffer, res: Response) {
     fetch(`https://api.netlify.com/api/v1/sites/${site_id}`, {
         method: 'PUT',
         headers: {
@@ -126,15 +125,15 @@ const updateNetlifySite = function(token: String, site_id: String, zip: Buffer, 
             'Authorization': `Bearer ${token}`
         },
         body: zip
-        })
+    })
         .then(response => {
             if (response.ok) return response.json();
-            else return Promise.reject(response); 
+            else return Promise.reject(response);
         })
         .then(response => {
             res.status(StatusCodes.OK).json(response);
         })
-        .catch( error => {
+        .catch(error => {
             error.json().then(error => res.json(error));
         })
 }
@@ -160,7 +159,7 @@ export default {
     },
     publishToNetlify: (req: Request, res: Response) => {
         const model = req.body.model as any;
-        generate(model, res, onPublishToNetlify.bind(this,req, res, config.get("file.zip")), model.mode);
+        generate(model, res, onPublishToNetlify.bind(this, req, res, config.get("file.zip")), model.mode);
     },
     scorm: (req: Request, res: Response) => {
         const model = req.body;

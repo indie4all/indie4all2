@@ -37,6 +37,8 @@ export function init(api: Api) {
 
     $('.author-publish').on('click', () => api.publish()).data('title', i18n.value('header.publish'));
     $('.author-publish').find('.btn-text').text(i18n.value('header.publish'));
+    $('.author-publishToNetlify').on('click', () => api.publishToNetlify()).data('title', i18n.value('header.publishToNetlify'));
+    $('.author-publishToNetlify').find('.btn-text').text(i18n.value('header.publishToNetlify'));
     $('.author-scorm').on('click', () => api.scorm()).data('title', i18n.value('header.scorm'));
     $('.author-scorm').find('.btn-text').text(i18n.value('header.scorm'));
     $('.author-preview').on('click', () => api.preview()).data('title', i18n.value('header.preview'));

@@ -3,6 +3,7 @@ import { StatusCodes } from 'http-status-codes';
 const exec = require('child_process').exec;
 import fs from 'fs-extra';
 import AdmZip from "adm-zip";
+import fetch from "node-fetch";
 import { LoggerModes, JetLogger } from 'jet-logger';
 const logger = JetLogger(LoggerModes.Console);
 import config from 'config';
@@ -32,10 +33,9 @@ const copyAssets = async function (folder: string, color: string, cover: string,
     }
 }
 
-const generate = function (req: Request, res: Response, onGenerated: Function, mode = "Local") {
+const generate = function (model: any, res: Response, onGenerated: Function, mode = "Local") {
 
     logger.info("Generating unit in " + mode + " mode");
-    const model = req.body as any;
     if (Object.keys(model).length === 0 && Object.getPrototypeOf(model) === Object.prototype)
         return res.status(StatusCodes.NO_CONTENT).send();
     // Set unit mode to local
@@ -69,13 +69,74 @@ const generate = function (req: Request, res: Response, onGenerated: Function, m
 }
 
 const onPublishUnit = async function (res: Response, output: string, folder: string, model: any) {
+    const zip : Buffer = await packModel(folder, model);
+    return res.attachment(output).type("application/zip").status(StatusCodes.CREATED).send(zip);
+}
+
+const onPublishToNetlify = async function (req: Request, res: Response, output: string, folder: string, model: any) {
+    const token : string = req.body.token;
+    console.log(token);
+    const site_id : string = req.body.site;
+    const zip : Buffer = await packModel(folder, model);
+    if (site_id == "0") createNetlifySite(token, zip, res);
+    else updateNetlifySite(token, site_id, zip, res);
+}
+
+const packModel = async function(folder: string, model: any) {
     await copyAssets(`${folder}/${config.get("folder.assets")}`, model.color, model.cover, model.mode);
     logger.info("Zipping the generated unit folder");
+    const binary = generateZip(folder);
+    fs.rm(folder, { recursive: true, force: true });
+    return binary;
+}
+
+const generateZip = function(folder : string) : Buffer{
     const zip = new AdmZip();
     zip.addLocalFolder(folder);
     const binary = zip.toBuffer();
-    fs.rm(folder, { recursive: true, force: true });
-    return res.attachment(output).type("application/zip").status(StatusCodes.CREATED).send(binary);
+    return binary;
+}
+
+const createNetlifySite = function(token : String, zip: Buffer, res: Response) {
+    fetch('https://api.netlify.com/api/v1/sites', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/zip',
+            'Authorization': `Bearer ${token}`
+        },
+        body: zip
+        })
+        .then(response => {
+            if (response.ok) return response.json();
+            else return Promise.reject(response);
+        })
+        .then(response => {
+            res.status(StatusCodes.OK).json(response);
+        })
+        .catch( error => {
+            error.json().then(error =>   res.json(error));
+        })
+}
+
+const updateNetlifySite = function(token: String, site_id: String, zip: Buffer, res: Response) {
+    fetch(`https://api.netlify.com/api/v1/sites/${site_id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/zip',
+            'Authorization': `Bearer ${token}`
+        },
+        body: zip
+        })
+        .then(response => {
+            if (response.ok) return response.json();
+            else return Promise.reject(response); 
+        })
+        .then(response => {
+            res.status(StatusCodes.OK).json(response);
+        })
+        .catch( error => {
+            error.json().then(error => res.json(error));
+        })
 }
 
 export default {
@@ -91,13 +152,18 @@ export default {
             await copyAssets(`${folder}/${config.get("folder.assets")}`, model.color, model.cover, model.mode);
             return res.status(StatusCodes.OK).json({ success: true, url: folder });
         };
-        generate(req, res, onGenerated, model.mode);
+        generate(model, res, onGenerated, model.mode);
     },
     publish: (req: Request, res: Response) => {
         const model = req.body as any;
-        generate(req, res, onPublishUnit.bind(this, res, config.get("file.zip")), model.mode);
+        generate(model, res, onPublishUnit.bind(this, res, config.get("file.zip")), model.mode);
+    },
+    publishToNetlify: (req: Request, res: Response) => {
+        const model = req.body.model as any;
+        generate(model, res, onPublishToNetlify.bind(this,req, res, config.get("file.zip")), model.mode);
     },
     scorm: (req: Request, res: Response) => {
-        generate(req, res, onPublishUnit.bind(this, res, config.get("file.scorm")), "SCORM");
+        const model = req.body;
+        generate(model, res, onPublishUnit.bind(this, res, config.get("file.scorm")), "SCORM");
     }
 }

@@ -11,6 +11,8 @@ export default class Config {
     private static previewBackendURL: string = '/model/preview';
     // Server URL to publish the current unit. Default value: '/model/publish'.
     private static publishBackendURL: string = '/model/publish';
+    // Server URL to publish the current unit in Netlify. Default value: '/model/publishToNetlify'.
+    private static publishToNetlifyBackendURL: string = '/model/publishToNetlify';
     // Sets if the API should show a modal asking for additional information when publishing a unit. Default value: true.
     private static requestAdditionalDataOnPopulate: boolean = true;
     // Server URL to store the contents of the unit. Default value: '/model/save'.
@@ -95,6 +97,14 @@ export default class Config {
 
     public static getPublishBackendURL(): string {
         return this.publishBackendURL;
+    }
+
+    public static setPublishToNetlifyBackendURL(value: string) {
+        this.publishToNetlifyBackendURL = value;
+    }
+
+    public static getPublishToNetlifyBackendURL(): string {
+        return this.publishToNetlifyBackendURL;
     }
 
     public static setRequestAdditionalDataOnPopulate(value: boolean) {

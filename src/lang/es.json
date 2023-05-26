@@ -70,6 +70,10 @@
             "title": "Publicando unidad",
             "description": "Tu unidad está siendo generada para su descarga, por favor espere"
         },
+        "publishToNetlify": {
+            "title": "Publicando unidad en Netlify",
+            "description": "Tu unidad está siendo subida a Netlify, por favor espere"
+        },
         "save": {
             "title": "Guardando",
             "description": "Guardando, por favor espere"
@@ -527,6 +531,7 @@
     },
     "header": {
         "publish": "Publicar contenido",
+        "publishToNetlify": "Publicar contenido en Netlify",
         "scorm": "Exportar en formato SCORM",
         "preview": "Previsualizar contenido",
         "validate": "Validar unidad",
@@ -620,6 +625,28 @@
         "label": "Sección",
         "moveDown": "Desplazar sección hacia abajo",
         "moveUp": "Desplazar sección hacia arriba"
+    },
+    "netlify": {
+        "success" : {
+            "title" : "Unida subida a Netlify",
+            "message": "La unidad ha sido subida a Netlify con exito, accede a ella haciendo clic en el siguiente enlace: "
+        },
+        "config" : {
+            "title": "Rellena los campos para conectar con Netlify ",
+            "token": {
+                "label": "Inserta el token de acceso personal:",
+                "placeholder": "Inserte aquí su token de acceso personal de Netlify",
+                "help": "Escriba su token de acceso personal de Netlify, puede encontrarlo en la sección de Applications de la configuración de cuenta de Netlify"
+            },
+            "chooseSite":{
+                "default" : "Crear sitio",
+                "label": "Por favor, seleccione un sitio disponible de su Netlify para subir la Unidad",
+                "help": "Seleccione uno de los sitios disponibles en su cuenta Netlify"
+            }
+        },
+        "error" : {
+            "message": "Token inválido"
+        }
     },
     "units": {
         "form": {

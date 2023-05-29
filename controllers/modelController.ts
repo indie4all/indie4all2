@@ -75,11 +75,11 @@ const onPublishUnit = async function (res: Response, output: string, folder: str
 
 const onPublishToNetlify = async function (req: Request, res: Response, output: string, folder: string, model: any) {
     const token : string = req.body.token;
-    console.log(token);
-    const site_id : string = req.body.site;
+    const site_id : string = req.body.site_id;
+    const site_url : string = req.body.site_url;
     const zip : Buffer = await packModel(folder, model);
     if (site_id == "0") createNetlifySite(token, zip, res);
-    else updateNetlifySite(token, site_id, zip, res);
+    else updateNetlifySite(token, site_id, site_url, zip, res);
 }
 
 const packModel = async function(folder: string, model: any) {
@@ -118,7 +118,7 @@ const createNetlifySite = function(token : String, zip: Buffer, res: Response) {
         })
 }
 
-const updateNetlifySite = function(token: String, site_id: String, zip: Buffer, res: Response) {
+const updateNetlifySite = function(token: String, site_id: String, site_url: String, zip: Buffer, res: Response) {
     fetch(`https://api.netlify.com/api/v1/sites/${site_id}`, {
         method: 'PUT',
         headers: {
@@ -132,7 +132,7 @@ const updateNetlifySite = function(token: String, site_id: String, zip: Buffer, 
             else return Promise.reject(response); 
         })
         .then(response => {
-            res.status(StatusCodes.OK).json(response);
+            res.status(StatusCodes.OK).json({url : site_url});
         })
         .catch( error => {
             error.json().then(error => res.json(error));

@@ -212,7 +212,7 @@ export default class Api {
             e.preventDefault();
             $("#modal-settings").modal('hide'); 
             setTimeout(function() {
-                onSubmit($tokenNetlify.val(), $("#select-sites").val());
+                onSubmit($tokenNetlify.val(), $("#select-sites").val(), $("#select-sites option:selected" ).text());
             },1000);
         });
 
@@ -659,7 +659,7 @@ export default class Api {
     publishToNetlify() {
         const self = this;
 
-        const onSubmitSettings = (token: string, site: string, model: Model) => {
+        const onSubmitSettings = (token: string, site_id: string, site_url : string, model: Model) => {
             const title = this.i18n.value("common.publishToNetlify.title");
             const description = this.i18n.value("common.publishToNetlify.description");
             self.author.showLoading(title, description);            
@@ -668,7 +668,7 @@ export default class Api {
             headers.append("Content-Type", "application/json");
             headers.append("Accept", "application/json");
 
-            const requestOptions = { method: 'POST', body: JSON.stringify({token, site, model}), headers };
+            const requestOptions = { method: 'POST', body: JSON.stringify({token, site_id, site_url, model}), headers };
             fetch(Config.getPublishToNetlifyBackendURL(), requestOptions)
                 .then(self.onPublishModelToNetlify.bind(self))
                 .catch(error => {
@@ -682,9 +682,8 @@ export default class Api {
             return;
         }
          if (Config.isRequestAdditionalDataOnPopulate()) {
-            const onSubmitToken = (token: string, site: string) => {
-                this.openUnitSettings(this.i18n.value(`common.unit.settings`), 
-                    onSubmitSettings.bind(this,token, site));
+            const onSubmitToken = (token: string, site_id: string, site_url: string) => {
+                this.openUnitSettings(this.i18n.value(`common.unit.settings`), onSubmitSettings.bind(this,token, site_id, site_url));
             };
             this.openTokenNetlifySettings(this.i18n.value(`netlify.config.title`), onSubmitToken);
         }

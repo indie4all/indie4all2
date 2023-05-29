@@ -93,7 +93,6 @@ export default class Api {
             return;
         }
         const json = await response.json();
-        window.open(json.url, '_blank');
         $('#modal-netlify-generated-url').html(json.url);
         $('#modal-netlify-generated-url').attr('href', json.url);
         $('#modal-netlify-generated').modal({ backdrop: true });

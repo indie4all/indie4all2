@@ -628,7 +628,7 @@
     },
     "netlify": {
         "success" : {
-            "title" : "Unida subida a Netlify",
+            "title" : "Unidad subida a Netlify",
             "message": "La unidad ha sido subida a Netlify con exito, accede a ella haciendo clic en el siguiente enlace: "
         },
         "config" : {

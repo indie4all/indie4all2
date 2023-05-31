@@ -1,0 +1,6 @@
+.guessword-answer {
+    text-transform: uppercase;
+    &::placeholder {
+        text-transform: none;
+    }
+}

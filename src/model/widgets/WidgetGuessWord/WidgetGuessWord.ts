@@ -80,7 +80,7 @@ export default class WidgetGuessWord extends WidgetItemElement {
         this.params.help = form.help;
         this.params.name = form.instanceName;
         this.data.question = form.question;
-        this.data.answer = form.answer;
+        this.data.answer = form.answer.toUpperCase();
         this.data.attempts = form.attempts;
     }
 

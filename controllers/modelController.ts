@@ -25,7 +25,7 @@ const copyAssets = async function (folder: string, color: string, cover: string,
     const data = `$base-color: ${realColor}; $base-url: "${realCover}"; @import '${themeTemplate}';`
     const css = await new Promise((resolve) =>
         sass.render({ data, includePaths: [themeTemplate], outputStyle: 'compressed' }, (err, result) => { resolve(result.css) }));
-    await fs.writeFile(folder + '/generator/content/v4-7-2/css/stylesCustom.min.css', css as string);
+    await fs.writeFile(folder + '/generator/content/v4-7-3/css/stylesCustom.min.css', css as string);
     // Remove scorm libraries if the unit is not of SCORM type
     if (mode !== "SCORM") {
         logger.info("Removing scorm-related assets");
@@ -74,10 +74,10 @@ const onPublishUnit = async function (res: Response, output: string, folder: str
 }
 
 const onPublishToNetlify = async function (req: Request, res: Response, output: string, folder: string, model: any) {
-    const token : string = req.body.token;
-    const site_id : string = req.body.site_id;
-    const site_url : string = req.body.site_url;
-    const zip : Buffer = await packModel(folder, model);
+    const token: string = req.body.token;
+    const site_id: string = req.body.site_id;
+    const site_url: string = req.body.site_url;
+    const zip: Buffer = await packModel(folder, model);
     if (site_id == "0") createNetlifySite(token, zip, res);
     else updateNetlifySite(token, site_id, site_url, zip, res);
 }
@@ -118,7 +118,7 @@ const createNetlifySite = function (token: String, zip: Buffer, res: Response) {
         })
 }
 
-const updateNetlifySite = function(token: String, site_id: String, site_url: String, zip: Buffer, res: Response) {
+const updateNetlifySite = function (token: String, site_id: String, site_url: String, zip: Buffer, res: Response) {
     fetch(`https://api.netlify.com/api/v1/sites/${site_id}`, {
         method: 'PUT',
         headers: {
@@ -132,7 +132,7 @@ const updateNetlifySite = function(token: String, site_id: String, site_url: Str
             else return Promise.reject(response);
         })
         .then(response => {
-            res.status(StatusCodes.OK).json({url : site_url});
+            res.status(StatusCodes.OK).json({ url: site_url });
         })
         .catch(error => {
             error.json().then(error => res.json(error));

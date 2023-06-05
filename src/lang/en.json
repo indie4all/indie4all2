@@ -648,7 +648,7 @@
             "message": "Token invalid"
         },
         "button" : {
-            "text": "Verify"
+            "text": "Connect"
         }
     },
     "units": {

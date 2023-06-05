@@ -647,6 +647,9 @@
         },
         "error" : {
             "message": "Token invalid"
+        },
+        "button" : {
+            "text": "Connect"
         }
     },
     "units": {

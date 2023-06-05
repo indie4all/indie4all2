@@ -646,7 +646,10 @@
             }
         },
         "error" : {
-            "message": "Token inválido"
+            "message": "Token inválido" 
+        },
+        "button" : {
+                "text" : "Conectar"
         }
     },
     "units": {

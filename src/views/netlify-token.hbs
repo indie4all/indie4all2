@@ -1,10 +1,24 @@
 <form id="f-netlify-settings">
-    <div class="form-group">
+  <!--  <div class="form-group d-inline-block">
         <label for="token-netlify">{{translate "netlify.config.token.label"}}</label>
         <input type="text" id="token-netlify" name="token-netlify" class="form-control" value="{{token}}"
             placeholder="{{translate "netlify.config.token.placeholder"}}" autocomplete="off" required />
+       <button class="btn btn-outline-secondary" type="button">Button</button>
         <small class="form-text text-muted">{{translate "netlify.config.token.help"}}</small>
-    </div>
+    </div> -->
+    <div class="input-group mb-4">
+        <label class="w-100" for="token-netlify">{{translate "netlify.config.token.label"}}</label>
+        <div class="custom-file">
+            <input type="text" id="token-netlify" name="token-netlify" class="form-control" value="{{token}}"
+            placeholder="{{translate "netlify.config.token.placeholder"}}" autocomplete="off" required />
+        </div>
+        <div class="input-group-append">
+        <button id="confirm-token" class="btn btn-indie" type="button">{{translate "netlify.button.text"}}</button>
+        </div>
+  </div>
+  <div class="invalid-feedback">
+    Example invalid input group feedback
+  </div>
     <div id="div-sites" class="form-group d-none">
     </div>
     <input type="submit" class="hide"  />

@@ -199,7 +199,7 @@ export default class Api {
         $('#modal-settings-body').html(downloadTemplate());
         $("#modal-settings").modal({ keyboard: false, focus: true, backdrop: 'static' });
         const $tokenNetlify = $("#token-netlify");
-
+        const $confirmToken = $("#confirm-token");
         $("#modal-settings .btn-submit").on('click', function (e) {
             if ($("#select-sites").val() == undefined) {
                 e.preventDefault();
@@ -216,7 +216,7 @@ export default class Api {
             },1000);
         });
 
-        $tokenNetlify.on('change', function(){
+        $confirmToken.on('click', function(){
             const token = $tokenNetlify.val();
             const urls = [];
             const sites_id = [];

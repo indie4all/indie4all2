@@ -645,7 +645,10 @@
             }
         },
         "error" : {
-            "message": "Token inválido"
+            "message": "Token inválido" 
+        },
+        "button" : {
+                "text" : "Verificar"
         }
     },
     "units": {

@@ -53,7 +53,7 @@ export default class WidgetLatexFormula extends WidgetItemElement {
         };
         return {
             inputs: form(data),
-            title: 'Latex Formula' // TODO: i18n
+            title: this.translate("widgets.LatexFormula.form.formula.label") 
         };
     }
 

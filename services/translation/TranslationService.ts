@@ -1,3 +1,5 @@
+
+
 export abstract class TranslationService {
     protected endpoint!: string;
     protected key!: string;
@@ -21,6 +23,14 @@ export abstract class TranslationService {
                 .map(async ([key, value]) => [key, await this.translateJSON(value, from, to)]));
             return Promise.resolve(Object.fromEntries(entries));
         }
+        throw new Error("Invalid content type: " + (typeof content));
+    }
+
+    public translationLength(content: any): number {
+        if (typeof content === "string") return content.length;
+        if (Array.isArray(content)) return content.reduce((acc, item) => acc + this.translationLength(item), 0);
+        if (typeof content === "object")
+            return Object.values(content).reduce((acc: number, item) => acc + this.translationLength(item), 0) as number;
         throw new Error("Invalid content type: " + (typeof content));
     }
 

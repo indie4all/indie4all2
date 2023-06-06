@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { TranslationService } from "./TranslationService";
-
 // Class to translate texts
 export class DeeplTranslationService extends TranslationService {
 

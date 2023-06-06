@@ -9,6 +9,7 @@ const logger = JetLogger(LoggerModes.Console);
 import config from 'config';
 import sass from 'node-sass';
 import { Request, Response } from 'express';
+import { AnalyticsService } from '../services/AnalyticsService';
 
 const VALID_COVER_PATTERN = /^data:([-\w.]+\/[-\w.+]+)?;base64,[A-Za-z0-9+/]*={0,2}$/;
 const VALID_COLOR_PATTERN = /^#[0-9a-fA-F]{6}$/;
@@ -70,6 +71,8 @@ const generate = function (model: any, res: Response, onGenerated: Function, mod
 
 const onPublishUnit = async function (res: Response, output: string, folder: string, model: any) {
     const zip: Buffer = await packModel(folder, model);
+    const analyzer : AnalyticsService = res.locals.analyzer;
+    analyzer.exit().send();
     return res.attachment(output).type("application/zip").status(StatusCodes.CREATED).send(zip);
 }
 
@@ -111,9 +114,13 @@ const createNetlifySite = function (token: String, zip: Buffer, res: Response) {
             else return Promise.reject(response);
         })
         .then(response => {
+            const analyzer : AnalyticsService = res.locals.analyzer;
+            analyzer.exit().send();
             res.status(StatusCodes.OK).json(response);
         })
         .catch(error => {
+            const analyzer : AnalyticsService = res.locals.analyzer;
+            analyzer.exit().send();
             error.json().then(error => res.json(error));
         })
 }
@@ -132,9 +139,13 @@ const updateNetlifySite = function (token: String, site_id: String, site_url: St
             else return Promise.reject(response);
         })
         .then(response => {
+            const analyzer : AnalyticsService = res.locals.analyzer;
+            analyzer.exit().send();
             res.status(StatusCodes.OK).json({ url: site_url });
         })
         .catch(error => {
+            const analyzer : AnalyticsService = res.locals.analyzer;
+            analyzer.exit().send();
             error.json().then(error => res.json(error));
         })
 }
@@ -142,6 +153,8 @@ const updateNetlifySite = function (token: String, site_id: String, site_url: St
 export default {
     // Dummy method that always returns OK without saving anything
     save: (req: Request, res: Response) => {
+        const analyzer : AnalyticsService = res.locals.analyzer;
+        analyzer.exit().send();
         return res
             .status(StatusCodes.OK)
             .json({ success: true, message: "OK" });
@@ -150,6 +163,8 @@ export default {
         const model = req.body as any;
         const onGenerated = async (folder) => {
             await copyAssets(`${folder}/${config.get("folder.assets")}`, model.color, model.cover, model.mode);
+            const analyzer : AnalyticsService = res.locals.analyzer;
+            analyzer.exit().send();
             return res.status(StatusCodes.OK).json({ success: true, url: folder });
         };
         generate(model, res, onGenerated, model.mode);

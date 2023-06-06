@@ -1,6 +1,14 @@
 import express, { Request, Response } from "express";
 const router = express.Router();
 import model_controller from "../controllers/modelController";
+import { AnalyticsService } from "../services/AnalyticsService";
+
+router.use((req : Request, res: Response, next) => {
+    const analyzer = AnalyticsService.create();
+    analyzer.entrance(req.originalUrl);
+    res.locals.analyzer = analyzer;
+    next();
+})
 
 // Save a given model
 router.post('/save', model_controller.save);

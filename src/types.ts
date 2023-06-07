@@ -617,8 +617,18 @@ export interface WidgetSimpleQuestionData {
     question?: string
 }
 
+export interface WidgetMultipleQuestionData {
+    answers?: { text: string, correct: boolean }[],
+    feedback?: Feedback,
+    question?: string
+}
+
 export interface InputWidgetSimpleQuestionData extends InputWidgetElementData {
     data?: WidgetSimpleQuestionData
+}
+
+export interface InputWidgetMultipleQuestionData extends InputWidgetElementData {
+    data?: WidgetMultipleQuestionData
 }
 
 export interface WidgetTrueFalseQuestionData {

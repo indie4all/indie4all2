@@ -412,6 +412,15 @@
                 "empty": "El texto de la pregunta no puede estar vacío"
             }
         },
+        "MultipleQuestion": {
+            "answers": {
+                "noCorrect": "Debes seleccionar al menos respuesta correcta",
+                "notEnoughAnswers": "Debes escribir al menos 2 posibles respuestas"
+            },
+            "question": {
+                "empty": "El texto de la pregunta no puede estar vacío"
+            }
+        },
         "SchemaItem": {
             "image": {
                 "invalid": "La URL establecida para la imagen no es válida. Debes asegurarte de proporcionar una URL válida de indiemedia en el campo imagen."
@@ -1305,6 +1314,21 @@
             },
             "label": "Pregunta simple",
             "prev": "Pregunta simple no establecida todavía ..."
+        },
+        "MultipleQuestion": {
+            "form": {
+                "answers": {
+                    "help": "Debes escribir al menos 2 respuestas y marcar al menos una correcta.",
+                    "label": "Posibles respuestas"
+                },
+                "questionText": {
+                    "help": "Este es el texto de la pregunta se mostrará en la unidad de contenido.",
+                    "label": "Texto de la pregunta",
+                    "placeholder": "Texto de la pregunta múltiple..."
+                }
+            },
+            "label": "Pregunta múltiple",
+            "prev": "Pregunta múltiple no establecida todavía ..."
         },
         "TabContent": {
             "form": {

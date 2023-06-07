@@ -420,6 +420,15 @@
                 "empty": "The question text cannot be empty"
             }
         },
+        "MultipleQuestion": {
+            "answers": {
+                "noCorrect": "You must select at least one correct answer",
+                "notEnoughAnswers": "You must write at least 2 possible answers"
+            },
+            "question": {
+                "empty": "The question text cannot be empty"
+            }
+        },
         "TabContent": {
             "data": {
                 "empty": "The tab is empty. You must add at least one element to the tab."
@@ -1061,7 +1070,7 @@
                 "pieces": {
                     "new": "Add new piece...",
                     "delete": "Delete",
-                    "altImg": "Alternative text for clipping",
+                    "altImg": "Alternative text for clipping", 
                     "altRec": "Alternative text for position",
                     "x": "Left",
                     "y": "Top",
@@ -1131,7 +1140,7 @@
                     "label": "Preview of the sentence",
                     "placeholder": "Text of the sentence with ___ marker",
                     "help": "This is how you would see the sentence in the content unit."
-                    
+
                 },
                 "combinations": {
                     "new": "Add new answer...",
@@ -1305,6 +1314,21 @@
             },
             "label": "Simple question",
             "prev": "Simple question not yet set ..."
+        },
+        "MultipleQuestion": {
+            "form": {
+                "answers": {
+                    "help": "You must write at least 2 answers and mark which of them are correct.",
+                    "label": "Possible answers"
+                },
+                "questionText": {
+                    "help": "This is the question text that will be shown to the user.",
+                    "label": "Question text",
+                    "placeholder": "Question text"
+                }
+            },
+            "label": "Multiple question",
+            "prev": "Multiple question not yet set ..."
         },
         "TabContent": {
             "form": {

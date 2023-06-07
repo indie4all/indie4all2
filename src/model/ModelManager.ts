@@ -30,6 +30,7 @@ import WidgetLatexFormula from "./widgets/WidgetLatexFormula/WidgetLatexFormula"
 import WidgetMissingwordsContainer from "./widgets/WidgetMissingwordsContainer/WidgetMissingwordsContainer";
 import WidgetMissingwordsItem from "./widgets/WidgetMissingwordsItem/WidgetMissingwordsItem";
 import WidgetModal from "./widgets/WidgetModal/WidgetModal";
+import WidgetMultipleQuestion from "./widgets/WidgetMultipleQuestion/WidgetMultipleQuestion";
 import WidgetPuzzle from "./widgets/WidgetPuzzle/WidgetPuzzle";
 import WidgetSchemaContainer from "./widgets/WidgetSchemaContainer/WidgetSchemaContainer";
 import WidgetSchemaItem from "./widgets/WidgetSchemaItem/WidgetSchemaItem";
@@ -147,6 +148,7 @@ export default class ModelManager {
         [WidgetTestContainer.widget]: WidgetTestContainer,
         [WidgetGapQuestion.widget]: WidgetGapQuestion,
         [WidgetSimpleQuestion.widget]: WidgetSimpleQuestion,
+        [WidgetMultipleQuestion.widget] : WidgetMultipleQuestion,
         [WidgetTrueFalseQuestion.widget]: WidgetTrueFalseQuestion
     };
 
@@ -193,7 +195,7 @@ export default class ModelManager {
         [WidgetTermClassifcation.widget]: { "allows": [WidgetTermClassificationItem] },
         [WidgetRelatedUnitsContainer.widget]: { "allows": [WidgetRelatedUnitsItem, WidgetRelatedUnitsAssociation] },
         [WidgetRelatedUnitsAssociation.widget]: { "allows": [WidgetRelatedUnitsItem] },
-        [WidgetTestContainer.widget]: { "allows": [WidgetGapQuestion, WidgetSimpleQuestion, WidgetTrueFalseQuestion] },
+        [WidgetTestContainer.widget]: { "allows": [WidgetGapQuestion, WidgetSimpleQuestion, WidgetMultipleQuestion, WidgetTrueFalseQuestion] },
     }
 
     static canHave(parent: typeof ModelElement, child: typeof ModelElement) {

@@ -38,6 +38,7 @@ export default class Migrator {
             // Force the update of the content unit
             model.version = 1;
             MigrationEvaluationToContent.run(model);
+            delete model.evaluation;
         }
 
         if (!model.sections) {

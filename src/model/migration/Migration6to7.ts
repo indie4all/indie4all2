@@ -3,7 +3,7 @@ import Utils from "../../Utils";
 export default class Migration6to7 {
 
     static run(model: any) {
-        const types = ['TrueFalseItem', 'GapQuestion', 'SimpleQuestion', 'TrueFalseQuestion'];
+        const types = ['TrueFalseItem', 'GapQuestion', 'SimpleQuestion', 'TrueFalseQuestion', 'MultipleQuestion'];
         const questionWidgets = Utils.findObjectsOfType(model, types);
         questionWidgets.forEach(widget => {
             if (typeof widget.data?.feedback !== "object")

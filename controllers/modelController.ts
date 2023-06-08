@@ -26,7 +26,7 @@ const copyAssets = async function (folder: string, color: string, cover: string,
     const data = `$base-color: ${realColor}; $base-url: "${realCover}"; @import '${themeTemplate}';`
     const css = await new Promise((resolve) =>
         sass.render({ data, includePaths: [themeTemplate], outputStyle: 'compressed' }, (err, result) => { resolve(result.css) }));
-    await fs.writeFile(folder + '/generator/content/v4-7-3/css/stylesCustom.min.css', css as string);
+    await fs.writeFile(folder + '/generator/content/v4-7-4/css/stylesCustom.min.css', css as string);
     // Remove scorm libraries if the unit is not of SCORM type
     if (mode !== "SCORM") {
         logger.info("Removing scorm-related assets");
@@ -71,7 +71,7 @@ const generate = function (model: any, res: Response, onGenerated: Function, mod
 
 const onPublishUnit = async function (res: Response, output: string, folder: string, model: any) {
     const zip: Buffer = await packModel(folder, model);
-    const analyzer : AnalyticsService = res.locals.analyzer;
+    const analyzer: AnalyticsService = res.locals.analyzer;
     analyzer.exit().send();
     return res.attachment(output).type("application/zip").status(StatusCodes.CREATED).send(zip);
 }
@@ -114,12 +114,12 @@ const createNetlifySite = function (token: String, zip: Buffer, res: Response) {
             else return Promise.reject(response);
         })
         .then(response => {
-            const analyzer : AnalyticsService = res.locals.analyzer;
+            const analyzer: AnalyticsService = res.locals.analyzer;
             analyzer.exit().send();
             res.status(StatusCodes.OK).json(response);
         })
         .catch(error => {
-            const analyzer : AnalyticsService = res.locals.analyzer;
+            const analyzer: AnalyticsService = res.locals.analyzer;
             analyzer.exit().send();
             error.json().then(error => res.json(error));
         })
@@ -139,12 +139,12 @@ const updateNetlifySite = function (token: String, site_id: String, site_url: St
             else return Promise.reject(response);
         })
         .then(response => {
-            const analyzer : AnalyticsService = res.locals.analyzer;
+            const analyzer: AnalyticsService = res.locals.analyzer;
             analyzer.exit().send();
             res.status(StatusCodes.OK).json({ url: site_url });
         })
         .catch(error => {
-            const analyzer : AnalyticsService = res.locals.analyzer;
+            const analyzer: AnalyticsService = res.locals.analyzer;
             analyzer.exit().send();
             error.json().then(error => res.json(error));
         })
@@ -153,7 +153,7 @@ const updateNetlifySite = function (token: String, site_id: String, site_url: St
 export default {
     // Dummy method that always returns OK without saving anything
     save: (req: Request, res: Response) => {
-        const analyzer : AnalyticsService = res.locals.analyzer;
+        const analyzer: AnalyticsService = res.locals.analyzer;
         analyzer.exit().send();
         return res
             .status(StatusCodes.OK)
@@ -163,7 +163,7 @@ export default {
         const model = req.body as any;
         const onGenerated = async (folder) => {
             await copyAssets(`${folder}/${config.get("folder.assets")}`, model.color, model.cover, model.mode);
-            const analyzer : AnalyticsService = res.locals.analyzer;
+            const analyzer: AnalyticsService = res.locals.analyzer;
             analyzer.exit().send();
             return res.status(StatusCodes.OK).json({ success: true, url: folder });
         };

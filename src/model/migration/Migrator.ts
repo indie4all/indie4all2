@@ -10,6 +10,8 @@ import Migration7to8 from "./Migration7to8";
 import Migration8to9 from "./Migration8to9";
 import Migration9to10 from "./Migration9to10";
 
+import MigrationEvaluationToContent from "./MigrationEvaluationToContent";
+
 export default class Migrator {
 
     static VERSION_MIGRATIONS: { [k: number]: any } = {
@@ -30,6 +32,13 @@ export default class Migrator {
     static CURRENT_MODEL_VERSION = Math.max(...Object.keys(this.VERSION_MIGRATIONS).map(v => parseInt(v)));
 
     static migrate(model: any) {
+
+        // Transform evaluation units into content units
+        if (model.evaluation) {
+            // Force the update of the content unit
+            model.version = 1;
+            MigrationEvaluationToContent.run(model);
+        }
 
         if (!model.sections) {
             model.version = Migrator.CURRENT_MODEL_VERSION;

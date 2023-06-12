@@ -18,8 +18,8 @@
     "jet-logger": "^1.2.6",
     "node-cron": "^3.0.2",
     "node-fetch": "^2.6.11",
-    "node-sass": "^6.0.1",
-    "pm2": "^5.2.2"
+    "pm2": "^5.2.2",
+    "sass": "^1.63.3"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",

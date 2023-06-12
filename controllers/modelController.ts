@@ -7,7 +7,7 @@ import fetch from "node-fetch";
 import { LoggerModes, JetLogger } from 'jet-logger';
 const logger = JetLogger(LoggerModes.Console);
 import config from 'config';
-import sass from 'node-sass';
+import sass from 'sass';
 import { Request, Response } from 'express';
 import { AnalyticsService } from '../services/AnalyticsService';
 
@@ -24,9 +24,9 @@ const copyAssets = async function (folder: string, color: string, cover: string,
     const realColor = VALID_COLOR_PATTERN.test(color) ? color : '#000000';
     const realCover = VALID_COVER_PATTERN.test(cover) ? cover : 'data:null';
     const data = `$base-color: ${realColor}; $base-url: "${realCover}"; @import '${themeTemplate}';`
-    const css = await new Promise((resolve) =>
-        sass.render({ data, includePaths: [themeTemplate], outputStyle: 'compressed' }, (err, result) => { resolve(result.css) }));
-    await fs.writeFile(folder + '/generator/content/v4-7-4/css/stylesCustom.min.css', css as string);
+    const result = sass.renderSync({ data, includePaths: [themeTemplate], outputStyle: 'compressed' });
+    const css = result.css.toString();
+    await fs.writeFile(folder + '/generator/content/v4-7-4/css/stylesCustom.min.css', css);
     // Remove scorm libraries if the unit is not of SCORM type
     if (mode !== "SCORM") {
         logger.info("Removing scorm-related assets");

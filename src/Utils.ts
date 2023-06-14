@@ -104,7 +104,7 @@ export default class Utils {
     static array_move(arr: any[], old_index: number, new_index: number) {
         if (new_index >= arr.length)
             arr.push(...new Array(new_index - arr.length + 1));
-        [arr[new_index], arr[old_index]] = [arr[old_index], arr[new_index]];
+        arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
     }
 
     static swap(elementOrigin: HTMLElement, elementTarget: HTMLElement) {

@@ -163,4 +163,12 @@ export function init(api: Api) {
     $('body').on('click', '.js-set-default-text', function () {
         $(this).closest('form').find('input[name="help"]').val('');
     });
+
+    $(document).ready(function () {
+        fetch("/entrance");
+    });
+
+    document.addEventListener('visibilitychange', function (event) {
+        navigator.sendBeacon(document.visibilityState === "hidden" ? "/exit" : "/entrance")
+    });
 }

@@ -2,11 +2,14 @@ import { LoggerModes, JetLogger } from 'jet-logger';
 import compression from 'compression';
 import express from 'express';
 import helmet from 'helmet';
+const cookieParser = require('cookie-parser');
+const session = require('express-session')
 import config from "config";
 import modelRouter from "./routes/model";
 import resourceRouter from "./routes/resource";
 import translationRouter from "./routes/translation";
 import cleanPreviewsCron from "./cron/cleanPreviews";
+import { AnalyticsService } from './services/analytics/AnalyticsService';
 const logger = JetLogger(LoggerModes.Console);
 const app = express();
 require('dotenv').config();
@@ -36,7 +39,28 @@ app.use(express.static(config.get("folder.web")));
 // Enable access to preview units
 app.use(config.get("url.previews"), express.static(config.get("folder.previews")));
 app.use(config.get("url.media"), express.static(config.get("folder.media")));
+app.use(cookieParser());
+app.use(session({
+    secret: process.env.SECRET_KEY,
+    resave: false,
+    saveUninitialized: true
+}));
 // Map root paths to their corresponding routes
+
+app.post('/entrance', (req, res) => {
+    //TODO: EXPRESS-SESSION USA POR DEFECTO ALMACENAMIENTO EN MEMORIA, NO ACONSEJABLE EN PRODUCCIÓN 
+    req.session["timestamp"] = Date.now();
+    res.status(200).send();
+});
+
+app.post('/exit', (req, res) => {
+    const analyzer = AnalyticsService.create().entrance("/activity").setField("user_id", req.session.id);
+    if (req.session["timestamp"])
+        analyzer.setField("in_TIMESTAMP", req.session["timestamp"])
+    analyzer.exit().send();
+    res.status(200).send();
+});
+
 app.use("/model", modelRouter);
 app.use("/resource", resourceRouter);
 app.use("/translation", translationRouter);

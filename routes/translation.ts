@@ -2,7 +2,7 @@ import express from "express";
 const router = express.Router();
 import translation_controller from "../controllers/translationController";
 import { AzureTranslationService } from "../services/translation/AzureTranslationService";
-import { AnalyticsService } from "../services/AnalyticsService";
+import { AnalyticsService } from "../services/analytics/AnalyticsService";
 
 
 // Check if the translation service is available
@@ -14,8 +14,9 @@ router.use((req: any, res: any, next) => {
     }
     
     const analyzer = AnalyticsService.create();
+    analyzer.setField("user_id", req.session.id)
     analyzer.entrance(req.originalUrl);
-    res.locals.analyzer = analyzer;
+    res.locals.analyzer = analyzer; 
 
     res.locals.translator = new AzureTranslationService();
     next();

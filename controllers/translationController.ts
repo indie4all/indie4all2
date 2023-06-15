@@ -1,6 +1,6 @@
 import { LoggerModes, JetLogger } from 'jet-logger';
 import { TranslationService } from '../services/translation/TranslationService';
-import { AnalyticsService } from '../services/AnalyticsService';
+import { AnalyticsService } from '../services/analytics/AnalyticsService';
 const logger = JetLogger(LoggerModes.Console);
 
 export default {
@@ -22,12 +22,12 @@ export default {
             .translateJSON(req.body, from, to)
             .then((result) => {
                 const size : number = translator.translationLength(result);
-                analyzer.insertField("length", size).exit().send();
+                analyzer.setField("length", size).exit().send();
                 res.status(200).send(result);
             })
             .catch((error) => {
                 //TODO: PENSAR ANALIZAR EL ERROR
-                analyzer.exit().send();
+                 analyzer.exit().send();
                 res.status(500).send(error)
             });
     },

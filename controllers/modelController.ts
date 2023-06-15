@@ -9,7 +9,7 @@ const logger = JetLogger(LoggerModes.Console);
 import config from 'config';
 import sass from 'node-sass';
 import { Request, Response } from 'express';
-import { AnalyticsService } from '../services/AnalyticsService';
+import { AnalyticsService } from '../services/analytics/AnalyticsService';
 
 const VALID_COVER_PATTERN = /^data:([-\w.]+\/[-\w.+]+)?;base64,[A-Za-z0-9+/]*={0,2}$/;
 const VALID_COLOR_PATTERN = /^#[0-9a-fA-F]{6}$/;

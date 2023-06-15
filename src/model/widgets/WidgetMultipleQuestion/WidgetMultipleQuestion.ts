@@ -52,7 +52,6 @@ export default class WidgetMultipleQuestion extends WidgetSpecificItemElement {
             question: this.data.question,
             feedback: this.data.feedback
         };
-        console.log(data);
         return {
             inputs: form(data),
             title: this.translate("widgets.MultipleQuestion.label")

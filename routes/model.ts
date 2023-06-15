@@ -1,10 +1,11 @@
 import express, { Request, Response } from "express";
 const router = express.Router();
 import model_controller from "../controllers/modelController";
-import { AnalyticsService } from "../services/AnalyticsService";
+import { AnalyticsService } from "../services/analytics/AnalyticsService";
 
 router.use((req : Request, res: Response, next) => {
     const analyzer = AnalyticsService.create();
+    analyzer.setField("user_id", req.session.id)
     analyzer.entrance(req.originalUrl);
     res.locals.analyzer = analyzer;
     next();

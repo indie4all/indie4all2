@@ -1,5 +1,6 @@
 /* global $ */
 import Api from './Api';
+import Config from './Config';
 import I18n from './I18n';
 
 export function init(api: Api) {
@@ -162,5 +163,13 @@ export function init(api: Api) {
     // Set default text in edit modals
     $('body').on('click', '.js-set-default-text', function () {
         $(this).closest('form').find('input[name="help"]').val('');
+    });
+
+    $(document).ready(function() {
+        fetch("/entrance");
+      });
+
+    document.addEventListener('visibilitychange', function(event) {
+        navigator.sendBeacon(document.visibilityState === "hidden" ? "/exit" : "/entrance")
     });
 }

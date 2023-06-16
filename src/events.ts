@@ -165,7 +165,7 @@ export function init(api: Api) {
     });
 
     $(document).ready(function () {
-        fetch("/entrance");
+        navigator.sendBeacon("/entrance")
     });
 
     document.addEventListener('visibilitychange', function (event) {

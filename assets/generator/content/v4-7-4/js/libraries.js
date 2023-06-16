@@ -4834,16 +4834,18 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
                 }
 
                 if (!gamification) {
+                    const $checkedAnswers = $answers.filter(':checked');
                     // Highlight correct and incorrect answers and show feedback
-                    $answers.filter(':checked').each(function () {
+                    $checkedAnswers.each(function () {
                         const correct = $correctAnswers.is(this);
                         const $icon = $(this).closest('.option').find('.iconresult');
                         $icon
                             .attr('aria-label', correct ? i18n('TextCorrectAnswer') : i18n('TextIncorrectAnswer'))
                             .html(correct ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times"></i>');
                     });
-                    $question.find('.negativeFeedback:not(:empty)').toggleClass('hidden', allCorrect);
-                    $question.find('.positiveFeedback:not(:empty)').toggleClass('hidden', !allCorrect);
+                    // Show feedback only if there are checked answers
+                    $question.find('.negativeFeedback:not(:empty)').toggleClass('hidden', $checkedAnswers.length == 0 || allCorrect);
+                    $question.find('.positiveFeedback:not(:empty)').toggleClass('hidden', $checkedAnswers.length == 0 || !allCorrect);
                 }
             });
             // Notify gamification results

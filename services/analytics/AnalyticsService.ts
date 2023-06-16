@@ -94,7 +94,7 @@ export class AnalyticsService implements IAnalytics {
                 "Authorization": `Bearer ${AnalyticsService.token.access_token}`
             }
 
-            const body = { "event": this.data }
+            const body  = this.data
 
             const requestOptions: RequestInit = {
                 method: 'POST',

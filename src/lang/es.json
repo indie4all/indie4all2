@@ -265,6 +265,14 @@
                 "invalid": "El texto esta vacio. Debes escribir un pequeño texto."
             }
         },
+        "Callout": {
+            "data": {
+                "empty": "El callout está vacío. Debe agregar al menos un elemento simple."
+            },
+            "text": {
+                "invalid": "El texto esta vacio. Debes escribir un pequeño texto."
+            }
+        },
         "Puzzle": {
             "image": {
                 "invalid": "La URL establecida para la imagen de fondo no es correcta. Debes proporcionar una URL de indieauthor válida."
@@ -875,6 +883,33 @@
                 }
             }
         },
+        "Callout": {
+            "label": "Callout",
+            "form" : {
+                "textTitle": "Título",
+                "colorTheme" : "Color del Callout",
+                "styles": {
+                    "animation": "Estilo de animación",
+                    "simple": "Simple",
+                    "collapsible": "Plegable",
+                    "label": "Estilo del Callout",
+                    "more": "Saber más",
+                    "note": "Nota",
+                    "attention": "Atención",
+                    "danger": "Peligro"
+                },
+                "helps" : {
+                    "textTitle" : "Este será el texto que aparecerá como título del Callout. Si no se rellena tomará un valor por defecto.",
+                    "styles": "Determina uno de los estilos predifinidos para la caja con los elementos embebidos.",
+                    "animation" : "Determina una de las animaciones predefinidas para la caja con los elementos embebidos (simple o plegable).",
+                    "colorTheme" : "Formato hexadecimal #FFFFFF requerido. Si no se rellena tomará el valor por defecto el color de la unidad."
+                },
+                "placeholder" : {
+                    "textTitle" : "Introduce aquí el título del Callout",
+                    "colorTheme" : "Introduce aquí el color del Callout"
+                }
+            }
+        },
         "TwoColumnsLayout": {
             "label": "Dos columnas"
         },
@@ -1372,15 +1407,7 @@
             "form": {
                 "help": "Debes escribir obligatoriamente un texto.",
                 "label": "En este editor de texto puedes escribir el contenido del bloque.",
-                "placeholder": "Introduce un texto...",
-                "styles": {
-                    "label": "Estilo del bloque de texto",
-                    "default": "Sin estilo",
-                    "more": "Saber más",
-                    "note": "Nota",
-                    "attention": "Atención",
-                    "help": "Determina el diseño de la caja que envuelve al texto"
-                }
+                "placeholder": "Introduce un texto..."
             },
             "label": "Bloque de texto",
             "prev": "Texto no establecido todavía..."

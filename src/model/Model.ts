@@ -137,7 +137,7 @@ export class Model {
             });
         }
 
-        // Save the errors   
+        // Save the errors  
         this.currentErrors = errors;
         return errors;
     }

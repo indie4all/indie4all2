@@ -39,7 +39,7 @@
             "placeholder": "Example: https://indiemedia.upct.es/descriptions.vtt",
             "help": "INDIeMedia URL of the file containing text descriptions of what happens in the video for when the part of the video is not available because the viewer is blind and does not use a screen. Descriptions are read by a screen reader or converted to a separate audio track."
         },
-        "download": {
+                "download": {
             "title": "Downloading",
             "description": "Downloading unit, please wait"
         },
@@ -260,6 +260,14 @@
         "Modal": {
             "data": {
                 "empty": "The modal is empty. You must add at least one simple element."
+            },
+            "text": {
+                "invalid": "The text is empty. You must write a small text."
+            }
+        },
+        "Callout": {
+            "data": {
+                "empty": "The callout is empty. You must add at least one simple element."
             },
             "text": {
                 "invalid": "The text is empty. You must write a small text."
@@ -568,9 +576,9 @@
         "confirmLoadModel": "A previous unit has been detected. Choose whether to load or discard it.",
         "contentCleared": "Content deleted successfully.",
         "contentErrors": "Ooops! There are errors in your content. Check the error messages and follow their instructions to fix them.",
-		"couldNotExportElement": "The element could not be exported",
+        "couldNotExportElement": "The element could not be exported",
         "couldNotExportSection": "The section could not be exported",
-        "deletedSection": "Section removed successfully.",
+		"deletedSection": "Section removed successfully.",
         "emptyContent": "You have not added content yet.",
         "errorMessage": "Error",
 		"exportedElement": "Element successfully exported",
@@ -875,6 +883,34 @@
                 }
             }
         },
+        "Callout": {
+            "label": "Callout",
+            "form" : {
+                "textTitle" : "Title",
+                "colorTheme" : "Callout color",
+                "styles": {
+                    "animation" : "Animation style",
+                    "simple": "Simple",
+                    "collapsible": "Collapsible",
+                    "label": "Callout style",
+                    "default": "No style",
+                    "more": "Learn more",
+                    "note": "Note",
+                    "attention": "Attention",
+                    "danger": "Danger"
+                },
+                "helps" : {
+                    "textTitle": "This will be the text that appears as the title of the Callout. If not filled, it will be used a default value.",
+                    "styles": "Determines one of the predefined styles for the box with embedded elements.",
+                    "animation": "Determines one of the predefined animations for the box with embedded elements (simple or collapsible).",
+                    "colorTheme": "Required hexadecimal format #FFFFFF. If not filled, the default color of the unit will be used."
+                },
+                "placeholder" : {
+                    "textTitle" : "Introduce aquí el título del Callout",
+                    "colorTheme" : "Introduce aquí el color del Callout"
+                }
+            }
+        },
         "TwoColumnsLayout": {
             "label": "Two columns"
         },
@@ -1070,7 +1106,7 @@
                 "pieces": {
                     "new": "Add new piece...",
                     "delete": "Delete",
-                    "altImg": "Alternative text for clipping", 
+                    "altImg": "Alternative text for clipping",
                     "altRec": "Alternative text for position",
                     "x": "Left",
                     "y": "Top",
@@ -1372,15 +1408,7 @@
             "form": {
                 "help": "In this text editor you can write the content of the block.",
                 "label": "Text block",
-                "placeholder": "Introduce some text...",
-                "styles": {
-                    "label": "Text block style",
-                    "default": "No style",
-                    "more": "Learn more",
-                    "note": "Note",
-                    "attention": "Attention",
-                    "help": "Determines the layout of the box that surrounds the text"
-                }
+                "placeholder": "Introduce some text..."
             },
             "label": "Text Block",
             "prev": "Text not yet set ..."

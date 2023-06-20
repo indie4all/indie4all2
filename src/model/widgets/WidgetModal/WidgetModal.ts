@@ -48,7 +48,7 @@ export default class WidgetModal extends WidgetContainerElement {
         };
         return {
             inputs: form(data),
-            title: this.translate("widgets.SchemaContainer.label")
+            title: this.translate("widgets.Modal.label")
         };
     }
 

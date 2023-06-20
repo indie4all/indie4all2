@@ -10,6 +10,7 @@ import resourceRouter from "./routes/resource";
 import translationRouter from "./routes/translation";
 import cleanPreviewsCron from "./cron/cleanPreviews";
 import { AnalyticsService } from './services/analytics/AnalyticsService';
+import { MemoryStore } from 'express-session';
 const logger = JetLogger(LoggerModes.Console);
 const app = express();
 require('dotenv').config();
@@ -41,7 +42,7 @@ app.use(config.get("url.previews"), express.static(config.get("folder.previews")
 app.use(config.get("url.media"), express.static(config.get("folder.media")));
 app.use(cookieParser());
 app.use(session({
-    secret: process.env.SECRET_KEY,
+    secret: "key_secret",
     resave: false,
     saveUninitialized: true
 }));

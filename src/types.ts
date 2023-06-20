@@ -89,13 +89,11 @@ export interface InputSectionData extends InputModelElementData {
 }
 
 export interface TextBlockData {
-    style?: string,
     text?: string
 }
 
 export interface InputTextBlockData extends InputWidgetElementData {
     data?: TextBlockData,
-    style?: string,
     text?: string
 }
 
@@ -233,6 +231,25 @@ export interface WidgetModalParams {
 export interface InputWidgetModalData extends InputWidgetElementData {
     data?: InputWidgetData[],
     params?: WidgetModalParams
+}
+
+export enum colorThemes {
+    "more" = "#ecf8e8",
+    "note" = "#e9f2fc",
+    "attention" = "#fff1e8",
+    "danger" = "#ffe6eb"
+}
+
+export interface WidgetCalloutParams {
+    style: string,
+    text: string,
+    colorTheme: colorThemes | string,
+    animation: string
+}
+
+export interface InputWidgetCalloutData extends InputWidgetElementData {
+    data?: InputWidgetData[],
+    params?: WidgetCalloutParams
 }
 
 export interface WidgetImageAndTextParams {

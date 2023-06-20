@@ -19,7 +19,7 @@ export default class WidgetTextBlock extends RichTextEditorMixin(WidgetItemEleme
 
     constructor(values?: InputTextBlockData) {
         super(values);
-        this.data = values?.data ? structuredClone(values.data) : { style: "default", text: "" };
+        this.data = values?.data ? structuredClone(values.data) : { text: "" };
     }
 
     clone(): WidgetTextBlock {
@@ -34,7 +34,6 @@ export default class WidgetTextBlock extends RichTextEditorMixin(WidgetItemEleme
             instanceId: this.id,
             label: "widgets." + WidgetTextBlock.widget + ".form.label",
             help: "widgets." + WidgetTextBlock.widget + ".form.help",
-            style: this.data.style
         };
         return {
             inputs: form(data),
@@ -63,7 +62,6 @@ export default class WidgetTextBlock extends RichTextEditorMixin(WidgetItemEleme
 
     updateModelFromForm(form: any): void {
         this.data.text = this.clearAndSanitizeHtml(form.textblockText);
-        this.data.style = form.style;
     }
 
     updateTexts(texts: any): void {

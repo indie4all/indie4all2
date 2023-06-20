@@ -1,5 +1,6 @@
 import Migration10to11 from "./Migration10to11";
 import Migration11to12 from "./Migration11to12";
+import Migration12to13 from "./Migration12to13";
 import Migration1to2 from "./Migration1to2";
 import Migration2to3 from "./Migration2to3";
 import Migration3to4 from "./Migration3to4";
@@ -25,7 +26,8 @@ export default class Migrator {
         9: Migration8to9,
         10: Migration9to10,
         11: Migration10to11,
-        12: Migration11to12
+        12: Migration11to12,
+        13: Migration12to13
     };
 
     // Get the latest version

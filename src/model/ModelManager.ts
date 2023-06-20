@@ -86,6 +86,7 @@ import WidgetRemoteVideo from "./widgets/WidgetVideo/WidgetRemoteVideo";
 import WidgetRelatedUnitsContainer from "./widgets/WidgetRelatedUnitsContainer/WidgetRelatedUnitsContainer";
 import WidgetRelatedUnitsItem from "./widgets/WidgetRelatedUnitsItem/WidgetRelatedUnitsItem";
 import WidgetRelatedUnitsAssociation from "./widgets/WidgetRelatedUnitsAssociation/WidgetRelatedUnitsAssociation";
+import WidgetCallout from "./widgets/WidgetCallout/WidgetCallout";
 
 export default class ModelManager {
 
@@ -112,6 +113,7 @@ export default class ModelManager {
         [WidgetRelatedUnitsAssociation.widget]: WidgetRelatedUnitsAssociation,
         [WidgetRelatedUnitsContainer.widget]: WidgetRelatedUnitsContainer,
         [WidgetRelatedUnitsItem.widget]: WidgetRelatedUnitsItem,
+        [WidgetCallout.widget]: WidgetCallout,
         // Interactive elements
         [WidgetImageAndText.widget]: () => Config.isLocal() ? WidgetLocalImageAndText : WidgetRemoteImageAndText,
         [WidgetImage.widget]: () => Config.isLocal() ? WidgetLocalImage : WidgetRemoteImage,
@@ -179,6 +181,10 @@ export default class ModelManager {
         },
         [WidgetModal.widget]: {
             "allows": [WidgetItemElement],
+            "refuses": [WidgetSpecificItemElement]
+        },
+        [WidgetCallout.widget]: {
+            "allows": [WidgetItemElement, WidgetColumnsLayout],
             "refuses": [WidgetSpecificItemElement]
         },
         [WidgetDragdropContainer.widget]: { "allows": [WidgetDragdropItem] },

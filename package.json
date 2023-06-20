@@ -21,7 +21,7 @@
     "node-cron": "^3.0.2",
     "node-fetch": "^2.6.11",
     "pm2": "^5.2.2",
-    "sass": "^1.63.3"
+    "sass": "^1.63.4"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",

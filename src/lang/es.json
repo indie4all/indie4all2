@@ -606,7 +606,8 @@
         "items": "ítems",
         "layouts": "Disposiciones",
         "question": "Preguntas",
-        "simpleElements": "Elementos"
+        "simpleElements": "Elementos",
+        "bankWidgets" : "Banco de Widgets"
     },
     "sections": {
         "deleteSection": "Eliminar sección",
@@ -821,6 +822,10 @@
             },
             "label": "Audio-término",
             "prev": "Audio-término no establecido todavía ..."
+        },
+        "Bank": {
+            "label": "Banco",
+            "modalTitle": "Banco de Widgets"
         },
         "Blockquote": {
             "form": {

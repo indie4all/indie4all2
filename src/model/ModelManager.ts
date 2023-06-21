@@ -87,12 +87,15 @@ import WidgetRelatedUnitsContainer from "./widgets/WidgetRelatedUnitsContainer/W
 import WidgetRelatedUnitsItem from "./widgets/WidgetRelatedUnitsItem/WidgetRelatedUnitsItem";
 import WidgetRelatedUnitsAssociation from "./widgets/WidgetRelatedUnitsAssociation/WidgetRelatedUnitsAssociation";
 import WidgetCallout from "./widgets/WidgetCallout/WidgetCallout";
+import WidgetBank from "./widgets/WidgetBank/WidgetBank";
 
 export default class ModelManager {
 
     private static elements = {
         // Section element
         [Section.widget]: Section,
+        //Bank of Widgets
+        [WidgetBank.widget] : WidgetBank,
         // Elements
         [WidgetTextBlock.widget]: WidgetTextBlock,
         [WidgetBlockquote.widget]: WidgetBlockquote,

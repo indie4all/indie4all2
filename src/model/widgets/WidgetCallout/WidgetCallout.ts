@@ -26,7 +26,7 @@ export default class WidgetCallout extends WidgetContainerElement {
         super(values);
         this.params = values?.params ? structuredClone(values.params) : {
             text: this.translate("widgets.Callout.form.styles.more"),
-            style: "",
+            style: "more",
             colorTheme: colorThemes.more,
             animation: "simple"
         };

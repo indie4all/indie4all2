@@ -13954,6 +13954,12 @@ toggle {  0% {
 }
 .element-video {
 
+	// IndieMedia video not showing properly in bootstrap5
+	.azuremediaplayer.vjs-fluid {
+		padding: 0;
+		height: 100%;
+	}
+
 	.btn-video-minimize {
 		visibility: hidden;
 		display: block;
@@ -13961,6 +13967,8 @@ toggle {  0% {
 		position: fixed;
 		top: -4rem;
 		transition: top 1s;
+		width: auto;
+    	height: auto;
 	}
 	
 	&.maximized {
@@ -14410,50 +14418,66 @@ toggle {  0% {
 	}
 
 }
-.textblock-heading {
+.callout-heading {
 	font-size: 1.55rem;
+	margin-bottom: 0;
+	width: 100%;
+
+	.btn {
+		color: inherit;
+		&:active, &:focus, &:hover {
+			color: inherit;
+		}
+	}
 }
 
-.textblock-more {
+.callout-more {
 	border: 2px solid $base-color;
+	background-color: $base-color;
 	margin-bottom: 15px;
-	.textblock-heading {
+	.callout-heading {
 		padding: 5px 10px;
-		background-color: $base-color;
-		color: white;
+		color: white !important;
 	}
 	
-	.textblock-content {
+	.callout-content {
 		padding: 5px 10px;
+		background-color: white;
 	}
 }
 
-.textblock-note {
+.callout-note {
 	border-left: 10px solid $base-color;
     padding-left: 10px;
 	margin-bottom: 15px;
-	
-	.textblock-heading {
-		color: $base-color;
+	color: $base-color;
+	background-color: white !important;
+		
+	.callout-heading {
+		color: inherit;
+		margin-bottom: 1rem;
+		margin-left: 0.5rem;
 	}
 	
-	.textblock-content {
+	.callout-content {
 		padding-left: 10px;
 	}
 }
 
-.textblock-attention {
+.callout-attention, .callout-danger {
 	padding: 10px;
 	background-color: rgba($base-color, 0.1);
+	border: 2px solid rgba($base-color, 0.1);
 	margin-bottom: 15px;
 	
-	.textblock-heading {
-		border-bottom: 2px solid;
+	.callout-heading {
+		
 		padding: 5px;
 		display: inline-block;
 	}
 	
-	.textblock-content {
+	.callout-content {
+		border-top: 2px solid;
 		padding: 5px 10px;
 	}
 }

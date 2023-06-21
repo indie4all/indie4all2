@@ -899,10 +899,10 @@
                     "danger": "Peligro"
                 },
                 "helps" : {
-                    "textTitle" : "Este será el texto que aparecerá como título del Callout. Si no se rellena tomará un valor por defecto.",
+                    "textTitle" : "Este será el texto que aparecerá como título del Callout. <strong>Si no se rellena tomará un valor por defecto.</strong>",
                     "styles": "Determina uno de los estilos predifinidos para la caja con los elementos embebidos.",
                     "animation" : "Determina una de las animaciones predefinidas para la caja con los elementos embebidos (simple o plegable).",
-                    "colorTheme" : "Formato hexadecimal #FFFFFF requerido. Si no se rellena tomará el valor por defecto el color de la unidad."
+                    "colorTheme" : "Formato hexadecimal #FFFFFF requerido.<strong> Si no se rellena tomará el valor por defecto el color del tema de la unidad.</strong>"
                 },
                 "placeholder" : {
                     "textTitle" : "Introduce aquí el título del Callout",

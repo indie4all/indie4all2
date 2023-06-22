@@ -887,12 +887,12 @@
             "label": "Callout",
             "form" : {
                 "textTitle" : "Title",
-                "colorTheme" : "Callout color",
+                "colorTheme" : "Color",
                 "styles": {
                     "animation" : "Animation style",
                     "simple": "Simple",
                     "collapsible": "Collapsible",
-                    "label": "Callout style",
+                    "label": "Style",
                     "default": "No style",
                     "more": "Learn more",
                     "note": "Note",
@@ -900,14 +900,14 @@
                     "danger": "Danger"
                 },
                 "helps" : {
-                    "textTitle": "This will be the text that appears as the title of the Callout. <strong>If not filled, it will be used a default value</strong>.",
+                    "textTitle": "This will be the text that appears as the title. <strong>If not filled, it will be used a default value</strong>.",
                     "styles": "Determines one of the predefined styles for the box with embedded elements.",
                     "animation": "Determines one of the predefined animations for the box with embedded elements (simple or collapsible).",
                     "colorTheme": "Required hexadecimal format #FFFFFF. <strong>If not filled, the color of the unit theme will be used</strong>."
                 },
                 "placeholder" : {
-                    "textTitle" : "Introduce aquí el título del Callout",
-                    "colorTheme" : "Introduce aquí el color del Callout"
+                    "textTitle" : "Enter the title here",
+                    "colorTheme" : "Enter the color here"
                 }
             }
         },

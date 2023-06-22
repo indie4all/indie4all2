@@ -854,7 +854,8 @@
         },
         "Bank": {
             "label": "Bank",
-            "modalTitle" : "Bank of Widgets"
+            "modalTitle" : "Bank of Widgets",
+            "search": "Search"
         },
         "ChooseOption": {
             "form": {

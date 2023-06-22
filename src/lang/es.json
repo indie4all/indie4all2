@@ -825,7 +825,8 @@
         },
         "Bank": {
             "label": "Banco",
-            "modalTitle": "Banco de Widgets"
+            "modalTitle": "Banco de Widgets",
+            "search": "Buscar"
         },
         "Blockquote": {
             "form": {

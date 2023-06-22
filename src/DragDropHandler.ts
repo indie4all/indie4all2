@@ -204,7 +204,7 @@ export default class DragDropHandler {
           });
 
         $("input[type=search]").on('change', function(){
-            var searchTerm = ($(this).val() as string).toLowerCase(); 
+            const searchTerm = ($(this).val() as string).toLowerCase(); 
 
             $('.widget-button h3').each(function() {
                 var text = $(this).text().toLowerCase();

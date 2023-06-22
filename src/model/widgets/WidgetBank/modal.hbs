@@ -5,16 +5,19 @@
                 <h2 id="modal-bank-widgets-tittle" class="modal-title h5"> {{ translate "widgets.Bank.modalTitle"}}</h2>
             </div>
             <div id="modal-bank-widgets-body" class="modal-body">
-                <div class="form-group mb-4">
-                    <input type="search" class="form-control ds-input" placeholder="Search by title of Widget"> 
+                <div class="form-group mb-4 d-flex">
+                    <input id="search-bank-widget" type="search" class="form-control ds-input" placeholder="Search by title of Widget"> 
+                    <div class="input-group-append">
+                       <button id="button-search-bank-widget" class="btn btn-indie" type="button">{{translate "widgets.Bank.search"}}</button>
+                    </div>
                 </div>
-                <div class="panel-bank-widgets" style="max-height: 500px; overflow-y: scroll;">
+                <div class="panel-bank-widgets">
                 {{#each data}}
                 <button class="col-md-12 d-flex mb-3 align-items-center p-3 border border-secondary widget-button" >
-                    <div class="col-md-1">
+                    <div class="col-1">
                         <img src="{{ img }}">
                     </div>
-                    <div class="col-md-11 pl-4">
+                    <div class="col-11 pl-4">
                         <h3  class="h5"> {{ this.title }} </h3>
                         <p class="mb-0"> {{ this.desc }} </p>
                     </div>

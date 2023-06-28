@@ -2747,7 +2747,7 @@ b._handlePointerMove(a,c,g,d)};c._handleEnd=function(b,a,c){var g=b.__touch,d=g.
         /**
          * Creates a drag and drop section in the page and stores it into the plugin data
          * 
-         * @param {string} optionsContainerSelector Selecter of the container of the initial options
+         * @param {string} optionsContainerSelector Selector of the container of the initial options
          * @param {string} selectedOptionsContainerSelector Selector of the container if the selected options 
          * @param {string} definitionsContainerSelector  Selector of the container of the descriptions
          * @param {*} ddTerms Definitions and Terms 
@@ -2798,8 +2798,7 @@ b._handlePointerMove(a,c,g,d)};c._handleEnd=function(b,a,c){var g=b.__touch,d=g.
                     $widget.find('.drag-item').filter(function () { return matchBetweenTexts($(this).find('.drag-drop-option').text(), text) }).first().addClass('selected');
                     $('#drag-drop-modal-' + widgetId).find('.drag-drop-current-option').html(i18n('accessible-dragdrop-modal-current-option', { optionIndex: currPosition, option: $(this).find('.drag-drop-option').html(), interpolation: { escapeValue: false } }));
                     const options = { keyboard: true, focus: true, show: true };
-                    if (!modal) 
-                        modal = new bootstrap.Modal(document.getElementById('drag-drop-modal-' + widgetId), options);
+                    const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('drag-drop-modal-' + widgetId), options);
                     modal.show();
                 }
 
@@ -2843,6 +2842,7 @@ b._handlePointerMove(a,c,g,d)};c._handleEnd=function(b,a,c){var g=b.__touch,d=g.
                     let $dragOptions = $dragOptionsList.find('.drag-item');
                     let $dragElections = $dragElectionsList.find('.drag-item');
                     let $tableOptions = $('#dragdrop-table-options-' + widgetId + ' div button');
+                    $widget.find('.dragdrop-check-icon').addClass('d-none');
                     $tableOptions.each(function () {
                         let $tOpt = $(this);
                         let $placeholder = $tOpt.parent().find('.response-placeholder');
@@ -2887,6 +2887,7 @@ b._handlePointerMove(a,c,g,d)};c._handleEnd=function(b,a,c){var g=b.__touch,d=g.
                     var validCount = 0;
                     var $selectedContainers = $dragElectionsList.find('.drag-container');
                     var $definitions = $dragDropDescriptions.children();
+                    const userAnswers = [];
                     for (var i = 0; i < $selectedContainers.length; i++) {
                         if ($selectedContainers.eq(i).has('.drag-item').length) {
                             let $selectedItem = $selectedContainers.eq(i).find('.drag-item');
@@ -2895,7 +2896,9 @@ b._handlePointerMove(a,c,g,d)};c._handleEnd=function(b,a,c){var g=b.__touch,d=g.
                             let targetDescription = $.parseHTML(ddTerms.filter((t) => {
                                 return $.parseHTML(t.term)[0].textContent === term
                             })[0].definition)[0].textContent;
-                            if (currentDescription == targetDescription) {
+                            const correct = currentDescription == targetDescription;
+                            userAnswers.push({item: $selectedItem, correct});
+                            if (correct) {
                                 validCount++;
                             } else {
                                 if (!gamification) {
@@ -2903,11 +2906,25 @@ b._handlePointerMove(a,c,g,d)};c._handleEnd=function(b,a,c){var g=b.__touch,d=g.
                                         $(this).append($selectedItem);
                                     });
                                 }
-                            }
+                            }        
                         }
                     }
                     updateStateOfOptions();
                     if (!gamification) {
+                        userAnswers.forEach(tuple => {
+                            const $item = tuple.item;
+                            const correct = tuple.correct;
+                            let $tableOptions = $('#dragdrop-table-options-' + widgetId + ' div button');
+                            let $sOpt = $tableOptions.find('.btn-option').filter(function () {
+                                    return matchBetweenTexts($(this).find('.drag-drop-option').text(), $item.find('.drag-drop-option').text())
+                            }).first();                            
+                            const $icons = $item.add($sOpt).find('.dragdrop-check-icon');
+                            $icons.removeClass('d-none');
+                            $icons.toggleClass('fa-check', correct);
+                            $icons.toggleClass('fa-times', !correct);
+                            $icons.attr('aria-label', correct ? i18n('CorrectOption') : i18n('IncorrectOption'));
+                        });
+
                         let $results = $("#result-" + widgetId).add($("#mobile-result-" + widgetId))
                         // show in text
                         if (validCount == ddTerms.length) {
@@ -2948,14 +2965,18 @@ b._handlePointerMove(a,c,g,d)};c._handleEnd=function(b,a,c){var g=b.__touch,d=g.
                             .attr('aria-labelledby',
                                 'dragdrop-table-option-' + widgetId + "-prefix-" + currPosition + ' ' +
                                 'dragdrop-table-option-' + widgetId + "-option-" + currPosition + ' ' +
-                                'dragdrop-table-option-' + widgetId + "-state-" + currPosition);
+                                'dragdrop-table-option-' + widgetId + "-state-" + currPosition + ' ' + 
+                                'dragdrop-table-option-' + widgetId + "-check-" + currPosition);
 
                         let term = $(this).find('.drag-drop-option').html();
                         let $content = $('<span />').addClass('drag-drop-option').attr('id', 'dragdrop-table-option-' + widgetId + "-option-" + currPosition).html(term);
                         let $state = $("<span />").addClass('dragdrop-state visually-hidden').attr('id', 'dragdrop-table-option-' + widgetId + "-state-" + currPosition).html("")
                         let $prefix = $("<span />").addClass('dragdrop-prefix visually-hidden').attr('id', 'dragdrop-table-option-' + widgetId + "-prefix-" + currPosition).html(i18n("accessibility-option") + " " + currPosition)
+                        let $check = $("<i/>").addClass('dragdrop-check-icon d-none far ms-2')
+                            .attr('aria-label', '')
+                            .attr('id', 'dragdrop-table-option-' + widgetId + "-check-" + currPosition);
                         $button.toggleClass('has-code', $.parseHTML(term)[0].nodeType !== 3 && $(term).is('code'));
-                        $button.append($content, $state, $prefix);
+                        $button.append($content, $state, $prefix, $check);
                         position++;
                         $button
                             .on('click', function (e) {
@@ -3148,6 +3169,7 @@ b._handlePointerMove(a,c,g,d)};c._handleEnd=function(b,a,c){var g=b.__touch,d=g.
                             playReader({ 'action': 'move-error', 'alertType': 'alert-danger' })
                             return -1;
                         }
+                        const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('drag-drop-modal-' + widgetId));
                         modal && modal.hide();
                     });
 
@@ -3156,10 +3178,13 @@ b._handlePointerMove(a,c,g,d)};c._handleEnd=function(b,a,c){var g=b.__touch,d=g.
                         if ($selected) {
                             $selected.removeClass('selected');
                             let $tableOption = $('#dragdrop-table-options-' + widgetId + ' div button').filter(function () { return matchBetweenTexts($(this).find('.drag-drop-option').text(), $selected.find('.drag-drop-option').text()) }).first();
-                            if ($tableOption.is(":visible"))
+                            // Fix - Focus is not triggered if we don't wait a little
+                            setTimeout(() => {
+                                if ($tableOption.is(":visible"))
                                 $tableOption.focus();
                             else
                                 $selected.focus()
+                            }, 1);
                         }
                     });
                 }
@@ -3177,12 +3202,16 @@ b._handlePointerMove(a,c,g,d)};c._handleEnd=function(b,a,c){var g=b.__touch,d=g.
                         .attr('aria-labelledby',
                             widgetId + "-prefix-" + currPosition + ' ' +
                             widgetId + "-option-" + currPosition + ' ' +
-                            widgetId + "-state-" + currPosition);
+                            widgetId + "-state-" + currPosition + ' ' + 
+                            widgetId + "-check-" + currPosition);
 
                     let $content = $('<span />').addClass('drag-drop-option').attr('id', widgetId + "-option-" + currPosition).html(term);
                     let $state = $("<span />").addClass('dragdrop-state visually-hidden').attr('id', widgetId + "-state-" + currPosition).html("")
                     let $prefix = $("<span />").addClass('dragdrop-prefix visually-hidden').attr('id', widgetId + "-prefix-" + currPosition).html(i18n("accessibility-option") + " " + currPosition)
-                    $button.append($content, $state, $prefix);
+                    let $check = $("<i/>").addClass('dragdrop-check-icon d-none far ms-2')
+                            .attr('aria-label', '')
+                            .attr('id', widgetId + "-check-" + currPosition);                        
+                    $button.append($content, $state, $prefix, $check);
                     $button.toggleClass('has-code', $.parseHTML(term)[0].nodeType !== 3 && $(term).is('code'));
                     let $container = $("<div />").addClass('drag-container');
                     $container.append($button);
@@ -5893,6 +5922,8 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
 })();
 /* global $ */
 /* global i18next */
+/* global bootstrap */
+/* global setObjetivoCompleto */
 (function () {
 
     const NAVIGATION_TABS = 0;
@@ -5904,7 +5935,6 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
     }
 
     let onLanguageLoaded = function (err, i18n) {
-
 
         let highlightContentElement = function () {
             $('.speech-focused').removeClass('speech-focused');
@@ -5942,6 +5972,12 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
             let $selectionTabs = $widget.find('.tab-link:visible').first();
             let $selectionContent;
             let mySetTopLinkIfNeeded = setTopLinkIfNeeded.bind(this);
+            $widget.find('.tab-link:visible').each(function() {
+                // Mark the objetive as complete when the tab is shown
+                this.addEventListener('show.bs.tab', function() {
+                    setObjetivoCompleto('objetivo' + this.getAttribute("id"), this.dataset.desc, this.dataset.type);
+                });
+            })
 
             mySetTopLinkIfNeeded();
             $widget.find('a[data-bs-toggle="tab"]').on('shown.bs.tab', mySetTopLinkIfNeeded);
@@ -5972,6 +6008,7 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
                     $selectionTabs = $btns.eq(nextPos)
                     highlightContentElement.apply($selectionTabs[0]);
                     $selectionTabs.focus();
+                    bootstrap.Tab.getOrCreateInstance($selectionTabs[0]).show();
                 }
                 else {
                     let $btns = $widget.find('.speech-to-action:visible')
@@ -6003,9 +6040,6 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
                     }
                     return;
                 }
-
-                if (action === "FINISH")
-                    return;
 
                 if (action === "START") {
                     mode = NAVIGATION_TABS;
@@ -6450,6 +6484,7 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
 })();
 /* global $ */
 /* global i18next */
+/* global setObjetivoCompleto */
 
 (function () {
 
@@ -6460,7 +6495,6 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
     const KEYCODE_RIGHT = 39;
     const KEYCODE_HOME = 36;
     const KEYCODE_END = 35;
-    const KEYCODE_ESCAPE = 27;
 
     let setTopLinkIfNeeded = function () {
         let height = $(this).find(".shared-texts").height();
@@ -6472,25 +6506,47 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
 		let $btns = $(this).closest('.widget-button-text').find('.btn-show');
 		let position = $btns.index($(this));
 		let key = e.which || e.keyCode;
+        let $btn = null;
 		switch (key) {
 			case KEYCODE_HOME:
 				e.preventDefault();
-				$btns.first().focus();
+				$btn = $btns.first()
 				break;
 			case KEYCODE_END:
 			e.preventDefault();
-				$btns.last().focus();
+				$btn = $btns.last()
 				break;
 			case KEYCODE_LEFT:
-				$btns.eq((position - 1) % $btns.length).focus();
+				$btn = $btns.eq((position - 1) % $btns.length);
 				break;
 			case KEYCODE_RIGHT:
-				$btns.eq((position + 1) % $btns.length).focus();
+				$btn = $btns.eq((position + 1) % $btns.length);
 				break;
-			case KEYCODE_ESCAPE: $(this).blur(); break;
-			default: return;
 		}
+
+        if ($btn) {
+            $btn.focus();
+            // Show the tab content associated to this button
+            show.apply($btn[0]);
+        }
 	}
+
+    let show = function() {
+        let $widget = $(this).closest('.widget-button-text'); 
+        let $btns = $widget.find('.btn-show');
+        let $texts = $widget.find('.shared-text');
+        let pos = $btns.index($(this));
+        let $text = $texts.eq(pos);
+        $btns.closest('.tab').removeClass('show');
+        $btns.attr('tabindex', "-1").attr('aria-selected', 'false');
+        $(this).closest('.tab').addClass('show');
+        $(this).attr('tabindex', "0").attr('aria-selected', 'true');
+        $texts.removeClass('show');
+        $text.addClass('show');
+        setTopLinkIfNeeded.apply($widget);
+        // Mark the objetive as complete when the tab is shown
+        setObjetivoCompleto('objetivo' + this.getAttribute("id"), this.dataset.desc, this.dataset.type);
+    }
 
     let onLanguageLoaded = function (err, i18n) {
 
@@ -6519,23 +6575,11 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
         $('.widget-button-text').each(function () {
             let $widget = $(this);
             let id = $widget.attr('id');
-            let $btns = $widget.find('.btn-show');
             let mode = NAVIGATION_TABS;
             let $selectionTabs = $widget.find('.btn-show').first();
             let $selectionContent;
 
-            $widget.on('click', '.btn-show', function () {
-                let $texts = $widget.find('.shared-text');
-                let pos = $btns.index($(this));
-                let $text = $texts.eq(pos);
-				$btns.closest('.tab').removeClass('show');
-				$btns.attr('tabindex', "-1").attr('aria-selected', 'false');
-				$(this).closest('.tab').addClass('show');
-                $(this).attr('tabindex', "0").attr('aria-selected', 'true');
-				$texts.removeClass('show');
-                $text.addClass('show');
-                setTopLinkIfNeeded.apply($widget);
-            });
+            $widget.on('click', '.btn-show', show);
 
             let highlightContentElement = function () {
                 $('.speech-focused').removeClass('speech-focused');
@@ -6547,7 +6591,7 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
                 if (mode === NAVIGATION_TABS) {
                     if (!$selectionTabs.is('.active'))
                         $selectionTabs.trigger('click');
-                    $widget.find('.shared-texts').first().focus();
+                    $widget.find('.shared-texts').find('.show').first().focus();
                     mode = NAVIGATION_CONTENT;
                 } else {
                     $selectionContent && $selectionContent.trigger('click')
@@ -6569,6 +6613,9 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
                     $selectionTabs = $btns.eq(nextPos)
                     highlightContentElement.apply($selectionTabs[0]);
                     $selectionTabs.focus();
+                    // Show the tab content associated to this button
+                    console.log("HANDLED!", $selectionTabs);
+                    show.apply($selectionTabs[0]);
                 }
                 else {
                     let $btns = $widget.find('.speech-to-action:visible')
@@ -6600,9 +6647,6 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
                     }
                     return;
                 }
-
-                if (action === "FINISH")
-                    return;
 
                 if (action === "START") {
                     mode = NAVIGATION_TABS;
@@ -8813,7 +8857,7 @@ var DragDropTouch;
                 if (paramOrigin && ALLOWED_ORIGIN_PARAMETERS.includes(paramOrigin)) 
                     originQueryParam = "&origin="+paramOrigin;
             }
-            url = parsed.protocol + hostname + parsed.pathname;
+            url = parsed.protocol + "//" + hostname + parsed.pathname;
         }
         current = url === (window.location.origin + window.location.pathname);
 

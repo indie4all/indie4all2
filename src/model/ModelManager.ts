@@ -263,6 +263,12 @@ export default class ModelManager {
         return (value as Function)();
     }
 
+    static getWidgetElement(widget): typeof WidgetElement {
+        const value: any = this.elements[widget];
+        if (WidgetElement.isPrototypeOf(value)) return value;
+    }
+
+
     static async create(widget = "Section", values?: any): Promise<ModelElement> {
         return this.get(widget).create(values);
     }

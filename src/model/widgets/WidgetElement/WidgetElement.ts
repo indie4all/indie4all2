@@ -7,7 +7,7 @@ export default abstract class WidgetElement extends ModelElement {
 
     // Category - Category of the palette to include the widget in. Hidden if not set
     static category: string;
-    protected static icon: string;
+    static icon: string;
 
 
     constructor(values?: any) { super(values); }

@@ -20,8 +20,7 @@ export default {
             title: "Widget 1",
             desc: "El primer widget del banco",
             autor: "Javier",
-            widgetElement: "TextBlock",
-            img: "http://localhost:8000/assets/6a9ed63d28606b03d603.png",
+            widgetElement: "Callout",
             data: JSON.stringify(obj)
         }
         
@@ -36,10 +35,9 @@ export default {
             desc: "El primer widget del banco",
             autor: "Javier",
             widgetElement: "TextBlock",
-            img: "http://localhost:8000/assets/6a9ed63d28606b03d603.png",
             data: JSON.stringify(obj)
         })
 
-        res.send({ data: json });
+        res.send(json);
     }
 }

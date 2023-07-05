@@ -95,7 +95,7 @@ export default class ModelManager {
         // Section element
         [Section.widget]: Section,
         //Bank of Widgets
-        [WidgetBank.widget] : WidgetBank,
+        [WidgetBank.widget]: WidgetBank,
         // Elements
         [WidgetTextBlock.widget]: WidgetTextBlock,
         [WidgetBlockquote.widget]: WidgetBlockquote,
@@ -153,7 +153,7 @@ export default class ModelManager {
         [WidgetTestContainer.widget]: WidgetTestContainer,
         [WidgetGapQuestion.widget]: WidgetGapQuestion,
         [WidgetSimpleQuestion.widget]: WidgetSimpleQuestion,
-        [WidgetMultipleQuestion.widget] : WidgetMultipleQuestion,
+        [WidgetMultipleQuestion.widget]: WidgetMultipleQuestion,
         [WidgetTrueFalseQuestion.widget]: WidgetTrueFalseQuestion
     };
 
@@ -225,7 +225,7 @@ export default class ModelManager {
         return this.rules[widget] ? this.rules[widget]?.refuses : [];
     }
 
-    static addRule(widget: string, { allows, refuses } : {allows?: any[], refuses?: any[]} ) {
+    static addRule(widget: string, { allows, refuses }: { allows?: any[], refuses?: any[] }) {
         if (allows) this.rules[widget].allows = allows;
         if (refuses) this.rules[widget].refuses = refuses;
     }
@@ -238,12 +238,12 @@ export default class ModelManager {
             .map(elem => elem as typeof WidgetElement);
     }
 
-    static getAllWidgetsAllowedIn(widget : string) : typeof WidgetElement[]{
+    static getAllWidgetsAllowedIn(widget: string): typeof WidgetElement[] {
         return Object
             .values(this.elements)
             .map(elem => ModelElement.isPrototypeOf(elem) ? elem : (elem as Function)())
             .filter(elem => WidgetElement.isPrototypeOf(elem))
-            .filter(elem => !this.refused(widget).some(className => className.isPrototypeOf(elem)))
+            .filter(elem => !this.refused(widget) || !this.refused(widget).some(className => className.isPrototypeOf(elem)))
             .filter(elem => this.allowed(widget) && this.allowed(widget).some(className => className.isPrototypeOf(elem)))
 
     }

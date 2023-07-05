@@ -18,25 +18,19 @@ export class WidgetEditorAuthor extends Author {
 
     private sectionParentId;
 
-    static async create(palette: HTMLElement, container: HTMLElement): Promise<Author>{ 
-        
-        const section = await ModelManager.create("Section") as Section;
-        const modelObj = {sections:[ section.toJSON() ]}
-        const model = await Model.create(modelObj);
-        const author = new WidgetEditorAuthor(palette,container,model);
-        const data =         {
-            widget: "TwoColumnsLayout",
-          };
-        author.load(data);
+    static async create(palette: HTMLElement, container: HTMLElement): Promise<Author> {
+
+        const model = await Model.create({});
+        const author = new WidgetEditorAuthor(palette, container, model);
         return author;
     }
 
     private constructor(palette: HTMLElement, container: HTMLElement, model: Model) {
         super();
         this.model = model;
-        this.GUI = GUI.create(this as Author,palette,container, []);
+        this.GUI = GUI.create(this as Author, palette, container, []);
     }
-    
+
     editElement(id: string) {
         if (id != this.sectionParentId) this.GUI.openSettings(id);
     }
@@ -113,11 +107,11 @@ export class WidgetEditorAuthor extends Author {
         return CryptoJS.AES.encrypt(text, key).toString();
     }
 
-    async addSection(modelSection?: Section) {  
-        
+    async addSection(modelSection?: Section) {
+
     }
 
-    addContent(containerId: string, widget: string) { 
+    addContent(containerId: string, widget: string) {
         const self = this;
         const allowed = ModelManager.allowed(widget);
         if (allowed.length === 0)
@@ -146,26 +140,26 @@ export class WidgetEditorAuthor extends Author {
             });
         });
     }
-    
-    copyElement(id: string) {  
-        let parentId = <string>$(`[data-id=${id}]`).parents('[type=container]').first().attr('data-id'); 
+
+    copyElement(id: string) {
+        let parentId = <string>$(`[data-id=${id}]`).parents('[type=container]').first().attr('data-id');
         this.copyModelElement(this.getModelElement(id), parentId);
     }
 
-    copyModelElement(element: ModelElement, parentId : string) {
+    copyModelElement(element: ModelElement, parentId: string) {
         const parent = this.model.findObject(parentId);
-        if(parent instanceof WidgetColumnsLayout){
+        if (parent instanceof WidgetColumnsLayout) {
             const index = parent.data.findIndex((elem) => elem.includes(element));
-            this.addModelElement(element.clone(), parentId,index);
-        } 
-        else  this.addModelElement(element.clone(), parentId);
+            this.addModelElement(element.clone(), parentId, index);
+        }
+        else this.addModelElement(element.clone(), parentId);
     }
 
 
-    getModelElement(id : string) { return this.model.findObject(id); }
+    getModelElement(id: string) { return this.model.findObject(id); }
 
     copySection(id: string) { this.copyModelSection(<Section>this.getModelElement(id)) }
-    
+
     copyModelSection(section: Section) {
         this.addSection(section.clone());
     }
@@ -201,10 +195,10 @@ export class WidgetEditorAuthor extends Author {
             parentContainerId,
             inPositionElementId
         });
-        this.undoredo.pushAndExecuteCommand(action); 
+        this.undoredo.pushAndExecuteCommand(action);
     }
 
-    removeSection(sectionId: string) { 
+    removeSection(sectionId: string) {
     }
 
     exportElement(id: string) {
@@ -222,31 +216,31 @@ export class WidgetEditorAuthor extends Author {
     exportSection(id: string) {
     }
 
-    swap(sectionOriginId: string, direction: number) { 
+    swap(sectionOriginId: string, direction: number) {
         const action = new ActionSwapSections(this.model, {
-        sectionOriginId: sectionOriginId,
-        direction: direction
+            sectionOriginId: sectionOriginId,
+            direction: direction
         });
-        this.undoredo.pushAndExecuteCommand(action); 
+        this.undoredo.pushAndExecuteCommand(action);
     }
 
-    toggleCategory(category: string) { 
+    toggleCategory(category: string) {
         this.GUI.toggleCategory(category);
     }
 
-    async load(dataObject : any, onLoaded?: Function, onError?: Function) {
-        const section = await ModelManager.create("Section", { data : [dataObject] }) as Section;
+    async load(dataObject: any, onLoaded?: Function, onError?: Function) {
+        const section = await ModelManager.create("Section", { data: [dataObject] }) as Section;
         section.bookmark = "WidgetEditorSection";
         ModelManager.get(dataObject.widget).setDeletable(false);
         ModelManager.get(dataObject.widget).setCopyable(false);
-        const modelObj = {sections:[ section.toJSON() ]}
+        const modelObj = { sections: [section.toJSON()] }
         const model = await Model.create(modelObj);
         const widgetsAvailable = ModelManager.getAllWidgetsAllowedByCategory(dataObject.widget);
         const categories = Object.entries(
             widgetsAvailable).map(
                 ([name, widgets]) => new Category(name, widgets));
-        ModelManager.addRule("Section", {  refuses : ModelManager.getAllWidgetsAllowedIn(dataObject.widget)})
-        
+        ModelManager.addRule("Section", { refuses: ModelManager.getAllWidgetsAllowedIn(dataObject.widget) })
+
         this.GUI.renderCategories(categories);
         this.sectionParentId = section.id;
         this.model = model;

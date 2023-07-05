@@ -28,6 +28,7 @@ export default class ActionAddElement extends ActionElement {
         let target: HTMLElement;
         if (parentElement instanceof WidgetColumnsLayout) {
             target = <HTMLElement>parentContainer.querySelector('[data-index="' + this.parentContainerIndex + '"');
+            console.log(target);
             this.model.appendObject(this.element, this.inPositionElementId, this.parentContainerId, this.parentContainerIndex);
         } else {
             target = <HTMLElement>parentContainer.querySelector('[data-content]');

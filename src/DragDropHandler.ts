@@ -10,6 +10,7 @@ import { Model } from './model/Model';
 import WidgetColumnsLayout from './model/widgets/WidgetColumnsLayout/WidgetColumnsLayout';
 import WidgetContainerElement from './model/widgets/WidgetContainerElement/WidgetContainerElement';
 import Section from './model/section/Section';
+import ModelElement from './model/ModelElement';
 
 export default class DragDropHandler {
     private palette: HTMLElement;
@@ -68,8 +69,9 @@ export default class DragDropHandler {
     drop(el: HTMLElement, target: HTMLElement, source: HTMLElement, sibling: HTMLElement) {
         if (!target) return;
         if (this.allowGenerate(source, target)) {
+            if (el.dataset.widget === "Bank") this.openBankModal(el, target, sibling); 
             // Add a new element to the container
-            this.onCreateElement(el, target, sibling);
+            else this.onCreateElement(el, target, sibling);
         } else if (source != target) {
             // Move one element from a container to another
             this.onMoveElementIntoContainer(el, target, sibling);
@@ -158,8 +160,9 @@ export default class DragDropHandler {
         this.model.moveElementFromContainerToAnother(elementId, inPositionElementId, targetParentId, targetContainerIndex);
     }
 
-    async onCreateElement(el: HTMLElement, target: HTMLElement, sibling: HTMLElement) {
-        const widget = await ModelManager.create(el.dataset.widget); // Widget type (TextBlock, Image...etc)
+    async onCreateElement(el: HTMLElement, target: HTMLElement, sibling: HTMLElement, widget?: ModelElement) {
+        if (!widget) widget = await ModelManager.create(el.dataset.widget);
+        //const widget = await ModelManager.create(el.dataset.widget); // Widget type (TextBlock, Image...etc)
         const parentContainerId = $(target).closest('[data-id]')[0].dataset.id;
         const inPositionElementId = sibling ? $(sibling).children('div').first().data('id') : null;
         let parentContainerIndex = -1; // Parent container index (only for layout)
@@ -173,5 +176,56 @@ export default class DragDropHandler {
             element: widget,
             parentContainerIndex, parentContainerId, inPositionElementId
         }));
+    }
+
+    async openBankModal(el: HTMLElement, target: HTMLElement, sibling: HTMLElement) {
+        $(el).hide();
+        const { default: modalTemplate } = await import('./model/widgets/WidgetBank/modal.hbs');
+        let data = await this.connectWithBank();
+        $(this.container).after(modalTemplate(data));
+        $("#modal-bank-widgets").modal({ keyboard: false, focus: true, backdrop: 'static' });
+        const fun = async function( model: Model, button : HTMLElement){
+            const json = $(button).find("input[type=hidden]").val() as string;;
+            const obj = JSON.parse(json);
+            const widget = await ModelManager.create(obj.widget, { data: obj.data });
+            this.onCreateElement(el,target,sibling,widget);
+            $("#modal-bank-widgets").modal('hide');
+        }
+
+        const anotherfunction = fun.bind(this,this.model);
+
+        $(".widget-button").on("click", function() {
+           anotherfunction(this);
+        });
+
+        $('#modal-bank-widgets').on('hidden.bs.modal', function() {
+            // Código para manejar el evento "dismiss" del modal
+            $(target).find(el).remove();
+          });
+
+        $("input[type=search]").on('change', function(){
+            const searchTerm = ($(this).val() as string).toLowerCase(); 
+
+            $('.widget-button h3').each(function() {
+                var text = $(this).text().toLowerCase();
+                if (text.includes(searchTerm)) {
+                  $(this).parent().parent().removeClass("d-none");
+                  $(this).parent().parent().addClass("d-flex");
+                } else {
+                    $(this).parent().parent().removeClass("d-flex");
+                    $(this).parent().parent().addClass("d-none");
+                }
+        })
+    })
+
+    }
+
+    async connectWithBank() : Promise<any> {
+        const res = await fetch("/widgets")
+        .then(res => res.json())
+        .then(res => {
+            return res; 
+        });
+        return res;
     }
 }

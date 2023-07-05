@@ -22,6 +22,8 @@ export default abstract class WidgetColumnsLayout extends WidgetElement {
             icon: constructor.icon,
             columns: constructor.columns,
             canEdit: constructor.editable,
+            canCopy: constructor.copyable,
+            canDelete: constructor.deletable,
             children
         });
     }

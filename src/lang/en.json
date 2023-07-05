@@ -606,7 +606,8 @@
         "items": "items",
         "layouts": "Layouts",
         "question": "Questions",
-        "simpleElements": "Elements"
+        "simpleElements": "Elements",
+        "bankWidgets": "Bank of Widgets"
     },
     "sections": {
         "deleteSection": "Delete section",
@@ -850,6 +851,11 @@
             },
             "label": "Quote",
             "prev": "Quote not yet set ..."
+        },
+        "Bank": {
+            "label": "Bank",
+            "modalTitle" : "Bank of Widgets",
+            "search": "Search"
         },
         "ChooseOption": {
             "form": {

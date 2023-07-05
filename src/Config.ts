@@ -29,6 +29,8 @@ export default class Config {
     private static allowedResourceOrigins: string[] = ["http://localhost:8000", "https://indiemedia.upct.es", "http://indieopen.upct.es", "https://multimediarepository.blob.core.windows.net"];
     // Additional rules to check if a video URL is allowed
     private static additionalVideoResourceRules: ((url: string) => boolean)[] = [];
+    //Enable mode of Widget Editor
+    private static enableWidgetEditor : boolean = false;
 
     public static setOptions(options: ConfigOptions) {
         if (typeof options.enablePWA === 'boolean')
@@ -57,6 +59,15 @@ export default class Config {
             this.setAllowedResourceOrigins(options.allowedResourceOrigins);
         if (Array.isArray(options.additionalVideoResourceRules))
             this.setAdditionalVideoResourceRules(options.additionalVideoResourceRules);
+        if (typeof options.enableWidgetEditor === 'boolean') 
+            this.setWidgetEditorEnabled(options.enableWidgetEditor)
+    }
+    static setWidgetEditorEnabled(value: boolean) {
+        this.enableWidgetEditor = value;
+    }
+
+    static isWidgetEditorEnabled() : boolean {
+        return this.enableWidgetEditor;
     }
 
     public static setPWAEnabled(value: boolean) {

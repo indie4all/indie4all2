@@ -17,6 +17,7 @@ export default abstract class WidgetContainerElement extends WidgetElement {
             label: this.preview(),
             canAdd: constructor.addable,
             canEdit: constructor.editable,
+            canDelete: constructor.deletable,
             canCopy: constructor.copyable,
             children,
             cssClass: Utils.toKebabCase(constructor.name)

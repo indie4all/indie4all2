@@ -8,7 +8,6 @@ import { FormEditData, InputWidgetTabContentData, WidgetTabContentParams } from 
 
 export default class WidgetTabContent extends WidgetContainerElement {
 
-    protected static copyable: boolean = false;
 
     static widget = "TabContent";
     static icon = icon;

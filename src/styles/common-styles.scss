@@ -39,6 +39,21 @@
   padding: 1rem !important;
 }
 
+.footer-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  margin-bottom: 0;
+  padding-inline-start: 0px;
+}
+
+@media (max-width: 800px) {
+  .footer-buttons {
+     flex-direction: column;
+     row-gap: 0.5em;
+   }
+ }
+
 .element-container {
   background-color: $colorElementContainer;
   min-height: 62px;

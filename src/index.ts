@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
-import Api from "./Api"
+//import Api from "./Api"
 import { dom, library } from '@fortawesome/fontawesome-svg-core'
 import {
     faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle,
@@ -11,6 +11,9 @@ import { init as init_events } from './events'
 import I18n from './I18n';
 import { ConfigOptions } from './types';
 import Config from './Config';
+import { WidgetEditorAuthor } from './modes/WidgetEditorAuthor';
+import { IApi } from './IApi';
+import { BasicAuthor } from './modes/BasicAuthor';
 
 const start = async (options?: ConfigOptions) => {
     options && Config.setOptions(options);
@@ -36,7 +39,9 @@ const start = async (options?: ConfigOptions) => {
     const domPalette = document.getElementById('palette');
     const domContainer = document.getElementById('main-container');
     // Initialize the IndieAuthor api
-    const api = await Api.create(domPalette, domContainer);
+    //const api = await Api.create(domPalette, domContainer);
+    //const api : Author = new BasicAuthor(domPalette,domContainer);
+    const api: IApi = Config.isWidgetEditorEnabled() ? await WidgetEditorAuthor.create(domPalette,domContainer) : await BasicAuthor.create(domPalette,domContainer);
     init_events(api);
     return api;
 }

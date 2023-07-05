@@ -2,10 +2,12 @@ import I18n from "../../I18n";
 import ModelElement from "../ModelElement";
 import ModelManager from "../ModelManager";
 import prevTemplate from "./prev.hbs";
+import sectionTemplateEditor  from "./templateWidgetEditor.hbs";
 import sectionTemplate from "./template.hbs";
 import icon from "./icon.png";
 import WidgetElement from "../widgets/WidgetElement/WidgetElement";
 import { FormEditData, InputSectionData } from "../../types";
+import Config from "./../../Config";
 
 export default class Section extends ModelElement {
 
@@ -18,7 +20,7 @@ export default class Section extends ModelElement {
 
     static async create(values?: InputSectionData): Promise<Section> {
         const section = new Section(values);
-        section.data = values.data ? await Promise.all(values.data.map((elem: any) => ModelManager.create(elem.widget, elem))) : [];
+        section.data = values?.data ? await Promise.all(values.data.map((elem: any) => ModelManager.create(elem.widget, elem))) : [];
         return section;
     }
 
@@ -55,12 +57,17 @@ export default class Section extends ModelElement {
     }
 
     createElement(): string {
-        return sectionTemplate({
+        const data = {
             id: this.id,
             name: this.name,
             icon: Section.icon,
             children: this.data ? this.data.map(child => child.createElement()).join('') : ""
-        });
+        };
+
+        if(Config.isWidgetEditorEnabled())
+            return sectionTemplateEditor(data);
+        else
+            return sectionTemplate(data);
     }
 
     getTexts() {

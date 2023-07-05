@@ -28,6 +28,9 @@ export interface ConfigOptions {
     allowedResourceOrigins?: []
     // Additional rules to validate video resources
     additionalVideoResourceRules?: []
+        //Enable mode of Widget Editor
+    enableWidgetEditor : boolean;
+
 }
 
 /** Edit form data **/

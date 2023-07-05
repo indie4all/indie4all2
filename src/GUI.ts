@@ -1,109 +1,57 @@
-/* global $ */
-import Author from "./Author";
-import I18n from "./I18n";
-import { Model } from "./model/Model";
-import ModelManager from './model/ModelManager';
-import Section from "./model/section/Section";
-import UndoRedo from "./Undoredo";
-import Utils from "./Utils";
 import Config from "./Config";
-
+import DragDropHandler from "./DragDropHandler";
+import I18n from "./I18n";
+import Utils from "./Utils";
+import Category from "./category/Category";
+import { Model } from "./model/Model";
+import Author from "./modes/Author";
+import "./styles/common-styles.scss";
+import loadingTemplate from "./views/loading.hbs"
+import settingsTemplate from "./views/modal-settings.hbs"
+import previewGeneratedTemplate from "./views/preview-generated.hbs"
 import netlifyUrlTemplate from "./views/netlify-url.hbs";
 
-export default class Api {
+export default class GUI {
 
+    private static GUI : GUI
     private static ALLOWED_LANGUAGES = ["EN", "ES", "FR", "EL", "LT"];
-    private container: HTMLElement;
-    private i18n: I18n;
-    private author: Author;
-    private undoredo: UndoRedo;
 
-    static async create(palette: HTMLElement, container: HTMLElement): Promise<Api> {
-        const result = new Api(container);
-        result.author = await Author.create(palette, container);
-        return result;
+    private container: HTMLElement;
+    private palette: HTMLElement;
+    private dragDropHandler: DragDropHandler;
+    private  author: Author;
+    private i18n: I18n;
+    private categories : Category[];
+
+    static create(author: Author, palette: HTMLElement, container: HTMLElement, categories : Category[]) : GUI {
+        if (this.GUI) return this.getInstance();
+        else{
+            this.GUI = new GUI(author,palette,container, categories); 
+            return  this.GUI;
+        }
+
     }
 
-    constructor(container: HTMLElement) {
+    static getInstance() : GUI {
+        return this.GUI;
+    }
+
+    private constructor(author: Author, palette: HTMLElement, container: HTMLElement, categories : Category[]) {
+        this.author = author;
         this.container = container;
+        this.palette = palette;
+        this.categories = categories;
         this.i18n = I18n.getInstance();
-        this.undoredo = UndoRedo.getInstance();
+        this.dragDropHandler = new DragDropHandler(palette, container, author.getModel());
+        $(this.palette).append(categories.map(cat => cat.render()).join(''));
+        // Initialize the widgets palette
+        !$('#modal-loading').length && $(this.container).after(loadingTemplate());
+        !$('#modal-settings').length && $(this.container).after(settingsTemplate());
+        !$('#modal-preview-generated').length && $(this.container).after(previewGeneratedTemplate());
         !$('#modal-netlify-generated').length && $(this.container).after(netlifyUrlTemplate());
     }
 
-    /**
-     * Downloads a given file
-     * @param {File} file - Blob with the contents of the compressed unit file
-     */
-    private downloadFile(file: File) {
-        const link = document.createElement('a');
-        const url = URL.createObjectURL(file)
-        link.href = url;
-        link.download = file.name;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        window.URL.revokeObjectURL(url);
-    }
-
-    /**
-     * Event to execute when a model has been published.
-     * Creates a blob with the contents of the compressed unit file and downloads them.
-     * @param {} response 
-     * @returns 
-     */
-    private onPublishModel(response: Response) {
-        const self = this;
-        if (!response.ok) {
-            // Wait until the modal is fully loaded (1 sec)
-            setTimeout(() => self.author.hideLoading(), 1000);
-            Utils.notifyError(this.i18n.value("messages.publishError"));
-            return;
-        }
-
-        return new Promise<void>(resolve => {
-            const type = response.headers.get('content-type') ?? undefined;
-            const filename = response.headers.get('content-disposition')?.split(';')
-                .find((n: string) => n.trim().startsWith('filename='))?.replace('filename=', '')
-                .replaceAll('"', '')
-                .trim() ?? "model.zip";
-
-            response.blob().then((blob: Blob) => {
-                const zip = new File([blob], filename, { type });
-                self.downloadFile(zip);
-                self.author.hideLoading();
-                resolve();
-            });
-        });
-    }
-
-    private async onPublishModelToNetlify(response: Response){
-        const self = this;
-        if (!response.ok) {
-            // Wait until the modal is fully loaded (1 sec)
-            setTimeout(() => self.author.hideLoading(), 1000);
-            Utils.notifyError(this.i18n.value("messages.publishError"));
-            return;
-        }
-
-        // Wait until the modal is fully loaded (1 sec)
-        setTimeout(() => self.author.hideLoading(), 1000);
-        if (!response.ok) {
-            Utils.notifyError(this.i18n.value("messages.previewError"));
-            return;
-        }
-        const json = await response.json();
-        $('#modal-netlify-generated-url').html(json.url);
-        $('#modal-netlify-generated-url').attr('href', json.url);
-        $('#modal-netlify-generated').modal({ backdrop: true });
-    }
-
-    /**
-     * Shows a modal to fill with information about the current unit
-     * @param {string} title - Title of the modal window
-     * @param {Function} onSubmit - Action to perform when the user submits the form
-     */
-    private async openUnitSettings(title: string, onSubmit: Function) {
+     async openUnitSettings(title: string, onSubmit: Function) {
 
         await import("@melloware/coloris/dist/coloris.css");
         const { default: downloadTemplate } = await import("./views/download.hbs");
@@ -113,10 +61,10 @@ export default class Api {
         themes.unshift("Custom");
         $("#modal-settings .btn-submit").off('click'); // Unbind button submit click event 
         const licenses = ["PRIVATE", "BY", "BYSA", "BYND", "BYNC", "BYNCSA", "BYNCND"];
-        const model = this.author.model;
+        const model = this.author.getModel();
         const data = {
             themes,
-            languages: Api.ALLOWED_LANGUAGES,
+            languages: GUI.ALLOWED_LANGUAGES,
             licenses,
             title: model.title ?? '',
             user: model.user ?? '',
@@ -191,7 +139,66 @@ export default class Api {
         });
     }
 
-    private async openTokenNetlifySettings(title: string, onSubmit : Function) {
+    async openSettings(dataElementId: string) {
+
+        const self = this;
+        // 0 Clear older values
+        $('#modal-settings-body').empty(); // clear the body
+        $("#modal-settings .btn-submit").off('click'); // Unbind button submit click event 
+
+        // 1  get model from object
+        const model = this.author.getModel();
+        const modelElem = model.findObject(dataElementId);
+        if (!modelElem) throw new Error('Could not locate the given element id');
+
+        // 2 Populate the modal with the inputs of the widget
+        modelElem.getInputs().then(modalContent => {
+            // 3 Open the modal with values put
+            $('#modal-settings-body').html(modalContent.inputs);
+            $('#modal-settings-tittle').html(modalContent.title);
+            $("#modal-settings").modal({ keyboard: false, focus: true, backdrop: 'static' });
+            // 4 Associate functions to the modal
+            const $form = $("#f-" + dataElementId);
+            $form.append("<input type='submit' class='hide' />");
+            $("#modal-settings-body").prepend('<div class="errors"></div>');
+
+            $form.off('submit').on('submit', async function (e) {
+                e.preventDefault();
+                const formData = Utils.toJSON(this);
+                const errors = model.validateFormElement(modelElem, formData);
+                if (errors.length > 0) {
+                    const { default: alertErrorTemplate } = await import("./views/download.hbs");
+                    $("#modal-settings").animate({ scrollTop: 0 }, "slow");
+                    const errorText = errors.map(error => self.i18n.translate("errors." + error)).join(". ")
+                    $("#modal-settings-body .errors").html(alertErrorTemplate({ errorText }));
+                    return;
+                }
+
+                modelElem.settingsClosed();
+                $("#modal-settings").modal('hide');
+                modelElem.updateModelFromForm(formData);
+                const modelTemplate = document.querySelector('[data-id="' + modelElem.id + '"]');
+                if (modelTemplate) {
+                    modelTemplate.parentNode && $(modelTemplate.parentNode).removeClass('editor-error');
+                    const previewElement = modelTemplate.querySelector('[data-prev]');
+                    if (previewElement) {
+                        previewElement.innerHTML = modelElem.preview();
+                        // Clean errors
+                        self.deleteToolTipError(<HTMLElement>previewElement);
+                    }
+                }
+            });
+
+            $("#modal-settings .btn-submit").on('click', function () {
+                $form.find('input[type="submit"]').trigger('click');
+            });
+
+            // 5 Run when settings are opened
+            modelElem.settingsOpened();
+        });
+    }
+
+   async openTokenNetlifySettings(title: string, onSubmit : Function) {
         const { default: downloadTemplate } = await import("./views/netlify-token.hbs");
         const { default: optionsSitesTemplate} = await import("./views/netlify-sites-options.hbs");
         $("#modal-settings .btn-submit").off('click'); // Unbind button submit click event
@@ -256,6 +263,53 @@ export default class Api {
         });
     }
 
+     showLoading(title?: string, message?: string) {
+        const $modal = $('#modal-loading');
+        $modal.find('#modal-loading-title').html(title ?? this.i18n.value("common.loading.title"));
+        $modal.find('#modal-loading-description').html(message ?? this.i18n.value("common.loading.description"));
+        $modal.modal({ keyboard: false, backdrop: 'static' });
+    }
+
+    hideLoading() { $('#modal-loading').modal('hide'); }
+
+    showErrors(currentErrors : { element: string, keys: string[] }[], newErrors : { element: string, keys: string[]}[]) {
+
+        // Remove previous errors
+        currentErrors
+            .map(error => document.querySelector("[data-id='" + error.element + "']"))
+            .filter(elem => elem !== null)
+            .forEach(elem => {
+                this.deleteToolTipError(elem.querySelector('[data-prev]'));
+                $(elem.parentNode).removeClass('editor-error');
+            });
+
+        // Show new errors
+        newErrors
+            .forEach(error => {
+                const element = document.querySelector("[data-id='" + error.element + "']");
+                if (element) {
+                    element.parentNode && $(element.parentNode).addClass('editor-error');
+                    const preview = <HTMLElement>element.querySelector('[data-prev]');
+                    if (preview) {
+                        const title = error.keys
+                            .map(key => this.i18n.value("errors." + key))
+                            .join(" ");
+                        this.creatToolTipError(title, preview);
+                    }
+                }
+            });
+
+            if (this.author.getModel().sections.length == 0) {
+                if (print) Utils.notifyError(this.i18n.value("messages.emptyContent"));
+                return false;
+            }
+            if (newErrors.length > 0) {
+                if (print) Utils.notifyError(this.i18n.value("messages.contentErrors"));
+                return false;
+            }
+            if (print) Utils.notifySuccess(this.i18n.value("messages.noErrors"));
+    }
+
     /**
      * Populates a model to a server, optionally showing a modal for requesting additional information
      * @param {string} title - Title of the modal window
@@ -264,7 +318,9 @@ export default class Api {
     populateModel(onSubmit: Function) {
 
         // Check if the model is valid before trying to download
-        if (!this.validate()) {
+        if (!this.author.validateContent()) {
+            const {currentErrors, newErrors} = this.author.getModelErrors();
+            this.showErrors(currentErrors,newErrors);
             console.error(this.i18n.translate("messages.contentErrors"));
             return;
         }
@@ -272,184 +328,23 @@ export default class Api {
         if (Config.isRequestAdditionalDataOnPopulate())
             this.openUnitSettings(this.i18n.value(`common.unit.settings`), onSubmit);
         else
-            onSubmit && onSubmit(this.author.model);
+            onSubmit && onSubmit(this.author.getModel());
     }
 
-
-    /**
-     * Encrypts a text if an encryptionKey is provided
-     * @param {string} text - Text to be encrypted
-     * @returns string - Encrypted text
-     */
-    private async encrypt(text: string): Promise<string> {
-        const encOption = Config.getEncryptionKey();
-        if (encOption === null)
-            return new Promise(resolve => resolve(text));
-
-        const { default: CryptoJS } = await import('crypto-js');
-        const key = typeof encOption === 'function' ? encOption() : encOption;
-        return CryptoJS.AES.encrypt(text, key).toString();
+    deleteToolTipError(previewElement: HTMLElement) {
+        delete previewElement.dataset.title;
+        delete previewElement.dataset['originalTitle'];
+        previewElement.removeEventListener('mouseenter', () => $(previewElement).tooltip('show'));
+        previewElement.removeEventListener('mouseout', () => $(previewElement).tooltip('hide'));
+        $(previewElement).tooltip('dispose');
     }
 
-    /**
-     * Decrypts a text if an encryptionKey is provided
-     * @param {string} text - Text to be decrypted
-     * @returns string - Decrypted text
-     */
-    private async decrypt(encrypted: string): Promise<string> {
-        const encOption = Config.getEncryptionKey();
-        if (encOption === null)
-            return new Promise(resolve => resolve(encrypted));
-
-        const { default: CryptoJS } = await import('crypto-js');
-        const key = typeof encOption === 'function' ? encOption() : encOption;
-        return CryptoJS.AES.decrypt(encrypted, key).toString(CryptoJS.enc.Utf8);
+    creatToolTipError(title: string, previewElement: HTMLElement) {
+        previewElement.dataset.title = title;
+        previewElement.dataset['originalTitle'] = title;
+        previewElement.addEventListener('mouseenter', () => $(previewElement).tooltip('show'));
+        previewElement.addEventListener('mouseleave', () => $(previewElement).tooltip('hide'));
     }
-
-    /**
-     * Adds an empty section
-     */
-    addSection() { this.author.addSection(); }
-
-    /**
-     * Adds an empty model element into a container
-     * @param {string} id - Container ID
-     * @param {string} widget - Type of model element
-     */
-    addContent(id: string, widget: string) { this.author.addContent(id, widget) }
-
-    /**
-     * Duplicates a given model element
-     * @param {string} id - Model Element ID
-     */
-    copyElement(id: string) {
-        let sectionId = <string>$(`[data-id=${id}]`).closest('.section-elements').attr('id')?.split('-').at(-1);
-        this.author.copyModelElement(this.author.getModelElement(id), sectionId);
-    }
-
-    /**
-     * Duplicates a given section
-     * @param {string} id - SectionID
-     */
-    copySection(id: string) {
-        this.author.copyModelSection(<Section>this.author.getModelElement(id));
-    }
-
-    /**
-     * Loads a model element from LocalStorage into a given section
-     * @param {string} id - Section ID
-     */
-    async importElement(id: string) {
-        try {
-            const encrypted: string | null = localStorage.getItem('copied-element');
-            if (!encrypted) {
-                localStorage.removeItem('copied-element');
-                Utils.notifyWarning(this.i18n.value("messages.noElement"));
-                return;
-            }
-
-            const decrypted = await this.decrypt(encrypted);
-            const elementJSON = JSON.parse(decrypted);
-            const modelElement = await ModelManager.create(elementJSON.widget, elementJSON);
-            this.author.copyModelElement(modelElement, id);
-            Utils.notifySuccess(this.i18n.value("messages.importedElement"));
-
-        } catch (err) {
-            localStorage.removeItem('copied-element');
-            Utils.notifyWarning(this.i18n.value("messages.noElement"));
-        }
-    }
-
-    /**
-     * Loads a given section from LocalStorage
-     */
-    async importSection() {
-        try {
-            const encrypted: string | null = localStorage.getItem('copied-section');
-            if (!encrypted) {
-                localStorage.removeItem('copied-section');
-                Utils.notifyWarning(this.i18n.value("messages.noSection"));
-                return;
-            }
-            const decrypted = await this.decrypt(encrypted);
-            const sectionJSON = JSON.parse(decrypted);
-            const sectionElement = await ModelManager.create(sectionJSON.widget, sectionJSON);
-            this.author.copyModelSection(<Section>sectionElement);
-            Utils.notifySuccess(this.i18n.value("messages.importedSection"));
-        } catch (err) {
-            localStorage.removeItem('copied-section');
-            Utils.notifyWarning(this.i18n.value("messages.noSection"));
-        }
-    }
-
-    /**
-     * Removes a given model element
-     * @param {string} id - Model element ID
-     */
-    removeElement(id: string) { this.author.removeElement(id); }
-
-    /**
-     * Removes a given section
-     * @param {String} id - Section ID
-     */
-    removeSection(id: string) { this.author.removeSection(id); }
-
-    /**
-     * Opens a modal to edit the given element fields
-     * @param {string} id - Model element ID
-     */
-    editElement(id: string) { this.author.openSettings(id); }
-
-    /**
-     * Stores the given model element encrypted in LocalStorage using the user's cookie
-     * @param {string} id - Model element ID 
-     */
-    exportElement(id: string) {
-        try {
-            const original = this.author.getModelElement(id);
-            this.encrypt(JSON.stringify(original)).then(encrypted => {
-                localStorage.setItem('copied-element', encrypted);
-                Utils.notifySuccess(this.i18n.value("messages.exportedElement"));
-            });
-        } catch (err) {
-            Utils.notifyWarning(this.i18n.value("messages.couldNotExportElement"));
-        }
-    }
-
-    /**
-     * Stores the given section encrypted in LocalStorage using the user's cookie
-     * @param {string} id - Section ID
-     */
-    exportSection(id: string) {
-        try {
-            const original = this.author.getModelElement(id);
-            this.encrypt(JSON.stringify(original)).then(encrypted => {
-                localStorage.setItem('copied-section', encrypted);
-                Utils.notifySuccess(this.i18n.value("messages.exportedSection"));
-            });
-        } catch (err) {
-            Utils.notifyWarning(this.i18n.value("messages.couldNotExportSection"));
-        }
-    }
-
-    /**
-     * Moves a given section up or down
-     * @param {string} id - Section ID
-     * @param {0,1} direction - Down (0) or Up (1)
-     */
-    swap(id: string, direction: number) { this.author.swap(id, direction); }
-
-    /**
-     * Expands/Collapses the given category
-     * @param {string} category - Category ID
-     */
-    toggleCategory(category: string) { this.author.toggleCategory(category); }
-
-    /**
-     * Validates the current state of the model and shows its errors
-     * @returns True if the model is valid, false otherwise
-     */
-    validate() { return this.author.validateContent(true); }
 
     /**
      * Clears the content of the editor
@@ -484,15 +379,6 @@ export default class Api {
         });
     }
 
-    /**
-     * Undoes an action
-     */
-    undo() { this.undoredo.undo(); }
-
-    /**
-     * Repeats a previously undone action
-     */
-    redo() { this.undoredo.redo(); }
 
     /**
      * Loads a model into the application
@@ -500,21 +386,22 @@ export default class Api {
      * @param {Function} onLoaded - Event to trigger when the model has been loaded
      * @param {Function} onError - Event to trigger when there has been an error
      */
-    load(model: object, onLoaded?: Function, onError?: Function) {
+    load( onLoaded?: Function, onError?: Function) {
         const self = this;
-        self.author.showLoading();
+        this.showLoading();
         $(self.container).hide(1000, async function () {
             try {
                 $(self.container).empty();
-                await self.author.loadModelIntoPlugin(model);
+                self.dragDropHandler.setModel(self.author.getModel());
+                $(self.container).append(self.author.getModel().sections.map(section => section.createElement()).join(''));
                 $(self.container).show(1000, () => {
-                    self.author.hideLoading();
+                    self.hideLoading();
                     onLoaded && onLoaded();
                 });
             } catch (err) {
                 console.error(err);
                 $(self.container).empty();
-                setTimeout(() => self.author.hideLoading(), 1000);
+                setTimeout(() => self.hideLoading(), 1000);
                 self.author.resetModel();
                 Utils.notifyError(self.i18n.value("messages.loadError"));
                 onError && onError(err);
@@ -522,18 +409,15 @@ export default class Api {
         });
     }
 
-    /**
-     * Stores the model in the server
-     */
     save() {
         const self = this;
         const onSubmit = (model: Model) => {
             const title = this.i18n.value("common.save.title");
             const description = this.i18n.value("common.save.description");
-            self.author.showLoading(title, description);
+            self.showLoading(title, description);
             const onGenerated = async (response: Response) => {
                 // Wait until the modal is fully loaded (1 sec)
-                setTimeout(() => self.author.hideLoading(), 1000);
+                setTimeout(() => self.hideLoading(), 1000);
                 if (!response.ok) {
                     Utils.notifyError(this.i18n.value("messages.saveError"));
                     return;
@@ -553,15 +437,33 @@ export default class Api {
                 .then(onGenerated)
                 .catch(error => {
                     console.log('error', error);
-                    self.author.hideLoading();
+                    self.hideLoading();
                 });
         };
         this.populateModel(onSubmit);
     }
 
-    /**
-     * Downloads the current model in XText format
-     */
+    scorm() {
+        const self = this;
+        const onSubmit = (model: Model) => {
+            const title = this.i18n.value("common.scorm.title");
+            const description = this.i18n.value("common.scorm.description");
+            self.showLoading(title, description);
+            // Download the generated files
+            const headers = new Headers();
+            headers.append("Content-Type", "application/json");
+            headers.append("Accept", "application/json, application/octet-stream");
+            const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
+            fetch(Config.getScormBackendURL(), requestOptions)
+                .then(self.onPublishModel.bind(self))
+                .catch(error => {
+                    console.log('error', error);
+                    self.hideLoading();
+                });
+        }
+        this.populateModel(onSubmit);
+    }
+
     download() {
         const self = this;
         const onSubmit = (model: Model) => {
@@ -571,18 +473,126 @@ export default class Api {
         this.populateModel(onSubmit);
     }
 
-    /**
-     * Redirects the user to a previously generated unit
-     */
+    private downloadFile(file: File) {
+        const link = document.createElement('a');
+        const url = URL.createObjectURL(file)
+        link.href = url;
+        link.download = file.name;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+    }
+
+    publish() {
+        const self = this;
+        const onSubmit = (model: Model) => {
+            const title = this.i18n.value("common.publish.title");
+            const description = this.i18n.value("common.publish.description");
+            self.showLoading(title, description);
+            // Download the generated files
+            const headers = new Headers();
+            headers.append("Content-Type", "application/json");
+            headers.append("Accept", "application/json, application/octet-stream");
+            const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
+            fetch(Config.getPublishBackendURL(), requestOptions)
+                .then(self.onPublishModel.bind(self))
+                .catch(error => {
+                    console.log('error', error);
+                    self.hideLoading();
+                });
+        }
+        this.populateModel(onSubmit);
+    }
+
+    private onPublishModel(response: Response) {
+        const self = this;
+        if (!response.ok) {
+            // Wait until the modal is fully loaded (1 sec)
+            setTimeout(() => self.hideLoading(), 1000);
+            Utils.notifyError(this.i18n.value("messages.publishError"));
+            return;
+        }
+
+        return new Promise<void>(resolve => {
+            const type = response.headers.get('content-type') ?? undefined;
+            const filename = response.headers.get('content-disposition')?.split(';')
+                .find((n: string) => n.trim().startsWith('filename='))?.replace('filename=', '')
+                .replaceAll('"', '')
+                .trim() ?? "model.zip";
+
+            response.blob().then((blob: Blob) => {
+                const zip = new File([blob], filename, { type });
+                self.downloadFile(zip);
+                self.hideLoading();
+                resolve();
+            });
+        });
+    }
+
+    publishToNetlify() {
+        const self = this;
+
+        const onSubmitSettings = (token: string, site_id: string, site_url : string, model: Model) => {
+            const title = this.i18n.value("common.publishToNetlify.title");
+            const description = this.i18n.value("common.publishToNetlify.description");
+            self.showLoading(title, description);            
+            // Download the generated files
+            const headers = new Headers();
+            headers.append("Content-Type", "application/json");
+            headers.append("Accept", "application/json");
+
+            const requestOptions = { method: 'POST', body: JSON.stringify({token, site_id, site_url, model}), headers };
+            fetch(Config.getPublishToNetlifyBackendURL(), requestOptions)
+                .then(self.onPublishModelToNetlify.bind(self))
+                .catch(error => {
+                    console.log('error', error);
+                    self.hideLoading();
+                });
+        }
+     // Check if the model is valid before trying to download
+        if (!this.author.validateContent()) {
+            console.error(this.i18n.translate("messages.contentErrors"));
+            return;
+        }
+         if (Config.isRequestAdditionalDataOnPopulate()) {
+            const onSubmitToken = (token: string, site_id: string, site_url: string) => {
+                this.openUnitSettings(this.i18n.value(`common.unit.settings`), onSubmitSettings.bind(this,token, site_id, site_url));
+            };
+            this.openTokenNetlifySettings(this.i18n.value(`netlify.config.title`), onSubmitToken);
+        }
+    }
+
+    private async onPublishModelToNetlify(response: Response){
+        const self = this;
+        if (!response.ok) {
+            // Wait until the modal is fully loaded (1 sec)
+            setTimeout(() => self.hideLoading(), 1000);
+            Utils.notifyError(this.i18n.value("messages.publishError"));
+            return;
+        }
+
+        // Wait until the modal is fully loaded (1 sec)
+        setTimeout(() => self.hideLoading(), 1000);
+        if (!response.ok) {
+            Utils.notifyError(this.i18n.value("messages.previewError"));
+            return;
+        }
+        const json = await response.json();
+        $('#modal-netlify-generated-url').html(json.url);
+        $('#modal-netlify-generated-url').attr('href', json.url);
+        $('#modal-netlify-generated').modal({ backdrop: true });
+    }
+
     preview() {
         const self = this;
         const onSubmit = (model: Model) => {
             const title = this.i18n.value("common.preview.title");
             const description = this.i18n.value("common.preview.description");
-            self.author.showLoading(title, description);
+            self.showLoading(title, description);
             const onGenerated = async (response: Response) => {
                 // Wait until the modal is fully loaded (1 sec)
-                setTimeout(() => self.author.hideLoading(), 1000);
+                setTimeout(() => self.hideLoading(), 1000);
                 if (!response.ok) {
                     Utils.notifyError(this.i18n.value("messages.previewError"));
                     return;
@@ -602,105 +612,18 @@ export default class Api {
                 .then(onGenerated)
                 .catch(error => {
                     console.log('error', error);
-                    self.author.hideLoading();
+                    self.hideLoading();
                 });
         }
         self.populateModel(onSubmit);
     }
 
-    /**
-     * Generates a zip file in SCORM format
-     */
-    scorm() {
-        const self = this;
-        const onSubmit = (model: Model) => {
-            const title = this.i18n.value("common.scorm.title");
-            const description = this.i18n.value("common.scorm.description");
-            self.author.showLoading(title, description);
-            // Download the generated files
-            const headers = new Headers();
-            headers.append("Content-Type", "application/json");
-            headers.append("Accept", "application/json, application/octet-stream");
-            const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
-            fetch(Config.getScormBackendURL(), requestOptions)
-                .then(self.onPublishModel.bind(self))
-                .catch(error => {
-                    console.log('error', error);
-                    self.author.hideLoading();
-                });
-        }
-        this.populateModel(onSubmit);
-    }
-
-    /**
-     * Generates a zip file with the content of the unit
-     */
-    publish() {
-        const self = this;
-        const onSubmit = (model: Model) => {
-            const title = this.i18n.value("common.publish.title");
-            const description = this.i18n.value("common.publish.description");
-            self.author.showLoading(title, description);
-            // Download the generated files
-            const headers = new Headers();
-            headers.append("Content-Type", "application/json");
-            headers.append("Accept", "application/json, application/octet-stream");
-            const requestOptions = { method: 'POST', body: JSON.stringify(model), headers };
-            fetch(Config.getPublishBackendURL(), requestOptions)
-                .then(self.onPublishModel.bind(self))
-                .catch(error => {
-                    console.log('error', error);
-                    self.author.hideLoading();
-                });
-        }
-        this.populateModel(onSubmit);
-    }
-
-    publishToNetlify() {
-        const self = this;
-
-        const onSubmitSettings = (token: string, site_id: string, site_url : string, model: Model) => {
-            const title = this.i18n.value("common.publishToNetlify.title");
-            const description = this.i18n.value("common.publishToNetlify.description");
-            self.author.showLoading(title, description);            
-            // Download the generated files
-            const headers = new Headers();
-            headers.append("Content-Type", "application/json");
-            headers.append("Accept", "application/json");
-
-            const requestOptions = { method: 'POST', body: JSON.stringify({token, site_id, site_url, model}), headers };
-            fetch(Config.getPublishToNetlifyBackendURL(), requestOptions)
-                .then(self.onPublishModelToNetlify.bind(self))
-                .catch(error => {
-                    console.log('error', error);
-                    self.author.hideLoading();
-                });
-        }
-     // Check if the model is valid before trying to download
-        if (!this.validate()) {
-            console.error(this.i18n.translate("messages.contentErrors"));
-            return;
-        }
-         if (Config.isRequestAdditionalDataOnPopulate()) {
-            const onSubmitToken = (token: string, site_id: string, site_url: string) => {
-                this.openUnitSettings(this.i18n.value(`common.unit.settings`), onSubmitSettings.bind(this,token, site_id, site_url));
-            };
-            this.openTokenNetlifySettings(this.i18n.value(`netlify.config.title`), onSubmitToken);
-        }
-    }
-
-    async translate() {
+    async translate(model : Model) {
         // Check if the model is valid before trying to download
-        if (!this.validate()) {
-            console.error(this.i18n.translate("messages.contentErrors"));
-            return;
-        }
-
         const api = this;
         const { default: chooseLanguageTemplate } = await import("./views/translate.hbs");
-        const model = this.author.model;
         const data = {
-            languages: Api.ALLOWED_LANGUAGES,
+            languages: GUI.ALLOWED_LANGUAGES,
             language: model.language?.toUpperCase() ?? '',
         };
         // Create the form
@@ -716,17 +639,18 @@ export default class Api {
             const tgtLang = tgtInput.value;
             e.preventDefault();
             $("#modal-settings").modal('hide');                    // Hide the modal
-            api.author.showLoading();                              // Show loading modal
+            api.showLoading();                              // Show loading modal
             try {
                 const translated = await I18n.getInstance().translateOnDemand(JSON.stringify(model.getTexts()), srcLang ?? "EN", tgtLang);
                 model.updateTexts(translated);
                 // Update the language of the model
                 model.language = tgtLang;           // Overwrite indieauthor.model with the specified data
-                api.load(model.toJSON());           // Reload the model
+                api.author.load(model.toJSON());
+                           // Reload the model
             } catch (error) {
                 console.error(error);
                 Utils.notifyError(error.message);
-                setTimeout(() => api.author.hideLoading(), 1000);
+                setTimeout(() => api.hideLoading(), 1000);
             }
         });
 
@@ -734,4 +658,20 @@ export default class Api {
             $("#modal-settings input[type='submit']").trigger('click');
         });
     }
+
+    getContainer() : HTMLElement {
+        return this.container;
+    }
+
+    renderCategories(categories : Category[]) {
+        this.categories = categories;
+        $(this.palette).append(categories.map(cat => cat.render()).join(''));
+    }
+
+    toggleCategory(category: string) { 
+        const cat = this.categories.find(cat => cat.name === category);
+        cat && cat.toggle(); 
+    }
+    
+
 }

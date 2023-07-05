@@ -8,9 +8,9 @@ import config from "config";
 import modelRouter from "./routes/model";
 import resourceRouter from "./routes/resource";
 import translationRouter from "./routes/translation";
+import widgetRouter from "./routes/widget";
 import cleanPreviewsCron from "./cron/cleanPreviews";
 import { AnalyticsService } from './services/analytics/AnalyticsService';
-import { MemoryStore } from 'express-session';
 const logger = JetLogger(LoggerModes.Console);
 const app = express();
 require('dotenv').config();
@@ -65,6 +65,7 @@ app.post('/exit', (req, res) => {
 app.use("/model", modelRouter);
 app.use("/resource", resourceRouter);
 app.use("/translation", translationRouter);
+app.use("/widgets", widgetRouter);
 
 app.listen(config.get("server.port"), function () {
     logger.imp("---------------");

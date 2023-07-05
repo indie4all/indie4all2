@@ -185,18 +185,19 @@ export default class DragDropHandler {
         data.map( elem => elem["img"] =  ModelManager.getWidgetElement(elem.widgetElement).icon);
         $(this.container).after(modalTemplate({ data: data}));
         $("#modal-bank-widgets").modal({ keyboard: false, focus: true, backdrop: 'static' });
-        const fun = async function( model: Model, button : HTMLElement){
+        
+        const aggregateWidget = async function( model: Model, button : HTMLElement){
             const json = $(button).find("input[type=hidden]").val() as string;;
             const obj = JSON.parse(json);
-            const widget = await ModelManager.create(obj.widget, { data: obj });
+            const widget = await ModelManager.create(obj.widget, { data: obj.data });
             this.onCreateElement(el,target,sibling,widget);
             $("#modal-bank-widgets").modal('hide');
         }
 
-        const anotherfunction = fun.bind(this,this.model);
+        const onClick = aggregateWidget.bind(this,this.model);
 
         $(".widget-button").on("click", function() {
-           anotherfunction(this);
+            onClick(this);
         });
 
         $('#modal-bank-widgets').on('hidden.bs.modal', function() {

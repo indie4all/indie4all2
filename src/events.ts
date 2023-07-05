@@ -1,8 +1,9 @@
 /* global $ */
-import Api from './Api';
 import I18n from './I18n';
+import { IApi } from './IApi';
+import Author from './modes/Author';
 
-export function init(api: Api) {
+export function init(api: IApi) {
     const i18n = I18n.getInstance();
     // Bind interface action events
     $('#upload-model').on('click', function () {
@@ -43,7 +44,7 @@ export function init(api: Api) {
     $('.author-scorm').find('.btn-text').text(i18n.value('header.scorm'));
     $('.author-preview').on('click', () => api.preview()).data('title', i18n.value('header.preview'));
     $('.author-preview').find('.btn-text').text(i18n.value('header.preview'));
-    $('.author-validate').on('click', () => api.validate()).data('title', i18n.value('header.validate'));
+    $('.author-validate').on('click', () => api.validateContent()).data('title', i18n.value('header.validate'));
     $('.author-validate').find('.btn-text').text(i18n.value('header.validate'));
     $('.author-save').on('click', () => api.save()).data('title', i18n.value('header.save'));
     $('.author-save').find('.btn-text').text(i18n.value('header.save'));
@@ -139,7 +140,7 @@ export function init(api: Api) {
         });
     });
 
-    $('#editor-footer .alert')[0].innerHTML = i18n.value('footer.content');
+    //$('#editor-footer .alert')[0].innerHTML = i18n.value('footer.content');
 
     // Needed in order to hide after click in delete button
     $("#main-container").on('click', ".btn", function () {

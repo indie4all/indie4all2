@@ -218,7 +218,16 @@ export default class ModelManager {
     }
 
     static allowed(widget: string): any[] {
-        return this.rules[widget].allows;
+        return this.rules[widget] ? this.rules[widget]?.allows : [];
+    }
+
+    static refused(widget: string): any[] {
+        return this.rules[widget] ? this.rules[widget]?.refuses : [];
+    }
+
+    static addRule(widget: string, { allows, refuses } : {allows?: any[], refuses?: any[]} ) {
+        if (allows) this.rules[widget].allows = allows;
+        if (refuses) this.rules[widget].refuses = refuses;
     }
 
     static getAllWidgets(): typeof WidgetElement[] {
@@ -229,8 +238,22 @@ export default class ModelManager {
             .map(elem => elem as typeof WidgetElement);
     }
 
+    static getAllWidgetsAllowedIn(widget : string) : typeof WidgetElement[]{
+        return Object
+            .values(this.elements)
+            .map(elem => ModelElement.isPrototypeOf(elem) ? elem : (elem as Function)())
+            .filter(elem => WidgetElement.isPrototypeOf(elem))
+            .filter(elem => !this.refused(widget).some(className => className.isPrototypeOf(elem)))
+            .filter(elem => this.allowed(widget) && this.allowed(widget).some(className => className.isPrototypeOf(elem)))
+
+    }
+
     static getAllWidgetsByCategory() {
         return Utils.groupBy({ collection: this.getAllWidgets().filter(widget => widget.category), key: "category" });
+    }
+
+    static getAllWidgetsAllowedByCategory(widget: string) {
+        return Utils.groupBy({ collection: this.getAllWidgetsAllowedIn(widget).filter(widget => widget.category), key: "category" });
     }
 
     static get(widget = "Section"): typeof ModelElement {

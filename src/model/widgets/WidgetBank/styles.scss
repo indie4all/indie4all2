@@ -1,6 +1,11 @@
 #modal-bank-widgets {
     .widget-button {
         border-radius: 15px;
+        display: flex;
+    
+        @media screen and (max-width: 575px) {
+           display: block;
+        }
     } 
     .panel-bank-widgets {
         max-height: 500px;

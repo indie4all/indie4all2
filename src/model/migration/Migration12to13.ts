@@ -1,6 +1,6 @@
 import Utils from "../../Utils";
 import I18n from "../../I18n";
-import { WidgetCalloutParams, colorThemes } from "../../types";
+import { WidgetCalloutParams} from "../../types";
 
 export default class Migration11to12 {
 

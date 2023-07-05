@@ -32,7 +32,7 @@ export default class Migrator {
 
     // Get the latest version
     static CURRENT_MODEL_VERSION = Math.max(...Object.keys(this.VERSION_MIGRATIONS).map(v => parseInt(v)));
-
+    
     static migrate(model: any) {
 
         // Transform evaluation units into content units

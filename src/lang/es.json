@@ -262,15 +262,15 @@
                 "empty": "El modal está vacío. Debe agregar al menos un elemento simple."
             },
             "text": {
-                "invalid": "El texto esta vacio. Debes escribir un pequeño texto."
+                "invalid": "El texto esta vacío. Debes escribir un pequeño texto."
             }
         },
         "Callout": {
             "data": {
-                "empty": "El callout está vacío. Debe agregar al menos un elemento simple."
+                "empty": "La ventana destacada está vacía. Debe agregar al menos un elemento simple."
             },
             "text": {
-                "invalid": "El texto esta vacio. Debes escribir un pequeño texto."
+                "invalid": "El texto esta vacío. Debes escribir un pequeño texto."
             }
         },
         "Puzzle": {
@@ -890,29 +890,29 @@
             }
         },
         "Callout": {
-            "label": "Callout",
+            "label": "Destacado",
             "form" : {
                 "textTitle": "Título",
-                "colorTheme" : "Color del Callout",
+                "colorTheme" : "Color",
                 "styles": {
                     "animation": "Estilo de animación",
                     "simple": "Simple",
                     "collapsible": "Plegable",
-                    "label": "Estilo del Callout",
+                    "label": "Estilo",
                     "more": "Saber más",
                     "note": "Nota",
                     "attention": "Atención",
                     "danger": "Peligro"
                 },
                 "helps" : {
-                    "textTitle" : "Este será el texto que aparecerá como título del Callout. Si no se rellena tomará un valor por defecto.",
+                    "textTitle" : "Este será el texto que aparecerá como título. <strong>Si no se rellena tomará un valor por defecto.</strong>",
                     "styles": "Determina uno de los estilos predifinidos para la caja con los elementos embebidos.",
                     "animation" : "Determina una de las animaciones predefinidas para la caja con los elementos embebidos (simple o plegable).",
-                    "colorTheme" : "Formato hexadecimal #FFFFFF requerido. Si no se rellena tomará el valor por defecto el color de la unidad."
+                    "colorTheme" : "Formato hexadecimal #FFFFFF requerido.<strong> Si no se rellena tomará el valor por defecto el color del tema de la unidad.</strong>"
                 },
                 "placeholder" : {
-                    "textTitle" : "Introduce aquí el título del Callout",
-                    "colorTheme" : "Introduce aquí el color del Callout"
+                    "textTitle" : "Introduce aquí el título",
+                    "colorTheme" : "Introduce aquí el color"
                 }
             }
         },

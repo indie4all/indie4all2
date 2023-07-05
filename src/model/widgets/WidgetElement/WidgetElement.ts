@@ -9,6 +9,7 @@ export default abstract class WidgetElement extends ModelElement {
     static category: string;
     protected static icon: string;
 
+
     constructor(values?: any) { super(values); }
 
     static createPaletteItem() {

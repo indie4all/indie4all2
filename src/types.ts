@@ -28,6 +28,9 @@ export interface ConfigOptions {
     allowedResourceOrigins?: []
     // Additional rules to validate video resources
     additionalVideoResourceRules?: []
+        //Enable mode of Widget Editor
+    enableWidgetEditor : boolean;
+
 }
 
 /** Edit form data **/
@@ -233,17 +236,12 @@ export interface InputWidgetModalData extends InputWidgetElementData {
     params?: WidgetModalParams
 }
 
-export enum colorThemes {
-    "more" = "#ecf8e8",
-    "note" = "#e9f2fc",
-    "attention" = "#fff1e8",
-    "danger" = "#ffe6eb"
-}
+
 
 export interface WidgetCalloutParams {
     style: string,
     text: string,
-    colorTheme: colorThemes | string,
+    colorTheme: string,
     animation: string
 }
 

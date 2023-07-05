@@ -4,7 +4,7 @@ import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerEle
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetElement from "../WidgetElement/WidgetElement";
-import { FormEditData, InputWidgetCalloutData, WidgetCalloutParams, colorThemes } from "../../../types";
+import { FormEditData, InputWidgetCalloutData, WidgetCalloutParams} from "../../../types";
 
 
 export default class WidgetCallout extends WidgetContainerElement {
@@ -27,7 +27,7 @@ export default class WidgetCallout extends WidgetContainerElement {
         this.params = values?.params ? structuredClone(values.params) : {
             text: this.translate("widgets.Callout.form.styles.more"),
             style: "more",
-            colorTheme: colorThemes.more,
+            colorTheme: "",
             animation: "simple"
         };
     }
@@ -112,7 +112,6 @@ export default class WidgetCallout extends WidgetContainerElement {
         $(`#callout-block-style`).on("change", () => {
            const elem = $(`#callout-block-style option:selected`);
            $(`#textTitle`).val($.trim(elem.text()));
-           $(`#custom-callout-color-picker`).val(colorThemes[elem.val() as string]);
            $(`#custom-callout-color-picker`).trigger('change');
         })
 

@@ -25,6 +25,8 @@ export default class Config {
     private static resourceProxyBackendURL: string = '/resource';
     // Server URL to create a remote resource and get its URL
     private static resourceBackendURL: string = '/resource';
+    // Server URL to get the list of widgets available in the bank of widgets
+    private static bankOfWidgetsURL: string = '/widgets';
     // List of allowed origins for media data
     private static allowedResourceOrigins: string[] = ["http://localhost:8000", "https://indiemedia.upct.es", "http://indieopen.upct.es", "https://multimediarepository.blob.core.windows.net"];
     // Additional rules to check if a video URL is allowed
@@ -57,6 +59,8 @@ export default class Config {
             this.setResourceProxyBackendURL(options.resourceProxyBackendURL);
         if (Array.isArray(options.allowedResourceOrigins))
             this.setAllowedResourceOrigins(options.allowedResourceOrigins);
+        if (typeof options.bankOfWidgetsURL === "string")
+            this.setBankOfWidgetsURL(options.bankOfWidgetsURL);
         if (Array.isArray(options.additionalVideoResourceRules))
             this.setAdditionalVideoResourceRules(options.additionalVideoResourceRules);
         if (typeof options.enableWidgetEditor === 'boolean') 
@@ -104,6 +108,14 @@ export default class Config {
 
     public static setPublishBackendURL(value: string) {
         this.publishBackendURL = value;
+    }
+
+    public static getBankOfWidgetsURL(): string {
+        return this.bankOfWidgetsURL;
+    }
+
+    public static setBankOfWidgetsURL(value: string) {
+        this.bankOfWidgetsURL = value;
     }
 
     public static getPublishBackendURL(): string {

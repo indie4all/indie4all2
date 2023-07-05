@@ -11,6 +11,7 @@ import WidgetColumnsLayout from './model/widgets/WidgetColumnsLayout/WidgetColum
 import WidgetContainerElement from './model/widgets/WidgetContainerElement/WidgetContainerElement';
 import Section from './model/section/Section';
 import ModelElement from './model/ModelElement';
+import Config from './Config';
 
 export default class DragDropHandler {
     private palette: HTMLElement;
@@ -223,7 +224,7 @@ export default class DragDropHandler {
     }
 
     async connectWithBank() : Promise<any> {
-        const res = await fetch("/widgets")
+        const res = await fetch(Config.getBankOfWidgetsURL())
         .then(res => res.json())
         .then(res => {
             return res; 

@@ -24,6 +24,8 @@ export interface ConfigOptions {
     resourceProxyBackendURL?: string
     // Server URL to remotely create a local resource and get its corresponding URL
     resourceBackendURL?: string
+    // Server URL to get the list of widgets available in the bank of widgets
+     bankOfWidgetsURL?: string
     // List of permitted origins for hosting resources
     allowedResourceOrigins?: []
     // Additional rules to validate video resources

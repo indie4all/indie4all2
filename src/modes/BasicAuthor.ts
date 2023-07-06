@@ -15,10 +15,10 @@ import GUI from "./../GUI";
 import Category from "./../category/Category";
 
 export class BasicAuthor extends Author {
-    
+
     static async create(palette: HTMLElement, container: HTMLElement): Promise<Author> {
         const model = await Model.create({});
-        const author = new BasicAuthor(palette,container,model);
+        const author = new BasicAuthor(palette, container, model);
         return author;
     }
 
@@ -28,7 +28,7 @@ export class BasicAuthor extends Author {
         const categories = Object.entries(
             ModelManager.getAllWidgetsByCategory()).map(
                 ([name, widgets]) => new Category(name, widgets));
-        this.GUI = GUI.create(this as Author,palette,container, categories);
+        this.GUI = GUI.create(this as Author, palette, container, categories);
     }
 
     editElement(id: string) {
@@ -56,26 +56,11 @@ export class BasicAuthor extends Author {
         return { currentErrors, newErrors };
     }
 
-    validateContent() {
-
-        let { newErrors } = this.getModelErrors();
-
-        // Paint errors in the view
-        if (this.model.sections.length == 0) {
-            return false;
-        }
-        if (newErrors.length > 0) {
-            return false;
-        }
-
-        return true;
-    }
-
     async addSpecificContent(containerId: string, type: string) {
         this.addModelElement(await ModelManager.create(type), containerId);
     }
 
-    addModelElement(modelElement: ModelElement, parentContainerId: string, parentContainerIndex ?: number) {
+    addModelElement(modelElement: ModelElement, parentContainerId: string, parentContainerIndex?: number) {
         const action = new ActionAddElement(this.model, {
             element: modelElement,
             // Only important for columns, and we cannot add items in columns without dragging
@@ -107,7 +92,7 @@ export class BasicAuthor extends Author {
         return CryptoJS.AES.encrypt(text, key).toString();
     }
 
-    async addSection(modelSection?: Section) {  
+    async addSection(modelSection?: Section) {
         const index = this.model.sections.length + 1;
         const section = modelSection ?? await ModelManager.create("Section", { index });
         const action = new ActionAddSection(this.model, {
@@ -115,10 +100,10 @@ export class BasicAuthor extends Author {
             position: this.model.sections.length,
             container: this.GUI.getContainer()
         });
-        this.undoredo.pushAndExecuteCommand(action); 
+        this.undoredo.pushAndExecuteCommand(action);
     }
 
-    addContent(containerId: string, widget: string) { 
+    addContent(containerId: string, widget: string) {
         const self = this;
         const allowed = ModelManager.allowed(widget);
         if (allowed.length === 0)
@@ -147,26 +132,26 @@ export class BasicAuthor extends Author {
             });
         });
     }
-    
-    copyElement(id: string) {    
-        let parentId = <string>$(`[data-id=${id}]`).parents('[type=container]').first().attr('data-id'); 
+
+    copyElement(id: string) {
+        let parentId = <string>$(`[data-id=${id}]`).parents('[type=container]').first().attr('data-id');
         this.copyModelElement(this.getModelElement(id), parentId);
     }
 
     copyModelElement(element: ModelElement, sectionId: string) {
         const parent = this.model.findObject(sectionId);
-        if(parent instanceof WidgetColumnsLayout){
+        if (parent instanceof WidgetColumnsLayout) {
             const index = parent.data.findIndex((elem) => elem.includes(element));
-            this.addModelElement(element.clone(), sectionId,index);
-        } 
-        else  this.addModelElement(element.clone(), sectionId);
+            this.addModelElement(element.clone(), sectionId, index);
+        }
+        else this.addModelElement(element.clone(), sectionId);
     }
 
 
-    getModelElement(id : string) { return this.model.findObject(id); }
+    getModelElement(id: string) { return this.model.findObject(id); }
 
     copySection(id: string) { this.copyModelSection(<Section>this.getModelElement(id)) }
-    
+
     copyModelSection(section: Section) {
         this.addSection(section.clone());
     }
@@ -211,7 +196,7 @@ export class BasicAuthor extends Author {
         }
     }
 
-    removeElement(id: string) { 
+    removeElement(id: string) {
         var elementToBeRemoved = this.model.findObject(id);
         var parent = this.model.findParentOfObject(id);
         var parentContainerId = parent.id;
@@ -236,10 +221,10 @@ export class BasicAuthor extends Author {
             parentContainerId,
             inPositionElementId
         });
-        this.undoredo.pushAndExecuteCommand(action); 
+        this.undoredo.pushAndExecuteCommand(action);
     }
 
-    removeSection(sectionId: string) { 
+    removeSection(sectionId: string) {
         const action = new ActionRemoveSection(this.model, {
             element: this.model.findObject(sectionId),
             position: Utils.findIndexObjectInArray(this.model.sections, "id", sectionId),
@@ -273,15 +258,15 @@ export class BasicAuthor extends Author {
         }
     }
 
-    swap(sectionOriginId: string, direction: number) { 
+    swap(sectionOriginId: string, direction: number) {
         const action = new ActionSwapSections(this.model, {
-        sectionOriginId: sectionOriginId,
-        direction: direction
+            sectionOriginId: sectionOriginId,
+            direction: direction
         });
-        this.undoredo.pushAndExecuteCommand(action); 
+        this.undoredo.pushAndExecuteCommand(action);
     }
 
-    toggleCategory(category: string) { 
+    toggleCategory(category: string) {
         this.GUI.toggleCategory(category);
     }
 

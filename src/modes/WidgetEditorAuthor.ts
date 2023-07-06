@@ -56,21 +56,6 @@ export class WidgetEditorAuthor extends Author {
         return { currentErrors, newErrors };
     }
 
-    validateContent() {
-
-        let { newErrors } = this.getModelErrors();
-
-        // Paint errors in the view
-        if (this.model.sections.length == 0) {
-            return false;
-        }
-        if (newErrors.length > 0) {
-            return false;
-        }
-
-        return true;
-    }
-
     async addSpecificContent(containerId: string, type: string) {
         this.addModelElement(await ModelManager.create(type), containerId);
     }

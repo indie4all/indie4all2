@@ -13,30 +13,30 @@ import netlifyUrlTemplate from "./views/netlify-url.hbs";
 
 export default class GUI {
 
-    private static GUI : GUI
+    private static GUI: GUI
     private static ALLOWED_LANGUAGES = ["EN", "ES", "FR", "EL", "LT"];
 
     private container: HTMLElement;
     private palette: HTMLElement;
     private dragDropHandler: DragDropHandler;
-    private  author: Author;
+    private author: Author;
     private i18n: I18n;
-    private categories : Category[];
+    private categories: Category[];
 
-    static create(author: Author, palette: HTMLElement, container: HTMLElement, categories : Category[]) : GUI {
+    static create(author: Author, palette: HTMLElement, container: HTMLElement, categories: Category[]): GUI {
         if (this.GUI) return this.getInstance();
-        else{
-            this.GUI = new GUI(author,palette,container, categories); 
-            return  this.GUI;
+        else {
+            this.GUI = new GUI(author, palette, container, categories);
+            return this.GUI;
         }
 
     }
 
-    static getInstance() : GUI {
+    static getInstance(): GUI {
         return this.GUI;
     }
 
-    private constructor(author: Author, palette: HTMLElement, container: HTMLElement, categories : Category[]) {
+    private constructor(author: Author, palette: HTMLElement, container: HTMLElement, categories: Category[]) {
         this.author = author;
         this.container = container;
         this.palette = palette;
@@ -51,7 +51,7 @@ export default class GUI {
         !$('#modal-netlify-generated').length && $(this.container).after(netlifyUrlTemplate());
     }
 
-     async openUnitSettings(title: string, onSubmit: Function) {
+    async openUnitSettings(title: string, onSubmit: Function) {
 
         await import("@melloware/coloris/dist/coloris.css");
         const { default: downloadTemplate } = await import("./views/download.hbs");
@@ -198,9 +198,9 @@ export default class GUI {
         });
     }
 
-   async openTokenNetlifySettings(title: string, onSubmit : Function) {
+    async openTokenNetlifySettings(title: string, onSubmit: Function) {
         const { default: downloadTemplate } = await import("./views/netlify-token.hbs");
-        const { default: optionsSitesTemplate} = await import("./views/netlify-sites-options.hbs");
+        const { default: optionsSitesTemplate } = await import("./views/netlify-sites-options.hbs");
         $("#modal-settings .btn-submit").off('click'); // Unbind button submit click event
         $('#modal-settings-tittle').html(title);
         $('#modal-settings-body').html(downloadTemplate());
@@ -217,53 +217,53 @@ export default class GUI {
         });
         $("#f-netlify-settings").on('submit', function (e) {
             e.preventDefault();
-            $("#modal-settings").modal('hide'); 
-            setTimeout(function() {
-                onSubmit($tokenNetlify.val(), $("#select-sites").val(), $("#select-sites option:selected" ).text());
-            },1000);
+            $("#modal-settings").modal('hide');
+            setTimeout(function () {
+                onSubmit($tokenNetlify.val(), $("#select-sites").val(), $("#select-sites option:selected").text());
+            }, 1000);
         });
 
-        $confirmToken.on('click', function(){
+        $confirmToken.on('click', function () {
             const token = $tokenNetlify.val();
             const urls = [];
             const sites_id = [];
             fetch('https://api.netlify.com/api/v1/sites', {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${token}`
-                        }
-                    })
-                    .then(response => {
-                        if (response.ok) return response.json();
-                        else return Promise.reject(response);
-                    })
-                    .then(response => {
-                        for (let json of response) {
-                            urls.push(json.url);
-                            sites_id.push(json.site_id);
-                        }
-                        const data = {
-                            urls: urls,
-                            ids: sites_id,
-                            incorrectToken: false
-                        }
-                        $("#div-sites").html(optionsSitesTemplate(data))
-                        $("#div-sites").removeClass("d-none");
-                    })
-                    .catch( error => {
-                        const data = {
-                            urls: urls,
-                            ids: sites_id,
-                            incorrectToken: true
-                        }
-                        $("#div-sites").html(optionsSitesTemplate(data))
-                        $("#div-sites").removeClass("d-none");
-                       
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
             })
+                .then(response => {
+                    if (response.ok) return response.json();
+                    else return Promise.reject(response);
+                })
+                .then(response => {
+                    for (let json of response) {
+                        urls.push(json.url);
+                        sites_id.push(json.site_id);
+                    }
+                    const data = {
+                        urls: urls,
+                        ids: sites_id,
+                        incorrectToken: false
+                    }
+                    $("#div-sites").html(optionsSitesTemplate(data))
+                    $("#div-sites").removeClass("d-none");
+                })
+                .catch(error => {
+                    const data = {
+                        urls: urls,
+                        ids: sites_id,
+                        incorrectToken: true
+                    }
+                    $("#div-sites").html(optionsSitesTemplate(data))
+                    $("#div-sites").removeClass("d-none");
+
+                })
         });
     }
 
-     showLoading(title?: string, message?: string) {
+    showLoading(title?: string, message?: string) {
         const $modal = $('#modal-loading');
         $modal.find('#modal-loading-title').html(title ?? this.i18n.value("common.loading.title"));
         $modal.find('#modal-loading-description').html(message ?? this.i18n.value("common.loading.description"));
@@ -272,7 +272,7 @@ export default class GUI {
 
     hideLoading() { $('#modal-loading').modal('hide'); }
 
-    showErrors(currentErrors : { element: string, keys: string[] }[], newErrors : { element: string, keys: string[]}[]) {
+    showErrors(currentErrors: { element: string, keys: string[] }[], newErrors: { element: string, keys: string[] }[]) {
 
         // Remove previous errors
         currentErrors
@@ -298,16 +298,14 @@ export default class GUI {
                     }
                 }
             });
+    }
 
-            if (this.author.getModel().sections.length == 0) {
-                if (print) Utils.notifyError(this.i18n.value("messages.emptyContent"));
-                return false;
-            }
-            if (newErrors.length > 0) {
-                if (print) Utils.notifyError(this.i18n.value("messages.contentErrors"));
-                return false;
-            }
-            if (print) Utils.notifySuccess(this.i18n.value("messages.noErrors"));
+    showGeneralError(key: string) {
+        Utils.notifyError(this.i18n.value(key));
+    }
+
+    showSuccess(key: string) {
+        Utils.notifySuccess(this.i18n.value(key));
     }
 
     /**
@@ -319,8 +317,8 @@ export default class GUI {
 
         // Check if the model is valid before trying to download
         if (!this.author.validateContent()) {
-            const {currentErrors, newErrors} = this.author.getModelErrors();
-            this.showErrors(currentErrors,newErrors);
+            const { currentErrors, newErrors } = this.author.getModelErrors();
+            this.showErrors(currentErrors, newErrors);
             console.error(this.i18n.translate("messages.contentErrors"));
             return;
         }
@@ -386,7 +384,7 @@ export default class GUI {
      * @param {Function} onLoaded - Event to trigger when the model has been loaded
      * @param {Function} onError - Event to trigger when there has been an error
      */
-    load( onLoaded?: Function, onError?: Function) {
+    load(onLoaded?: Function, onError?: Function) {
         const self = this;
         this.showLoading();
         $(self.container).hide(1000, async function () {
@@ -533,16 +531,16 @@ export default class GUI {
     publishToNetlify() {
         const self = this;
 
-        const onSubmitSettings = (token: string, site_id: string, site_url : string, model: Model) => {
+        const onSubmitSettings = (token: string, site_id: string, site_url: string, model: Model) => {
             const title = this.i18n.value("common.publishToNetlify.title");
             const description = this.i18n.value("common.publishToNetlify.description");
-            self.showLoading(title, description);            
+            self.showLoading(title, description);
             // Download the generated files
             const headers = new Headers();
             headers.append("Content-Type", "application/json");
             headers.append("Accept", "application/json");
 
-            const requestOptions = { method: 'POST', body: JSON.stringify({token, site_id, site_url, model}), headers };
+            const requestOptions = { method: 'POST', body: JSON.stringify({ token, site_id, site_url, model }), headers };
             fetch(Config.getPublishToNetlifyBackendURL(), requestOptions)
                 .then(self.onPublishModelToNetlify.bind(self))
                 .catch(error => {
@@ -550,20 +548,20 @@ export default class GUI {
                     self.hideLoading();
                 });
         }
-     // Check if the model is valid before trying to download
+        // Check if the model is valid before trying to download
         if (!this.author.validateContent()) {
             console.error(this.i18n.translate("messages.contentErrors"));
             return;
         }
-         if (Config.isRequestAdditionalDataOnPopulate()) {
+        if (Config.isRequestAdditionalDataOnPopulate()) {
             const onSubmitToken = (token: string, site_id: string, site_url: string) => {
-                this.openUnitSettings(this.i18n.value(`common.unit.settings`), onSubmitSettings.bind(this,token, site_id, site_url));
+                this.openUnitSettings(this.i18n.value(`common.unit.settings`), onSubmitSettings.bind(this, token, site_id, site_url));
             };
             this.openTokenNetlifySettings(this.i18n.value(`netlify.config.title`), onSubmitToken);
         }
     }
 
-    private async onPublishModelToNetlify(response: Response){
+    private async onPublishModelToNetlify(response: Response) {
         const self = this;
         if (!response.ok) {
             // Wait until the modal is fully loaded (1 sec)
@@ -618,7 +616,7 @@ export default class GUI {
         self.populateModel(onSubmit);
     }
 
-    async translate(model : Model) {
+    async translate(model: Model) {
         // Check if the model is valid before trying to download
         const api = this;
         const { default: chooseLanguageTemplate } = await import("./views/translate.hbs");
@@ -646,7 +644,7 @@ export default class GUI {
                 // Update the language of the model
                 model.language = tgtLang;           // Overwrite indieauthor.model with the specified data
                 api.author.load(model.toJSON());
-                           // Reload the model
+                // Reload the model
             } catch (error) {
                 console.error(error);
                 Utils.notifyError(error.message);
@@ -659,19 +657,19 @@ export default class GUI {
         });
     }
 
-    getContainer() : HTMLElement {
+    getContainer(): HTMLElement {
         return this.container;
     }
 
-    renderCategories(categories : Category[]) {
+    renderCategories(categories: Category[]) {
         this.categories = categories;
         $(this.palette).append(categories.map(cat => cat.render()).join(''));
     }
 
-    toggleCategory(category: string) { 
+    toggleCategory(category: string) {
         const cat = this.categories.find(cat => cat.name === category);
-        cat && cat.toggle(); 
+        cat && cat.toggle();
     }
-    
+
 
 }

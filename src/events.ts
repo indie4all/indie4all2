@@ -44,7 +44,7 @@ export function init(api: IApi) {
     $('.author-scorm').find('.btn-text').text(i18n.value('header.scorm'));
     $('.author-preview').on('click', () => api.preview()).data('title', i18n.value('header.preview'));
     $('.author-preview').find('.btn-text').text(i18n.value('header.preview'));
-    $('.author-validate').on('click', () => api.validateContent()).data('title', i18n.value('header.validate'));
+    $('.author-validate').on('click', () => api.validateContent(true)).data('title', i18n.value('header.validate'));
     $('.author-validate').find('.btn-text').text(i18n.value('header.validate'));
     $('.author-save').on('click', () => api.save()).data('title', i18n.value('header.save'));
     $('.author-save').find('.btn-text').text(i18n.value('header.save'));

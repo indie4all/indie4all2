@@ -263,9 +263,11 @@ export default class ModelManager {
         return (value as Function)();
     }
 
-    static getWidgetElement(widget): typeof WidgetElement {
-        const value: any = this.elements[widget];
-        if (WidgetElement.isPrototypeOf(value)) return value;
+    static getWidgetElement(widget: string): typeof WidgetElement {
+        const element = this.get(widget);
+        if (WidgetElement.isPrototypeOf(element))
+            return element as typeof WidgetElement;
+        return null;
     }
 
 

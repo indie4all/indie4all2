@@ -70,7 +70,7 @@ export default class DragDropHandler {
     drop(el: HTMLElement, target: HTMLElement, source: HTMLElement, sibling: HTMLElement) {
         if (!target) return;
         if (this.allowGenerate(source, target)) {
-            if (el.dataset.widget === "Bank") this.openBankModal(el, target, sibling); 
+            if (el.dataset.widget === "Bank") this.openBankModal(el, target, sibling);
             // Add a new element to the container
             else this.onCreateElement(el, target, sibling);
         } else if (source != target) {
@@ -183,52 +183,52 @@ export default class DragDropHandler {
         $(el).hide();
         const { default: modalTemplate } = await import('./model/widgets/WidgetBank/modal.hbs');
         let data = await this.connectWithBank();
-        data.map( elem => elem["img"] =  ModelManager.getWidgetElement(elem.widgetElement).icon);
-        $(this.container).after(modalTemplate({ data: data}));
+        data.map(elem => elem["img"] = ModelManager.getWidgetElement(elem.widgetElement).icon);
+        $(this.container).after(modalTemplate({ data: data }));
         $("#modal-bank-widgets").modal({ keyboard: false, focus: true, backdrop: 'static' });
-        
-        const aggregateWidget = async function( model: Model, button : HTMLElement){
+
+        const aggregateWidget = async function (model: Model, button: HTMLElement) {
             const json = $(button).find("input[type=hidden]").val() as string;;
             const obj = JSON.parse(json);
-            const widget = await ModelManager.create(obj.widget, { data: obj.data });
-            this.onCreateElement(el,target,sibling,widget);
+            const widget = (await ModelManager.create(obj.widget, obj)).clone();
+            this.onCreateElement(el, target, sibling, widget);
             $("#modal-bank-widgets").modal('hide');
         }
 
-        const onClick = aggregateWidget.bind(this,this.model);
+        const onClick = aggregateWidget.bind(this, this.model);
 
-        $(".widget-button").on("click", function() {
+        $(".widget-button").on("click", function () {
             onClick(this);
         });
 
-        $('#modal-bank-widgets').on('hidden.bs.modal', function() {
+        $('#modal-bank-widgets').on('hidden.bs.modal', function () {
             // Código para manejar el evento "dismiss" del modal
             $(target).find(el).remove();
-          });
+        });
 
-        $("input[type=search]").on('change', function(){
-            const searchTerm = ($(this).val() as string).toLowerCase(); 
+        $("input[type=search]").on('change', function () {
+            const searchTerm = ($(this).val() as string).toLowerCase();
 
-            $('.widget-button h3').each(function() {
+            $('.widget-button h3').each(function () {
                 var text = $(this).text().toLowerCase();
                 if (text.includes(searchTerm)) {
-                  $(this).parent().parent().removeClass("d-none");
-                  $(this).parent().parent().addClass("d-flex");
+                    $(this).parent().parent().removeClass("d-none");
+                    $(this).parent().parent().addClass("d-flex");
                 } else {
                     $(this).parent().parent().removeClass("d-flex");
                     $(this).parent().parent().addClass("d-none");
                 }
+            })
         })
-    })
 
     }
 
-    async connectWithBank() : Promise<any> {
+    async connectWithBank(): Promise<any> {
         const res = await fetch(Config.getBankOfWidgetsURL())
-        .then(res => res.json())
-        .then(res => {
-            return res; 
-        });
+            .then(res => res.json())
+            .then(res => {
+                return res;
+            });
         return res;
     }
 }

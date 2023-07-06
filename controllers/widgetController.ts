@@ -13,27 +13,27 @@ export default {
             widget: "TextBlock",
             data: {
                 "text": "<p>eeeeeee</p>"
-                }
+            }
         };
 
         const widget = {
             title: "Widget 1",
             desc: "El primer widget del banco",
-            autor: "Javier",
+            author: "Javier",
             widgetElement: "Callout",
             data: JSON.stringify(obj)
         }
-        
-        const json : Object[] =  []
+
+        const json: Object[] = []
 
         for (let i = 0; i < 100; i++) {
             json.push(widget);
         }
 
-        json.push( {
+        json.push({
             title: "Widget 2",
             desc: "El primer widget del banco",
-            autor: "Javier",
+            author: "Javier",
             widgetElement: "TextBlock",
             data: JSON.stringify(obj)
         })

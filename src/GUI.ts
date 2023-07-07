@@ -643,7 +643,9 @@ export default class GUI {
                 model.updateTexts(translated);
                 // Update the language of the model
                 model.language = tgtLang;           // Overwrite indieauthor.model with the specified data
-                api.author.load(model.toJSON());
+                // TODO: redesign this
+                await api.author.loadModelIntoPlugin(model.toJSON());
+                api.load();
                 // Reload the model
             } catch (error) {
                 console.error(error);

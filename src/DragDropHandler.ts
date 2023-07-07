@@ -224,7 +224,9 @@ export default class DragDropHandler {
     }
 
     async connectWithBank(): Promise<any> {
-        const res = await fetch(Config.getBankOfWidgetsURL())
+        const headers = new Headers();
+        headers.append("Accept", "application/json");
+        const res = await fetch(Config.getBankOfWidgetsURL(), { method: 'GET', headers, redirect: 'follow' })
             .then(res => res.json())
             .then(res => {
                 return res;

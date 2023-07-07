@@ -73,7 +73,7 @@ export default class WidgetRemotePuzzle extends WidgetPuzzle {
 
     validateForm(form: any): string[] {
         const errors = super.validateForm(form);
-        !Utils.isValidResource(this.data.image) && errors.push(WidgetRemotePuzzle + ".image.invalid");
+        !Utils.isValidResource(this.data.image) && errors.push(WidgetRemotePuzzle.widget + ".image.invalid");
         return errors;
     }
 }

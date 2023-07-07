@@ -75,7 +75,7 @@ export default class WidgetRemoteAnimation extends WidgetAnimationDelegate {
 
     validateForm(form: any): string[] {
         const errors = super.validateForm(form);
-        !Utils.isValidResource(this.data.image) && errors.push(WidgetRemoteAnimation + ".image.invalid");
+        !Utils.isValidResource(this.data.image) && errors.push(WidgetRemoteAnimation.widget + ".image.invalid");
         return errors;
     }
 }

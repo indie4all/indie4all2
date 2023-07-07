@@ -64,7 +64,6 @@ export default class WidgetLocalImageAndSoundItem extends WidgetImageAndSoundIte
         const $sectionPreview = $preview.closest('.form-group');
         $iImg.prop('required', !this.data.blob);
         $iAudio.prop('required', !this.data.audioblob);
-        $iCaptions.prop('required', !this.data.captionsblob);
         $sectionPreview.toggleClass('d-none', !this.data.blob);
         $iImg.on('change', function () {
             const self = <HTMLInputElement>this;
@@ -97,10 +96,8 @@ export default class WidgetLocalImageAndSoundItem extends WidgetImageAndSoundIte
         $iCaptions.on('change', function () {
             const self = <HTMLInputElement>this;
             $iCaptionsBlob.val('');
-            $iCaptions.prop('required', true);
             if (self.files) {
                 Utils.encodeBlobAsBase64DataURL(self.files[0]).then(value => {
-                    $iCaptions.prop('required', false);
                     $iCaptionsBlob.val(<string>value);
                 });
             }
@@ -120,7 +117,7 @@ export default class WidgetLocalImageAndSoundItem extends WidgetImageAndSoundIte
             errors.push("common.audioblob.invalid");
         if (!Utils.isValidBase64DataUrl(this.data.blob))
             errors.push("common.imageblob.invalid");
-        if (!Utils.isValidBase64DataUrl(this.data.captionsblob))
+        if (this.data.captionsblob && !Utils.isValidBase64DataUrl(this.data.captionsblob))
             errors.push("common.captionsblob.invalid");
         return errors;
     }
@@ -131,7 +128,7 @@ export default class WidgetLocalImageAndSoundItem extends WidgetImageAndSoundIte
             errors.push("common.audioblob.invalid");
         if (!Utils.isValidBase64DataUrl(form.blob))
             errors.push("common.imageblob.invalid");
-        if (!Utils.isValidBase64DataUrl(form.captionsblob))
+        if (form.captionsblob && !Utils.isValidBase64DataUrl(form.captionsblob))
             errors.push("common.captionsblob.invalid");
         return errors;
     }

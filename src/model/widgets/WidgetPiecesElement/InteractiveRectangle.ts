@@ -139,7 +139,7 @@ export default class InteractiveRectangle {
             case "e-resize": this.w += sX; break;
             case "w-resize": this.x += sX; this.w -= sX; break;
             case "n-resize": this.y += sY; this.h -= sY; break;
-            case "s-resize": this.h += sY; this;
+            case "s-resize": this.h += sY; this; break;
             case "nw-resize": this.x += sX; this.w -= sX; this.y += sY; this.h -= sY; break;
             case "nwse-resize": this.w += sX; this.h += sY; break;
             case "ne-resize": this.w += sX; this.y += sY; this.h -= sY; break;

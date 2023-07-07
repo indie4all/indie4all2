@@ -115,7 +115,7 @@ export default class InteractiveRectangle {
 
     getTopRightCorner(): Path2D {
         const circle = new Path2D();
-        circle.arc(this.getScaledX() + this.getScaledW(), this.getScaledY() + this.getScaledH(), InteractiveRectangle.CORNER_RESIZE_RADIUS, 0, 2 * Math.PI);
+        circle.arc(this.getScaledX() + this.getScaledW(), this.getScaledY(), InteractiveRectangle.CORNER_RESIZE_RADIUS, 0, 2 * Math.PI);
         return circle;
     }
 

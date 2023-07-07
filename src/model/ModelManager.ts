@@ -161,15 +161,15 @@ export default class ModelManager {
         // Section element
         [Section.widget]: { "allows": [WidgetElement], "refuses": [WidgetSpecificItemElement, WidgetAcordionContent, WidgetTabContent] },
         [WidgetTwoColumnsLayout.widget]: {
-            "allows": [WidgetItemElement, WidgetContainerSpecificElement],
+            "allows": [WidgetItemElement, WidgetContainerSpecificElement, WidgetCallout],
             "refuses": [WidgetSpecificItemElement]
         },
         [WidgetThreeColumnsLayout.widget]: {
-            "allows": [WidgetItemElement, WidgetContainerSpecificElement],
+            "allows": [WidgetItemElement, WidgetContainerSpecificElement, WidgetCallout],
             "refuses": [WidgetSpecificItemElement]
         },
         [WidgetFourColumnsLayout.widget]: {
-            "allows": [WidgetItemElement, WidgetContainerSpecificElement],
+            "allows": [WidgetItemElement, WidgetContainerSpecificElement, WidgetCallout],
             "refuses": [WidgetSpecificItemElement]
         },
         [WidgetTabsContainer.widget]: { "allows": [WidgetTabContent] },

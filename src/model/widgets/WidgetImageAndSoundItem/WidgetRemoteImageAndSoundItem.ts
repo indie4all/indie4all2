@@ -75,6 +75,7 @@ export default class WidgetRemoteImageAndSoundItem extends WidgetImageAndSoundIt
     }
 
     updateModelFromForm(form: any): void {
+        super.updateModelFromForm(form);
         this.data.audio = form.audio;
         this.data.captions = form.captions;
         this.data.image = form.image;

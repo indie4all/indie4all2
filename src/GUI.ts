@@ -167,7 +167,7 @@ export default class GUI {
                 const formData = Utils.toJSON(this);
                 const errors = model.validateFormElement(modelElem, formData);
                 if (errors.length > 0) {
-                    const { default: alertErrorTemplate } = await import("./views/download.hbs");
+                    const { default: alertErrorTemplate } = await import("./views/alertError.hbs");
                     $("#modal-settings").animate({ scrollTop: 0 }, "slow");
                     const errorText = errors.map(error => self.i18n.translate("errors." + error)).join(". ")
                     $("#modal-settings-body .errors").html(alertErrorTemplate({ errorText }));

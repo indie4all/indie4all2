@@ -75,5 +75,11 @@ export default class WidgetInteractiveVideo extends WidgetItemElement {
         return keys;
     }
 
+    toJSON(): any {
+        const result = super.toJSON();
+        if (this.params) result["params"] = structuredClone(this.params);
+        if (this.data) result["data"] = structuredClone(this.data);
+        return result;
+    }
 
 }

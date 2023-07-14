@@ -232,11 +232,14 @@ export default class ModelManager {
     }
 
     static getAllWidgets(): typeof WidgetElement[] {
-        return Object
+        let widgets = Object
             .values(this.elements)
             .map(elem => ModelElement.isPrototypeOf(elem) ? elem : (elem as Function)())
             .filter(elem => WidgetElement.isPrototypeOf(elem))
             .map(elem => elem as typeof WidgetElement);
+        if (!Config.getBankOfWidgetsURL())
+            widgets = widgets.filter(elem => elem != WidgetBank);
+        return widgets;
     }
 
     static getAllWidgetsAllowedIn(widget: string): typeof WidgetElement[] {

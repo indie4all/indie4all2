@@ -183,12 +183,12 @@ export default class DragDropHandler {
         $(el).hide();
         const { default: modalTemplate } = await import('./model/widgets/WidgetBank/modal.hbs');
         let data = await this.connectWithBank();
-        data.map(elem => elem["img"] = ModelManager.getWidgetElement(elem.widgetElement).icon);
+        data.map(elem => elem["img"] = ModelManager.getWidgetElement(elem.type).icon);
         $(this.container).after(modalTemplate({ data: data }));
         $("#modal-bank-widgets").modal({ keyboard: false, focus: true, backdrop: 'static' });
 
         const aggregateWidget = async function (model: Model, button: HTMLElement) {
-            const json = $(button).find("input[type=hidden]").val() as string;;
+            const json = $(button).find("input[type=hidden]").val() as string;
             const obj = JSON.parse(json);
             const widget = (await ModelManager.create(obj.widget, obj)).clone();
             this.onCreateElement(el, target, sibling, widget);

@@ -1,6 +1,5 @@
 /* global $ */
 import "./styles.scss";
-import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 import icon from "./icon.png";
 import { FormEditData } from "../../../types";
 import WidgetElement from "../WidgetElement/WidgetElement";
@@ -12,7 +11,7 @@ export default class WidgetBank extends WidgetElement {
     static icon = icon;
 
     static async create(): Promise<WidgetElement> {
-    
+
         return new WidgetBank();
     }
 

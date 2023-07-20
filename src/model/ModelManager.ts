@@ -96,7 +96,7 @@ export default class ModelManager {
         // Section element
         [Section.widget]: Section,
         //Bank of Widgets
-        [WidgetBank.widget]: WidgetBank,
+       [WidgetBank.widget]: WidgetBank,
         // Elements
         [WidgetTextBlock.widget]: WidgetTextBlock,
         [WidgetBlockquote.widget]: WidgetBlockquote,

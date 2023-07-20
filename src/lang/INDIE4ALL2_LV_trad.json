@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Rādīt/paslēpt kategorijas",
+    "viewImage": "Skatīt attēlu"
+  },
+  "common": {
+    "alt": {
+      "help": "Šis ir attēla alternatīvais apraksta teksts pieejamības ziņā",
+      "label": "Attēla alternatīvais teksts",
+      "placeholder": "Alternatīvais teksts"
+    },
+    "captions": {
+      "help": "INDIeMedia faila URL, kas satur dialoga atšifrējumu, skaņas efektus, mūzikas ierakstus un citu audio informāciju par to, kad skatītājs ir nedzirdīgs vai vājdzirdīgs vai ja video/audio ir izslēgts. Subtitri tiek parādīti arī virs videoklipa.",
+      "label": "Subtitri (CC)",
+      "placeholder": "Piemērs: https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "Faila INDIeMedia URL, kurā ir teksta apraksti par videoklipā notiekošo, ja videoklipa daļa nav pieejama, jo skatītājs ir akls un neizmanto ekrānu. Aprakstus nolasa ekrāna nolasītājs vai pārvērš atsevišķā audio celiņā.",
+      "label": "Apraksts",
+      "placeholder": "Piemērs: https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Lejupielādējot disku, lūdzu, uzgaidiet",
+      "title": "Lejupielāde"
+    },
+    "feedback": {
+      "help": "Interpretējiet atgriezenisko saiti, ko students saņems, vai viņš atbildēs pareizi vai nepareizi",
+      "label": "Atsauksmes",
+      "negative": "Negatīva atgriezeniskā saite...",
+      "positive": "Pozitīvas atsauksmes..."
+    },
+    "generate": {
+      "description": "Ģenerējot, lūdzu, pagaidiet",
+      "title": "Radot"
+    },
+    "help": {
+      "button": "Noklusējuma",
+      "help": "Šis teksts parādīsies virs logrīka, lai lietotājs saprastu, kā ar to mijiedarboties. <strong>Ja atstāts tukšs, tiks parādīts noklusējuma teksts.</strong>",
+      "label": "Palīgā",
+      "placeholder": "Noklusējuma palīdzības teksts"
+    },
+    "language": {
+      "EL": "Grieķu",
+      "EN": "Angļu",
+      "ES": "Spāņu",
+      "FR": "Franču",
+      "LT": "Lietuviešu"
+    },
+    "loading": {
+      "description": "Notiek ielāde, lūdzu, uzgaidiet",
+      "title": "Iekraušanas"
+    },
+    "name": {
+      "help": "Tas būs logrīka instances nosaukums mācību analītikai",
+      "label": "Vārds",
+      "placeholder": "Logrīka gadījuma nosaukums"
+    },
+    "navbar": {
+      "options": "Izvēršanas/sakļaušanas opcijas"
+    },
+    "preview": {
+      "description": "Jūsu priekšskatījums tiek ģenerēts, lūdzu, uzgaidiet",
+      "generated": {
+        "description": "Priekšskatījums ir gatavs. Ja pārlūkprogramma nenovirza jūs uz priekšskatījumu, noklikšķiniet uz tālāk norādītās saites.",
+        "title": "Veiksmīgi ģenerēts priekšskatījums"
+      },
+      "title": "Priekšskatījuma ģenerēšana"
+    },
+    "publish": {
+      "description": "Jūsu disks tiek ģenerēts lejupielādei, lūdzu, uzgaidiet",
+      "title": "Izdevējdarbības vienība"
+    },
+    "publishToNetlify": {
+      "description": "Jūsu vienība tiek augšupielādēta vietnē Netlify, lūdzu, uzgaidiet",
+      "title": "Publicēšanas vienība Netlify"
+    },
+    "save": {
+      "description": "Ietaupot, lūdzu, uzgaidiet",
+      "title": "Glābjot"
+    },
+    "scorm": {
+      "description": "Jūsu SCORM pakotne tiek ģenerēta, lūdzu, uzgaidiet",
+      "title": "SCORM paketes ģenerēšana"
+    },
+    "selectType": "Atlasiet tipu no šīm opcijām",
+    "unit": {
+      "settings": "Ievadiet detalizētu informāciju par vienību"
+    }
+  },
+  "dialog": {
+    "translate": "Tulkošanas vienība"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "Akordeons ir tukšs. Jums jāpievieno saturs, izmantojot pievienošanas pogu labajā pusē."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "Konteiners ir tukšs. Konteineram jāpievieno vismaz viens vienums."
+      },
+      "title": {
+        "invalid": "Konteinera nosaukums nav derīgs. Jums tas ir jāizveido."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "Fona attēlam iestatītais URL nav pareizs. Jums ir jānorāda derīgs indieauthor URL."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Ir jāiestata animētā attēla alternatīvais teksts."
+        },
+        "altRec": {
+          "invalid": "Ir jāiestata animācijas apgabala alternatīvais teksts."
+        },
+        "empty": "Animācijai jābūt vismaz vienam animācijas apgabalam.",
+        "h": {
+          "invalid": "Augstumam jābūt iestatītam, un tam jābūt derīgam skaitlim."
+        },
+        "w": {
+          "invalid": "Platumam jābūt iestatītam, un tam jābūt derīgam skaitlim."
+        },
+        "x": {
+          "invalid": "Jānosaka vistālāk pa kreisi esošā koordināta, un tai jābūt derīgam numuram."
+        },
+        "y": {
+          "invalid": "Augšējais numurs ir jāiestata, un tam jābūt derīgam skaitlim."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "Animācija ir tukša. Jums jāpievieno vismaz viens vienums, izmantojot pievienošanas pogu."
+      },
+      "height": {
+        "invalid": "Animācijas augstumam jābūt lielākam par 0."
+      },
+      "image": {
+        "invalid": "Attēlam iestatītais URL nav derīgs. Attēla laukā ir jānorāda derīgs indiemedia URL."
+      },
+      "width": {
+        "invalid": "Animācijas platumam jābūt lielākam par 0."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "Attēlam iestatītais URL nav derīgs. Attēla laukā ir jānorāda derīgs indiemedia URL."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "Jums jāpievieno vismaz viena audio termina definīcija"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "Jums ir jānorāda derīgs indiemedia URL"
+      },
+      "definition": {
+        "invalid": "Jums ir jāsniedz definīcija."
+      },
+      "term": {
+        "invalid": "Jums ir jānorāda termiņš."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "Jūs neesat uzrakstījis citāta saturu. Jums vismaz jāraksta saturs."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "Jums jānorāda vismaz viens teksta un pogas veida elements."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "Attēlam iestatītais URL nav derīgs. Pogas attēla laukā ir jānorāda derīgs IndieMedia URL."
+      },
+      "text": {
+        "invalid": "Teksts ir tukšs. Jums ir jāraksta vai jākopē teksts."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "Iezīmētais logs ir tukšs. Jums jāpievieno vismaz viens vienkāršs elements."
+      },
+      "text": {
+        "invalid": "Teksts ir tukšs. Jums jāraksta neliels teksts."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "Denes nodrošina derīgu attēlu URL laukā."
+      },
+      "options": {
+        "noCorrect": "Jums jāizvēlas vismaz viens pareizs",
+        "notEnougOptions": "Jums jāievada 4 opcijas"
+      },
+      "text": {
+        "invalid": "Teksts ir tukšs. Jums ir jāievada teksts."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Visās izkārtojuma kolonnās jābūt vismaz vienam elementam, velkot to no paletes kreisajā pusē."
+      },
+      "width": {
+        "invalid": "Nederīgs kolonnas platums"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "Attēlam ir jānorāda alternatīvais teksts"
+      },
+      "audioblob": {
+        "invalid": "Audio faila saturs nav pareizs. Jums ir jāizvēlas derīgs fails."
+      },
+      "captions": {
+        "invalid": "Subtitriem iestatītais vietrādis URL nav derīgs. Jums ir jāpārliecinās, vai esat norādījis derīgu indiemedia URL"
+      },
+      "captionsblob": {
+        "invalid": "Subtitru faila saturs nav pareizs. Jums ir jāizvēlas derīgs fails."
+      },
+      "descriptions": {
+        "invalid": "Aprakstam iestatītais URL nav derīgs. Jums ir jāpārliecinās, vai esat norādījis derīgu indiemedia URL"
+      },
+      "imageblob": {
+        "invalid": "Attēla saturs nav pareizs. Jums jāizvēlas derīgs attēls."
+      },
+      "name": {
+        "invalid": "Jums ir jānorāda šīs instances nosaukums.",
+        "notUniqueName": "Instances nosaukumam ir jābūt unikālam visā saturā."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "Jums ir jānodrošina vismaz viens pareiza Word vienums."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "Attēlam iestatītais URL nav derīgs. Jums ir jānorāda derīgs indieauthor URL."
+      },
+      "question": {
+        "invalid": "Jautājuma teksts ir tukšs."
+      },
+      "word": {
+        "invalid": "Atbildes teksts ir tukšs."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "Jums jāpievieno vismaz viens pāris"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "Attēlam ievadītais URL nav derīgs. Attēla laukā ir jānorāda derīgs indiemedia URL."
+      },
+      "text": {
+        "invalid": "Teksts ir tukšs. Jums jāraksta īss teksts."
+      },
+      "type": {
+        "invalid": "Vienumam iestatītais tips nav derīgs. Jums jāpārliecinās, ka ir atlasīta opcija \"Teksts\" vai \"Attēls\"."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "Prece ir tukša. Jums jāpievieno vismaz viens termina definīcijas vienums, izmantojot pogu pievienot labajā pusē."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "Definīcijas lauks ir tukšs. Jums ir jāraksta definīcija."
+      },
+      "term": {
+        "invalid": "Termina lauks ir tukšs. Jums ir jāraksta termins."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "Jums jāizvēlas pareizā atbilde",
+        "notEnoughAnswers": "Jums jāuzraksta vismaz 2 iespējamās atbildes"
+      },
+      "question": {
+        "empty": "Jautājuma teksts nevar būt tukšs",
+        "onlyOneBlank": "Jautājumā jāiekļauj tikai viena tukša vieta"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "Atbilde nedrīkst būt tukša"
+      },
+      "attempts": {
+        "invalid": "Mēģinājumiem jābūt skaitlim no 1 līdz 9"
+      },
+      "question": {
+        "invalid": "Jautājums nedrīkst būt tukšs"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "Attēlam iestatītais URL nav derīgs. Attēla laukā ir jānorāda derīgs indiemedia URL."
+      },
+      "text": {
+        "invalid": "Teksts ir tukšs. Jums jāraksta teksts"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "Kolonnu skaitam jābūt 1,2 vai 3"
+      },
+      "data": {
+        "empty": "Jums jāsniedz vismaz viens attēla un skaņas elements."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "Jums ir jānorāda derīgs indiemedia URL"
+      },
+      "image": {
+        "invalid": "Attēlam ievadītais URL nav derīgs. Attēla laukā ir jānorāda derīgs indiemedia URL."
+      },
+      "text": {
+        "invalid": "Teksts ir tukšs. Jums jāraksta īss teksts."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "Attēlam iestatītais URL nav derīgs. Attēla laukā ir jānorāda derīgs indiemedia URL."
+      },
+      "text": {
+        "invalid": "Teksts ir tukšs. Jums ir jāraksta vai jākopē teksts."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "Videoklipam konfigurētais vietrādis URL nav derīgs. Jums vajadzētu pārliecināties, ka esat nodrošinājis vienu no indieopen interaktīvajiem videoklipiem."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "Formulai ir jānorāda leģenda."
+      },
+      "formula": {
+        "invalid": "Jums ir jāsniedz formula LaTex formātā."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "Jums ir jānorāda vismaz viens trūkstošs vārda vienums."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "Jums jāuzraksta vismaz viena pareiza atbilde",
+        "invalid": "Atbildes teksts ir tukšs"
+      },
+      "sentence": {
+        "empty": "Frāze nedrīkst būt tukša",
+        "onlyOneBlank": "Teikumā jāiekļauj tikai atstarpes marķieris"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "Modāls ir tukšs. Jums jāpievieno vismaz viens vienkāršs elements."
+      },
+      "text": {
+        "invalid": "Teksts ir tukšs. Jums jāraksta neliels teksts."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "Fona attēlam iestatītais URL nav pareizs. Jums ir jānorāda derīgs indieauthor URL."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Ir jāiestata izgriezuma alternatīvais teksts."
+        },
+        "altRec": {
+          "invalid": "Ir jāiestata pozīcijas alternatīvais teksts."
+        },
+        "empty": "Puzlei jābūt vismaz vienam gabaliņam.",
+        "h": {
+          "invalid": "Augstumam jābūt iestatītam, un tam jābūt derīgam skaitlim."
+        },
+        "w": {
+          "invalid": "Platumam jābūt iestatītam, un tam jābūt derīgam skaitlim."
+        },
+        "x": {
+          "invalid": "Jānosaka vistālāk pa kreisi esošā koordināta, un tai jābūt derīgam numuram."
+        },
+        "y": {
+          "invalid": "Augšējais numurs ir jāiestata, un tam jābūt derīgam skaitlim."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "Prece ir tukša. Jums jāpievieno vismaz viens ieraksts, izmantojot pievienošanas pogu labajā pusē."
+      },
+      "title": {
+        "invalid": "Virsraksta lauks ir tukšs. Jums ir jāraksta nosaukums."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "Ir vismaz viens saites dublikāts. Katrai ziņai ir jānorāda unikāla saite.",
+        "empty": "Prece ir tukša. Jums jāpievieno vismaz viens ieraksts, izmantojot pievienošanas pogu labajā pusē.",
+        "multipleCurrent": "Ir vismaz divi aktuāli ieraksti. Jums ir jānorāda tikai viens pašreizējais ieraksts."
+      },
+      "moreThanOne": "Jums ir jānorāda ne vairāk kā viens satura rādītāja vienums."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "Virsraksta lauks ir tukšs. Jums ir jāraksta nosaukums."
+      },
+      "url": {
+        "invalid": "URL laukam jābūt iestatītam šādā formātā: https://[source]/[author]/[unit]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "Shēma ir tukša. Jums jāpievieno vismaz viens vienums, izmantojot pievienošanas pogu labajā pusē."
+      },
+      "height": {
+        "invalid": "Animācijas augstumam jābūt lielākam par 0."
+      },
+      "image": {
+        "invalid": "Pilnam attēlam iestatītais URL nav derīgs. Jums ir jāpārliecinās, vai esat norādījis derīgu indiemedia URL."
+      },
+      "width": {
+        "invalid": "Animācijas platumam jābūt lielākam par 0."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "Attēlam iestatītais URL nav derīgs. Attēla laukā ir jānorāda derīgs indiemedia URL."
+      },
+      "text": {
+        "invalid": "Teksts ir tukšs. Jums jāraksta neliels teksts."
+      }
+    },
+    "section": {
+      "emptyData": "Sadaļa nevar būt tukša. Jums jāpievieno vismaz viens vienums.",
+      "invalidBookmark": "Sadaļai jābūt derīgai grāmatzīmei.",
+      "invalidImage": "Sadaļai jābūt fona attēlam.",
+      "invalidName": "Sadaļai jābūt nosaukumam.",
+      "typeImageNotSelected": "Ja atlasītais tips ir Fona attēls, attēls ir jāiestata."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "Jums jānorāda vismaz viens teikuma kārtošanas elements."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "Jums jāuzraksta vismaz viena pareiza atbilde",
+        "impossible": "Teikumu nevar veidot no noteiktajiem vārdiem",
+        "invalid": "Atbildes teksts ir tukšs"
+      },
+      "words": {
+        "empty": "Jums jāievada vismaz viens derīgs vārds",
+        "invalid": "Word teksts ir tukšs"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "Attēlam iestatītais URL nav derīgs. Attēla laukā ir jānorāda derīgs indiemedia URL.",
+        "sizeNotSet": "Attēla platums un augstums ir jāiestata, kad tā izskats ir \"Pielāgots\""
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "Jums jāizvēlas pareizā atbilde",
+        "notEnoughAnswers": "Jums jāuzraksta vismaz 2 iespējamās atbildes"
+      },
+      "question": {
+        "empty": "Jautājuma teksts nevar būt tukšs"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "Cilne ir tukša. Cilnei jāpievieno vismaz viens vienums."
+      },
+      "name": {
+        "invalid": "Cilnes nosaukums nav derīgs. Jums tas ir jāizveido."
+      }
+    },
+    "Table": {
+      "empty": "Tabulā nav iestatītas kolonnas"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "Cilnes izvēlnē nav cilņu. Jums jāpievieno vismaz viens."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Ir dublētas kolonnas. Pārbaudiet savus vienumus.",
+        "duplicatedTerms": "Starp slejām ir terminu dublikāti. Noteikumu pārskatīšana"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "Kolonna nedrīkst būt tukša"
+      },
+      "terms": {
+        "empty": "Noteikumi nevar būt tukši.",
+        "invalid": "Noteikumi neatbilst nepieciešamajam formātam. Lūdzu, atdaliet terminus ar semikoliem (;)."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "Tests ir tukšs. Jums jāpievieno vismaz viens jautājums."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "Teksts ir tukšs. Jums jāraksta īss teksts."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "Jums jāpievieno vismaz viens patiess vai nepatiess elements"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "Jautājuma teksts nevar būt tukšs"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "Jautājuma teksts nevar būt tukšs"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "Videoklipa vietrādis URL nav derīgs. Jums ir jānorāda derīgs URL no IndieMedia vai Youtube.",
+        "localInvalid": "Videoklipa vietrādis URL nav derīgs. Jums ir jāpārliecinās, vai esat norādījis derīgu YouTube vietrādi URL."
+      }
+    }
+  },
+  "footer": {
+    "content": "Varat pievienot jaunas sadaļas, izmantojot augšējo rīkjoslu"
+  },
+  "general": {
+    "areYouSure": "Vai esi pārliecināts?",
+    "cancel": "Atcelt",
+    "close": "Aizvērt",
+    "confirm": "Apstiprināt",
+    "delete": "Novērstu",
+    "discard": "Atmest",
+    "false": "Nepatiess",
+    "load": "Slodze",
+    "modelDetected": "Vai vēlaties ielādēt iepriekšējo ierīci?",
+    "true": "Patiess"
+  },
+  "header": {
+    "addSection": "Pievienot sadaļu",
+    "clear": "Satura dzēšana",
+    "download": "Lejupielādes ierīce",
+    "importSection": "Importēšanas sadaļa",
+    "install": "Instalēt lietotni",
+    "preview": "Satura priekšskatīšana",
+    "publish": "Satura publicēšana",
+    "publishToNetlify": "Satura publicēšana pakalpojumā Netlify",
+    "redo": "Atcelt atsaukšanas darbību",
+    "save": "Satura saglabāšana",
+    "scorm": "Eksports SCORM formātā",
+    "translate": "Tulkošanas vienība",
+    "undo": "Atsaukt darbību",
+    "upload": "Augšupielādes vienība",
+    "validate": "Validēt vienību"
+  },
+  "items": {
+    "add": "Satura pievienošana",
+    "delete": "Dzēst vienumu",
+    "duplicate": "Dublēt vienumu",
+    "edit": "Satura rediģēšana",
+    "export": "Eksportēt vienumu"
+  },
+  "messages": {
+    "changesSaved": "Veiksmīgi saglabātas izmaiņas.",
+    "confirmClearContent": "Jūs izdzēsīsit saturu pilnībā. Pārliecinieties, ka tas ir tas, ko jūs patiešām vēlaties darīt.",
+    "confirmLoadModel": "Ir atrasta iepriekšējā vienība. Izvēlieties, vai vēlaties to ielādēt vai izmest.",
+    "contentCleared": "Saturs ir veiksmīgi izdzēsts.",
+    "contentErrors": "Ups! Jūsu saturā ir kļūdas. Pārskatiet kļūdu ziņojumus un izpildiet to norādījumus, lai tos labotu.",
+    "couldNotExportElement": "Preci nevarēja eksportēt",
+    "couldNotExportSection": "Sadaļu nevarēja eksportēt",
+    "deletedSection": "Sadaļa veiksmīgi dzēsta",
+    "emptyContent": "Jūs neesat pievienojis saturu.",
+    "errorMessage": "Kļūda",
+    "exportedElement": "Vienums veiksmīgi eksportēts",
+    "exportedSection": "Veiksmīgi eksportētā sadaļa",
+    "importedElement": "Vienums ir veiksmīgi importēts",
+    "importedSection": "Sadaļa veiksmīgi importēta",
+    "loadError": "Ierīci nevarēja ielādēt",
+    "noElement": "Nav importējamu vienumu",
+    "noErrors": "Nav slikti! Kļūdu nav. Jūs varat turpināt saglabāt saturu.",
+    "noRedo": "Nav ko pārtaisīt",
+    "noSection": "Nav importējamu sadaļu",
+    "noUndo": "Nav ko atsaukt",
+    "previewError": "Ierīci nevarēja priekšskatīt",
+    "publishError": "Vienību nevarēja publicēt",
+    "savedUnit": "Vienība ir veiksmīgi saglabāta",
+    "saveError": "Vienību neizdevās saglabāt",
+    "successMessage": "Labi",
+    "translateError": "Vienību nevarēja iztulkot",
+    "warningMessage": "Uzmanība"
+  },
+  "netlify": {
+    "button": {
+      "text": "Savienot"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Izveidot vietni",
+        "help": "Atlasiet vienu no pieejamajām vietnēm savā Netlify kontā",
+        "label": "Lūdzu, atlasiet pieejamo vietni no sava Netlify, lai augšupielādētu vienību"
+      },
+      "title": "Aizpildiet laukus, lai izveidotu savienojumu ar Netlify ",
+      "token": {
+        "help": "Ievadiet savu personīgo Netlify piekļuves pilnvaru. To var atrast Netlify konta iestatījumu sadaļā Lietojumprogrammas",
+        "label": "Ievietojiet personisko piekļuves pilnvaru:",
+        "placeholder": "Ievietojiet savu Netlify personisko piekļuves pilnvaru šeit"
+      }
+    },
+    "error": {
+      "message": "Nederīgs marķieris"
+    },
+    "success": {
+      "message": "Vienība ir veiksmīgi augšupielādēta Netlify. Piekļūstiet tai, noklikšķinot uz šīs saites: ",
+      "message_2": "Ņemiet vērā, ka, ja jūsu vienībā ir daudz satura, tās publicēšana var aizņemt dažas minūtes.",
+      "title": "Vienība augšupielādēta vietnē Netlify"
+    }
+  },
+  "palette": {
+    "containers": "Konteineri",
+    "exerciseElement": "Vingrinājumi",
+    "interactiveElements": "Interaktīvie elementi",
+    "items": "Vienumus",
+    "layouts": "Noteikumi",
+    "question": "Jautājumiem",
+    "simpleElements": "Elementi"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Kodu bloks",
+        "screenReader": "Palīdzības teksts ekrāna lasītājiem"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Dzēst sadaļu",
+    "duplicate": "Dublēt sadaļu",
+    "edit": "Informācijas rediģēšana",
+    "expandContract": "Izvēršana vai sakļaušana",
+    "export": "Eksporta sadaļa",
+    "form": {
+      "bookmark": {
+        "help": "Šis marķieris parādīsies ierīces augšpusē kā sekcijas marķieris. Tam jābūt ne vairāk kā 40 rakstzīmēm.",
+        "label": "Sadaļas grāmatzīme",
+        "placeholder": "Uzrakstiet grāmatzīmi..."
+      },
+      "image": {
+        "help": "",
+        "label": "Fona attēla URL",
+        "placeholder": "Ievadiet attēla URL..."
+      },
+      "name": {
+        "help": "Šis ir nosaukums, kas sadaļai būs saturā.",
+        "label": "Sadaļas nosaukums",
+        "placeholder": "Uzraksti vārdu..."
+      },
+      "preview": "Priekšskatiet fona attēlu",
+      "type": {
+        "bc": "Fona krāsa (noklusējums)",
+        "bi": "Fona attēls",
+        "help": "Ja veids ir iestatīts uz \"fona krāsa\", noklusējuma krāsa parādīsies aiz virsraksta, savukārt sadaļā \"Fona attēls\" jums ir jāizveido fona attēls sadaļas virsrakstam.",
+        "label": "Fona veids"
+      }
+    },
+    "import": "Importēt vienumu",
+    "label": "Sadaļā",
+    "moveDown": "Ritināt sadaļu uz leju",
+    "moveUp": "Ritināt sadaļu uz augšu"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Iespējot/atspējot analīzi vienībā",
+        "label": "Analytics",
+        "no": "Nē",
+        "yes": "Jā"
+      },
+      "author": {
+        "help": "Vienības autoram jāraksta šeit.",
+        "label": "Vienības autors",
+        "placeholder": "Vienības autors raksta"
+      },
+      "background": {
+        "help": "Attēlam jābūt aptuveni 1900 x 550 pikseļiem.",
+        "label": "Dizaina attēls"
+      },
+      "color": {
+        "help": "Heksadecimālais formāts #FFFFFF obligāts",
+        "label": "Dizaina krāsa",
+        "placeholder": "Šeit ievadiet dizaina krāsu"
+      },
+      "email": {
+        "help": "Šī ir autora e-pasta adrese.",
+        "label": "E-pasts",
+        "placeholder": "Ievadiet autora e-pasta adresi"
+      },
+      "institution": {
+        "help": "Iestādes nosaukums",
+        "label": "Iestāde",
+        "placeholder": "Ievadiet iestādes nosaukumu"
+      },
+      "language": {
+        "help": "Vienības valoda.",
+        "label": "Valoda"
+      },
+      "license": {
+        "BY": "Starptautiskā 4.0 atzīšana (CC BY 4.0)",
+        "BYNC": "Attiecinājums-Nekomerciāls-NoDerivs 4.0 Starptautisks (CC BY-NC-ND 4.0)",
+        "BYNCND": "Attiecinājums-Nekomerciāls-NoDerivs 4.0 Starptautisks (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Attiecinājums-Nekomerciāls-ShareAlike 4.0 Starptautisks (CC BY-NC-SA 4.0)",
+        "BYND": "Attiecinājums-NoDerivs 4.0 Starptautiskais (CC BY-ND 4.0)",
+        "BYSA": "Attiecinājums-ShareAlike 4.0 Starptautiskais (CC BY-SA 4.0)",
+        "help": "Vienības licence",
+        "label": "Licence",
+        "PRIVATE": "Visas tiesības aizsargātas"
+      },
+      "resource": {
+        "help": "Ievadiet resursa ID",
+        "label": "Resursa ID:",
+        "placeholder": "Ievadiet resursa ID"
+      },
+      "theme": {
+        "help": "Izvēlieties vienības tēmu.",
+        "label": "Dizains"
+      },
+      "title": {
+        "help": "Tas ir vienības nosaukums.",
+        "label": "Vienības nosaukums",
+        "placeholder": "Virsraksta ievadīšana"
+      },
+      "type": {
+        "help": "Tas ir vienības tips.",
+        "interoperability": "Savstarpēja izmantojamība",
+        "label": "Piedziņas tips",
+        "open": "Atvērts"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "Šī ir vienības avota valoda",
+        "label": "Avota valoda"
+      },
+      "target": {
+        "help": "Mērķa valoda, kurā vienība tiks tulkota",
+        "label": "Mērķa valoda"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Akordeona ēdienkarte"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "Iestata satura grupas nosaukumu. Tas parādīsies nolaižamās izvēlnes nosaukumā.",
+          "label": "Satura virsraksts",
+          "placeholder": "Piemērs: profesionālās prasmes"
+        }
+      },
+      "label": "Satura grupa"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "Tas būs animācijas fona attēls. Varat izvēlēties vienu no augšupielādētajiem attēliem.",
+          "label": "Attēla URL",
+          "placeholder": "Ievietojiet attēla URL šeit...",
+          "preview": "Animācijas priekšskatījums"
+        },
+        "pieces": {
+          "altImg": "Alternatīvais teksts animētam attēlam",
+          "altRec": "Alternatīvais teksts animācijas reģionam",
+          "delete": "Izdzēst",
+          "h": "Augsts",
+          "new": "Pievienot jaunu animācijas reģionu...",
+          "w": "Plats",
+          "x": "Pa kreisi",
+          "y": "Superior"
+        }
+      },
+      "label": "Animācijas",
+      "prev": "Animācija vēl nav inicializēta..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "Tas būs pikseļu animācijas konteinera augstums",
+          "label": "Animācijas augstums",
+          "placeholder": "Piemērs: 200"
+        },
+        "image": {
+          "help": "Tas būs attēls, kas parādās vienumā. Varat izvēlēties vienu no augšupielādētajiem attēliem vai augšupielādēt jaunu.",
+          "label": "Attēla URL",
+          "placeholder": "Noklikšķiniet šeit, lai atlasītu attēlu"
+        },
+        "prev": "Attēla priekšskatījuma priekšskatījums",
+        "width": {
+          "help": "Tas būs animācijas konteinera platums pikseļos",
+          "label": "Animācijas platums",
+          "placeholder": "Piemērs: 400"
+        }
+      },
+      "label": "Animācijas"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "Tas būs animācijas vienuma attēls.",
+          "label": "Attēla URL",
+          "placeholder": "Noklikšķiniet šeit, lai atlasītu attēlu"
+        },
+        "prev": "Priekšskatījums"
+      },
+      "label": "Animācijas vienums.",
+      "prev": "Animācijas vienums vēl nav iestatīts..."
+    },
+    "AudioTermContainer": {
+      "label": "Audio termini"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "Jums ir jāievada tā audio vietrādis URL, kuru vēlaties atskaņot satura vienībā.",
+          "label": "Audio faila URL",
+          "placeholder": "Lūdzu, ievadiet derīgu indiemedia URL..."
+        },
+        "definition": {
+          "help": "Šai definīcijai vajadzētu būt audio stenogrammai.",
+          "label": "Definīcija",
+          "placeholder": "Uzrakstiet definīciju..."
+        },
+        "term": {
+          "help": "Tas būs termins, kas novietots pa kreisi no logrīka",
+          "label": "Termins",
+          "placeholder": "Uzrakstiet savu terminu šeit..."
+        }
+      },
+      "label": "Audio termins",
+      "prev": "Audio-termins vēl nav izveidots..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "Tikšanās var būt līdzināta pa labi vai pa kreisi",
+          "label": "Iecelšanas saskaņošana",
+          "values": {
+            "left": "Kreisajā pusē",
+            "right": "Pa labi"
+          }
+        },
+        "caption": {
+          "help": "Citāta apakšvirsraksts tiek parādīts zem citāta. To galvenokārt izmanto, lai norādītu citāta autoru vai autorus",
+          "label": "Citāta apakšvirsraksts",
+          "placeholder": "Piemērs: Karls Sagans"
+        },
+        "quote": {
+          "help": "Šis teksts ir stenogrammas citāts",
+          "label": "Citāta teksts",
+          "placeholder": "Piemērs: \"Pierādījumu trūkums nav pierādījums par neesamību.\""
+        },
+        "source": {
+          "help": "Citāta oriģinālais avots (Gads, grāmata, žurnāls... utt.)",
+          "label": "Citāta izcelsme",
+          "placeholder": "Piemērs:1990"
+        }
+      },
+      "label": "Citēt",
+      "prev": "Citāts vēl nav noteikts..."
+    },
+    "ButtonTextContainer": {
+      "label": "Pogas ar tekstu"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "Tas būs attēls, kas parādīsies uz pogas. Varat izvēlēties vienu no augšupielādētajiem attēliem vai augšupielādēt jaunu.",
+          "label": "Pogas attēla URL",
+          "placeholder": "Ievietojiet savu URL šeit"
+        },
+        "preview": "Pogas Priekšskatījums attēls",
+        "text": {
+          "help": "Šajā teksta redaktorā varat rakstīt ar pogu saistītā teksta saturu",
+          "label": "Teksts",
+          "placeholder": "Uzrakstiet savu tekstu šeit..."
+        }
+      },
+      "label": "Pogas elements ar tekstu",
+      "prev": "Pogas elements ar tekstu vēl nav inicializēts..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Krāsu",
+        "helps": {
+          "animation": "Nosaka vienu no iepriekš definētajām animācijām lodziņam ar iegultajiem elementiem (atsevišķi vai salokāmi).",
+          "colorTheme": "Hex formāts #FFFFFF nepieciešams. <strong> Ja tas nav aizpildīts, vienības tēmas krāsai būs noklusējuma vērtība.</strong>",
+          "styles": "Nosaka vienu no iepriekš definētajiem lodziņa stiliem ar iegultajiem elementiem.",
+          "textTitle": "Tas būs teksts, kas parādīsies kā virsraksts. <strong>Ja tas nav aizpildīts, tam būs noklusējuma vērtība.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Ievadiet krāsu šeit",
+          "textTitle": "Ievadiet virsrakstu šeit"
+        },
+        "styles": {
+          "animation": "Animācijas stils",
+          "attention": "Uzmanība",
+          "collapsible": "Saliekams",
+          "danger": "Briesmas",
+          "label": "Stils",
+          "more": "Apgūt vairāk",
+          "note": "Piezīme",
+          "simple": "Vienkāršs"
+        },
+        "textTitle": "Nosaukums"
+      },
+      "label": "Izcilu"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "Attēls parādīsies logrīka augšpusē, virs opcijām.",
+          "label": "Attēla URL",
+          "placeholder": "Ievadiet attēla URL..."
+        },
+        "options": {
+          "help": "Šīs 4 opcijas parādīsies zem attēla. Tikai viens var būt pareizs.",
+          "label": "Opcijas",
+          "placeholder": "Opcijas ievadīšana"
+        },
+        "preview": "Attēla priekšskatījums",
+        "text": {
+          "help": "Šis teksts parādīsies virs attēla kā teksts vai jautājums.",
+          "label": "Teksts",
+          "placeholder": "Uzrakstiet tekstu šeit..."
+        }
+      },
+      "label": "Izvēlieties opciju",
+      "prev": "Izvēloties opciju, kas nav iestatīta ..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "Kolonnas",
+      "form": {
+        "width": {
+          "1": "Pirmās kolonnas platums",
+          "help": "Otra kolonna aizņems atlikušo platumu"
+        }
+      },
+      "label": "Apglabāšanas"
+    },
+    "CorrectWord": {
+      "label": "Pareizais vārds"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "Jautājuma aprakstošais attēls",
+          "label": "Attēla URL",
+          "placeholder": "Ievietojiet savu attēla URL šeit..."
+        },
+        "preview": "Attēla priekšskatījums",
+        "question": {
+          "help": "Šis ir jautājums, kas tiks parādīts lietotājam.",
+          "label": "Jautājuma teksts",
+          "placeholder": "Jautājuma teksts"
+        },
+        "word": {
+          "help": "Šis vārds būs atbilde uz jautājumu",
+          "label": "Atbildēt",
+          "placeholder": "Uzraksti vārdu..."
+        }
+      },
+      "label": "Pareizs teksta elements",
+      "prev": "Pareizais vārds vēl nav noskaidrots..."
+    },
+    "CouplesContainer": {
+      "label": "Pāri",
+      "prev": "Pāri, kas vēl nav nodibināti..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "Šis attēls tiks saistīts ar tekstu, kas šajā formā ievadīts kā pāris.",
+          "label": "Attēla URL",
+          "placeholder": "Šeit ievadiet attēla URL..."
+        },
+        "legend": {
+          "first": "Pirmais elements",
+          "second": "Otrais elements"
+        },
+        "preview": "Attēla priekšskatījums",
+        "text": {
+          "help": "Šis teksts tiks saistīts ar attēlu, kas šajā formā tiek ievadīts kā pāris.",
+          "label": "Teksts",
+          "placeholder": "Uzrakstiet tekstu..."
+        },
+        "type": {
+          "image": "Attēlu",
+          "label": "Puisis",
+          "text": "Teksts"
+        }
+      },
+      "label": "Pāris",
+      "prev": "Pāris, kas vēl nav izveidots..."
+    },
+    "DragdropContainer": {
+      "label": "Velciet un nometiet"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "Definīcija tiek rādīta pa labi no interaktīvā elementa, un skolēnam termins ir jāvelk uz definīciju",
+          "label": "Definīcija",
+          "placeholder": "Piemērs: Visiem cilvēkiem ir tiesības izteikties, neuzmācoties tam, ko viņi domā"
+        },
+        "term": {
+          "help": "Termins parādās pa kreisi no interaktīvā elementa, un tas būs tas, kas studentam ir jāvelk un jānomet definīcijā.",
+          "label": "Termins",
+          "placeholder": "Piemērs: vārda brīvība"
+        }
+      },
+      "label": "Termina definīcija",
+      "prev": "Postenis nav izveidots..."
+    },
+    "FourColumnsLayout": {
+      "label": "Četras kolonnas"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Jums jāuzraksta vismaz 2 atbildes un jāatzīmē, kura no tām ir pareiza.",
+          "label": "Iespējamās atbildes"
+        },
+        "questionPreview": {
+          "help": "Tas ir tas, kā jautājums izskatīsies satura vienībā.",
+          "label": "Priekšskatiet jautājuma tekstu.",
+          "placeholder": "Jautājuma teksts ar tukšu ___ slotu."
+        },
+        "questionText": {
+          "help": "Jautājuma teksts ir jāieraksta ar vajadzīgo tukšo vietu ar īpašo atslēgvārdu [blank].",
+          "label": "Jautājuma teksts",
+          "placeholder": "Jautājuma teksts ar tukšu elementu"
+        }
+      },
+      "label": "Aizpildiet plaisas jautājumu",
+      "prev": "Jautājums par vēl nenoskaidrotās plaisas aizpildīšanu..."
+    },
+    "GenericWidget": {
+      "label": "Widget"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "Atbilde uz jautājumu",
+          "label": "Atbildēt",
+          "placeholder": "Uzrakstiet savu atbildi šeit"
+        },
+        "attempts": {
+          "help": "Mēģinājumu skaits uzminēt atbildi. Tam jābūt skaitlim no 1 līdz 9.",
+          "label": "Mēģinājumiem"
+        },
+        "question": {
+          "help": "Par jautājumu, uz kuru jāatbild",
+          "label": "Jautājums",
+          "placeholder": "Uzrakstiet savu jautājumu šeit"
+        }
+      },
+      "label": "Uzminiet vārdu",
+      "prev": "Uzminiet, ka vārds vēl nav inicializēts..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Ja izveidojat tekstu, tas būs attēla paraksts",
+          "label": "Attēla paraksts",
+          "placeholder": "Lūdzu, ievadiet parakstu."
+        },
+        "image": {
+          "help": "Šis ir attēls, kas parādīsies vienumā.",
+          "label": "Attēla URL",
+          "placeholder": "Noklikšķiniet šeit, lai atlasītu attēlu"
+        },
+        "preview": "Priekšskatījums"
+      },
+      "label": "Attēls ar tekstu virs tā",
+      "prev": "Attēls ar tekstu virs tā vēl nav izveidots..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Attēls un skaņa"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "Audio fails tiks atskaņots, kad tiks noklikšķināts uz attēla.",
+          "label": "Audio faila URL",
+          "placeholder": "Lūdzu, ievadiet derīgu indiemedia URL..."
+        },
+        "image": {
+          "help": "Vispirms parādīsies attēls",
+          "label": "Attēla URL",
+          "placeholder": "Ievadiet attēla URL..."
+        },
+        "preview": "Attēla priekšskatījums",
+        "text": {
+          "help": "Teksts parādīsies virs attēla, kad novietosit kursoru virs tā.",
+          "label": "Attēla teksts",
+          "placeholder": "Uzrakstiet tekstu..."
+        }
+      },
+      "label": "Attēla un skaņas vienums",
+      "prev": "Attēla un skaņas vienums vēl nav izveidots ..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "Tas būs attēls, kas parādās vienumā. Varat izvēlēties vienu no augšupielādētajiem attēliem vai augšupielādēt jaunu.",
+          "label": "Attēla URL",
+          "placeholder": "Noklikšķiniet šeit, lai atlasītu attēlu"
+        },
+        "layout": {
+          "help": "Attēla un teksta bloka orientācija nosaka, kur parādās katrs no bloka elementiem.",
+          "label": "Orientācija",
+          "values": {
+            "0": "Teksts labajā pusē, attēls kreisajā pusē",
+            "1": "Teksts kreisajā pusē, attēls labajā pusē"
+          }
+        },
+        "preview": "Attēla priekšskatījums",
+        "text": {
+          "help": "Jums ir jāraksta teksts.",
+          "label": "Šajā teksta redaktorā varat rakstīt bloka saturu.",
+          "placeholder": "Uzrakstiet tekstu..."
+        }
+      },
+      "label": "Attēls un teksts",
+      "prev": "Attēls un teksts vēl nav izveidots..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Izmantojiet teksta ievadi, lai ievadītu tā interaktīvā videoklipa vietrādi URL, kas izveidots, izmantojot interaktīvo video rīku.",
+          "label": "Videoklipa URL",
+          "placeholder": "Piemērs: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Interaktīvs video",
+      "prev": "Interaktīvs video vēl nav izveidots"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "Šie apzīmējumi parādīsies zem formulas un kā teksta bloks",
+          "label": "Formulas apzīmējumi",
+          "placeholder": "Piemērs: kvadrātiskā formula"
+        },
+        "formula": {
+          "help": "Izmantojiet teksta apgabalu, lai ierakstītu formulu. Zem šī apgabala tiks parādīts formulas priekšskatījums, ja tā ir pareiza, vai teksts sarkanā krāsā, ja formula nav pareiza",
+          "label": "Formula LaTex formātā",
+          "placeholder": "Piemērs: \\text{Kvadrātiskā formula ir }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "LaTeX formula",
+      "prev": "Formula vēl nav noteikta..."
+    },
+    "MissingWords": {
+      "label": "Trūkst vārdu"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Izdzēst",
+          "new": "Pievienot jaunu atbildi...",
+          "text": "Atbildēt"
+        },
+        "sentence": {
+          "help": "Jums jāraksta teikuma teksts, ieskaitot atstarpi, izmantojot speciālo marķieri [tukšs].",
+          "label": "Teikuma teksts",
+          "placeholder": "Teikuma teksts ar marķieri [tukšs]"
+        },
+        "sentencePreview": {
+          "help": "Tādā veidā jūs skatītos uz frāzi satura vienībā.",
+          "label": "Frāzes priekšskatījums",
+          "placeholder": "Teikuma teksts ar marķieri ___ "
+        }
+      },
+      "label": "Trūkstošo vārdu elements",
+      "prev": "Trūkstošais vārda elements vēl nav noskaidrots..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "Šis teksts parādīsies kā pogas teksts, kas jāaktivizē, lai atvērtu modālo logu.",
+          "label": "Pogas teksts",
+          "placeholder": "Uzrakstiet tekstu..."
+        }
+      },
+      "label": "Modālais logs"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "Tas būs mīklas fona attēls. Varat izvēlēties vienu no augšupielādētajiem attēliem.",
+          "label": "Attēla URL",
+          "placeholder": "Ievietojiet attēla URL šeit...",
+          "preview": "Puzles priekšskatījums"
+        },
+        "pieces": {
+          "altImg": "Alternatīvais teksts apgriešanai",
+          "altRec": "Pozīcijas alternatīvais teksts",
+          "delete": "Izdzēst",
+          "h": "Augsts",
+          "new": "Pievienot jaunu skaņdarbu...",
+          "w": "Plats",
+          "x": "Pa kreisi",
+          "y": "Superior"
+        }
+      },
+      "label": "Puzzle",
+      "prev": "Mīkla vēl nav inicializēta..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Grupas nosaukums",
+          "label": "Nosaukums",
+          "placeholder": "Piemērs: Tiesību moduļa modulis"
+        }
+      },
+      "label": "Grupa",
+      "prev": "Grupa vēl nav estabecido ..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Satura rādītājs"
+    },
+    "RelatedUnitsItem": {
+      "current": "Pašreizējā vienība",
+      "form": {
+        "current": {
+          "title": "Šī ir pašreizējā vienība"
+        },
+        "title": {
+          "help": "Ziņas virsraksts",
+          "label": "Nosaukums",
+          "placeholder": "Piemērs: Cilvēktiesības"
+        },
+        "url": {
+          "help": "Galamērķa URL",
+          "label": "URL",
+          "placeholder": "Piemērs: https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Ieeja",
+      "prev": "Ieraksts vēl nav izveidots..."
+    },
+    "SchemaContainer": {
+      "label": "Shēma"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "Tas būs shēmas daļējs attēls.",
+          "label": "Attēla URL",
+          "placeholder": "Noklikšķiniet šeit, lai atlasītu attēlu"
+        },
+        "prev": "Attēla priekšskatījums"
+      },
+      "label": "Strukturējuma vienums",
+      "prev": "Esuqema postenis vēl nav izveidots..."
+    },
+    "SentenceOrderContainer": {
+      "label": "Frāžu kārtošana"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Izdzēst",
+          "help": "Atbildes, kas tiks veidotas no ievadītajiem vārdiem",
+          "legend": "Atbilžu saraksts",
+          "new": "Pievienot jaunu atbildi...",
+          "text": "Atbildēt"
+        },
+        "words": {
+          "delete": "Izdzēst",
+          "help": "Atbildes jāspēj veidot no šiem vārdiem",
+          "legend": "Vārdu saraksts",
+          "new": "Pievienot jaunu vārdu...",
+          "text": "Vārds"
+        }
+      },
+      "label": "Frāzes kārtošanas elements",
+      "prev": "Teikumu šķirošanas elements vēl nav inicializēts..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "Iestata attēla līdzinājumu, ja izskats nav \"Pielāgot sākotnējos izmērus pieejamajai vietai\".",
+          "label": "Attēla līdzinājums",
+          "values": {
+            "center": "Vērsta",
+            "left": "Pa kreisi",
+            "right": "Pa labi"
+          }
+        },
+        "aspect": {
+          "help": "Attēlu var parādīt ar sākotnējiem izmēriem (ja iespējams) vai arī to var pielāgot ekrāna platumam (mērogot attēlu). ja izmēri ir garāki un platāki, nekā ekrāns var parādīt, tas vienmēr automātiski pielāgosies ekrānam",
+          "label": "Attēla izskats",
+          "values": {
+            "custom": "Paraža",
+            "fit": "Pielāgojiet sākotnējos izmērus pieejamajai vietai",
+            "original": "Sākotnējie izmēri"
+          }
+        },
+        "image": {
+          "help": "Tas būs attēls, kas parādīsies vienumā.",
+          "label": "Attēla URL",
+          "placeholder": "Šeit ievadiet attēla URL"
+        },
+        "preview": "Priekšskatījums",
+        "size": {
+          "height": "Augsts",
+          "heightPlaceholder": "Attēla augstums...",
+          "keepRatio": "Attēla proporcijas saglabāšana",
+          "width": "Plats",
+          "widthPlaceholder": "Attēla platums..."
+        }
+      },
+      "label": "Attēlu",
+      "prev": "Attēls vēl nav izveidots..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Jums jāuzraksta vismaz 2 atbildes un jāatzīmē, kura no tām ir pareiza.",
+          "label": "Iespējamās atbildes"
+        },
+        "questionText": {
+          "help": "Tas ir jautājuma teksts, kas tiks parādīts satura vienībā.",
+          "label": "Jautājuma teksts",
+          "placeholder": "Vienkāršā jautājuma teksts..."
+        }
+      },
+      "label": "Vienkāršs jautājums",
+      "prev": "Vienkāršs jautājums vēl nav iestatīts..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "Tas būs nosaukums, kas parādās cilnes virsrakstā.",
+          "label": "Cilnes nosaukums",
+          "placeholder": "Piemērs: profesionālās prasmes"
+        }
+      },
+      "label": "Skropsta"
+    },
+    "Table": {
+      "empty": "Tabula vēl nav inicializēta",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "Kolonnas nosaukums ir tukšs vai jau definēts",
+            "label": "Kolonnas nosaukums",
+            "placeholder": "Ierakstiet kolonnas nosaukumu šeit..."
+          },
+          "columnPosition": {
+            "error": "Kolonnas atrašanās ārpus diapazona atrašanās vieta",
+            "label": "Kolonnas novietojums"
+          },
+          "label": "Jaunas kolonnas pievienošana",
+          "submit": "Pievienot kolonnu"
+        },
+        "addRow": "Jaunas rindas pievienošana",
+        "deleteColumn": "Notīrīt kolonnu",
+        "deleteRow": "Notīrīt rindu"
+      },
+      "help": {
+        "edit": "Atlasiet rediģējamo šūnu. Lai rediģēšanas laikā pievienotu jaunas rindas, nospiediet taustiņu Shift, vienlaikus nospiežot taustiņu Enter."
+      },
+      "label": "Dēlis",
+      "prev": "Tabula vēl nav izveidota..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Skropstas",
+      "label": "Cilnes izvēlne"
+    },
+    "TermClassification": {
+      "label": "Klasifikācija",
+      "prev": "Klasifikācija"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "Šī ir kolonna, ar kuru termini būs saistīti.",
+          "label": "Kolonna",
+          "placeholder": "Kolonna"
+        },
+        "terms": {
+          "help": "Šajā amatā jums jāraksta vārdi, kas ir saistīti ar terminu, kas atdalīts ar semikolu. Piemēram: šie; ir; daži; Vārdiem",
+          "label": "Vārdiem",
+          "placeholder": "Rakstiet vārdus, kas atdalīti ar semikoliem"
+        }
+      },
+      "label": "Klasifikācijas vienums",
+      "prev": "Postenis vēl nav izveidots..."
+    },
+    "Test": {
+      "label": "Testa veids",
+      "questionSelect": "Izvēlieties jautājuma veidu, kuru vēlaties pievienot viktorīnai"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Jums ir jāraksta teksts.",
+        "label": "Šajā teksta redaktorā varat rakstīt bloka saturu.",
+        "placeholder": "Ievadiet tekstu...",
+        "styles": {
+          "attention": "Uzmanība",
+          "default": "Nav stila",
+          "help": "Nosaka tā lodziņa izkārtojumu, kas aptver tekstu",
+          "label": "Teksta bloka stils",
+          "more": "Apgūt vairāk",
+          "note": "Piezīme"
+        }
+      },
+      "label": "Teksta bloks",
+      "prev": "Teksts vēl nav izveidots..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Trīs kolonnas"
+    },
+    "TrueFalseContainer": {
+      "label": "Patiess/nepatiess",
+      "prev": "Patiess/nepatiess vēl nav noskaidrots..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Nepatiess",
+          "help": "Izvēlieties starp patiesu vai nepatiesu kā pareizu atbildi",
+          "label": "Pareizā atbilde",
+          "true": "Patiess"
+        },
+        "questionText": {
+          "help": "Tas ir punkta teksts.",
+          "label": "Vienuma teksts",
+          "placeholder": "Punkta teksts..."
+        }
+      },
+      "label": "Patiess/aplams vienums",
+      "prev": "Patiess/nepatiess priekšmets vēl nav noskaidrots..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Nepatiess",
+          "help": "Izvēlieties starp patiesu vai nepatiesu kā pareizu atbildi",
+          "label": "Pareizā atbilde",
+          "true": "Patiess"
+        },
+        "questionText": {
+          "help": "Tas ir jautājuma teksts, kas tiks parādīts satura vienībā.",
+          "label": "Teksta jautājuma teksts",
+          "placeholder": "Jautājuma teksts..."
+        }
+      },
+      "label": "Patiess vai nepatiess jautājums",
+      "prev": "Jautājums par patiesu vai nepatiesu nbo vēl noskaidrots..."
+    },
+    "TwoColumnsLayout": {
+      "label": "Divas kolonnas"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Rādīt noklusējuma subtitrus",
+          "no": "Nē",
+          "yes": "Jā"
+        },
+        "url": {
+          "help": "Izmantojiet teksta ievadi, lai ievadītu sava videoklipa URL (youtube, vimeo...)",
+          "label": "Videoklipa URL",
+          "placeholder": "Piemērs: https://example.com/video.mp4"
+        }
+      },
+      "label": "Video",
+      "prev": "Video vēl nav iestatīts..."
+    }
+  }
+}

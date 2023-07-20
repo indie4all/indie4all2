@@ -26,7 +26,7 @@ export default class Config {
     // Server URL to create a remote resource and get its URL
     private static resourceBackendURL: string = '/resource';
     // Server URL to get the list of widgets available in the bank of widgets
-    private static bankOfWidgetsURL: string = null;
+    private static bankOfWidgetsURL: string = '/widgets';
     // List of allowed origins for media data
     private static allowedResourceOrigins: string[] = ["http://localhost:8000", "https://indiemedia.upct.es", "http://indieopen.upct.es", "https://multimediarepository.blob.core.windows.net"];
     // Additional rules to check if a video URL is allowed

@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Taispeáin / Folaigh Catagóirí",
+    "viewImage": "Féach an íomhá"
+  },
+  "common": {
+    "alt": {
+      "help": "Is é seo an téacs malartach cur síos don íomhá i dtéarmaí inrochtaineachta",
+      "label": "Alt téacs don íomhá",
+      "placeholder": "Alt téacs"
+    },
+    "captions": {
+      "help": "URL INDIeMedia an chomhaid ina bhfuil tras-scríbhinn idirphlé, éifeachtaí fuaime, rianta ceoil agus faisnéis fuaime eile nuair a bhíonn an breathnóir bodhar nó deacair éisteacht, nó má tá an físeán / fuaime muted. Taispeántar fotheidil os cionn an fhíseáin freisin.",
+      "label": "Fotheidil (CC)",
+      "placeholder": "Sampla: https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "URL INDIeMedia den chomhad ina bhfuil cur síos téacs ar cad a tharlaíonn san fhíseán nuair nach bhfuil an chuid den fhíseán ar fáil toisc go bhfuil an breathnóir dall agus nach n-úsáideann sé scáileán. Léann léitheoir scáileáin na tuairiscí nó tiontaítear iad ina rian fuaime ar leith.",
+      "label": "Cur síos",
+      "placeholder": "Sampla: https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Tiomántán á íosluchtú, fan go fóill",
+      "title": "Á Íosluchtú"
+    },
+    "feedback": {
+      "help": "Léirmhínigh an t-aiseolas a gheobhaidh an mac léinn cibé an bhfreagraíonn sé i gceart nó go mícheart",
+      "label": "Aiseolas",
+      "negative": "Aiseolas diúltach...",
+      "positive": "Aiseolas dearfach..."
+    },
+    "generate": {
+      "description": "Giniúint, fan go fóill",
+      "title": "Giniúint"
+    },
+    "help": {
+      "button": "Réamhshocrú",
+      "help": "Beidh an téacs seo le feiceáil os cionn an ghiuirléid ionas go dtuigeann an t-úsáideoir conas idirghníomhú leis. <strong>Má fhágtar bán é, taispeánfar an téacs réamhshocraithe.</strong>",
+      "label": "Cabhair",
+      "placeholder": "Téacs cabhrach réamhshocraithe"
+    },
+    "language": {
+      "EL": "Gréigis",
+      "EN": "Béarla",
+      "ES": "Spainnis",
+      "FR": "Fraincis",
+      "LT": "Liotuáinis"
+    },
+    "loading": {
+      "description": "Luchtú, fan go fóill",
+      "title": "Á Luchtú"
+    },
+    "name": {
+      "help": "Beidh sé seo an t-ainm ar an ásc ghiuirléid le haghaidh anailísíocht foghlama",
+      "label": "Ainm",
+      "placeholder": "Ainm ásc ghiuirléidí"
+    },
+    "navbar": {
+      "options": "Roghanna leathnaithe / titim"
+    },
+    "preview": {
+      "description": "Tá do réamhamharc á ghiniúint, fan go fóill",
+      "generated": {
+        "description": "Tá do réamhamharc réidh. Mura ndéanann do bhrabhsálaí tú a atreorú chuig an réamhamharc, cliceáil ar an nasc thíos:",
+        "title": "D' éirigh le réamhamharc a ghintear"
+      },
+      "title": "Réamhamharc á ghiniúint"
+    },
+    "publish": {
+      "description": "Tá do thiomántán á ghiniúint le híoslódáil, fan go fóill",
+      "title": "Aonad foilsitheoireachta"
+    },
+    "publishToNetlify": {
+      "description": "Tá d'aonad á uaslódáil chuig Netlify, fan go fóill",
+      "title": "Aonad foilsitheoireachta i Netlify"
+    },
+    "save": {
+      "description": "Sábháil, fan go fóill",
+      "title": "Sábháil"
+    },
+    "scorm": {
+      "description": "Tá do phacáiste SCORM á ghiniúint, fan go fóill",
+      "title": "Pacáiste SCORM á ghiniúint"
+    },
+    "selectType": "Roghnaigh cineál ó na roghanna seo a leanas",
+    "unit": {
+      "settings": "Iontráil sonraí an aonaid"
+    }
+  },
+  "dialog": {
+    "translate": "Aistrigh aonad"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "Tá an bosca ceoil folamh. Ní mór duit ábhar a chur leis ag baint úsáide as an gcnaipe cuir ar dheis."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "Tá an coimeádán folamh. Ní mór duit mír amháin ar a laghad a chur leis an gcoimeádán."
+      },
+      "title": {
+        "invalid": "Tá teideal an choimeádáin neamhbhailí. Ní mór duit ceann a bhunú."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "Tá an tacar URL don íomhá chúlra mícheart. Ní mór duit URL indieauthor bailí a chur ar fáil."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Ní mór téacs alt na híomhá beoite a shocrú."
+        },
+        "altRec": {
+          "invalid": "Ní mór téacs alt an cheantair bheoite a shocrú."
+        },
+        "empty": "Caithfidh limistéar beoite amháin ar a laghad a bheith ag an mbeochan.",
+        "h": {
+          "invalid": "Ní mór an airde a shocrú agus ní mór gur uimhir bhailí í."
+        },
+        "w": {
+          "invalid": "Ní mór an leithead a shocrú agus ní mór gur uimhir bhailí í."
+        },
+        "x": {
+          "invalid": "Ní mór an comhordanáid is mó a shocrú agus ní mór uimhir bhailí a bheith ann."
+        },
+        "y": {
+          "invalid": "Ní mór an uimhir is airde a shocrú agus ní mór gur uimhir bhailí í."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "Tá an beochan folamh. Ní mór duit mír amháin ar a laghad a chur leis an gcnaipe breise."
+      },
+      "height": {
+        "invalid": "Caithfidh airde na beochana a bheith níos mó ná 0."
+      },
+      "image": {
+        "invalid": "Tá an tacar URL don íomhá neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL indiemedia bailí i réimse na híomhá."
+      },
+      "width": {
+        "invalid": "Caithfidh leithead na beochana a bheith níos mó ná 0."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "Tá an tacar URL don íomhá neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL indiemedia bailí i réimse na híomhá."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "Ní mór duit sainmhíniú téarma fuaime amháin ar a laghad a chur leis"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "Ní mór duit URL indiemedia bailí a chur ar fáil"
+      },
+      "definition": {
+        "invalid": "Ní mór duit sainmhíniú a chur ar fáil."
+      },
+      "term": {
+        "invalid": "Ní mór duit téarma a chur ar fáil."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "Níor scríobh tú ábhar an athfhriotail. Ní mór duit, ar a laghad, an t-ábhar a scríobh."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "Ní mór duit téacs amháin ar a laghad agus eilimint de chineál cnaipe a chur ar fáil."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "Tá an tacar URL don íomhá neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL IndieMedia bailí i réimse íomhá an chnaipe."
+      },
+      "text": {
+        "invalid": "Tá an téacs folamh. Ní mór duit téacs a scríobh nó a chóipeáil."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "Tá an fhuinneog aibhsithe folamh. Ní mór duit gné shimplí amháin ar a laghad a chur leis."
+      },
+      "text": {
+        "invalid": "Tá an téacs folamh. Caithfidh tú téacs beag a scríobh."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "Soláthraíonn Denes íomhá bhailí sa réimse URL."
+      },
+      "options": {
+        "noCorrect": "Ní mór duit ceann ceart amháin ar a laghad a roghnú",
+        "notEnougOptions": "Ní mór duit 4 rogha a chur isteach"
+      },
+      "text": {
+        "invalid": "Tá an téacs folamh. Ní mór duit téacs a iontráil."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Caithfidh gné amháin ar a laghad a bheith i ngach colún sa leagan amach trína tharraingt ón bpailéad ar thaobh na láimhe clé."
+      },
+      "width": {
+        "invalid": "Leithead colún neamhbhailí"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "Ní mór duit téacs alt a chur ar fáil don íomhá"
+      },
+      "audioblob": {
+        "invalid": "Níl ábhar an chomhaid fuaime ceart. Ní mór duit comhad bailí a roghnú."
+      },
+      "captions": {
+        "invalid": "Tá an URL atá leagtha síos do na fotheidil neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL indiemedia bailí"
+      },
+      "captionsblob": {
+        "invalid": "Níl ábhar an chomhaid fotheideal ceart. Ní mór duit comhad bailí a roghnú."
+      },
+      "descriptions": {
+        "invalid": "Tá an tacar URL don chur síos neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL indiemedia bailí"
+      },
+      "imageblob": {
+        "invalid": "Níl ábhar na híomhá ceart. Ní mór duit íomhá bhailí a roghnú."
+      },
+      "name": {
+        "invalid": "Ní mór duit ainm a chur ar fáil don chás seo.",
+        "notUniqueName": "Caithfidh an t-ainm ásc a bheith uathúil ar fud an ábhair go léir."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "Ní mór duit mír Focal Ceart amháin ar a laghad a chur ar fáil."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "Tá an tacar URL don íomhá neamhbhailí. Ní mór duit URL indieauthor bailí a chur ar fáil."
+      },
+      "question": {
+        "invalid": "Tá téacs na ceiste folamh."
+      },
+      "word": {
+        "invalid": "Tá téacs an fhreagra folamh."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "Ní mór duit péire amháin ar a laghad a chur leis"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "Tá an URL a iontráladh don íomhá neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL indiemedia bailí i réimse na híomhá."
+      },
+      "text": {
+        "invalid": "Tá an téacs folamh. Caithfidh tú téacs gearr a scríobh."
+      },
+      "type": {
+        "invalid": "Tá an cineál atá leagtha síos don mhír neamhbhailí. Ní mór duit a chinntiú go roghnaítear an rogha 'Téacs' nó 'Íomhá'."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "Tá an mhír folamh. Ní mór duit mír sainmhínithe téarma amháin ar a laghad a chur leis ag baint úsáide as an gcnaipe cuir ar dheis."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "Tá an réimse sainmhínithe folamh. Ní mór duit sainmhíniú a scríobh."
+      },
+      "term": {
+        "invalid": "Tá an téarma réimse folamh. Ní mór duit téarma a scríobh."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "Ní mór duit freagra ceart a roghnú",
+        "notEnoughAnswers": "Ní mór duit 2 fhreagra féideartha ar a laghad a scríobh"
+      },
+      "question": {
+        "empty": "Ní féidir téacs na ceiste a bheith folamh",
+        "onlyOneBlank": "Ní mór duit ach spás bán amháin a chur san áireamh sa cheist"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "Ní féidir leis an bhfreagra a bheith folamh"
+      },
+      "attempts": {
+        "invalid": "Ní mór iarrachtaí a bheith ina uimhir idir 1 agus 9"
+      },
+      "question": {
+        "invalid": "Níor cheart go mbeadh an cheist folamh"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "Tá an tacar URL don íomhá neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL indiemedia bailí i réimse na híomhá."
+      },
+      "text": {
+        "invalid": "Tá an téacs folamh. Ní mór duit téacs a scríobh"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "Ní mór líon na gcolún a bheith 1,2 nó 3"
+      },
+      "data": {
+        "empty": "Ní mór duit íomhá amháin ar a laghad agus gné fuaime amháin a chur ar fáil."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "Ní mór duit URL indiemedia bailí a chur ar fáil"
+      },
+      "image": {
+        "invalid": "Tá an URL a iontráladh don íomhá neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL indiemedia bailí i réimse na híomhá."
+      },
+      "text": {
+        "invalid": "Tá an téacs folamh. Caithfidh tú téacs gearr a scríobh."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "Tá an tacar URL don íomhá neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL indiemedia bailí i réimse na híomhá."
+      },
+      "text": {
+        "invalid": "Tá an téacs folamh. Ní mór duit téacs a scríobh nó a chóipeáil."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "Tá an URL atá cumraithe don fhíseán neamhbhailí. Ba chóir duit a chinntiú ceann a chur ar fáil ó fhíseáin idirghníomhacha indieopen."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "Ní mór duit finscéal a chur ar fáil don fhoirmle."
+      },
+      "formula": {
+        "invalid": "Ní mór duit foirmle a chur ar fáil san fhormáid LaTex."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "Ní mór duit mír focal amháin ar a laghad atá ar iarraidh a chur ar fáil."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "Ní mór duit freagra ceart amháin ar a laghad a scríobh",
+        "invalid": "Tá an téacs freagartha folamh"
+      },
+      "sentence": {
+        "empty": "Ní féidir leis an bhfrása a bheith folamh",
+        "onlyOneBlank": "Níor chóir duit ach marcóir bearna a chur san abairt"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "Tá an modal folamh. Ní mór duit gné shimplí amháin ar a laghad a chur leis."
+      },
+      "text": {
+        "invalid": "Tá an téacs folamh. Caithfidh tú téacs beag a scríobh."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "Tá an tacar URL don íomhá chúlra mícheart. Ní mór duit URL indieauthor bailí a chur ar fáil."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Ní mór an téacs malartach don ghearrthóg a shocrú."
+        },
+        "altRec": {
+          "invalid": "Ní mór téacs alt an phoist a shocrú."
+        },
+        "empty": "Caithfidh píosa amháin ar a laghad a bheith sa bhfreagra.",
+        "h": {
+          "invalid": "Ní mór an airde a shocrú agus ní mór gur uimhir bhailí í."
+        },
+        "w": {
+          "invalid": "Ní mór an leithead a shocrú agus ní mór gur uimhir bhailí í."
+        },
+        "x": {
+          "invalid": "Ní mór an comhordanáid is mó a shocrú agus ní mór uimhir bhailí a bheith ann."
+        },
+        "y": {
+          "invalid": "Ní mór an uimhir is airde a shocrú agus ní mór gur uimhir bhailí í."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "Tá an mhír folamh. Ní mór duit iontráil amháin ar a laghad a chur leis an gcnaipe cuir ar dheis."
+      },
+      "title": {
+        "invalid": "Tá an réimse teidil folamh. Ní mór duit teideal a scríobh."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "Tá nasc dúblach amháin ar a laghad ann. Ní mór duit nasc uathúil a chur ar fáil do gach post.",
+        "empty": "Tá an mhír folamh. Ní mór duit iontráil amháin ar a laghad a chur leis an gcnaipe cuir ar dheis.",
+        "multipleCurrent": "Tá ar a laghad dhá iontráil reatha ann. Ní mór duit ach iontráil reatha amháin a chur ar fáil."
+      },
+      "moreThanOne": "Ní mór duit mír cláir ábhair amháin ar a mhéad a chur ar fáil."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "Tá an réimse teidil folamh. Ní mór duit teideal a scríobh."
+      },
+      "url": {
+        "invalid": "Ní mór an réimse url a shocrú san fhormáid seo a leanas: https://[foinse]/[údar]/[aonad]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "Tá an scéimre folamh. Ní mór duit mír amháin ar a laghad a chur leis an gcnaipe cuir ar dheis."
+      },
+      "height": {
+        "invalid": "Caithfidh airde na beochana a bheith níos mó ná 0."
+      },
+      "image": {
+        "invalid": "Tá an tacar URL don íomhá iomlán neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL indiemedia bailí."
+      },
+      "width": {
+        "invalid": "Caithfidh leithead na beochana a bheith níos mó ná 0."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "Tá an tacar URL don íomhá neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL indiemedia bailí i réimse na híomhá."
+      },
+      "text": {
+        "invalid": "Tá an téacs folamh. Caithfidh tú téacs beag a scríobh."
+      }
+    },
+    "section": {
+      "emptyData": "Ní féidir le rannóg a bheith folamh. Ní mór duit mír amháin ar a laghad a chur leis.",
+      "invalidBookmark": "Ní mór leabharmharc bailí a bheith ag an rannóg.",
+      "invalidImage": "Caithfidh íomhá chúlra a bheith ag an rannóg.",
+      "invalidName": "Caithfidh ainm a bheith ar an rannóg.",
+      "typeImageNotSelected": "Más Íomhá Chúlra an cineál roghnaithe, ní mór duit an íomhá a shocrú."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "Ní mór duit gné sórtála abairte amháin ar a laghad a chur ar fáil."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "Ní mór duit freagra ceart amháin ar a laghad a scríobh",
+        "impossible": "Ní féidir an abairt a thógáil ó na focail bhunaithe",
+        "invalid": "Tá an téacs freagartha folamh"
+      },
+      "words": {
+        "empty": "Ní mór duit focal bailí amháin ar a laghad a chlóscríobh",
+        "invalid": "Tá téacs an fhocail folamh"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "Tá an tacar URL don íomhá neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL indiemedia bailí i réimse na híomhá.",
+        "sizeNotSet": "Ní mór leithead agus airde na híomhá a shocrú nuair a bhíonn a chuma \"Saincheaptha\""
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "Ní mór duit freagra ceart a roghnú",
+        "notEnoughAnswers": "Ní mór duit 2 fhreagra féideartha ar a laghad a scríobh"
+      },
+      "question": {
+        "empty": "Ní féidir téacs na ceiste a bheith folamh"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "Tá an cluaisín folamh. Ní mór duit mír amháin ar a laghad a chur leis an gcluaisín."
+      },
+      "name": {
+        "invalid": "Tá ainm an chluaisín neamhbhailí. Ní mór duit ceann a bhunú."
+      }
+    },
+    "Table": {
+      "empty": "Níl aon cholúin socraithe sa tábla"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "Níl cluaisíní sa roghchlár cluaisíní. Ní mór duit ceann amháin ar a laghad a chur leis."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Tá colúin dhúbailte ann. Seiceáil do mhíreanna.",
+        "duplicatedTerms": "Tá téarmaí dúblacha idir do cholúin. Athbhreithniú a dhéanamh ar na téarmaí"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "Ní féidir colún a bheith folamh"
+      },
+      "terms": {
+        "empty": "Ní féidir téarmaí a bheith folamh.",
+        "invalid": "Ní chloíonn na téarmaí leis an bhformáid riachtanach. Scar téarmaí le leathstadanna (;)."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "Tá an tástáil folamh. Ní mór duit ceist amháin ar a laghad a chur leis."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "Tá an téacs folamh. Caithfidh tú téacs gearr a scríobh."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "Ní mór duit gné amháin ar a laghad fíor nó bréagach a chur leis"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "Ní féidir téacs na ceiste a bheith folamh"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "Ní féidir téacs na ceiste a bheith folamh"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "Tá URL an fhíseáin neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL bailí ó IndieMedia nó Youtube.",
+        "localInvalid": "Tá URL an fhíseáin neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL YouTube bailí."
+      }
+    }
+  },
+  "footer": {
+    "content": "Is féidir leat rannáin nua a chur leis ag baint úsáide as an mbarra uirlisí barr"
+  },
+  "general": {
+    "areYouSure": "An bhfuil tú cinnte?",
+    "cancel": "Cuir ar ceal",
+    "close": "Dún",
+    "confirm": "Deimhnigh",
+    "delete": "Deireadh a chur leis",
+    "discard": "Ná Sábháil",
+    "false": "Bréagach",
+    "load": "Luchtaigh",
+    "modelDetected": "An bhfuil fonn ort aonad roimhe seo a luchtú?",
+    "true": "Fíor"
+  },
+  "header": {
+    "addSection": "Cuir alt leis",
+    "clear": "Léirscrios an t-ábhar",
+    "download": "Aonad íoslódála",
+    "importSection": "Iompórtáil alt",
+    "install": "Suiteáil feidhmchlár",
+    "preview": "Réamhamharc ar ábhar",
+    "publish": "Ábhar a fhoilsiú",
+    "publishToNetlify": "Ábhar a fhoilsiú i Netlify",
+    "redo": "Athdhéan gníomh",
+    "save": "Sábháil inneachar",
+    "scorm": "Easpórtáil i bhformáid SCORM",
+    "translate": "Aistrigh aonad",
+    "undo": "Cealaigh Gníomh",
+    "upload": "Uasluchtaigh aonad",
+    "validate": "Aonad Bailíochtaithe"
+  },
+  "items": {
+    "add": "Cuir inneachar leis",
+    "delete": "Scrios mír",
+    "duplicate": "Mír dhúblach",
+    "edit": "Cuir ábhar in eagar",
+    "export": "Easpórtáil mír"
+  },
+  "messages": {
+    "changesSaved": "D' éirigh le hathruithe a shábháil.",
+    "confirmClearContent": "Tá tú chun an t-ábhar a scriosadh go hiomlán. Déan cinnte go bhfuil sé cad ba mhaith leat a dhéanamh i ndáiríre.",
+    "confirmLoadModel": "Aimsíodh aonad roimhe seo. Roghnaigh cé acu is mian leat é a luchtú nó é a chaitheamh amach.",
+    "contentCleared": "D' éirigh leis an inneachar a scriosadh.",
+    "contentErrors": "Ups! Tá earráidí i d'ábhar. Athbhreithnigh na teachtaireachtaí earráide agus lean a dtreoracha chun iad a shocrú.",
+    "couldNotExportElement": "Níorbh fhéidir an mhír a easpórtáil",
+    "couldNotExportSection": "Níorbh fhéidir an chuid a easpórtáil",
+    "deletedSection": "D' éirigh le scriosadh na rannóige",
+    "emptyContent": "Níor chuir tú ábhar leis.",
+    "errorMessage": "Earráid",
+    "exportedElement": "D' éirigh le heaspórtáil na míre",
+    "exportedSection": "D' éirigh le heaspórtáil na rannóige",
+    "importedElement": "D' éirigh le hiompórtáil na míre",
+    "importedSection": "D' éirigh leis an rannóg iompórtáilte",
+    "loadError": "Níorbh fhéidir an t-aonad a luchtú",
+    "noElement": "Níl aon mhíreanna le hiompórtáil",
+    "noErrors": "Níl sé go dona! Níl aon bhotún ann. Is féidir leat dul ar aghaidh chun an t-ábhar a shábháil.",
+    "noRedo": "Ní dhéanfaidh aon ní a redo",
+    "noSection": "Níl aon rannáin le hiompórtáil",
+    "noUndo": "Ní dhéanfaidh aon ní le cealú",
+    "previewError": "Níorbh fhéidir réamhamharc a dhéanamh ar an aonad",
+    "publishError": "Níorbh fhéidir an t-aonad a fhoilsiú",
+    "savedUnit": "D' éirigh leis an aonad a shábháil",
+    "saveError": "Níorbh fhéidir an t-aonad a shábháil",
+    "successMessage": "Ceart go leor",
+    "translateError": "Níorbh fhéidir an t-aonad a aistriú",
+    "warningMessage": "Aird"
+  },
+  "netlify": {
+    "button": {
+      "text": "Ceangail"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Cruthaigh suíomh",
+        "help": "Roghnaigh ceann de na suíomhanna atá ar fáil i do chuntas Netlify",
+        "label": "Roghnaigh suíomh atá ar fáil ó do Netlify chun an tAonad a uaslódáil"
+      },
+      "title": "Líon isteach na réimsí chun ceangal le Netlify ",
+      "token": {
+        "help": "Cuir isteach do chomhartha rochtana Netlify pearsanta. Is féidir leat é a fháil sa rannán Iarratais de na socruithe cuntais Netlify",
+        "label": "Ionsáigh an comhartha rochtana pearsanta:",
+        "placeholder": "Cuir isteach do chomhartha rochtana pearsanta Netlify anseo"
+      }
+    },
+    "error": {
+      "message": "Comhartha neamhbhailí"
+    },
+    "success": {
+      "message": "Uaslódáladh an t-aonad chuig Netlify go rathúil. Rochtain air trí chliceáil ar an nasc seo a leanas: ",
+      "message_2": "Coinnigh i gcuimhne má tá a lán ábhar ag d'aonad, b'fhéidir go dtógfaidh sé cúpla nóiméad é a fhoilsiú.",
+      "title": "Aonad uaslódáilte chuig Netlify"
+    }
+  },
+  "palette": {
+    "containers": "Coimeádáin",
+    "exerciseElement": "Cleachtaí",
+    "interactiveElements": "Eilimintí idirghníomhacha",
+    "items": "Míreanna",
+    "layouts": "Forálacha",
+    "question": "Ceisteanna",
+    "simpleElements": "Eilimintí"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Bloc cóid",
+        "screenReader": "Téacs cabhrach do léitheoirí scáileáin"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Scrios alt",
+    "duplicate": "Alt dúblach",
+    "edit": "Cuir eolas in eagar",
+    "expandContract": "Leathnaigh nó titim",
+    "export": "Easpórtáil alt",
+    "form": {
+      "bookmark": {
+        "help": "Beidh an marcóir seo le feiceáil ag barr an aonaid mar mharcóir rannóige. Caithfidh uasmhéid de 40 carachtar a bheith aige.",
+        "label": "Leabharmharc rannáin",
+        "placeholder": "Scríobh leabharmharc..."
+      },
+      "image": {
+        "help": "",
+        "label": "URL na híomhá cúlra",
+        "placeholder": "Iontráil URL na híomhá..."
+      },
+      "name": {
+        "help": "Is é seo an t-ainm a bheidh ar an rannóg san ábhar.",
+        "label": "Ainm na Rannóige",
+        "placeholder": "Scríobh ainm..."
+      },
+      "preview": "Réamhamharc ar an íomhá chúlra",
+      "type": {
+        "bc": "Dath cúlra (réamhshocrú)",
+        "bi": "Íomhá chúlra",
+        "help": "Má tá an cineál socraithe le 'dath cúlra', beidh an dath réamhshocraithe le feiceáil taobh thiar den teideal agus in 'Íomhá chúlra' ní mór duit íomhá chúlra a bhunú do cheannteideal na rannóige.",
+        "label": "Cineál cúlra"
+      }
+    },
+    "import": "Iompórtáil mír",
+    "label": "Rannóg",
+    "moveDown": "Scrollaigh an chuid síos",
+    "moveUp": "Scrollaigh an rannán suas"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Cumasaigh / Díchumasaigh anailísíocht san aonad",
+        "label": "Anailísíocht",
+        "no": "Ní hea",
+        "yes": "Tá"
+      },
+      "author": {
+        "help": "Ba chóir d'údar an aonaid scríobh anseo.",
+        "label": "Údar aonaid",
+        "placeholder": "Scríobhann údar an aonaid"
+      },
+      "background": {
+        "help": "Ba chóir go mbeadh an íomhá thart ar 1900 x 550 picteilín.",
+        "label": "Íomhá téama"
+      },
+      "color": {
+        "help": "Formáid heicsidheachúlach de dhíth #FFFFFF",
+        "label": "Dath an téama",
+        "placeholder": "Iontráil dath an téama anseo"
+      },
+      "email": {
+        "help": "Seo seoladh ríomhphoist an údair.",
+        "label": "Ríomhphost",
+        "placeholder": "Iontráil seoladh ríomhphoist an údair"
+      },
+      "institution": {
+        "help": "Ainm na hinstitiúide",
+        "label": "Institiúid",
+        "placeholder": "Cuir isteach ainm na hinstitiúide"
+      },
+      "language": {
+        "help": "Teanga an aonaid.",
+        "label": "Teanga"
+      },
+      "license": {
+        "BY": "Aitheantas Idirnáisiúnta 4.0 (CC BY 4.0)",
+        "BYNC": "Aitreabúideacht-NonCommercial-NoDerivs 4.0 Idirnáisiúnta (CC BY-NC-ND 4.0)",
+        "BYNCND": "Aitreabúideacht-NonCommercial-NoDerivs 4.0 Idirnáisiúnta (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Aitreabúideacht-NonCommercial-ShareAlike 4.0 Idirnáisiúnta (CC BY-NC-SA 4.0)",
+        "BYND": "Aitreabúideacht-NoDerivs 4.0 Idirnáisiúnta (CC BY-ND 4.0)",
+        "BYSA": "Aitreabúideacht-ShareAlike 4.0 Idirnáisiúnta (CC BY-SA 4.0)",
+        "help": "Ceadúnas Aonaid",
+        "label": "Ceadúnas",
+        "PRIVATE": "Gach ceart ar cosaint"
+      },
+      "resource": {
+        "help": "Iontráil aitheantas na hacmhainne",
+        "label": "Aitheantas Acmhainne:",
+        "placeholder": "Iontráil aitheantas na hacmhainne"
+      },
+      "theme": {
+        "help": "Roghnaigh téama an aonaid.",
+        "label": "Téama"
+      },
+      "title": {
+        "help": "Is é seo teideal an aonaid.",
+        "label": "Teideal an Aonaid",
+        "placeholder": "Iontráil teideal"
+      },
+      "type": {
+        "help": "Is é seo an cineál aonaid.",
+        "interoperability": "Idir-inoibritheacht",
+        "label": "Cineál Tiomántáin",
+        "open": "Oscail"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "Is í seo teanga fhoinseach an aonaid",
+        "label": "Teanga fhoinseach"
+      },
+      "target": {
+        "help": "An sprioctheanga ina n-aistreofar an t-aonad",
+        "label": "Sprioctheanga"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Roghchlár bosca ceoil"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "Socraigh teideal an ghrúpa ábhair. Beidh sé le feiceáil i dteideal an roghchlár anuas.",
+          "label": "Teideal an ábhair",
+          "placeholder": "Sampla: Scileanna gairmiúla"
+        }
+      },
+      "label": "Grúpa inneachair"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "Is é seo íomhá chúlra na beochana. Is féidir leat ceann de do chuid íomhánna uaslódáilte a roghnú.",
+          "label": "URL na híomhá",
+          "placeholder": "Ionsáigh URL na híomhá anseo...",
+          "preview": "Réamhamharc beochana"
+        },
+        "pieces": {
+          "altImg": "Alt téacs le haghaidh íomhá bheoite",
+          "altRec": "Alt téacs do réigiún beoite",
+          "delete": "Léirscrios",
+          "h": "Ard",
+          "new": "Cuir réigiún beoite nua leis...",
+          "w": "Leathan",
+          "x": "Ar chlé",
+          "y": "Níos Fearr"
+        }
+      },
+      "label": "Beochan",
+      "prev": "Níor cuireadh tús leis an mbeochan go fóill..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "Is é seo airde an choimeádáin beochana picteilín",
+          "label": "Airde beochana",
+          "placeholder": "Sampla: 200"
+        },
+        "image": {
+          "help": "Is é seo an íomhá atá le feiceáil sa mhír. Is féidir leat ceann de do chuid íomhánna uaslódáilte a roghnú nó ceann nua a uaslódáil.",
+          "label": "URL na híomhá",
+          "placeholder": "Cliceáil anseo chun an íomhá a roghnú"
+        },
+        "prev": "Réamhamharc ar an íomhá",
+        "width": {
+          "help": "Is é seo leithead an choimeádáin beochana i bpicteilíní",
+          "label": "Leithead beochana",
+          "placeholder": "Sampla: 400"
+        }
+      },
+      "label": "Beochan"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "Is é seo íomhá na míre beochana.",
+          "label": "URL na híomhá",
+          "placeholder": "Cliceáil anseo chun an íomhá a roghnú"
+        },
+        "prev": "Réamhamharc"
+      },
+      "label": "Mír na beochana.",
+      "prev": "Níl an mhír bheochana socraithe fós..."
+    },
+    "AudioTermContainer": {
+      "label": "Téarmaí fuaime"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "Ní mór duit URL na fuaime is mian leat a sheinm san aonad inneachair a iontráil.",
+          "label": "URL an chomhaid fuaime",
+          "placeholder": "Iontráil URL indiemedia bailí..."
+        },
+        "definition": {
+          "help": "Ba chóir gurb é an sainmhíniú seo tras-scríobh focal ar fhocal na fuaime.",
+          "label": "Sainmhíniú",
+          "placeholder": "Scríobh an sainmhíniú..."
+        },
+        "term": {
+          "help": "Beidh sé seo an téarma a chur ar an taobh clé den ghiuirléid",
+          "label": "Téarma",
+          "placeholder": "Scríobh do théarma anseo..."
+        }
+      },
+      "label": "Téarma fuaime",
+      "prev": "Téarma fuaime nach bhfuil bunaithe fós..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "Is féidir leis an gceapachán a bheith ailínithe ar dheis nó ailínithe ar chlé",
+          "label": "Ailíniú ceapacháin",
+          "values": {
+            "left": "Ar thaobh na láimhe clé",
+            "right": "Ar dheis"
+          }
+        },
+        "caption": {
+          "help": "Tá fotheideal an athfhriotail le feiceáil faoi bhun an athfhriotail. Úsáidtear é go príomha chun údar nó údair na lua a léiriú",
+          "label": "Fotheideal an athfhriotail",
+          "placeholder": "Sampla: Carl Sagan"
+        },
+        "quote": {
+          "help": "Is é an téacs seo an luachan focal ar fhocal",
+          "label": "Athfhriotal téacs",
+          "placeholder": "Sampla: 'Ní fianaise ar neamhláithreacht é easpa fianaise.'"
+        },
+        "source": {
+          "help": "Bunfhoinse an athfhriotail (Bliain, leabhar, iris... srl)",
+          "label": "Bunús an athfhriotail",
+          "placeholder": "Sampla: 1990"
+        }
+      },
+      "label": "Athfhriotal",
+      "prev": "Athfhriotal nach bhfuil bunaithe go fóill..."
+    },
+    "ButtonTextContainer": {
+      "label": "Cnaipí le téacs"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "Is é seo an íomhá a bheidh le feiceáil ar an gcnaipe. Is féidir leat ceann de do chuid íomhánna uaslódáilte a roghnú nó ceann nua a uaslódáil.",
+          "label": "URL na híomhá cnaipe",
+          "placeholder": "Ionsáigh do URL anseo"
+        },
+        "preview": "Réamhamharc ar íomhá chnaipe",
+        "text": {
+          "help": "San eagarthóir téacs seo is féidir leat ábhar an téacs a bhaineann leis an gcnaipe a scríobh",
+          "label": "Téacs",
+          "placeholder": "Scríobh do théacs anseo..."
+        }
+      },
+      "label": "Eilimint chnaipe le téacs",
+      "prev": "Níor túsaíodh eilimint an chnaipe le téacs go fóill..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Dath",
+        "helps": {
+          "animation": "Cinneann sé ceann de na beochana réamhshainithe don bhosca leis na heilimintí leabaithe (singil nó foldable).",
+          "colorTheme": "#FFFFFF gá le formáid heicsidheachúlach. <strong> Mura bhfuil sé líonta, tógfaidh dath théama an aonaid an luach réamhshocraithe.</strong>",
+          "styles": "Socraíonn sé ceann de na stíleanna réamhshainithe don bhosca leis na heilimintí leabaithe.",
+          "textTitle": "Is é seo an téacs a bheidh le feiceáil mar theideal. <strong>Mura bhfuil sé líonta tógfaidh sé luach réamhshocraithe.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Iontráil an dath anseo",
+          "textTitle": "Iontráil an teideal anseo"
+        },
+        "styles": {
+          "animation": "Stíl bheochana",
+          "attention": "Aird",
+          "collapsible": "Collapsible",
+          "danger": "Contúirt",
+          "label": "Stíl",
+          "more": "Faigh tuilleadh eolais",
+          "note": "Nóta",
+          "simple": "Simplí"
+        },
+        "textTitle": "Teideal"
+      },
+      "label": "Gan íoc"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "Beidh an íomhá le feiceáil ag barr an ghiuirléid, os cionn na roghanna.",
+          "label": "URL na híomhá",
+          "placeholder": "Iontráil URL na híomhá..."
+        },
+        "options": {
+          "help": "Beidh na 4 rogha seo le feiceáil faoi bhun na híomhá. Ní féidir ach ceann amháin a bheith ceart.",
+          "label": "Roghanna",
+          "placeholder": "Iontráil rogha"
+        },
+        "preview": "Réamhamharc íomhá",
+        "text": {
+          "help": "Beidh an téacs seo le feiceáil os cionn na híomhá mar théacs nó mar cheist.",
+          "label": "Téacs",
+          "placeholder": "Scríobh an téacs anseo..."
+        }
+      },
+      "label": "Roghnaigh rogha",
+      "prev": "Rogha a roghnú nach bhfuil socraithe ..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "Colúin",
+      "form": {
+        "width": {
+          "1": "Leithead an chéad cholúin",
+          "help": "Beidh an colún eile áitiú ar an leithead atá fágtha"
+        }
+      },
+      "label": "Diúscairt"
+    },
+    "CorrectWord": {
+      "label": "Focal ceart"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "Íomhá thuairisciúil den cheist",
+          "label": "URL na híomhá",
+          "placeholder": "Ionsáigh URL d'íomhá anseo..."
+        },
+        "preview": "Réamhamharc íomhá",
+        "question": {
+          "help": "Is í seo an cheist a thaispeánfar don úsáideoir.",
+          "label": "Téacs na gceisteanna",
+          "placeholder": "Téacs na gceisteanna"
+        },
+        "word": {
+          "help": "Is é an focal seo freagra na ceiste",
+          "label": "Freagra",
+          "placeholder": "Scríobh focal..."
+        }
+      },
+      "label": "Eilimint cheart focal",
+      "prev": "Níl an focal ceart bunaithe fós..."
+    },
+    "CouplesContainer": {
+      "label": "Lánúineacha",
+      "prev": "Lánúineacha nach bhfuil bunaithe go fóill..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "Beidh baint ag an íomhá seo leis an téacs a iontráiltear mar phéire san fhoirm seo.",
+          "label": "URL na híomhá",
+          "placeholder": "Iontráil URL na híomhá anseo..."
+        },
+        "legend": {
+          "first": "An chéad eilimint",
+          "second": "An dara gné"
+        },
+        "preview": "Réamhamharc íomhá",
+        "text": {
+          "help": "Beidh baint ag an téacs seo leis an íomhá a iontráiltear mar phéire san fhoirm seo.",
+          "label": "Téacs",
+          "placeholder": "Scríobh téacs..."
+        },
+        "type": {
+          "image": "Íomhá",
+          "label": "Fear",
+          "text": "Téacs"
+        }
+      },
+      "label": "Lánúin",
+      "prev": "Lánúin nach bhfuil bunaithe go fóill..."
+    },
+    "DragdropContainer": {
+      "label": "Tarraing agus scaoil"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "Feictear an sainmhíniú ar cheart na gné idirghníomhaí agus ní mór don mhac léinn an téarma a tharraingt chuig an sainmhíniú",
+          "label": "Sainmhíniú",
+          "placeholder": "Sampla: Tá sé de cheart ag gach duine iad féin a chur in iúl gan a bheith ciaptha mar gheall ar an méid a cheapann siad"
+        },
+        "term": {
+          "help": "Feictear an téarma ar thaobh na láimhe clé den ghné idirghníomhach agus is é an ceann a chaithfidh an mac léinn a tharraingt agus a scaoileadh sa sainmhíniú.",
+          "label": "Téarma",
+          "placeholder": "Sampla: Saoirse tuairimíochta"
+        }
+      },
+      "label": "Sainmhíniú téarma",
+      "prev": "Mír nach bhfuil bunaithe..."
+    },
+    "FourColumnsLayout": {
+      "label": "Ceithre cholún"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Ní mór duit 2 fhreagra ar a laghad a scríobh agus marcáil cé acu atá ceart.",
+          "label": "Freagraí féideartha"
+        },
+        "questionPreview": {
+          "help": "Is é seo an chuma a bheidh ar an gceist san aonad ábhair.",
+          "label": "Réamhamharc ar théacs na ceiste.",
+          "placeholder": "Ceist téacs le bán ___ sliotán."
+        },
+        "questionText": {
+          "help": "Ní mór duit téacs na ceiste a chlóscríobh leis an spás bán is mian leat leis an eochairfhocal speisialta [bán].",
+          "label": "Téacs na gceisteanna",
+          "placeholder": "Téacs na gceisteanna le heilimint bhán"
+        }
+      },
+      "label": "Líon ceist na bearna",
+      "prev": "Ceist faoi líonadh na bearna nach bhfuil bunaithe fós..."
+    },
+    "GenericWidget": {
+      "label": "Giuirléid"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "Freagra na ceiste",
+          "label": "Freagra",
+          "placeholder": "Scríobh do fhreagra anseo"
+        },
+        "attempts": {
+          "help": "Líon na n-iarrachtaí chun buille faoi thuairim an freagra. Caithfidh sé a bheith ina uimhir idir 1 agus 9.",
+          "label": "Iarrachtaí"
+        },
+        "question": {
+          "help": "An cheist atá le freagairt",
+          "label": "Ceist",
+          "placeholder": "Scríobh do cheist anseo"
+        }
+      },
+      "label": "Buille faoi thuairim an focal",
+      "prev": "Buille faoi thuairim nach bhfuil an focal túsaithe fós..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Má bhunaíonn tú téacs, is é seo fotheideal na híomhá",
+          "label": "Fotheideal íomhá",
+          "placeholder": "Iontráil fotheideal, le do thoil."
+        },
+        "image": {
+          "help": "Is é seo an íomhá a bheidh le feiceáil sa mhír.",
+          "label": "URL na híomhá",
+          "placeholder": "Cliceáil anseo chun an íomhá a roghnú"
+        },
+        "preview": "Réamhamharc"
+      },
+      "label": "Íomhá le téacs thuas",
+      "prev": "Íomhá le téacs thuas nach bhfuil bunaithe go fóill..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Íomhá agus fuaim"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "Seinnfear an comhad fuaime nuair a chliceáiltear an íomhá.",
+          "label": "URL an chomhaid fuaime",
+          "placeholder": "Iontráil URL indiemedia bailí..."
+        },
+        "image": {
+          "help": "Beidh an íomhá le feiceáil ar dtús",
+          "label": "URL na híomhá",
+          "placeholder": "Iontráil URL na híomhá..."
+        },
+        "preview": "Réamhamharc íomhá",
+        "text": {
+          "help": "Beidh an téacs le feiceáil os cionn na híomhá nuair a ainlíonn tú os a chionn.",
+          "label": "Téacs na híomhá",
+          "placeholder": "Scríobh téacs..."
+        }
+      },
+      "label": "Íomhá agus mír fuaime",
+      "prev": "Íomhá agus mír fuaime nach bhfuil bunaithe go fóill ..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "Is é seo an íomhá atá le feiceáil sa mhír. Is féidir leat ceann de do chuid íomhánna uaslódáilte a roghnú nó ceann nua a uaslódáil.",
+          "label": "URL na híomhá",
+          "placeholder": "Cliceáil anseo chun an íomhá a roghnú"
+        },
+        "layout": {
+          "help": "Bunaítear le treoshuíomh íomhá agus bloc téacs an áit a bhfuil gach ceann de na heilimintí sa bhloc le feiceáil.",
+          "label": "Treoshuíomh",
+          "values": {
+            "0": "Téacs ar dheis, íomhá ar chlé",
+            "1": "Téacs ar chlé, íomhá ar dheis"
+          }
+        },
+        "preview": "Réamhamharc íomhá",
+        "text": {
+          "help": "Caithfidh tú téacs a scríobh.",
+          "label": "San eagarthóir téacs seo is féidir leat ábhar an bhloic a scríobh.",
+          "placeholder": "Scríobh téacs..."
+        }
+      },
+      "label": "Íomhá agus téacs",
+      "prev": "Íomhá agus téacs nach bhfuil bunaithe go fóill..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Bain úsáid as ionchur téacs chun URL an fhíseáin idirghníomhach a cruthaíodh leis an uirlis físe idirghníomhach a iontráil.",
+          "label": "URL an fhíseáin",
+          "placeholder": "Sampla: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Físeán idirghníomhach",
+      "prev": "Físeán idirghníomhach nach bhfuil bunaithe go fóill"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "Beidh an finscéal seo le feiceáil faoi bhun na foirmle agus mar bhloc téacs",
+          "label": "Finscéal foirmle",
+          "placeholder": "Sampla: Foirmle chearnach"
+        },
+        "formula": {
+          "help": "Bain úsáid as an limistéar téacs chun an fhoirmle a chlóscríobh. Faoi bhun an réimse seo beidh réamhamharc ar an bhfoirmle le feiceáil má tá sé ceart nó an téacs i ndath dearg mura bhfuil an fhoirmle ceart",
+          "label": "Foirmle i bhformáid LaTex",
+          "placeholder": "Sampla: \\text{Is í an Fhoirmle Cheathrach }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "Foirmle LaTeX",
+      "prev": "Foirmle nach bhfuil bunaithe go fóill..."
+    },
+    "MissingWords": {
+      "label": "Focail ar iarraidh"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Léirscrios",
+          "new": "Cuir freagra nua leis...",
+          "text": "Freagra"
+        },
+        "sentence": {
+          "help": "Ní mór duit téacs na habairte a scríobh lena n-áirítear an bhearna tríd an marcóir speisialta [bán] a úsáid.",
+          "label": "Téacs abairte",
+          "placeholder": "Téacs abairte le marcóir [bán]"
+        },
+        "sentencePreview": {
+          "help": "Seo mar a bhreathnódh tú ar an bhfrása san aonad ábhair.",
+          "label": "Réamhamharc frásaí",
+          "placeholder": "Téacs abairte leis an marcóir ___ "
+        }
+      },
+      "label": "Eilimint na bhfocal ar iarraidh",
+      "prev": "Níl gné an fhocail atá ar iarraidh bunaithe go fóill..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "Taispeánfar an téacs seo mar théacs cnaipe, agus ní mór é a ghníomhachtú chun an fhuinneog mhódúil a oscailt.",
+          "label": "Téacs na gcnaipí",
+          "placeholder": "Scríobh an téacs..."
+        }
+      },
+      "label": "Fuinneog mhódúil"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "Beidh sé seo an íomhá cúlra an bhfreagra. Is féidir leat ceann de do chuid íomhánna uaslódáilte a roghnú.",
+          "label": "URL na híomhá",
+          "placeholder": "Ionsáigh URL na híomhá anseo...",
+          "preview": "Réamhamharc puzail"
+        },
+        "pieces": {
+          "altImg": "Alt téacs le haghaidh bearrtha",
+          "altRec": "Alt téacs le haghaidh suímh",
+          "delete": "Léirscrios",
+          "h": "Ard",
+          "new": "Cuir píosa nua leis...",
+          "w": "Leathan",
+          "x": "Ar chlé",
+          "y": "Níos Fearr"
+        }
+      },
+      "label": "Puzal",
+      "prev": "Níor túsaíodh an puzal go fóill..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Teideal an ghrúpa",
+          "label": "Teideal",
+          "placeholder": "Sampla: Modúl Dlí"
+        }
+      },
+      "label": "Grúpa",
+      "prev": "Grúpa nach bhfuil fós estabecido ..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Clár Ábhair"
+    },
+    "RelatedUnitsItem": {
+      "current": "An t-aonad reatha",
+      "form": {
+        "current": {
+          "title": "Is é seo an t-aonad reatha"
+        },
+        "title": {
+          "help": "Teideal an phoist",
+          "label": "Teideal",
+          "placeholder": "Sampla: Cearta an duine"
+        },
+        "url": {
+          "help": "URL sprice",
+          "label": "URL",
+          "placeholder": "Sampla: https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Bealach Isteach",
+      "prev": "Níl iontráil bunaithe fós..."
+    },
+    "SchemaContainer": {
+      "label": "Scéim"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "Is í seo íomhá pháirteach na scéime.",
+          "label": "URL na híomhá",
+          "placeholder": "Cliceáil anseo chun an íomhá a roghnú"
+        },
+        "prev": "Réamhamharc íomhá"
+      },
+      "label": "Mír imlíneach",
+      "prev": "Mír esuqema nach bhfuil bunaithe go fóill ..."
+    },
+    "SentenceOrderContainer": {
+      "label": "Sórtáil frásaí"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Léirscrios",
+          "help": "Freagraí a thógfar ó na focail a cuireadh isteach",
+          "legend": "Liosta freagraí",
+          "new": "Cuir freagra nua leis...",
+          "text": "Freagra"
+        },
+        "words": {
+          "delete": "Léirscrios",
+          "help": "Ba chóir go mbeadh na freagraí in ann a thógáil ó na focail seo",
+          "legend": "Liosta focal",
+          "new": "Cuir focal nua leis...",
+          "text": "Focal"
+        }
+      },
+      "label": "Eilimint shórtála frásaí",
+      "prev": "Níor túsaíodh an ghné sórtála abairte go fóill..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "Socraigh ailíniú na híomhá nuair nach bhfuil an chuma \"Coigeartaigh na toisí bunaidh go dtí an spás atá ar fáil\".",
+          "label": "Ailíniú íomhá",
+          "values": {
+            "center": "Dírithe",
+            "left": "Ar chlé",
+            "right": "Ceart"
+          }
+        },
+        "aspect": {
+          "help": "Is féidir an íomhá a thaispeáint leis na toisí bunaidh (nuair is féidir) nó is féidir í a choigeartú go leithead an scáileáin (scálaigh an íomhá). má tá na toisí níos airde agus níos leithne ná mar is féidir leis an scáileán a thaispeáint rachaidh sé i dtaithí go huathoibríoch ar an scáileán i gcónaí",
+          "label": "Cuma na híomhá",
+          "values": {
+            "custom": "Saincheaptha",
+            "fit": "Coigeartaigh na toisí bunaidh go dtí an spás atá ar fáil",
+            "original": "Toisí bunaidh"
+          }
+        },
+        "image": {
+          "help": "Is é seo an íomhá a bheidh le feiceáil sa mhír.",
+          "label": "URL na híomhá",
+          "placeholder": "Iontráil URL na híomhá anseo"
+        },
+        "preview": "Réamhamharc",
+        "size": {
+          "height": "Ard",
+          "heightPlaceholder": "Airde na híomhá...",
+          "keepRatio": "Coinnigh cóimheas íomhá",
+          "width": "Leathan",
+          "widthPlaceholder": "Leithead na híomhá..."
+        }
+      },
+      "label": "Íomhá",
+      "prev": "Níl an íomhá bunaithe fós..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Ní mór duit 2 fhreagra ar a laghad a scríobh agus marcáil cé acu atá ceart.",
+          "label": "Freagraí féideartha"
+        },
+        "questionText": {
+          "help": "Is é seo téacs na ceiste a thaispeánfar san aonad ábhair.",
+          "label": "Téacs na gceisteanna",
+          "placeholder": "Téacs na ceiste simplí..."
+        }
+      },
+      "label": "Ceist shimplí",
+      "prev": "Ceist shimplí nach bhfuil socraithe fós..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "Is é seo an t-ainm atá le feiceáil i dteideal na gcluaisíní.",
+          "label": "Ainm an chluaisín",
+          "placeholder": "Sampla: Scileanna gairmiúla"
+        }
+      },
+      "label": "Fabhraí"
+    },
+    "Table": {
+      "empty": "Níor túsaíodh an tábla go fóill",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "Tá ainm an cholúin folamh nó sainithe cheana féin",
+            "label": "Ainm an cholúin",
+            "placeholder": "Clóscríobh ainm an cholúin anseo..."
+          },
+          "columnPosition": {
+            "error": "Suíomh colún lasmuigh den raon",
+            "label": "Ionad an cholúin"
+          },
+          "label": "Cuir colún nua leis",
+          "submit": "Cuir colún leis"
+        },
+        "addRow": "Cuir ró nua leis",
+        "deleteColumn": "Glan colún",
+        "deleteRow": "Glan ró"
+      },
+      "help": {
+        "edit": "Roghnaigh cill le cur in eagar. Chun línte nua a chur leis agus tú i mbun eagarthóireachta, brúigh an eochair aistrithe agus Iontráil á bhrú."
+      },
+      "label": "An Bord",
+      "prev": "Tábla nach bhfuil bunaithe go fóill..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Fabhraí",
+      "label": "Roghchlár na gcluaisíní"
+    },
+    "TermClassification": {
+      "label": "Aicmiú",
+      "prev": "Aicmiú"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "Is é seo an colún lena mbainfidh na téarmaí.",
+          "label": "Colún",
+          "placeholder": "Colún"
+        },
+        "terms": {
+          "help": "Sa phost seo ní mór duit na focail a bhaineann leis an téarma scartha ag leathstad an ceann a scríobh. Mar shampla: iad seo; is iad sin; cuid acu; focail",
+          "label": "Focail",
+          "placeholder": "Scríobh focail scartha ag leathstadanna"
+        }
+      },
+      "label": "Mír aicmithe",
+      "prev": "Mír nach bhfuil bunaithe fós..."
+    },
+    "Test": {
+      "label": "Cineál Tástála",
+      "questionSelect": "Roghnaigh cineál ceiste is mian leat a chur leis an tráth na gceist"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Caithfidh tú téacs a scríobh.",
+        "label": "San eagarthóir téacs seo is féidir leat ábhar an bhloic a scríobh.",
+        "placeholder": "Iontráil téacs...",
+        "styles": {
+          "attention": "Aird",
+          "default": "Gan stíl",
+          "help": "Socraíonn seo leagan amach an bhosca atá timpeall ar an téacs",
+          "label": "Stíl bhloc téacs",
+          "more": "Faigh tuilleadh eolais",
+          "note": "Nóta"
+        }
+      },
+      "label": "Bloc téacs",
+      "prev": "Téacs nach bhfuil bunaithe go fóill..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Trí cholún"
+    },
+    "TrueFalseContainer": {
+      "label": "Fíor/bréagach",
+      "prev": "Fíor/bréagach nach bhfuil bunaithe fós..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Bréagach",
+          "help": "Roghnaigh idir fíor nó bréagach mar fhreagra ceart",
+          "label": "Freagra ceart",
+          "true": "Fíor"
+        },
+        "questionText": {
+          "help": "Is é seo téacs na míre.",
+          "label": "Téacs na míre",
+          "placeholder": "Téacs na míre..."
+        }
+      },
+      "label": "Mír fhíor/bhréagach",
+      "prev": "Mír fhíor/bhréagach nach bhfuil bunaithe fós..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Bréagach",
+          "help": "Roghnaigh idir fíor nó bréagach mar fhreagra ceart",
+          "label": "Freagra ceart",
+          "true": "Fíor"
+        },
+        "questionText": {
+          "help": "Is é seo téacs na ceiste a thaispeánfar san aonad ábhair.",
+          "label": "Téacs na ceiste téacs",
+          "placeholder": "Téacs na ceiste..."
+        }
+      },
+      "label": "Ceist fhíor nó bhréagach",
+      "prev": "Ceist fíor nó bréagach bunaithe fós..."
+    },
+    "TwoColumnsLayout": {
+      "label": "Dhá cholún"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Taispeáin fotheidil réamhshocraithe",
+          "no": "Ní hea",
+          "yes": "Tá"
+        },
+        "url": {
+          "help": "Bain úsáid as ionchur téacs chun URL d'fhíseáin a iontráil (youtube, vimeo...)",
+          "label": "URL an fhíseáin",
+          "placeholder": "Sampla: https://example.com/video.mp4"
+        }
+      },
+      "label": "Físeán",
+      "prev": "Níl an físeán socraithe fós..."
+    }
+  }
+}

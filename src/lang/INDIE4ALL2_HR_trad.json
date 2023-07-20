@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Pokaži/sakrij kategorije",
+    "viewImage": "Pogledajte sliku"
+  },
+  "common": {
+    "alt": {
+      "help": "Ovo je alternativni tekst opisa slike u smislu pristupačnosti",
+      "label": "Zamjenski tekst za sliku",
+      "placeholder": "Zamjenski tekst"
+    },
+    "captions": {
+      "help": "INDIeMedia URL datoteke koja sadrži transkript dijaloga, zvučnih efekata, glazbenih zapisa i drugih audioinformacija kada je gledatelj gluh ili nagluh ili ako je video/audio isključen. Titlovi se također prikazuju iznad videozapisa.",
+      "label": "Titlovi (CC)",
+      "placeholder": "Primjer: https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "INDIeMedia URL datoteke koja sadrži tekstualne opise onoga što se događa u videozapisu kada dio videozapisa nije dostupan jer je gledatelj slijep i ne koristi zaslon. Opise čita čitač zaslona ili ih pretvara u zasebni audio zapis.",
+      "label": "Opis",
+      "placeholder": "Primjer: https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Preuzimanje pogona, pričekajte",
+      "title": "Učitavanje"
+    },
+    "feedback": {
+      "help": "Protumačite povratne informacije koje će učenik dobiti bez obzira na to odgovara li točno ili pogrešno",
+      "label": "Povratna informacija",
+      "negative": "Negativne povratne informacije...",
+      "positive": "Pozitivne povratne informacije..."
+    },
+    "generate": {
+      "description": "Generiranje, pričekajte",
+      "title": "Generiranje"
+    },
+    "help": {
+      "button": "Propust",
+      "help": "Ovaj će se tekst pojaviti iznad widgeta kako bi korisnik razumio kako komunicirati s njim. <strong>Ako ostane prazan, pojavit će se zadani tekst.</strong>",
+      "label": "Pomoć",
+      "placeholder": "Zadani tekst pomoći"
+    },
+    "language": {
+      "EL": "Grčki",
+      "EN": "Engleski",
+      "ES": "Španjolski",
+      "FR": "Francuski",
+      "LT": "Litvanski"
+    },
+    "loading": {
+      "description": "Učitavanje, pričekajte",
+      "title": "Učitavanje"
+    },
+    "name": {
+      "help": "To će biti naziv instance widgeta za analitiku učenja",
+      "label": "Ime",
+      "placeholder": "Naziv instance widgeta"
+    },
+    "navbar": {
+      "options": "Mogućnosti proširivanja/sažimanja"
+    },
+    "preview": {
+      "description": "Generira se vaš pregled, pričekajte",
+      "generated": {
+        "description": "Vaš pregled je spreman. Ako vas preglednik ne preusmjeri na pretpregled, kliknite donju vezu:",
+        "title": "Pretpregled je uspješno generiran"
+      },
+      "title": "Generiranje pretpregleda"
+    },
+    "publish": {
+      "description": "Vaš se pogon generira za preuzimanje, pričekajte",
+      "title": "Jedinica za objavljivanje"
+    },
+    "publishToNetlify": {
+      "description": "Vaša jedinica se prenosi u Netlify, pričekajte",
+      "title": "Jedinica za objavljivanje u programu Netlify"
+    },
+    "save": {
+      "description": "Štednja, pričekajte",
+      "title": "Ušteda"
+    },
+    "scorm": {
+      "description": "Vaš SCORM paket se generira, pričekajte",
+      "title": "Generiranje SCORM paketa"
+    },
+    "selectType": "Odaberite vrstu iz sljedećih mogućnosti",
+    "unit": {
+      "settings": "Unesite detalje o jedinici"
+    }
+  },
+  "dialog": {
+    "translate": "Prevedi jedinicu"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "Harmonika je prazna. Sadržaj morate dodati pomoću gumba za dodavanje s desne strane."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "Spremnik je prazan. U spremnik morate dodati barem jednu stavku."
+      },
+      "title": {
+        "invalid": "Naslov spremnika nije valjan. Morate ga uspostaviti."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "Skup URL-ova za pozadinsku sliku nije točan. Morate navesti valjani URL indieautora."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Mora biti postavljen zamjenski tekst za animiranu sliku."
+        },
+        "altRec": {
+          "invalid": "Mora biti postavljen zamjenski tekst za animirano područje."
+        },
+        "empty": "Animacija mora imati barem jedno animirano područje.",
+        "h": {
+          "invalid": "Visina mora biti postavljena i mora biti valjani broj."
+        },
+        "w": {
+          "invalid": "Širina mora biti postavljena i mora biti valjani broj."
+        },
+        "x": {
+          "invalid": "Krajnje lijeva koordinata mora biti postavljena i mora biti valjani broj."
+        },
+        "y": {
+          "invalid": "Gornji broj mora biti postavljen i mora biti valjan broj."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "Animacija je prazna. Morate dodati barem jednu stavku pomoću gumba dodaj."
+      },
+      "height": {
+        "invalid": "Visina animacije mora biti veća od 0."
+      },
+      "image": {
+        "invalid": "Skup URL-ova za sliku nije valjan. Morate biti sigurni da ste u polju slike naveli valjani URL indiemedije."
+      },
+      "width": {
+        "invalid": "Širina animacije mora biti veća od 0."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "Skup URL-ova za sliku nije valjan. Morate biti sigurni da ste u polju slike naveli valjani URL indiemedije."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "Morate dodati barem jednu definiciju audio termina"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "Morate navesti valjani URL indiemedije"
+      },
+      "definition": {
+        "invalid": "Morate navesti definiciju."
+      },
+      "term": {
+        "invalid": "Morate navesti termin."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "Niste napisali sadržaj ponude. Morate barem napisati sadržaj."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "Morate navesti barem jedan element vrste teksta i gumba."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "Skup URL-ova za sliku nije valjan. Morate osigurati valjani INDIEMedia URL u polju slike gumba."
+      },
+      "text": {
+        "invalid": "Tekst je prazan. Morate napisati ili kopirati tekst."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "Istaknuti prozor je prazan. Morate dodati barem jedan jednostavan element."
+      },
+      "text": {
+        "invalid": "Tekst je prazan. Morate napisati mali tekst."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "Denes pruža valjanu sliku u polju URL-a."
+      },
+      "options": {
+        "noCorrect": "Morate odabrati barem jednu ispravnu",
+        "notEnougOptions": "Morate unijeti 4 mogućnosti"
+      },
+      "text": {
+        "invalid": "Tekst je prazan. Morate unijeti tekst."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Svi stupci u izgledu moraju sadržavati barem jedan element povlačenjem iz palete s lijeve strane."
+      },
+      "width": {
+        "invalid": "Širina stupca nije valjana"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "Morate navesti zamjenski tekst za sliku"
+      },
+      "audioblob": {
+        "invalid": "Sadržaj audiodatoteke nije ispravan. Morate odabrati valjanu datoteku."
+      },
+      "captions": {
+        "invalid": "Skup URL-ova za titlove nije valjan. Morate biti sigurni da ste naveli valjani INDIEMEDIA URL"
+      },
+      "captionsblob": {
+        "invalid": "Sadržaj datoteke titlova nije ispravan. Morate odabrati valjanu datoteku."
+      },
+      "descriptions": {
+        "invalid": "Skup URL-ova za opis nije valjan. Morate biti sigurni da ste naveli valjani INDIEMEDIA URL"
+      },
+      "imageblob": {
+        "invalid": "Sadržaj slike nije točan. Morate odabrati valjanu sliku."
+      },
+      "name": {
+        "invalid": "Morate navesti naziv za ovu instancu.",
+        "notUniqueName": "Naziv instance mora biti jedinstven u cijelom sadržaju."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "Morate navesti barem jednu ispravnu stavku Worda."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "Skup URL-ova za sliku nije valjan. Morate navesti valjani URL indieautora."
+      },
+      "question": {
+        "invalid": "Tekst pitanja je prazan."
+      },
+      "word": {
+        "invalid": "Tekst odgovora je prazan."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "Morate dodati barem jedan par"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "URL unesen za sliku nije valjan. Morate biti sigurni da u polju slike navedite valjani URL indiemedije."
+      },
+      "text": {
+        "invalid": "Tekst je prazan. Morate napisati kratki tekst."
+      },
+      "type": {
+        "invalid": "Skup vrsta za stavku nije valjan. Morate biti sigurni da je odabrana opcija \"Tekst\" ili \"Slika\"."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "Stavka je prazna. Morate dodati barem jednu stavku definicije termina pomoću gumba za dodavanje s desne strane."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "Polje definicije je prazno. Morate napisati definiciju."
+      },
+      "term": {
+        "invalid": "Polje termina je prazno. Morate napisati termin."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "Morate odabrati točan odgovor",
+        "notEnoughAnswers": "Morate napisati najmanje 2 moguća odgovora"
+      },
+      "question": {
+        "empty": "Tekst pitanja ne može biti prazan",
+        "onlyOneBlank": "U pitanje morate uključiti samo jedan prazan prostor"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "Odgovor ne smije biti prazan"
+      },
+      "attempts": {
+        "invalid": "Pokušaji moraju biti broj između 1 i 9"
+      },
+      "question": {
+        "invalid": "Pitanje ne smije biti prazno"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "Skup URL-ova za sliku nije valjan. Morate biti sigurni da ste u polju slike naveli valjani URL indiemedije."
+      },
+      "text": {
+        "invalid": "Tekst je prazan. Morate napisati tekst"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "Broj stupaca mora biti 1,2 ili 3"
+      },
+      "data": {
+        "empty": "Morate navesti barem jedan element slike i zvuka."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "Morate navesti valjani URL indiemedije"
+      },
+      "image": {
+        "invalid": "URL unesen za sliku nije valjan. Morate biti sigurni da u polju slike navedite valjani URL indiemedije."
+      },
+      "text": {
+        "invalid": "Tekst je prazan. Morate napisati kratki tekst."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "Skup URL-ova za sliku nije valjan. Morate biti sigurni da ste u polju slike naveli valjani URL indiemedije."
+      },
+      "text": {
+        "invalid": "Tekst je prazan. Morate napisati ili kopirati tekst."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "URL konfiguriran za videozapis nije valjan. Trebali biste ga pružiti iz indieopen interaktivnih videozapisa."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "Morate navesti legendu za formulu."
+      },
+      "formula": {
+        "invalid": "Morate navesti formulu u LaTex formatu."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "Morate navesti barem jednu stavku riječi koja nedostaje."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "Morate napisati barem jedan točan odgovor",
+        "invalid": "Tekst odgovora je prazan"
+      },
+      "sentence": {
+        "empty": "Fraza ne smije biti prazna",
+        "onlyOneBlank": "U rečenicu biste trebali uključiti samo oznaku razmaka"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "Modo je prazan. Morate dodati barem jedan jednostavan element."
+      },
+      "text": {
+        "invalid": "Tekst je prazan. Morate napisati mali tekst."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "Skup URL-ova za pozadinsku sliku nije točan. Morate navesti valjani URL indieautora."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Mora se postaviti zamjenski tekst za isječak."
+        },
+        "altRec": {
+          "invalid": "Zamjenski tekst za položaj mora biti postavljen."
+        },
+        "empty": "Zagonetka mora imati barem jedan komad.",
+        "h": {
+          "invalid": "Visina mora biti postavljena i mora biti valjani broj."
+        },
+        "w": {
+          "invalid": "Širina mora biti postavljena i mora biti valjani broj."
+        },
+        "x": {
+          "invalid": "Krajnje lijeva koordinata mora biti postavljena i mora biti valjani broj."
+        },
+        "y": {
+          "invalid": "Gornji broj mora biti postavljen i mora biti valjan broj."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "Stavka je prazna. Morate dodati barem jedan unos pomoću gumba za dodavanje s desne strane."
+      },
+      "title": {
+        "invalid": "Polje naslova je prazno. Moraš napisati naslov."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "Postoji barem jedna duplicirana veza. Morate navesti jedinstvenu vezu za svaku objavu.",
+        "empty": "Stavka je prazna. Morate dodati barem jedan unos pomoću gumba za dodavanje s desne strane.",
+        "multipleCurrent": "Postoje najmanje dvije trenutne stavke. Morate navesti samo jednu trenutnu stavku."
+      },
+      "moreThanOne": "Morate navesti najviše jednu stavku tablice sadržaja."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "Polje naslova je prazno. Moraš napisati naslov."
+      },
+      "url": {
+        "invalid": "Polje URL-a mora biti postavljeno na sljedeći oblik: https://[izvor]/[autor]/[jedinica]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "Shema je prazna. Morate dodati barem jednu stavku pomoću gumba za dodavanje s desne strane."
+      },
+      "height": {
+        "invalid": "Visina animacije mora biti veća od 0."
+      },
+      "image": {
+        "invalid": "Skup URL-ova za cijelu sliku nije valjan. Morate biti sigurni da ste naveli valjani INDIEMEDIA URL."
+      },
+      "width": {
+        "invalid": "Širina animacije mora biti veća od 0."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "Skup URL-ova za sliku nije valjan. Morate biti sigurni da ste u polju slike naveli valjani URL indiemedije."
+      },
+      "text": {
+        "invalid": "Tekst je prazan. Morate napisati mali tekst."
+      }
+    },
+    "section": {
+      "emptyData": "Sekcija ne može biti prazna. Morate dodati barem jednu stavku.",
+      "invalidBookmark": "Sekcija mora imati valjanu knjižnu oznaku.",
+      "invalidImage": "Sekcija mora imati pozadinsku sliku.",
+      "invalidName": "Sekcija mora imati naziv.",
+      "typeImageNotSelected": "Ako je odabrana vrsta Pozadinska slika, morate postaviti sliku."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "Morate navesti barem jedan element sortiranja rečenica."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "Morate napisati barem jedan točan odgovor",
+        "impossible": "Rečenica se ne može konstruirati iz utvrđenih riječi",
+        "invalid": "Tekst odgovora je prazan"
+      },
+      "words": {
+        "empty": "Morate upisati barem jednu valjanu riječ",
+        "invalid": "Wordov tekst je prazan"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "Skup URL-ova za sliku nije valjan. Morate biti sigurni da ste u polju slike naveli valjani URL indiemedije.",
+        "sizeNotSet": "Širina i visina slike moraju biti postavljene kada je njezin izgled \"Prilagođen\""
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "Morate odabrati točan odgovor",
+        "notEnoughAnswers": "Morate napisati najmanje 2 moguća odgovora"
+      },
+      "question": {
+        "empty": "Tekst pitanja ne može biti prazan"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "Kartica je prazna. Na karticu morate dodati barem jednu stavku."
+      },
+      "name": {
+        "invalid": "Naziv kartice nije valjan. Morate ga uspostaviti."
+      }
+    },
+    "Table": {
+      "empty": "Tablica nema postavljenih stupaca"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "Izbornik kartica ne sadrži kartice. Morate dodati barem jednu."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Postoje duplicirani stupci. Provjerite svoje predmete.",
+        "duplicatedTerms": "Između stupaca postoje duplicirani pojmovi. Pregledajte uvjete"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "Stupac ne smije biti prazan"
+      },
+      "terms": {
+        "empty": "Uvjeti ne mogu biti prazni.",
+        "invalid": "Uvjeti nisu u skladu s potrebnim formatom. Izraze odvojite točka-zarezom (;)."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "Test je prazan. Morate dodati barem jedno pitanje."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "Tekst je prazan. Morate napisati kratki tekst."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "Morate dodati barem jedan istiniti ili lažni element"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "Tekst pitanja ne može biti prazan"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "Tekst pitanja ne može biti prazan"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "URL videozapisa nije valjan. Morate navesti valjani URL tvrtke IndieMedia ili Youtube.",
+        "localInvalid": "URL videozapisa nije valjan. Morate biti sigurni da ste naveli valjani URL YouTubea."
+      }
+    }
+  },
+  "footer": {
+    "content": "Nove sekcije možete dodati pomoću gornje alatne trake"
+  },
+  "general": {
+    "areYouSure": "Jesi siguran?",
+    "cancel": "Otkazati",
+    "close": "Blizak",
+    "confirm": "Potvrditi",
+    "delete": "Eliminirati",
+    "discard": "Odbaciti",
+    "false": "Lažan",
+    "load": "Opterećenje",
+    "modelDetected": "Želite li učitati prethodnu jedinicu?",
+    "true": "Istinit"
+  },
+  "header": {
+    "addSection": "Dodaj sekciju",
+    "clear": "Brisanje sadržaja",
+    "download": "Jedinica za preuzimanje",
+    "importSection": "Sekcija Uvoz",
+    "install": "Instaliranje aplikacije",
+    "preview": "Pretpregled sadržaja",
+    "publish": "Objavljivanje sadržaja",
+    "publishToNetlify": "Objavljivanje sadržaja u programu Netlify",
+    "redo": "Ponovi poništenu akciju",
+    "save": "Spremanje sadržaja",
+    "scorm": "Izvoz u SCORM formatu",
+    "translate": "Prevedi jedinicu",
+    "undo": "Poništi akciju",
+    "upload": "Prenesi jedinicu",
+    "validate": "Provjera valjanosti jedinice"
+  },
+  "items": {
+    "add": "Dodavanje sadržaja",
+    "delete": "Izbriši stavku",
+    "duplicate": "Dupliciraj stavku",
+    "edit": "Uređivanje sadržaja",
+    "export": "Izvezi stavku"
+  },
+  "messages": {
+    "changesSaved": "Promjene su uspješno spremljene.",
+    "confirmClearContent": "Sadržaj ćete u potpunosti izbrisati. Pobrinite se da je to ono što stvarno želite učiniti.",
+    "confirmLoadModel": "Pronađena je prethodna jedinica. Odaberite želite li ga učitati ili odbaciti.",
+    "contentCleared": "Sadržaj je uspješno izbrisan.",
+    "contentErrors": "Usponi! Postoje pogreške u vašem sadržaju. Pregledajte poruke o pogreškama i slijedite njihove upute da biste ih ispravili.",
+    "couldNotExportElement": "Stavku nije moguće izvesti",
+    "couldNotExportSection": "Sekciju nije moguće izvesti",
+    "deletedSection": "Sekcija je uspješno izbrisana",
+    "emptyContent": "Niste dodali sadržaj.",
+    "errorMessage": "Greška",
+    "exportedElement": "Stavka je uspješno izvezena",
+    "exportedSection": "Sekcija je uspješno izvezena",
+    "importedElement": "Stavka je uspješno uvezena",
+    "importedSection": "Sekcija je uspješno uvezena",
+    "loadError": "Jedinicu nije moguće učitati",
+    "noElement": "Nema stavki za uvoz",
+    "noErrors": "Nije loše! Nema grešaka. Možete nastaviti sa spremanjem sadržaja.",
+    "noRedo": "Nema se što ponoviti",
+    "noSection": "Nema sekcija za uvoz",
+    "noUndo": "Ništa za poništiti",
+    "previewError": "Jedinicu nije moguće pregledati",
+    "publishError": "Jedinicu nije moguće objaviti",
+    "savedUnit": "Jedinica je uspješno spremljena",
+    "saveError": "Jedinicu nije moguće spremiti",
+    "successMessage": "Ok",
+    "translateError": "Jedinicu nije moguće prevesti",
+    "warningMessage": "Pažnja"
+  },
+  "netlify": {
+    "button": {
+      "text": "Spojiti"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Stvaranje web-mjesta",
+        "help": "Odaberite jedno od dostupnih web-mjesta na računu za Netlify",
+        "label": "Odaberite dostupno web-mjesto iz netlifikata da biste prenijeli jedinicu"
+      },
+      "title": "Ispunite polja da biste se povezali s mrežom Netlify ",
+      "token": {
+        "help": "Unesite svoj osobni Netlify pristupni token. Možete ga pronaći u odjeljku Aplikacije u postavkama računa Netlify",
+        "label": "Umetnite token za osobni pristup:",
+        "placeholder": "Ovdje umetnite svoj Netlify token za osobni pristup"
+      }
+    },
+    "error": {
+      "message": "Token nije valjan"
+    },
+    "success": {
+      "message": "Jedinica je uspješno prenesena na Netlify. Pristupite mu klikom na sljedeću vezu: ",
+      "message_2": "Imajte na umu da ako vaša jedinica ima puno sadržaja, objavljivanje može potrajati nekoliko minuta.",
+      "title": "Jedinica prenesena na Netlify"
+    }
+  },
+  "palette": {
+    "containers": "Kontejnere",
+    "exerciseElement": "Vježbe",
+    "interactiveElements": "Interaktivni elementi",
+    "items": "Predmeta",
+    "layouts": "Odredbama",
+    "question": "Pitanja",
+    "simpleElements": "Elemenata"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Blok koda",
+        "screenReader": "Tekst pomoći za čitače zaslona"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Brisanje sekcije",
+    "duplicate": "Dupliciraj sekciju",
+    "edit": "Uređivanje informacija",
+    "expandContract": "Proširivanje ili sažimanje",
+    "export": "Sekcija Izvoz",
+    "form": {
+      "bookmark": {
+        "help": "Ova oznaka pojavit će se na vrhu jedinice kao oznaka sekcije. Mora imati najviše 40 znakova.",
+        "label": "Knjižna oznaka sekcije",
+        "placeholder": "Napišite knjižnu oznaku..."
+      },
+      "image": {
+        "help": "",
+        "label": "URL pozadinske slike",
+        "placeholder": "Unesite URL slike..."
+      },
+      "name": {
+        "help": "To je naziv koji će sekcija imati u sadržaju.",
+        "label": "Naziv sekcije",
+        "placeholder": "Napišite ime..."
+      },
+      "preview": "Pretpregled pozadinske slike",
+      "type": {
+        "bc": "Boja pozadine (zadano)",
+        "bi": "Pozadinska slika",
+        "help": "Ako je vrsta postavljena na \"boja pozadine\", zadana boja pojavit će se iza naslova, dok u odjeljku \"Pozadinska slika\" morate uspostaviti pozadinsku sliku naslova sekcije.",
+        "label": "Vrsta pozadine"
+      }
+    },
+    "import": "Uvoz stavke",
+    "label": "Sekcija",
+    "moveDown": "Pomicanje sekcije prema dolje",
+    "moveUp": "Pomicanje sekcije prema gore"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Omogućivanje/onemogućivanje analitike u jedinici",
+        "label": "Analitika",
+        "no": "Ne",
+        "yes": "Da"
+      },
+      "author": {
+        "help": "Autor jedinice trebao bi pisati ovdje.",
+        "label": "Autor jedinice",
+        "placeholder": "Autor jedinice piše"
+      },
+      "background": {
+        "help": "Slika bi trebala biti približno 1900 x 550 piksela.",
+        "label": "Slika teme"
+      },
+      "color": {
+        "help": "Potreban #FFFFFF heksadecimalni oblik",
+        "label": "Boja teme",
+        "placeholder": "Ovdje unesite boju teme"
+      },
+      "email": {
+        "help": "Ovo je autorova adresa e-pošte.",
+        "label": "E-pošta",
+        "placeholder": "Unesite autorovu adresu e-pošte"
+      },
+      "institution": {
+        "help": "Naziv ustanove",
+        "label": "Institucija",
+        "placeholder": "Unesite naziv ustanove"
+      },
+      "language": {
+        "help": "Jezik jedinice.",
+        "label": "Jezik"
+      },
+      "license": {
+        "BY": "Međunarodno priznanje 4.0 (CC BY 4.0)",
+        "BYNC": "Attribution-NonCommercial-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCND": "Attribution-NonCommercial-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
+        "BYND": "Attribution-NoDerivs 4.0 International (CC BY-ND 4.0)",
+        "BYSA": "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+        "help": "Jedinična licenca",
+        "label": "Dozvola",
+        "PRIVATE": "Sva prava pridržana"
+      },
+      "resource": {
+        "help": "Unesite ID resursa",
+        "label": "ID resursa:",
+        "placeholder": "Unesite ID resursa"
+      },
+      "theme": {
+        "help": "Odaberite temu jedinice.",
+        "label": "Tema"
+      },
+      "title": {
+        "help": "Ovo je naslov jedinice.",
+        "label": "Naslov jedinice",
+        "placeholder": "Unesite naslov"
+      },
+      "type": {
+        "help": "Ovo je tip jedinice.",
+        "interoperability": "Interoperabilnost",
+        "label": "Vrsta pogona",
+        "open": "Otvoren"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "Ovo je izvorni jezik jedinice",
+        "label": "Izvorni jezik"
+      },
+      "target": {
+        "help": "Ciljni jezik na koji će jedinica biti prevedena",
+        "label": "Ciljni jezik"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Izbornik harmonike"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "Postavlja naslov grupe sadržaja. Pojavit će se u naslovu padajućeg izbornika.",
+          "label": "Naslov sadržaja",
+          "placeholder": "Primjer: profesionalne vještine"
+        }
+      },
+      "label": "Grupa Sadržaj"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "Ovo će biti pozadinska slika animacije. Možete odabrati jednu od prenesenih slika.",
+          "label": "URL slike",
+          "placeholder": "Ovdje umetnite URL slike...",
+          "preview": "Pretpregled animacije"
+        },
+        "pieces": {
+          "altImg": "Zamjenski tekst za animiranu sliku",
+          "altRec": "Zamjenski tekst za animirano područje",
+          "delete": "Izbrisati",
+          "h": "Visok",
+          "new": "Dodaj novo animirano područje...",
+          "w": "Širok",
+          "x": "Lijevo",
+          "y": "Viši"
+        }
+      },
+      "label": "Animacija",
+      "prev": "Animacija još nije inicijalizirana..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "To će biti visina spremnika animacije piksela",
+          "label": "Visina animacije",
+          "placeholder": "Primjer: 200"
+        },
+        "image": {
+          "help": "To će biti slika koja se pojavljuje u stavci. Možete odabrati jednu od prenesenih slika ili prenijeti novu.",
+          "label": "URL slike",
+          "placeholder": "Kliknite ovdje da biste odabrali sliku"
+        },
+        "prev": "Pretpregled slike",
+        "width": {
+          "help": "To će biti širina spremnika animacije u pikselima",
+          "label": "Širina animacije",
+          "placeholder": "Primjer: 400"
+        }
+      },
+      "label": "Animacija"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "Ovo će biti slika stavke animacije.",
+          "label": "URL slike",
+          "placeholder": "Kliknite ovdje da biste odabrali sliku"
+        },
+        "prev": "Pregled"
+      },
+      "label": "Stavka animacije.",
+      "prev": "Stavka animacije još nije postavljena..."
+    },
+    "AudioTermContainer": {
+      "label": "Audio-pojmovi"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "Morate unijeti URL zvuka koji želite reproducirati u jedinici sadržaja.",
+          "label": "URL audiodatoteke",
+          "placeholder": "Unesite valjani INDIEMEDIA URL..."
+        },
+        "definition": {
+          "help": "Ova definicija trebala bi biti doslovna transkripcija zvuka.",
+          "label": "Definicija",
+          "placeholder": "Napišite definiciju..."
+        },
+        "term": {
+          "help": "To će biti izraz smješten lijevo od widgeta",
+          "label": "Termin",
+          "placeholder": "Napišite svoj termin ovdje..."
+        }
+      },
+      "label": "Audio-pojam",
+      "prev": "Audio-pojam još nije uspostavljen..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "Obveza može izgledati desno poravnato ili lijevo poravnato",
+          "label": "Poravnanje obveze",
+          "values": {
+            "left": "S lijeve strane",
+            "right": "Desno"
+          }
+        },
+        "caption": {
+          "help": "Podnaslov ponude pojavljuje se ispod ponude. Uglavnom se koristi za označavanje autora ili autora citata",
+          "label": "Podnaslov ponude",
+          "placeholder": "Primjer: Carl Sagan"
+        },
+        "quote": {
+          "help": "Ovaj tekst je doslovni citat",
+          "label": "Tekst ponude",
+          "placeholder": "Primjer: \"Nepostojanje dokaza nije dokaz odsutnosti.\""
+        },
+        "source": {
+          "help": "Izvorni izvor citata (Godina, knjiga, časopis... itd.)",
+          "label": "Podrijetlo ponude",
+          "placeholder": "Primjer:1990"
+        }
+      },
+      "label": "Citirati",
+      "prev": "Ponuda još nije uspostavljena..."
+    },
+    "ButtonTextContainer": {
+      "label": "Gumbi s tekstom"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "To će biti slika koja će se pojaviti na gumbu. Možete odabrati jednu od prenesenih slika ili prenijeti novu.",
+          "label": "URL slike gumba",
+          "placeholder": "Ovdje umetnite URL"
+        },
+        "preview": "Slika gumba Pretpregled",
+        "text": {
+          "help": "U ovom uređivaču teksta možete napisati sadržaj teksta pridruženog gumbu",
+          "label": "Tekstualna poruka",
+          "placeholder": "Ovdje napišite svoj tekst..."
+        }
+      },
+      "label": "Element gumba s tekstom",
+      "prev": "Element gumba s tekstom još nije inicijaliziran..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Boja",
+        "helps": {
+          "animation": "Određuje jednu od unaprijed definiranih animacija za kutiju s uloženim elementima (jednostrukim ili sklopivim).",
+          "colorTheme": "Potreban #FFFFFF šesterokutni format. <strong> Ako nije ispunjena, boja teme jedinice uzet će zadanu vrijednost.</strong>",
+          "styles": "Određuje jedan od unaprijed definiranih stilova za okvir s uloženim elementima.",
+          "textTitle": "To će biti tekst koji će se pojaviti kao naslov. <strong>Ako nije ispunjena, uzet će zadanu vrijednost.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Ovdje unesite boju",
+          "textTitle": "Ovdje unesite naslov"
+        },
+        "styles": {
+          "animation": "Stil animacije",
+          "attention": "Pažnja",
+          "collapsible": "Složiv",
+          "danger": "Opasnost",
+          "label": "Stil",
+          "more": "Uči više",
+          "note": "Bilješka",
+          "simple": "Jednostavan"
+        },
+        "textTitle": "Naslov"
+      },
+      "label": "Izvanredan"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "Slika će se pojaviti na vrhu widgeta, iznad opcija.",
+          "label": "URL slike",
+          "placeholder": "Unesite URL slike..."
+        },
+        "options": {
+          "help": "Ove 4 opcije pojavit će se ispod slike. Samo jedan može biti točan.",
+          "label": "Mogućnosti",
+          "placeholder": "Unesite mogućnost"
+        },
+        "preview": "Pretpregled slike",
+        "text": {
+          "help": "Ovaj će se tekst iznad slike pojaviti kao tekst ili pitanje.",
+          "label": "Tekstualna poruka",
+          "placeholder": "Ovdje napišite tekst..."
+        }
+      },
+      "label": "Odaberite mogućnost",
+      "prev": "Odabir opcije koja nije postavljena ..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "Kolone",
+      "form": {
+        "width": {
+          "1": "Širina prvog stupca",
+          "help": "Drugi stupac će zauzeti preostalu širinu"
+        }
+      },
+      "label": "Raspolaganje"
+    },
+    "CorrectWord": {
+      "label": "Ispravna riječ"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "Opisna slika pitanja",
+          "label": "URL slike",
+          "placeholder": "Ovdje umetnite URL slike..."
+        },
+        "preview": "Pretpregled slike",
+        "question": {
+          "help": "To je pitanje koje će biti prikazano korisniku.",
+          "label": "Tekst pitanja",
+          "placeholder": "Tekst pitanja"
+        },
+        "word": {
+          "help": "Ova riječ će biti odgovor na pitanje",
+          "label": "Odgovor",
+          "placeholder": "Napišite riječ..."
+        }
+      },
+      "label": "Ispravljanje elementa riječi",
+      "prev": "Točna riječ još nije utvrđena..."
+    },
+    "CouplesContainer": {
+      "label": "Parovi",
+      "prev": "Parovi još nisu uspostavljeni..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "Ova će slika biti povezana s tekstom unesenim kao par u ovom obrascu.",
+          "label": "URL slike",
+          "placeholder": "Ovdje unesite URL slike..."
+        },
+        "legend": {
+          "first": "Prvi element",
+          "second": "Drugi element"
+        },
+        "preview": "Pretpregled slike",
+        "text": {
+          "help": "Ovaj će tekst biti povezan sa slikom koja je unesena kao par u ovom obrascu.",
+          "label": "Tekstualna poruka",
+          "placeholder": "Pisanje teksta..."
+        },
+        "type": {
+          "image": "Slika",
+          "label": "Momak",
+          "text": "Tekstualna poruka"
+        }
+      },
+      "label": "Par",
+      "prev": "Par još nije uspostavljen..."
+    },
+    "DragdropContainer": {
+      "label": "Vuci i ispusti"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "Definicija se pojavljuje desno od interaktivnog elementa i učenik mora povući pojam do definicije",
+          "label": "Definicija",
+          "placeholder": "Primjer: Sva ljudska bića imaju pravo izraziti se bez uznemiravanja zbog onoga što misle"
+        },
+        "term": {
+          "help": "Izraz se pojavljuje lijevo od interaktivnog elementa i bit će onaj koji učenik mora povući i ispustiti u definiciji.",
+          "label": "Termin",
+          "placeholder": "Primjer: Sloboda izražavanja"
+        }
+      },
+      "label": "Definicija pojma",
+      "prev": "Stavka nije uspostavljena..."
+    },
+    "FourColumnsLayout": {
+      "label": "Četiri stupca"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Morate napisati najmanje 2 odgovora i označiti koji je od njih točan.",
+          "label": "Mogući odgovori"
+        },
+        "questionPreview": {
+          "help": "Ovako će izgledati pitanje u jedinici sadržaja.",
+          "label": "Pretpregledajte tekst pitanja.",
+          "placeholder": "Tekst pitanja s praznim ___ utorom."
+        },
+        "questionText": {
+          "help": "Morate upisati tekst pitanja s praznim prostorom koji želite s posebnom ključnom riječi [prazno].",
+          "label": "Tekst pitanja",
+          "placeholder": "Tekst pitanja s praznim elementom"
+        }
+      },
+      "label": "Ispunite pitanje o praznini",
+      "prev": "Pitanje popunjavanja praznine još nije utvrđeno..."
+    },
+    "GenericWidget": {
+      "label": "Widget"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "Odgovor na pitanje",
+          "label": "Odgovor",
+          "placeholder": "Ovdje napišite svoj odgovor"
+        },
+        "attempts": {
+          "help": "Broj pokušaja pogađanja odgovora. Mora biti broj između 1 i 9.",
+          "label": "Pokušajima"
+        },
+        "question": {
+          "help": "Pitanje na koje treba odgovoriti",
+          "label": "Pitanje",
+          "placeholder": "Ovdje napišite svoje pitanje"
+        }
+      },
+      "label": "Pogodite riječ",
+      "prev": "Izgleda da riječ još nije inicijalizirana..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Ako uspostavite tekst, to će biti opis slike",
+          "label": "Opis slike",
+          "placeholder": "Unesite opis."
+        },
+        "image": {
+          "help": "Ovo je slika koja će se pojaviti u stavci.",
+          "label": "URL slike",
+          "placeholder": "Kliknite ovdje da biste odabrali sliku"
+        },
+        "preview": "Pregled"
+      },
+      "label": "Slika s gornjim tekstom",
+      "prev": "Slika s gornjim tekstom još nije utvrđena..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Slika i zvuk"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "Audiodatoteka će se reproducirati kada kliknete sliku.",
+          "label": "URL audiodatoteke",
+          "placeholder": "Unesite valjani INDIEMEDIA URL..."
+        },
+        "image": {
+          "help": "Prvo će se pojaviti slika",
+          "label": "URL slike",
+          "placeholder": "Unesite URL slike..."
+        },
+        "preview": "Pretpregled slike",
+        "text": {
+          "help": "Tekst će se pojaviti iznad slike kada zadržite pokazivač miša iznad njega.",
+          "label": "Tekst slike",
+          "placeholder": "Pisanje teksta..."
+        }
+      },
+      "label": "Slika i zvučna stavka",
+      "prev": "Slika i zvučna stavka još nisu uspostavljene ..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "To će biti slika koja se pojavljuje u stavci. Možete odabrati jednu od prenesenih slika ili prenijeti novu.",
+          "label": "URL slike",
+          "placeholder": "Kliknite ovdje da biste odabrali sliku"
+        },
+        "layout": {
+          "help": "Orijentacija slikovnog i tekstualnog bloka određuje gdje se pojavljuje svaki od elemenata u bloku.",
+          "label": "Orijentacija",
+          "values": {
+            "0": "Tekst s desne strane, slika s lijeve strane",
+            "1": "Tekst s lijeve strane, slika s desne strane"
+          }
+        },
+        "preview": "Pretpregled slike",
+        "text": {
+          "help": "Morate napisati tekst.",
+          "label": "U ovom uređivaču teksta možete napisati sadržaj bloka.",
+          "placeholder": "Pisanje teksta..."
+        }
+      },
+      "label": "Slika i tekst",
+      "prev": "Slika i tekst još nisu uspostavljeni..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Pomoću unosa teksta unesite URL interaktivnog videozapisa stvorenog pomoću interaktivnog alata za videozapise.",
+          "label": "URL videozapisa",
+          "placeholder": "Primjer: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Interaktivni videozapis",
+      "prev": "Interaktivni videozapis još nije uspostavljen"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "Ova će se legenda pojaviti ispod formule i kao blok teksta",
+          "label": "Legenda formule",
+          "placeholder": "Primjer: kvadratna formula"
+        },
+        "formula": {
+          "help": "Za upisivanje formule koristite područje teksta. Ispod ovog područja pojavit će se pretpregled formule ako je ispravna ili tekst crvenom bojom ako formula nije ispravna",
+          "label": "Formula u LaTex obliku",
+          "placeholder": "Primjer: \\text{Kvadratna formula je }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "LaTeX formula",
+      "prev": "Formula još nije uspostavljena..."
+    },
+    "MissingWords": {
+      "label": "Riječi koje nedostaju"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Izbrisati",
+          "new": "Dodaj novi odgovor...",
+          "text": "Odgovor"
+        },
+        "sentence": {
+          "help": "Morate napisati tekst rečenice, uključujući prazninu, pomoću posebne oznake [prazno].",
+          "label": "Tekst rečenice",
+          "placeholder": "Tekst rečenice s oznakom [prazno]"
+        },
+        "sentencePreview": {
+          "help": "Ovako biste gledali na frazu u jedinici sadržaja.",
+          "label": "Pretpregled fraze",
+          "placeholder": "Tekst rečenice s oznakom ___ "
+        }
+      },
+      "label": "Element riječi koji nedostaje",
+      "prev": "Element riječi koji nedostaje još nije uspostavljen..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "Ovaj će se tekst pojaviti kao tekst gumba, koji se mora aktivirati za otvaranje modalnog prozora.",
+          "label": "Tekst gumba",
+          "placeholder": "Pisanje teksta..."
+        }
+      },
+      "label": "Modalni prozor"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "Ovo će biti pozadinska slika slagalice. Možete odabrati jednu od prenesenih slika.",
+          "label": "URL slike",
+          "placeholder": "Ovdje umetnite URL slike...",
+          "preview": "Pregled zagonetki"
+        },
+        "pieces": {
+          "altImg": "Zamjenski tekst za obrezivanje",
+          "altRec": "Zamjenski tekst za položaj",
+          "delete": "Izbrisati",
+          "h": "Visok",
+          "new": "Dodaj novi komad...",
+          "w": "Širok",
+          "x": "Lijevo",
+          "y": "Viši"
+        }
+      },
+      "label": "Zagonetka",
+      "prev": "Zagonetka još nije inicijalizirana..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Naslov grupe",
+          "label": "Naslov",
+          "placeholder": "Primjer: pravni modul"
+        }
+      },
+      "label": "Grupa",
+      "prev": "Grupa još nije estabecido ..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Tablica sadržaja"
+    },
+    "RelatedUnitsItem": {
+      "current": "Trenutna jedinica",
+      "form": {
+        "current": {
+          "title": "Ovo je trenutna jedinica"
+        },
+        "title": {
+          "help": "Naslov objave",
+          "label": "Naslov",
+          "placeholder": "Primjer: ljudska prava"
+        },
+        "url": {
+          "help": "Odredišni URL",
+          "label": "URL",
+          "placeholder": "Primjer: https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Ulaz",
+      "prev": "Unos još nije uspostavljen..."
+    },
+    "SchemaContainer": {
+      "label": "Shema"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "To će biti djelomična slika sheme.",
+          "label": "URL slike",
+          "placeholder": "Kliknite ovdje da biste odabrali sliku"
+        },
+        "prev": "Pretpregled slike"
+      },
+      "label": "Stavka strukture",
+      "prev": "Stavka esuqema još nije utvrđena..."
+    },
+    "SentenceOrderContainer": {
+      "label": "Sortiranje fraza"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Izbrisati",
+          "help": "Odgovori koji će biti konstruirani iz unesenih riječi",
+          "legend": "Popis odgovora",
+          "new": "Dodavanje novog odgovora...",
+          "text": "Odgovor"
+        },
+        "words": {
+          "delete": "Izbrisati",
+          "help": "Odgovori bi se trebali moći konstruirati iz ovih riječi",
+          "legend": "Popis programa Word",
+          "new": "Dodavanje nove riječi...",
+          "text": "Riječ"
+        }
+      },
+      "label": "Element sortiranja fraza",
+      "prev": "Element sortiranja rečenica još nije inicijaliziran..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "Postavlja poravnanje slike kada izgled nije \"Prilagodite izvorne dimenzije raspoloživom prostoru\".",
+          "label": "Poravnanje slike",
+          "values": {
+            "center": "Usredotočen",
+            "left": "Lijevo",
+            "right": "Desno"
+          }
+        },
+        "aspect": {
+          "help": "Slika se može prikazati s izvornim dimenzijama (kada je to moguće) ili se može prilagoditi širini zaslona (skalirati sliku). Ako su dimenzije više i šire nego što zaslon može prikazati, uvijek će se automatski prilagoditi zaslonu",
+          "label": "Izgled slike",
+          "values": {
+            "custom": "Običaj",
+            "fit": "Prilagodite izvorne dimenzije raspoloživom prostoru",
+            "original": "Izvorne dimenzije"
+          }
+        },
+        "image": {
+          "help": "To će biti slika koja će se pojaviti u stavci.",
+          "label": "URL slike",
+          "placeholder": "Ovdje unesite URL slike"
+        },
+        "preview": "Pregled",
+        "size": {
+          "height": "Visok",
+          "heightPlaceholder": "Visina slike...",
+          "keepRatio": "Održavanje omjera slike",
+          "width": "Širok",
+          "widthPlaceholder": "Širina slike..."
+        }
+      },
+      "label": "Slika",
+      "prev": "Slika još nije uspostavljena..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Morate napisati najmanje 2 odgovora i označiti koji je od njih točan.",
+          "label": "Mogući odgovori"
+        },
+        "questionText": {
+          "help": "Ovo je tekst pitanja koje će biti prikazano u jedinici sadržaja.",
+          "label": "Tekst pitanja",
+          "placeholder": "Tekst jednostavnog pitanja..."
+        }
+      },
+      "label": "Jednostavno pitanje",
+      "prev": "Jednostavno pitanje još nije postavljeno ..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "To će biti naziv koji se pojavljuje u naslovu kartice.",
+          "label": "Naziv kartice",
+          "placeholder": "Primjer: profesionalne vještine"
+        }
+      },
+      "label": "Trepavica"
+    },
+    "Table": {
+      "empty": "Tablica još nije inicijalizirana",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "Naziv stupca je prazan ili je već definiran",
+            "label": "Naziv stupca",
+            "placeholder": "Ovdje upišite naziv stupca..."
+          },
+          "columnPosition": {
+            "error": "Položaj stupca izvan raspona",
+            "label": "Položaj stupca"
+          },
+          "label": "Dodaj novi stupac",
+          "submit": "Dodaj stupac"
+        },
+        "addRow": "Dodaj novi redak",
+        "deleteColumn": "Očisti stupac",
+        "deleteRow": "Očisti redak"
+      },
+      "help": {
+        "edit": "Odaberite ćeliju koju želite urediti. Da biste tijekom uređivanja dodali nove retke, pritisnite tipku shift dok pritišćete Enter."
+      },
+      "label": "Odbor",
+      "prev": "Tablica još nije uspostavljena..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Trepavice",
+      "label": "Izbornik Kartica"
+    },
+    "TermClassification": {
+      "label": "Klasifikacija",
+      "prev": "Klasifikacija"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "Ovo je stupac na koji će se pojmovi odnositi.",
+          "label": "Stupac",
+          "placeholder": "Stupac"
+        },
+        "terms": {
+          "help": "U ovom postu morate napisati riječi koje su povezane s pojmom odvojenim točkom sa zarezom. Na primjer: ovi; su; neki; riječi",
+          "label": "Riječi",
+          "placeholder": "Napišite riječi odvojene točka-zarezom"
+        }
+      },
+      "label": "Stavka klasifikacije",
+      "prev": "Stavka još nije uspostavljena..."
+    },
+    "Test": {
+      "label": "Vrsta testiranja",
+      "questionSelect": "Odaberite vrstu pitanja koju želite dodati u kviz"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Morate napisati tekst.",
+        "label": "U ovom uređivaču teksta možete napisati sadržaj bloka.",
+        "placeholder": "Unos teksta...",
+        "styles": {
+          "attention": "Pažnja",
+          "default": "Bez stila",
+          "help": "Određuje izgled okvira koji okružuje tekst",
+          "label": "Stil bloka teksta",
+          "more": "Uči više",
+          "note": "Bilješka"
+        }
+      },
+      "label": "Blok teksta",
+      "prev": "Tekst još nije utvrđen..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Tri stupca"
+    },
+    "TrueFalseContainer": {
+      "label": "Točno/netočno",
+      "prev": "Točno/netočno još nije utvrđeno..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Lažan",
+          "help": "Odabir između istinitog ili netočnog kao točnog odgovora",
+          "label": "Točan odgovor",
+          "true": "Istinit"
+        },
+        "questionText": {
+          "help": "Ovo je tekst stavke.",
+          "label": "Tekst stavke",
+          "placeholder": "Tekst stavke..."
+        }
+      },
+      "label": "Stavka True/false",
+      "prev": "Istinita/lažna stavka još nije utvrđena..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Lažan",
+          "help": "Odabir između istinitog ili netočnog kao točnog odgovora",
+          "label": "Točan odgovor",
+          "true": "Istinit"
+        },
+        "questionText": {
+          "help": "Ovo je tekst pitanja koje će biti prikazano u jedinici sadržaja.",
+          "label": "Tekst tekstnog pitanja",
+          "placeholder": "Tekst pitanja..."
+        }
+      },
+      "label": "Istinito ili lažno pitanje",
+      "prev": "Pitanje istinitog ili lažnog nbo uspostavljenog još..."
+    },
+    "TwoColumnsLayout": {
+      "label": "Dva stupca"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Pokaži zadane titlove",
+          "no": "Ne",
+          "yes": "Da"
+        },
+        "url": {
+          "help": "Pomoću unosa teksta unesite URL videozapisa (youtube, vimeo...)",
+          "label": "URL videozapisa",
+          "placeholder": "Primjer: https://example.com/video.mp4"
+        }
+      },
+      "label": "Video",
+      "prev": "Videozapis još nije postavljen..."
+    }
+  }
+}

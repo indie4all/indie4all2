@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Afișare/Ascundere categorii",
+    "viewImage": "Vezi imaginea"
+  },
+  "common": {
+    "alt": {
+      "help": "Acesta este textul alternativ de descriere a imaginii în ceea ce privește accesibilitatea",
+      "label": "Text alternativ pentru imagine",
+      "placeholder": "Text alternativ"
+    },
+    "captions": {
+      "help": "URL-ul INDIeMedia al fișierului care conține transcrierea dialogului, efectele sonore, piesele muzicale și alte informații audio pentru momentul în care spectatorul este surd sau cu deficiențe de auz sau dacă sunetul / sunetul este dezactivat. Subtitrările sunt, de asemenea, afișate deasupra videoclipului.",
+      "label": "Subtitrari (CC)",
+      "placeholder": "Exemplu: https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "Adresa URL INDIeMedia a fișierului care conține descrieri text a ceea ce se întâmplă în videoclip atunci când partea videoclipului nu este disponibilă deoarece spectatorul este orb și nu folosește un ecran. Descrierile sunt citite de un cititor de ecran sau convertite într-o pistă audio separată.",
+      "label": "Descriere:__________",
+      "placeholder": "Exemplu: https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Descărcarea unității, vă rugăm să așteptați",
+      "title": "Descărcare"
+    },
+    "feedback": {
+      "help": "Interpretați feedback-ul pe care îl va primi elevul, indiferent dacă răspunde corect sau incorect",
+      "label": "Feedback",
+      "negative": "Feedback negativ...",
+      "positive": "Feedback pozitiv..."
+    },
+    "generate": {
+      "description": "Generarea, vă rugăm să așteptați",
+      "title": "Generatoare"
+    },
+    "help": {
+      "button": "Implicit",
+      "help": "Acest text va apărea deasupra widgetului, astfel încât utilizatorul să înțeleagă cum să interacționeze cu acesta. <strong>Dacă este lăsat necompletat, va apărea textul implicit.</strong>",
+      "label": "Ajutor",
+      "placeholder": "Text de ajutor implicit"
+    },
+    "language": {
+      "EL": "Greacă",
+      "EN": "Engleză",
+      "ES": "Spaniolă",
+      "FR": "Franceză",
+      "LT": "Lituaniană"
+    },
+    "loading": {
+      "description": "Se încarcă, vă rugăm să așteptați",
+      "title": "Încărcare"
+    },
+    "name": {
+      "help": "Acesta va fi numele instanței widget pentru învățarea analizelor",
+      "label": "Nume",
+      "placeholder": "Numele instanței widgetului"
+    },
+    "navbar": {
+      "options": "Opțiuni de extindere/restrângere"
+    },
+    "preview": {
+      "description": "Previzualizarea este generată, vă rugăm să așteptați",
+      "generated": {
+        "description": "Previzualizarea este gata. Dacă browserul nu vă redirecționează la previzualizare, dați clic pe linkul de mai jos:",
+        "title": "Previzualizare generată cu succes"
+      },
+      "title": "Generarea previzualizării"
+    },
+    "publish": {
+      "description": "Unitatea dvs. este generată pentru descărcare, vă rugăm să așteptați",
+      "title": "Editura"
+    },
+    "publishToNetlify": {
+      "description": "Unitatea dvs. este încărcată pe Netlify, vă rugăm să așteptați",
+      "title": "Unitate de publicare în Netlify"
+    },
+    "save": {
+      "description": "Salvând, vă rugăm să așteptați",
+      "title": "Economisire"
+    },
+    "scorm": {
+      "description": "Pachetul dvs. SCORM este generat, vă rugăm să așteptați",
+      "title": "Generarea pachetului SCORM"
+    },
+    "selectType": "Selectați un tip din următoarele opțiuni",
+    "unit": {
+      "settings": "Introduceți detaliile unității"
+    }
+  },
+  "dialog": {
+    "translate": "Unitate de traducere"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "Acordeonul este gol. Trebuie să adăugați conținut folosind butonul de adăugare din dreapta."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "Containerul este gol. Trebuie să adăugați cel puțin un element în container."
+      },
+      "title": {
+        "invalid": "Titlul containerului nu este valid. Trebuie să înființezi unul."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "URL-ul setat pentru imaginea de fundal este incorect. Trebuie să furnizați o adresă URL indieauthor validă."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Trebuie setat textul alternativ pentru imaginea animată."
+        },
+        "altRec": {
+          "invalid": "Trebuie setat textul alternativ pentru zona animată."
+        },
+        "empty": "Animația trebuie să aibă cel puțin o zonă animată.",
+        "h": {
+          "invalid": "Înălțimea trebuie setată și trebuie să fie un număr valid."
+        },
+        "w": {
+          "invalid": "Lățimea trebuie setată și trebuie să fie un număr valid."
+        },
+        "x": {
+          "invalid": "Coordonata cea mai din stânga trebuie setată și trebuie să fie un număr valid."
+        },
+        "y": {
+          "invalid": "Numărul de sus trebuie setat și trebuie să fie un număr valid."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "Animația este goală. Trebuie să adăugați cel puțin un element utilizând butonul de adăugare."
+      },
+      "height": {
+        "invalid": "Înălțimea animației trebuie să fie mai mare de 0."
+      },
+      "image": {
+        "invalid": "URL-ul setat pentru imagine nu este valid. Trebuie să vă asigurați că furnizați o adresă URL indiemedia validă în câmpul imaginii."
+      },
+      "width": {
+        "invalid": "Lățimea animației trebuie să fie mai mare de 0."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "URL-ul setat pentru imagine nu este valid. Trebuie să vă asigurați că furnizați o adresă URL indiemedia validă în câmpul imaginii."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "Trebuie să adăugați cel puțin o definiție audio a termenului"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "Trebuie să furnizați o adresă URL indiemedia validă"
+      },
+      "definition": {
+        "invalid": "Trebuie să furnizați o definiție."
+      },
+      "term": {
+        "invalid": "Trebuie să furnizați un termen."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "Nu ați scris conținutul citatului. Trebuie, cel puțin, să scrieți conținutul."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "Trebuie să furnizați cel puțin un element text și tip buton."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "URL-ul setat pentru imagine nu este valid. Trebuie să vă asigurați că furnizați o adresă URL IndieMedia validă în câmpul de imagine al butonului."
+      },
+      "text": {
+        "invalid": "Textul este gol. Trebuie să scrieți sau să copiați un text."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "Fereastra evidențiată este goală. Trebuie să adăugați cel puțin un element simplu."
+      },
+      "text": {
+        "invalid": "Textul este gol. Trebuie să scrieți un text mic."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "Denes oferă o imagine validă în câmpul URL."
+      },
+      "options": {
+        "noCorrect": "Trebuie să selectați cel puțin o corecție",
+        "notEnougOptions": "Trebuie să introduceți 4 opțiuni"
+      },
+      "text": {
+        "invalid": "Textul este gol. Trebuie să introduceți un text."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Toate coloanele din aspect trebuie să conțină cel puțin un element trăgându-l din paleta din stânga."
+      },
+      "width": {
+        "invalid": "Lățime nevalidă a coloanei"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "Trebuie să furnizați text alternativ pentru imagine"
+      },
+      "audioblob": {
+        "invalid": "Conținutul fișierului audio nu este corect. Trebuie să selectați un fișier valid."
+      },
+      "captions": {
+        "invalid": "Adresa URL setată pentru subtitrări nu este validă. Trebuie să vă asigurați că furnizați o adresă URL indiemedia validă"
+      },
+      "captionsblob": {
+        "invalid": "Conținutul fișierului de subtitrare nu este corect. Trebuie să selectați un fișier valid."
+      },
+      "descriptions": {
+        "invalid": "Adresa URL setată pentru descriere nu este validă. Trebuie să vă asigurați că furnizați o adresă URL indiemedia validă"
+      },
+      "imageblob": {
+        "invalid": "Conținutul imaginii nu este corect. Trebuie să selectați o imagine validă."
+      },
+      "name": {
+        "invalid": "Trebuie să furnizați un nume pentru această instanță.",
+        "notUniqueName": "Numele instanței trebuie să fie unic pentru tot conținutul."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "Trebuie să furnizați cel puțin un element Correct Word."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "URL-ul setat pentru imagine nu este valid. Trebuie să furnizați o adresă URL indieauthor validă."
+      },
+      "question": {
+        "invalid": "Textul întrebării este gol."
+      },
+      "word": {
+        "invalid": "Textul răspunsului este gol."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "Trebuie să adăugați cel puțin o pereche"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "Adresa URL introdusă pentru imagine nu este validă. Trebuie să vă asigurați că furnizați o adresă URL indiemedia validă în câmpul imaginii."
+      },
+      "text": {
+        "invalid": "Textul este gol. Trebuie să scrieți un text scurt."
+      },
+      "type": {
+        "invalid": "Tipul setat pentru element nu este valid. Trebuie să vă asigurați că opțiunea \"Text\" sau \"Imagine\" este selectată."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "Articolul este gol. Trebuie să adăugați cel puțin un element de definire a termenului utilizând butonul de adăugare din dreapta."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "Câmpul de definiție este gol. Trebuie să scrieți o definiție."
+      },
+      "term": {
+        "invalid": "Câmpul termen este gol. Trebuie să scrieți un termen."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "Trebuie să selectați un răspuns corect",
+        "notEnoughAnswers": "Trebuie să scrieți cel puțin 2 răspunsuri posibile"
+      },
+      "question": {
+        "empty": "Textul întrebării nu poate fi gol",
+        "onlyOneBlank": "Trebuie să includeți un singur spațiu gol în întrebare"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "Răspunsul nu trebuie să fie gol"
+      },
+      "attempts": {
+        "invalid": "Încercările trebuie să fie un număr între 1 și 9"
+      },
+      "question": {
+        "invalid": "Întrebarea nu trebuie să fie goală"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "URL-ul setat pentru imagine nu este valid. Trebuie să vă asigurați că furnizați o adresă URL indiemedia validă în câmpul imaginii."
+      },
+      "text": {
+        "invalid": "Textul este gol. Trebuie să scrieți un text"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "Numărul de coloane trebuie să fie 1,2 sau 3"
+      },
+      "data": {
+        "empty": "Trebuie să furnizați cel puțin un element de imagine și sunet."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "Trebuie să furnizați o adresă URL indiemedia validă"
+      },
+      "image": {
+        "invalid": "Adresa URL introdusă pentru imagine nu este validă. Trebuie să vă asigurați că furnizați o adresă URL indiemedia validă în câmpul imaginii."
+      },
+      "text": {
+        "invalid": "Textul este gol. Trebuie să scrieți un text scurt."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "URL-ul setat pentru imagine nu este valid. Trebuie să vă asigurați că furnizați o adresă URL indiemedia validă în câmpul imaginii."
+      },
+      "text": {
+        "invalid": "Textul este gol. Trebuie să scrieți sau să copiați un text."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "Adresa URL configurată pentru videoclip nu este validă. Ar trebui să vă asigurați că furnizați unul din videoclipurile interactive indieopen."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "Trebuie să furnizați o legendă pentru formulă."
+      },
+      "formula": {
+        "invalid": "Trebuie să furnizați o formulă în format LaTex."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "Trebuie să furnizați cel puțin un element cuvânt lipsă."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "Trebuie să scrieți cel puțin un răspuns corect",
+        "invalid": "Textul răspunsului este gol"
+      },
+      "sentence": {
+        "empty": "Fraza nu trebuie să fie goală",
+        "onlyOneBlank": "Ar trebui să includeți doar un marcator de decalaj în propoziție"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "Modalul este gol. Trebuie să adăugați cel puțin un element simplu."
+      },
+      "text": {
+        "invalid": "Textul este gol. Trebuie să scrieți un text mic."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "URL-ul setat pentru imaginea de fundal este incorect. Trebuie să furnizați o adresă URL indieauthor validă."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Trebuie setat textul alternativ pentru tăiere."
+        },
+        "altRec": {
+          "invalid": "Trebuie setat textul alternativ pentru poziție."
+        },
+        "empty": "Puzzle-ul trebuie să aibă cel puțin o piesă.",
+        "h": {
+          "invalid": "Înălțimea trebuie setată și trebuie să fie un număr valid."
+        },
+        "w": {
+          "invalid": "Lățimea trebuie setată și trebuie să fie un număr valid."
+        },
+        "x": {
+          "invalid": "Coordonata cea mai din stânga trebuie setată și trebuie să fie un număr valid."
+        },
+        "y": {
+          "invalid": "Numărul de sus trebuie setat și trebuie să fie un număr valid."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "Articolul este gol. Trebuie să adăugați cel puțin o intrare folosind butonul de adăugare din dreapta."
+      },
+      "title": {
+        "invalid": "Câmpul titlu este gol. Trebuie să scrieți un titlu."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "Există cel puțin un link duplicat. Trebuie să furnizați un link unic pentru fiecare postare.",
+        "empty": "Articolul este gol. Trebuie să adăugați cel puțin o intrare folosind butonul de adăugare din dreapta.",
+        "multipleCurrent": "Există cel puțin două intrări curente. Trebuie să furnizați o singură intrare curentă."
+      },
+      "moreThanOne": "Trebuie să furnizați cel mult un cuprins."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "Câmpul titlu este gol. Trebuie să scrieți un titlu."
+      },
+      "url": {
+        "invalid": "Câmpul url trebuie setat la următorul format: https://[source]/[author]/[unit]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "Schema este goală. Trebuie să adăugați cel puțin un element folosind butonul de adăugare din dreapta."
+      },
+      "height": {
+        "invalid": "Înălțimea animației trebuie să fie mai mare de 0."
+      },
+      "image": {
+        "invalid": "Adresa URL setată pentru imaginea completă nu este validă. Trebuie să vă asigurați că furnizați o adresă URL indiemedia validă."
+      },
+      "width": {
+        "invalid": "Lățimea animației trebuie să fie mai mare de 0."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "URL-ul setat pentru imagine nu este valid. Trebuie să vă asigurați că furnizați o adresă URL indiemedia validă în câmpul imaginii."
+      },
+      "text": {
+        "invalid": "Textul este gol. Trebuie să scrieți un text mic."
+      }
+    },
+    "section": {
+      "emptyData": "O secțiune nu poate fi goală. Trebuie să adăugați cel puțin un element.",
+      "invalidBookmark": "Secțiunea trebuie să aibă un marcaj valid.",
+      "invalidImage": "Secțiunea trebuie să aibă o imagine de fundal.",
+      "invalidName": "Secțiunea trebuie să aibă un nume.",
+      "typeImageNotSelected": "Dacă tipul selectat este Imagine de fundal, trebuie să setați imaginea."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "Trebuie să furnizați cel puțin un element de sortare a propozițiilor."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "Trebuie să scrieți cel puțin un răspuns corect",
+        "impossible": "Propoziția nu poate fi construită din cuvintele stabilite",
+        "invalid": "Textul răspunsului este gol"
+      },
+      "words": {
+        "empty": "Trebuie să tastați cel puțin un cuvânt valid",
+        "invalid": "Textul Word este gol"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "URL-ul setat pentru imagine nu este valid. Trebuie să vă asigurați că furnizați o adresă URL indiemedia validă în câmpul imaginii.",
+        "sizeNotSet": "Lățimea și înălțimea imaginii trebuie setate atunci când aspectul său este \"Personalizat\""
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "Trebuie să selectați un răspuns corect",
+        "notEnoughAnswers": "Trebuie să scrieți cel puțin 2 răspunsuri posibile"
+      },
+      "question": {
+        "empty": "Textul întrebării nu poate fi gol"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "Fila este goală. Trebuie să adăugați cel puțin un element la filă."
+      },
+      "name": {
+        "invalid": "Numele filei nu este valid. Trebuie să înființezi unul."
+      }
+    },
+    "Table": {
+      "empty": "Tabelul nu are coloane setate"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "Meniul filelor nu conține file. Trebuie să adăugați cel puțin unul."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Există coloane duplicate. Verifică-ți articolele.",
+        "duplicatedTerms": "Există termeni dublați între coloane. Consultați termenii"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "Coloana nu trebuie să fie goală"
+      },
+      "terms": {
+        "empty": "Termenii nu pot fi goi.",
+        "invalid": "Termenii nu respectă formatul cerut. Vă rugăm să separați termenii prin punct și virgulă (;)."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "Testul este gol. Trebuie să adăugați cel puțin o întrebare."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "Textul este gol. Trebuie să scrieți un text scurt."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "Trebuie să adăugați cel puțin un element adevărat sau fals"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "Textul întrebării nu poate fi gol"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "Textul întrebării nu poate fi gol"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "Adresa URL a videoclipului nu este validă. Trebuie să vă asigurați că furnizați o adresă URL validă de la IndieMedia sau Youtube.",
+        "localInvalid": "Adresa URL a videoclipului nu este validă. Trebuie să te asiguri că introduci o adresă URL YouTube validă."
+      }
+    }
+  },
+  "footer": {
+    "content": "Puteți adăuga secțiuni noi folosind bara de instrumente de sus"
+  },
+  "general": {
+    "areYouSure": "Eşti sigur?",
+    "cancel": "Anula",
+    "close": "Închide",
+    "confirm": "Confirma",
+    "delete": "Elimina",
+    "discard": "Arunca",
+    "false": "Fals",
+    "load": "Încărca",
+    "modelDetected": "Doriți să încărcați o unitate anterioară?",
+    "true": "Adevărat"
+  },
+  "header": {
+    "addSection": "Adaugă secțiune",
+    "clear": "Ștergerea conținutului",
+    "download": "Unitate de descărcare",
+    "importSection": "Secțiunea Import",
+    "install": "Instalați aplicația",
+    "preview": "Previzualizarea conținutului",
+    "publish": "Publicați conținut",
+    "publishToNetlify": "Publicați conținut în Netlify",
+    "redo": "Refaceți acțiunea",
+    "save": "Salvați conținutul",
+    "scorm": "Export în format SCORM",
+    "translate": "Unitate de traducere",
+    "undo": "Anularea acțiunii",
+    "upload": "Încărcați unitatea",
+    "validate": "Validare unitate"
+  },
+  "items": {
+    "add": "Adăugați conținut",
+    "delete": "Ștergere element",
+    "duplicate": "Element duplicat",
+    "edit": "Editarea conținutului",
+    "export": "Export articol"
+  },
+  "messages": {
+    "changesSaved": "Modificările s-au salvat cu succes.",
+    "confirmClearContent": "Veți șterge conținutul în întregime. Asigurați-vă că este ceea ce doriți cu adevărat să faceți.",
+    "confirmLoadModel": "O unitate anterioară a fost găsită. Alegeți dacă doriți să o încărcați sau să o aruncați.",
+    "contentCleared": "Conținutul a fost șters cu succes.",
+    "contentErrors": "Ups! Există erori în conținutul dvs. Examinați mesajele de eroare și urmați instrucțiunile pentru a le remedia.",
+    "couldNotExportElement": "Articolul nu a putut fi exportat",
+    "couldNotExportSection": "Secțiunea nu a putut fi exportată",
+    "deletedSection": "Secțiunea a fost ștearsă cu succes",
+    "emptyContent": "Nu ați adăugat conținut.",
+    "errorMessage": "Eroare",
+    "exportedElement": "Articol exportat cu succes",
+    "exportedSection": "Secțiune exportată cu succes",
+    "importedElement": "Articol importat cu succes",
+    "importedSection": "Secțiune importată cu succes",
+    "loadError": "Unitatea nu a putut fi încărcată",
+    "noElement": "Nu există articole de importat",
+    "noErrors": "Nu e rău! Nu există greșeli. Puteți continua să salvați conținutul.",
+    "noRedo": "Nimic de refăcut",
+    "noSection": "Nu există secțiuni de importat",
+    "noUndo": "Nimic de anulat",
+    "previewError": "Unitatea nu a putut fi previzualizată",
+    "publishError": "Unitatea nu a putut fi publicată",
+    "savedUnit": "Unitate salvată cu succes",
+    "saveError": "Unitatea nu a putut fi salvată",
+    "successMessage": "Ok",
+    "translateError": "Unitatea nu a putut fi tradusă",
+    "warningMessage": "Atenție"
+  },
+  "netlify": {
+    "button": {
+      "text": "Conecta"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Creare site",
+        "help": "Selectați unul dintre site-urile disponibile în contul dvs. Netlify",
+        "label": "Vă rugăm să selectați un site disponibil din Netlify pentru a încărca unitatea"
+      },
+      "title": "Completați câmpurile pentru a vă conecta la Netlify ",
+      "token": {
+        "help": "Introduceți tokenul personal de acces Netlify. Îl puteți găsi în secțiunea Aplicații din setările contului Netlify",
+        "label": "Introduceți tokenul personal de acces:",
+        "placeholder": "Introduceți tokenul personal de acces Netlify aici"
+      }
+    },
+    "error": {
+      "message": "Token nevalid"
+    },
+    "success": {
+      "message": "Unitatea a fost încărcată cu succes pe Netlify. Accesați-l făcând clic pe următorul link: ",
+      "message_2": "Reține că, dacă unitatea ta are mult conținut, publicarea poate dura câteva minute.",
+      "title": "Unitate încărcată pe Netlify"
+    }
+  },
+  "palette": {
+    "containers": "Containere",
+    "exerciseElement": "Exerciţii",
+    "interactiveElements": "Elemente interactive",
+    "items": "Elemente",
+    "layouts": "Dispozițiile",
+    "question": "Întrebări",
+    "simpleElements": "Elemente"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Bloc de cod",
+        "screenReader": "Text de ajutor pentru cititoarele de ecran"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Ștergeți secțiunea",
+    "duplicate": "Secțiune duplicat",
+    "edit": "Editați informațiile",
+    "expandContract": "Extinderea sau restrângerea",
+    "export": "Secțiunea de export",
+    "form": {
+      "bookmark": {
+        "help": "Acest marcator va apărea în partea de sus a unității ca marcator de secțiune. Trebuie să aibă maximum 40 de caractere.",
+        "label": "Marcaj secțiune",
+        "placeholder": "Scrie un semn de carte..."
+      },
+      "image": {
+        "help": "",
+        "label": "Adresa URL a imaginii de fundal",
+        "placeholder": "Introduceți adresa URL a imaginii..."
+      },
+      "name": {
+        "help": "Acesta este numele pe care secțiunea îl va avea în conținut.",
+        "label": "Numele secțiunii",
+        "placeholder": "Scrie un nume..."
+      },
+      "preview": "Previzualizați imaginea de fundal",
+      "type": {
+        "bc": "Culoare de fundal (implicit)",
+        "bi": "Imagine de fundal",
+        "help": "Dacă tipul este setat la \"culoare de fundal\", culoarea implicită va apărea în spatele titlului, în timp ce în \"Imagine de fundal\" trebuie să stabiliți o imagine de fundal pentru titlul secțiunii.",
+        "label": "Tipul de fundal"
+      }
+    },
+    "import": "Import articol",
+    "label": "Secțiune",
+    "moveDown": "Derulați secțiunea în jos",
+    "moveUp": "Derulați secțiunea în sus"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Activați/dezactivați analizele în unitate",
+        "label": "Analytics",
+        "no": "Nu",
+        "yes": "Da"
+      },
+      "author": {
+        "help": "Autorul unității ar trebui să scrie aici.",
+        "label": "Autorul unității",
+        "placeholder": "Autorul unității scrie:"
+      },
+      "background": {
+        "help": "Imaginea trebuie să aibă aproximativ 1900 x 550 pixeli.",
+        "label": "Imagine temă"
+      },
+      "color": {
+        "help": "Este necesar formatul hexazecimal #FFFFFF",
+        "label": "Culoarea temei",
+        "placeholder": "Introduceți culoarea temei aici"
+      },
+      "email": {
+        "help": "Aceasta este adresa de e-mail a autorului.",
+        "label": "E-mail",
+        "placeholder": "Introduceți adresa de e-mail a autorului"
+      },
+      "institution": {
+        "help": "Denumirea instituției",
+        "label": "Instituție",
+        "placeholder": "Introduceți numele instituției"
+      },
+      "language": {
+        "help": "Limba unității.",
+        "label": "Limbă"
+      },
+      "license": {
+        "BY": "Recunoaștere internațională 4.0 (CC BY 4.0)",
+        "BYNC": "Atribuire-Necomercial-NoDerivs 4.0 Internațional (CC BY-NC-ND 4.0)",
+        "BYNCND": "Atribuire-Necomercial-NoDerivs 4.0 Internațional (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Atribuire-Necomercial-Distribuire în Condiții Identice 4.0 Internațional (CC BY-NC-SA 4.0)",
+        "BYND": "Atribuire-NoDerivs 4.0 International (CC BY-ND 4.0)",
+        "BYSA": "Atribuire-Distribuire în condiții identice 4.0 Internațional (CC BY-SA 4.0)",
+        "help": "Licență unitară",
+        "label": "Licență",
+        "PRIVATE": "Toate drepturile rezervate"
+      },
+      "resource": {
+        "help": "Introduceți ID-ul resursei",
+        "label": "ID resursă:",
+        "placeholder": "Introduceți ID-ul resursei"
+      },
+      "theme": {
+        "help": "Alegeți tema unității.",
+        "label": "Temă"
+      },
+      "title": {
+        "help": "Acesta este titlul unității.",
+        "label": "Titlul unității",
+        "placeholder": "Introduceți un titlu"
+      },
+      "type": {
+        "help": "Acesta este tipul de unitate.",
+        "interoperability": "Interoperabilitate",
+        "label": "Tip unitate",
+        "open": "Deschide"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "Aceasta este limba sursă a unității",
+        "label": "Limba sursă"
+      },
+      "target": {
+        "help": "Limba țintă în care va fi tradusă unitatea",
+        "label": "Limba țintă"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Meniu acordeon"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "Setează titlul grupului de conținut. Acesta va apărea în titlul meniului derulant.",
+          "label": "Titlul conținutului",
+          "placeholder": "Exemplu: Competențe profesionale"
+        }
+      },
+      "label": "Grup de conținut"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "Aceasta va fi imaginea de fundal a animației. Puteți alege una dintre imaginile încărcate.",
+          "label": "Adresa URL a imaginii",
+          "placeholder": "Introduceți adresa URL a imaginii aici...",
+          "preview": "Previzualizare animație"
+        },
+        "pieces": {
+          "altImg": "Text alternativ pentru imagine animată",
+          "altRec": "Text alternativ pentru regiunea animată",
+          "delete": "Șterge",
+          "h": "Înalt",
+          "new": "Adăugați o nouă regiune animată...",
+          "w": "Larg",
+          "x": "Stânga",
+          "y": "Superioară"
+        }
+      },
+      "label": "Animație",
+      "prev": "Animația nu a fost încă inițializată..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "Aceasta va fi înălțimea containerului de animație pixel",
+          "label": "Înălțimea animației",
+          "placeholder": "Exemplu: 200"
+        },
+        "image": {
+          "help": "Aceasta va fi imaginea care apare în element. Puteți alege una dintre imaginile încărcate sau puteți încărca una nouă.",
+          "label": "Adresa URL a imaginii",
+          "placeholder": "Click aici pentru a selecta imaginea"
+        },
+        "prev": "Previzualizarea imaginii",
+        "width": {
+          "help": "Aceasta va fi lățimea containerului de animație în pixeli",
+          "label": "Lățimea animației",
+          "placeholder": "Exemplu: 400"
+        }
+      },
+      "label": "Animație"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "Aceasta va fi imaginea elementului de animație.",
+          "label": "Adresa URL a imaginii",
+          "placeholder": "Click aici pentru a selecta imaginea"
+        },
+        "prev": "Previzualizare"
+      },
+      "label": "Element al animației.",
+      "prev": "Elementul de animație nu este setat încă..."
+    },
+    "AudioTermContainer": {
+      "label": "Termeni audio"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "Trebuie să introduceți adresa URL a conținutului audio pe care doriți să îl redați în unitatea de conținut.",
+          "label": "Adresa URL a fișierului audio",
+          "placeholder": "Vă rugăm să introduceți o adresă URL indiemedia validă ..."
+        },
+        "definition": {
+          "help": "Această definiție ar trebui să fie transcrierea textuală a sunetului.",
+          "label": "Definiție",
+          "placeholder": "Scrie definiția..."
+        },
+        "term": {
+          "help": "Acesta va fi termenul plasat în stânga widgetului",
+          "label": "Termen",
+          "placeholder": "Scrie-ți termenul aici..."
+        }
+      },
+      "label": "Termen audio",
+      "prev": "Termenul audio nu a fost încă stabilit..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "Rezervarea poate apărea aliniată la dreapta sau la stânga",
+          "label": "Alinierea numirilor",
+          "values": {
+            "left": "În stânga",
+            "right": "La dreapta"
+          }
+        },
+        "caption": {
+          "help": "Subtitlul citatului apare sub citat. Este folosit în principal pentru a indica autorul sau autorii citării",
+          "label": "Subtitlul citatului",
+          "placeholder": "Exemplu: Carl Sagan"
+        },
+        "quote": {
+          "help": "Acest text este citatul textual",
+          "label": "Citați textul",
+          "placeholder": "Exemplu: \"Absența probelor nu este o dovadă a absenței.\""
+        },
+        "source": {
+          "help": "Sursa originală a citatului (Anul, cartea, revista... etc)",
+          "label": "Originea cotației",
+          "placeholder": "Exemplu:1990"
+        }
+      },
+      "label": "Citat",
+      "prev": "Citatul nu a fost încă stabilit..."
+    },
+    "ButtonTextContainer": {
+      "label": "Butoane cu text"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "Aceasta va fi imaginea care va apărea pe buton. Puteți alege una dintre imaginile încărcate sau puteți încărca una nouă.",
+          "label": "Adresa URL a imaginii butonului",
+          "placeholder": "Introduceți adresa URL aici"
+        },
+        "preview": "Imaginea butonului Previzualizare",
+        "text": {
+          "help": "În acest editor de text puteți scrie conținutul textului asociat butonului",
+          "label": "Text",
+          "placeholder": "Scrie-ți textul aici..."
+        }
+      },
+      "label": "Element buton cu text",
+      "prev": "Elementul buton cu text nu a fost încă inițializat ..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Culoare",
+        "helps": {
+          "animation": "Stabilește una dintre animațiile predefinite pentru caseta cu elementele încorporate (simple sau pliabile).",
+          "colorTheme": "Este necesar formatul hexagonal #FFFFFF. <strong> Dacă nu este umplută, culoarea temei unității va lua valoarea implicită.</strong>",
+          "styles": "Stabilește unul dintre stilurile predefinite pentru caseta cu elementele încorporate.",
+          "textTitle": "Acesta va fi textul care va apărea ca titlu. <strong>Dacă nu este completat, va avea o valoare implicită.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Introduceți culoarea aici",
+          "textTitle": "Introdu titlul aici"
+        },
+        "styles": {
+          "animation": "Stil de animație",
+          "attention": "Atenție",
+          "collapsible": "Pliabile",
+          "danger": "Pericol",
+          "label": "Stil",
+          "more": "Află mai multe",
+          "note": "Notă",
+          "simple": "Simplu"
+        },
+        "textTitle": "Titlu"
+      },
+      "label": "Remarcabil"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "Imaginea va apărea în partea de sus a widgetului, deasupra opțiunilor.",
+          "label": "Adresa URL a imaginii",
+          "placeholder": "Introduceți adresa URL a imaginii..."
+        },
+        "options": {
+          "help": "Aceste 4 opțiuni vor apărea sub imagine. Numai unul poate fi corect.",
+          "label": "Opțiuni",
+          "placeholder": "Introduceți o opțiune"
+        },
+        "preview": "Previzualizare imagine",
+        "text": {
+          "help": "Acest text va apărea deasupra imaginii ca text sau întrebare.",
+          "label": "Text",
+          "placeholder": "Scrie textul aici..."
+        }
+      },
+      "label": "Alegeți o opțiune",
+      "prev": "Alegerea unei opțiuni nu este setată ..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "Coloane",
+      "form": {
+        "width": {
+          "1": "Lățimea primei coloane",
+          "help": "Cealaltă coloană va ocupa lățimea rămasă"
+        }
+      },
+      "label": "Dispoziţia"
+    },
+    "CorrectWord": {
+      "label": "Cuvântul corect"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "Imaginea descriptivă a întrebării",
+          "label": "Adresa URL a imaginii",
+          "placeholder": "Introduceți adresa URL a imaginii aici..."
+        },
+        "preview": "Previzualizare imagine",
+        "question": {
+          "help": "Aceasta este întrebarea care va fi afișată utilizatorului.",
+          "label": "Textul întrebării",
+          "placeholder": "Textul întrebării"
+        },
+        "word": {
+          "help": "Acest cuvânt va fi răspunsul la întrebare",
+          "label": "Răspunde",
+          "placeholder": "Scrie un cuvânt..."
+        }
+      },
+      "label": "Elementul cuvânt corect",
+      "prev": "Cuvântul corect nu a fost încă stabilit ..."
+    },
+    "CouplesContainer": {
+      "label": "Cupluri",
+      "prev": "Cuplurile care nu s-au stabilit încă..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "Această imagine va fi asociată cu textul introdus ca pereche în acest formular.",
+          "label": "Adresa URL a imaginii",
+          "placeholder": "Introduceți adresa URL a imaginii aici..."
+        },
+        "legend": {
+          "first": "Primul element",
+          "second": "Al doilea element"
+        },
+        "preview": "Previzualizare imagine",
+        "text": {
+          "help": "Acest text va fi asociat cu imaginea care este introdusă ca pereche în acest formular.",
+          "label": "Text",
+          "placeholder": "Scrie un text..."
+        },
+        "type": {
+          "image": "Imagine",
+          "label": "Tip",
+          "text": "Text"
+        }
+      },
+      "label": "Cuplu",
+      "prev": "Cuplu nestabilit încă..."
+    },
+    "DragdropContainer": {
+      "label": "Glisați și fixați"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "Definiția apare în dreapta elementului interactiv, iar elevul trebuie să tragă termenul în definiție",
+          "label": "Definiție",
+          "placeholder": "Exemplu: Toate ființele umane au dreptul să se exprime fără a fi hărțuite din cauza a ceea ce gândesc"
+        },
+        "term": {
+          "help": "Termenul apare în stânga elementului interactiv și va fi cel pe care elevul trebuie să-l tragă și să-l plaseze în definiție.",
+          "label": "Termen",
+          "placeholder": "Exemplu: Libertatea de exprimare"
+        }
+      },
+      "label": "Definiția termenului",
+      "prev": "Articol nestabilit..."
+    },
+    "FourColumnsLayout": {
+      "label": "Patru coloane"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Trebuie să scrieți cel puțin 2 răspunsuri și să marcați care dintre ele este corectă.",
+          "label": "Răspunsuri posibile"
+        },
+        "questionPreview": {
+          "help": "Așa va arăta întrebarea în unitatea de conținut.",
+          "label": "Previzualizați textul întrebării.",
+          "placeholder": "Textul întrebării cu slotul ___ gol."
+        },
+        "questionText": {
+          "help": "Trebuie să tastați textul întrebării cu spațiul gol dorit cu cuvântul cheie special [necompletat].",
+          "label": "Textul întrebării",
+          "placeholder": "Text întrebare cu element gol"
+        }
+      },
+      "label": "Completați întrebarea goală",
+      "prev": "Problema umplerii golului nu a fost încă stabilită ..."
+    },
+    "GenericWidget": {
+      "label": "Widget"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "Răspunsul la întrebare",
+          "label": "Răspunde",
+          "placeholder": "Scrie răspunsul tău aici"
+        },
+        "attempts": {
+          "help": "Numărul de încercări de a ghici răspunsul. Trebuie să fie un număr între 1 și 9.",
+          "label": "Încercări"
+        },
+        "question": {
+          "help": "Cu privire la întrebarea la care trebuie să se răspundă",
+          "label": "Întrebare",
+          "placeholder": "Scrie întrebarea ta aici"
+        }
+      },
+      "label": "Ghiciți cuvântul",
+      "prev": "Ghici că cuvântul nu a fost încă inițializat ..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Dacă stabiliți un text, aceasta va fi legenda imaginii",
+          "label": "Legenda imaginii",
+          "placeholder": "Vă rugăm să introduceți o legendă."
+        },
+        "image": {
+          "help": "Aceasta este imaginea care va apărea în element.",
+          "label": "Adresa URL a imaginii",
+          "placeholder": "Click aici pentru a selecta imaginea"
+        },
+        "preview": "Previzualizare"
+      },
+      "label": "Imagine cu text deasupra",
+      "prev": "Imaginea cu textul de mai sus nu a fost încă stabilită..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Imagine și sunet"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "Fișierul audio va fi redat atunci când se face clic pe imagine.",
+          "label": "Adresa URL a fișierului audio",
+          "placeholder": "Vă rugăm să introduceți o adresă URL indiemedia validă ..."
+        },
+        "image": {
+          "help": "Imaginea va apărea mai întâi",
+          "label": "Adresa URL a imaginii",
+          "placeholder": "Introduceți adresa URL a imaginii..."
+        },
+        "preview": "Previzualizare imagine",
+        "text": {
+          "help": "Textul va apărea deasupra imaginii atunci când treceți cu mouse-ul peste ea.",
+          "label": "Text imagine",
+          "placeholder": "Scrie un text..."
+        }
+      },
+      "label": "Element imagine și sunet",
+      "prev": "Elementul de imagine și sunet nu a fost încă stabilit ..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "Aceasta va fi imaginea care apare în element. Puteți alege una dintre imaginile încărcate sau puteți încărca una nouă.",
+          "label": "Adresa URL a imaginii",
+          "placeholder": "Click aici pentru a selecta imaginea"
+        },
+        "layout": {
+          "help": "Orientarea unei imagini și a unui bloc de text stabilește unde apare fiecare dintre elementele blocului.",
+          "label": "Orientare",
+          "values": {
+            "0": "Text în dreapta, imagine în stânga",
+            "1": "Text în stânga, imagine în dreapta"
+          }
+        },
+        "preview": "Previzualizare imagine",
+        "text": {
+          "help": "Trebuie să scrieți un text.",
+          "label": "În acest editor de text puteți scrie conținutul blocului.",
+          "placeholder": "Scrie un text..."
+        }
+      },
+      "label": "Imagine și text",
+      "prev": "Imaginea și textul nu au fost încă stabilite..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Utilizați introducerea textului pentru a introduce adresa URL a videoclipului interactiv creat cu instrumentul video interactiv.",
+          "label": "Adresa URL a videoclipului",
+          "placeholder": "Exemplu: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Video interactiv",
+      "prev": "Video interactiv nu a fost încă stabilit"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "Această legendă va apărea sub formulă și ca bloc de text",
+          "label": "Legenda formulei",
+          "placeholder": "Exemplu: Formula pătratică"
+        },
+        "formula": {
+          "help": "Utilizați zona de text pentru a tasta formula. Sub această zonă va apărea o previzualizare a formulei dacă este corectă sau textul în roșu dacă formula nu este corectă",
+          "label": "Formulă în format LaTex",
+          "placeholder": "Exemplu: \\text{Formula pătratică este }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "Formula LaTeX",
+      "prev": "Formula nu a fost încă stabilită..."
+    },
+    "MissingWords": {
+      "label": "Cuvinte lipsă"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Șterge",
+          "new": "Adăugați un răspuns nou...",
+          "text": "Răspunde"
+        },
+        "sentence": {
+          "help": "Trebuie să scrieți textul propoziției, inclusiv decalajul, folosind markerul special [gol].",
+          "label": "Textul propoziției",
+          "placeholder": "Text propoziție cu marcator [necompletat]"
+        },
+        "sentencePreview": {
+          "help": "Acesta este modul în care ați privi fraza din unitatea de conținut.",
+          "label": "Previzualizare expresie",
+          "placeholder": "Textul propoziției cu markerul ___ "
+        }
+      },
+      "label": "Elementul Cuvinte lipsă",
+      "prev": "Elementul cuvânt lipsă nu a fost încă stabilit..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "Acest text va apărea ca text buton, care trebuie activat pentru a deschide fereastra modală.",
+          "label": "Textul butonului",
+          "placeholder": "Scrie textul..."
+        }
+      },
+      "label": "Fereastra modală"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "Aceasta va fi imaginea de fundal a puzzle-ului. Puteți alege una dintre imaginile încărcate.",
+          "label": "Adresa URL a imaginii",
+          "placeholder": "Introduceți adresa URL a imaginii aici...",
+          "preview": "Previzualizare puzzle"
+        },
+        "pieces": {
+          "altImg": "Text alternativ pentru trunchiere",
+          "altRec": "Text alternativ pentru poziție",
+          "delete": "Șterge",
+          "h": "Înalt",
+          "new": "Adăugați o piesă nouă...",
+          "w": "Larg",
+          "x": "Stânga",
+          "y": "Superioară"
+        }
+      },
+      "label": "Puzzle",
+      "prev": "Puzzle-ul nu a fost încă inițializat ..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Titlul grupului",
+          "label": "Titlu",
+          "placeholder": "Exemplu: Modulul Drept"
+        }
+      },
+      "label": "Grup",
+      "prev": "Grupul nu este încă estabecido ..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Cuprins"
+    },
+    "RelatedUnitsItem": {
+      "current": "Unitatea actuală",
+      "form": {
+        "current": {
+          "title": "Aceasta este unitatea curentă"
+        },
+        "title": {
+          "help": "Titlul postului",
+          "label": "Titlu",
+          "placeholder": "Exemplu: Drepturile omului"
+        },
+        "url": {
+          "help": "Adresa URL de destinație",
+          "label": "Adresa URL",
+          "placeholder": "Exemplu: https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Intrare",
+      "prev": "Intrarea nu a fost încă stabilită..."
+    },
+    "SchemaContainer": {
+      "label": "Schemă"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "Aceasta va fi imaginea parțială a schemei.",
+          "label": "Adresa URL a imaginii",
+          "placeholder": "Click aici pentru a selecta imaginea"
+        },
+        "prev": "Previzualizare imagine"
+      },
+      "label": "Element schiță",
+      "prev": "Punctul de esuqema nu a fost încă stabilit ..."
+    },
+    "SentenceOrderContainer": {
+      "label": "Sortarea frazelor"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Șterge",
+          "help": "Răspunsuri care vor fi construite din cuvintele introduse",
+          "legend": "Lista răspunsurilor",
+          "new": "Adăugați un răspuns nou...",
+          "text": "Răspunde"
+        },
+        "words": {
+          "delete": "Șterge",
+          "help": "Răspunsurile ar trebui să poată fi construite din aceste cuvinte",
+          "legend": "Lista de cuvinte",
+          "new": "Adăugați un cuvânt nou...",
+          "text": "Cuvânt"
+        }
+      },
+      "label": "Element de sortare a frazelor",
+      "prev": "Elementul de sortare a propozițiilor nu a fost încă inițializat ..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "Setează alinierea imaginii atunci când aspectul nu este \"Reglați dimensiunile originale la spațiul disponibil\".",
+          "label": "Alinierea imaginii",
+          "values": {
+            "center": "Concentrat",
+            "left": "Stânga",
+            "right": "Dreapta"
+          }
+        },
+        "aspect": {
+          "help": "Imaginea poate fi afișată cu dimensiunile originale (atunci când este posibil) sau poate fi ajustată la lățimea ecranului (scalați imaginea). Dacă dimensiunile sunt mai înalte și mai late decât poate afișa ecranul, acesta se va ajusta întotdeauna automat la ecran",
+          "label": "Aspectul imaginii",
+          "values": {
+            "custom": "Obicei",
+            "fit": "Ajustați dimensiunile originale la spațiul disponibil",
+            "original": "Dimensiuni originale"
+          }
+        },
+        "image": {
+          "help": "Aceasta va fi imaginea care va apărea în element.",
+          "label": "Adresa URL a imaginii",
+          "placeholder": "Introduceți adresa URL a imaginii aici"
+        },
+        "preview": "Previzualizare",
+        "size": {
+          "height": "Înalt",
+          "heightPlaceholder": "Înălțimea imaginii...",
+          "keepRatio": "Mențineți raportul imaginii",
+          "width": "Larg",
+          "widthPlaceholder": "Lățimea imaginii..."
+        }
+      },
+      "label": "Imagine",
+      "prev": "Imaginea nu a fost încă stabilită..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Trebuie să scrieți cel puțin 2 răspunsuri și să marcați care dintre ele este corectă.",
+          "label": "Răspunsuri posibile"
+        },
+        "questionText": {
+          "help": "Acesta este textul întrebării care va fi afișat în unitatea de conținut.",
+          "label": "Textul întrebării",
+          "placeholder": "Textul întrebării simple..."
+        }
+      },
+      "label": "Întrebare simplă",
+      "prev": "Întrebare simplă care nu a fost încă stabilită ..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "Acesta va fi numele care apare în titlul filei.",
+          "label": "Numele filei",
+          "placeholder": "Exemplu: Competențe profesionale"
+        }
+      },
+      "label": "Geană"
+    },
+    "Table": {
+      "empty": "Tabelul nu a fost încă inițializat",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "Numele coloanei este gol sau deja definit",
+            "label": "Numele coloanei",
+            "placeholder": "Tastați numele coloanei aici..."
+          },
+          "columnPosition": {
+            "error": "Poziția coloanei în afara intervalului",
+            "label": "Poziția coloanei"
+          },
+          "label": "Adăugați o coloană nouă",
+          "submit": "Adăugare coloană"
+        },
+        "addRow": "Adăugați un rând nou",
+        "deleteColumn": "Golire coloană",
+        "deleteRow": "Golire rând"
+      },
+      "help": {
+        "edit": "Selectați o celulă de editat. Pentru a adăuga linii noi în timpul editării, apăsați tasta Shift în timp ce apăsați pe Enter."
+      },
+      "label": "Scândură",
+      "prev": "Tabelul nu a fost încă stabilit..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Genelor",
+      "label": "Meniul Tab"
+    },
+    "TermClassification": {
+      "label": "Clasificare",
+      "prev": "Clasificare"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "Aceasta este coloana la care vor fi legați termenii.",
+          "label": "Coloană",
+          "placeholder": "Coloană"
+        },
+        "terms": {
+          "help": "În acest post trebuie să scrieți cuvintele care sunt legate de termenul separat prin punct și virgulă fiecare. De exemplu: aceste; Sunt; niște; cuvinte",
+          "label": "Cuvinte",
+          "placeholder": "Scrieți cuvinte separate prin punct și virgulă"
+        }
+      },
+      "label": "Element de clasificare",
+      "prev": "Articol nestabilit încă..."
+    },
+    "Test": {
+      "label": "Tipul testului",
+      "questionSelect": "Selectați un tip de întrebare pe care doriți să îl adăugați la test"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Trebuie să scrieți un text.",
+        "label": "În acest editor de text puteți scrie conținutul blocului.",
+        "placeholder": "Introduceți un text...",
+        "styles": {
+          "attention": "Atenție",
+          "default": "Fără stil",
+          "help": "Stabilește aspectul casetei care înconjoară textul",
+          "label": "Stilul blocului de text",
+          "more": "Află mai multe",
+          "note": "Notă"
+        }
+      },
+      "label": "Bloc text",
+      "prev": "Textul nu a fost încă stabilit..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Trei coloane"
+    },
+    "TrueFalseContainer": {
+      "label": "Adevărat/fals",
+      "prev": "Adevărat/fals nu s-a stabilit încă..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Fals",
+          "help": "Selectați între adevărat sau fals ca răspuns corect",
+          "label": "Răspunsul corect",
+          "true": "Adevărat"
+        },
+        "questionText": {
+          "help": "Acesta este textul elementului.",
+          "label": "Textul elementului",
+          "placeholder": "Textul articolului..."
+        }
+      },
+      "label": "Element adevărat/fals",
+      "prev": "Elementul adevărat/fals nu a fost încă stabilit..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Fals",
+          "help": "Selectați între adevărat sau fals ca răspuns corect",
+          "label": "Răspunsul corect",
+          "true": "Adevărat"
+        },
+        "questionText": {
+          "help": "Acesta este textul întrebării care va fi afișat în unitatea de conținut.",
+          "label": "Textul întrebării text",
+          "placeholder": "Textul întrebării..."
+        }
+      },
+      "label": "Întrebare adevărată sau falsă",
+      "prev": "Problema nbo-ului adevărat sau fals stabilită încă..."
+    },
+    "TwoColumnsLayout": {
+      "label": "Două coloane"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Afișați subtitrările implicite",
+          "no": "Nu",
+          "yes": "Da"
+        },
+        "url": {
+          "help": "Utilizați introducerea textului pentru a introduce adresa URL a videoclipului (youtube, vimeo ...)",
+          "label": "Adresa URL a videoclipului",
+          "placeholder": "Exemplu: https://example.com/video.mp4"
+        }
+      },
+      "label": "Video",
+      "prev": "Videoclipul nu este setat încă..."
+    }
+  }
+}

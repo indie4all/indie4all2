@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Afficher/Masquer les catégories",
+    "viewImage": "Voir l’image"
+  },
+  "common": {
+    "alt": {
+      "help": "Il s’agit du texte de description alternatif de l’image en termes d’accessibilité",
+      "label": "Texte alternatif de l’image",
+      "placeholder": "Texte de remplacement"
+    },
+    "captions": {
+      "help": "URL INDIeMedia du fichier contenant la transcription des dialogues, des effets sonores, des pistes musicales et d’autres informations audio lorsque le spectateur est sourd ou malentendant, ou si la vidéo / audio est coupée. Les sous-titres sont également affichés au-dessus de la vidéo.",
+      "label": "Sous-titres (CC)",
+      "placeholder": "Exemple : https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "URL INDIeMedia du fichier contenant des descriptions textuelles de ce qui se passe dans la vidéo lorsque la partie de la vidéo n’est pas disponible parce que le spectateur est aveugle et n’utilise pas d’écran. Les descriptions sont lues par un lecteur d’écran ou converties en une piste audio distincte.",
+      "label": "Description",
+      "placeholder": "Exemple : https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Téléchargement du lecteur, veuillez patienter",
+      "title": "Téléchargement"
+    },
+    "feedback": {
+      "help": "Interpréter les commentaires que l’élève recevra s’il répond correctement ou incorrectement",
+      "label": "Rétroaction",
+      "negative": "Commentaires négatifs...",
+      "positive": "Commentaires positifs..."
+    },
+    "generate": {
+      "description": "Générer, veuillez patienter",
+      "title": "Générer"
+    },
+    "help": {
+      "button": "Faire défaut",
+      "help": "Ce texte apparaîtra au-dessus du widget afin que l’utilisateur comprenne comment interagir avec lui. <strong>Si ce champ est laissé vide, le texte par défaut apparaîtra.</strong>",
+      "label": "Aide",
+      "placeholder": "Texte d’aide par défaut"
+    },
+    "language": {
+      "EL": "Grec",
+      "EN": "Anglais",
+      "ES": "Espagnol",
+      "FR": "Français",
+      "LT": "Lituanien"
+    },
+    "loading": {
+      "description": "Chargement, veuillez patienter",
+      "title": "Chargement"
+    },
+    "name": {
+      "help": "Il s’agit du nom de l’instance de widget pour l’analyse de l’apprentissage.",
+      "label": "Nom",
+      "placeholder": "Nom de l’instance du widget"
+    },
+    "navbar": {
+      "options": "Options de développement/réduction"
+    },
+    "preview": {
+      "description": "Votre aperçu est en cours de génération, veuillez patienter",
+      "generated": {
+        "description": "Votre aperçu est prêt. Si votre navigateur ne vous redirige pas vers l’aperçu, cliquez sur le lien ci-dessous :",
+        "title": "Aperçu généré avec succès"
+      },
+      "title": "Génération de l’aperçu"
+    },
+    "publish": {
+      "description": "Votre lecteur est généré pour téléchargement, veuillez patienter",
+      "title": "Unité d’édition"
+    },
+    "publishToNetlify": {
+      "description": "Votre appareil est en cours de téléchargement sur Netlify, veuillez patienter",
+      "title": "Unité d’édition dans Netlify"
+    },
+    "save": {
+      "description": "Épargne, veuillez patienter",
+      "title": "Épargne"
+    },
+    "scorm": {
+      "description": "Votre paquet SCORM est en cours de génération, veuillez patienter",
+      "title": "Génération du package SCORM"
+    },
+    "selectType": "Sélectionnez un type parmi les options suivantes",
+    "unit": {
+      "settings": "Entrez les détails de l’unité"
+    }
+  },
+  "dialog": {
+    "translate": "Unité de traduction"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "L’accordéon est vide. Vous devez ajouter du contenu à l’aide du bouton Ajouter à droite."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "Le conteneur est vide. Vous devez ajouter au moins un élément au conteneur."
+      },
+      "title": {
+        "invalid": "Le titre du conteneur n’est pas valide. Vous devez en établir un."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "L’URL définie pour l’image d’arrière-plan est incorrecte. Vous devez fournir une URL indieauthor valide."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Le texte alternatif de l’image animée doit être défini."
+        },
+        "altRec": {
+          "invalid": "Le texte alternatif de la zone animée doit être défini."
+        },
+        "empty": "L’animation doit comporter au moins une zone animée.",
+        "h": {
+          "invalid": "La hauteur doit être définie et doit être un nombre valide."
+        },
+        "w": {
+          "invalid": "La largeur doit être définie et doit être un nombre valide."
+        },
+        "x": {
+          "invalid": "La coordonnée la plus à gauche doit être définie et doit être un nombre valide."
+        },
+        "y": {
+          "invalid": "Le numéro supérieur doit être défini et doit être un nombre valide."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "L’animation est vide. Vous devez ajouter au moins un élément à l’aide du bouton Ajouter."
+      },
+      "height": {
+        "invalid": "La hauteur de l’animation doit être supérieure à 0."
+      },
+      "image": {
+        "invalid": "L’URL définie pour l’image n’est pas valide. Vous devez vous assurer de fournir une URL indiemedia valide dans le champ image."
+      },
+      "width": {
+        "invalid": "La largeur de l’animation doit être supérieure à 0."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "L’URL définie pour l’image n’est pas valide. Vous devez vous assurer de fournir une URL indiemedia valide dans le champ image."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "Vous devez ajouter au moins une définition de terme audio"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "Vous devez fournir une URL indiemedia valide"
+      },
+      "definition": {
+        "invalid": "Vous devez fournir une définition."
+      },
+      "term": {
+        "invalid": "Vous devez fournir un terme."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "Vous n’avez pas écrit le contenu de la citation. Vous devez, au moins, écrire le contenu."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "Vous devez fournir au moins un élément de type texte et bouton."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "L’URL définie pour l’image n’est pas valide. Vous devez vous assurer de fournir une URL IndieMedia valide dans le champ image du bouton."
+      },
+      "text": {
+        "invalid": "Le texte est vide. Vous devez écrire ou copier un texte."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "La fenêtre en surbrillance est vide. Vous devez ajouter au moins un élément simple."
+      },
+      "text": {
+        "invalid": "Le texte est vide. Vous devez écrire un petit texte."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "Les denes fournissent une image valide dans le champ URL."
+      },
+      "options": {
+        "noCorrect": "Vous devez sélectionner au moins un correct",
+        "notEnougOptions": "Vous devez entrer 4 options"
+      },
+      "text": {
+        "invalid": "Le texte est vide. Vous devez saisir un texte."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Toutes les colonnes de la mise en page doivent contenir au moins un élément en le faisant glisser depuis la palette de gauche."
+      },
+      "width": {
+        "invalid": "Largeur de colonne non valide"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "Vous devez fournir un texte alternatif pour l’image"
+      },
+      "audioblob": {
+        "invalid": "Le contenu du fichier audio n’est pas correct. Vous devez sélectionner un fichier valide."
+      },
+      "captions": {
+        "invalid": "L’URL définie pour les sous-titres n’est pas valide. Vous devez vous assurer de fournir une URL indiemedia valide"
+      },
+      "captionsblob": {
+        "invalid": "Le contenu du fichier de sous-titres n’est pas correct. Vous devez sélectionner un fichier valide."
+      },
+      "descriptions": {
+        "invalid": "L’URL définie pour la description n’est pas valide. Vous devez vous assurer de fournir une URL indiemedia valide"
+      },
+      "imageblob": {
+        "invalid": "Le contenu de l’image n’est pas correct. Vous devez sélectionner une image valide."
+      },
+      "name": {
+        "invalid": "Vous devez fournir un nom pour cette instance.",
+        "notUniqueName": "Le nom de l’instance doit être unique dans tout le contenu."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "Vous devez fournir au moins un élément Word correct."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "L’URL définie pour l’image n’est pas valide. Vous devez fournir une URL indieauthor valide."
+      },
+      "question": {
+        "invalid": "Le texte de la question est vide."
+      },
+      "word": {
+        "invalid": "Le texte de la réponse est vide."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "Vous devez ajouter au moins une paire"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "L’URL saisie pour l’image n’est pas valide. Vous devez vous assurer que vous fournissez une URL indiemedia valide dans le champ image."
+      },
+      "text": {
+        "invalid": "Le texte est vide. Vous devez écrire un court texte."
+      },
+      "type": {
+        "invalid": "Le type défini pour l’élément n’est pas valide. Vous devez vous assurer que l’option « Texte » ou « Image » est sélectionnée."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "L’élément est vide. Vous devez ajouter au moins un élément de définition terminologique à l’aide du bouton Ajouter situé à droite."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "Le champ de définition est vide. Vous devez écrire une définition."
+      },
+      "term": {
+        "invalid": "Le champ de terme est vide. Vous devez écrire un terme."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "Vous devez sélectionner une bonne réponse",
+        "notEnoughAnswers": "Vous devez écrire au moins 2 réponses possibles"
+      },
+      "question": {
+        "empty": "Le texte de la question ne peut pas être vide",
+        "onlyOneBlank": "Vous ne devez inclure qu’un seul espace vide dans la question"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "La réponse ne doit pas être vide de sens"
+      },
+      "attempts": {
+        "invalid": "Les tentatives doivent être un nombre compris entre 1 et 9"
+      },
+      "question": {
+        "invalid": "La question ne doit pas être vide de sens"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "L’URL définie pour l’image n’est pas valide. Vous devez vous assurer de fournir une URL indiemedia valide dans le champ image."
+      },
+      "text": {
+        "invalid": "Le texte est vide. Vous devez écrire un texte"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "Le nombre de colonnes doit être de 1, 2 ou 3"
+      },
+      "data": {
+        "empty": "Vous devez fournir au moins un élément d’image et de son."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "Vous devez fournir une URL indiemedia valide"
+      },
+      "image": {
+        "invalid": "L’URL saisie pour l’image n’est pas valide. Vous devez vous assurer que vous fournissez une URL indiemedia valide dans le champ image."
+      },
+      "text": {
+        "invalid": "Le texte est vide. Vous devez écrire un court texte."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "L’URL définie pour l’image n’est pas valide. Vous devez vous assurer de fournir une URL indiemedia valide dans le champ image."
+      },
+      "text": {
+        "invalid": "Le texte est vide. Vous devez écrire ou copier un texte."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "L’URL configurée pour la vidéo n’est pas valide. Vous devez vous assurer d’en fournir un à partir de vidéos interactives indieopen."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "Vous devez fournir une légende pour la formule."
+      },
+      "formula": {
+        "invalid": "Vous devez fournir une formule au format LaTex."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "Vous devez fournir au moins un élément Word manquant."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "Vous devez écrire au moins une bonne réponse",
+        "invalid": "Le texte de la réponse est vide"
+      },
+      "sentence": {
+        "empty": "La phrase ne doit pas être vide",
+        "onlyOneBlank": "Vous ne devez inclure qu’un marqueur d’écart dans la phrase"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "Le modal est vide. Vous devez ajouter au moins un élément simple."
+      },
+      "text": {
+        "invalid": "Le texte est vide. Vous devez écrire un petit texte."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "L’URL définie pour l’image d’arrière-plan est incorrecte. Vous devez fournir une URL indieauthor valide."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Le texte de remplacement pour l’écrêtage doit être défini."
+        },
+        "altRec": {
+          "invalid": "Le texte alternatif de la position doit être défini."
+        },
+        "empty": "Le puzzle doit avoir au moins une pièce.",
+        "h": {
+          "invalid": "La hauteur doit être définie et doit être un nombre valide."
+        },
+        "w": {
+          "invalid": "La largeur doit être définie et doit être un nombre valide."
+        },
+        "x": {
+          "invalid": "La coordonnée la plus à gauche doit être définie et doit être un nombre valide."
+        },
+        "y": {
+          "invalid": "Le numéro supérieur doit être défini et doit être un nombre valide."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "L’élément est vide. Vous devez ajouter au moins une entrée à l’aide du bouton Ajouter à droite."
+      },
+      "title": {
+        "invalid": "Le champ titre est vide. Vous devez écrire un titre."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "Il y a au moins un lien en double. Vous devez fournir un lien unique pour chaque publication.",
+        "empty": "L’élément est vide. Vous devez ajouter au moins une entrée à l’aide du bouton Ajouter à droite.",
+        "multipleCurrent": "Il y a au moins deux entrées actuelles. Vous ne devez fournir qu’une seule entrée actuelle."
+      },
+      "moreThanOne": "Vous devez fournir au plus un élément de table des matières."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "Le champ titre est vide. Vous devez écrire un titre."
+      },
+      "url": {
+        "invalid": "Le champ url doit être défini au format suivant : https://[source]/[author]/[unit]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "Le schéma est vide. Vous devez ajouter au moins un élément à l’aide du bouton Ajouter situé à droite."
+      },
+      "height": {
+        "invalid": "La hauteur de l’animation doit être supérieure à 0."
+      },
+      "image": {
+        "invalid": "L’URL définie pour l’image complète n’est pas valide. Vous devez vous assurer de fournir une URL indiemedia valide."
+      },
+      "width": {
+        "invalid": "La largeur de l’animation doit être supérieure à 0."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "L’URL définie pour l’image n’est pas valide. Vous devez vous assurer de fournir une URL indiemedia valide dans le champ image."
+      },
+      "text": {
+        "invalid": "Le texte est vide. Vous devez écrire un petit texte."
+      }
+    },
+    "section": {
+      "emptyData": "Une section ne peut pas être vide. Vous devez ajouter au moins un élément.",
+      "invalidBookmark": "La section doit avoir un signet valide.",
+      "invalidImage": "La section doit avoir une image d’arrière-plan.",
+      "invalidName": "La section doit avoir un nom.",
+      "typeImageNotSelected": "Si le type sélectionné est Image d’arrière-plan, vous devez définir l’image."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "Vous devez fournir au moins un élément de tri de phrases."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "Vous devez écrire au moins une bonne réponse",
+        "impossible": "La phrase ne peut pas être construite à partir des mots établis",
+        "invalid": "Le texte de la réponse est vide"
+      },
+      "words": {
+        "empty": "Vous devez taper au moins un mot valide",
+        "invalid": "Le texte Word est vide"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "L’URL définie pour l’image n’est pas valide. Vous devez vous assurer de fournir une URL indiemedia valide dans le champ image.",
+        "sizeNotSet": "La largeur et la hauteur de l’image doivent être définies lorsque son apparence est « Personnalisée »"
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "Vous devez sélectionner une bonne réponse",
+        "notEnoughAnswers": "Vous devez écrire au moins 2 réponses possibles"
+      },
+      "question": {
+        "empty": "Le texte de la question ne peut pas être vide"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "L’onglet est vide. Vous devez ajouter au moins un élément à l’onglet."
+      },
+      "name": {
+        "invalid": "Le nom de l’onglet n’est pas valide. Vous devez en établir un."
+      }
+    },
+    "Table": {
+      "empty": "La table n’a pas de colonnes définies"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "Le menu à onglets ne contient pas d’onglets. Vous devez en ajouter au moins un."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Il y a des colonnes en double. Vérifiez vos articles.",
+        "duplicatedTerms": "Il y a des termes en double entre vos colonnes. Revoir les conditions"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "La colonne ne doit pas être vide"
+      },
+      "terms": {
+        "empty": "Les termes ne peuvent pas être vides.",
+        "invalid": "Les conditions ne sont pas conformes au format requis. Veuillez séparer les termes par des points-virgules (;)."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "Le test est vide. Vous devez ajouter au moins une question."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "Le texte est vide. Vous devez écrire un court texte."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "Vous devez ajouter au moins un élément true ou false"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "Le texte de la question ne peut pas être vide"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "Le texte de la question ne peut pas être vide"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "L’URL de la vidéo n’est pas valide. Vous devez vous assurer de fournir une URL valide provenant d’IndieMedia ou de Youtube.",
+        "localInvalid": "L’URL de la vidéo n’est pas valide. Vous devez vous assurer que vous fournissez une URL YouTube valide."
+      }
+    }
+  },
+  "footer": {
+    "content": "Vous pouvez ajouter de nouvelles sections à l’aide de la barre d’outils supérieure"
+  },
+  "general": {
+    "areYouSure": "Es-tu sûr?",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "confirm": "Confirmer",
+    "delete": "Éliminer",
+    "discard": "Jeter",
+    "false": "Faux",
+    "load": "Charger",
+    "modelDetected": "Voulez-vous charger une unité précédente?",
+    "true": "Vrai"
+  },
+  "header": {
+    "addSection": "Ajouter une section",
+    "clear": "Effacer le contenu",
+    "download": "Télécharger l’unité",
+    "importSection": "Section d’importation",
+    "install": "Installer l’application",
+    "preview": "Aperçu du contenu",
+    "publish": "Publier du contenu",
+    "publishToNetlify": "Publier du contenu dans Netlify",
+    "redo": "Action de rétablissement",
+    "save": "Enregistrer le contenu",
+    "scorm": "Exportation au format SCORM",
+    "translate": "Unité de traduction",
+    "undo": "Action d’annulation",
+    "upload": "Unité de téléchargement",
+    "validate": "Valider l’unité"
+  },
+  "items": {
+    "add": "Ajouter du contenu",
+    "delete": "Supprimer l’élément",
+    "duplicate": "Elément en double",
+    "edit": "Modifier le contenu",
+    "export": "Exporter l’article"
+  },
+  "messages": {
+    "changesSaved": "Les modifications ont été enregistrées avec succès.",
+    "confirmClearContent": "Vous allez supprimer entièrement le contenu. Assurez-vous que c’est ce que vous voulez vraiment faire.",
+    "confirmLoadModel": "Une unité précédente a été trouvée. Choisissez si vous souhaitez le charger ou le supprimer.",
+    "contentCleared": "Contenu supprimé avec succès.",
+    "contentErrors": "ASI! Il y a des erreurs dans votre contenu. Passez en revue les messages d’erreur et suivez leurs instructions pour les corriger.",
+    "couldNotExportElement": "L’article n’a pas pu être exporté",
+    "couldNotExportSection": "La section n’a pas pu être exportée",
+    "deletedSection": "Section supprimée avec succès",
+    "emptyContent": "Vous n’avez pas ajouté de contenu.",
+    "errorMessage": "Erreur",
+    "exportedElement": "Objet exporté avec succès",
+    "exportedSection": "Section exportée avec succès",
+    "importedElement": "Élément importé avec succès",
+    "importedSection": "Section importée avec succès",
+    "loadError": "L’unité n’a pas pu être chargée",
+    "noElement": "Aucun élément à importer",
+    "noErrors": "Pas mal! Il n’y a pas d’erreurs. Vous pouvez procéder à l’enregistrement du contenu.",
+    "noRedo": "Rien à refaire",
+    "noSection": "Aucune section à importer",
+    "noUndo": "Rien à défaire",
+    "previewError": "L’unité n’a pas pu être prévisualisée",
+    "publishError": "L’unité n’a pas pu être publiée",
+    "savedUnit": "Unité enregistrée avec succès",
+    "saveError": "L’unité n’a pas pu être sauvegardée",
+    "successMessage": "D’accord",
+    "translateError": "L’unité n’a pas pu être traduite",
+    "warningMessage": "Attention"
+  },
+  "netlify": {
+    "button": {
+      "text": "Relier"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Créer un site",
+        "help": "Sélectionnez l’un des sites disponibles dans votre compte Netlify",
+        "label": "Veuillez sélectionner un site disponible dans votre Netlify pour télécharger l’unité"
+      },
+      "title": "Remplissez les champs pour vous connecter à Netlify ",
+      "token": {
+        "help": "Entrez votre jeton d’accès Netlify personnel. Vous pouvez le trouver dans la section Applications des paramètres du compte Netlify",
+        "label": "Insérez le jeton d’accès personnel :",
+        "placeholder": "Insérez votre jeton d’accès personnel Netlify ici"
+      }
+    },
+    "error": {
+      "message": "Jeton non valide"
+    },
+    "success": {
+      "message": "L’unité a été téléchargée sur Netlify avec succès. Accédez-y en cliquant sur le lien suivant : ",
+      "message_2": "Gardez à l’esprit que si votre appareil a beaucoup de contenu, la publication peut prendre quelques minutes.",
+      "title": "Unité téléchargée sur Netlify"
+    }
+  },
+  "palette": {
+    "containers": "Conteneurs",
+    "exerciseElement": "Exercices",
+    "interactiveElements": "Éléments interactifs",
+    "items": "Articles",
+    "layouts": "Provisions",
+    "question": "Questionne",
+    "simpleElements": "Éléments"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Bloc de code",
+        "screenReader": "Texte d’aide pour les lecteurs d’écran"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Supprimer la section",
+    "duplicate": "Section en double",
+    "edit": "Modifier les informations",
+    "expandContract": "Développer ou réduire",
+    "export": "Section d’exportation",
+    "form": {
+      "bookmark": {
+        "help": "Ce marqueur apparaîtra en haut de l’unité en tant que marqueur de section. Il doit comporter un maximum de 40 caractères.",
+        "label": "Signet de section",
+        "placeholder": "Écrivez un signet..."
+      },
+      "image": {
+        "help": "",
+        "label": "URL de l’image d’arrière-plan",
+        "placeholder": "Entrez l’URL de l’image..."
+      },
+      "name": {
+        "help": "Il s’agit du nom que la section aura dans le contenu.",
+        "label": "Nom de la section",
+        "placeholder": "Écrivez un nom..."
+      },
+      "preview": "Prévisualiser l’image d’arrière-plan",
+      "type": {
+        "bc": "Couleur d’arrière-plan (par défaut)",
+        "bi": "Image d’arrière-plan",
+        "help": "Si le type est défini sur 'couleur d’arrière-plan', la couleur par défaut apparaîtra derrière le titre tandis que dans 'Image d’arrière-plan', vous devez établir une image d’arrière-plan pour le titre de la section.",
+        "label": "Type d’arrière-plan"
+      }
+    },
+    "import": "Importer un élément",
+    "label": "Section",
+    "moveDown": "Faire défiler la section vers le bas",
+    "moveUp": "Faire défiler la section vers le haut"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Activer/désactiver l’analyse dans l’unité",
+        "label": "Analytics",
+        "no": "Non",
+        "yes": "Oui"
+      },
+      "author": {
+        "help": "L’auteur de l’unité devrait écrire ici.",
+        "label": "Auteur de l’unité",
+        "placeholder": "L’auteur de l’unité écrit"
+      },
+      "background": {
+        "help": "L’image doit être d’environ 1900 x 550 pixels.",
+        "label": "Image du thème"
+      },
+      "color": {
+        "help": "Format hexadécimal #FFFFFF requis",
+        "label": "Couleur du thème",
+        "placeholder": "Entrez la couleur du thème ici"
+      },
+      "email": {
+        "help": "Il s’agit de l’adresse e-mail de l’auteur.",
+        "label": "Messagerie électronique",
+        "placeholder": "Entrez l’adresse e-mail de l’auteur"
+      },
+      "institution": {
+        "help": "Nom de l’institution",
+        "label": "Institution",
+        "placeholder": "Entrez le nom de l’institution"
+      },
+      "language": {
+        "help": "Langue de l’unité.",
+        "label": "Langue"
+      },
+      "license": {
+        "BY": "Reconnaissance internationale 4.0 (CC BY 4.0)",
+        "BYNC": "Attribution-NonCommercial-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCND": "Attribution-NonCommercial-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
+        "BYND": "Attribution-NoDerivs 4.0 International (CC BY-ND 4.0)",
+        "BYSA": "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+        "help": "Licence d’unité",
+        "label": "Licence",
+        "PRIVATE": "Tous droits réservés"
+      },
+      "resource": {
+        "help": "Entrez l’ID de ressource",
+        "label": "ID de ressource :",
+        "placeholder": "Entrez l’ID de ressource"
+      },
+      "theme": {
+        "help": "Choisissez le thème de l’unité.",
+        "label": "Thème"
+      },
+      "title": {
+        "help": "C’est le titre de l’unité.",
+        "label": "Titre de l’unité",
+        "placeholder": "Entrez un titre"
+      },
+      "type": {
+        "help": "Il s’agit du type d’unité.",
+        "interoperability": "Interopérabilité",
+        "label": "Type de lecteur",
+        "open": "Ouvrir"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "Il s’agit de la langue source de l’unité",
+        "label": "Langue source"
+      },
+      "target": {
+        "help": "La langue cible dans laquelle l’unité sera traduite",
+        "label": "Langue cible"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Menu accordéon"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "Définit le titre du groupe de contenu. Il apparaîtra dans le titre du menu déroulant.",
+          "label": "Titre du contenu",
+          "placeholder": "Exemple : Compétences professionnelles"
+        }
+      },
+      "label": "Groupe de contenu"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "Ce sera l’image d’arrière-plan de l’animation. Vous pouvez choisir l’une de vos images téléchargées.",
+          "label": "URL de l’image",
+          "placeholder": "Insérez l’URL de l’image ici...",
+          "preview": "Aperçu de l’animation"
+        },
+        "pieces": {
+          "altImg": "Texte alternatif pour l’image animée",
+          "altRec": "Texte de remplacement pour la région animée",
+          "delete": "Effacer",
+          "h": "Haut",
+          "new": "Ajouter une nouvelle région animée...",
+          "w": "Large",
+          "x": "Gauche",
+          "y": "Supérieur"
+        }
+      },
+      "label": "Animation",
+      "prev": "L’animation n’a pas encore été initialisée..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "Ce sera la hauteur du conteneur d’animation de pixels",
+          "label": "Hauteur de l’animation",
+          "placeholder": "Exemple : 200"
+        },
+        "image": {
+          "help": "Il s’agit de l’image qui apparaît dans l’élément. Vous pouvez choisir l’une de vos images téléchargées ou en télécharger une nouvelle.",
+          "label": "URL de l’image",
+          "placeholder": "Cliquez ici pour sélectionner l’image"
+        },
+        "prev": "Aperçu de l’image",
+        "width": {
+          "help": "Il s’agit de la largeur du conteneur d’animation en pixels",
+          "label": "Largeur de l’animation",
+          "placeholder": "Exemple : 400"
+        }
+      },
+      "label": "Animation"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "Ce sera l’image de l’élément d’animation.",
+          "label": "URL de l’image",
+          "placeholder": "Cliquez ici pour sélectionner l’image"
+        },
+        "prev": "Aperçu"
+      },
+      "label": "Élément de l’animation.",
+      "prev": "L’élément d’animation n’est pas encore défini..."
+    },
+    "AudioTermContainer": {
+      "label": "Termes audio"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "Vous devez entrer l’URL de l’audio que vous souhaitez lire dans l’unité de contenu.",
+          "label": "URL du fichier audio",
+          "placeholder": "Veuillez saisir une URL indiemedia valide..."
+        },
+        "definition": {
+          "help": "Cette définition devrait être la transcription textuelle de l’audio.",
+          "label": "Définition",
+          "placeholder": "Écrivez la définition..."
+        },
+        "term": {
+          "help": "Ce sera le terme placé à gauche du widget",
+          "label": "Terme",
+          "placeholder": "Écrivez votre terme ici..."
+        }
+      },
+      "label": "Terme audio",
+      "prev": "Audio-term pas encore établi..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "Le rendez-vous peut apparaître aligné à droite ou à gauche",
+          "label": "Alignement des rendez-vous",
+          "values": {
+            "left": "À gauche",
+            "right": "À droite"
+          }
+        },
+        "caption": {
+          "help": "Le sous-titre de la citation apparaît sous la citation. Il est principalement utilisé pour indiquer l’auteur ou les auteurs de la citation",
+          "label": "Sous-titre de la citation",
+          "placeholder": "Exemple : Carl Sagan"
+        },
+        "quote": {
+          "help": "Ce texte est la citation textuelle",
+          "label": "Texte de citation",
+          "placeholder": "Exemple : « L’absence de preuve n’est pas une preuve d’absence. »"
+        },
+        "source": {
+          "help": "Source originale de la citation (année, livre, magazine... etc.)",
+          "label": "Origine de la citation",
+          "placeholder": "Exemple :1990"
+        }
+      },
+      "label": "Citer",
+      "prev": "Devis pas encore établi..."
+    },
+    "ButtonTextContainer": {
+      "label": "Boutons avec texte"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "Ce sera l’image qui apparaîtra sur le bouton. Vous pouvez choisir l’une de vos images téléchargées ou en télécharger une nouvelle.",
+          "label": "URL de l’image du bouton",
+          "placeholder": "Insérez votre URL ici"
+        },
+        "preview": "Aperçu de l’image du bouton",
+        "text": {
+          "help": "Dans cet éditeur de texte, vous pouvez écrire le contenu du texte associé au bouton",
+          "label": "SMS",
+          "placeholder": "Écrivez votre texte ici..."
+        }
+      },
+      "label": "Elément Button avec texte",
+      "prev": "L’élément button avec du texte n’a pas encore été initialisé..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Couleur",
+        "helps": {
+          "animation": "Détermine l’une des animations prédéfinies pour la boîte avec les éléments incorporés (simple ou pliable).",
+          "colorTheme": "Le format hexadécimal #FFFFFF requis. <strong> S’il n’est pas rempli, la couleur du thème de l’appareil prendra la valeur par défaut.</strong>",
+          "styles": "Détermine l’un des styles prédéfinis pour la zone contenant les éléments incorporés.",
+          "textTitle": "Ce sera le texte qui apparaîtra comme titre. <strong>S’il n’est pas rempli, il prendra une valeur par défaut.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Entrez la couleur ici",
+          "textTitle": "Entrez le titre ici"
+        },
+        "styles": {
+          "animation": "Style d’animation",
+          "attention": "Attention",
+          "collapsible": "Pliable",
+          "danger": "Danger",
+          "label": "Style",
+          "more": "Pour en savoir plus",
+          "note": "Note",
+          "simple": "Simple"
+        },
+        "textTitle": "Titre"
+      },
+      "label": "Exceptionnel"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "L’image apparaîtra en haut du widget, au-dessus des options.",
+          "label": "URL de l’image",
+          "placeholder": "Entrez l’URL de l’image..."
+        },
+        "options": {
+          "help": "Ces 4 options apparaîtront sous l’image. Un seul peut être correct.",
+          "label": "Options",
+          "placeholder": "Entrez une option"
+        },
+        "preview": "Aperçu de l’image",
+        "text": {
+          "help": "Ce texte apparaîtra au-dessus de l’image sous forme de texte ou de question.",
+          "label": "SMS",
+          "placeholder": "Écrivez le texte ici..."
+        }
+      },
+      "label": "Choisissez une option",
+      "prev": "Choisir une option non définie ..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "Colonnes",
+      "form": {
+        "width": {
+          "1": "Largeur de la première colonne",
+          "help": "L’autre colonne occupera la largeur restante"
+        }
+      },
+      "label": "Disposition"
+    },
+    "CorrectWord": {
+      "label": "Mot correct"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "Image descriptive de la question",
+          "label": "URL de l’image",
+          "placeholder": "Insérez l’URL de votre image ici..."
+        },
+        "preview": "Aperçu de l’image",
+        "question": {
+          "help": "C’est la question qui sera montrée à l’utilisateur.",
+          "label": "Texte de la question",
+          "placeholder": "Texte de la question"
+        },
+        "word": {
+          "help": "Ce mot sera la réponse à la question",
+          "label": "Répondre",
+          "placeholder": "Écrivez un mot..."
+        }
+      },
+      "label": "Corriger l’élément de mot",
+      "prev": "Le mot correct n’a pas encore été établi..."
+    },
+    "CouplesContainer": {
+      "label": "Couples",
+      "prev": "Couples pas encore établis..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "Cette image sera associée au texte saisi par paire dans ce formulaire.",
+          "label": "URL de l’image",
+          "placeholder": "Entrez l’URL de l’image ici..."
+        },
+        "legend": {
+          "first": "Premier élément",
+          "second": "Deuxième élément"
+        },
+        "preview": "Aperçu de l’image",
+        "text": {
+          "help": "Ce texte sera associé à l’image saisie en tant que paire dans ce formulaire.",
+          "label": "SMS",
+          "placeholder": "Rédigez un texte..."
+        },
+        "type": {
+          "image": "Image",
+          "label": "Mec",
+          "text": "SMS"
+        }
+      },
+      "label": "Couple",
+      "prev": "Couple pas encore établi..."
+    },
+    "DragdropContainer": {
+      "label": "Glisser-déposer"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "La définition apparaît à droite de l’élément interactif et l’élève doit faire glisser le terme vers la définition",
+          "label": "Définition",
+          "placeholder": "Exemple : Tous les êtres humains ont le droit de s’exprimer sans être harcelés à cause de ce qu’ils pensent"
+        },
+        "term": {
+          "help": "Le terme apparaît à gauche de l’élément interactif et sera celui que l’élève devra glisser-déposer dans la définition.",
+          "label": "Terme",
+          "placeholder": "Exemple : Liberté d’expression"
+        }
+      },
+      "label": "Définition du terme",
+      "prev": "Point non établi..."
+    },
+    "FourColumnsLayout": {
+      "label": "Quatre colonnes"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Vous devez écrire au moins 2 réponses et marquer laquelle d’entre elles est correcte.",
+          "label": "Réponses possibles"
+        },
+        "questionPreview": {
+          "help": "Voici à quoi ressemblera la question dans l’unité de contenu.",
+          "label": "Prévisualisez le texte de la question.",
+          "placeholder": "Texte de la question avec un emplacement ___ vide."
+        },
+        "questionText": {
+          "help": "Vous devez taper le texte de la question avec l’espace vide souhaité avec le mot-clé spécial [blank].",
+          "label": "Texte de la question",
+          "placeholder": "Texte de la question avec élément vide"
+        }
+      },
+      "label": "Combler la question de l’écart",
+      "prev": "La question de combler le vide n’est pas encore établie..."
+    },
+    "GenericWidget": {
+      "label": "Widget"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "La réponse à la question",
+          "label": "Répondre",
+          "placeholder": "Écrivez votre réponse ici"
+        },
+        "attempts": {
+          "help": "Nombre de tentatives pour deviner la réponse. Il doit s’agir d’un nombre compris entre 1 et 9.",
+          "label": "Tentatives"
+        },
+        "question": {
+          "help": "La question à laquelle il faut répondre",
+          "label": "Question",
+          "placeholder": "Écrivez votre question ici"
+        }
+      },
+      "label": "Devinez le mot",
+      "prev": "Je suppose que le mot n’a pas encore été initialisé..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Si vous établissez un texte, ce sera la légende de l’image",
+          "label": "Légende de l’image",
+          "placeholder": "Veuillez saisir une légende."
+        },
+        "image": {
+          "help": "Il s’agit de l’image qui apparaîtra dans l’élément.",
+          "label": "URL de l’image",
+          "placeholder": "Cliquez ici pour sélectionner l’image"
+        },
+        "preview": "Aperçu"
+      },
+      "label": "Image avec texte ci-dessus",
+      "prev": "Image avec texte ci-dessus pas encore établi..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Image et son"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "Le fichier audio sera lu lorsque l’image est cliquée.",
+          "label": "URL du fichier audio",
+          "placeholder": "Veuillez saisir une URL indiemedia valide..."
+        },
+        "image": {
+          "help": "L’image apparaîtra en premier",
+          "label": "URL de l’image",
+          "placeholder": "Entrez l’URL de l’image..."
+        },
+        "preview": "Aperçu de l’image",
+        "text": {
+          "help": "Le texte apparaîtra au-dessus de l’image lorsque vous la survolerez.",
+          "label": "Texte de l’image",
+          "placeholder": "Rédigez un texte..."
+        }
+      },
+      "label": "Élément image et son",
+      "prev": "Objet image et son pas encore établi ..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "Il s’agit de l’image qui apparaît dans l’élément. Vous pouvez choisir l’une de vos images téléchargées ou en télécharger une nouvelle.",
+          "label": "URL de l’image",
+          "placeholder": "Cliquez ici pour sélectionner l’image"
+        },
+        "layout": {
+          "help": "L’orientation d’un bloc d’image et de texte détermine où chacun des éléments du bloc apparaît.",
+          "label": "Orientation",
+          "values": {
+            "0": "Texte à droite, image à gauche",
+            "1": "Texte à gauche, image à droite"
+          }
+        },
+        "preview": "Aperçu de l’image",
+        "text": {
+          "help": "Vous devez écrire un texte.",
+          "label": "Dans cet éditeur de texte, vous pouvez écrire le contenu du bloc.",
+          "placeholder": "Rédigez un texte..."
+        }
+      },
+      "label": "Image et texte",
+      "prev": "Image et texte pas encore établis..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Utilisez la saisie de texte pour entrer l’URL de la vidéo interactive créée avec l’outil vidéo interactif.",
+          "label": "URL de la vidéo",
+          "placeholder": "Exemple : https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Vidéo interactive",
+      "prev": "Vidéo interactive non encore établie"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "Cette légende apparaîtra sous la formule et sous forme de bloc de texte",
+          "label": "Légende de la formule",
+          "placeholder": "Exemple : formule quadratique"
+        },
+        "formula": {
+          "help": "Utilisez la zone de texte pour taper la formule. Sous cette zone apparaîtra un aperçu de la formule si elle est correcte ou le texte en rouge si la formule n’est pas correcte",
+          "label": "Formule au format LaTex",
+          "placeholder": "Exemple : \\text{La formule quadratique est }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "Formule LaTeX",
+      "prev": "Formule non encore établie..."
+    },
+    "MissingWords": {
+      "label": "Mots manquants"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Effacer",
+          "new": "Ajouter une nouvelle réponse...",
+          "text": "Répondre"
+        },
+        "sentence": {
+          "help": "Vous devez écrire le texte de la phrase, y compris l’espace, en utilisant le marqueur spécial [vide].",
+          "label": "Texte de la phrase",
+          "placeholder": "Texte de phrase avec marqueur [vide]"
+        },
+        "sentencePreview": {
+          "help": "C’est ainsi que vous considéreriez la phrase dans l’unité de contenu.",
+          "label": "Aperçu de phrase",
+          "placeholder": "Texte de phrase avec le marqueur ___ "
+        }
+      },
+      "label": "Elément Mots manquants",
+      "prev": "L’élément de mot manquant n’a pas encore été établi..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "Ce texte apparaîtra sous forme de texte de bouton, qui doit être activé pour ouvrir la fenêtre modale.",
+          "label": "Texte du bouton",
+          "placeholder": "Écrivez le texte..."
+        }
+      },
+      "label": "Fenêtre modale"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "Ce sera l’image de fond du puzzle. Vous pouvez choisir l’une de vos images téléchargées.",
+          "label": "URL de l’image",
+          "placeholder": "Insérez l’URL de l’image ici...",
+          "preview": "Aperçu du puzzle"
+        },
+        "pieces": {
+          "altImg": "Texte de remplacement pour le recadrage",
+          "altRec": "Texte de remplacement pour la position",
+          "delete": "Effacer",
+          "h": "Haut",
+          "new": "Ajouter une nouvelle pièce...",
+          "w": "Large",
+          "x": "Gauche",
+          "y": "Supérieur"
+        }
+      },
+      "label": "Puzzle",
+      "prev": "Le puzzle n’a pas encore été initialisé..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Titre du groupe",
+          "label": "Titre",
+          "placeholder": "Exemple : Module de droit"
+        }
+      },
+      "label": "Groupe",
+      "prev": "Groupe pas encore établi ..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Table des matières"
+    },
+    "RelatedUnitsItem": {
+      "current": "Unité actuelle",
+      "form": {
+        "current": {
+          "title": "Il s’agit de l’unité actuelle"
+        },
+        "title": {
+          "help": "Titre de l’article",
+          "label": "Titre",
+          "placeholder": "Exemple : Droits de l’homme"
+        },
+        "url": {
+          "help": "Destination URL",
+          "label": "URL",
+          "placeholder": "Exemple : https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Entrée",
+      "prev": "L’entrée n’est pas encore établie..."
+    },
+    "SchemaContainer": {
+      "label": "Schéma"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "Ce sera l’image partielle du schéma.",
+          "label": "URL de l’image",
+          "placeholder": "Cliquez ici pour sélectionner l’image"
+        },
+        "prev": "Aperçu de l’image"
+      },
+      "label": "Élément de plan",
+      "prev": "Objet d’esuqema pas encore établi..."
+    },
+    "SentenceOrderContainer": {
+      "label": "Tri d’expressions"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Effacer",
+          "help": "Des réponses qui seront construites à partir des mots saisis",
+          "legend": "Liste des réponses",
+          "new": "Ajouter une nouvelle réponse...",
+          "text": "Répondre"
+        },
+        "words": {
+          "delete": "Effacer",
+          "help": "Les réponses devraient pouvoir être construites à partir de ces mots",
+          "legend": "Liste de mots",
+          "new": "Ajouter un nouveau mot...",
+          "text": "Mot"
+        }
+      },
+      "label": "Elément de tri d’expressions",
+      "prev": "L’élément de tri des phrases n’a pas encore été initialisé..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "Définit l’alignement de l’image lorsque l’apparence n’est pas « Ajuster les dimensions d’origine à l’espace disponible ».",
+          "label": "Alignement de l’image",
+          "values": {
+            "center": "Concentré",
+            "left": "Gauche",
+            "right": "Droite"
+          }
+        },
+        "aspect": {
+          "help": "L’image peut être affichée avec les dimensions d’origine (si possible) ou elle peut être ajustée à la largeur de l’écran (mise à l’échelle de l’image). Si les dimensions sont plus hautes et plus larges que ce que l’écran peut afficher, il s’ajustera toujours automatiquement à l’écran",
+          "label": "Apparence de l’image",
+          "values": {
+            "custom": "Coutume",
+            "fit": "Ajustez les dimensions d’origine à l’espace disponible",
+            "original": "Dimensions d’origine"
+          }
+        },
+        "image": {
+          "help": "Ce sera l’image qui apparaîtra dans l’élément.",
+          "label": "URL de l’image",
+          "placeholder": "Entrez l’URL de l’image ici"
+        },
+        "preview": "Aperçu",
+        "size": {
+          "height": "Haut",
+          "heightPlaceholder": "Hauteur de l’image...",
+          "keepRatio": "Maintenir le ratio d’image",
+          "width": "Large",
+          "widthPlaceholder": "Largeur de l’image..."
+        }
+      },
+      "label": "Image",
+      "prev": "Image pas encore établie..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Vous devez écrire au moins 2 réponses et marquer laquelle d’entre elles est correcte.",
+          "label": "Réponses possibles"
+        },
+        "questionText": {
+          "help": "C’est le texte de la question qui sera affiché dans l’unité de contenu.",
+          "label": "Texte de la question",
+          "placeholder": "Texte de la question simple..."
+        }
+      },
+      "label": "Question simple",
+      "prev": "Question simple pas encore posée..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "Ce sera le nom qui apparaît dans le titre de l’onglet.",
+          "label": "Nom de l’onglet",
+          "placeholder": "Exemple : Compétences professionnelles"
+        }
+      },
+      "label": "Cil"
+    },
+    "Table": {
+      "empty": "La table n’a pas encore été initialisée",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "Le nom de colonne est vide ou déjà défini",
+            "label": "Nom de colonne",
+            "placeholder": "Tapez le nom de la colonne ici..."
+          },
+          "columnPosition": {
+            "error": "Position de la colonne hors plage",
+            "label": "Position de la colonne"
+          },
+          "label": "Ajouter une nouvelle colonne",
+          "submit": "Ajouter une colonne"
+        },
+        "addRow": "Ajouter une nouvelle ligne",
+        "deleteColumn": "Effacer la colonne",
+        "deleteRow": "Effacer la ligne"
+      },
+      "help": {
+        "edit": "Sélectionnez une cellule à modifier. Pour ajouter de nouvelles lignes pendant l’édition, appuyez sur la touche Maj tout en appuyant sur Entrée."
+      },
+      "label": "Planche",
+      "prev": "Tableau pas encore établi..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Cils",
+      "label": "Menu à onglets"
+    },
+    "TermClassification": {
+      "label": "Classification",
+      "prev": "Classification"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "Il s’agit de la colonne à laquelle les termes seront liés.",
+          "label": "Colonne",
+          "placeholder": "Colonne"
+        },
+        "terms": {
+          "help": "Dans cet article, vous devez écrire les mots liés au terme séparés par un point-virgule chacun. Par exemple : ceux-ci ; are; quelques; mots",
+          "label": "Mots",
+          "placeholder": "Écrire des mots séparés par des points-virgules"
+        }
+      },
+      "label": "Élément de classification",
+      "prev": "Point non encore établi..."
+    },
+    "Test": {
+      "label": "Type d’essai",
+      "questionSelect": "Sélectionnez un type de question que vous souhaitez ajouter au quiz"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Vous devez écrire un texte.",
+        "label": "Dans cet éditeur de texte, vous pouvez écrire le contenu du bloc.",
+        "placeholder": "Entrez un texte...",
+        "styles": {
+          "attention": "Attention",
+          "default": "Pas de style",
+          "help": "Détermine la disposition de la zone qui entoure le texte",
+          "label": "Style de bloc de texte",
+          "more": "Pour en savoir plus",
+          "note": "Note"
+        }
+      },
+      "label": "Bloc de texte",
+      "prev": "Texte non encore établi..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Trois colonnes"
+    },
+    "TrueFalseContainer": {
+      "label": "Vrai/faux",
+      "prev": "Vrai/faux pas encore établi..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Faux",
+          "help": "Choisir entre vrai ou faux comme bonne réponse",
+          "label": "Réponse correcte",
+          "true": "Vrai"
+        },
+        "questionText": {
+          "help": "Il s’agit du texte de l’élément.",
+          "label": "Texte de l’élément",
+          "placeholder": "Texte de l’article..."
+        }
+      },
+      "label": "Élément vrai/faux",
+      "prev": "L’élément vrai/faux n’est pas encore établi..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Faux",
+          "help": "Choisir entre vrai ou faux comme bonne réponse",
+          "label": "Réponse correcte",
+          "true": "Vrai"
+        },
+        "questionText": {
+          "help": "C’est le texte de la question qui sera affiché dans l’unité de contenu.",
+          "label": "Texte de la question textuelle",
+          "placeholder": "Texte de la question..."
+        }
+      },
+      "label": "Question vraie ou fausse",
+      "prev": "Question de vrai ou faux nbo encore établie..."
+    },
+    "TwoColumnsLayout": {
+      "label": "Deux colonnes"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Afficher les sous-titres par défaut",
+          "no": "Non",
+          "yes": "Oui"
+        },
+        "url": {
+          "help": "Utilisez la saisie de texte pour entrer l’URL de votre vidéo (youtube, vimeo...)",
+          "label": "URL de la vidéo",
+          "placeholder": "Exemple : https://example.com/video.mp4"
+        }
+      },
+      "label": "Vidéo",
+      "prev": "La vidéo n’est pas encore réglée..."
+    }
+  }
+}

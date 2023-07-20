@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Kuva/peida kategooriad",
+    "viewImage": "Vaata pilti"
+  },
+  "common": {
+    "alt": {
+      "help": "See on pildi alternatiivne kirjeldav tekst juurdepääsetavuse osas",
+      "label": "Pildi asetekst",
+      "placeholder": "Asetekst"
+    },
+    "captions": {
+      "help": "INDIeMedia faili URL, mis sisaldab dialoogi, heliefektide, muusikapalade ja muu heliteabe transkriptsiooni, kui vaataja on kurt või vaegkuulja või kui video/heli on vaigistatud. Subtiitrid kuvatakse ka video kohal.",
+      "label": "Subtiitrid (CC)",
+      "placeholder": "Näide: https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "INDIeMedia faili URL, mis sisaldab tekstikirjeldusi selle kohta, mis juhtub videos, kui video osa pole saadaval, kuna vaataja on pime ja ei kasuta ekraani. Kirjeldused loetakse ekraanilugejaga ette või teisendatakse eraldi heliribaks.",
+      "label": "Kirjeldus: __________",
+      "placeholder": "Näide: https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Draivi allalaadimine, palun oodake",
+      "title": "Allalaadimine"
+    },
+    "feedback": {
+      "help": "Tõlgendage tagasisidet, mida õpilane saab, olenemata sellest, kas ta vastab õigesti või valesti",
+      "label": "Tagasiside",
+      "negative": "Negatiivne tagasiside...",
+      "positive": "Positiivne tagasiside..."
+    },
+    "generate": {
+      "description": "Genereerimine, palun oodake",
+      "title": "Teeniva"
+    },
+    "help": {
+      "button": "Vaikimisi",
+      "help": "See tekst ilmub vidina kohal, nii et kasutaja mõistab, kuidas sellega suhelda. <strong>Kui see jäetakse tühjaks, kuvatakse vaiketekst.</strong>",
+      "label": "Abi",
+      "placeholder": "Spikri vaiketekst"
+    },
+    "language": {
+      "EL": "Kreeka",
+      "EN": "Inglise",
+      "ES": "Hispaania",
+      "FR": "Prantsuse",
+      "LT": "Leedu"
+    },
+    "loading": {
+      "description": "Laadimine, palun oodake",
+      "title": "Laadimise"
+    },
+    "name": {
+      "help": "See on õpianalüütika vidina eksemplari nimi",
+      "label": "Nimi",
+      "placeholder": "Vidina eksemplari nimi"
+    },
+    "navbar": {
+      "options": "Laiendamis-/ahendamissuvandid"
+    },
+    "preview": {
+      "description": "Teie eelvaadet luuakse, palun oodake",
+      "generated": {
+        "description": "Teie eelvaade on valmis. Kui teie brauser ei suuna teid eelvaatesse, klõpsake allolevat linki:",
+        "title": "Eelvaade on loodud edukalt"
+      },
+      "title": "Eelvaate loomine"
+    },
+    "publish": {
+      "description": "Teie draiv genereeritakse allalaadimiseks, palun oodake",
+      "title": "Kirjastusüksus"
+    },
+    "publishToNetlify": {
+      "description": "Teie üksus laaditakse üles Netlifysse, palun oodake",
+      "title": "Kirjastusüksus Netlifys"
+    },
+    "save": {
+      "description": "Säästke, palun oodake",
+      "title": "Salvestamine"
+    },
+    "scorm": {
+      "description": "Teie SCORM-i pakett on loomisel, palun oodake",
+      "title": "SCORM paketi genereerimine"
+    },
+    "selectType": "Valige tüüp järgmiste suvandite hulgast",
+    "unit": {
+      "settings": "Üksuse üksikasjade sisestamine"
+    }
+  },
+  "dialog": {
+    "translate": "Tõlgi üksus"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "Akordion on tühi. Sisu lisamiseks peate kasutama paremal asuvat lisamisnuppu."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "Mahuti on tühi. Konteinerisse tuleb lisada vähemalt üks üksus."
+      },
+      "title": {
+        "invalid": "Konteineri pealkiri on kehtetu. Peate selle looma."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "Taustpildile määratud URL on vale. Peate esitama kehtiva indieauthori URL-i."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Animeeritud pildi asetekst peab olema seatud."
+        },
+        "altRec": {
+          "invalid": "Animeeritud ala asetekst peab olema seatud."
+        },
+        "empty": "Animatsioonil peab olema vähemalt üks animeeritud ala.",
+        "h": {
+          "invalid": "Kõrgus peab olema määratud ja see peab olema kehtiv number."
+        },
+        "w": {
+          "invalid": "Laius peab olema määratud ja see peab olema kehtiv number."
+        },
+        "x": {
+          "invalid": "Kõige vasakpoolsem koordinaat peab olema määratud ja see peab olema kehtiv number."
+        },
+        "y": {
+          "invalid": "Ülemine number peab olema määratud ja see peab olema kehtiv number."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "Animatsioon on tühi. Peate lisama vähemalt ühe üksuse, kasutades lisamisnuppu."
+      },
+      "height": {
+        "invalid": "Animatsiooni kõrgus peab olema suurem kui 0."
+      },
+      "image": {
+        "invalid": "Pildile määratud URL on sobimatu. Peate veenduma, et sisestate pildiväljale kehtiva indiemedia URL-i."
+      },
+      "width": {
+        "invalid": "Animatsiooni laius peab olema suurem kui 0."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "Pildile määratud URL on sobimatu. Peate veenduma, et sisestate pildiväljale kehtiva indiemedia URL-i."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "Peate lisama vähemalt ühe helitermini definitsiooni"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "Peate esitama kehtiva indiemedia URL-i"
+      },
+      "definition": {
+        "invalid": "Peate esitama määratluse."
+      },
+      "term": {
+        "invalid": "Peate esitama tähtaja."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "Te ei ole tsitaadi sisu kirjutanud. Peate vähemalt sisu kirjutama."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "Peate sisestama vähemalt ühe teksti- ja nuputüübi elemendi."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "Pildile määratud URL on sobimatu. Peate tagama, et sisestate nupu pildiväljale kehtiva IndieMedia URL-i."
+      },
+      "text": {
+        "invalid": "Tekst on tühi. Peate teksti kirjutama või kopeerima."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "Esiletõstetud aken on tühi. Peate lisama vähemalt ühe lihtsa elemendi."
+      },
+      "text": {
+        "invalid": "Tekst on tühi. Peate kirjutama väikese teksti."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "Denes esitab URL-i väljal kehtiva pildi."
+      },
+      "options": {
+        "noCorrect": "Peate valima vähemalt ühe õige",
+        "notEnougOptions": "Peate sisestama 4 võimalust"
+      },
+      "text": {
+        "invalid": "Tekst on tühi. Peate sisestama teksti."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Kõik paigutuse veerud peavad sisaldama vähemalt ühte elementi, lohistades seda vasakul asuvast paletist."
+      },
+      "width": {
+        "invalid": "Sobimatu veerulaius"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "Peate andma pildile aseteksti"
+      },
+      "audioblob": {
+        "invalid": "Helifaili sisu ei ole õige. Peate valima kehtiva faili."
+      },
+      "captions": {
+        "invalid": "Subtiitritele määratud URL on sobimatu. Peate veenduma, et sisestate kehtiva indiemedia URL-i"
+      },
+      "captionsblob": {
+        "invalid": "Subtiitrite faili sisu ei ole õige. Peate valima kehtiva faili."
+      },
+      "descriptions": {
+        "invalid": "Kirjelduse jaoks määratud URL on sobimatu. Peate veenduma, et sisestate kehtiva indiemedia URL-i"
+      },
+      "imageblob": {
+        "invalid": "Pildi sisu ei ole õige. Peate valima kehtiva pildi."
+      },
+      "name": {
+        "invalid": "Peate esitama selle eksemplari nime.",
+        "notUniqueName": "Eksemplari nimi peab olema kogu sisus kordumatu."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "Peate esitama vähemalt ühe õige Wordi üksuse."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "Pildile määratud URL on sobimatu. Peate esitama kehtiva indieauthori URL-i."
+      },
+      "question": {
+        "invalid": "Küsimuse tekst on tühi."
+      },
+      "word": {
+        "invalid": "Vastuse tekst on tühi."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "Peate lisama vähemalt ühe paari"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "Pildile sisestatud URL on sobimatu. Peate veenduma, et sisestate pildiväljale kehtiva indiemedia URL-i."
+      },
+      "text": {
+        "invalid": "Tekst on tühi. Peate kirjutama lühikese teksti."
+      },
+      "type": {
+        "invalid": "Üksusele määratud tüüp on sobimatu. Peate veenduma, et valitud on suvand \"Tekst\" või \"Pilt\"."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "Üksus on tühi. Peate lisama vähemalt ühe terminimääratlusüksuse, kasutades paremal asuvat lisamisnuppu."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "Definitsiooniväli on tühi. Peate kirjutama määratluse."
+      },
+      "term": {
+        "invalid": "Terminiväli on tühi. Peate kirjutama termini."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "Peate valima õige vastuse",
+        "notEnoughAnswers": "Peate kirjutama vähemalt 2 võimalikku vastust"
+      },
+      "question": {
+        "empty": "Küsimuse tekst ei saa olla tühi",
+        "onlyOneBlank": "Küsimusse tuleb lisada ainult üks tühik"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "Vastus ei tohi olla tühi"
+      },
+      "attempts": {
+        "invalid": "Katsed peavad olema vahemikus 1 kuni 9"
+      },
+      "question": {
+        "invalid": "Küsimus ei tohi olla tühi"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "Pildile määratud URL on sobimatu. Peate veenduma, et sisestate pildiväljale kehtiva indiemedia URL-i."
+      },
+      "text": {
+        "invalid": "Tekst on tühi. Peate kirjutama teksti"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "Veergude arv peab olema 1,2 või 3"
+      },
+      "data": {
+        "empty": "Peate esitama vähemalt ühe pildi- ja helielemendi."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "Peate esitama kehtiva indiemedia URL-i"
+      },
+      "image": {
+        "invalid": "Pildile sisestatud URL on sobimatu. Peate veenduma, et sisestate pildiväljale kehtiva indiemedia URL-i."
+      },
+      "text": {
+        "invalid": "Tekst on tühi. Peate kirjutama lühikese teksti."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "Pildile määratud URL on sobimatu. Peate veenduma, et sisestate pildiväljale kehtiva indiemedia URL-i."
+      },
+      "text": {
+        "invalid": "Tekst on tühi. Peate teksti kirjutama või kopeerima."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "Video jaoks konfigureeritud URL on sobimatu. Peaksite kindlasti pakkuma seda indieopeni interaktiivsetest videotest."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "Peate esitama valemi jaoks legendi."
+      },
+      "formula": {
+        "invalid": "Peate esitama valemi LaTex-vormingus."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "Peate esitama vähemalt ühe puuduva sõna."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "Peate kirjutama vähemalt ühe õige vastuse",
+        "invalid": "Vastuse tekst on tühi"
+      },
+      "sentence": {
+        "empty": "Fraas ei tohi olla tühi",
+        "onlyOneBlank": "Lausesse tuleks lisada ainult tühimiku marker"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "Modaal on tühi. Peate lisama vähemalt ühe lihtsa elemendi."
+      },
+      "text": {
+        "invalid": "Tekst on tühi. Peate kirjutama väikese teksti."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "Taustpildile määratud URL on vale. Peate esitama kehtiva indieauthori URL-i."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Lõikamise alternatiivtekst peab olema määratud."
+        },
+        "altRec": {
+          "invalid": "Asukoha asetekst peab olema seatud."
+        },
+        "empty": "Pusles peab olema vähemalt üks tükk.",
+        "h": {
+          "invalid": "Kõrgus peab olema määratud ja see peab olema kehtiv number."
+        },
+        "w": {
+          "invalid": "Laius peab olema määratud ja see peab olema kehtiv number."
+        },
+        "x": {
+          "invalid": "Kõige vasakpoolsem koordinaat peab olema määratud ja see peab olema kehtiv number."
+        },
+        "y": {
+          "invalid": "Ülemine number peab olema määratud ja see peab olema kehtiv number."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "Üksus on tühi. Peate lisama vähemalt ühe kirje, kasutades paremal asuvat lisamisnuppu."
+      },
+      "title": {
+        "invalid": "Tiitliväli on tühi. Peate kirjutama pealkirja."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "On vähemalt üks dubleeriv link. Iga postituse jaoks peate esitama unikaalse lingi.",
+        "empty": "Üksus on tühi. Peate lisama vähemalt ühe kirje, kasutades paremal asuvat lisamisnuppu.",
+        "multipleCurrent": "Praeguseid kirjeid on vähemalt kaks. Peate esitama ainult ühe praeguse kirje."
+      },
+      "moreThanOne": "Peate esitama maksimaalselt ühe sisukorra üksuse."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "Tiitliväli on tühi. Peate kirjutama pealkirja."
+      },
+      "url": {
+        "invalid": "URL-i väli peab olema seatud järgmisele vormingule: https://[allikas]/[autor]/[ühik]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "Skeem on tühi. Peate lisama vähemalt ühe üksuse, kasutades paremal asuvat lisamisnuppu."
+      },
+      "height": {
+        "invalid": "Animatsiooni kõrgus peab olema suurem kui 0."
+      },
+      "image": {
+        "invalid": "Täispildile määratud URL on sobimatu. Peate veenduma, et sisestate kehtiva indiemedia URL-i."
+      },
+      "width": {
+        "invalid": "Animatsiooni laius peab olema suurem kui 0."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "Pildile määratud URL on sobimatu. Peate veenduma, et sisestate pildiväljale kehtiva indiemedia URL-i."
+      },
+      "text": {
+        "invalid": "Tekst on tühi. Peate kirjutama väikese teksti."
+      }
+    },
+    "section": {
+      "emptyData": "Sektsioon ei saa olla tühi. Peate lisama vähemalt ühe üksuse.",
+      "invalidBookmark": "Sektsioonil peab olema kehtiv järjehoidja.",
+      "invalidImage": "Sektsioonil peab olema taustpilt.",
+      "invalidName": "Sektsioonil peab olema nimi.",
+      "typeImageNotSelected": "Kui valitud tüüp on taustpilt, peate pildi määrama."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "Peate esitama vähemalt ühe lausete sortimise elemendi."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "Peate kirjutama vähemalt ühe õige vastuse",
+        "impossible": "Lauset ei saa konstrueerida väljakujunenud sõnadest",
+        "invalid": "Vastuse tekst on tühi"
+      },
+      "words": {
+        "empty": "Peate tippima vähemalt ühe kehtiva sõna",
+        "invalid": "Wordi tekst on tühi"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "Pildile määratud URL on sobimatu. Peate veenduma, et sisestate pildiväljale kehtiva indiemedia URL-i.",
+        "sizeNotSet": "Pildi laius ja kõrgus tuleb määrata, kui selle välimus on \"Kohandatud\""
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "Peate valima õige vastuse",
+        "notEnoughAnswers": "Peate kirjutama vähemalt 2 võimalikku vastust"
+      },
+      "question": {
+        "empty": "Küsimuse tekst ei saa olla tühi"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "Vahekaart on tühi. Peate vahekaardile lisama vähemalt ühe elemendi."
+      },
+      "name": {
+        "invalid": "Vahekaardi nimi on sobimatu. Peate selle looma."
+      }
+    },
+    "Table": {
+      "empty": "Tabelis pole veerge määratud"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "Vahekaardimenüü ei sisalda vahekaarte. Peate lisama vähemalt ühe."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Seal on dubleeritud veerud. Kontrollige oma üksusi.",
+        "duplicatedTerms": "Teie veergude vahel on duplikaatterminid. Vaadake tingimused üle"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "Veerg ei tohi olla tühi"
+      },
+      "terms": {
+        "empty": "Terminid ei saa olla tühjad.",
+        "invalid": "Tingimused ei vasta nõutavale vormingule. Palun eraldage terminid semikoolonitega (;)."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "Test on tühi. Peate lisama vähemalt ühe küsimuse."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "Tekst on tühi. Peate kirjutama lühikese teksti."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "Peate lisama vähemalt ühe tõese või väära elemendi"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "Küsimuse tekst ei saa olla tühi"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "Küsimuse tekst ei saa olla tühi"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "Video URL on sobimatu. Peate kindlasti esitama kehtiva URL-i IndieMediast või Youtube'ist.",
+        "localInvalid": "Video URL on sobimatu. Peate veenduma, et sisestate kehtiva YouTube'i URL-i."
+      }
+    }
+  },
+  "footer": {
+    "content": "Uusi jaotisi saate lisada ülemise tööriistariba abil"
+  },
+  "general": {
+    "areYouSure": "Kas oled kindel?",
+    "cancel": "Tühistama",
+    "close": "Sulgema",
+    "confirm": "Kinnitama",
+    "delete": "Kõrvaldada",
+    "discard": "Hülga",
+    "false": "Väär",
+    "load": "Laadima",
+    "modelDetected": "Kas soovite laadida eelmist seadet?",
+    "true": "Tõsi"
+  },
+  "header": {
+    "addSection": "Jaotise lisamine",
+    "clear": "Sisu kustutamine",
+    "download": "Laadige seade alla",
+    "importSection": "Importimise jaotis",
+    "install": "Rakenduse installimine",
+    "preview": "Sisu eelvaade",
+    "publish": "Sisu avaldamine",
+    "publishToNetlify": "Avaldage sisu Netlifys",
+    "redo": "Toimingu uuesti tegemine",
+    "save": "Sisu salvestamine",
+    "scorm": "Ekspordi SCORM-vormingus",
+    "translate": "Tõlgi üksus",
+    "undo": "Toimingu tagasivõtmine",
+    "upload": "Üleslaadimise üksus",
+    "validate": "Valideeri üksus"
+  },
+  "items": {
+    "add": "Sisu lisamine",
+    "delete": "Üksuse kustutamine",
+    "duplicate": "Üksuse dubleerimine",
+    "edit": "Sisu redigeerimine",
+    "export": "Ekspordi üksus"
+  },
+  "messages": {
+    "changesSaved": "Muudatused salvestati edukalt.",
+    "confirmClearContent": "Kustutate sisu täielikult. Veenduge, et see on see, mida soovite tõesti teha.",
+    "confirmLoadModel": "Eelmine üksus on leitud. Valige, kas soovite selle laadida või hüljata.",
+    "contentCleared": "Sisu on edukalt kustutatud.",
+    "contentErrors": "Ups! Teie sisus on vigu. Vaadake tõrketeated üle ja järgige nende parandamiseks juhiseid.",
+    "couldNotExportElement": "Kaupa ei saanud eksportida",
+    "couldNotExportSection": "Seda osa ei olnud võimalik eksportida",
+    "deletedSection": "Jaotis on edukalt kustutatud",
+    "emptyContent": "Te pole sisu lisanud.",
+    "errorMessage": "Viga",
+    "exportedElement": "Üksus eksporditi edukalt",
+    "exportedSection": "Jaotis eksporditi edukalt",
+    "importedElement": "Toode on edukalt imporditud",
+    "importedSection": "Jaotis on edukalt imporditud",
+    "loadError": "Seadet ei saanud laadida",
+    "noElement": "Imporditavaid üksusi pole",
+    "noErrors": "Pole paha! Vigu pole. Võite jätkata sisu salvestamist.",
+    "noRedo": "Pole midagi uuesti teha",
+    "noSection": "Imporditavaid jaotisi pole",
+    "noUndo": "Midagi tagasi võtta",
+    "previewError": "Seadme eelvaadet ei olnud võimalik vaadata",
+    "publishError": "Üksust ei olnud võimalik avaldada",
+    "savedUnit": "Seade on edukalt salvestatud",
+    "saveError": "Seadet ei õnnestunud salvestada",
+    "successMessage": "Ok",
+    "translateError": "Ühikut ei olnud võimalik tõlkida",
+    "warningMessage": "Tähelepanu"
+  },
+  "netlify": {
+    "button": {
+      "text": "Ühendust"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Saidi loomine",
+        "help": "Valige oma Netlify kontol üks saadaolevatest saitidest",
+        "label": "Üksuse üleslaadimiseks valige oma Netlifyst saadaolev sait"
+      },
+      "title": "Netlifyga ühenduse loomiseks täitke väljad ",
+      "token": {
+        "help": "Sisestage oma isiklik Netlify juurdepääsuluba. Selle leiate Netlify konto seadete jaotisest Rakendused",
+        "label": "Sisestage isiklik juurdepääsuluba:",
+        "placeholder": "Sisestage siia oma Netlify isiklik juurdepääsuluba"
+      }
+    },
+    "error": {
+      "message": "Sobimatu märk"
+    },
+    "success": {
+      "message": "Seade on edukalt Netlifysse üles laaditud. Pääsete sellele juurde, klõpsates järgmisel lingil: ",
+      "message_2": "Pidage meeles, et kui teie seadmel on palju sisu, võib selle avaldamiseks kuluda mõni minut.",
+      "title": "Netlifysse üles laaditud üksus"
+    }
+  },
+  "palette": {
+    "containers": "Konteinerid",
+    "exerciseElement": "Harjutusi",
+    "interactiveElements": "Interaktiivsed elemendid",
+    "items": "Üksused",
+    "layouts": "Sätted",
+    "question": "Küsimused",
+    "simpleElements": "Elemente"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Koodi plokk",
+        "screenReader": "Abitekst ekraanilugejatele"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Kustuta jaotis",
+    "duplicate": "Duplikaatjaotis",
+    "edit": "Teabe redigeerimine",
+    "expandContract": "Laiendamine või ahendamine",
+    "export": "Ekspordi jaotis",
+    "form": {
+      "bookmark": {
+        "help": "See marker kuvatakse seadme ülaosas sektsiooni markerina. See peab olema maksimaalselt 40 tähemärki.",
+        "label": "Jaotise järjehoidja",
+        "placeholder": "Kirjutage järjehoidja..."
+      },
+      "image": {
+        "help": "",
+        "label": "Taustpildi URL",
+        "placeholder": "Sisestage pildi URL..."
+      },
+      "name": {
+        "help": "See on nimi, mis sektsioonil on sisus.",
+        "label": "Jaotise nimi",
+        "placeholder": "Kirjuta nimi..."
+      },
+      "preview": "Taustpildi eelvaade",
+      "type": {
+        "bc": "Taustavärv (vaikesäte)",
+        "bi": "Taustpilt",
+        "help": "Kui tüübiks on seatud \"taustavärv\", kuvatakse pealkirja taga vaikevärv, samas kui jaotises \"Taustpilt\" peate jaotise pealkirja jaoks looma taustpildi.",
+        "label": "Tausta tüüp"
+      }
+    },
+    "import": "Üksuse importimine",
+    "label": "Jagu",
+    "moveDown": "Jaotise kerimine alla",
+    "moveUp": "Kerige jaotis üles"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Analüüsi lubamine/keelamine üksuses",
+        "label": "Analytics",
+        "no": "Ei",
+        "yes": "Jah"
+      },
+      "author": {
+        "help": "Üksuse autor peaks siia kirjutama.",
+        "label": "Üksuse autor",
+        "placeholder": "Üksuse autor kirjutab:"
+      },
+      "background": {
+        "help": "Pilt peaks olema umbes 1900 x 550 pikslit.",
+        "label": "Kujunduse pilt"
+      },
+      "color": {
+        "help": "Vajalik #FFFFFF kuueteistkümnendsüsteemis vorming",
+        "label": "Kujunduse värv",
+        "placeholder": "Sisestage siia kujunduse värv"
+      },
+      "email": {
+        "help": "See on autori e-posti aadress.",
+        "label": "Meil",
+        "placeholder": "Sisestage autori e-posti aadress"
+      },
+      "institution": {
+        "help": "Asutuse nimi",
+        "label": "Institutsioon",
+        "placeholder": "Sisestage asutuse nimi"
+      },
+      "language": {
+        "help": "Üksuse keel.",
+        "label": "Keel"
+      },
+      "license": {
+        "BY": "Rahvusvaheline 4.0 tunnustamine (CC BY 4.0)",
+        "BYNC": "Attribution-NonCommercial-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCND": "Attribution-NonCommercial-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
+        "BYND": "Attribution-NoDerivs 4.0 International (CC BY-ND 4.0)",
+        "BYSA": "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+        "help": "Üksuse litsents",
+        "label": "Litsents",
+        "PRIVATE": "Kõik õigused kaitstud"
+      },
+      "resource": {
+        "help": "Sisestage ressursi ID",
+        "label": "Ressursi ID:",
+        "placeholder": "Sisestage ressursi ID"
+      },
+      "theme": {
+        "help": "Valige seadme teema.",
+        "label": "Theme"
+      },
+      "title": {
+        "help": "See on üksuse pealkiri.",
+        "label": "Üksuse pealkiri",
+        "placeholder": "Tiitli sisestamine"
+      },
+      "type": {
+        "help": "See on seadme tüüp.",
+        "interoperability": "Koostalitlusvõime",
+        "label": "Draivi tüüp",
+        "open": "Avama"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "See on seadme lähtekeel",
+        "label": "Lähtekeel"
+      },
+      "target": {
+        "help": "Sihtkeel, millesse üksus tõlgitakse",
+        "label": "Sihtkeel"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Akordioni menüü"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "– saate seada sisurühma pealkirja. See ilmub rippmenüü pealkirjas.",
+          "label": "Sisu pealkiri",
+          "placeholder": "Näide: professionaalsed oskused"
+        }
+      },
+      "label": "Sisurühm"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "See on animatsiooni taustpilt. Saate valida ühe oma üleslaaditud piltidest.",
+          "label": "Pildi URL",
+          "placeholder": "Sisestage siia pildi URL ...",
+          "preview": "Animatsiooni eelvaade"
+        },
+        "pieces": {
+          "altImg": "Asetekst animeeritud pildi jaoks",
+          "altRec": "Asetekst animeeritud piirkonna jaoks",
+          "delete": "Kustutada",
+          "h": "Kõrge",
+          "new": "Lisage uus animeeritud piirkond ...",
+          "w": "Lai",
+          "x": "Vasak",
+          "y": "Superior"
+        }
+      },
+      "label": "Animatsioon",
+      "prev": "Animatsiooni pole veel initsialiseeritud ..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "See on pikslite animatsioonikonteineri kõrgus",
+          "label": "Animatsiooni kõrgus",
+          "placeholder": "Näide: 200"
+        },
+        "image": {
+          "help": "See on pilt, mis kuvatakse üksuses. Võite valida ühe oma üleslaaditud piltidest või laadida üles uue.",
+          "label": "Pildi URL",
+          "placeholder": "Pildi valimiseks klõpsake siin"
+        },
+        "prev": "Pildi eelvaate eelvaade",
+        "width": {
+          "help": "See on animatsioonikonteineri laius pikslites",
+          "label": "Animatsiooni laius",
+          "placeholder": "Näide: 400"
+        }
+      },
+      "label": "Animatsioon"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "See on animatsioonielemendi pilt.",
+          "label": "Pildi URL",
+          "placeholder": "Pildi valimiseks klõpsake siin"
+        },
+        "prev": "Eelvaade"
+      },
+      "label": "Animatsiooni üksus.",
+      "prev": "Animatsiooniüksust pole veel seatud ..."
+    },
+    "AudioTermContainer": {
+      "label": "Audio-terminid"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "Peate sisestama selle heli URL-i, mida soovite sisuüksuses esitada.",
+          "label": "Helifaili URL",
+          "placeholder": "Palun sisestage kehtiv indiemedia URL ..."
+        },
+        "definition": {
+          "help": "See määratlus peaks olema heli sõnasõnaline transkriptsioon.",
+          "label": "Definitsioon",
+          "placeholder": "Kirjutage definitsioon..."
+        },
+        "term": {
+          "help": "See on termin, mis paigutatakse vidinast vasakule",
+          "label": "Mõiste",
+          "placeholder": "Kirjutage oma termin siia ..."
+        }
+      },
+      "label": "Audio-termin",
+      "prev": "Audio-term pole veel kindlaks tehtud..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "Kohtumine võib ilmuda paremale või vasakule joondatuna",
+          "label": "Kohtumiste joondamine",
+          "values": {
+            "left": "Vasakul",
+            "right": "Paremale"
+          }
+        },
+        "caption": {
+          "help": "Tsitaadi alapealkiri kuvatakse tsitaadi all. Seda kasutatakse peamiselt tsitaadi autori või autorite märkimiseks",
+          "label": "Tsitaadi alapealkiri",
+          "placeholder": "Näide: Carl Sagan"
+        },
+        "quote": {
+          "help": "See tekst on sõnasõnaline tsitaat",
+          "label": "Tsiteeri teksti",
+          "placeholder": "Näide: \"Tõendite puudumine ei ole tõend puudumise kohta.\""
+        },
+        "source": {
+          "help": "Tsitaadi algallikas (Aasta, raamat, ajakiri... jne)",
+          "label": "Tsitaadi päritolu",
+          "placeholder": "Näide:1990"
+        }
+      },
+      "label": "Tsitaat",
+      "prev": "Tsitaat pole veel kindlaks tehtud..."
+    },
+    "ButtonTextContainer": {
+      "label": "Tekstiga nupud"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "See on pilt, mis ilmub nupule. Võite valida ühe oma üleslaaditud piltidest või laadida üles uue.",
+          "label": "Nupu pildi URL",
+          "placeholder": "Sisestage oma URL siia"
+        },
+        "preview": "Nupu Eelvaade pilt",
+        "text": {
+          "help": "Selles tekstiredaktoris saate kirjutada nupuga seotud teksti sisu",
+          "label": "Tekst",
+          "placeholder": "Kirjutage oma tekst siia ..."
+        }
+      },
+      "label": "Nupuelement koos tekstiga",
+      "prev": "Tekstiga nupuelementi pole veel initsialiseeritud..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Värvus",
+        "helps": {
+          "animation": "Määrab manustatud elementidega kasti jaoks ühe eelmääratletud animatsioonidest (üksikud või kokkupandavad).",
+          "colorTheme": "Vajalik #FFFFFF Hex-vorming. <strong> Kui see ei ole täidetud, võtab seadme teema värv vaikeväärtuse.</strong>",
+          "styles": "– saate määrata manustatud elementidega boksi jaoks ühe eelmääratletud laadidest.",
+          "textTitle": "See on tekst, mis kuvatakse pealkirjana. <strong>Kui see ei ole täidetud, võtab see vaikeväärtuse.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Sisestage värv siia",
+          "textTitle": "Sisestage pealkiri siia"
+        },
+        "styles": {
+          "animation": "Animatsiooni stiil",
+          "attention": "Tähelepanu",
+          "collapsible": "Kokkupandav",
+          "danger": "Oht",
+          "label": "Laad",
+          "more": "Lisateave",
+          "note": "Märkus",
+          "simple": "Lihtne"
+        },
+        "textTitle": "Pealkiri"
+      },
+      "label": "Täitmata"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "Pilt ilmub vidina ülaosas valikute kohal.",
+          "label": "Pildi URL",
+          "placeholder": "Sisestage pildi URL..."
+        },
+        "options": {
+          "help": "Need 4 valikut kuvatakse pildi all. Ainult üks saab olla õige.",
+          "label": "Valikud",
+          "placeholder": "Sisestage valik"
+        },
+        "preview": "Pildi eelvaade",
+        "text": {
+          "help": "See tekst kuvatakse pildi kohal teksti või küsimusena.",
+          "label": "Tekst",
+          "placeholder": "Kirjuta tekst siia..."
+        }
+      },
+      "label": "Valige suvand",
+      "prev": "Valides valiku, mida pole määratud ..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "Veergude",
+      "form": {
+        "width": {
+          "1": "Esimese veeru laius",
+          "help": "Teine veerg hõivab ülejäänud laiuse"
+        }
+      },
+      "label": "Kõrvaldamise"
+    },
+    "CorrectWord": {
+      "label": "Õige sõna"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "Küsimuse kirjeldav pilt",
+          "label": "Pildi URL",
+          "placeholder": "Sisestage siia oma pildi URL ..."
+        },
+        "preview": "Pildi eelvaade",
+        "question": {
+          "help": "See on küsimus, mida kasutajale näidatakse.",
+          "label": "Küsimuse tekst",
+          "placeholder": "Küsimuse tekst"
+        },
+        "word": {
+          "help": "See sõna on vastus küsimusele",
+          "label": "Vastus",
+          "placeholder": "Kirjuta sõna..."
+        }
+      },
+      "label": "Õige sõnaline element",
+      "prev": "Õiget sõna pole veel kindlaks tehtud..."
+    },
+    "CouplesContainer": {
+      "label": "Paarid",
+      "prev": "Paarid, kes pole veel välja kujunenud..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "See pilt seostatakse selles vormis paarina sisestatud tekstiga.",
+          "label": "Pildi URL",
+          "placeholder": "Sisestage siia pildi URL ..."
+        },
+        "legend": {
+          "first": "Esimene element",
+          "second": "Teine element"
+        },
+        "preview": "Pildi eelvaade",
+        "text": {
+          "help": "See tekst seostatakse pildiga, mis sisestatakse selles vormis paarina.",
+          "label": "Tekst",
+          "placeholder": "Kirjutage tekst..."
+        },
+        "type": {
+          "image": "Piltide",
+          "label": "Kutt",
+          "text": "Tekst"
+        }
+      },
+      "label": "Paar",
+      "prev": "Paar pole veel loodud ..."
+    },
+    "DragdropContainer": {
+      "label": "Pukseerimine"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "Definitsioon on interaktiivsest elemendist paremal ja õpilane peab termini definitsiooni lohistama",
+          "label": "Definitsioon",
+          "placeholder": "Näide: Kõigil inimestel on õigus end väljendada, ilma et neid ahistataks selle pärast, mida nad arvavad"
+        },
+        "term": {
+          "help": "Termin ilmub interaktiivsest elemendist vasakule ja on see, mida õpilane peab määratluses lohistama.",
+          "label": "Mõiste",
+          "placeholder": "Näide: sõnavabadus"
+        }
+      },
+      "label": "Mõiste määratlus",
+      "prev": "Objekt ei ole kindlaks määratud..."
+    },
+    "FourColumnsLayout": {
+      "label": "Neli veergu"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Peate kirjutama vähemalt 2 vastust ja märkima, milline neist on õige.",
+          "label": "Võimalikud vastused"
+        },
+        "questionPreview": {
+          "help": "See on see, mida küsimus sisuüksuses välja näeb.",
+          "label": "Vaadake küsimuse teksti eelvaadet.",
+          "placeholder": "Küsimuse tekst tühja ___ pesaga."
+        },
+        "questionText": {
+          "help": "Peate tippima küsimuse teksti soovitud tühja ruumiga spetsiaalse märksõnaga [blank].",
+          "label": "Küsimuse tekst",
+          "placeholder": "Küsimuse tekst tühja elemendiga"
+        }
+      },
+      "label": "Täitke lünk",
+      "prev": "Küsimus lünga täitmisest, mida pole veel kindlaks tehtud ..."
+    },
+    "GenericWidget": {
+      "label": "Vidina"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "Vastus küsimusele",
+          "label": "Vastus",
+          "placeholder": "Kirjutage oma vastus siia"
+        },
+        "attempts": {
+          "help": "Vastuse äraarvamise katsete arv. See peab olema number vahemikus 1 kuni 9.",
+          "label": "Katsed"
+        },
+        "question": {
+          "help": "Küsimus, millele tuleb vastata",
+          "label": "Küsimus",
+          "placeholder": "Kirjutage oma küsimus siia"
+        }
+      },
+      "label": "Arvake sõna ära",
+      "prev": "Arvake, et sõna pole veel initsialiseeritud ..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Kui loote teksti, on see pildi pealdis",
+          "label": "Pildi pealdis",
+          "placeholder": "Palun sisestage pealdis."
+        },
+        "image": {
+          "help": "See on pilt, mis ilmub üksuses.",
+          "label": "Pildi URL",
+          "placeholder": "Pildi valimiseks klõpsake siin"
+        },
+        "preview": "Eelvaade"
+      },
+      "label": "Ülaloleva tekstiga pilt",
+      "prev": "Ülaloleva tekstiga pilt pole veel kindlaks tehtud..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Pilt ja heli"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "Helifail esitatakse pildi klõpsamisel.",
+          "label": "Helifaili URL",
+          "placeholder": "Palun sisestage kehtiv indiemedia URL ..."
+        },
+        "image": {
+          "help": "Esmalt ilmub pilt",
+          "label": "Pildi URL",
+          "placeholder": "Sisestage pildi URL..."
+        },
+        "preview": "Pildi eelvaade",
+        "text": {
+          "help": "Tekst ilmub pildi kohal, kui hõljutate kursorit selle kohal.",
+          "label": "Pildi tekst",
+          "placeholder": "Kirjutage tekst..."
+        }
+      },
+      "label": "Pilt ja heli üksus",
+      "prev": "Pildi- ja heliobjekt pole veel loodud ..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "See on pilt, mis kuvatakse üksuses. Võite valida ühe oma üleslaaditud piltidest või laadida üles uue.",
+          "label": "Pildi URL",
+          "placeholder": "Pildi valimiseks klõpsake siin"
+        },
+        "layout": {
+          "help": "Pildi ja tekstiploki suund määrab, kus kuvatakse kõik ploki elemendid.",
+          "label": "Orientatsioon",
+          "values": {
+            "0": "Tekst paremal, pilt vasakul",
+            "1": "Tekst vasakul, pilt paremal"
+          }
+        },
+        "preview": "Pildi eelvaade",
+        "text": {
+          "help": "Peate kirjutama teksti.",
+          "label": "Selles tekstiredaktoris saate kirjutada ploki sisu.",
+          "placeholder": "Kirjutage tekst..."
+        }
+      },
+      "label": "Pilt ja tekst",
+      "prev": "Pilt ja tekst pole veel loodud ..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Kasutage interaktiivse videotööriistaga loodud interaktiivse video URL-i sisestamiseks tekstisisestust.",
+          "label": "Video URL",
+          "placeholder": "Näide: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Interaktiivne video",
+      "prev": "Interaktiivne video pole veel loodud"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "See legend kuvatakse valemi all ja tekstiplokina",
+          "label": "Valemi legend",
+          "placeholder": "Näide: ruutvalem"
+        },
+        "formula": {
+          "help": "Kasutage valemi tippimiseks tekstiala. Selle ala all kuvatakse valemi eelvaade, kui see on õige, või punane tekst, kui valem pole õige",
+          "label": "Valem vormingus LaTex",
+          "placeholder": "Näide: \\text{Ruutvalem on }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "LaTeX valem",
+      "prev": "Valem pole veel paika pandud..."
+    },
+    "MissingWords": {
+      "label": "Puuduvad sõnad"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Kustutada",
+          "new": "Lisa uus vastus...",
+          "text": "Vastus"
+        },
+        "sentence": {
+          "help": "Peate kirjutama lause teksti koos tühikuga, kasutades spetsiaalset markerit [tühi].",
+          "label": "Lause tekst",
+          "placeholder": "Lause tekst markeriga [tühi]"
+        },
+        "sentencePreview": {
+          "help": "Nii vaataksite sisuüksuse fraasi.",
+          "label": "Fraasi eelvaade",
+          "placeholder": "Lause tekst markeriga ___ "
+        }
+      },
+      "label": "Puuduvate sõnade element",
+      "prev": "Puuduvat sõnaelementi pole veel kindlaks tehtud..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "See tekst ilmub nupu tekstina, mis tuleb modaalse akna avamiseks aktiveerida.",
+          "label": "Nupu tekst",
+          "placeholder": "Kirjutage tekst..."
+        }
+      },
+      "label": "Modaalne aken"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "See on pusle taustpilt. Saate valida ühe oma üleslaaditud piltidest.",
+          "label": "Pildi URL",
+          "placeholder": "Sisestage siia pildi URL ...",
+          "preview": "Mõistatuse eelvaade"
+        },
+        "pieces": {
+          "altImg": "Asetekst kärpimiseks",
+          "altRec": "Asetekst asukoha jaoks",
+          "delete": "Kustutada",
+          "h": "Kõrge",
+          "new": "Lisa uus tükk...",
+          "w": "Lai",
+          "x": "Vasak",
+          "y": "Superior"
+        }
+      },
+      "label": "Puzzle",
+      "prev": "Puslet pole veel initsialiseeritud..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Rühma pealkiri",
+          "label": "Pealkiri",
+          "placeholder": "Näide: õigusmoodul"
+        }
+      },
+      "label": "Rühm",
+      "prev": "Grupp pole veel estabecido ..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Sisukord"
+    },
+    "RelatedUnitsItem": {
+      "current": "Praegune ühik",
+      "form": {
+        "current": {
+          "title": "See on praegune üksus"
+        },
+        "title": {
+          "help": "Postituse pealkiri",
+          "label": "Pealkiri",
+          "placeholder": "Näide: inimõigused"
+        },
+        "url": {
+          "help": "Sihtkoha URL",
+          "label": "URL",
+          "placeholder": "Näide: https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Sissepääs",
+      "prev": "Kanne pole veel kindlaks tehtud..."
+    },
+    "SchemaContainer": {
+      "label": "Kava"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "See on skeemi osaline pilt.",
+          "label": "Pildi URL",
+          "placeholder": "Pildi valimiseks klõpsake siin"
+        },
+        "prev": "Pildi eelvaade"
+      },
+      "label": "Üksuse liigendamine",
+      "prev": "Esuqema ese pole veel kindlaks tehtud..."
+    },
+    "SentenceOrderContainer": {
+      "label": "Fraaside sortimine"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Kustutada",
+          "help": "Vastused, mis konstrueeritakse sisestatud sõnadest",
+          "legend": "Vastuste loetelu",
+          "new": "Lisage uus vastus ...",
+          "text": "Vastus"
+        },
+        "words": {
+          "delete": "Kustutada",
+          "help": "Vastused peaks olema võimalik konstrueerida nendest sõnadest",
+          "legend": "Wordi loend",
+          "new": "Lisage uus sõna...",
+          "text": "Sõna"
+        }
+      },
+      "label": "Fraaside sortimise element",
+      "prev": "Lausesorteerimiselementi pole veel initsialiseeritud..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "– saate seada pildi joonduse, kui ilme ei ole \"Kohandage algseid mõõtmeid vaba ruumiga\".",
+          "label": "Pildi joondamine",
+          "values": {
+            "center": "Keskendunud",
+            "left": "Vasak",
+            "right": "Parem"
+          }
+        },
+        "aspect": {
+          "help": "Pilti saab kuvada algsete mõõtmetega (kui võimalik) või seda saab reguleerida ekraani laiusele (pildi skaala). kui mõõtmed on kõrgemad ja laiemad, kui ekraan suudab kuvada, kohandub see alati automaatselt ekraaniga",
+          "label": "Pildi välimus",
+          "values": {
+            "custom": "Komme",
+            "fit": "Reguleerige algsed mõõtmed vastavalt olemasolevale ruumile",
+            "original": "Algsed mõõtmed"
+          }
+        },
+        "image": {
+          "help": "See on pilt, mis ilmub üksuses.",
+          "label": "Pildi URL",
+          "placeholder": "Sisestage siia pildi URL"
+        },
+        "preview": "Eelvaade",
+        "size": {
+          "height": "Kõrge",
+          "heightPlaceholder": "Pildi kõrgus...",
+          "keepRatio": "Säilitage pildi suhe",
+          "width": "Lai",
+          "widthPlaceholder": "Pildi laius..."
+        }
+      },
+      "label": "Piltide",
+      "prev": "Pilt pole veel loodud ..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Peate kirjutama vähemalt 2 vastust ja märkima, milline neist on õige.",
+          "label": "Võimalikud vastused"
+        },
+        "questionText": {
+          "help": "See on küsimuse tekst, mis kuvatakse sisuüksuses.",
+          "label": "Küsimuse tekst",
+          "placeholder": "Lihtsa küsimuse tekst..."
+        }
+      },
+      "label": "Lihtne küsimus",
+      "prev": "Lihtne küsimus pole veel paika pandud..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "See on nimi, mis kuvatakse vahekaardi pealkirjas.",
+          "label": "Vahekaardi nimi",
+          "placeholder": "Näide: professionaalsed oskused"
+        }
+      },
+      "label": "Ripsmete"
+    },
+    "Table": {
+      "empty": "Tabelit pole veel initsialiseeritud",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "Veeru nimi on tühi või juba määratletud",
+            "label": "Veeru nimi",
+            "placeholder": "Tippige siia veeru nimi..."
+          },
+          "columnPosition": {
+            "error": "Veeru asukoht väljaspool vahemikku",
+            "label": "Veeru asukoht"
+          },
+          "label": "Uue veeru lisamine",
+          "submit": "Veeru lisamine"
+        },
+        "addRow": "Uue rea lisamine",
+        "deleteColumn": "Tühjenda veerg",
+        "deleteRow": "Tühjenda rida"
+      },
+      "help": {
+        "edit": "Valige redigeeritav lahter. Redigeerimise ajal uute ridade lisamiseks vajutage sisestusklahvi (Enter) vajutades tõstuklahvi."
+      },
+      "label": "Pardal",
+      "prev": "Tabel pole veel paika pandud..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Ripsmed",
+      "label": "Vahekaardi menüü"
+    },
+    "TermClassification": {
+      "label": "Liigitus",
+      "prev": "Liigitus"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "See on veerg, millega terminid on seotud.",
+          "label": "Veerg",
+          "placeholder": "Veerg"
+        },
+        "terms": {
+          "help": "Selles postituses peate kirjutama sõnad, mis on seotud semikooloniga eraldatud terminiga. Näiteks: need; On; mingi; Sõnad",
+          "label": "Sõnad",
+          "placeholder": "Kirjutage semikoolonitega eraldatud sõnu"
+        }
+      },
+      "label": "Klassifikatsiooni üksus",
+      "prev": "Punkt pole veel loodud ..."
+    },
+    "Test": {
+      "label": "Katse tüüp",
+      "questionSelect": "Valige küsimuse tüüp, mille soovite õppetestile lisada"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Peate kirjutama teksti.",
+        "label": "Selles tekstiredaktoris saate kirjutada ploki sisu.",
+        "placeholder": "Sisestage tekst...",
+        "styles": {
+          "attention": "Tähelepanu",
+          "default": "Stiili pole",
+          "help": "– saate määratleda teksti ümbritseva boksi paigutuse",
+          "label": "Tekstiploki laad",
+          "more": "Lisateave",
+          "note": "Märkus"
+        }
+      },
+      "label": "Teksti plokk",
+      "prev": "Tekst pole veel kindlaks tehtud..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Kolm veergu"
+    },
+    "TrueFalseContainer": {
+      "label": "Tõene/väär",
+      "prev": "Tõene/vale pole veel kindlaks tehtud..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Väär",
+          "help": "Valige õige vastusena tõene või väär",
+          "label": "Õige vastus",
+          "true": "Tõsi"
+        },
+        "questionText": {
+          "help": "See on üksuse tekst.",
+          "label": "Üksuse tekst",
+          "placeholder": "Üksuse tekst..."
+        }
+      },
+      "label": "Tõene/väär üksus",
+      "prev": "Tõene/vale objekt pole veel kindlaks tehtud ..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Väär",
+          "help": "Valige õige vastusena tõene või väär",
+          "label": "Õige vastus",
+          "true": "Tõsi"
+        },
+        "questionText": {
+          "help": "See on küsimuse tekst, mis kuvatakse sisuüksuses.",
+          "label": "Tekstiküsimuse tekst",
+          "placeholder": "Küsimuse tekst..."
+        }
+      },
+      "label": "Õige või vale küsimus",
+      "prev": "Küsimus õigest või valest nbo-st, mis on veel kindlaks tehtud..."
+    },
+    "TwoColumnsLayout": {
+      "label": "Kaks veergu"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Kuva vaikesubtiitrid",
+          "no": "Ei",
+          "yes": "Jah"
+        },
+        "url": {
+          "help": "Kasutage oma video URL-i sisestamiseks tekstisisestust (youtube, vimeo ...)",
+          "label": "Video URL",
+          "placeholder": "Näide: https://example.com/video.mp4"
+        }
+      },
+      "label": "Video",
+      "prev": "Video pole veel seatud ..."
+    }
+  }
+}

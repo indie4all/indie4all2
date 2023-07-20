@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Näytä/piilota luokat",
+    "viewImage": "Katso kuva"
+  },
+  "common": {
+    "alt": {
+      "help": "Tämä on kuvan vaihtoehtoinen kuvausteksti saavutettavuuden kannalta",
+      "label": "Kuvan vaihtoehtoinen teksti",
+      "placeholder": "Vaihtoehtoinen teksti"
+    },
+    "captions": {
+      "help": "INDIeMedia URL-osoite tiedostosta, joka sisältää dialogin, äänitehosteiden, musiikkiraitojen ja muiden äänitietojen transkription, kun katsoja on kuuro tai huonokuuloinen tai jos video/ääni on mykistetty. Tekstitys näkyy myös videon yläpuolella.",
+      "label": "Tekstitys (CC)",
+      "placeholder": "Esimerkki: https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "Tiedoston INDIeMedia URL-osoite, joka sisältää tekstikuvaukset siitä, mitä videossa tapahtuu, kun videon osa ei ole käytettävissä, koska katsoja on sokea eikä käytä näyttöä. Näytönlukuohjelma lukee kuvaukset tai muuntaa ne erilliseksi ääniraidaksi.",
+      "label": "Kuvaus: __________",
+      "placeholder": "Esimerkki: https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Ladataan asemaa, odota",
+      "title": "Lataaminen"
+    },
+    "feedback": {
+      "help": "Tulkitse opiskelijan saama palaute riippumatta siitä, vastaako hän oikein vai väärin",
+      "label": "Palaute",
+      "negative": "Negatiivinen palaute...",
+      "positive": "Positiivinen palaute..."
+    },
+    "generate": {
+      "description": "Luodaan, odota",
+      "title": "Tuottaa"
+    },
+    "help": {
+      "button": "Laiminlyönti",
+      "help": "Tämä teksti näkyy widgetin yläpuolella, jotta käyttäjä ymmärtää, miten sen kanssa voi olla vuorovaikutuksessa. <strong>Jos se jätetään tyhjäksi, oletusteksti tulee näkyviin.</strong>",
+      "label": "Apua",
+      "placeholder": "Ohjeen oletusteksti"
+    },
+    "language": {
+      "EL": "Kreikka",
+      "EN": "Englanti",
+      "ES": "Espanja",
+      "FR": "Ranska",
+      "LT": "Liettua"
+    },
+    "loading": {
+      "description": "Ladataan, odota",
+      "title": "Lastaaminen"
+    },
+    "name": {
+      "help": "Tämä on oppimisanalytiikan widget-esiintymän nimi",
+      "label": "Nimi",
+      "placeholder": "Widget-esiintymän nimi"
+    },
+    "navbar": {
+      "options": "Laajenna/kutista -asetukset"
+    },
+    "preview": {
+      "description": "Esikatseluasi luodaan, odota",
+      "generated": {
+        "description": "Esikatselu on valmis. Jos selaimesi ei ohjaa sinua esikatseluun, klikkaa alla olevaa linkkiä:",
+        "title": "Esikatselu luotu onnistuneesti"
+      },
+      "title": "Esikatselun luominen"
+    },
+    "publish": {
+      "description": "Asemaasi luodaan ladattavaksi, odota",
+      "title": "Julkaisuyksikkö"
+    },
+    "publishToNetlify": {
+      "description": "Laitettasi ladataan Netlifyyn, odota",
+      "title": "Julkaisuyksikkö Netlifyssä"
+    },
+    "save": {
+      "description": "Tallenna, odota",
+      "title": "Säästäminen"
+    },
+    "scorm": {
+      "description": "SCORM-pakettiasi luodaan, odota",
+      "title": "SCORM-paketin luominen"
+    },
+    "selectType": "Valitse tyyppi seuraavista vaihtoehdoista",
+    "unit": {
+      "settings": "Syötä yksikön tiedot"
+    }
+  },
+  "dialog": {
+    "translate": "Käännä yksikkö"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "Haitari on tyhjä. Sinun on lisättävä sisältöä oikealla olevalla lisäyspainikkeella."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "Säiliö on tyhjä. Sinun on lisättävä vähintään yksi nimike säilöön."
+      },
+      "title": {
+        "invalid": "Säilön otsikko on virheellinen. Sinun on perustettava sellainen."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "Taustakuvalle määritetty URL-osoite on virheellinen. Sinun on annettava kelvollinen indieauthor-URL-osoite."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Animoidun kuvan vaihtoehtoinen teksti on määritettävä."
+        },
+        "altRec": {
+          "invalid": "Animoidun alueen vaihtoehtoinen teksti on määritettävä."
+        },
+        "empty": "Animaatiossa on oltava vähintään yksi animoitu alue.",
+        "h": {
+          "invalid": "Korkeus on asetettava ja sen on oltava kelvollinen numero."
+        },
+        "w": {
+          "invalid": "Leveys on asetettava ja sen on oltava kelvollinen numero."
+        },
+        "x": {
+          "invalid": "Vasemmanpuoleisin koordinaatti on asetettava ja sen on oltava kelvollinen numero."
+        },
+        "y": {
+          "invalid": "Ylin numero on asetettava ja sen on oltava kelvollinen numero."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "Animaatio on tyhjä. Sinun on lisättävä vähintään yksi kohde Lisää-painikkeella."
+      },
+      "height": {
+        "invalid": "Animaation korkeuden on oltava suurempi kuin 0."
+      },
+      "image": {
+        "invalid": "Kuvalle määritetty URL-osoite on virheellinen. Sinun on varmistettava, että annat kelvollisen indiemedian URL-osoitteen kuvakenttään."
+      },
+      "width": {
+        "invalid": "Animaation leveyden on oltava suurempi kuin 0."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "Kuvalle määritetty URL-osoite on virheellinen. Sinun on varmistettava, että annat kelvollisen indiemedian URL-osoitteen kuvakenttään."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "Sinun on lisättävä vähintään yksi äänitermin määritelmä"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "Sinun on annettava kelvollinen indiemedian URL-osoite"
+      },
+      "definition": {
+        "invalid": "Sinun on annettava määritelmä."
+      },
+      "term": {
+        "invalid": "Sinun on annettava termi."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "Et ole kirjoittanut lainauksen sisältöä. Sinun on ainakin kirjoitettava sisältö."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "Sinun on annettava vähintään yksi teksti- ja painiketyyppielementti."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "Kuvalle määritetty URL-osoite on virheellinen. Sinun on varmistettava, että annat kelvollisen IndieMedian URL-osoitteen painikkeen kuvakenttään."
+      },
+      "text": {
+        "invalid": "Teksti on tyhjä. Sinun on kirjoitettava tai kopioitava teksti."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "Korostettu ikkuna on tyhjä. Sinun on lisättävä vähintään yksi yksinkertainen elementti."
+      },
+      "text": {
+        "invalid": "Teksti on tyhjä. Sinun täytyy kirjoittaa pieni teksti."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "Denes antaa kelvollisen kuvan URL-kenttään."
+      },
+      "options": {
+        "noCorrect": "Sinun on valittava vähintään yksi oikea",
+        "notEnougOptions": "Sinun on annettava 4 vaihtoehtoa"
+      },
+      "text": {
+        "invalid": "Teksti on tyhjä. Sinun on kirjoitettava teksti."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Kaikissa asettelun sarakkeissa on oltava vähintään yksi elementti vetämällä se vasemmalla olevasta paletista."
+      },
+      "width": {
+        "invalid": "Virheellinen sarakkeen leveys"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "Sinun on annettava kuvalle vaihtoehtoinen teksti"
+      },
+      "audioblob": {
+        "invalid": "Äänitiedoston sisältö ei ole oikea. Sinun on valittava kelvollinen tiedosto."
+      },
+      "captions": {
+        "invalid": "Tekstityksille määritetty URL-osoite on virheellinen. Sinun on varmistettava, että annat kelvollisen indiemedian URL-osoitteen"
+      },
+      "captionsblob": {
+        "invalid": "Tekstitystiedoston sisältö ei ole oikea. Sinun on valittava kelvollinen tiedosto."
+      },
+      "descriptions": {
+        "invalid": "Kuvaukselle määritetty URL-osoite on virheellinen. Sinun on varmistettava, että annat kelvollisen indiemedian URL-osoitteen"
+      },
+      "imageblob": {
+        "invalid": "Kuvan sisältö ei ole oikea. Sinun on valittava kelvollinen kuva."
+      },
+      "name": {
+        "invalid": "Sinun on annettava tälle esiintymälle nimi.",
+        "notUniqueName": "Esiintymän nimen on oltava yksilöllinen kaikessa sisällössä."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "Sinun on annettava vähintään yksi Oikea sana -kohde."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "Kuvalle määritetty URL-osoite on virheellinen. Sinun on annettava kelvollinen indieauthor-URL-osoite."
+      },
+      "question": {
+        "invalid": "Kysymyksen teksti on tyhjä."
+      },
+      "word": {
+        "invalid": "Vastauksen teksti on tyhjä."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "Sinun on lisättävä vähintään yksi pari"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "Kuvalle annettu URL-osoite on virheellinen. Sinun on varmistettava, että annat kelvollisen indiemedian URL-osoitteen kuvakenttään."
+      },
+      "text": {
+        "invalid": "Teksti on tyhjä. Sinun on kirjoitettava lyhyt teksti."
+      },
+      "type": {
+        "invalid": "Nimikkeelle määritetty tyyppi on virheellinen. Sinun on varmistettava, että 'Teksti'tai'Kuva'vaihtoehto on valittuna."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "Kohde on tyhjä. Sinun on lisättävä vähintään yksi termimäärityskohde oikealla olevalla lisäyspainikkeella."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "Määrityskenttä on tyhjä. Sinun on kirjoitettava määritelmä."
+      },
+      "term": {
+        "invalid": "Termikenttä on tyhjä. Sinun on kirjoitettava termi."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "Sinun on valittava oikea vastaus",
+        "notEnoughAnswers": "Sinun on kirjoitettava vähintään 2 mahdollista vastausta"
+      },
+      "question": {
+        "empty": "Kysymyksen teksti ei voi olla tyhjä",
+        "onlyOneBlank": "Kysymykseen saa sisällyttää vain yksi tyhjä välilyönti"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "Vastaus ei saa olla tyhjä"
+      },
+      "attempts": {
+        "invalid": "Yritysten on oltava numeroita välillä 1–9"
+      },
+      "question": {
+        "invalid": "Kysymys ei saa olla tyhjä"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "Kuvalle määritetty URL-osoite on virheellinen. Sinun on varmistettava, että annat kelvollisen indiemedian URL-osoitteen kuvakenttään."
+      },
+      "text": {
+        "invalid": "Teksti on tyhjä. Sinun on kirjoitettava teksti"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "Sarakkeiden lukumäärän on oltava 1,2 tai 3"
+      },
+      "data": {
+        "empty": "Sinun on annettava vähintään yksi kuva- ja äänielementti."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "Sinun on annettava kelvollinen indiemedian URL-osoite"
+      },
+      "image": {
+        "invalid": "Kuvalle annettu URL-osoite on virheellinen. Sinun on varmistettava, että annat kelvollisen indiemedian URL-osoitteen kuvakenttään."
+      },
+      "text": {
+        "invalid": "Teksti on tyhjä. Sinun on kirjoitettava lyhyt teksti."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "Kuvalle määritetty URL-osoite on virheellinen. Sinun on varmistettava, että annat kelvollisen indiemedian URL-osoitteen kuvakenttään."
+      },
+      "text": {
+        "invalid": "Teksti on tyhjä. Sinun on kirjoitettava tai kopioitava teksti."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "Videolle määritetty URL-osoite on virheellinen. Varmista, että tarjoat sellaisen indieopen-interaktiivisista videoista."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "Sinun on annettava kaavalle selite."
+      },
+      "formula": {
+        "invalid": "Sinun on annettava kaava LaTex-muodossa."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "Sinun on annettava vähintään yksi puuttuva sana."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "Sinun on kirjoitettava vähintään yksi oikea vastaus",
+        "invalid": "Vastauksen teksti on tyhjä"
+      },
+      "sentence": {
+        "empty": "Lause ei saa olla tyhjä",
+        "onlyOneBlank": "Sinun tulisi sisällyttää lauseeseen vain aukkomerkki"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "Modaali on tyhjä. Sinun on lisättävä vähintään yksi yksinkertainen elementti."
+      },
+      "text": {
+        "invalid": "Teksti on tyhjä. Sinun täytyy kirjoittaa pieni teksti."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "Taustakuvalle määritetty URL-osoite on virheellinen. Sinun on annettava kelvollinen indieauthor-URL-osoite."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Leikkauksen vaihtoehtoinen teksti on asetettava."
+        },
+        "altRec": {
+          "invalid": "Sijainnin vaihtoehtoinen teksti on määritettävä."
+        },
+        "empty": "Palapelissä on oltava vähintään yksi pala.",
+        "h": {
+          "invalid": "Korkeus on asetettava ja sen on oltava kelvollinen numero."
+        },
+        "w": {
+          "invalid": "Leveys on asetettava ja sen on oltava kelvollinen numero."
+        },
+        "x": {
+          "invalid": "Vasemmanpuoleisin koordinaatti on asetettava ja sen on oltava kelvollinen numero."
+        },
+        "y": {
+          "invalid": "Ylin numero on asetettava ja sen on oltava kelvollinen numero."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "Kohde on tyhjä. Sinun on lisättävä vähintään yksi merkintä oikealla olevalla lisäyspainikkeella."
+      },
+      "title": {
+        "invalid": "Otsikkokenttä on tyhjä. Sinun on kirjoitettava otsikko."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "On ainakin yksi päällekkäinen linkki. Sinun on annettava yksilöllinen linkki jokaiselle viestille.",
+        "empty": "Kohde on tyhjä. Sinun on lisättävä vähintään yksi merkintä oikealla olevalla lisäyspainikkeella.",
+        "multipleCurrent": "Nykyisiä merkintöjä on ainakin kaksi. Sinun on annettava vain yksi nykyinen merkintä."
+      },
+      "moreThanOne": "Sinun on annettava enintään yksi sisällysluettelokohde."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "Otsikkokenttä on tyhjä. Sinun on kirjoitettava otsikko."
+      },
+      "url": {
+        "invalid": "URL-kentän on oltava seuraavassa muodossa: https://[source]/[author]/[unit]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "Malli on tyhjä. Sinun on lisättävä vähintään yksi kohde oikealla olevalla lisäyspainikkeella."
+      },
+      "height": {
+        "invalid": "Animaation korkeuden on oltava suurempi kuin 0."
+      },
+      "image": {
+        "invalid": "Koko kuvalle määritetty URL-osoite on virheellinen. Sinun on varmistettava, että annat kelvollisen indiemedian URL-osoitteen."
+      },
+      "width": {
+        "invalid": "Animaation leveyden on oltava suurempi kuin 0."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "Kuvalle määritetty URL-osoite on virheellinen. Sinun on varmistettava, että annat kelvollisen indiemedian URL-osoitteen kuvakenttään."
+      },
+      "text": {
+        "invalid": "Teksti on tyhjä. Sinun täytyy kirjoittaa pieni teksti."
+      }
+    },
+    "section": {
+      "emptyData": "Osa ei voi olla tyhjä. Sinun on lisättävä vähintään yksi kohde.",
+      "invalidBookmark": "Osassa on oltava kelvollinen kirjanmerkki.",
+      "invalidImage": "Osassa on oltava taustakuva.",
+      "invalidName": "Osalla on oltava nimi.",
+      "typeImageNotSelected": "Jos valittu tyyppi on Taustakuva, sinun on määritettävä kuva."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "Sinun on annettava vähintään yksi lauseen lajitteluelementti."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "Sinun on kirjoitettava vähintään yksi oikea vastaus",
+        "impossible": "Lausetta ei voida rakentaa vakiintuneista sanoista",
+        "invalid": "Vastauksen teksti on tyhjä"
+      },
+      "words": {
+        "empty": "Sinun on kirjoitettava vähintään yksi kelvollinen sana",
+        "invalid": "Word-teksti on tyhjä"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "Kuvalle määritetty URL-osoite on virheellinen. Sinun on varmistettava, että annat kelvollisen indiemedian URL-osoitteen kuvakenttään.",
+        "sizeNotSet": "Kuvan leveys ja korkeus on asetettava, kun sen ulkonäkö on \"Mukautettu\""
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "Sinun on valittava oikea vastaus",
+        "notEnoughAnswers": "Sinun on kirjoitettava vähintään 2 mahdollista vastausta"
+      },
+      "question": {
+        "empty": "Kysymyksen teksti ei voi olla tyhjä"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "Välilehti on tyhjä. Sinun on lisättävä välilehteen vähintään yksi kohde."
+      },
+      "name": {
+        "invalid": "Välilehden nimi on virheellinen. Sinun on perustettava sellainen."
+      }
+    },
+    "Table": {
+      "empty": "Taulukossa ei ole sarakkeita määritettynä"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "Välilehtivalikko ei sisällä välilehtiä. Sinun on lisättävä vähintään yksi."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Sarakkeita on päällekkäisiä. Tarkista kohteesi.",
+        "duplicatedTerms": "Sarakkeiden välillä on päällekkäisiä termejä. Tarkista ehdot"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "Sarake ei saa olla tyhjä"
+      },
+      "terms": {
+        "empty": "Termit eivät voi olla tyhjiä.",
+        "invalid": "Ehdot eivät ole vaaditun muodon mukaisia. Erota termit puolipisteillä (;)."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "Testi on tyhjä. Sinun on lisättävä vähintään yksi kysymys."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "Teksti on tyhjä. Sinun on kirjoitettava lyhyt teksti."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "Sinun on lisättävä vähintään yksi tosi- tai epätosi-elementti"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "Kysymyksen teksti ei voi olla tyhjä"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "Kysymyksen teksti ei voi olla tyhjä"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "Videon URL-osoite on virheellinen. Sinun on varmistettava, että annat kelvollisen URL-osoitteen IndieMediasta tai Youtubesta.",
+        "localInvalid": "Videon URL-osoite on virheellinen. Varmista, että annat kelvollisen YouTube-URL-osoitteen."
+      }
+    }
+  },
+  "footer": {
+    "content": "Voit lisätä uusia osioita ylätyökalurivin avulla"
+  },
+  "general": {
+    "areYouSure": "Oletko varma?",
+    "cancel": "Perua",
+    "close": "Sulkea",
+    "confirm": "Vahvistaa",
+    "delete": "Poistaa",
+    "discard": "Hylätä",
+    "false": "Väärä",
+    "load": "Kuorma",
+    "modelDetected": "Haluatko ladata edellisen yksikön?",
+    "true": "Tosi"
+  },
+  "header": {
+    "addSection": "Lisää osio",
+    "clear": "Sisällön poistaminen",
+    "download": "Lataa yksikkö",
+    "importSection": "Tuo-osio",
+    "install": "Asenna sovellus",
+    "preview": "Sisällön esikatselu",
+    "publish": "Julkaise sisältöä",
+    "publishToNetlify": "Julkaise sisältöä Netlifyssä",
+    "redo": "Tee toiminto uudelleen",
+    "save": "Sisällön tallentaminen",
+    "scorm": "Vienti SCORM-muodossa",
+    "translate": "Käännä yksikkö",
+    "undo": "Kumoa toiminto",
+    "upload": "Latausyksikkö",
+    "validate": "Vahvista yksikkö"
+  },
+  "items": {
+    "add": "Lisää sisältöä",
+    "delete": "Poista kohde",
+    "duplicate": "Kohteen kaksoiskappale",
+    "edit": "Muokkaa sisältöä",
+    "export": "Vie kohde"
+  },
+  "messages": {
+    "changesSaved": "Muutokset tallennettu onnistuneesti.",
+    "confirmClearContent": "Aiot poistaa sisällön kokonaan. Varmista, että se on se, mitä todella haluat tehdä.",
+    "confirmLoadModel": "Edellinen yksikkö on löydetty. Valitse, haluatko ladata sen vai hävittää sen.",
+    "contentCleared": "Sisällön poisto onnistui.",
+    "contentErrors": "Ups! Sisällössäsi on virheitä. Tarkista virhesanomat ja korjaa ne noudattamalla niiden ohjeita.",
+    "couldNotExportElement": "Kohdetta ei voitu viedä",
+    "couldNotExportSection": "Osaa ei voitu viedä",
+    "deletedSection": "Osio poistettiin onnistuneesti",
+    "emptyContent": "Et ole lisännyt sisältöä.",
+    "errorMessage": "Virhe",
+    "exportedElement": "Kohteen vienti onnistui",
+    "exportedSection": "Osan vienti onnistui",
+    "importedElement": "Kohteen tuonti onnistui",
+    "importedSection": "Osan tuonti onnistui",
+    "loadError": "Laitetta ei voitu ladata",
+    "noElement": "Ei tuotavia kohteita",
+    "noErrors": "Ei hassumpaa! Virheitä ei ole. Voit jatkaa sisällön tallentamista.",
+    "noRedo": "Ei mitään uudelleentekemistä",
+    "noSection": "Ei tuotavia osioita",
+    "noUndo": "Ei mitään kumottavaa",
+    "previewError": "Laitetta ei voitu esikatsella",
+    "publishError": "Yksikköä ei voitu julkaista",
+    "savedUnit": "Yksikön tallennus onnistui",
+    "saveError": "Laitetta ei voitu tallentaa",
+    "successMessage": "Okei",
+    "translateError": "Yksikköä ei voitu kääntää",
+    "warningMessage": "Tarkkaavaisuus"
+  },
+  "netlify": {
+    "button": {
+      "text": "Yhdistää"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Luo sivusto",
+        "help": "Valitse jokin Netlify-tilisi käytettävissä olevista sivustoista",
+        "label": "Valitse Netlifystä käytettävissä oleva sivusto ladataksesi laitteen"
+      },
+      "title": "Täytä kentät muodostaaksesi yhteyden Netlifyyn ",
+      "token": {
+        "help": "Syötä henkilökohtainen Netlify-käyttöoikeustietueesi. Löydät sen Netlify-tilin asetusten Sovellukset-osiosta",
+        "label": "Lisää henkilökohtainen käyttöoikeustietue:",
+        "placeholder": "Lisää henkilökohtainen Netlify-käyttöoikeustietueesi tähän"
+      }
+    },
+    "error": {
+      "message": "Virheellinen tunnus"
+    },
+    "success": {
+      "message": "Laite on ladattu Netlifyyn onnistuneesti. Pääset siihen napsauttamalla seuraavaa linkkiä: ",
+      "message_2": "Muista, että jos laitteessasi on paljon sisältöä, julkaiseminen voi kestää muutaman minuutin.",
+      "title": "Yksikkö ladattu Netlifyyn"
+    }
+  },
+  "palette": {
+    "containers": "Säiliöt",
+    "exerciseElement": "Harjoitukset",
+    "interactiveElements": "Interaktiiviset elementit",
+    "items": "Kohteita",
+    "layouts": "Eväät",
+    "question": "Kysymyksiä",
+    "simpleElements": "Luonnonvoimat"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Koodi-lohko",
+        "screenReader": "Näytönlukuohjelmien ohjeteksti"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Poista osio",
+    "duplicate": "Osan monistaminen",
+    "edit": "Muokkaa tietoja",
+    "expandContract": "Laajenna tai kutista",
+    "export": "Vie-osio",
+    "form": {
+      "bookmark": {
+        "help": "Tämä merkki näkyy yksikön yläosassa leikkausmerkkinä. Siinä saa olla enintään 40 merkkiä.",
+        "label": "Osion kirjanmerkki",
+        "placeholder": "Kirjoita kirjanmerkki..."
+      },
+      "image": {
+        "help": "",
+        "label": "Taustakuvan URL-osoite",
+        "placeholder": "Kirjoita kuvan URL-osoite..."
+      },
+      "name": {
+        "help": "Tämä on nimi, joka osiolla on sisällössä.",
+        "label": "Osion nimi",
+        "placeholder": "Kirjoita nimi..."
+      },
+      "preview": "Taustakuvan esikatselu",
+      "type": {
+        "bc": "Taustaväri (oletus)",
+        "bi": "Taustakuvan",
+        "help": "Jos tyypiksi on asetettu 'taustaväri', oletusväri näkyy otsikon takana, kun taas 'Taustakuva' -kohdassa sinun on luotava taustakuva osion otsikolle.",
+        "label": "Taustan tyyppi"
+      }
+    },
+    "import": "Tuo kohde",
+    "label": "Osa",
+    "moveDown": "Vieritä osaa alaspäin",
+    "moveUp": "Vieritä osiota ylöspäin"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Ota käyttöön / poista käytöstä analytiikka yksikössä",
+        "label": "Analytiikka",
+        "no": "Ei",
+        "yes": "Kyllä"
+      },
+      "author": {
+        "help": "Yksikön kirjoittajan tulee kirjoittaa tähän.",
+        "label": "Yksikön tekijä",
+        "placeholder": "Yksikön kirjoittaja kirjoittaa:"
+      },
+      "background": {
+        "help": "Kuvan tulee olla kooltaan noin 1900 x 550 pikseliä.",
+        "label": "Teeman kuva"
+      },
+      "color": {
+        "help": "Heksadesimaalimuoto #FFFFFF pakollinen",
+        "label": "Teeman väri",
+        "placeholder": "Kirjoita teeman väri tähän"
+      },
+      "email": {
+        "help": "Tämä on tekijän sähköpostiosoite.",
+        "label": "Sähköposti",
+        "placeholder": "Kirjoita tekijän sähköpostiosoite"
+      },
+      "institution": {
+        "help": "Laitoksen nimi",
+        "label": "Laitos",
+        "placeholder": "Kirjoita oppilaitoksen nimi"
+      },
+      "language": {
+        "help": "Yksikön kieli.",
+        "label": "Kieli"
+      },
+      "license": {
+        "BY": "Kansainvälinen 4.0-tunnustus (CC BY 4.0)",
+        "BYNC": "Nimeä-EiKaupallinen-NoDerivs 4.0 Kansainvälinen (CC BY-NC-ND 4.0)",
+        "BYNCND": "Nimeä-EiKaupallinen-NoDerivs 4.0 Kansainvälinen (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Nimeä-EiKaupallinen-JaaSamoin 4.0 Kansainvälinen (CC BY-NC-SA 4.0)",
+        "BYND": "Nimeä-NoDerivs 4.0 Kansainvälinen (CC BY-ND 4.0)",
+        "BYSA": "Nimeä-JaaSamoin 4.0 Kansainvälinen (CC BY-SA 4.0)",
+        "help": "Yksikön lisenssi",
+        "label": "Lisenssi",
+        "PRIVATE": "Kaikki oikeudet pidätetään"
+      },
+      "resource": {
+        "help": "Anna resurssin tunnus",
+        "label": "Resurssin tunnus:",
+        "placeholder": "Anna resurssin tunnus"
+      },
+      "theme": {
+        "help": "Valitse laitteen teema.",
+        "label": "Teema"
+      },
+      "title": {
+        "help": "Tämä on yksikön nimi.",
+        "label": "Yksikön nimi",
+        "placeholder": "Kirjoita otsikko"
+      },
+      "type": {
+        "help": "Tämä on yksikkötyyppi.",
+        "interoperability": "Yhteentoimivuus",
+        "label": "Taajuusmuuttajan tyyppi",
+        "open": "Avata"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "Tämä on yksikön lähdekieli",
+        "label": "Lähdekieli"
+      },
+      "target": {
+        "help": "Kohdekieli, jolle yksikkö käännetään",
+        "label": "Kohdekieli"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Harmonikka-valikko"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "Määrittää sisältöryhmän otsikon. Se näkyy avattavan valikon otsikossa.",
+          "label": "Sisällön otsikko",
+          "placeholder": "Esimerkki: Ammattitaito"
+        }
+      },
+      "label": "Sisältö-ryhmä"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "Tämä on animaation taustakuva. Voit valita yhden lataamistasi kuvista.",
+          "label": "Kuvan URL-osoite",
+          "placeholder": "Lisää kuvan URL-osoite tähän...",
+          "preview": "Animaation esikatselu"
+        },
+        "pieces": {
+          "altImg": "Animoidun kuvan vaihtoehtoinen teksti",
+          "altRec": "Animoidun alueen vaihtoehtoinen teksti",
+          "delete": "Poistaa",
+          "h": "Korkea",
+          "new": "Lisää uusi animoitu alue...",
+          "w": "Leveä",
+          "x": "Vasen",
+          "y": "Esimies"
+        }
+      },
+      "label": "Animaatio",
+      "prev": "Animaatiota ei ole vielä alustettu..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "Tämä on pikselianimaatiosäiliön korkeus",
+          "label": "Animaation korkeus",
+          "placeholder": "Esimerkki: 200"
+        },
+        "image": {
+          "help": "Tämä on kuva, joka näkyy kohteessa. Voit valita yhden lataamistasi kuvista tai ladata uuden.",
+          "label": "Kuvan URL-osoite",
+          "placeholder": "Klikkaa tästä valitaksesi kuvan"
+        },
+        "prev": "Esikatsele kuvan esikatselua",
+        "width": {
+          "help": "Tämä on animaatiosäiliön leveys pikseleinä",
+          "label": "Animaation leveys",
+          "placeholder": "Esimerkki: 400"
+        }
+      },
+      "label": "Animaatio"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "Tämä on animaatiokohteen kuva.",
+          "label": "Kuvan URL-osoite",
+          "placeholder": "Klikkaa tästä valitaksesi kuvan"
+        },
+        "prev": "Ennakkoesitys"
+      },
+      "label": "Animaation kohde.",
+      "prev": "Animaatiokohdetta ei ole vielä asetettu..."
+    },
+    "AudioTermContainer": {
+      "label": "Audio-termit"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "Sinun on annettava toistettavan äänen URL-osoite sisältöyksikköön.",
+          "label": "Äänitiedoston URL-osoite",
+          "placeholder": "Anna kelvollinen indiemedian URL-osoite..."
+        },
+        "definition": {
+          "help": "Tämän määritelmän tulisi olla äänen sanatarkka transkriptio.",
+          "label": "Määritelmä",
+          "placeholder": "Kirjoita määritelmä..."
+        },
+        "term": {
+          "help": "Tämä termi sijoitetaan widgetin vasemmalle puolelle",
+          "label": "Termi",
+          "placeholder": "Kirjoita lukukautesi tähän..."
+        }
+      },
+      "label": "Audio-termi",
+      "prev": "Äänitermiä ei ole vielä vahvistettu..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "Tapaaminen voi näkyä oikealle tai vasemmalle tasattuna",
+          "label": "Tapaamisen tasaus",
+          "values": {
+            "left": "Vasemmalla",
+            "right": "Oikealle"
+          }
+        },
+        "caption": {
+          "help": "Lainauksen alaotsikko näkyy lainauksen alapuolella. Sitä käytetään pääasiassa viittauksen tekijän tai tekijöiden osoittamiseen",
+          "label": "Lainauksen alaotsikko",
+          "placeholder": "Esimerkki: Carl Sagan"
+        },
+        "quote": {
+          "help": "Tämä teksti on sanatarkka lainaus",
+          "label": "Lainaa tekstiä",
+          "placeholder": "Esimerkki: \"Todisteiden puuttuminen ei ole todiste poissaolosta.\""
+        },
+        "source": {
+          "help": "Lainauksen alkuperäinen lähde (vuosi, kirja, aikakauslehti... jne)",
+          "label": "Tarjouksen alkuperä",
+          "placeholder": "Esimerkki:1990"
+        }
+      },
+      "label": "Siteerata",
+      "prev": "Lainaus ei ole vielä vakiintunut..."
+    },
+    "ButtonTextContainer": {
+      "label": "Painikkeet, joissa on tekstiä"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "Tämä on kuva, joka näkyy painikkeessa. Voit valita yhden lataamistasi kuvista tai ladata uuden.",
+          "label": "Painikkeen kuvan URL-osoite",
+          "placeholder": "Lisää URL-osoitteesi tähän"
+        },
+        "preview": "Esikatselu-painikkeen kuva",
+        "text": {
+          "help": "Tässä tekstieditorissa voit kirjoittaa painikkeeseen liittyvän tekstin sisällön",
+          "label": "Tekstiviesti",
+          "placeholder": "Kirjoita tekstisi tähän..."
+        }
+      },
+      "label": "Tekstiä sisältävä painike-elementti",
+      "prev": "Tekstiä sisältävää painike-elementtiä ei ole vielä alustettu..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Väri",
+        "helps": {
+          "animation": "Määrittää yhden ruudun ennalta määritetyistä animaatioista, joissa on upotetut elementit (yksittäinen tai taitettava).",
+          "colorTheme": "Hex-muoto #FFFFFF pakollinen. <strong> Jos sitä ei täytetä, yksikön teeman väri saa oletusarvon.</strong>",
+          "styles": "Määrittää yhden upotettuja elementtejä sisältävän ruudun ennalta määritetyistä tyyleistä.",
+          "textTitle": "Tämä on teksti, joka näkyy otsikkona. <strong>Jos sitä ei täytetä, se ottaa oletusarvon.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Kirjoita väri tähän",
+          "textTitle": "Kirjoita otsikko tähän"
+        },
+        "styles": {
+          "animation": "Animaation tyyli",
+          "attention": "Tarkkaavaisuus",
+          "collapsible": "Kokoontaitettava",
+          "danger": "Vaara",
+          "label": "Tyyli",
+          "more": "Opi lisää",
+          "note": "Muistiinpano",
+          "simple": "Yksinkertainen"
+        },
+        "textTitle": "Nimike"
+      },
+      "label": "Erinomainen"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "Kuva näkyy widgetin yläosassa vaihtoehtojen yläpuolella.",
+          "label": "Kuvan URL-osoite",
+          "placeholder": "Kirjoita kuvan URL-osoite..."
+        },
+        "options": {
+          "help": "Nämä 4 vaihtoehtoa näkyvät kuvan alla. Vain yksi voi olla oikeassa.",
+          "label": "Asetukset",
+          "placeholder": "Vaihtoehdon syöttäminen"
+        },
+        "preview": "Kuvan esikatselu",
+        "text": {
+          "help": "Tämä teksti näkyy kuvan yläpuolella tekstinä tai kysymyksenä.",
+          "label": "Tekstiviesti",
+          "placeholder": "Kirjoita teksti tähän..."
+        }
+      },
+      "label": "Valitse vaihtoehto",
+      "prev": "Vaihtoehdon valitseminen, jota ei ole asetettu ..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "Sarakkeet",
+      "form": {
+        "width": {
+          "1": "Ensimmäisen sarakkeen leveys",
+          "help": "Toinen sarake vie jäljellä olevan leveyden"
+        }
+      },
+      "label": "Hävittäminen"
+    },
+    "CorrectWord": {
+      "label": "Oikea sana"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "Kuvaileva kuva kysymyksestä",
+          "label": "Kuvan URL-osoite",
+          "placeholder": "Lisää kuvan URL-osoite tähän..."
+        },
+        "preview": "Kuvan esikatselu",
+        "question": {
+          "help": "Tämä on kysymys, joka näytetään käyttäjälle.",
+          "label": "Kysymyksen teksti",
+          "placeholder": "Kysymyksen teksti"
+        },
+        "word": {
+          "help": "Tämä sana on vastaus kysymykseen",
+          "label": "Vastata",
+          "placeholder": "Kirjoita sana..."
+        }
+      },
+      "label": "Oikea sanaelementti",
+      "prev": "Oikeaa sanaa ei ole vielä vahvistettu..."
+    },
+    "CouplesContainer": {
+      "label": "Parit",
+      "prev": "Pariskunnat, jotka eivät ole vielä vakiintuneet..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "Tämä kuva liitetään tekstiin, joka syötetään parina tässä lomakkeessa.",
+          "label": "Kuvan URL-osoite",
+          "placeholder": "Kirjoita kuvan URL-osoite tähän..."
+        },
+        "legend": {
+          "first": "Ensimmäinen elementti",
+          "second": "Toinen elementti"
+        },
+        "preview": "Kuvan esikatselu",
+        "text": {
+          "help": "Tämä teksti liitetään kuvaan, joka syötetään parina tässä lomakkeessa.",
+          "label": "Tekstiviesti",
+          "placeholder": "Kirjoita teksti..."
+        },
+        "type": {
+          "image": "Kuva",
+          "label": "Kundi",
+          "text": "Tekstiviesti"
+        }
+      },
+      "label": "Pari",
+      "prev": "Pariskunta ei ole vielä vakiintunut..."
+    },
+    "DragdropContainer": {
+      "label": "Vedä ja pudota"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "Määritelmä näkyy interaktiivisen elementin oikealla puolella, ja opiskelijan on vedettävä termi määritelmään",
+          "label": "Määritelmä",
+          "placeholder": "Esimerkki: Kaikilla ihmisillä on oikeus ilmaista itseään ilman, että heitä häiritään sen vuoksi, mitä he ajattelevat"
+        },
+        "term": {
+          "help": "Termi näkyy interaktiivisen elementin vasemmalla puolella, ja opiskelijan on vedettävä ja pudotettava se määritelmään.",
+          "label": "Termi",
+          "placeholder": "Esimerkki: Sananvapaus"
+        }
+      },
+      "label": "Termin määritelmä",
+      "prev": "Kohdetta ei ole vahvistettu..."
+    },
+    "FourColumnsLayout": {
+      "label": "Neljä saraketta"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Sinun on kirjoitettava vähintään 2 vastausta ja merkittävä, mikä niistä on oikea.",
+          "label": "Mahdolliset vastaukset"
+        },
+        "questionPreview": {
+          "help": "Tältä kysymys näyttää sisältöyksikössä.",
+          "label": "Esikatsele kysymyksen tekstiä.",
+          "placeholder": "Kysymysteksti, jossa on tyhjä ___-paikka."
+        },
+        "questionText": {
+          "help": "Kirjoita kysymysteksti haluamallasi tyhjällä tilalla ja erityinen avainsana [tyhjä].",
+          "label": "Kysymyksen teksti",
+          "placeholder": "Kysymysteksti, jossa on tyhjä elementti"
+        }
+      },
+      "label": "Täytä aukkokysymys",
+      "prev": "Kysymys aukon täyttämisestä ei ole vielä vakiintunut..."
+    },
+    "GenericWidget": {
+      "label": "Kapine"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "Vastaus kysymykseen",
+          "label": "Vastata",
+          "placeholder": "Kirjoita vastauksesi tähän"
+        },
+        "attempts": {
+          "help": "Vastausyritysten lukumäärä. Sen on oltava numero väliltä 1–9.",
+          "label": "Yrittää"
+        },
+        "question": {
+          "help": "Kysymys, johon on vastattava",
+          "label": "Kysymys",
+          "placeholder": "Kirjoita kysymyksesi tähän"
+        }
+      },
+      "label": "Arvaa sana",
+      "prev": "Arvaa, että sanaa ei ole vielä alustettu ..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Jos luot tekstin, tämä on kuvan kuvateksti",
+          "label": "Kuvateksti",
+          "placeholder": "Kirjoita kuvateksti."
+        },
+        "image": {
+          "help": "Tämä on kuva, joka näkyy kohteessa.",
+          "label": "Kuvan URL-osoite",
+          "placeholder": "Klikkaa tästä valitaksesi kuvan"
+        },
+        "preview": "Ennakkoesitys"
+      },
+      "label": "Kuva, jossa on tekstiä yllä",
+      "prev": "Kuva, jossa on teksti yllä, ei ole vielä vakiintunut..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Kuva ja ääni"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "Äänitiedosto toistetaan, kun kuvaa napsautetaan.",
+          "label": "Äänitiedoston URL-osoite",
+          "placeholder": "Anna kelvollinen indiemedian URL-osoite..."
+        },
+        "image": {
+          "help": "Kuva näkyy ensimmäisenä",
+          "label": "Kuvan URL-osoite",
+          "placeholder": "Kirjoita kuvan URL-osoite..."
+        },
+        "preview": "Kuvan esikatselu",
+        "text": {
+          "help": "Teksti näkyy kuvan yläpuolella, kun viet hiiren sen päälle.",
+          "label": "Kuvan teksti",
+          "placeholder": "Kirjoita teksti..."
+        }
+      },
+      "label": "Kuva ja ääni -kohde",
+      "prev": "Kuva- ja äänikohdetta ei ole vielä vahvistettu ..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "Tämä on kuva, joka näkyy kohteessa. Voit valita yhden lataamistasi kuvista tai ladata uuden.",
+          "label": "Kuvan URL-osoite",
+          "placeholder": "Klikkaa tästä valitaksesi kuvan"
+        },
+        "layout": {
+          "help": "Kuva- ja tekstilohkon suunta määrittää, missä kukin lohkon elementti näkyy.",
+          "label": "Suunnistus",
+          "values": {
+            "0": "Teksti oikealla, kuva vasemmalla",
+            "1": "Teksti vasemmalla, kuva oikealla"
+          }
+        },
+        "preview": "Kuvan esikatselu",
+        "text": {
+          "help": "Sinun on kirjoitettava teksti.",
+          "label": "Tässä tekstieditorissa voit kirjoittaa lohkon sisällön.",
+          "placeholder": "Kirjoita teksti..."
+        }
+      },
+      "label": "Kuva ja teksti",
+      "prev": "Kuva ja teksti eivät ole vielä vakiintuneet..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Käytä tekstinsyöttöä interaktiivisella videotyökalulla luodun interaktiivisen videon URL-osoitteen syöttämiseen.",
+          "label": "Videon URL-osoite",
+          "placeholder": "Esimerkki: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Interaktiivinen video",
+      "prev": "Interaktiivinen video ei ole vielä vakiintunut"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "Tämä selite näkyy kaavan alapuolella ja tekstilohkona",
+          "label": "Kaavan selite",
+          "placeholder": "Esimerkki: Kvadraattinen kaava"
+        },
+        "formula": {
+          "help": "Kirjoita kaava tekstialueen avulla. Tämän alueen alapuolella näkyy kaavan esikatselu, jos se on oikein, tai punainen teksti, jos kaava ei ole oikea",
+          "label": "Kaava LaTex-muodossa",
+          "placeholder": "Esimerkki: \\text{Kvadraattinen kaava on }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "LaTeX-kaava",
+      "prev": "Kaavaa ei ole vielä vahvistettu..."
+    },
+    "MissingWords": {
+      "label": "Puuttuvat sanat"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Poistaa",
+          "new": "Lisää uusi vastaus...",
+          "text": "Vastata"
+        },
+        "sentence": {
+          "help": "Sinun on kirjoitettava lauseen teksti, aukko mukaan lukien, käyttämällä erityistä merkkiä [tyhjä].",
+          "label": "Lauseen teksti",
+          "placeholder": "Lauseen teksti merkinnällä [tyhjä]"
+        },
+        "sentencePreview": {
+          "help": "Näin tarkastelisit lausetta sisältöyksikössä.",
+          "label": "Fraasin esikatselu",
+          "placeholder": "Lauseen teksti merkinnällä ___ "
+        }
+      },
+      "label": "Puuttuvat sanat -elementti",
+      "prev": "Puuttuvaa sanaelementtiä ei ole vielä vahvistettu..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "Tämä teksti näkyy painikkeen tekstinä, joka on aktivoitava modaalisen ikkunan avaamiseksi.",
+          "label": "Painikkeen teksti",
+          "placeholder": "Kirjoita teksti..."
+        }
+      },
+      "label": "Modaalinen ikkuna"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "Tämä on palapelin taustakuva. Voit valita yhden lataamistasi kuvista.",
+          "label": "Kuvan URL-osoite",
+          "placeholder": "Lisää kuvan URL-osoite tähän...",
+          "preview": "Palapelin esikatselu"
+        },
+        "pieces": {
+          "altImg": "Vaihtoehtoinen teksti rajaamista varten",
+          "altRec": "Sijainnin vaihtoehtoinen teksti",
+          "delete": "Poistaa",
+          "h": "Korkea",
+          "new": "Lisää uusi pala...",
+          "w": "Leveä",
+          "x": "Vasen",
+          "y": "Esimies"
+        }
+      },
+      "label": "Pulma",
+      "prev": "Palapeliä ei ole vielä alustettu..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Ryhmän otsikko",
+          "label": "Nimike",
+          "placeholder": "Esimerkki: Lakimoduuli"
+        }
+      },
+      "label": "Ryhmä",
+      "prev": "Ryhmä ei ole vielä perustanut ..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Sisällys"
+    },
+    "RelatedUnitsItem": {
+      "current": "Nykyinen yksikkö",
+      "form": {
+        "current": {
+          "title": "Tämä on nykyinen yksikkö"
+        },
+        "title": {
+          "help": "Viestin otsikko",
+          "label": "Nimike",
+          "placeholder": "Esimerkki: Ihmisoikeudet"
+        },
+        "url": {
+          "help": "Kohde-URL-osoite",
+          "label": "URL",
+          "placeholder": "Esimerkki: https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Sisäänkäynti",
+      "prev": "Merkintää ei ole vielä vahvistettu..."
+    },
+    "SchemaContainer": {
+      "label": "Järjestelmä"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "Tämä on järjestelmän osittainen kuva.",
+          "label": "Kuvan URL-osoite",
+          "placeholder": "Klikkaa tästä valitaksesi kuvan"
+        },
+        "prev": "Kuvan esikatselu"
+      },
+      "label": "Jäsennys-kohde",
+      "prev": "Esuqeman kohta ei ole vielä vakiintunut..."
+    },
+    "SentenceOrderContainer": {
+      "label": "Lauseiden lajittelu"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Poistaa",
+          "help": "Vastaukset, jotka rakennetaan syötetyistä sanoista",
+          "legend": "Luettelo vastauksista",
+          "new": "Lisää uusi vastaus...",
+          "text": "Vastata"
+        },
+        "words": {
+          "delete": "Poistaa",
+          "help": "Vastaukset pitäisi pystyä rakentamaan näistä sanoista",
+          "legend": "Word-luettelo",
+          "new": "Lisää uusi sana...",
+          "text": "Sana"
+        }
+      },
+      "label": "Lauseiden lajitteluelementti",
+      "prev": "Lauseiden lajitteluelementtiä ei ole vielä alustettu..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "Asettaa kuvan tasauksen, kun ulkoasu ei ole \"Säädä alkuperäiset mitat käytettävissä olevaan tilaan\".",
+          "label": "Kuvan tasaus",
+          "values": {
+            "center": "Keskittynyt",
+            "left": "Vasen",
+            "right": "Oikea"
+          }
+        },
+        "aspect": {
+          "help": "Kuva voidaan näyttää alkuperäisillä mitoilla (jos mahdollista) tai se voidaan säätää näytön leveyden mukaan (skaalaa kuva). Jos mitat ovat korkeammat ja leveämmät kuin näyttö voi näyttää, se mukautuu aina automaattisesti näyttöön",
+          "label": "Kuvan ulkonäkö",
+          "values": {
+            "custom": "Tapa",
+            "fit": "Säädä alkuperäiset mitat käytettävissä olevaan tilaan",
+            "original": "Alkuperäiset mitat"
+          }
+        },
+        "image": {
+          "help": "Tämä on kuva, joka näkyy kohteessa.",
+          "label": "Kuvan URL-osoite",
+          "placeholder": "Kirjoita kuvan URL-osoite tähän"
+        },
+        "preview": "Ennakkoesitys",
+        "size": {
+          "height": "Korkea",
+          "heightPlaceholder": "Kuvan korkeus...",
+          "keepRatio": "Säilytä kuvasuhde",
+          "width": "Leveä",
+          "widthPlaceholder": "Kuvan leveys..."
+        }
+      },
+      "label": "Kuva",
+      "prev": "Kuva ei ole vielä vakiintunut..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Sinun on kirjoitettava vähintään 2 vastausta ja merkittävä, mikä niistä on oikea.",
+          "label": "Mahdolliset vastaukset"
+        },
+        "questionText": {
+          "help": "Tämä on kysymyksen teksti, joka näkyy sisältöyksikössä.",
+          "label": "Kysymyksen teksti",
+          "placeholder": "Yksinkertaisen kysymyksen teksti..."
+        }
+      },
+      "label": "Yksinkertainen kysymys",
+      "prev": "Yksinkertaista kysymystä ei ole vielä asetettu..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "Tämä on nimi, joka näkyy välilehden otsikossa.",
+          "label": "Välilehden nimi",
+          "placeholder": "Esimerkki: Ammattitaito"
+        }
+      },
+      "label": "Silmäripsi"
+    },
+    "Table": {
+      "empty": "Taulukkoa ei ole vielä alustettu",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "Sarakkeen nimi on tyhjä tai jo määritetty",
+            "label": "Sarakkeen nimi",
+            "placeholder": "Kirjoita sarakkeen nimi tähän..."
+          },
+          "columnPosition": {
+            "error": "Pylvään sijainti alueen ulkopuolella",
+            "label": "Sarakkeen sijainti"
+          },
+          "label": "Lisää uusi sarake",
+          "submit": "Lisää sarake"
+        },
+        "addRow": "Lisää uusi rivi",
+        "deleteColumn": "Tyhjennä sarake",
+        "deleteRow": "Tyhjennä rivi"
+      },
+      "help": {
+        "edit": "Valitse muokattava solu. Jos haluat lisätä uusia rivejä muokkauksen aikana, paina vaihtonäppäintä samalla, kun painat Enter-näppäintä."
+      },
+      "label": "Lauta",
+      "prev": "Taulukkoa ei ole vielä vahvistettu..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Ripsien",
+      "label": "Välilehti-valikko"
+    },
+    "TermClassification": {
+      "label": "Luokitus",
+      "prev": "Luokitus"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "Tämä on sarake, johon termit liittyvät.",
+          "label": "Sarake",
+          "placeholder": "Sarake"
+        },
+        "terms": {
+          "help": "Tässä viestissä sinun on kirjoitettava termiin liittyvät sanat, jotka on erotettu puolipisteellä. Esimerkiksi: nämä; aari; jokin; sanat",
+          "label": "Sanat",
+          "placeholder": "Kirjoita puolipisteillä erotetut sanat"
+        }
+      },
+      "label": "Luokittelun erä",
+      "prev": "Kohdetta ei ole vielä vahvistettu..."
+    },
+    "Test": {
+      "label": "Testin tyyppi",
+      "questionSelect": "Valitse kysymystyyppi, jonka haluat lisätä kokeeseen"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Sinun on kirjoitettava teksti.",
+        "label": "Tässä tekstieditorissa voit kirjoittaa lohkon sisällön.",
+        "placeholder": "Kirjoita teksti...",
+        "styles": {
+          "attention": "Tarkkaavaisuus",
+          "default": "Ei tyyliä",
+          "help": "Määrittää tekstiä ympäröivän ruudun asettelun.",
+          "label": "Tekstilohkon tyyli",
+          "more": "Opi lisää",
+          "note": "Muistiinpano"
+        }
+      },
+      "label": "Teksti-osa",
+      "prev": "Tekstiä ei ole vielä vahvistettu..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Kolme saraketta"
+    },
+    "TrueFalseContainer": {
+      "label": "Tosi/epätosi",
+      "prev": "Tosi/epätosi ei ole vielä vahvistettu..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Väärä",
+          "help": "Valitse oikeaksi vastaukseksi tosi tai epätosi",
+          "label": "Oikea vastaus",
+          "true": "Tosi"
+        },
+        "questionText": {
+          "help": "Tämä on kohteen teksti.",
+          "label": "Kohteen teksti",
+          "placeholder": "Kohteen teksti..."
+        }
+      },
+      "label": "Tosi/epätosi-kohde",
+      "prev": "Tosi/epätosi-kohdetta ei ole vielä vahvistettu..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Väärä",
+          "help": "Valitse oikeaksi vastaukseksi tosi tai epätosi",
+          "label": "Oikea vastaus",
+          "true": "Tosi"
+        },
+        "questionText": {
+          "help": "Tämä on kysymyksen teksti, joka näkyy sisältöyksikössä.",
+          "label": "Tekstikysymyksen teksti",
+          "placeholder": "Kysymyksen teksti..."
+        }
+      },
+      "label": "Tosi vai epätosi kysymys",
+      "prev": "Kysymys todellisesta vai väärästä nbo: sta on vielä vahvistettu..."
+    },
+    "TwoColumnsLayout": {
+      "label": "Kaksi saraketta"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Näytä oletustekstitykset",
+          "no": "Ei",
+          "yes": "Kyllä"
+        },
+        "url": {
+          "help": "Kirjoita videosi URL-osoite tekstinsyötöllä (youtube, vimeo...)",
+          "label": "Videon URL-osoite",
+          "placeholder": "Esimerkki: https://example.com/video.mp4"
+        }
+      },
+      "label": "Video",
+      "prev": "Videota ei ole vielä asetettu..."
+    }
+  }
+}

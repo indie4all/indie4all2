@@ -825,6 +825,16 @@
         },
         "Bank": {
             "label": "Banco",
+            "modal" : {
+                "modalTitle" : "Banco de Widgets",
+                "search" : "Buscar",
+                "placeholderTitle" : "Buscar por título de Widget",
+                "placeholderGroup" : "Grupo",
+                "placeholderType" : "Tipo",
+                "randomTextPrev" : "Introducir ",
+                "randomTextBefore" : " widgets aleatorios de los seleccionados",
+                "selectAllText" : "Seleccionar todos"
+            },
             "modalTitle": "Banco de Widgets",
             "search": "Buscar"
         },

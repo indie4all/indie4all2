@@ -70,7 +70,9 @@ export default class DragDropHandler {
     drop(el: HTMLElement, target: HTMLElement, source: HTMLElement, sibling: HTMLElement) {
         if (!target) return;
         if (this.allowGenerate(source, target)) {
-            if (el.dataset.widget === "Bank") this.openBankModal(el, target, sibling);
+            if (el.dataset.widget === "Bank") {
+                this.openBankModal(el, target, sibling);
+            }
             // Add a new element to the container
             else this.onCreateElement(el, target, sibling);
         } else if (source != target) {
@@ -171,7 +173,7 @@ export default class DragDropHandler {
         const elementToBeAppended = widget.createElement();
         $(el).replaceWith(elementToBeAppended);
         if (parent instanceof WidgetColumnsLayout)
-            parentContainerIndex = parseInt(target.dataset.index);
+          parentContainerIndex = parseInt(target.dataset.index);
         this.model.appendObject(widget, inPositionElementId, parentContainerId, parentContainerIndex);
         this.undoredo.pushCommand(new ActionAddElement(this.model, {
             element: widget,
@@ -183,22 +185,56 @@ export default class DragDropHandler {
         $(el).hide();
         const { default: modalTemplate } = await import('./model/widgets/WidgetBank/modal.hbs');
         let data = await this.connectWithBank();
-        data.map(elem => elem["img"] = ModelManager.getWidgetElement(elem.type).icon);
-        $(this.container).after(modalTemplate({ data: data }));
+        data.map(elem => {
+            elem["img"] = ModelManager.getWidgetElement(elem.type).icon
+        });
+        const groups = [...new Set(data.map(objeto => objeto.group))].filter(elem => elem != null);
+        const types = [...new Set(data.map(objeto => objeto.type))];
+        $("#modal-bank-widgets").remove();
+        $(this.container).after(modalTemplate({ groups: groups, types: types, data: data }));
         $("#modal-bank-widgets").modal({ keyboard: false, focus: true, backdrop: 'static' });
 
-        const aggregateWidget = async function (model: Model, button: HTMLElement) {
-            const json = $(button).find("input[type=hidden]").val() as string;
+        const aggregateWidget = async function (button: HTMLElement) {
+            const json = $(button).find("input[name=content]").val() as string;
             const obj = JSON.parse(json);
-            const widget = (await ModelManager.create(obj.widget, obj)).clone();
-            this.onCreateElement(el, target, sibling, widget);
-            $("#modal-bank-widgets").modal('hide');
+            let widget = (await ModelManager.create(obj.widget, obj)).clone();
+            const clonedElem = $(el).clone();
+            $(clonedElem).insertBefore(el);
+            this.onCreateElement(clonedElem.get(0), target, sibling, widget);
+
         }
 
-        const onClick = aggregateWidget.bind(this, this.model);
+        const onClick = aggregateWidget.bind(this);
+
+         $("#check-select-all").on('change', function() {
+            $(".d-flex .input-checkbox ").prop('checked', $("#check-select-all").prop('checked'));
+          });
+
+        $(".d-flex .input-checkbox").on("click", function() {
+            $("#check-select-all").prop('checked',  $(".d-flex .input-checkbox:checked").length ===  $(".d-flex .input-checkbox").length);
+            $(this).prop("checked", !$(this).prop("checked"));
+        }); 
 
         $(".widget-button").on("click", function () {
-            onClick(this);
+            const checkbox = $(this).find("input[type='checkbox']");
+            checkbox.prop("checked", !checkbox.prop("checked"));
+        });
+
+        $("#modal-bank-widgets .btn-submit").on("click", async function() {
+            if($("#checkbox-random").prop("checked")) {
+                const num = $("#number-of-random-widgets").val() as number;
+                
+                for (let count = 0; count < num; count++) {
+                  const indexAleatorio = Math.floor(Math.random() * $(".input-checkbox:checked").length);
+                  await onClick($(".input-checkbox:checked")[indexAleatorio].parentElement);
+                }
+            }
+            else {
+                $("#modal-bank-widgets .panel-bank-widgets input[type='checkbox']:checked").each( (index,elem) => {
+                 onClick(elem.parentElement);
+            });
+        }
+        $("#modal-bank-widgets").modal('hide');
         });
 
         $('#modal-bank-widgets').on('hidden.bs.modal', function () {
@@ -206,17 +242,28 @@ export default class DragDropHandler {
             $(target).find(el).remove();
         });
 
-        $("input[type=search]").on('change', function () {
-            const searchTerm = ($(this).val() as string).toLowerCase();
+        $("#button-search-bank-widget").on('click', function () {
+            
+            const searchTerm = ($(" #modal-bank-widgets input[type='search']").val() as string).toLowerCase();
+            const searchGroup = ($(" #modal-bank-widgets .select-group option:selected").val() as string).trim();
+            const searchType = ($(" #modal-bank-widgets .select-type option:selected").val() as string).trim();
 
-            $('.widget-button h3').each(function () {
-                var text = $(this).text().toLowerCase();
-                if (text.includes(searchTerm)) {
-                    $(this).parent().parent().removeClass("d-none");
-                    $(this).parent().parent().addClass("d-flex");
+            $('.widget-button').each(function () {
+
+                const result: boolean[] = [];
+
+                const title = $(this).find('h3').text().toLowerCase();
+                const group = $(this).find("input[name='group']").val() as string;
+                const type = $(this).find("input[name='type']").val() as string;
+                
+                result[0] = title.includes(searchTerm);
+                result[1] = searchGroup === "default" || group === searchGroup;
+                result[2] = searchType === "default" || type === searchType;
+                
+                if (result.every(elem => elem)) {
+                  $(this).removeClass("d-none").addClass("d-flex");
                 } else {
-                    $(this).parent().parent().removeClass("d-flex");
-                    $(this).parent().parent().addClass("d-none");
+                  $(this).removeClass("d-flex").addClass("d-none");
                 }
             })
         })

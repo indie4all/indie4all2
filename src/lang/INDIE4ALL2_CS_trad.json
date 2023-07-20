@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Zobrazit/skrýt kategorie",
+    "viewImage": "Viz obrázek"
+  },
+  "common": {
+    "alt": {
+      "help": "Toto je alternativní text popisu obrázku z hlediska přístupnosti",
+      "label": "Alternativní text obrázku",
+      "placeholder": "Alternativní text"
+    },
+    "captions": {
+      "help": "INDIeMedia URL souboru obsahujícího přepis dialogu, zvukové efekty, hudební stopy a další zvukové informace, když je divák neslyšící nebo nedoslýchavý, nebo pokud je video / audio ztlumené. Titulky jsou také zobrazeny nad videem.",
+      "label": "Titulky (CC)",
+      "placeholder": "Příklad: https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "INDIeMedia Adresa URL souboru obsahujícího textové popisy toho, co se ve videu děje, když část videa není dostupná, protože divák je nevidomý a nepoužívá obrazovku. Popisy jsou čteny programem pro čtení z obrazovky nebo převedeny na samostatnou zvukovou stopu.",
+      "label": "Popis:__________",
+      "placeholder": "Příklad: https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Stahování disku, čekejte prosím",
+      "title": "Stahování dat"
+    },
+    "feedback": {
+      "help": "Vyložte zpětnou vazbu, kterou student obdrží, ať už odpoví správně nebo nesprávně",
+      "label": "Zpětná vazba",
+      "negative": "Negativní zpětná vazba...",
+      "positive": "Pozitivní zpětná vazba..."
+    },
+    "generate": {
+      "description": "Generuji, čekejte prosím",
+      "title": "Generující"
+    },
+    "help": {
+      "button": "Výchozí",
+      "help": "Tento text se zobrazí nad widgetem, aby uživatel pochopil, jak s ním pracovat. <strong>Pokud je ponecháno prázdné, zobrazí se výchozí text.</strong>",
+      "label": "Pomoc",
+      "placeholder": "Výchozí text nápovědy"
+    },
+    "language": {
+      "EL": "Řečtina",
+      "EN": "Angličtina",
+      "ES": "Španělština",
+      "FR": "Francouzština",
+      "LT": "Litevština"
+    },
+    "loading": {
+      "description": "Načítám, čekejte prosím",
+      "title": "Nakládka"
+    },
+    "name": {
+      "help": "To bude název instance widgetu pro analýzu učení",
+      "label": "Jméno",
+      "placeholder": "Název instance widgetu"
+    },
+    "navbar": {
+      "options": "Možnosti rozbalení/sbalení"
+    },
+    "preview": {
+      "description": "Probíhá generování náhledu, čekejte prosím",
+      "generated": {
+        "description": "Náhled je připraven. Pokud vás prohlížeč na náhled nepřesměruje, klikněte na následující odkaz:",
+        "title": "Náhled byl úspěšně vygenerován"
+      },
+      "title": "Generování náhledu"
+    },
+    "publish": {
+      "description": "Váš disk je generován ke stažení, čekejte prosím",
+      "title": "Vydavatelské oddělení"
+    },
+    "publishToNetlify": {
+      "description": "Vaše jednotka se nahrává na Netlify, čekejte prosím",
+      "title": "Vydavatelská jednotka v Netlify"
+    },
+    "save": {
+      "description": "Ukládám, čekejte prosím",
+      "title": "Zachraňování"
+    },
+    "scorm": {
+      "description": "Váš balíček SCORM se právě generuje, počkejte prosím",
+      "title": "Generování balíčku SCORM"
+    },
+    "selectType": "Vyberte typ z následujících možností",
+    "unit": {
+      "settings": "Zadejte podrobnosti o jednotce"
+    }
+  },
+  "dialog": {
+    "translate": "Přeložit jednotku"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "Akordeon je prázdný. Obsah musíte přidat pomocí tlačítka Přidat na pravé straně."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "Kontejner je prázdný. Do kontejneru je nutné přidat alespoň jednu položku."
+      },
+      "title": {
+        "invalid": "Název kontejneru je neplatný. Musíte si ho vytvořit."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "Adresa URL nastavená pro obrázek pozadí je nesprávná. Musíte zadat platnou adresu URL indieauthor."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Musí být nastaven alternativní text pro animovaný obrázek."
+        },
+        "altRec": {
+          "invalid": "Musí být nastaven alternativní text pro animovanou oblast."
+        },
+        "empty": "Animace musí mít alespoň jednu animovanou oblast.",
+        "h": {
+          "invalid": "Výška musí být nastavena a musí to být platné číslo."
+        },
+        "w": {
+          "invalid": "Šířka musí být nastavena a musí to být platné číslo."
+        },
+        "x": {
+          "invalid": "Musí být nastavena souřadnice zcela vlevo a musí to být platné číslo."
+        },
+        "y": {
+          "invalid": "Musí být nastaveno horní číslo a musí to být platné číslo."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "Animace je prázdná. Musíte přidat alespoň jednu položku pomocí tlačítka Přidat."
+      },
+      "height": {
+        "invalid": "Výška animace musí být větší než 0."
+      },
+      "image": {
+        "invalid": "Adresa URL nastavená pro obrázek je neplatná. Musíte se ujistit, že jste do pole obrázku uvedli platnou adresu URL indiemedia."
+      },
+      "width": {
+        "invalid": "Šířka animace musí být větší než 0."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "Adresa URL nastavená pro obrázek je neplatná. Musíte se ujistit, že jste do pole obrázku uvedli platnou adresu URL indiemedia."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "Je nutné přidat alespoň jednu definici zvukového termínu"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "Musíte zadat platnou adresu URL indiemedia"
+      },
+      "definition": {
+        "invalid": "Musíte zadat definici."
+      },
+      "term": {
+        "invalid": "Musíte zadat termín."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "Nenapsal jste obsah citátu. Musíte alespoň napsat obsah."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "Musíte zadat alespoň jeden prvek textu a typu tlačítka."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "Adresa URL nastavená pro obrázek je neplatná. Musíte se ujistit, že jste do pole obrázku tlačítka uvedli platnou adresu URL IndieMedia."
+      },
+      "text": {
+        "invalid": "Text je prázdný. Musíte napsat nebo zkopírovat text."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "Zvýrazněné okno je prázdné. Musíte přidat alespoň jeden jednoduchý prvek."
+      },
+      "text": {
+        "invalid": "Text je prázdný. Musíte napsat malý text."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "Denes poskytují platný obrázek v poli URL."
+      },
+      "options": {
+        "noCorrect": "Musíte vybrat alespoň jednu správnou",
+        "notEnougOptions": "Musíte zadat 4 možnosti"
+      },
+      "text": {
+        "invalid": "Text je prázdný. Musíte zadat text."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Všechny sloupce v rozvržení musí obsahovat alespoň jeden prvek přetažením z palety vlevo."
+      },
+      "width": {
+        "invalid": "Neplatná šířka sloupce"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "Pro obrázek je nutné zadat alternativní text"
+      },
+      "audioblob": {
+        "invalid": "Obsah zvukového souboru není správný. Musíte vybrat platný soubor."
+      },
+      "captions": {
+        "invalid": "Adresa URL nastavená pro titulky je neplatná. Musíte se ujistit, že jste zadali platnou adresu URL indiemedia"
+      },
+      "captionsblob": {
+        "invalid": "Obsah souboru titulků není správný. Musíte vybrat platný soubor."
+      },
+      "descriptions": {
+        "invalid": "Adresa URL nastavená pro popis je neplatná. Musíte se ujistit, že jste zadali platnou adresu URL indiemedia"
+      },
+      "imageblob": {
+        "invalid": "Obsah obrázku není správný. Musíte vybrat platný obrázek."
+      },
+      "name": {
+        "invalid": "Pro tuto instanci musíte zadat název.",
+        "notUniqueName": "Název instance musí být jedinečný v rámci veškerého obsahu."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "Musíte zadat alespoň jednu položku Správné slovo."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "Adresa URL nastavená pro obrázek je neplatná. Musíte zadat platnou adresu URL indieauthor."
+      },
+      "question": {
+        "invalid": "Text otázky je prázdný."
+      },
+      "word": {
+        "invalid": "Text odpovědi je prázdný."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "Musíte přidat alespoň jeden pár"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "Adresa URL zadaná pro obrázek je neplatná. Musíte se ujistit, že do pole obrázku zadáte platnou adresu URL indiemedia."
+      },
+      "text": {
+        "invalid": "Text je prázdný. Musíte napsat krátký text."
+      },
+      "type": {
+        "invalid": "Typ nastavený pro položku je neplatný. Musíte se ujistit, že je vybrána možnost \"Text\" nebo \"Obrázek\"."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "Položka je prázdná. Musíte přidat alespoň jednu položku definice termínu pomocí tlačítka Přidat na pravé straně."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "Definiční pole je prázdné. Musíte napsat definici."
+      },
+      "term": {
+        "invalid": "Pole termínu je prázdné. Musíte napsat termín."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "Musíte vybrat správnou odpověď",
+        "notEnoughAnswers": "Musíte napsat alespoň 2 možné odpovědi"
+      },
+      "question": {
+        "empty": "Text otázky nemůže být prázdný",
+        "onlyOneBlank": "Do otázky musíte zahrnout pouze jedno prázdné místo"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "Odpověď nesmí být prázdná"
+      },
+      "attempts": {
+        "invalid": "Počet pokusů musí být mezi 1 a 9"
+      },
+      "question": {
+        "invalid": "Otázka nesmí být prázdná"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "Adresa URL nastavená pro obrázek je neplatná. Musíte se ujistit, že jste do pole obrázku uvedli platnou adresu URL indiemedia."
+      },
+      "text": {
+        "invalid": "Text je prázdný. Musíte napsat text"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "Počet sloupců musí být 1,2 nebo 3"
+      },
+      "data": {
+        "empty": "Musíte poskytnout alespoň jeden obrazový a zvukový prvek."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "Musíte zadat platnou adresu URL indiemedia"
+      },
+      "image": {
+        "invalid": "Adresa URL zadaná pro obrázek je neplatná. Musíte se ujistit, že do pole obrázku zadáte platnou adresu URL indiemedia."
+      },
+      "text": {
+        "invalid": "Text je prázdný. Musíte napsat krátký text."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "Adresa URL nastavená pro obrázek je neplatná. Musíte se ujistit, že jste do pole obrázku uvedli platnou adresu URL indiemedia."
+      },
+      "text": {
+        "invalid": "Text je prázdný. Musíte napsat nebo zkopírovat text."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "Adresa URL nakonfigurovaná pro video je neplatná. Měli byste se ujistit, že poskytnete jeden z interaktivních videí indieopen."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "Ke vzorci je nutné zadat legendu."
+      },
+      "formula": {
+        "invalid": "Musíte zadat vzorec ve formátu LaTex."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "Musíte zadat alespoň jednu chybějící položku slova."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "Musíte napsat alespoň jednu správnou odpověď",
+        "invalid": "Text odpovědi je prázdný"
+      },
+      "sentence": {
+        "empty": "Fráze nesmí být prázdná",
+        "onlyOneBlank": "Do věty byste měli zahrnout pouze značku mezery"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "Modální je prázdný. Musíte přidat alespoň jeden jednoduchý prvek."
+      },
+      "text": {
+        "invalid": "Text je prázdný. Musíte napsat malý text."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "Adresa URL nastavená pro obrázek pozadí je nesprávná. Musíte zadat platnou adresu URL indieauthor."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Musí být nastaven alternativní text pro výstřižek."
+        },
+        "altRec": {
+          "invalid": "Musí být nastaven alternativní text pro pozici."
+        },
+        "empty": "Puzzle musí mít alespoň jeden kousek.",
+        "h": {
+          "invalid": "Výška musí být nastavena a musí to být platné číslo."
+        },
+        "w": {
+          "invalid": "Šířka musí být nastavena a musí to být platné číslo."
+        },
+        "x": {
+          "invalid": "Musí být nastavena souřadnice zcela vlevo a musí to být platné číslo."
+        },
+        "y": {
+          "invalid": "Musí být nastaveno horní číslo a musí to být platné číslo."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "Položka je prázdná. Musíte přidat alespoň jednu položku pomocí tlačítka Přidat vpravo."
+      },
+      "title": {
+        "invalid": "Pole názvu je prázdné. Musíte napsat název."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "Existuje alespoň jeden duplicitní odkaz. Pro každý příspěvek musíte poskytnout jedinečný odkaz.",
+        "empty": "Položka je prázdná. Musíte přidat alespoň jednu položku pomocí tlačítka Přidat vpravo.",
+        "multipleCurrent": "Existují nejméně dvě aktuální položky. Musíte zadat pouze jednu aktuální položku."
+      },
+      "moreThanOne": "Musíte poskytnout maximálně jednu položku obsahu."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "Pole názvu je prázdné. Musíte napsat název."
+      },
+      "url": {
+        "invalid": "Pole url musí být nastaveno na následující formát: https://[zdroj]/[autor]/[jednotka]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "Schéma je prázdné. Musíte přidat alespoň jednu položku pomocí tlačítka Přidat na pravé straně."
+      },
+      "height": {
+        "invalid": "Výška animace musí být větší než 0."
+      },
+      "image": {
+        "invalid": "Adresa URL nastavená pro celý obrázek je neplatná. Musíte se ujistit, že jste zadali platnou adresu URL indiemedia."
+      },
+      "width": {
+        "invalid": "Šířka animace musí být větší než 0."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "Adresa URL nastavená pro obrázek je neplatná. Musíte se ujistit, že jste do pole obrázku uvedli platnou adresu URL indiemedia."
+      },
+      "text": {
+        "invalid": "Text je prázdný. Musíte napsat malý text."
+      }
+    },
+    "section": {
+      "emptyData": "Sekce nemůže být prázdná. Musíte přidat alespoň jednu položku.",
+      "invalidBookmark": "Sekce musí mít platnou záložku.",
+      "invalidImage": "Sekce musí mít obrázek na pozadí.",
+      "invalidName": "Sekce musí mít název.",
+      "typeImageNotSelected": "Pokud je vybrán typ Obrázek na pozadí, musíte nastavit obrázek."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "Musíte zadat alespoň jeden prvek řazení vět."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "Musíte napsat alespoň jednu správnou odpověď",
+        "impossible": "Větu nelze vystrojit ze zavedených slov",
+        "invalid": "Text odpovědi je prázdný"
+      },
+      "words": {
+        "empty": "Je nutné zadat alespoň jedno platné slovo",
+        "invalid": "Text aplikace Word je prázdný"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "Adresa URL nastavená pro obrázek je neplatná. Musíte se ujistit, že jste do pole obrázku uvedli platnou adresu URL indiemedia.",
+        "sizeNotSet": "Šířka a výška obrázku musí být nastavena, pokud je jeho vzhled \"Vlastní\""
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "Musíte vybrat správnou odpověď",
+        "notEnoughAnswers": "Musíte napsat alespoň 2 možné odpovědi"
+      },
+      "question": {
+        "empty": "Text otázky nemůže být prázdný"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "Karta je prázdná. Na kartu musíte přidat alespoň jednu položku."
+      },
+      "name": {
+        "invalid": "Název karty je neplatný. Musíte si ho vytvořit."
+      }
+    },
+    "Table": {
+      "empty": "Tabulka nemá nastavené žádné sloupce"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "Nabídka záložek neobsahuje karty. Musíte přidat alespoň jednu."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Existují duplicitní sloupce. Zkontrolujte své položky.",
+        "duplicatedTerms": "Mezi sloupci jsou duplicitní termíny. Přečtěte si podmínky"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "Sloupec nesmí být prázdný"
+      },
+      "terms": {
+        "empty": "Výrazy nemohou být prázdné.",
+        "invalid": "Podmínky neodpovídají požadovanému formátu. Výrazy oddělujte středníky (;)."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "Test je prázdný. Musíte přidat alespoň jednu otázku."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "Text je prázdný. Musíte napsat krátký text."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "Je nutné přidat alespoň jeden prvek true nebo false"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "Text otázky nemůže být prázdný"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "Text otázky nemůže být prázdný"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "Adresa URL videa je neplatná. Musíte zadat platnou adresu URL z IndieMedia nebo Youtube.",
+        "localInvalid": "Adresa URL videa je neplatná. Musíte se ujistit, že jste uvedli platnou adresu URL YouTube."
+      }
+    }
+  },
+  "footer": {
+    "content": "Nové sekce můžete přidávat pomocí horního panelu nástrojů"
+  },
+  "general": {
+    "areYouSure": "Opravdu?",
+    "cancel": "Zrušit",
+    "close": "Zavřít",
+    "confirm": "Potvrdit",
+    "delete": "Odstranit",
+    "discard": "Odhodit",
+    "false": "Falešný",
+    "load": "Náklad",
+    "modelDetected": "Chcete načíst předchozí jednotku?",
+    "true": "Pravdivý"
+  },
+  "header": {
+    "addSection": "Přidat oddíl",
+    "clear": "Vymazání obsahu",
+    "download": "Jednotka pro stahování",
+    "importSection": "Sekce Import",
+    "install": "Instalace aplikace",
+    "preview": "Náhled obsahu",
+    "publish": "Publikování obsahu",
+    "publishToNetlify": "Publikování obsahu v Netlify",
+    "redo": "Akce Znovu",
+    "save": "Uložení obsahu",
+    "scorm": "Export ve formátu SCORM",
+    "translate": "Přeložit jednotku",
+    "undo": "Akce vrácení zpět",
+    "upload": "Jednotka pro nahrávání",
+    "validate": "Ověřit jednotku"
+  },
+  "items": {
+    "add": "Přidat obsah",
+    "delete": "Odstranit položku",
+    "duplicate": "Duplicitní položka",
+    "edit": "Úprava obsahu",
+    "export": "Exportovat položku"
+  },
+  "messages": {
+    "changesSaved": "Změny byly úspěšně uloženy.",
+    "confirmClearContent": "Obsah zcela odstraníte. Ujistěte se, že je to to, co opravdu chcete dělat.",
+    "confirmLoadModel": "Předchozí jednotka byla nalezena. Zvolte, zda jej chcete načíst nebo zahodit.",
+    "contentCleared": "Obsah byl úspěšně odstraněn.",
+    "contentErrors": "Zvedá! Ve vašem obsahu jsou chyby. Zkontrolujte chybové zprávy a podle pokynů je opravte.",
+    "couldNotExportElement": "Položku nelze exportovat",
+    "couldNotExportSection": "Sekci nelze exportovat",
+    "deletedSection": "Oddíl byl úspěšně odstraněn",
+    "emptyContent": "Nepřidali jste obsah.",
+    "errorMessage": "Chyba",
+    "exportedElement": "Položka byla úspěšně exportována",
+    "exportedSection": "Sekce úspěšně exportována",
+    "importedElement": "Položka byla úspěšně importována",
+    "importedSection": "Sekce byla úspěšně importována",
+    "loadError": "Jednotku nelze načíst",
+    "noElement": "Žádné položky k importu",
+    "noErrors": "Není to zlé! Neexistují žádné chyby. Můžete pokračovat v ukládání obsahu.",
+    "noRedo": "Není co opakovat",
+    "noSection": "Žádné sekce k importu",
+    "noUndo": "Není co vracet zpět",
+    "previewError": "Náhled jednotky nelze zobrazit",
+    "publishError": "Jednotku nelze zveřejnit",
+    "savedUnit": "Jednotka byla úspěšně uložena",
+    "saveError": "Jednotku nelze uložit",
+    "successMessage": "Ok",
+    "translateError": "Jednotku nelze přeložit",
+    "warningMessage": "Pozornost"
+  },
+  "netlify": {
+    "button": {
+      "text": "Spojit"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Vytvořit web",
+        "help": "Vyberte jednu z dostupných stránek ve svém účtu Netlify",
+        "label": "Vyberte prosím dostupnou stránku z vašeho Netlify a nahrajte jednotku"
+      },
+      "title": "Vyplňte pole pro připojení k Netlify ",
+      "token": {
+        "help": "Zadejte svůj osobní přístupový token Netlify. Najdete ji v sekci Aplikace v nastavení účtu Netlify",
+        "label": "Vložte osobní přístupový token:",
+        "placeholder": "Sem vložte svůj osobní přístupový token Netlify"
+      }
+    },
+    "error": {
+      "message": "Neplatný token"
+    },
+    "success": {
+      "message": "Jednotka byla úspěšně nahrána do Netlify. Přístup k němu kliknutím na následující odkaz: ",
+      "message_2": "Mějte na paměti, že pokud má jednotka velké množství obsahu, může publikování trvat několik minut.",
+      "title": "Jednotka nahraná na Netlify"
+    }
+  },
+  "palette": {
+    "containers": "Kontejnery",
+    "exerciseElement": "Cvičení",
+    "interactiveElements": "Interaktivní prvky",
+    "items": "Položky",
+    "layouts": "Předpisy",
+    "question": "Otázky",
+    "simpleElements": "Elementy"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Blok kódu",
+        "screenReader": "Text nápovědy pro programy pro čtení z obrazovky"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Odstranit oddíl",
+    "duplicate": "Duplicitní oddíl",
+    "edit": "Upravit informace",
+    "expandContract": "Rozbalení nebo sbalení",
+    "export": "Sekce Export",
+    "form": {
+      "bookmark": {
+        "help": "Tato značka se zobrazí v horní části jednotky jako značka sekce. Musí mít maximálně 40 znaků.",
+        "label": "Záložka oddílu",
+        "placeholder": "Napište záložku..."
+      },
+      "image": {
+        "help": "",
+        "label": "Adresa URL obrázku na pozadí",
+        "placeholder": "Zadejte adresu URL obrázku..."
+      },
+      "name": {
+        "help": "Toto je název, který bude mít oddíl v obsahu.",
+        "label": "Název oddílu",
+        "placeholder": "Napište jméno..."
+      },
+      "preview": "Zobrazení náhledu obrázku na pozadí",
+      "type": {
+        "bc": "Barva pozadí (výchozí)",
+        "bi": "Obrázek na pozadí",
+        "help": "Pokud je typ nastaven na \"barvu pozadí\", zobrazí se výchozí barva za názvem, zatímco v části \"Obrázek na pozadí\" musíte vytvořit obrázek pozadí pro nadpis sekce.",
+        "label": "Typ pozadí"
+      }
+    },
+    "import": "Importovat položku",
+    "label": "Oddíl",
+    "moveDown": "Posunout oddíl dolů",
+    "moveUp": "Posunout sekci nahoru"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Povolení/zakázání analýzy v jednotce",
+        "label": "Analytika",
+        "no": "Ne",
+        "yes": "Ano"
+      },
+      "author": {
+        "help": "Autor jednotky by měl napsat zde.",
+        "label": "Autor jednotky",
+        "placeholder": "Autor jednotky píše:"
+      },
+      "background": {
+        "help": "Obrázek by měl mít přibližně 1900 x 550 pixelů.",
+        "label": "Obrázek motivu"
+      },
+      "color": {
+        "help": "Vyžaduje #FFFFFF hexadecimální formát",
+        "label": "Barva motivu",
+        "placeholder": "Zde zadejte barvu motivu"
+      },
+      "email": {
+        "help": "Toto je e-mailová adresa autora.",
+        "label": "E-mail",
+        "placeholder": "Zadejte e-mailovou adresu autora"
+      },
+      "institution": {
+        "help": "Název instituce",
+        "label": "Instituce",
+        "placeholder": "Zadejte název instituce"
+      },
+      "language": {
+        "help": "Jazyk jednotky.",
+        "label": "Jazyk"
+      },
+      "license": {
+        "BY": "Mezinárodní uznání 4.0 (CC BY 4.0)",
+        "BYNC": "Uveďte autora-Neužívejte komerčně-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCND": "Uveďte autora-Neužívejte komerčně-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Uveďte autora-Neužívejte dílo komerčně-Zachovejte licenci 4.0 Mezinárodní (CC BY-NC-SA 4.0)",
+        "BYND": "Uveďte autora-NoDerivs 4.0 International (CC BY-ND 4.0)",
+        "BYSA": "Uveďte autora-Zachovejte licenci 4.0 Mezinárodní (CC BY-SA 4.0)",
+        "help": "Jednotková licence",
+        "label": "Licence",
+        "PRIVATE": "Všechna práva vyhrazena"
+      },
+      "resource": {
+        "help": "Zadejte ID prostředku",
+        "label": "ID prostředku:",
+        "placeholder": "Zadejte ID prostředku"
+      },
+      "theme": {
+        "help": "Vyberte téma jednotky.",
+        "label": "Téma"
+      },
+      "title": {
+        "help": "Toto je název jednotky.",
+        "label": "Název jednotky",
+        "placeholder": "Zadejte název"
+      },
+      "type": {
+        "help": "Toto je typ jednotky.",
+        "interoperability": "Interoperabilita",
+        "label": "Typ jednotky",
+        "open": "Otevřený"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "Toto je zdrojový jazyk jednotky",
+        "label": "Zdrojový jazyk"
+      },
+      "target": {
+        "help": "Cílový jazyk, do kterého bude jednotka přeložena",
+        "label": "Cílový jazyk"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Akordeonové menu"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "Nastaví název skupiny obsahu. Zobrazí se v názvu rozbalovací nabídky.",
+          "label": "Název obsahu",
+          "placeholder": "Příklad: Profesní dovednosti"
+        }
+      },
+      "label": "Skupina obsahu"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "Toto bude obrázek na pozadí animace. Můžete si vybrat jeden z nahraných obrázků.",
+          "label": "Adresa URL obrázku",
+          "placeholder": "Sem vložte URL obrázku...",
+          "preview": "Náhled animace"
+        },
+        "pieces": {
+          "altImg": "Alternativní text pro animovaný obrázek",
+          "altRec": "Alternativní text pro animovanou oblast",
+          "delete": "Vymazat",
+          "h": "Vysoko",
+          "new": "Přidat novou animovanou oblast...",
+          "w": "Široký",
+          "x": "Vlevo",
+          "y": "Vyšší"
+        }
+      },
+      "label": "Animace",
+      "prev": "Animace ještě nebyla inicializována..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "Bude to výška kontejneru animace pixelů",
+          "label": "Výška animace",
+          "placeholder": "Příklad: 200"
+        },
+        "image": {
+          "help": "Bude to obrázek, který se zobrazí v položce. Můžete si vybrat jeden z nahraných obrázků nebo nahrát nový.",
+          "label": "Adresa URL obrázku",
+          "placeholder": "Klikněte zde pro výběr obrázku"
+        },
+        "prev": "Náhled náhledu obrázku",
+        "width": {
+          "help": "To bude šířka kontejneru animace v pixelech",
+          "label": "Šířka animace",
+          "placeholder": "Příklad: 400"
+        }
+      },
+      "label": "Animace"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "Toto bude obrázek položky animace.",
+          "label": "Adresa URL obrázku",
+          "placeholder": "Klikněte zde pro výběr obrázku"
+        },
+        "prev": "Náhled"
+      },
+      "label": "Položka animace.",
+      "prev": "Položka animace ještě není nastavena..."
+    },
+    "AudioTermContainer": {
+      "label": "Audio-pojmy"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "Do jednotky obsahu musíte zadat adresu URL zvuku, který chcete přehrát.",
+          "label": "Adresa URL zvukového souboru",
+          "placeholder": "Zadejte prosím platnou adresu URL indiemedia..."
+        },
+        "definition": {
+          "help": "Tato definice by měla být doslovným přepisem zvuku.",
+          "label": "Definice",
+          "placeholder": "Napište definici..."
+        },
+        "term": {
+          "help": "Toto bude termín umístěný vlevo od widgetu",
+          "label": "Semestr",
+          "placeholder": "Napište svůj termín zde..."
+        }
+      },
+      "label": "Zvukový termín",
+      "prev": "Termín zvuku zatím není stanoven..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "Událost může být zarovnána doprava nebo doleva",
+          "label": "Zarovnání schůzek",
+          "values": {
+            "left": "Vlevo",
+            "right": "Vpravo"
+          }
+        },
+        "caption": {
+          "help": "Podtitul citátu se zobrazí pod citací. Používá se hlavně k označení autora nebo autorů citace",
+          "label": "Podtitul citátu",
+          "placeholder": "Příklad: Carl Sagan"
+        },
+        "quote": {
+          "help": "Tento text je doslovnou citací",
+          "label": "Text citace",
+          "placeholder": "Příklad: \"Neexistence důkazů není důkazem nepřítomnosti.\""
+        },
+        "source": {
+          "help": "Původní zdroj citace (Rok, kniha, časopis... atd.)",
+          "label": "Původ citace",
+          "placeholder": "Příklad:1990"
+        }
+      },
+      "label": "Citát",
+      "prev": "Citace dosud nestanovena..."
+    },
+    "ButtonTextContainer": {
+      "label": "Tlačítka s textem"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "To bude obrázek, který se objeví na tlačítku. Můžete si vybrat jeden z nahraných obrázků nebo nahrát nový.",
+          "label": "Adresa URL obrázku tlačítka",
+          "placeholder": "Sem vložte svou adresu URL"
+        },
+        "preview": "Obrázek tlačítka Náhled",
+        "text": {
+          "help": "V tomto textovém editoru můžete psát obsah textu přidruženého k tlačítku",
+          "label": "Text",
+          "placeholder": "Napište svůj text zde..."
+        }
+      },
+      "label": "Prvek tlačítka s textem",
+      "prev": "Prvek tlačítka s textem ještě nebyl inicializován..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Barva",
+        "helps": {
+          "animation": "Určuje jednu z předdefinovaných animací pro rámeček s vloženými prvky (jednoduché nebo skládací).",
+          "colorTheme": "Šestihranný formát #FFFFFF vyžadován. <strong> Pokud není vyplněna, barva motivu jednotky bude mít výchozí hodnotu.</strong>",
+          "styles": "Určuje jeden z předdefinovaných stylů pro pole s vloženými prvky.",
+          "textTitle": "Bude to text, který se zobrazí jako název. <strong>Pokud není vyplněna, bude mít výchozí hodnotu.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Zde zadejte barvu",
+          "textTitle": "Zde zadejte název"
+        },
+        "styles": {
+          "animation": "Styl animace",
+          "attention": "Pozornost",
+          "collapsible": "Skládací",
+          "danger": "Nebezpečí",
+          "label": "Styl",
+          "more": "Víc se uč",
+          "note": "Poznámka",
+          "simple": "Jednoduchý"
+        },
+        "textTitle": "Titul"
+      },
+      "label": "Vynikající"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "Obrázek se zobrazí v horní části widgetu nad možnostmi.",
+          "label": "Adresa URL obrázku",
+          "placeholder": "Zadejte adresu URL obrázku..."
+        },
+        "options": {
+          "help": "Tyto 4 možnosti se zobrazí pod obrázkem. Jen jeden může být správný.",
+          "label": "Volby",
+          "placeholder": "Zadejte možnost"
+        },
+        "preview": "Náhled obrázku",
+        "text": {
+          "help": "Tento text se zobrazí nad obrázkem jako text nebo otázka.",
+          "label": "Text",
+          "placeholder": "Napište text zde..."
+        }
+      },
+      "label": "Vyberte jednu z možností",
+      "prev": "Výběr možnosti není nastaven ..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "Sloupce",
+      "form": {
+        "width": {
+          "1": "Šířka prvního sloupce",
+          "help": "Druhý sloupec zabere zbývající šířku"
+        }
+      },
+      "label": "Likvidace"
+    },
+    "CorrectWord": {
+      "label": "Správné slovo"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "Popisný obraz otázky",
+          "label": "Adresa URL obrázku",
+          "placeholder": "Sem vložte adresu URL obrázku..."
+        },
+        "preview": "Náhled obrázku",
+        "question": {
+          "help": "To je otázka, která se zobrazí uživateli.",
+          "label": "Text otázky",
+          "placeholder": "Text otázky"
+        },
+        "word": {
+          "help": "Toto slovo bude odpovědí na otázku",
+          "label": "Odpověď",
+          "placeholder": "Napište slovo..."
+        }
+      },
+      "label": "Oprava prvku slova",
+      "prev": "Správné slovo ještě nebylo stanoveno..."
+    },
+    "CouplesContainer": {
+      "label": "Páry",
+      "prev": "Dosud nezaložené páry..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "Tento obrázek bude spojen s textem zadaným v tomto formuláři jako pár.",
+          "label": "Adresa URL obrázku",
+          "placeholder": "Zde zadejte adresu URL obrázku..."
+        },
+        "legend": {
+          "first": "První prvek",
+          "second": "Druhý prvek"
+        },
+        "preview": "Náhled obrázku",
+        "text": {
+          "help": "Tento text bude přidružen k obrázku, který je v tomto formuláři zadán jako pár.",
+          "label": "Text",
+          "placeholder": "Napište text..."
+        },
+        "type": {
+          "image": "Obraz",
+          "label": "Chlapík",
+          "text": "Text"
+        }
+      },
+      "label": "Pár",
+      "prev": "Pár ještě nebyl stanoven..."
+    },
+    "DragdropContainer": {
+      "label": "Přetažení"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "Definice se zobrazí napravo od interaktivního prvku a student musí přetáhnout termín do definice",
+          "label": "Definice",
+          "placeholder": "Příklad: Všechny lidské bytosti mají právo se vyjádřit, aniž by byly obtěžovány kvůli tomu, co si myslí"
+        },
+        "term": {
+          "help": "Termín se zobrazí vlevo od interaktivního prvku a bude to ten, který musí student přetáhnout do definice.",
+          "label": "Semestr",
+          "placeholder": "Příklad: Svoboda projevu"
+        }
+      },
+      "label": "Definice pojmu",
+      "prev": "Položka nebyla stanovena..."
+    },
+    "FourColumnsLayout": {
+      "label": "Čtyři sloupce"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Musíte napsat alespoň 2 odpovědi a označit, která z nich je správná.",
+          "label": "Možné odpovědi"
+        },
+        "questionPreview": {
+          "help": "Takto bude vypadat otázka v obsahové jednotce.",
+          "label": "Zobrazte náhled textu otázky.",
+          "placeholder": "Text dotazu s prázdným ___ slotem."
+        },
+        "questionText": {
+          "help": "Text otázky musíte zadat s prázdným místem, které chcete použít pomocí speciálního klíčového slova [blank].",
+          "label": "Text otázky",
+          "placeholder": "Text otázky s prázdným prvkem"
+        }
+      },
+      "label": "Vyplňte mezeru",
+      "prev": "Otázka zaplnění mezery ještě nebyla stanovena..."
+    },
+    "GenericWidget": {
+      "label": "Věcička"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "Odpověď na otázku",
+          "label": "Odpověď",
+          "placeholder": "Napište svou odpověď zde"
+        },
+        "attempts": {
+          "help": "Počet pokusů uhodnout odpověď. Musí to být číslo mezi 1 a 9.",
+          "label": "Pokusy"
+        },
+        "question": {
+          "help": "Otázka, která má být zodpovězena",
+          "label": "Otázka",
+          "placeholder": "Napište svůj dotaz zde"
+        }
+      },
+      "label": "Hádejte slovo",
+      "prev": "Hádám, že slovo ještě nebylo inicializováno..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Pokud vytvoříte text, bude to titulek obrázku",
+          "label": "Popisek obrázku",
+          "placeholder": "Zadejte titulek."
+        },
+        "image": {
+          "help": "Toto je obrázek, který se zobrazí v položce.",
+          "label": "Adresa URL obrázku",
+          "placeholder": "Klikněte zde pro výběr obrázku"
+        },
+        "preview": "Náhled"
+      },
+      "label": "Obrázek s textem nahoře",
+      "prev": "Obrázek s výše uvedeným textem ještě není stanoven..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Obraz a zvuk"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "Zvukový soubor se přehraje po kliknutí na obrázek.",
+          "label": "Adresa URL zvukového souboru",
+          "placeholder": "Zadejte prosím platnou adresu URL indiemedia..."
+        },
+        "image": {
+          "help": "Obrázek se zobrazí jako první",
+          "label": "Adresa URL obrázku",
+          "placeholder": "Zadejte adresu URL obrázku..."
+        },
+        "preview": "Náhled obrázku",
+        "text": {
+          "help": "Text se zobrazí nad obrázkem, když na něj najedete myší.",
+          "label": "Text obrázku",
+          "placeholder": "Napište text..."
+        }
+      },
+      "label": "Položka obrazu a zvuku",
+      "prev": "Obrazová a zvuková položka dosud nebyla stanovena ..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "Bude to obrázek, který se zobrazí v položce. Můžete si vybrat jeden z nahraných obrázků nebo nahrát nový.",
+          "label": "Adresa URL obrázku",
+          "placeholder": "Klikněte zde pro výběr obrázku"
+        },
+        "layout": {
+          "help": "Orientace bloku obrázku a textu určuje, kde se každý z prvků v bloku zobrazí.",
+          "label": "Orientace",
+          "values": {
+            "0": "Text vpravo, obrázek vlevo",
+            "1": "Text vlevo, obrázek vpravo"
+          }
+        },
+        "preview": "Náhled obrázku",
+        "text": {
+          "help": "Musíte napsat text.",
+          "label": "V tomto textovém editoru můžete psát obsah bloku.",
+          "placeholder": "Napište text..."
+        }
+      },
+      "label": "Obrázek a text",
+      "prev": "Obrázek a text dosud nestanoveny..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Pomocí textového vstupu zadejte adresu URL interaktivního videa vytvořeného pomocí nástroje pro interaktivní video.",
+          "label": "Adresa URL videa",
+          "placeholder": "Příklad: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Interaktivní video",
+      "prev": "Interaktivní video dosud nebylo vytvořeno"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "Tato legenda se zobrazí pod vzorcem a jako blok textu",
+          "label": "Legenda vzorce",
+          "placeholder": "Příklad: Kvadratický vzorec"
+        },
+        "formula": {
+          "help": "Pomocí textové oblasti zadejte vzorec. Pod touto oblastí se zobrazí náhled vzorce, pokud je správný, nebo text v červené barvě, pokud vzorec není správný",
+          "label": "Vzorec ve formátu LaTex",
+          "placeholder": "Příklad: \\text{Kvadratický vzorec je }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "Vzorec LaTeXu",
+      "prev": "Vzorec dosud nebyl stanoven..."
+    },
+    "MissingWords": {
+      "label": "Chybějící slova"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Vymazat",
+          "new": "Přidat novou odpověď...",
+          "text": "Odpověď"
+        },
+        "sentence": {
+          "help": "Text věty včetně mezery musíte napsat pomocí speciální značky [blank].",
+          "label": "Text věty",
+          "placeholder": "Text věty se značkou [prázdné]"
+        },
+        "sentencePreview": {
+          "help": "Takto byste se dívali na frázi v jednotce obsahu.",
+          "label": "Náhled frází",
+          "placeholder": "Text věty se značkou ___ "
+        }
+      },
+      "label": "Prvek chybějících slov",
+      "prev": "Chybějící slovní prvek dosud nebyl stanoven..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "Tento text se zobrazí jako text tlačítka, které musí být aktivováno pro otevření modálního okna.",
+          "label": "Text tlačítka",
+          "placeholder": "Napište text..."
+        }
+      },
+      "label": "Modální okno"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "To bude obrázek pozadí hádanky. Můžete si vybrat jeden z nahraných obrázků.",
+          "label": "Adresa URL obrázku",
+          "placeholder": "Sem vložte URL obrázku...",
+          "preview": "Náhled puzzle"
+        },
+        "pieces": {
+          "altImg": "Alternativní text pro oříznutí",
+          "altRec": "Alternativní text pro pozici",
+          "delete": "Vymazat",
+          "h": "Vysoko",
+          "new": "Přidat nový kousek...",
+          "w": "Široký",
+          "x": "Vlevo",
+          "y": "Vyšší"
+        }
+      },
+      "label": "Hádanka",
+      "prev": "Hádanka ještě nebyla inicializována..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Název skupiny",
+          "label": "Titul",
+          "placeholder": "Příklad: Modul Právo"
+        }
+      },
+      "label": "Skupina",
+      "prev": "Skupina ještě není založena ..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Obsah"
+    },
+    "RelatedUnitsItem": {
+      "current": "Aktuální jednotka",
+      "form": {
+        "current": {
+          "title": "Toto je aktuální jednotka"
+        },
+        "title": {
+          "help": "Název příspěvku",
+          "label": "Titul",
+          "placeholder": "Příklad: Lidská práva"
+        },
+        "url": {
+          "help": "Cílová adresa URL",
+          "label": "Adresa URL",
+          "placeholder": "Příklad: https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Vchod",
+      "prev": "Vstup zatím nebyl stanoven..."
+    },
+    "SchemaContainer": {
+      "label": "Schéma"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "To bude částečný obraz schématu.",
+          "label": "Adresa URL obrázku",
+          "placeholder": "Klikněte zde pro výběr obrázku"
+        },
+        "prev": "Náhled obrázku"
+      },
+      "label": "Položka osnovy",
+      "prev": "Položka esuqema dosud nebyla stanovena..."
+    },
+    "SentenceOrderContainer": {
+      "label": "Řazení frází"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Vymazat",
+          "help": "Odpovědi, které budou vytvořeny ze zadaných slov",
+          "legend": "Seznam odpovědí",
+          "new": "Přidat novou odpověď...",
+          "text": "Odpověď"
+        },
+        "words": {
+          "delete": "Vymazat",
+          "help": "Odpovědi by mělo být možné vyvodit z těchto slov",
+          "legend": "Seznam slov",
+          "new": "Přidat nové slovo...",
+          "text": "Slovo"
+        }
+      },
+      "label": "Prvek řazení frází",
+      "prev": "Prvek řazení vět ještě nebyl inicializován..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "Nastaví zarovnání obrazu, když vzhled není \"Upravit původní rozměry podle dostupného prostoru\".",
+          "label": "Zarovnání obrazu",
+          "values": {
+            "center": "Rozhodný",
+            "left": "Vlevo",
+            "right": "Vpravo"
+          }
+        },
+        "aspect": {
+          "help": "Obraz lze zobrazit s původními rozměry (pokud je to možné) nebo jej lze upravit na šířku obrazovky (měřítko obrázku). Pokud jsou rozměry vyšší a širší, než může obrazovka zobrazit, vždy se automaticky přizpůsobí obrazovce",
+          "label": "Vzhled obrázku",
+          "values": {
+            "custom": "Zvyk",
+            "fit": "Upravte původní rozměry podle dostupného prostoru",
+            "original": "Původní rozměry"
+          }
+        },
+        "image": {
+          "help": "To bude obrázek, který se zobrazí v položce.",
+          "label": "Adresa URL obrázku",
+          "placeholder": "Zde zadejte adresu URL obrázku"
+        },
+        "preview": "Náhled",
+        "size": {
+          "height": "Vysoko",
+          "heightPlaceholder": "Výška obrazu...",
+          "keepRatio": "Zachovat poměr stran obrazu",
+          "width": "Široký",
+          "widthPlaceholder": "Šířka obrázku..."
+        }
+      },
+      "label": "Obraz",
+      "prev": "Obraz ještě nebyl stanoven..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Musíte napsat alespoň 2 odpovědi a označit, která z nich je správná.",
+          "label": "Možné odpovědi"
+        },
+        "questionText": {
+          "help": "To znamená, že text otázky se zobrazí v jednotce obsahu.",
+          "label": "Text otázky",
+          "placeholder": "Text jednoduché otázky..."
+        }
+      },
+      "label": "Jednoduchá otázka",
+      "prev": "Jednoduchá otázka ještě nebyla nastavena..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "To bude název, který se zobrazí v názvu karty.",
+          "label": "Název karty",
+          "placeholder": "Příklad: Profesní dovednosti"
+        }
+      },
+      "label": "Oční řasa"
+    },
+    "Table": {
+      "empty": "Tabulka ještě nebyla inicializována",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "Název sloupce je prázdný nebo již definovaný",
+            "label": "Název sloupce",
+            "placeholder": "Zde zadejte název sloupce..."
+          },
+          "columnPosition": {
+            "error": "Poloha kolony mimo rozsah",
+            "label": "Poloha sloupce"
+          },
+          "label": "Přidat nový sloupec",
+          "submit": "Přidat sloupec"
+        },
+        "addRow": "Přidat nový řádek",
+        "deleteColumn": "Vymazat sloupec",
+        "deleteRow": "Vymazat řádek"
+      },
+      "help": {
+        "edit": "Vyberte buňku, kterou chcete upravit. Chcete-li při úpravách přidat nové řádky, stiskněte klávesu Shift a stiskněte klávesu Enter."
+      },
+      "label": "Prkno",
+      "prev": "Tabulka dosud nestanovena..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Řasy",
+      "label": "Nabídka záložek"
+    },
+    "TermClassification": {
+      "label": "Klasifikace",
+      "prev": "Klasifikace"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "Toto je sloupec, ke kterému se budou podmínky vztahovat.",
+          "label": "Sloupec",
+          "placeholder": "Sloupec"
+        },
+        "terms": {
+          "help": "V tomto příspěvku musíte napsat slova, která souvisejí s termínem odděleným středníkem. Například: tyto; ar; nějaký; slova",
+          "label": "Slova",
+          "placeholder": "Psaní slov oddělených středníky"
+        }
+      },
+      "label": "Položka klasifikace",
+      "prev": "Položka ještě nebyla stanovena..."
+    },
+    "Test": {
+      "label": "Typ testu",
+      "questionSelect": "Vyberte typ otázky, který chcete přidat do kvízu"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Musíte napsat text.",
+        "label": "V tomto textovém editoru můžete psát obsah bloku.",
+        "placeholder": "Zadejte text...",
+        "styles": {
+          "attention": "Pozornost",
+          "default": "Žádný styl",
+          "help": "Určuje rozložení rámečku, který obklopuje text",
+          "label": "Styl textového bloku",
+          "more": "Víc se uč",
+          "note": "Poznámka"
+        }
+      },
+      "label": "Textový blok",
+      "prev": "Text dosud nestanoven..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Tři sloupce"
+    },
+    "TrueFalseContainer": {
+      "label": "Pravda/nepravda",
+      "prev": "Pravda/nepravda ještě není stanovena..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Falešný",
+          "help": "Výběr mezi pravdou a nepravdou jako správnou odpovědí",
+          "label": "Správná odpověď",
+          "true": "Pravdivý"
+        },
+        "questionText": {
+          "help": "Toto je text položky.",
+          "label": "Text položky",
+          "placeholder": "Text položky..."
+        }
+      },
+      "label": "True/false položka",
+      "prev": "True/false položka ještě nebyla stanovena..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Falešný",
+          "help": "Výběr mezi pravdou a nepravdou jako správnou odpovědí",
+          "label": "Správná odpověď",
+          "true": "Pravdivý"
+        },
+        "questionText": {
+          "help": "To znamená, že text otázky se zobrazí v jednotce obsahu.",
+          "label": "Text textové otázky",
+          "placeholder": "Text otázky..."
+        }
+      },
+      "label": "Pravdivá nebo nepravdivá otázka",
+      "prev": "Otázka pravdivého či nepravdivého nbo dosud stanovena..."
+    },
+    "TwoColumnsLayout": {
+      "label": "Dva sloupce"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Zobrazení výchozích titulků",
+          "no": "Ne",
+          "yes": "Ano"
+        },
+        "url": {
+          "help": "Pomocí textového zadání zadejte adresu URL videa (youtube, vimeo...)",
+          "label": "Adresa URL videa",
+          "placeholder": "Příklad: https://example.com/video.mp4"
+        }
+      },
+      "label": "Video",
+      "prev": "Video ještě není nastaveno..."
+    }
+  }
+}

@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Mostrar/amagar categories",
+    "viewImage": "Veure imatge"
+  },
+  "common": {
+    "alt": {
+      "help": "Aquest és el text alternatiu de descripció de la imatge en termes d'accessibilitat",
+      "label": "Text alternatiu de la imatge",
+      "placeholder": "Text alternatiu"
+    },
+    "captions": {
+      "help": "URL INDIeMedia del fitxer que conté la transcripció de diàlegs, efectes de so, pistes de música i altra informació d'àudio per quan l'espectador és sord o amb dificultats auditives, o si el vídeo / àudio està silenciat. Els subtítols també es mostren a sobre del vídeo.",
+      "label": "Subtítols (CC)",
+      "placeholder": "Exemple: https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "URL INDIeMedia del fitxer que conté descripcions de text del que passa al vídeo quan la part del vídeo no està disponible perquè l'espectador és cec i no utilitza pantalla. Les descripcions les llegeix un lector de pantalla o les converteix en una pista d'àudio independent.",
+      "label": "Descripció:__________",
+      "placeholder": "Exemple: https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Baixant la unitat, espereu",
+      "title": "Descarregar"
+    },
+    "feedback": {
+      "help": "Interpretar el feedback que rebrà l'estudiant tant si contesta correctament com incorrectament",
+      "label": "Retroalimentació",
+      "negative": "Comentaris negatius...",
+      "positive": "Comentaris positius..."
+    },
+    "generate": {
+      "description": "Generant, si us plau esperi",
+      "title": "Generar"
+    },
+    "help": {
+      "button": "Omissió",
+      "help": "Aquest text apareixerà a sobre del giny perquè l'usuari entengui com interactuar amb ell. <strong>Si es deixa en blanc, apareixerà el text per defecte.</strong>",
+      "label": "Ajudar",
+      "placeholder": "Text d'ajuda per defecte"
+    },
+    "language": {
+      "EL": "Grec",
+      "EN": "Anglès",
+      "ES": "Espanyol",
+      "FR": "Francès",
+      "LT": "Lituà"
+    },
+    "loading": {
+      "description": "Carregant, si us plau esperi",
+      "title": "Càrrega"
+    },
+    "name": {
+      "help": "Aquest serà el nom de la instància del widget per a les analítiques d'aprenentatge",
+      "label": "Nom",
+      "placeholder": "Nom de la instància del widget"
+    },
+    "navbar": {
+      "options": "Opcions d'ampliació/replegament"
+    },
+    "preview": {
+      "description": "S'està generant la vostra vista prèvia, espereu",
+      "generated": {
+        "description": "La previsualització ja està a punt. Si el vostre navegador no us redirigeix a la previsualització, feu clic a l'enllaç següent:",
+        "title": "Vista prèvia generada correctament"
+      },
+      "title": "Generació de previsualització"
+    },
+    "publish": {
+      "description": "La vostra unitat s'està generant per descarregar-la, espereu",
+      "title": "Unitat editorial"
+    },
+    "publishToNetlify": {
+      "description": "La vostra unitat s'està carregant a Netlify, espereu",
+      "title": "Unitat editorial a Netlify"
+    },
+    "save": {
+      "description": "Estalviant, si us plau esperi",
+      "title": "Estalvi"
+    },
+    "scorm": {
+      "description": "El vostre paquet SCORM s'està generant, espereu",
+      "title": "Generació del paquet SCORM"
+    },
+    "selectType": "Seleccioneu un tipus de les opcions següents",
+    "unit": {
+      "settings": "Introduïu els detalls de la unitat"
+    }
+  },
+  "dialog": {
+    "translate": "Unitat de traducció"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "L'acordió està buit. Heu d'afegir contingut mitjançant el botó d'afegir de la dreta."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "El contenidor està buit. Heu d'afegir almenys un element al contenidor."
+      },
+      "title": {
+        "invalid": "El títol del contenidor no és vàlid. Heu d'establir-ne un."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "L'URL definit per a la imatge de fons és incorrecte. Heu de proporcionar un URL independent vàlid."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "S'ha d'establir el text alternatiu de la imatge animada."
+        },
+        "altRec": {
+          "invalid": "S'ha d'establir el text alternatiu de l'àrea animada."
+        },
+        "empty": "L'animació ha de tenir almenys una àrea animada.",
+        "h": {
+          "invalid": "L'alçada ha d'estar fixada i ha de ser un número vàlid."
+        },
+        "w": {
+          "invalid": "L'amplada ha d'estar definida i ha de ser un número vàlid."
+        },
+        "x": {
+          "invalid": "La coordenada de més a l'esquerra ha d'estar definida i ha de ser un número vàlid."
+        },
+        "y": {
+          "invalid": "S'ha d'establir el número superior i ha de ser un número vàlid."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "L'animació està buida. Heu d'afegir com a mínim un element mitjançant el botó d'afegir."
+      },
+      "height": {
+        "invalid": "L'altura de l'animació ha de ser superior a 0."
+      },
+      "image": {
+        "invalid": "L'URL definit per a la imatge no és vàlid. Heu d'assegurar-vos que proporcioneu un URL indiemedia vàlid al camp de la imatge."
+      },
+      "width": {
+        "invalid": "L'amplada de l'animació ha de ser superior a 0."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "L'URL definit per a la imatge no és vàlid. Heu d'assegurar-vos que proporcioneu un URL indiemedia vàlid al camp de la imatge."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "Heu d'afegir com a mínim una definició de terme d'àudio"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "Heu de proporcionar un URL indiemedia vàlid"
+      },
+      "definition": {
+        "invalid": "Heu de proporcionar una definició."
+      },
+      "term": {
+        "invalid": "Heu de proporcionar un termini."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "No has escrit el contingut de la cita. Com a mínim, heu d'escriure el contingut."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "Heu de proporcionar com a mínim un element tipus text i botó."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "L'URL definit per a la imatge no és vàlid. Heu d'assegurar-vos que proporcioneu un URL d'IndieMedia vàlid al camp de la imatge del botó."
+      },
+      "text": {
+        "invalid": "El text està buit. Heu d'escriure o copiar un text."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "La finestra ressaltada està buida. Heu d'afegir almenys un element senzill."
+      },
+      "text": {
+        "invalid": "El text està buit. Heu d'escriure un text petit."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "Denes proporciona una imatge vàlida al camp URL."
+      },
+      "options": {
+        "noCorrect": "Has de seleccionar com a mínim una correcta",
+        "notEnougOptions": "Heu d'introduir 4 opcions"
+      },
+      "text": {
+        "invalid": "El text està buit. Heu d'introduir un text."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Totes les columnes del disseny han de contenir almenys un element arrossegant-lo de la paleta de l'esquerra."
+      },
+      "width": {
+        "invalid": "Amplada de columna no vàlida"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "Heu de proporcionar text alternatiu per a la imatge"
+      },
+      "audioblob": {
+        "invalid": "El contingut del fitxer d'àudio no és correcte. Heu de seleccionar un fitxer vàlid."
+      },
+      "captions": {
+        "invalid": "L'URL definit per als subtítols no és vàlid. Has d'assegurar-te que proporciones un URL indiemedia vàlid"
+      },
+      "captionsblob": {
+        "invalid": "El contingut del fitxer de subtítols no és correcte. Heu de seleccionar un fitxer vàlid."
+      },
+      "descriptions": {
+        "invalid": "L'URL definit per a la descripció no és vàlid. Has d'assegurar-te que proporciones un URL indiemedia vàlid"
+      },
+      "imageblob": {
+        "invalid": "El contingut de la imatge no és correcte. Heu de seleccionar una imatge vàlida."
+      },
+      "name": {
+        "invalid": "Heu de proporcionar un nom per a aquesta instància.",
+        "notUniqueName": "El nom de la instància ha de ser únic en tot el contingut."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "Heu de proporcionar com a mínim un element de Word correcte."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "L'URL definit per a la imatge no és vàlid. Heu de proporcionar un URL independent vàlid."
+      },
+      "question": {
+        "invalid": "El text de la pregunta està buit."
+      },
+      "word": {
+        "invalid": "El text de la resposta està buit."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "Heu d'afegir com a mínim un parell"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "L'URL introduït per a la imatge no és vàlid. Heu d'assegurar-vos que proporcioneu un URL indiemedia vàlid al camp imatge."
+      },
+      "text": {
+        "invalid": "El text està buit. Heu d'escriure un text breu."
+      },
+      "type": {
+        "invalid": "El tipus definit per a l'element no és vàlid. Heu d'assegurar-vos que l'opció \"Text\" o \"Imatge\" estigui seleccionada."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "L'element està buit. Heu d'afegir com a mínim un element de definició de terme mitjançant el botó d'afegir de la dreta."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "El camp de definició està buit. Heu d'escriure una definició."
+      },
+      "term": {
+        "invalid": "El terme camp està buit. Heu d'escriure un terme."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "Heu de seleccionar una resposta correcta",
+        "notEnoughAnswers": "Has d'escriure almenys 2 possibles respostes"
+      },
+      "question": {
+        "empty": "El text de la pregunta no pot estar buit",
+        "onlyOneBlank": "Heu d'incloure només un espai en blanc a la pregunta"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "La resposta no ha d'estar buida"
+      },
+      "attempts": {
+        "invalid": "Els intents han de ser un nombre entre l'1 i el 9"
+      },
+      "question": {
+        "invalid": "La pregunta no ha d'estar buida"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "L'URL definit per a la imatge no és vàlid. Heu d'assegurar-vos que proporcioneu un URL indiemedia vàlid al camp de la imatge."
+      },
+      "text": {
+        "invalid": "El text està buit. Has d'escriure un text"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "El nombre de columnes ha de ser 1,2 o 3"
+      },
+      "data": {
+        "empty": "Heu d'aportar almenys un element d'imatge i so."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "Heu de proporcionar un URL indiemedia vàlid"
+      },
+      "image": {
+        "invalid": "L'URL introduït per a la imatge no és vàlid. Heu d'assegurar-vos que proporcioneu un URL indiemedia vàlid al camp imatge."
+      },
+      "text": {
+        "invalid": "El text està buit. Heu d'escriure un text breu."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "L'URL definit per a la imatge no és vàlid. Heu d'assegurar-vos que proporcioneu un URL indiemedia vàlid al camp de la imatge."
+      },
+      "text": {
+        "invalid": "El text està buit. Heu d'escriure o copiar un text."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "L'URL configurat per al vídeo no és vàlid. Assegureu-vos de proporcionar-ne un de vídeos interactius independents."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "Heu de proporcionar una llegenda per a la fórmula."
+      },
+      "formula": {
+        "invalid": "Heu de proporcionar una fórmula en format LaTex."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "Heu de proporcionar com a mínim un element de paraula que falta."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "Heu d'escriure almenys una resposta correcta",
+        "invalid": "El text de la resposta està buit"
+      },
+      "sentence": {
+        "empty": "La frase no ha d'estar buida",
+        "onlyOneBlank": "Heu d'incloure només un marcador en blanc a la frase"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "El modal està buit. Heu d'afegir almenys un element senzill."
+      },
+      "text": {
+        "invalid": "El text està buit. Heu d'escriure un text petit."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "L'URL definit per a la imatge de fons és incorrecte. Heu de proporcionar un URL independent vàlid."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "S'ha d'establir el text alternatiu per al retall."
+        },
+        "altRec": {
+          "invalid": "S'ha d'establir el text alternatiu de la posició."
+        },
+        "empty": "El trencaclosques ha de tenir almenys una peça.",
+        "h": {
+          "invalid": "L'alçada ha d'estar fixada i ha de ser un número vàlid."
+        },
+        "w": {
+          "invalid": "L'amplada ha d'estar definida i ha de ser un número vàlid."
+        },
+        "x": {
+          "invalid": "La coordenada de més a l'esquerra ha d'estar definida i ha de ser un número vàlid."
+        },
+        "y": {
+          "invalid": "S'ha d'establir el número superior i ha de ser un número vàlid."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "L'element està buit. Heu d'afegir com a mínim una entrada utilitzant el botó d'afegir de la dreta."
+      },
+      "title": {
+        "invalid": "El camp títol està buit. Heu d'escriure un títol."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "Hi ha almenys un enllaç duplicat. Heu de proporcionar un enllaç únic per a cada publicació.",
+        "empty": "L'element està buit. Heu d'afegir com a mínim una entrada utilitzant el botó d'afegir de la dreta.",
+        "multipleCurrent": "Hi ha almenys dues entrades actuals. Heu de proporcionar només una entrada actual."
+      },
+      "moreThanOne": "Heu de proporcionar com a màxim un element de taula de contingut."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "El camp títol està buit. Heu d'escriure un títol."
+      },
+      "url": {
+        "invalid": "El camp url s'ha d'establir amb el format següent: https://[source]/[author]/[unit]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "L'esquema està buit. Heu d'afegir almenys un element mitjançant el botó d'afegir de la dreta."
+      },
+      "height": {
+        "invalid": "L'altura de l'animació ha de ser superior a 0."
+      },
+      "image": {
+        "invalid": "L'URL definit per a la imatge completa no és vàlid. Heu d'assegurar-vos que proporcioneu un URL indiemedia vàlid."
+      },
+      "width": {
+        "invalid": "L'amplada de l'animació ha de ser superior a 0."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "L'URL definit per a la imatge no és vàlid. Heu d'assegurar-vos que proporcioneu un URL indiemedia vàlid al camp de la imatge."
+      },
+      "text": {
+        "invalid": "El text està buit. Heu d'escriure un text petit."
+      }
+    },
+    "section": {
+      "emptyData": "Una secció no pot estar buida. Heu d'afegir almenys un element.",
+      "invalidBookmark": "La secció ha de tenir un marcador vàlid.",
+      "invalidImage": "La secció ha de tenir una imatge de fons.",
+      "invalidName": "La secció ha de tenir un nom.",
+      "typeImageNotSelected": "Si el tipus seleccionat és Imatge de fons, heu de definir la imatge."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "Heu de proporcionar almenys un element d'ordenació de frases."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "Heu d'escriure almenys una resposta correcta",
+        "impossible": "La frase no es pot construir a partir de les paraules establertes",
+        "invalid": "El text de la resposta està buit"
+      },
+      "words": {
+        "empty": "Heu d'escriure com a mínim una paraula vàlida",
+        "invalid": "El text del Word està buit"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "L'URL definit per a la imatge no és vàlid. Heu d'assegurar-vos que proporcioneu un URL indiemedia vàlid al camp de la imatge.",
+        "sizeNotSet": "L'amplada i l'alçada de la imatge s'han d'establir quan la seva aparença és \"Personalitzat\""
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "Heu de seleccionar una resposta correcta",
+        "notEnoughAnswers": "Has d'escriure almenys 2 possibles respostes"
+      },
+      "question": {
+        "empty": "El text de la pregunta no pot estar buit"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "La pestanya està buida. Heu d'afegir com a mínim un element a la pestanya."
+      },
+      "name": {
+        "invalid": "El nom de la pestanya no és vàlid. Heu d'establir-ne un."
+      }
+    },
+    "Table": {
+      "empty": "La taula no té cap conjunt de columnes"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "El menú de pestanyes no conté pestanyes. Heu d'afegir-ne almenys un."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Hi ha columnes duplicades. Revisa els teus articles.",
+        "duplicatedTerms": "Hi ha termes duplicats entre les columnes. Revisa les bases"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "La columna no ha d'estar buida"
+      },
+      "terms": {
+        "empty": "Els terminis no poden estar buits.",
+        "invalid": "Els termes no s'ajusten al format requerit. Si us plau, separeu els termes amb punt i coma (;)."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "La prova està buida. Heu d'afegir almenys una pregunta."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "El text està buit. Heu d'escriure un text breu."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "Heu d'afegir almenys un element vertader o fals"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "El text de la pregunta no pot estar buit"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "El text de la pregunta no pot estar buit"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "L'URL del vídeo no és vàlid. Heu d'assegurar-vos de proporcionar un URL vàlid des d'IndieMedia o Youtube.",
+        "localInvalid": "L'URL del vídeo no és vàlid. Has d'assegurar-te que proporciones un URL vàlid de YouTube."
+      }
+    }
+  },
+  "footer": {
+    "content": "Podeu afegir seccions noves mitjançant la barra d'eines superior"
+  },
+  "general": {
+    "areYouSure": "Estàs segur?",
+    "cancel": "Cancel·lar",
+    "close": "Tancar",
+    "confirm": "Confirmar",
+    "delete": "Eliminar",
+    "discard": "Descartar",
+    "false": "Fals",
+    "load": "Càrrega",
+    "modelDetected": "Vols carregar una unitat anterior?",
+    "true": "Veritable"
+  },
+  "header": {
+    "addSection": "Afegeix una secció",
+    "clear": "Esborrar contingut",
+    "download": "Unitat de descàrrega",
+    "importSection": "Secció d'importació",
+    "install": "Instal·lar aplicació",
+    "preview": "Previsualitzar contingut",
+    "publish": "Publicar contingut",
+    "publishToNetlify": "Publicar contingut a Netlify",
+    "redo": "Tornar a fer l'acció",
+    "save": "Desar contingut",
+    "scorm": "Exportació en format SCORM",
+    "translate": "Unitat de traducció",
+    "undo": "Desfés l'acció",
+    "upload": "Unitat de càrrega",
+    "validate": "Unitat Validar"
+  },
+  "items": {
+    "add": "Afegir contingut",
+    "delete": "Suprimeix l'element",
+    "duplicate": "Duplicat d'element",
+    "edit": "Editar contingut",
+    "export": "Exporta l'element"
+  },
+  "messages": {
+    "changesSaved": "Els canvis s'han desat correctament.",
+    "confirmClearContent": "Suprimireu el contingut completament. Assegureu-vos que és el que realment voleu fer.",
+    "confirmLoadModel": "S'ha trobat una unitat anterior. Tria si vols carregar-lo o descartar-lo.",
+    "contentCleared": "El contingut s'ha suprimit correctament.",
+    "contentErrors": "Ups! Hi ha errors en el contingut. Reviseu els missatges d'error i seguiu les instruccions per solucionar-los.",
+    "couldNotExportElement": "L'article no s'ha pogut exportar",
+    "couldNotExportSection": "La secció no s'ha pogut exportar",
+    "deletedSection": "Secció suprimida correctament",
+    "emptyContent": "No has afegit contingut.",
+    "errorMessage": "Error",
+    "exportedElement": "Article exportat correctament",
+    "exportedSection": "Secció exportada correctament",
+    "importedElement": "Article importat correctament",
+    "importedSection": "Secció importada correctament",
+    "loadError": "La unitat no s'ha pogut carregar",
+    "noElement": "No hi ha ítems per importar",
+    "noErrors": "No està malament! No hi ha errors. Podeu procedir a desar el contingut.",
+    "noRedo": "Res a refer",
+    "noSection": "No hi ha seccions per importar",
+    "noUndo": "Res a desfer",
+    "previewError": "La unitat no s'ha pogut previsualitzar",
+    "publishError": "La unitat no s'ha pogut publicar",
+    "savedUnit": "Unitat desada correctament",
+    "saveError": "La unitat no s'ha pogut salvar",
+    "successMessage": "D'acord",
+    "translateError": "La unitat no s'ha pogut traduir",
+    "warningMessage": "Atenció"
+  },
+  "netlify": {
+    "button": {
+      "text": "Connectar"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Crea un lloc",
+        "help": "Seleccioneu un dels llocs disponibles al vostre compte de Netlify",
+        "label": "Seleccioneu un lloc disponible del vostre Netlify per carregar la unitat"
+      },
+      "title": "Empleneu els camps per connectar-vos a Netlify ",
+      "token": {
+        "help": "Introduïu el vostre testimoni d'accés personal de Netlify. El podeu trobar a la secció Aplicacions de la configuració del compte de Netlify",
+        "label": "Inseriu el testimoni d'accés personal:",
+        "placeholder": "Inseriu aquí el vostre testimoni d'accés personal de Netlify"
+      }
+    },
+    "error": {
+      "message": "Testimoni no vàlid"
+    },
+    "success": {
+      "message": "La unitat s'ha pujat a Netlify amb èxit. Accediu-hi clicant al següent enllaç: ",
+      "message_2": "Tingues en compte que, si la unitat té molt contingut, la publicació pot tardar uns minuts a publicar-se.",
+      "title": "Unitat pujada a Netlify"
+    }
+  },
+  "palette": {
+    "containers": "Contenidors",
+    "exerciseElement": "Exercicis",
+    "interactiveElements": "Elements interactius",
+    "items": "Elements",
+    "layouts": "Disposicions",
+    "question": "Preguntes",
+    "simpleElements": "Elements"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Bloc de codi",
+        "screenReader": "Text d'ajuda per a lectors de pantalla"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Suprimeix la secció",
+    "duplicate": "Secció duplicada",
+    "edit": "Editar la informació",
+    "expandContract": "Expandir o reduir",
+    "export": "Secció d'exportació",
+    "form": {
+      "bookmark": {
+        "help": "Aquest marcador apareixerà a la part superior de la unitat com a marcador de secció. Ha de tenir un màxim de 40 caràcters.",
+        "label": "Punt de llibre de la secció",
+        "placeholder": "Escriu un marcador..."
+      },
+      "image": {
+        "help": "",
+        "label": "URL de la imatge de fons",
+        "placeholder": "Introduïu l'URL de la imatge..."
+      },
+      "name": {
+        "help": "Aquest és el nom que tindrà la secció en el contingut.",
+        "label": "Nom de la secció",
+        "placeholder": "Escriu un nom..."
+      },
+      "preview": "Previsualitza la imatge de fons",
+      "type": {
+        "bc": "Color de fons (per defecte)",
+        "bi": "Imatge de fons",
+        "help": "Si el tipus està definit com a \"color de fons\", el color predeterminat apareixerà darrere del títol, mentre que a \"Imatge de fons\" heu d'establir una imatge de fons per a l'encapçalament de la secció.",
+        "label": "Tipus de fons"
+      }
+    },
+    "import": "Importar element",
+    "label": "Secció",
+    "moveDown": "Desplaceu la secció cap avall",
+    "moveUp": "Desplaceu la secció cap amunt"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Activar/desactivar les analítiques a la unitat",
+        "label": "Analítica",
+        "no": "No",
+        "yes": "Sí"
+      },
+      "author": {
+        "help": "L'autor de la unitat hauria d'escriure aquí.",
+        "label": "Autor de la unitat",
+        "placeholder": "L'autor de la unitat escriu:"
+      },
+      "background": {
+        "help": "La imatge ha de tenir aproximadament 1900 x 550 píxels.",
+        "label": "Imatge temàtica"
+      },
+      "color": {
+        "help": "Format hexadecimal #FFFFFF obligatori",
+        "label": "Color del tema",
+        "placeholder": "Introduïu el color del tema aquí"
+      },
+      "email": {
+        "help": "Aquesta és l'adreça de correu electrònic de l'autor.",
+        "label": "Correu electrònic",
+        "placeholder": "Introduïu l'adreça electrònica de l'autor"
+      },
+      "institution": {
+        "help": "Nom de la institució",
+        "label": "Institució",
+        "placeholder": "Introduïu el nom de la institució"
+      },
+      "language": {
+        "help": "L'idioma de la unitat.",
+        "label": "Llengua"
+      },
+      "license": {
+        "BY": "Reconeixement Internacional 4.0 (CC BY 4.0)",
+        "BYNC": "Reconeixement-NoComercial-SenseObraDerivada 4.0 Internacional (CC BY-NC-ND 4.0)",
+        "BYNCND": "Reconeixement-NoComercial-SenseObraDerivada 4.0 Internacional (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Reconeixement-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)",
+        "BYND": "Reconeixement-SenseObraDerivada 4.0 Internacional (CC BY-ND 4.0)",
+        "BYSA": "Reconeixement-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)",
+        "help": "Llicència d'unitat",
+        "label": "Llicència",
+        "PRIVATE": "Tots els drets reservats"
+      },
+      "resource": {
+        "help": "Introduïu l'identificador del recurs",
+        "label": "Identificador del recurs:",
+        "placeholder": "Introduïu l'identificador del recurs"
+      },
+      "theme": {
+        "help": "Trieu el tema de la unitat.",
+        "label": "Tema"
+      },
+      "title": {
+        "help": "Aquest és el títol de la unitat.",
+        "label": "Títol de la unitat",
+        "placeholder": "Introdueix un títol"
+      },
+      "type": {
+        "help": "Aquest és el tipus d'unitat.",
+        "interoperability": "Interoperabilitat",
+        "label": "Tipus d'unitat",
+        "open": "Obrir"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "Aquest és l'idioma d'origen de la unitat",
+        "label": "Llengua d'origen"
+      },
+      "target": {
+        "help": "L'idioma de destinació al qual es traduirà la unitat",
+        "label": "Llengua d'arribada"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Menú acordió"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "Defineix el títol del grup de contingut. Apareixerà en el títol del menú desplegable.",
+          "label": "Títol del contingut",
+          "placeholder": "Exemple: Competències professionals"
+        }
+      },
+      "label": "Grup de continguts"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "Aquesta serà la imatge de fons de l'animació. Podeu triar una de les imatges que heu penjat.",
+          "label": "URL de la imatge",
+          "placeholder": "Inseriu aquí l'URL de la imatge...",
+          "preview": "Vista prèvia de l'animació"
+        },
+        "pieces": {
+          "altImg": "Text alternatiu per a la imatge animada",
+          "altRec": "Text alternatiu per a regió animada",
+          "delete": "Esborrar",
+          "h": "Alt",
+          "new": "Afegeix una nova regió animada...",
+          "w": "Ample",
+          "x": "Esquerra",
+          "y": "Superior"
+        }
+      },
+      "label": "Animació",
+      "prev": "L'animació encara no s'ha inicialitzat..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "Aquesta serà l'alçada del contenidor d'animació de píxels",
+          "label": "Alçada de l'animació",
+          "placeholder": "Exemple: 200"
+        },
+        "image": {
+          "help": "Aquesta serà la imatge que apareix a l'element. Podeu triar una de les imatges carregades o penjar-ne una de nova.",
+          "label": "URL de la imatge",
+          "placeholder": "Cliqueu aquí per seleccionar la imatge"
+        },
+        "prev": "Vista prèvia de la imatge",
+        "width": {
+          "help": "Aquesta serà l'amplada del contenidor d'animació en píxels",
+          "label": "Amplada de l'animació",
+          "placeholder": "Exemple: 400"
+        }
+      },
+      "label": "Animació"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "Aquesta serà la imatge de l'element d'animació.",
+          "label": "URL de la imatge",
+          "placeholder": "Cliqueu aquí per seleccionar la imatge"
+        },
+        "prev": "Preestrena"
+      },
+      "label": "Element de l'animació.",
+      "prev": "L'element d'animació encara no està configurat..."
+    },
+    "AudioTermContainer": {
+      "label": "Condicions d'àudio"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "Heu d'introduir l'URL de l'àudio que voleu reproduir a la unitat de contingut.",
+          "label": "URL del fitxer d'àudio",
+          "placeholder": "Si us plau, introdueix un URL indiemedia vàlid..."
+        },
+        "definition": {
+          "help": "Aquesta definició hauria de ser la transcripció literal de l'àudio.",
+          "label": "Definició",
+          "placeholder": "Escriu la definició..."
+        },
+        "term": {
+          "help": "Aquest serà el terme situat a l'esquerra del giny",
+          "label": "Terme",
+          "placeholder": "Escriu aquí el teu trimestre..."
+        }
+      },
+      "label": "Període d'àudio",
+      "prev": "Terme d'àudio encara no establert..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "La cita pot aparèixer alineada a la dreta o alineada a l'esquerra",
+          "label": "Alineació de cites",
+          "values": {
+            "left": "A l'esquerra",
+            "right": "A la dreta"
+          }
+        },
+        "caption": {
+          "help": "El subtítol de la cita apareix a sota de la cita. S'utilitza principalment per indicar l'autor o autors de la citació",
+          "label": "Subtítol de la cita",
+          "placeholder": "Exemple: Carl Sagan"
+        },
+        "quote": {
+          "help": "Aquest text és la cita literal",
+          "label": "Text de la cita",
+          "placeholder": "Exemple: \"L'absència de proves no és prova d'absència\"."
+        },
+        "source": {
+          "help": "Font original de la cita (Any, llibre, revista... etc)",
+          "label": "Procedència de la cita",
+          "placeholder": "Exemple:1990"
+        }
+      },
+      "label": "Citar",
+      "prev": "Cita encara no establerta..."
+    },
+    "ButtonTextContainer": {
+      "label": "Botons amb text"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "Aquesta serà la imatge que apareixerà al botó. Podeu triar una de les imatges carregades o penjar-ne una de nova.",
+          "label": "URL de la imatge del botó",
+          "placeholder": "Inseriu aquí la vostra URL"
+        },
+        "preview": "Vista prèvia de la imatge del botó",
+        "text": {
+          "help": "En aquest editor de text podeu escriure el contingut del text associat al botó",
+          "label": "SMS",
+          "placeholder": "Escriu el teu text aquí..."
+        }
+      },
+      "label": "Element botó amb text",
+      "prev": "L'element botó amb text encara no s'ha inicialitzat..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Color",
+        "helps": {
+          "animation": "Determina una de les animacions predefinides per a la caixa amb els elements incrustats (simples o plegables).",
+          "colorTheme": "Es #FFFFFF requerir format hexadecimal. <strong> Si no s'omple, el color del tema de la unitat prendrà el valor per defecte.</strong>",
+          "styles": "Determina un dels estils predefinits per a la caixa amb els elements incrustats.",
+          "textTitle": "Aquest serà el text que apareixerà com a títol. <strong>Si no s'omple, prendrà un valor per defecte.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Introdueix el color aquí",
+          "textTitle": "Introdueix el títol aquí"
+        },
+        "styles": {
+          "animation": "Estil d'animació",
+          "attention": "Atenció",
+          "collapsible": "Plegable",
+          "danger": "Perill",
+          "label": "Estil",
+          "more": "Aprèn més",
+          "note": "Nota",
+          "simple": "Senzill"
+        },
+        "textTitle": "Títol"
+      },
+      "label": "Excepcional"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "La imatge apareixerà a la part superior del widget, a sobre de les opcions.",
+          "label": "URL de la imatge",
+          "placeholder": "Introduïu l'URL de la imatge..."
+        },
+        "options": {
+          "help": "Aquestes 4 opcions apareixeran a sota de la imatge. Només un pot ser correcte.",
+          "label": "Opcions",
+          "placeholder": "Introdueix una opció"
+        },
+        "preview": "Previsualització d'imatges",
+        "text": {
+          "help": "Aquest text apareixerà a sobre de la imatge com a text o pregunta.",
+          "label": "SMS",
+          "placeholder": "Escriu el text aquí..."
+        }
+      },
+      "label": "Tria una opció",
+      "prev": "Triar una opció no establerta ..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "Columnes",
+      "form": {
+        "width": {
+          "1": "Amplada de la primera columna",
+          "help": "L'altra columna ocuparà l'amplada restant"
+        }
+      },
+      "label": "Disposició"
+    },
+    "CorrectWord": {
+      "label": "Paraula correcta"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "Imatge descriptiva de la pregunta",
+          "label": "URL de la imatge",
+          "placeholder": "Inseriu aquí l'URL de la vostra imatge..."
+        },
+        "preview": "Previsualització d'imatges",
+        "question": {
+          "help": "Aquesta és la pregunta que se li mostrarà a l'usuari.",
+          "label": "Text de la pregunta",
+          "placeholder": "Text de la pregunta"
+        },
+        "word": {
+          "help": "Aquesta paraula serà la resposta a la pregunta",
+          "label": "Resposta",
+          "placeholder": "Escriu una paraula..."
+        }
+      },
+      "label": "Element de paraula correcta",
+      "prev": "Encara no s'ha establert la paraula correcta..."
+    },
+    "CouplesContainer": {
+      "label": "Parelles",
+      "prev": "Parelles encara no establertes..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "Aquesta imatge s'associarà al text introduït com a parella en aquest formulari.",
+          "label": "URL de la imatge",
+          "placeholder": "Introduïu l'URL de la imatge aquí..."
+        },
+        "legend": {
+          "first": "Primer element",
+          "second": "Segon element"
+        },
+        "preview": "Previsualització d'imatges",
+        "text": {
+          "help": "Aquest text s'associarà a la imatge que s'introdueix com a parella en aquest formulari.",
+          "label": "SMS",
+          "placeholder": "Escriu un text..."
+        },
+        "type": {
+          "image": "Imatge",
+          "label": "Xicot",
+          "text": "SMS"
+        }
+      },
+      "label": "Parella",
+      "prev": "Parella encara no establerta..."
+    },
+    "DragdropContainer": {
+      "label": "Arrossegar i deixar anar"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "La definició apareix a la dreta de l'element interactiu i l'estudiant ha d'arrossegar el terme a la definició",
+          "label": "Definició",
+          "placeholder": "Exemple: Tots els éssers humans tenen dret a expressar-se sense ser assetjats pel que pensen"
+        },
+        "term": {
+          "help": "El terme apareix a l'esquerra de l'element interactiu i serà el que l'alumne haurà d'arrossegar i deixar anar en la definició.",
+          "label": "Terme",
+          "placeholder": "Exemple: llibertat d'expressió"
+        }
+      },
+      "label": "Definició de termes",
+      "prev": "Article no establert..."
+    },
+    "FourColumnsLayout": {
+      "label": "Quatre columnes"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Has d'escriure almenys 2 respostes i marcar quina d'elles és la correcta.",
+          "label": "Possibles respostes"
+        },
+        "questionPreview": {
+          "help": "Així serà la pregunta a la unitat de contingut.",
+          "label": "Previsualitzeu el text de la pregunta.",
+          "placeholder": "Text de la pregunta amb ranura ___ en blanc."
+        },
+        "questionText": {
+          "help": "Heu d'escriure el text de la pregunta amb l'espai en blanc que vulgueu amb la paraula clau especial [en blanc].",
+          "label": "Text de la pregunta",
+          "placeholder": "Text de la pregunta amb element en blanc"
+        }
+      },
+      "label": "Ompliu la pregunta en blanc",
+      "prev": "Qüestió d'omplir el buit encara no establert..."
+    },
+    "GenericWidget": {
+      "label": "Giny"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "La resposta a la pregunta",
+          "label": "Resposta",
+          "placeholder": "Escriu aquí la teva resposta"
+        },
+        "attempts": {
+          "help": "Nombre d'intents d'endevinar la resposta. Ha de ser un número entre l'1 i el 9.",
+          "label": "Intents"
+        },
+        "question": {
+          "help": "La pregunta a respondre",
+          "label": "Pregunta",
+          "placeholder": "Escriu aquí la teva pregunta"
+        }
+      },
+      "label": "Endevina la paraula",
+      "prev": "Suposo que la paraula encara no s'ha inicialitzat..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Si establiu un text, aquest serà el peu de foto de la imatge",
+          "label": "Peu de foto de la imatge",
+          "placeholder": "Introduïu un peu de foto."
+        },
+        "image": {
+          "help": "Aquesta és la imatge que apareixerà a l'element.",
+          "label": "URL de la imatge",
+          "placeholder": "Cliqueu aquí per seleccionar la imatge"
+        },
+        "preview": "Preestrena"
+      },
+      "label": "Imatge amb text a dalt",
+      "prev": "Imatge amb text a dalt encara no establert..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Imatge i so"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "El fitxer d'àudio es reproduirà quan es faci clic a la imatge.",
+          "label": "URL del fitxer d'àudio",
+          "placeholder": "Si us plau, introdueix un URL indiemedia vàlid..."
+        },
+        "image": {
+          "help": "La imatge apareixerà primer",
+          "label": "URL de la imatge",
+          "placeholder": "Introduïu l'URL de la imatge..."
+        },
+        "preview": "Previsualització d'imatges",
+        "text": {
+          "help": "El text apareixerà a sobre de la imatge quan hi passeu el cursor per sobre.",
+          "label": "Text de la imatge",
+          "placeholder": "Escriu un text..."
+        }
+      },
+      "label": "Imatge i element sonor",
+      "prev": "Imatge i element sonor encara no establert ..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "Aquesta serà la imatge que apareix a l'element. Podeu triar una de les imatges carregades o penjar-ne una de nova.",
+          "label": "URL de la imatge",
+          "placeholder": "Cliqueu aquí per seleccionar la imatge"
+        },
+        "layout": {
+          "help": "L'orientació d'un bloc d'imatge i text estableix on apareix cadascun dels elements del bloc.",
+          "label": "Orientació",
+          "values": {
+            "0": "Text a la dreta, imatge a l'esquerra",
+            "1": "Text a l'esquerra, imatge a la dreta"
+          }
+        },
+        "preview": "Previsualització d'imatges",
+        "text": {
+          "help": "Heu d'escriure un text.",
+          "label": "En aquest editor de text podeu escriure el contingut del bloc.",
+          "placeholder": "Escriu un text..."
+        }
+      },
+      "label": "Imatge i text",
+      "prev": "Imatge i text encara no establerts..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Utilitzeu l'entrada de text per introduir l'URL del vídeo interactiu creat amb l'eina de vídeo interactiu.",
+          "label": "URL del vídeo",
+          "placeholder": "Exemple: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Vídeo interactiu",
+      "prev": "Vídeo interactiu encara no establert"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "Aquesta llegenda apareixerà sota la fórmula i com un bloc de text",
+          "label": "Llegenda de fórmules",
+          "placeholder": "Exemple: Fórmula quadràtica"
+        },
+        "formula": {
+          "help": "Utilitzeu l'àrea de text per escriure la fórmula. Sota aquesta àrea apareixerà una vista prèvia de la fórmula si és correcta o el text en vermell si la fórmula no és correcta",
+          "label": "Fórmula en format LaTex",
+          "placeholder": "Exemple: \\text{La fórmula quadràtica és }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "Fórmula LaTeX",
+      "prev": "Fórmula encara no establerta..."
+    },
+    "MissingWords": {
+      "label": "Falten paraules"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Esborrar",
+          "new": "Afegeix una nova resposta...",
+          "text": "Resposta"
+        },
+        "sentence": {
+          "help": "Heu d'escriure el text de la frase, inclòs l'espai en blanc, utilitzant el marcador especial [en blanc].",
+          "label": "Text de la frase",
+          "placeholder": "Text de la frase amb retolador [en blanc]"
+        },
+        "sentencePreview": {
+          "help": "Així és com miraríeu la frase de la unitat de contingut.",
+          "label": "Previsualització de frases",
+          "placeholder": "Text de la frase amb el retolador ___ "
+        }
+      },
+      "label": "Element paraules que falten",
+      "prev": "Encara no s'ha establert l'element paraula que falta..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "Aquest text apareixerà com a text del botó, que s'ha d'activar per obrir la finestra modal.",
+          "label": "Text del botó",
+          "placeholder": "Escriu el text..."
+        }
+      },
+      "label": "Finestra modal"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "Aquesta serà la imatge de fons del trencaclosques. Podeu triar una de les imatges que heu penjat.",
+          "label": "URL de la imatge",
+          "placeholder": "Inseriu aquí l'URL de la imatge...",
+          "preview": "Vista prèvia del trencaclosques"
+        },
+        "pieces": {
+          "altImg": "Text alternatiu per retallar",
+          "altRec": "Text alternatiu per a la posició",
+          "delete": "Esborrar",
+          "h": "Alt",
+          "new": "Afegeix una peça nova...",
+          "w": "Ample",
+          "x": "Esquerra",
+          "y": "Superior"
+        }
+      },
+      "label": "Trencaclosques",
+      "prev": "El trencaclosques encara no s'ha inicialitzat..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Títol del grup",
+          "label": "Títol",
+          "placeholder": "Exemple: Mòdul de Dret"
+        }
+      },
+      "label": "Grup",
+      "prev": "Grup encara no establert ..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Taula de continguts"
+    },
+    "RelatedUnitsItem": {
+      "current": "Unitat actual",
+      "form": {
+        "current": {
+          "title": "Aquesta és la unitat actual"
+        },
+        "title": {
+          "help": "Títol de l'entrada",
+          "label": "Títol",
+          "placeholder": "Exemple: Drets humans"
+        },
+        "url": {
+          "help": "URL de destinació",
+          "label": "URL",
+          "placeholder": "Exemple: https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Entrada",
+      "prev": "Entrada encara no establerta..."
+    },
+    "SchemaContainer": {
+      "label": "Esquema"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "Aquesta serà la imatge parcial de l'esquema.",
+          "label": "URL de la imatge",
+          "placeholder": "Cliqueu aquí per seleccionar la imatge"
+        },
+        "prev": "Previsualització d'imatges"
+      },
+      "label": "Esquema de l'element",
+      "prev": "Article d'esuqema encara no establert..."
+    },
+    "SentenceOrderContainer": {
+      "label": "Ordenació de frases"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Esborrar",
+          "help": "Respostes que es construiran a partir de les paraules introduïdes",
+          "legend": "Llista de respostes",
+          "new": "Afegeix una nova resposta...",
+          "text": "Resposta"
+        },
+        "words": {
+          "delete": "Esborrar",
+          "help": "Les respostes s'han de poder construir a partir d'aquestes paraules",
+          "legend": "Llista de paraules",
+          "new": "Afegeix una paraula nova...",
+          "text": "Paraula"
+        }
+      },
+      "label": "Element d'ordenació de frases",
+      "prev": "L'element d'ordenació de frases encara no s'ha inicialitzat..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "Estableix l'alineació de la imatge quan l'aparença no és \"Ajusta les dimensions originals a l'espai disponible\".",
+          "label": "Alineació de la imatge",
+          "values": {
+            "center": "Centrat",
+            "left": "Esquerra",
+            "right": "Dreta"
+          }
+        },
+        "aspect": {
+          "help": "La imatge es pot mostrar amb les dimensions originals (quan sigui possible) o es pot ajustar a l'amplada de la pantalla (escala la imatge). Si les dimensions són més altes i amples del que la pantalla pot mostrar, sempre s'ajustarà automàticament a la pantalla",
+          "label": "Aparença de la imatge",
+          "values": {
+            "custom": "Costum",
+            "fit": "Ajusta les dimensions originals a l'espai disponible",
+            "original": "Dimensions originals"
+          }
+        },
+        "image": {
+          "help": "Aquesta serà la imatge que apareixerà a l'element.",
+          "label": "URL de la imatge",
+          "placeholder": "Introduïu aquí l'URL de la imatge"
+        },
+        "preview": "Preestrena",
+        "size": {
+          "height": "Alt",
+          "heightPlaceholder": "Alçada de la imatge...",
+          "keepRatio": "Mantenir la relació d'imatges",
+          "width": "Ample",
+          "widthPlaceholder": "Amplada de la imatge..."
+        }
+      },
+      "label": "Imatge",
+      "prev": "Imatge encara no establerta..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Has d'escriure almenys 2 respostes i marcar quina d'elles és la correcta.",
+          "label": "Possibles respostes"
+        },
+        "questionText": {
+          "help": "És a dir, el text de la pregunta es mostrarà a la unitat de contingut.",
+          "label": "Text de la pregunta",
+          "placeholder": "Text de la pregunta senzilla..."
+        }
+      },
+      "label": "Pregunta senzilla",
+      "prev": "Pregunta senzilla encara no establerta..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "Aquest serà el nom que apareixerà en el títol de la pestanya.",
+          "label": "Nom de la pestanya",
+          "placeholder": "Exemple: Competències professionals"
+        }
+      },
+      "label": "Pestanya"
+    },
+    "Table": {
+      "empty": "La taula encara no s'ha inicialitzat",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "El nom de la columna està buit o ja està definit",
+            "label": "Nom de la columna",
+            "placeholder": "Escriviu el nom de la columna aquí..."
+          },
+          "columnPosition": {
+            "error": "Posició de columna fora de rang",
+            "label": "Posició de la columna"
+          },
+          "label": "Afegeix una columna nova",
+          "submit": "Afegeix una columna"
+        },
+        "addRow": "Afegeix una fila nova",
+        "deleteColumn": "Esborra la columna",
+        "deleteRow": "Fila clara"
+      },
+      "help": {
+        "edit": "Seleccioneu una cel·la per editar-la. Per afegir línies noves mentre editeu, premeu la tecla majúscules mentre premeu Retorn."
+      },
+      "label": "Junta",
+      "prev": "Taula encara no establerta..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Pestanyes",
+      "label": "Menú de pestanyes"
+    },
+    "TermClassification": {
+      "label": "Classificació",
+      "prev": "Classificació"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "Aquesta és la columna amb la qual es relacionaran els termes.",
+          "label": "Columna",
+          "placeholder": "Columna"
+        },
+        "terms": {
+          "help": "En aquest post heu d'escriure les paraules que es relacionen amb el terme separades per un punt i coma cadascuna. Per exemple: aquests; Són; algun; Paraules",
+          "label": "Paraules",
+          "placeholder": "Escriure paraules separades per punt i coma"
+        }
+      },
+      "label": "Element de classificació",
+      "prev": "Article encara no establert..."
+    },
+    "Test": {
+      "label": "Tipus de prova",
+      "questionSelect": "Seleccioneu el tipus de pregunta que vulgueu afegir al qüestionari"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Heu d'escriure un text.",
+        "label": "En aquest editor de text podeu escriure el contingut del bloc.",
+        "placeholder": "Escriu un text...",
+        "styles": {
+          "attention": "Atenció",
+          "default": "Sense estil",
+          "help": "Determina la disposició del quadre que envolta el text",
+          "label": "Estil de bloc de text",
+          "more": "Aprèn més",
+          "note": "Nota"
+        }
+      },
+      "label": "Bloc de text",
+      "prev": "Text encara no establert..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Tres columnes"
+    },
+    "TrueFalseContainer": {
+      "label": "Vertader/fals",
+      "prev": "Vertader/fals encara no establert..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Fals",
+          "help": "Selecciona entre vertader o fals com a resposta correcta",
+          "label": "Resposta correcta",
+          "true": "Veritable"
+        },
+        "questionText": {
+          "help": "Aquest és el text de l'ítem.",
+          "label": "Text de l'element",
+          "placeholder": "Text de l'element..."
+        }
+      },
+      "label": "Element vertader/fals",
+      "prev": "Article vertader/fals encara no establert..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Fals",
+          "help": "Selecciona entre vertader o fals com a resposta correcta",
+          "label": "Resposta correcta",
+          "true": "Veritable"
+        },
+        "questionText": {
+          "help": "És a dir, el text de la pregunta es mostrarà a la unitat de contingut.",
+          "label": "Text de la pregunta de text",
+          "placeholder": "Text de la pregunta..."
+        }
+      },
+      "label": "Pregunta vertadera o falsa",
+      "prev": "Qüestió de nbo vertader o fals establerta encara..."
+    },
+    "TwoColumnsLayout": {
+      "label": "Dues columnes"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Mostrar els subtítols predeterminats",
+          "no": "No",
+          "yes": "Sí"
+        },
+        "url": {
+          "help": "Utilitza l'entrada de text per introduir l'URL del teu vídeo (youtube, vimeo...)",
+          "label": "URL del vídeo",
+          "placeholder": "Exemple: https://example.com/video.mp4"
+        }
+      },
+      "label": "Vídeo",
+      "prev": "El vídeo encara no està configurat..."
+    }
+  }
+}

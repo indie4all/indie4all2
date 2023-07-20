@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Rodyti / slėpti kategorijas",
+    "viewImage": "Žiūrėti paveikslėlį"
+  },
+  "common": {
+    "alt": {
+      "help": "Tai yra alternatyvus vaizdo aprašymo tekstas prieinamumo požiūriu",
+      "label": "Alternatyvusis vaizdo tekstas",
+      "placeholder": "Alternatyvusis tekstas"
+    },
+    "captions": {
+      "help": "INDIeMedia failo, kuriame yra dialogo transkripcija, garso efektai, muzikos takeliai ir kita garso informacija, URL, kai žiūrintysis yra kurčias ar neprigirdintis arba jei vaizdas / garsas yra nutildytas. Subtitrai taip pat rodomi virš vaizdo įrašo.",
+      "label": "Subtitrai (CC)",
+      "placeholder": "Pavyzdys: https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "INDIeMedia failo URL, kuriame yra tekstiniai aprašymai, kas vyksta vaizdo įraše, kai vaizdo įrašo dalis nepasiekiama, nes žiūrintysis yra aklas ir nenaudoja ekrano. Aprašymus skaito ekrano skaitytuvas arba konvertuoja į atskirą garso takelį.",
+      "label": "Apibūdinimas",
+      "placeholder": "Pavyzdys: https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Atsisiunčiant diską, palaukite",
+      "title": "Atsisiųsti"
+    },
+    "feedback": {
+      "help": "Interpretuokite grįžtamąjį ryšį, kurį studentas gaus, nesvarbu, ar jis atsakys teisingai, ar neteisingai",
+      "label": "Atsiliepimus",
+      "negative": "Neigiami atsiliepimai...",
+      "positive": "Teigiami atsiliepimai..."
+    },
+    "generate": {
+      "description": "Generuojate, palaukite",
+      "title": "Generuoti"
+    },
+    "help": {
+      "button": "Numatytasis",
+      "help": "Šis tekstas bus rodomas virš valdiklio, kad vartotojas suprastų, kaip su juo sąveikauti. <strong>Jei paliksite tuščią, pasirodys numatytasis tekstas.</strong>",
+      "label": "Pagalba",
+      "placeholder": "Numatytasis žinyno tekstas"
+    },
+    "language": {
+      "EL": "Graikų",
+      "EN": "Anglų",
+      "ES": "Ispanų",
+      "FR": "Prancūzų",
+      "LT": "Lietuvių"
+    },
+    "loading": {
+      "description": "Įkeliama , palaukite",
+      "title": "Pakrovimo"
+    },
+    "name": {
+      "help": "Tai bus valdiklio egzemplioriaus, skirto mokymosi analizei, pavadinimas",
+      "label": "Vardas, pavadinimas",
+      "placeholder": "Valdiklio egzemplioriaus pavadinimas"
+    },
+    "navbar": {
+      "options": "Išplėtimo / sutraukimo parinktys"
+    },
+    "preview": {
+      "description": "Jūsų peržiūra generuojama, palaukite",
+      "generated": {
+        "description": "Jūsų peržiūra paruošta. Jei naršyklė nenukreipia jūsų į peržiūrą, spustelėkite toliau pateiktą nuorodą:",
+        "title": "Peržiūra sugeneruota sėkmingai"
+      },
+      "title": "Peržiūros generavimas"
+    },
+    "publish": {
+      "description": "Jūsų diskas generuojamas atsisiųsti, palaukite",
+      "title": "Leidybos padalinys"
+    },
+    "publishToNetlify": {
+      "description": "Jūsų įrenginys įkeliamas į \"Netlify\", palaukite",
+      "title": "Leidybos padalinys \"Netlify\""
+    },
+    "save": {
+      "description": "Taupydami, palaukite",
+      "title": "Taupymo"
+    },
+    "scorm": {
+      "description": "Jūsų SCORM paketas yra generuojamas, palaukite",
+      "title": "SCORM paketo generavimas"
+    },
+    "selectType": "Pasirinkite tipą iš šių parinkčių:",
+    "unit": {
+      "settings": "Įveskite vieneto duomenis"
+    }
+  },
+  "dialog": {
+    "translate": "Versti vienetą"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "Akordeonas tuščias. Turite pridėti turinį naudodami pridėjimo mygtuką dešinėje."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "Konteineris tuščias. Į konteinerį turite pridėti bent vieną elementą."
+      },
+      "title": {
+        "invalid": "Konteinerio pavadinimas neteisingas. Jūs turite jį sukurti."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "Nustatytas fono paveikslėlio URL yra neteisingas. Turite pateikti galiojantį indieauthor URL."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Turi būti nustatytas animuoto vaizdo alternatyvusis tekstas."
+        },
+        "altRec": {
+          "invalid": "Animuotos srities alternatyvusis tekstas turi būti nustatytas."
+        },
+        "empty": "Animacijoje turi būti bent viena animuota sritis.",
+        "h": {
+          "invalid": "Aukštis turi būti nustatytas ir turi būti galiojantis skaičius."
+        },
+        "w": {
+          "invalid": "Plotis turi būti nustatytas ir turi būti galiojantis skaičius."
+        },
+        "x": {
+          "invalid": "Turi būti nustatyta kairioji koordinatė ir galiojantis numeris."
+        },
+        "y": {
+          "invalid": "Viršutinis numeris turi būti nustatytas ir turi būti galiojantis numeris."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "Animacija tuščia. Naudodami pridėjimo mygtuką turite pridėti bent vieną elementą."
+      },
+      "height": {
+        "invalid": "Animacijos aukštis turi būti didesnis nei 0."
+      },
+      "image": {
+        "invalid": "Nustatytas vaizdo URL yra neteisingas. Vaizdo lauke turite įsitikinti, kad pateikiate galiojantį indiemedia URL."
+      },
+      "width": {
+        "invalid": "Animacijos plotis turi būti didesnis nei 0."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "Nustatytas vaizdo URL yra neteisingas. Vaizdo lauke turite įsitikinti, kad pateikiate galiojantį indiemedia URL."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "Turite pridėti bent vieną garso termino apibrėžimą"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "Turite pateikti galiojantį indiemedia URL"
+      },
+      "definition": {
+        "invalid": "Turite pateikti apibrėžimą."
+      },
+      "term": {
+        "invalid": "Turite nurodyti terminą."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "Jūs neparašėte citatos turinio. Jūs turite bent jau parašyti turinį."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "Turite pateikti bent vieną teksto ir mygtuko tipo elementą."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "Nustatytas vaizdo URL yra neteisingas. Turite įsitikinti, kad mygtuko vaizdo lauke pateikiate galiojantį \"IndieMedia\" URL."
+      },
+      "text": {
+        "invalid": "Tekstas tuščias. Turite parašyti arba nukopijuoti tekstą."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "Paryškintas langas tuščias. Turite pridėti bent vieną paprastą elementą."
+      },
+      "text": {
+        "invalid": "Tekstas tuščias. Turite parašyti nedidelį tekstą."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "Denes pateikia tinkamą vaizdą URL lauke."
+      },
+      "options": {
+        "noCorrect": "Turite pasirinkti bent vieną teisingą",
+        "notEnougOptions": "Turite įvesti 4 parinktis"
+      },
+      "text": {
+        "invalid": "Tekstas tuščias. Turite įvesti tekstą."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Visuose maketo stulpeliuose turi būti bent vienas elementas, velkant jį iš paletės kairėje."
+      },
+      "width": {
+        "invalid": "Neteisingas stulpelio plotis"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "Turite pateikti vaizdo alternatyvųjį tekstą"
+      },
+      "audioblob": {
+        "invalid": "Garso failo turinys neteisingas. Turite pasirinkti tinkamą failą."
+      },
+      "captions": {
+        "invalid": "Subtitrų nustatytas URL yra neteisingas. Turite įsitikinti, kad pateikėte galiojantį indiemedia URL"
+      },
+      "captionsblob": {
+        "invalid": "Subtitrų failo turinys neteisingas. Turite pasirinkti tinkamą failą."
+      },
+      "descriptions": {
+        "invalid": "Nustatytas aprašo URL yra neteisingas. Turite įsitikinti, kad pateikėte galiojantį indiemedia URL"
+      },
+      "imageblob": {
+        "invalid": "Vaizdo turinys neteisingas. Turite pasirinkti galiojantį vaizdą."
+      },
+      "name": {
+        "invalid": "Turite nurodyti šio egzemplioriaus pavadinimą.",
+        "notUniqueName": "Egzemplioriaus pavadinimas turi būti unikalus visame turinyje."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "Turite pateikti bent vieną \"Correct Word\" elementą."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "Nustatytas vaizdo URL yra neteisingas. Turite pateikti galiojantį indieauthor URL."
+      },
+      "question": {
+        "invalid": "Klausimo tekstas tuščias."
+      },
+      "word": {
+        "invalid": "Atsakymo tekstas tuščias."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "Turite pridėti bent vieną porą"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "Įvestas vaizdo URL yra neteisingas. Turite įsitikinti, kad vaizdo lauke pateikiate galiojantį indiemedia URL."
+      },
+      "text": {
+        "invalid": "Tekstas tuščias. Turite parašyti trumpą tekstą."
+      },
+      "type": {
+        "invalid": "Nustatytas elemento tipas yra neteisingas. Turite įsitikinti, kad pasirinkta parinktis \"Tekstas\" arba \"Vaizdas\"."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "Prekė tuščia. Turite pridėti bent vieną termino apibrėžimo elementą naudodami dešinėje esantį mygtuką Pridėti."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "Apibrėžimo laukas tuščias. Turite parašyti apibrėžimą."
+      },
+      "term": {
+        "invalid": "Termino laukas tuščias. Turite parašyti terminą."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "Turite pasirinkti teisingą atsakymą",
+        "notEnoughAnswers": "Turite parašyti bent 2 galimus atsakymus"
+      },
+      "question": {
+        "empty": "Klausimo tekstas negali būti tuščias",
+        "onlyOneBlank": "Į klausimą turite įtraukti tik vieną tuščią vietą"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "Atsakymas neturi būti tuščias"
+      },
+      "attempts": {
+        "invalid": "Bandymai turi būti nuo 1 iki 9"
+      },
+      "question": {
+        "invalid": "Klausimas neturi būti tuščias"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "Nustatytas vaizdo URL yra neteisingas. Vaizdo lauke turite įsitikinti, kad pateikiate galiojantį indiemedia URL."
+      },
+      "text": {
+        "invalid": "Tekstas tuščias. Turite parašyti tekstą"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "Stulpelių skaičius turi būti 1,2 arba 3"
+      },
+      "data": {
+        "empty": "Turite pateikti bent vieną vaizdo ir garso elementą."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "Turite pateikti galiojantį indiemedia URL"
+      },
+      "image": {
+        "invalid": "Įvestas vaizdo URL yra neteisingas. Turite įsitikinti, kad vaizdo lauke pateikiate galiojantį indiemedia URL."
+      },
+      "text": {
+        "invalid": "Tekstas tuščias. Turite parašyti trumpą tekstą."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "Nustatytas vaizdo URL yra neteisingas. Vaizdo lauke turite įsitikinti, kad pateikiate galiojantį indiemedia URL."
+      },
+      "text": {
+        "invalid": "Tekstas tuščias. Turite parašyti arba nukopijuoti tekstą."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "Vaizdo įrašui sukonfigūruotas URL yra neteisingas. Turėtumėte būtinai pateikti vieną iš indieopen interaktyvių vaizdo įrašų."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "Turite pateikti formulės legendą."
+      },
+      "formula": {
+        "invalid": "Turite pateikti formulę LaTex formatu."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "Turite pateikti bent vieną trūkstamą žodžio elementą."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "Turite parašyti bent vieną teisingą atsakymą",
+        "invalid": "Atsakymo tekstas tuščias"
+      },
+      "sentence": {
+        "empty": "Frazė neturi būti tuščia",
+        "onlyOneBlank": "Sakinyje turėtumėte įtraukti tik tarpo žymeklį"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "Modalas tuščias. Turite pridėti bent vieną paprastą elementą."
+      },
+      "text": {
+        "invalid": "Tekstas tuščias. Turite parašyti nedidelį tekstą."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "Nustatytas fono paveikslėlio URL yra neteisingas. Turite pateikti galiojantį indieauthor URL."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Turi būti nustatytas alternatyvus iškarpos tekstas."
+        },
+        "altRec": {
+          "invalid": "Turi būti nustatytas pozicijos alternatyvusis tekstas."
+        },
+        "empty": "Dėlionė turi turėti bent vieną detalę.",
+        "h": {
+          "invalid": "Aukštis turi būti nustatytas ir turi būti galiojantis skaičius."
+        },
+        "w": {
+          "invalid": "Plotis turi būti nustatytas ir turi būti galiojantis skaičius."
+        },
+        "x": {
+          "invalid": "Turi būti nustatyta kairioji koordinatė ir galiojantis numeris."
+        },
+        "y": {
+          "invalid": "Viršutinis numeris turi būti nustatytas ir turi būti galiojantis numeris."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "Prekė tuščia. Turite pridėti bent vieną įrašą naudodami pridėjimo mygtuką dešinėje."
+      },
+      "title": {
+        "invalid": "Pavadinimo laukas tuščias. Turite parašyti pavadinimą."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "Yra bent viena pasikartojanti nuoroda. Kiekvienam įrašui turite pateikti unikalią nuorodą.",
+        "empty": "Prekė tuščia. Turite pridėti bent vieną įrašą naudodami pridėjimo mygtuką dešinėje.",
+        "multipleCurrent": "Yra bent du dabartiniai įrašai. Turite pateikti tik vieną dabartinį įrašą."
+      },
+      "moreThanOne": "Turite pateikti ne daugiau kaip vieną turinio elementą."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "Pavadinimo laukas tuščias. Turite parašyti pavadinimą."
+      },
+      "url": {
+        "invalid": "URL lauke turi būti nustatytas toks formatas: https://[šaltinis]/[autorius]/[vienetas]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "Schema tuščia. Turite pridėti bent vieną elementą naudodami pridėjimo mygtuką dešinėje."
+      },
+      "height": {
+        "invalid": "Animacijos aukštis turi būti didesnis nei 0."
+      },
+      "image": {
+        "invalid": "Nustatytas viso vaizdo URL yra neteisingas. Turite įsitikinti, kad pateikiate galiojantį indiemedia URL."
+      },
+      "width": {
+        "invalid": "Animacijos plotis turi būti didesnis nei 0."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "Nustatytas vaizdo URL yra neteisingas. Vaizdo lauke turite įsitikinti, kad pateikiate galiojantį indiemedia URL."
+      },
+      "text": {
+        "invalid": "Tekstas tuščias. Turite parašyti nedidelį tekstą."
+      }
+    },
+    "section": {
+      "emptyData": "Skyrius negali būti tuščias. Turite pridėti bent vieną elementą.",
+      "invalidBookmark": "Skyrius turi turėti galiojančią žymę.",
+      "invalidImage": "Skyriuje turi būti fono paveikslėlis.",
+      "invalidName": "Skyrius turi turėti pavadinimą.",
+      "typeImageNotSelected": "Jei pasirinktas tipas yra Fono paveikslėlis, turite nustatyti vaizdą."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "Turite pateikti bent vieną sakinio rūšiavimo elementą."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "Turite parašyti bent vieną teisingą atsakymą",
+        "impossible": "Sakinys negali būti sudarytas iš nustatytų žodžių",
+        "invalid": "Atsakymo tekstas tuščias"
+      },
+      "words": {
+        "empty": "Turite įvesti bent vieną leistiną žodį",
+        "invalid": "\"Word\" tekstas tuščias"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "Nustatytas vaizdo URL yra neteisingas. Vaizdo lauke turite įsitikinti, kad pateikiate galiojantį indiemedia URL.",
+        "sizeNotSet": "Vaizdo plotis ir aukštis turi būti nustatyti, kai jo išvaizda yra \"Pasirinktinis\""
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "Turite pasirinkti teisingą atsakymą",
+        "notEnoughAnswers": "Turite parašyti bent 2 galimus atsakymus"
+      },
+      "question": {
+        "empty": "Klausimo tekstas negali būti tuščias"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "Skirtukas tuščias. Į skirtuką turite įtraukti bent vieną elementą."
+      },
+      "name": {
+        "invalid": "Skirtuko pavadinimas neteisingas. Jūs turite jį sukurti."
+      }
+    },
+    "Table": {
+      "empty": "Lentelėje stulpeliai nenustatyti"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "Skirtukų meniu nėra skirtukų. Turite pridėti bent vieną."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Yra pasikartojančių stulpelių. Patikrinkite savo elementus.",
+        "duplicatedTerms": "Tarp stulpelių yra pasikartojančių terminų. Peržiūrėkite sąlygas"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "Kolonėlė neturi būti tuščia"
+      },
+      "terms": {
+        "empty": "Terminai negali būti tušti.",
+        "invalid": "Sąlygos neatitinka reikiamo formato. Prašome atskirti terminus kabliataškiais (;)."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "Testas tuščias. Turite pridėti bent vieną klausimą."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "Tekstas tuščias. Turite parašyti trumpą tekstą."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "Turite pridėti bent vieną teisingą arba klaidingą elementą"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "Klausimo tekstas negali būti tuščias"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "Klausimo tekstas negali būti tuščias"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "Vaizdo įrašo URL neteisingas. Turite būtinai pateikti galiojantį URL iš \"IndieMedia\" arba \"Youtube\".",
+        "localInvalid": "Vaizdo įrašo URL neteisingas. Turite įsitikinti, kad pateikiate galiojantį \"YouTube\" URL."
+      }
+    }
+  },
+  "footer": {
+    "content": "Galite pridėti naujų skyrių naudodami viršutinę įrankių juostą"
+  },
+  "general": {
+    "areYouSure": "Ar tikrai?",
+    "cancel": "Atšaukti",
+    "close": "Uždaryti",
+    "confirm": "Patvirtinti",
+    "delete": "Pašalinti",
+    "discard": "Išmesti",
+    "false": "Netiesa",
+    "load": "Apkrova",
+    "modelDetected": "Ar norite įkelti ankstesnį įrenginį?",
+    "true": "Tiesa"
+  },
+  "header": {
+    "addSection": "Pridėti skyrių",
+    "clear": "Ištrinti turinį",
+    "download": "Atsisiųsti įrenginį",
+    "importSection": "Importavimo skyrius",
+    "install": "Įdiekite programą",
+    "preview": "Turinio peržiūra",
+    "publish": "Turinio publikavimas",
+    "publishToNetlify": "Turinio publikavimas \"Netlify\"",
+    "redo": "Perdaryti veiksmą",
+    "save": "Išsaugoti turinį",
+    "scorm": "Eksportuoti SCORM formatu",
+    "translate": "Versti vienetą",
+    "undo": "Anuliuoti veiksmą",
+    "upload": "Įkėlimo vienetas",
+    "validate": "Vieneto tikrinimas"
+  },
+  "items": {
+    "add": "Turinio įtraukimas",
+    "delete": "Naikinti elementą",
+    "duplicate": "Besidubliuojantis elementas",
+    "edit": "Turinio redagavimas",
+    "export": "Eksportuoti prekę"
+  },
+  "messages": {
+    "changesSaved": "Pakeitimai išsaugoti sėkmingai.",
+    "confirmClearContent": "Jūs ketinate visiškai ištrinti turinį. Įsitikinkite, kad tai yra tai, ką tikrai norite padaryti.",
+    "confirmLoadModel": "Rastas ankstesnis vienetas. Pasirinkite, ar norite jį įkelti, ar atmesti.",
+    "contentCleared": "Turinys sėkmingai ištrintas.",
+    "contentErrors": "Ups! Jūsų turinyje yra klaidų. Peržiūrėkite klaidų pranešimus ir vykdykite jų instrukcijas, kad juos ištaisytumėte.",
+    "couldNotExportElement": "Prekės nepavyko eksportuoti",
+    "couldNotExportSection": "Sekcijos nepavyko eksportuoti",
+    "deletedSection": "Skyrius sėkmingai ištrintas",
+    "emptyContent": "Nepridėjote turinio.",
+    "errorMessage": "Klaida",
+    "exportedElement": "Prekė sėkmingai eksportuota",
+    "exportedSection": "Skyrius sėkmingai eksportuotas",
+    "importedElement": "Prekė sėkmingai importuota",
+    "importedSection": "Sekcija sėkmingai importuota",
+    "loadError": "Įrenginio nepavyko pakrauti",
+    "noElement": "Nėra importuojamų elementų",
+    "noErrors": "Neblogai! Klaidų nėra. Galite tęsti turinio išsaugojimą.",
+    "noRedo": "Nėra ko perdaryti",
+    "noSection": "Nėra importuotinų sekcijų",
+    "noUndo": "Nėra ko anuliuoti",
+    "previewError": "Įrenginio nepavyko peržiūrėti",
+    "publishError": "Vienetas negalėjo būti paskelbtas",
+    "savedUnit": "Vienetas sėkmingai išsaugotas",
+    "saveError": "Įrenginio nepavyko išsaugoti",
+    "successMessage": "Gerai",
+    "translateError": "Vienetas negalėjo būti išverstas",
+    "warningMessage": "Dėmesys"
+  },
+  "netlify": {
+    "button": {
+      "text": "Jungti"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Sukurti svetainę",
+        "help": "Pasirinkite vieną iš galimų svetainių savo \"Netlify\" paskyroje",
+        "label": "Norėdami įkelti įrenginį, pasirinkite galimą svetainę iš savo \"Netlify\""
+      },
+      "title": "Užpildykite laukus, kad prisijungtumėte prie \"Netlify\" ",
+      "token": {
+        "help": "Įveskite savo asmeninį \"Netlify\" prieigos raktą. Jį galite rasti \"Netlify\" paskyros nustatymų skiltyje \"Programos\"",
+        "label": "Įterpkite asmeninės prieigos atpažinimo ženklą:",
+        "placeholder": "Čia įterpkite savo \"Netlify\" asmeninės prieigos atpažinimo ženklą"
+      }
+    },
+    "error": {
+      "message": "Neteisingas atpažinimo ženklas"
+    },
+    "success": {
+      "message": "Įrenginys sėkmingai įkeltas į \"Netlify\". Pasiekite jį spustelėdami šią nuorodą: ",
+      "message_2": "Atminkite, kad jei jūsų įrenginyje yra daug turinio, jo paskelbimas gali užtrukti kelias minutes.",
+      "title": "Vienetas įkeltas į \"Netlify\""
+    }
+  },
+  "palette": {
+    "containers": "Konteineriai",
+    "exerciseElement": "Pratimai",
+    "interactiveElements": "Interaktyvūs elementai",
+    "items": "Elementus",
+    "layouts": "Nuostatos",
+    "question": "Klausimus",
+    "simpleElements": "Elementai"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Kodų blokas",
+        "screenReader": "Ekrano skaitytuvų žinyno tekstas"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Naikinti skyrių",
+    "duplicate": "Pasikartojantis skyrius",
+    "edit": "Informacijos redagavimas",
+    "expandContract": "Išplėtimas arba sutraukimas",
+    "export": "Eksporto skyrius",
+    "form": {
+      "bookmark": {
+        "help": "Šis žymeklis bus rodomas įrenginio viršuje kaip sekcijos žymeklis. Jį turi sudaryti ne daugiau kaip 40 simbolių.",
+        "label": "Sekcijos žymelė",
+        "placeholder": "Parašykite žymę..."
+      },
+      "image": {
+        "help": "",
+        "label": "Fono paveikslėlio URL",
+        "placeholder": "Įveskite vaizdo URL..."
+      },
+      "name": {
+        "help": "Tai pavadinimas, kurį skyrius turės turinyje.",
+        "label": "Skyriaus pavadinimas",
+        "placeholder": "Parašykite vardą..."
+      },
+      "preview": "Fono paveikslėlio peržiūra",
+      "type": {
+        "bc": "Fono spalva (numatytoji)",
+        "bi": "Fono paveikslėlis",
+        "help": "Jei tipas nustatytas į \"fono spalva\", numatytoji spalva bus rodoma už pavadinimo, o skiltyje \"Fono paveikslėlis\" turite sukurti skyriaus antraštės fono paveikslėlį.",
+        "label": "Fono tipas"
+      }
+    },
+    "import": "Importuoti prekę",
+    "label": "Sekcija",
+    "moveDown": "Slinkti sekcija žemyn",
+    "moveUp": "Slinkti sekcija aukštyn"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Įjungti / išjungti analizę vienete",
+        "label": "Analytics",
+        "no": "Ne",
+        "yes": "Taip"
+      },
+      "author": {
+        "help": "Čia turėtų parašyti skyriaus autorius.",
+        "label": "Vieneto autorius",
+        "placeholder": "Skyriaus autorius rašo"
+      },
+      "background": {
+        "help": "Vaizdas turėtų būti maždaug 1900 x 550 pikselių.",
+        "label": "Temos paveikslėlis"
+      },
+      "color": {
+        "help": "Būtinas šešioliktainis formatas #FFFFFF",
+        "label": "Temos spalva",
+        "placeholder": "Čia įveskite temos spalvą"
+      },
+      "email": {
+        "help": "Tai autoriaus el. Pašto adresas.",
+        "label": "El paštas",
+        "placeholder": "Įveskite autoriaus el. pašto adresą"
+      },
+      "institution": {
+        "help": "Institucijos pavadinimas",
+        "label": "Įstaiga",
+        "placeholder": "Įveskite institucijos pavadinimą"
+      },
+      "language": {
+        "help": "Vieneto kalba.",
+        "label": "Kalba"
+      },
+      "license": {
+        "BY": "Tarptautinis 4.0 pripažinimas (CC BY 4.0)",
+        "BYNC": "Priskyrimas-Nekomercinis-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCND": "Priskyrimas-Nekomercinis-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Priskyrimas-Nekomercinis-DalintisAlike 4.0 International (CC BY-NC-SA 4.0)",
+        "BYND": "\"Attribution-NoDerivs 4.0 International\" (CC BY-ND 4.0)",
+        "BYSA": "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+        "help": "Vieneto licencija",
+        "label": "Licencija",
+        "PRIVATE": "Visos teisės saugomos"
+      },
+      "resource": {
+        "help": "Įveskite išteklių ID",
+        "label": "Ištekliaus ID:",
+        "placeholder": "Įveskite išteklių ID"
+      },
+      "theme": {
+        "help": "Pasirinkite įrenginio temą.",
+        "label": "Tema"
+      },
+      "title": {
+        "help": "Tai yra vieneto pavadinimas.",
+        "label": "Vieneto pavadinimas",
+        "placeholder": "Įveskite pavadinimą"
+      },
+      "type": {
+        "help": "Tai yra vieneto tipas.",
+        "interoperability": "Sąveikumas",
+        "label": "Disko tipas",
+        "open": "Atidaryta"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "Tai yra vieneto šaltinio kalba",
+        "label": "Šaltinio kalba"
+      },
+      "target": {
+        "help": "Tikslinė kalba, į kurią vienetas bus išverstas",
+        "label": "UKDIM tikslinė kalba"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Akordeono meniu"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "Nustato turinio grupės pavadinimą. Jis bus rodomas išskleidžiamojo meniu pavadinime.",
+          "label": "Turinio pavadinimas",
+          "placeholder": "Pavyzdys: profesiniai įgūdžiai"
+        }
+      },
+      "label": "Turinio grupė"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "Tai bus animacijos fono paveikslėlis. Galite pasirinkti vieną iš įkeltų vaizdų.",
+          "label": "Vaizdo URL",
+          "placeholder": "Čia įterpkite vaizdo URL...",
+          "preview": "Animacijos peržiūra"
+        },
+        "pieces": {
+          "altImg": "Alternatyvusis tekstas animuotam vaizdui",
+          "altRec": "Animuotos srities alternatyvusis tekstas",
+          "delete": "Ištrinti",
+          "h": "Aukštas",
+          "new": "Pridėti naują animuotą regioną...",
+          "w": "Platus",
+          "x": "Į kairę",
+          "y": "Geresnysis"
+        }
+      },
+      "label": "Animacija",
+      "prev": "Animacija dar nebuvo inicijuota..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "Tai bus pikselių animacijos konteinerio aukštis",
+          "label": "Animacijos aukštis",
+          "placeholder": "Pavyzdys: 200"
+        },
+        "image": {
+          "help": "Tai bus vaizdas, rodomas elemente. Galite pasirinkti vieną iš įkeltų vaizdų arba įkelti naują.",
+          "label": "Vaizdo URL",
+          "placeholder": "Spustelėkite čia, kad pasirinktumėte vaizdą"
+        },
+        "prev": "Peržiūrėti vaizdo peržiūrą",
+        "width": {
+          "help": "Tai bus animacijos konteinerio plotis pikseliais",
+          "label": "Animacijos plotis",
+          "placeholder": "Pavyzdys: 400"
+        }
+      },
+      "label": "Animacija"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "Tai bus animacijos elemento vaizdas.",
+          "label": "Vaizdo URL",
+          "placeholder": "Spustelėkite čia, kad pasirinktumėte vaizdą"
+        },
+        "prev": "Peržiūra"
+      },
+      "label": "Animacijos elementas.",
+      "prev": "Animacijos elementas dar nenustatytas..."
+    },
+    "AudioTermContainer": {
+      "label": "Garso terminai"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "Turinio rinkinyje turite įvesti garso, kurį norite leisti, URL.",
+          "label": "Garso failo URL",
+          "placeholder": "Įveskite galiojantį indiemedia URL..."
+        },
+        "definition": {
+          "help": "Šis apibrėžimas turėtų būti garso įrašo stenograma.",
+          "label": "Apibrėžimas",
+          "placeholder": "Parašykite apibrėžimą..."
+        },
+        "term": {
+          "help": "Tai bus terminas, esantis valdiklio kairėje",
+          "label": "Terminas",
+          "placeholder": "Parašykite savo terminą čia..."
+        }
+      },
+      "label": "Garso terminas",
+      "prev": "Garso terminas dar nenustatytas..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "Paskyra gali būti lygiuojama dešinėje arba kairėje",
+          "label": "Paskyrimų suderinimas",
+          "values": {
+            "left": "Kairėje",
+            "right": "Į dešinę"
+          }
+        },
+        "caption": {
+          "help": "Citatos paantraštė rodoma po citata. Jis daugiausia naudojamas citatos autoriui ar autoriams nurodyti",
+          "label": "Citatos paantraštė",
+          "placeholder": "Pavyzdys: Carl Sagan"
+        },
+        "quote": {
+          "help": "Šis tekstas yra stenograma",
+          "label": "Citatos tekstas",
+          "placeholder": "Pavyzdys: \"Įrodymų nebuvimas nėra nebuvimo įrodymas.\""
+        },
+        "source": {
+          "help": "Originalus citatos šaltinis (Metai, knyga, žurnalas... ir t.t.)",
+          "label": "Citatos kilmė",
+          "placeholder": "Pavyzdys:1990 m."
+        }
+      },
+      "label": "Citata",
+      "prev": "Citata dar nenustatyta..."
+    },
+    "ButtonTextContainer": {
+      "label": "Mygtukai su tekstu"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "Tai bus vaizdas, kuris bus rodomas mygtuke. Galite pasirinkti vieną iš įkeltų vaizdų arba įkelti naują.",
+          "label": "Mygtuko vaizdo URL",
+          "placeholder": "Čia įterpkite savo URL"
+        },
+        "preview": "Peržiūros mygtuko paveikslėlis",
+        "text": {
+          "help": "Šiame teksto rengyklėje galite parašyti su mygtuku susieto teksto turinį",
+          "label": "SMS žinutė",
+          "placeholder": "Parašykite savo tekstą čia..."
+        }
+      },
+      "label": "Mygtuko elementas su tekstu",
+      "prev": "Mygtuko elementas su tekstu dar nebuvo inicijuotas..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Spalva",
+        "helps": {
+          "animation": "Nustato vieną iš iš anksto nustatytų laukelio su įdėtaisiais elementais animacijų (viengubą arba sulankstomą).",
+          "colorTheme": "Šešiakampis formatas #FFFFFF reikalingas. <strong> Jei jis nebus užpildytas, įrenginio temos spalva bus numatytoji.</strong>",
+          "styles": "Nustato vieną iš iš anksto nustatytų dėžutės su įdėtaisiais elementais stilių.",
+          "textTitle": "Tai bus tekstas, kuris bus rodomas kaip pavadinimas. <strong>Jei jis nebus užpildytas, tai bus numatytoji reikšmė.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Įveskite spalvą čia",
+          "textTitle": "Įveskite pavadinimą čia"
+        },
+        "styles": {
+          "animation": "Animacijos stilius",
+          "attention": "Dėmesys",
+          "collapsible": "Išardomi",
+          "danger": "Pavojus",
+          "label": "Stiliaus",
+          "more": "Sužinoti daugiau, sužinok daugiau",
+          "note": "Nata",
+          "simple": "Paprastas"
+        },
+        "textTitle": "Titulinis"
+      },
+      "label": "Neįvykdyti"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "Vaizdas bus rodomas valdiklio viršuje, virš parinkčių.",
+          "label": "Vaizdo URL",
+          "placeholder": "Įveskite vaizdo URL..."
+        },
+        "options": {
+          "help": "Šios 4 parinktys bus rodomos po paveikslėliu. Tik vienas gali būti teisingas.",
+          "label": "Parinktys",
+          "placeholder": "Įveskite parinktį"
+        },
+        "preview": "Vaizdo peržiūra",
+        "text": {
+          "help": "Šis tekstas bus rodomas virš vaizdo kaip tekstas arba klausimas.",
+          "label": "SMS žinutė",
+          "placeholder": "Parašykite tekstą čia..."
+        }
+      },
+      "label": "Pasirinkite parinktį",
+      "prev": "Pasirinkta parinktis nenustatyta ..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "Stulpelius",
+      "form": {
+        "width": {
+          "1": "Pirmojo stulpelio plotis",
+          "help": "Kitas stulpelis užims likusį plotį"
+        }
+      },
+      "label": "Šalinimo"
+    },
+    "CorrectWord": {
+      "label": "Teisingas žodis"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "Aprašomasis klausimo vaizdas",
+          "label": "Vaizdo URL",
+          "placeholder": "Įterpkite savo vaizdo URL čia..."
+        },
+        "preview": "Vaizdo peržiūra",
+        "question": {
+          "help": "Tai klausimas, kuris bus rodomas vartotojui.",
+          "label": "Klausimo tekstas",
+          "placeholder": "Klausimo tekstas"
+        },
+        "word": {
+          "help": "Šis žodis bus atsakymas į klausimą",
+          "label": "Atsakymas",
+          "placeholder": "Parašykite žodį..."
+        }
+      },
+      "label": "Teisingas žodžio elementas",
+      "prev": "Teisingas žodis dar nenustatytas..."
+    },
+    "CouplesContainer": {
+      "label": "Poros",
+      "prev": "Poros dar neįsitvirtinusios..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "Šis vaizdas bus susietas su tekstu, įvestu kaip pora šioje formoje.",
+          "label": "Vaizdo URL",
+          "placeholder": "Įveskite vaizdo URL čia..."
+        },
+        "legend": {
+          "first": "Pirmasis elementas",
+          "second": "Antrasis elementas"
+        },
+        "preview": "Vaizdo peržiūra",
+        "text": {
+          "help": "Šis tekstas bus susietas su vaizdu, kuris šioje formoje įvedamas kaip pora.",
+          "label": "SMS žinutė",
+          "placeholder": "Parašykite tekstą..."
+        },
+        "type": {
+          "image": "Vaizdas",
+          "label": "Vaikinas",
+          "text": "SMS žinutė"
+        }
+      },
+      "label": "Pora",
+      "prev": "Pora dar neįsitvirtinusi..."
+    },
+    "DragdropContainer": {
+      "label": "Vilkite ir upuść"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "Apibrėžimas rodomas interaktyvaus elemento dešinėje ir studentas turi vilkti terminą į apibrėžimą",
+          "label": "Apibrėžimas",
+          "placeholder": "Pavyzdys: Visi žmonės turi teisę išreikšti save be priekabiavimo dėl to, ką jie galvoja"
+        },
+        "term": {
+          "help": "Terminas rodomas interaktyvaus elemento kairėje ir bus tas, kurį studentas turi vilkti ir mesti į apibrėžimą.",
+          "label": "Terminas",
+          "placeholder": "Pavyzdys: saviraiškos laisvė"
+        }
+      },
+      "label": "Termino apibrėžimas",
+      "prev": "Punktas nenustatytas..."
+    },
+    "FourColumnsLayout": {
+      "label": "Keturi stulpeliai"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Turite parašyti bent 2 atsakymus ir pažymėti, kuris iš jų yra teisingas.",
+          "label": "Galimi atsakymai"
+        },
+        "questionPreview": {
+          "help": "Štai kaip klausimas atrodys turinio vienete.",
+          "label": "Peržiūrėkite klausimo tekstą.",
+          "placeholder": "Klausimo tekstas su tuščia ___ anga."
+        },
+        "questionText": {
+          "help": "Turite įvesti klausimo tekstą su tuščia norima vieta naudodami specialų raktinį žodį [tuščias].",
+          "label": "Klausimo tekstas",
+          "placeholder": "Klausimo tekstas su tuščiu elementu"
+        }
+      },
+      "label": "Užpildykite spragos klausimą",
+      "prev": "Klausimas, kaip užpildyti dar nenustatytą spragą..."
+    },
+    "GenericWidget": {
+      "label": "Valdikliui"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "Atsakymas į klausimą",
+          "label": "Atsakymas",
+          "placeholder": "Parašykite savo atsakymą čia"
+        },
+        "attempts": {
+          "help": "Bandymų atspėti atsakymą skaičius. Tai turi būti skaičius nuo 1 iki 9.",
+          "label": "Bandymai"
+        },
+        "question": {
+          "help": "Dėl klausimo, į kurį reikia atsakyti",
+          "label": "Klausimas",
+          "placeholder": "Parašykite savo klausimą čia"
+        }
+      },
+      "label": "Atspėk žodį",
+      "prev": "Spėk, kad žodis dar neinicijuotas..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Jei sukursite tekstą, tai bus vaizdo antraštė",
+          "label": "Vaizdo antraštė",
+          "placeholder": "Įveskite antraštę."
+        },
+        "image": {
+          "help": "Tai vaizdas, kuris bus rodomas elemente.",
+          "label": "Vaizdo URL",
+          "placeholder": "Spustelėkite čia, kad pasirinktumėte vaizdą"
+        },
+        "preview": "Peržiūra"
+      },
+      "label": "Vaizdas su tekstu aukščiau",
+      "prev": "Vaizdas su tekstu aukščiau dar nenustatytas..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Vaizdas ir garsas"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "Garso failas bus paleistas, kai bus spustelėtas vaizdas.",
+          "label": "Garso failo URL",
+          "placeholder": "Įveskite galiojantį indiemedia URL..."
+        },
+        "image": {
+          "help": "Pirmiausia pasirodys vaizdas",
+          "label": "Vaizdo URL",
+          "placeholder": "Įveskite vaizdo URL..."
+        },
+        "preview": "Vaizdo peržiūra",
+        "text": {
+          "help": "Tekstas bus rodomas virš vaizdo, kai užveskite pelės žymeklį virš jo.",
+          "label": "Vaizdo tekstas",
+          "placeholder": "Parašykite tekstą..."
+        }
+      },
+      "label": "Vaizdo ir garso elementas",
+      "prev": "Vaizdo ir garso elementas dar nenustatytas ..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "Tai bus vaizdas, rodomas elemente. Galite pasirinkti vieną iš įkeltų vaizdų arba įkelti naują.",
+          "label": "Vaizdo URL",
+          "placeholder": "Spustelėkite čia, kad pasirinktumėte vaizdą"
+        },
+        "layout": {
+          "help": "Vaizdo ir teksto bloko orientacija nustato, kur rodomas kiekvienas bloko elementas.",
+          "label": "Orientacijos",
+          "values": {
+            "0": "Tekstas dešinėje, vaizdas kairėje",
+            "1": "Tekstas kairėje, vaizdas dešinėje"
+          }
+        },
+        "preview": "Vaizdo peržiūra",
+        "text": {
+          "help": "Turite parašyti tekstą.",
+          "label": "Šiame teksto rengyklėje galite parašyti bloko turinį.",
+          "placeholder": "Parašykite tekstą..."
+        }
+      },
+      "label": "Vaizdas ir tekstas",
+      "prev": "Vaizdas ir tekstas dar nenustatyti..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Naudokite teksto įvestį, kad įvestumėte interaktyvaus vaizdo įrašo, sukurto naudojant interaktyvaus vaizdo įrankį, URL.",
+          "label": "Vaizdo įrašo URL",
+          "placeholder": "Pavyzdys: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Interaktyvus vaizdo įrašas",
+      "prev": "Interaktyvus vaizdo įrašas dar nenustatytas"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "Ši legenda bus rodoma po formule ir kaip teksto blokas",
+          "label": "Formulės legenda",
+          "placeholder": "Pavyzdys: kvadratinė formulė"
+        },
+        "formula": {
+          "help": "Norėdami įvesti formulę, naudokite teksto sritį. Po šia sritimi bus rodoma formulės peržiūra, jei ji teisinga, arba tekstas raudonas, jei formulė neteisinga",
+          "label": "Formulė LaTex formatu",
+          "placeholder": "Pavyzdys: \\text{Kvadratinė formulė yra }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "LaTeX formulė",
+      "prev": "Formulė dar nenustatyta..."
+    },
+    "MissingWords": {
+      "label": "Trūksta žodžių"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Ištrinti",
+          "new": "Pridėti naują atsakymą...",
+          "text": "Atsakymas"
+        },
+        "sentence": {
+          "help": "Turite parašyti sakinio tekstą, įskaitant tarpą, naudodami specialų žymeklį [blank].",
+          "label": "Sakinio tekstas",
+          "placeholder": "Sakinio tekstas su žymekliu [tuščias]"
+        },
+        "sentencePreview": {
+          "help": "Taip žiūrėtumėte į frazę turinio vienete.",
+          "label": "Frazės peržiūra",
+          "placeholder": "Sakinio tekstas su žymekliu ___ "
+        }
+      },
+      "label": "Trūkstamų žodžių elementas",
+      "prev": "Trūkstamas žodžio elementas dar nenustatytas..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "Šis tekstas bus rodomas kaip mygtuko tekstas, kurį reikia suaktyvinti norint atidaryti modalinį langą.",
+          "label": "Mygtuko tekstas",
+          "placeholder": "Parašykite tekstą..."
+        }
+      },
+      "label": "Modalinis langas"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "Tai bus dėlionės fono vaizdas. Galite pasirinkti vieną iš įkeltų vaizdų.",
+          "label": "Vaizdo URL",
+          "placeholder": "Čia įterpkite vaizdo URL...",
+          "preview": "Dėlionės peržiūra"
+        },
+        "pieces": {
+          "altImg": "Alternatyvusis tekstas apkarpymui",
+          "altRec": "Alternatyvusis pozicijos tekstas",
+          "delete": "Ištrinti",
+          "h": "Aukštas",
+          "new": "Pridėkite naują kūrinį...",
+          "w": "Platus",
+          "x": "Į kairę",
+          "y": "Geresnysis"
+        }
+      },
+      "label": "Dėlionę",
+      "prev": "Dėlionė dar nebuvo inicijuota..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Grupės pavadinimas",
+          "label": "Titulinis",
+          "placeholder": "Pavyzdys: teisės modulis"
+        }
+      },
+      "label": "Grupė",
+      "prev": "Grupė dar nėra estabecido ..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Turinys"
+    },
+    "RelatedUnitsItem": {
+      "current": "Dabartinis vienetas",
+      "form": {
+        "current": {
+          "title": "Tai yra dabartinis vienetas"
+        },
+        "title": {
+          "help": "Įrašo pavadinimas",
+          "label": "Titulinis",
+          "placeholder": "Pavyzdys: žmogaus teisės"
+        },
+        "url": {
+          "help": "Paskirties URL",
+          "label": "URL",
+          "placeholder": "Pavyzdys: https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Įėjimas",
+      "prev": "Įrašas dar nenustatytas..."
+    },
+    "SchemaContainer": {
+      "label": "Schema"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "Tai bus dalinis schemos vaizdas.",
+          "label": "Vaizdo URL",
+          "placeholder": "Spustelėkite čia, kad pasirinktumėte vaizdą"
+        },
+        "prev": "Vaizdo peržiūra"
+      },
+      "label": "Struktūros elementas",
+      "prev": "Esuqema elementas dar nenustatytas..."
+    },
+    "SentenceOrderContainer": {
+      "label": "Frazių rūšiavimas"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Ištrinti",
+          "help": "Atsakymai, kurie bus sudaryti iš įvestų žodžių",
+          "legend": "Atsakymų sąrašas",
+          "new": "Pridėkite naują atsakymą...",
+          "text": "Atsakymas"
+        },
+        "words": {
+          "delete": "Ištrinti",
+          "help": "Atsakymus turėtų būti galima sukonstruoti iš šių žodžių",
+          "legend": "Žodžių sąrašas",
+          "new": "Pridėti naują žodį...",
+          "text": "Žodis"
+        }
+      },
+      "label": "Frazių rūšiavimo elementas",
+      "prev": "Sakinio rūšiavimo elementas dar neinicijuotas..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "Nustato vaizdo lygiavimą, kai išvaizda nėra \"Sureguliuokite pradinius matmenis pagal laisvą vietą\".",
+          "label": "Vaizdo lygiavimas",
+          "values": {
+            "center": "Orientuota į",
+            "left": "Į kairę",
+            "right": "Į dešinę"
+          }
+        },
+        "aspect": {
+          "help": "Vaizdas gali būti rodomas su originaliais matmenimis (jei įmanoma) arba gali būti reguliuojamas pagal ekrano plotį (mastelio keitimas). Jei matmenys yra aukštesni ir platesni, nei gali būti rodomas ekranas, jis visada automatiškai prisitaikys prie ekrano",
+          "label": "Vaizdo išvaizda",
+          "values": {
+            "custom": "Paprotys",
+            "fit": "Sureguliuokite pradinius matmenis pagal laisvą vietą",
+            "original": "Originalūs matmenys"
+          }
+        },
+        "image": {
+          "help": "Tai bus vaizdas, kuris bus rodomas elemente.",
+          "label": "Vaizdo URL",
+          "placeholder": "Čia įveskite vaizdo URL"
+        },
+        "preview": "Peržiūra",
+        "size": {
+          "height": "Aukštas",
+          "heightPlaceholder": "Vaizdo aukštis...",
+          "keepRatio": "Išlaikyti vaizdo santykį",
+          "width": "Platus",
+          "widthPlaceholder": "Vaizdo plotis..."
+        }
+      },
+      "label": "Vaizdas",
+      "prev": "Vaizdas dar nesukurtas..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Turite parašyti bent 2 atsakymus ir pažymėti, kuris iš jų yra teisingas.",
+          "label": "Galimi atsakymai"
+        },
+        "questionText": {
+          "help": "Tai yra klausimo tekstas, kuris bus rodomas turinio vienete.",
+          "label": "Klausimo tekstas",
+          "placeholder": "Paprasto klausimo tekstas..."
+        }
+      },
+      "label": "Paprastas klausimas",
+      "prev": "Paprastas klausimas dar nenustatytas..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "Tai bus pavadinimas, rodomas skirtuko pavadinime.",
+          "label": "Skirtuko pavadinimas",
+          "placeholder": "Pavyzdys: profesiniai įgūdžiai"
+        }
+      },
+      "label": "Blakstiena"
+    },
+    "Table": {
+      "empty": "Lentelė dar neinicijuota",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "Stulpelio pavadinimas tuščias arba jau apibrėžtas",
+            "label": "Stulpelio pavadinimas",
+            "placeholder": "Įveskite stulpelio pavadinimą čia..."
+          },
+          "columnPosition": {
+            "error": "Stulpelio padėtis už diapazono ribų",
+            "label": "Stulpelio padėtis"
+          },
+          "label": "Pridėti naują stulpelį",
+          "submit": "Pridėti stulpelį"
+        },
+        "addRow": "Įtraukti naują eilutę",
+        "deleteColumn": "Valyti stulpelį",
+        "deleteRow": "Valyti eilutę"
+      },
+      "help": {
+        "edit": "Pasirinkite langelį, kurį norite redaguoti. Norėdami redaguodami pridėti naujų eilučių, paspauskite klavišą Shift ir paspauskite Enter."
+      },
+      "label": "Lenta",
+      "prev": "Lentelė dar nenustatyta..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Blakstienos",
+      "label": "Skirtuko meniu"
+    },
+    "TermClassification": {
+      "label": "Klasifikacija",
+      "prev": "Klasifikacija"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "Tai stulpelis, su kuriuo bus susiję terminai.",
+          "label": "Stulpelis",
+          "placeholder": "Stulpelis"
+        },
+        "terms": {
+          "help": "Šiame įraše turite parašyti žodžius, susijusius su terminu, atskirtu kabliataškiu. Pavyzdžiui: šie; esi; kažkoks; Žodžiai",
+          "label": "Žodžiai",
+          "placeholder": "Rašykite kabliataškiais atskirtus žodžius"
+        }
+      },
+      "label": "Klasifikavimo elementas",
+      "prev": "Daiktas dar nenustatytas..."
+    },
+    "Test": {
+      "label": "Bandymo tipas",
+      "questionSelect": "Pasirinkite klausimo tipą, kurį norite įtraukti į apklausą"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Turite parašyti tekstą.",
+        "label": "Šiame teksto rengyklėje galite parašyti bloko turinį.",
+        "placeholder": "Įveskite tekstą...",
+        "styles": {
+          "attention": "Dėmesys",
+          "default": "Nėra stiliaus",
+          "help": "Nustato tekstą supančio lauko maketą",
+          "label": "Teksto bloko stilius",
+          "more": "Sužinoti daugiau, sužinok daugiau",
+          "note": "Nata"
+        }
+      },
+      "label": "Teksto blokas",
+      "prev": "Tekstas dar nenustatytas..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Trys stulpeliai"
+    },
+    "TrueFalseContainer": {
+      "label": "Teisinga / klaidinga",
+      "prev": "Tiesa/melas dar nenustatytas..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Netiesa",
+          "help": "Pasirinkite teisingą arba klaidingą kaip teisingą atsakymą",
+          "label": "Teisingas atsakymas",
+          "true": "Tiesa"
+        },
+        "questionText": {
+          "help": "Tai yra elemento tekstas.",
+          "label": "Elemento tekstas",
+          "placeholder": "Elemento tekstas..."
+        }
+      },
+      "label": "Teisingas / klaidingas elementas",
+      "prev": "Tiesa/klaidingas daiktas dar nenustatytas..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Netiesa",
+          "help": "Pasirinkite teisingą arba klaidingą kaip teisingą atsakymą",
+          "label": "Teisingas atsakymas",
+          "true": "Tiesa"
+        },
+        "questionText": {
+          "help": "Tai yra klausimo tekstas, kuris bus rodomas turinio vienete.",
+          "label": "Teksto klausimo tekstas",
+          "placeholder": "Klausimo tekstas..."
+        }
+      },
+      "label": "Teisingas ar klaidingas klausimas",
+      "prev": "Klausimas apie tikrą ar klaidingą nbo dar nustatytas..."
+    },
+    "TwoColumnsLayout": {
+      "label": "Du stulpeliai"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Rodyti numatytuosius subtitrus",
+          "no": "Ne",
+          "yes": "Taip"
+        },
+        "url": {
+          "help": "Norėdami įvesti vaizdo įrašo URL, naudokite teksto įvestį (youtube, vimeo...)",
+          "label": "Vaizdo įrašo URL",
+          "placeholder": "Pavyzdys: https://example.com/video.mp4"
+        }
+      },
+      "label": "Video",
+      "prev": "Vaizdo įrašas dar nenustatytas..."
+    }
+  }
+}

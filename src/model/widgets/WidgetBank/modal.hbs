@@ -2,32 +2,56 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content border-indie">
             <div class="modal-header modal-indie">
-                <h2 id="modal-bank-widgets-tittle" class="modal-title h5"> {{ translate "widgets.Bank.modalTitle"}}</h2>
+                <h2 id="modal-bank-widgets-tittle" class="modal-title h5"> {{ translate "widgets.Bank.modal.modalTitle"}}</h2>
             </div>
             <div id="modal-bank-widgets-body" class="modal-body">
-                <div class="form-group mb-4 d-flex">
-                    <input id="search-bank-widget" type="search" class="form-control ds-input" placeholder="Search by title of Widget"> 
-                    <div class="input-group-append">
+                <div class="form-group mb-4 d-lg-flex d-md-block">
+                    <input id="search-bank-widget" type="search" class="form-control ds-input col-lg-6 col-md-12" placeholder="{{ translate "widgets.Bank.modal.placeholderTitle"}}">
+                    <div class="col-lg-5 col-md-12" id="filter-bank-widget">
+                        <select class="select-filter col-md-6 form-select select-group">
+                            <option value="default"> {{ translate "widgets.Bank.modal.placeholderGroup"}} </option> 
+                            {{#each groups}}
+                            <option value="{{ this }}"> {{ this }} </option>
+                            {{/each}}
+                        </select>
+                        <select class="select-filter col-md-6 form-select select-type">
+                             <option value="default" > {{ translate "widgets.Bank.modal.placeholderType"}} </option> 
+                            {{#each types}} 
+                                <option value="{{ this }}"> {{ translate (concat 'widgets.'this '.label') }} </option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="input-group-append pr-0 pr-md-0">
                        <button id="button-search-bank-widget" class="btn btn-indie" type="button">{{translate "widgets.Bank.search"}}</button>
                     </div>
                 </div>
+                <div class="form-group options-bank-widgets" >
+                    <label class="col-lg-8 col-md-12 random-label" > <input id="checkbox-random" style="margin-right: 5px;" type="checkbox"> {{ translate "widgets.Bank.modal.randomTextPrev"}} <input id="number-of-random-widgets" style="width: 60px;" type="number" min="1"> {{ translate "widgets.Bank.modal.randomTextBefore"}}</label>
+                    <label class="col-lg-4 col-md-12 select-all-label">{{ translate "widgets.Bank.modal.selectAllText"}} <input class="select-all-input" id="check-select-all" type="checkbox">  </label>
+                </div> 
                 <div class="panel-bank-widgets">
-                {{#each data}}
-                <button class="col-md-12 mb-3 align-items-center p-3 border border-secondary widget-button" >
-                    <div class="col-xs-12 col-sm-1">
-                        <img src="{{{ img }}}">
-                    </div>
-                    <div class="col-xs-12 col-sm-11 pl-4">
-                        <h3  class="h5"> {{ name }} </h3>
-                        <p class="mb-0"> {{ description }} </p>
-                    </div>
-                    <input type="hidden" name="json" value="{{ content }}">
-                </button>
-                {{/each}}
+                    {{#each data}}
+                    <button class="col-md-12 mb-3 align-items-center p-3 border border-secondary widget-button d-flex" >
+                        <div class="col-xs-12 col-sm-1">
+                            <img src="{{{ img }}}">
+                        </div>
+                        <div class="col-xs-12 col-sm-11 pl-4">
+                            <h3  class="h5"> {{ name }} </h3>
+                            <p class="mb-0"> {{ description }} </p>
+                        </div>
+                        <input type="checkbox" class="input-checkbox">
+                        <input type="hidden" name="type" value="{{ type }}">
+                        <input type="hidden" name="group" value="{{ group }}">
+                        <input type="hidden" name="content" value="{{ content }}">
+                    </button>
+                    {{/each}}
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ translate "general.cancel" }}</button>
+                <div class="content-buttons">
+                    <button type="button" class="btn btn-indie btn-submit">Añadir</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ translate "general.cancel" }}</button>
+                </div>
             </div>
         </div>
     </div>

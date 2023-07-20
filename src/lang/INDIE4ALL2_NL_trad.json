@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Categorieën weergeven/verbergen",
+    "viewImage": "Zie afbeelding"
+  },
+  "common": {
+    "alt": {
+      "help": "Dit is de alternatieve beschrijvingstekst voor de afbeelding in termen van toegankelijkheid",
+      "label": "Alt-tekst voor de afbeelding",
+      "placeholder": "Alternatieve tekst"
+    },
+    "captions": {
+      "help": "INDIeMedia-URL van het bestand met de transcriptie van dialogen, geluidseffecten, muziektracks en andere audio-informatie voor wanneer de kijker doof of slechthorend is, of als de video / audio is gedempt. Ondertiteling wordt ook boven de video weergegeven.",
+      "label": "Ondertiteling (CC)",
+      "placeholder": "Voorbeeld: https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "INDIeMedia URL van het bestand met tekstbeschrijvingen van wat er in de video gebeurt voor wanneer het deel van de video niet beschikbaar is omdat de kijker blind is en geen scherm gebruikt. De beschrijvingen worden gelezen door een schermlezer of omgezet in een aparte audiotrack.",
+      "label": "Beschrijving",
+      "placeholder": "Voorbeeld: https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Station downloaden, even geduld aub",
+      "title": "Downloaden"
+    },
+    "feedback": {
+      "help": "Interpreteer de feedback die de student zal ontvangen, of hij nu goed of onjuist antwoordt",
+      "label": "Terugkoppeling",
+      "negative": "Negatieve feedback...",
+      "positive": "Positieve feedback..."
+    },
+    "generate": {
+      "description": "Genereren, even geduld aub",
+      "title": "Genereren"
+    },
+    "help": {
+      "button": "Verstek",
+      "help": "Deze tekst verschijnt boven de widget, zodat de gebruiker begrijpt hoe hij ermee moet omgaan. <strong>Als deze leeg wordt gelaten, wordt de standaardtekst weergegeven.</strong>",
+      "label": "Help",
+      "placeholder": "Standaard Help-tekst"
+    },
+    "language": {
+      "EL": "Grieks",
+      "EN": "Engels",
+      "ES": "Spaans",
+      "FR": "Frans",
+      "LT": "Litouws"
+    },
+    "loading": {
+      "description": "Bezig met laden, even geduld aub",
+      "title": "Laden"
+    },
+    "name": {
+      "help": "Dit is de naam van de widgetinstantie voor learning analytics",
+      "label": "Naam",
+      "placeholder": "Naam van widgetinstantie"
+    },
+    "navbar": {
+      "options": "Opties voor uitvouwen/samenvouwen"
+    },
+    "preview": {
+      "description": "Uw voorbeeld wordt gegenereerd, even geduld aub",
+      "generated": {
+        "description": "Uw voorbeeld is klaar. Als uw browser u niet omleidt naar het voorbeeld, klikt u op de onderstaande link:",
+        "title": "Preview gegenereerd met succes"
+      },
+      "title": "Voorvertoning genereren"
+    },
+    "publish": {
+      "description": "Uw schijf wordt gegenereerd om te downloaden, even geduld aub",
+      "title": "Publicatie-eenheid"
+    },
+    "publishToNetlify": {
+      "description": "Uw eenheid wordt geüpload naar Netlify, even geduld aub",
+      "title": "Publicatie-eenheid in Netlify"
+    },
+    "save": {
+      "description": "Opslaan, even geduld aub",
+      "title": "Besparing"
+    },
+    "scorm": {
+      "description": "Uw SCORM-pakket wordt gegenereerd, even geduld aub",
+      "title": "SCORM-pakket genereren"
+    },
+    "selectType": "Selecteer een type uit de volgende opties",
+    "unit": {
+      "settings": "Voer de gegevens van de eenheid in"
+    }
+  },
+  "dialog": {
+    "translate": "Vertaaleenheid"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "De accordeon is leeg. U moet inhoud toevoegen met de knop Toevoegen aan de rechterkant."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "De container is leeg. U moet ten minste één item aan de container toevoegen."
+      },
+      "title": {
+        "invalid": "De containertitel is ongeldig. Je moet er een oprichten."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "De URL die is ingesteld voor de achtergrondafbeelding is onjuist. U moet een geldige indieauthor-URL opgeven."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "De alt-tekst voor de geanimeerde afbeelding moet worden ingesteld."
+        },
+        "altRec": {
+          "invalid": "De alt-tekst voor het geanimeerde gebied moet worden ingesteld."
+        },
+        "empty": "De animatie moet ten minste één geanimeerd gebied hebben.",
+        "h": {
+          "invalid": "De hoogte moet worden ingesteld en moet een geldig nummer zijn."
+        },
+        "w": {
+          "invalid": "De breedte moet worden ingesteld en moet een geldig getal zijn."
+        },
+        "x": {
+          "invalid": "De meest linkse coördinaat moet worden ingesteld en moet een geldig nummer zijn."
+        },
+        "y": {
+          "invalid": "Het bovenste nummer moet worden ingesteld en moet een geldig nummer zijn."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "De animatie is leeg. U moet ten minste één item toevoegen met de knop Toevoegen."
+      },
+      "height": {
+        "invalid": "De hoogte van de animatie moet groter zijn dan 0."
+      },
+      "image": {
+        "invalid": "De URL die voor de afbeelding is ingesteld, is ongeldig. U moet ervoor zorgen dat u een geldige indiemedia-URL opgeeft in het afbeeldingsveld."
+      },
+      "width": {
+        "invalid": "De breedte van de animatie moet groter zijn dan 0."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "De URL die voor de afbeelding is ingesteld, is ongeldig. U moet ervoor zorgen dat u een geldige indiemedia-URL opgeeft in het afbeeldingsveld."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "U moet ten minste één audiotermdefinitie toevoegen"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "U moet een geldige indiemedia-URL opgeven"
+      },
+      "definition": {
+        "invalid": "U moet een definitie opgeven."
+      },
+      "term": {
+        "invalid": "U moet een termijn opgeven."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "U hebt de inhoud van het citaat niet geschreven. Je moet op zijn minst de inhoud schrijven."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "U moet ten minste één tekst- en knoptype-element opgeven."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "De URL die voor de afbeelding is ingesteld, is ongeldig. U moet ervoor zorgen dat u een geldige IndieMedia-URL opgeeft in het afbeeldingsveld van de knop."
+      },
+      "text": {
+        "invalid": "De tekst is leeg. U moet een tekst schrijven of kopiëren."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "Het gemarkeerde venster is leeg. U moet ten minste één eenvoudig element toevoegen."
+      },
+      "text": {
+        "invalid": "De tekst is leeg. Je moet een kleine tekst schrijven."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "Denes bieden een geldige afbeelding in het URL-veld."
+      },
+      "options": {
+        "noCorrect": "U moet ten minste één juiste selectie selecteren",
+        "notEnougOptions": "U moet 4 opties invoeren"
+      },
+      "text": {
+        "invalid": "De tekst is leeg. U moet een tekst invoeren."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Alle kolommen in de lay-out moeten ten minste één element bevatten door het uit het palet aan de linkerkant te slepen."
+      },
+      "width": {
+        "invalid": "Ongeldige kolombreedte"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "U moet alternatieve tekst voor de afbeelding opgeven"
+      },
+      "audioblob": {
+        "invalid": "De inhoud van het audiobestand is niet correct. U moet een geldig bestand selecteren."
+      },
+      "captions": {
+        "invalid": "De URL die is ingesteld voor de ondertiteling is ongeldig. U moet ervoor zorgen dat u een geldige indiemedia-URL opgeeft"
+      },
+      "captionsblob": {
+        "invalid": "De inhoud van het ondertitelbestand is niet correct. U moet een geldig bestand selecteren."
+      },
+      "descriptions": {
+        "invalid": "De URL die is ingesteld voor de beschrijving is ongeldig. U moet ervoor zorgen dat u een geldige indiemedia-URL opgeeft"
+      },
+      "imageblob": {
+        "invalid": "De inhoud van de afbeelding is niet correct. U moet een geldige afbeelding selecteren."
+      },
+      "name": {
+        "invalid": "U moet een naam opgeven voor dit exemplaar.",
+        "notUniqueName": "De instantienaam moet uniek zijn voor alle inhoud."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "U moet ten minste één correct Word-item opgeven."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "De URL die voor de afbeelding is ingesteld, is ongeldig. U moet een geldige indieauthor-URL opgeven."
+      },
+      "question": {
+        "invalid": "De tekst van de vraag is leeg."
+      },
+      "word": {
+        "invalid": "De tekst van het antwoord is leeg."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "U moet ten minste één paar toevoegen"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "De URL die voor de afbeelding is ingevoerd, is ongeldig. U moet ervoor zorgen dat u een geldige indiemedia-URL opgeeft in het afbeeldingsveld."
+      },
+      "text": {
+        "invalid": "De tekst is leeg. Je moet een korte tekst schrijven."
+      },
+      "type": {
+        "invalid": "Het type dat voor het item is ingesteld, is ongeldig. U moet ervoor zorgen dat de optie 'Tekst' of 'Afbeelding' is geselecteerd."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "Het object is leeg. U moet ten minste één termdefinitie-item toevoegen met behulp van de knop Toevoegen aan de rechterkant."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "Het definitieveld is leeg. Je moet een definitie schrijven."
+      },
+      "term": {
+        "invalid": "Het termveld is leeg. Je moet een term schrijven."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "U moet een juist antwoord selecteren",
+        "notEnoughAnswers": "Je moet minstens 2 mogelijke antwoorden schrijven"
+      },
+      "question": {
+        "empty": "De tekst van de vraag mag niet leeg zijn",
+        "onlyOneBlank": "U moet slechts één spatie in de vraag opnemen"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "Het antwoord mag niet loos zijn"
+      },
+      "attempts": {
+        "invalid": "Pogingen moeten een getal tussen 1 en 9 zijn"
+      },
+      "question": {
+        "invalid": "De vraag mag niet leeg zijn"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "De URL die voor de afbeelding is ingesteld, is ongeldig. U moet ervoor zorgen dat u een geldige indiemedia-URL opgeeft in het afbeeldingsveld."
+      },
+      "text": {
+        "invalid": "De tekst is leeg. U moet een tekst schrijven"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "Het aantal kolommen moet 1,2 of 3 zijn"
+      },
+      "data": {
+        "empty": "U moet ten minste één beeld- en geluidselement opgeven."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "U moet een geldige indiemedia-URL opgeven"
+      },
+      "image": {
+        "invalid": "De URL die voor de afbeelding is ingevoerd, is ongeldig. U moet ervoor zorgen dat u een geldige indiemedia-URL opgeeft in het afbeeldingsveld."
+      },
+      "text": {
+        "invalid": "De tekst is leeg. Je moet een korte tekst schrijven."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "De URL die voor de afbeelding is ingesteld, is ongeldig. U moet ervoor zorgen dat u een geldige indiemedia-URL opgeeft in het afbeeldingsveld."
+      },
+      "text": {
+        "invalid": "De tekst is leeg. U moet een tekst schrijven of kopiëren."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "De URL die voor de video is geconfigureerd, is ongeldig. Je moet ervoor zorgen dat je er een van indieopen interactieve video's aanbiedt."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "U moet een legenda voor de formule opgeven."
+      },
+      "formula": {
+        "invalid": "U moet een formule in de LaTex-indeling opgeven."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "U moet ten minste één ontbrekend woorditem opgeven."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "U moet ten minste één correct antwoord schrijven",
+        "invalid": "Antwoordtekst is leeg"
+      },
+      "sentence": {
+        "empty": "De zin mag niet leeg zijn",
+        "onlyOneBlank": "U moet alleen een tussenruimtemarkering in de zin opnemen"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "De modale is leeg. U moet ten minste één eenvoudig element toevoegen."
+      },
+      "text": {
+        "invalid": "De tekst is leeg. Je moet een kleine tekst schrijven."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "De URL die is ingesteld voor de achtergrondafbeelding is onjuist. U moet een geldige indieauthor-URL opgeven."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "De alternatieve tekst voor het knipsel moet worden ingesteld."
+        },
+        "altRec": {
+          "invalid": "De alt-tekst voor de positie moet worden ingesteld."
+        },
+        "empty": "De puzzel moet minstens één stukje hebben.",
+        "h": {
+          "invalid": "De hoogte moet worden ingesteld en moet een geldig nummer zijn."
+        },
+        "w": {
+          "invalid": "De breedte moet worden ingesteld en moet een geldig getal zijn."
+        },
+        "x": {
+          "invalid": "De meest linkse coördinaat moet worden ingesteld en moet een geldig nummer zijn."
+        },
+        "y": {
+          "invalid": "Het bovenste nummer moet worden ingesteld en moet een geldig nummer zijn."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "Het object is leeg. U moet ten minste één item toevoegen met behulp van de knop Toevoegen aan de rechterkant."
+      },
+      "title": {
+        "invalid": "Het titelveld is leeg. Je moet een titel schrijven."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "Er is ten minste één dubbele link. Je moet voor elk bericht een unieke link opgeven.",
+        "empty": "Het object is leeg. U moet ten minste één item toevoegen met behulp van de knop Toevoegen aan de rechterkant.",
+        "multipleCurrent": "Er zijn ten minste twee actuele vermeldingen. U hoeft slechts één actuele vermelding op te geven."
+      },
+      "moreThanOne": "U moet maximaal één inhoudsopgave-item opgeven."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "Het titelveld is leeg. Je moet een titel schrijven."
+      },
+      "url": {
+        "invalid": "Het url-veld moet worden ingesteld op de volgende indeling: https://[bron]/[auteur]/[eenheid]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "Het schema is leeg. U moet ten minste één item toevoegen met de knop Toevoegen aan de rechterkant."
+      },
+      "height": {
+        "invalid": "De hoogte van de animatie moet groter zijn dan 0."
+      },
+      "image": {
+        "invalid": "De URL die is ingesteld voor de volledige afbeelding is ongeldig. U moet ervoor zorgen dat u een geldige indiemedia-URL opgeeft."
+      },
+      "width": {
+        "invalid": "De breedte van de animatie moet groter zijn dan 0."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "De URL die voor de afbeelding is ingesteld, is ongeldig. U moet ervoor zorgen dat u een geldige indiemedia-URL opgeeft in het afbeeldingsveld."
+      },
+      "text": {
+        "invalid": "De tekst is leeg. Je moet een kleine tekst schrijven."
+      }
+    },
+    "section": {
+      "emptyData": "Een sectie mag niet leeg zijn. U moet ten minste één item toevoegen.",
+      "invalidBookmark": "De sectie moet een geldige bladwijzer hebben.",
+      "invalidImage": "De sectie moet een achtergrondafbeelding hebben.",
+      "invalidName": "De sectie moet een naam hebben.",
+      "typeImageNotSelected": "Als het geselecteerde type Achtergrondafbeelding is, moet u de afbeelding instellen."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "U moet ten minste één zinsorteerelement opgeven."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "U moet ten minste één correct antwoord schrijven",
+        "impossible": "De zin kan niet worden opgebouwd uit de gevestigde woorden",
+        "invalid": "Antwoordtekst is leeg"
+      },
+      "words": {
+        "empty": "U moet ten minste één geldig woord typen",
+        "invalid": "Word-tekst is leeg"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "De URL die voor de afbeelding is ingesteld, is ongeldig. U moet ervoor zorgen dat u een geldige indiemedia-URL opgeeft in het afbeeldingsveld.",
+        "sizeNotSet": "De breedte en hoogte van de afbeelding moeten worden ingesteld wanneer de weergave \"Aangepast\" is"
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "U moet een juist antwoord selecteren",
+        "notEnoughAnswers": "Je moet minstens 2 mogelijke antwoorden schrijven"
+      },
+      "question": {
+        "empty": "De tekst van de vraag mag niet leeg zijn"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "Het tabblad is leeg. U moet ten minste één item aan het tabblad toevoegen."
+      },
+      "name": {
+        "invalid": "De tabbladnaam is ongeldig. Je moet er een oprichten."
+      }
+    },
+    "Table": {
+      "empty": "Tabel heeft geen kolommen ingesteld"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "Het tabbladmenu bevat geen tabbladen. U moet er ten minste één toevoegen."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Er zijn dubbele kolommen. Controleer uw objecten.",
+        "duplicatedTerms": "Er staan dubbele termen tussen uw kolommen. Bekijk de voorwaarden"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "Kolom mag niet leeg zijn"
+      },
+      "terms": {
+        "empty": "Termen mogen niet leeg zijn.",
+        "invalid": "De voorwaarden voldoen niet aan het vereiste formaat. Scheid termen met puntkomma's (;)."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "De test is leeg. U moet ten minste één vraag toevoegen."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "De tekst is leeg. Je moet een korte tekst schrijven."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "U moet ten minste één element waar of onwaar toevoegen"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "De tekst van de vraag mag niet leeg zijn"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "De tekst van de vraag mag niet leeg zijn"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "De URL voor de video is ongeldig. U moet ervoor zorgen dat u een geldige URL van IndieMedia of Youtube opgeeft.",
+        "localInvalid": "De URL voor de video is ongeldig. Je moet ervoor zorgen dat je een geldige YouTube-URL opgeeft."
+      }
+    }
+  },
+  "footer": {
+    "content": "U kunt nieuwe secties toevoegen met behulp van de bovenste werkbalk"
+  },
+  "general": {
+    "areYouSure": "Weet je het zeker?",
+    "cancel": "Annuleren",
+    "close": "Sluiten",
+    "confirm": "Bevestigen",
+    "delete": "Uitschakelen",
+    "discard": "Afdanken",
+    "false": "Vals",
+    "load": "Lading",
+    "modelDetected": "Wilt u een vorige eenheid laden?",
+    "true": "Waar"
+  },
+  "header": {
+    "addSection": "Sectie toevoegen",
+    "clear": "Inhoud wissen",
+    "download": "Download unit",
+    "importSection": "Sectie Importeren",
+    "install": "App installeren",
+    "preview": "Een voorbeeld van inhoud bekijken",
+    "publish": "Inhoud publiceren",
+    "publishToNetlify": "Inhoud publiceren in Netlify",
+    "redo": "Actie opnieuw uitvoeren",
+    "save": "Inhoud opslaan",
+    "scorm": "Exporteren in SCORM-indeling",
+    "translate": "Vertaaleenheid",
+    "undo": "Actie ongedaan maken",
+    "upload": "Uploadeenheid",
+    "validate": "Eenheid valideren"
+  },
+  "items": {
+    "add": "Inhoud toevoegen",
+    "delete": "Item verwijderen",
+    "duplicate": "Object dupliceren",
+    "edit": "Inhoud bewerken",
+    "export": "Item exporteren"
+  },
+  "messages": {
+    "changesSaved": "Wijzigingen zijn opgeslagen.",
+    "confirmClearContent": "U gaat de inhoud volledig verwijderen. Zorg ervoor dat het is wat je echt wilt doen.",
+    "confirmLoadModel": "Er is een eerdere eenheid gevonden. Kies of u het wilt laden of weggooien.",
+    "contentCleared": "Inhoud is verwijderd.",
+    "contentErrors": "Ups! Er zitten fouten in je content. Bekijk de foutberichten en volg hun instructies om ze op te lossen.",
+    "couldNotExportElement": "Het item kan niet worden geëxporteerd",
+    "couldNotExportSection": "De sectie kan niet worden geëxporteerd",
+    "deletedSection": "Sectie met succes verwijderd",
+    "emptyContent": "Je hebt geen inhoud toegevoegd.",
+    "errorMessage": "Fout",
+    "exportedElement": "Object geëxporteerd",
+    "exportedSection": "Sectie geëxporteerd",
+    "importedElement": "Object geïmporteerd",
+    "importedSection": "Sectie geïmporteerd",
+    "loadError": "Het apparaat kan niet worden geladen",
+    "noElement": "Geen items om te importeren",
+    "noErrors": "Niet slecht! Er zijn geen fouten. U kunt doorgaan met het opslaan van de inhoud.",
+    "noRedo": "Niets om opnieuw te doen",
+    "noSection": "Geen secties om te importeren",
+    "noUndo": "Niets ongedaan te maken",
+    "previewError": "Er kon geen voorbeeld van het apparaat worden bekeken",
+    "publishError": "De eenheid kan niet worden gepubliceerd",
+    "savedUnit": "Eenheid succesvol opgeslagen",
+    "saveError": "Het apparaat kon niet worden opgeslagen",
+    "successMessage": "OK",
+    "translateError": "Het apparaat kan niet worden vertaald",
+    "warningMessage": "Aandacht"
+  },
+  "netlify": {
+    "button": {
+      "text": "Verbinden"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Site maken",
+        "help": "Selecteer een van de beschikbare sites in uw Netlify-account",
+        "label": "Selecteer een beschikbare site van uw Netlify om de eenheid te uploaden"
+      },
+      "title": "Vul de velden in om verbinding te maken met Netlify ",
+      "token": {
+        "help": "Voer uw persoonlijke Netlify-toegangstoken in. U kunt het vinden in het gedeelte Toepassingen van de Netlify-accountinstellingen",
+        "label": "Voeg het token voor persoonlijke toegang in:",
+        "placeholder": "Voer hier uw persoonlijke toegangstoken van Netlify in"
+      }
+    },
+    "error": {
+      "message": "Ongeldig token"
+    },
+    "success": {
+      "message": "Het toestel is met succes geüpload naar Netlify. Open het door op de volgende link te klikken: ",
+      "message_2": "Houd er rekening mee dat als uw apparaat veel inhoud bevat, het enkele minuten kan duren om te publiceren.",
+      "title": "Eenheid geüpload naar Netlify"
+    }
+  },
+  "palette": {
+    "containers": "Containers",
+    "exerciseElement": "Oefeningen",
+    "interactiveElements": "Interactieve elementen",
+    "items": "Items",
+    "layouts": "Bepalingen",
+    "question": "Vragen",
+    "simpleElements": "Elementen"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Codeblok",
+        "screenReader": "Help-tekst voor schermlezers"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Sectie verwijderen",
+    "duplicate": "Sectie dupliceren",
+    "edit": "Informatie bewerken",
+    "expandContract": "Uitvouwen of samenvouwen",
+    "export": "Sectie Exporteren",
+    "form": {
+      "bookmark": {
+        "help": "Deze markering wordt boven aan de eenheid weergegeven als een sectiemarkering. Het mag maximaal 40 tekens bevatten.",
+        "label": "Sectie bladwijzer",
+        "placeholder": "Schrijf een bladwijzer..."
+      },
+      "image": {
+        "help": "",
+        "label": "URL van achtergrondafbeelding",
+        "placeholder": "Voer de URL van de afbeelding in..."
+      },
+      "name": {
+        "help": "Dit is de naam die de sectie in de inhoud zal hebben.",
+        "label": "Sectienaam",
+        "placeholder": "Schrijf een naam..."
+      },
+      "preview": "Een voorbeeld van de achtergrondafbeelding bekijken",
+      "type": {
+        "bc": "Achtergrondkleur (standaard)",
+        "bi": "Achtergrondafbeelding",
+        "help": "Als het type is ingesteld op 'achtergrondkleur', verschijnt de standaardkleur achter de titel, terwijl u in 'Achtergrondafbeelding' een achtergrondafbeelding voor de sectiekop moet instellen.",
+        "label": "Type achtergrond"
+      }
+    },
+    "import": "Artikel importeren",
+    "label": "Afdeling",
+    "moveDown": "Scroll sectie naar beneden",
+    "moveUp": "Scroll sectie omhoog"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Analyses in-/uitschakelen in het apparaat",
+        "label": "Analytics",
+        "no": "Nee",
+        "yes": "Ja"
+      },
+      "author": {
+        "help": "De auteur van de eenheid moet hier schrijven.",
+        "label": "Auteur van de eenheid",
+        "placeholder": "De auteur van de eenheid schrijft:"
+      },
+      "background": {
+        "help": "De afbeelding moet ongeveer 1900 x 550 pixels zijn.",
+        "label": "Thema-afbeelding"
+      },
+      "color": {
+        "help": "Hexadecimale indeling #FFFFFF vereist",
+        "label": "Thema kleur",
+        "placeholder": "Voer hier de themakleur in"
+      },
+      "email": {
+        "help": "Dit is het e-mailadres van de auteur.",
+        "label": "E-mail",
+        "placeholder": "Voer het e-mailadres van de auteur in"
+      },
+      "institution": {
+        "help": "Naam van de instelling",
+        "label": "Instelling",
+        "placeholder": "Voer de naam van de instelling in"
+      },
+      "language": {
+        "help": "De taal van de eenheid.",
+        "label": "Taal"
+      },
+      "license": {
+        "BY": "Internationale 4.0 Erkenning (CC BY 4.0)",
+        "BYNC": "Attributie-NietCommercieel-NoDerivs 4.0 Internationaal (CC BY-NC-ND 4.0)",
+        "BYNCND": "Attributie-NietCommercieel-NoDerivs 4.0 Internationaal (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Attributie-NietCommercieel-ShareAlike 4.0 Internationaal (CC BY-NC-SA 4.0)",
+        "BYND": "Naamsvermelding-NoDerivs 4.0 Internationaal (CC BY-ND 4.0)",
+        "BYSA": "Attributie-ShareAlike 4.0 Internationaal (CC BY-SA 4.0)",
+        "help": "Eenheidslicentie",
+        "label": "Licentie",
+        "PRIVATE": "Alle rechten voorbehouden"
+      },
+      "resource": {
+        "help": "Voer de resource-id in",
+        "label": "Bron-ID:",
+        "placeholder": "Voer de resource-id in"
+      },
+      "theme": {
+        "help": "Kies het thema van het apparaat.",
+        "label": "Thema"
+      },
+      "title": {
+        "help": "Dit is de titel van de eenheid.",
+        "label": "Titel van de eenheid",
+        "placeholder": "Voer een titel in"
+      },
+      "type": {
+        "help": "Dit is het type eenheid.",
+        "interoperability": "Interoperabiliteit",
+        "label": "Type schijf",
+        "open": "Openen"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "Dit is de brontaal van de eenheid",
+        "label": "Brontaal"
+      },
+      "target": {
+        "help": "De doeltaal waarin de eenheid zal worden vertaald",
+        "label": "Doeltaal"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Accordeon menu"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "Hiermee stelt u de titel van de inhoudsgroep in. Het verschijnt in de titel van het vervolgkeuzemenu.",
+          "label": "Titel van de inhoud",
+          "placeholder": "Voorbeeld: Professionele vaardigheden"
+        }
+      },
+      "label": "Inhoudsgroep"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "Dit is de achtergrondafbeelding van de animatie. U kunt een van uw geüploade afbeeldingen kiezen.",
+          "label": "URL van afbeelding",
+          "placeholder": "Voeg hier de URL van de afbeelding in...",
+          "preview": "Voorbeeld van animatie"
+        },
+        "pieces": {
+          "altImg": "Alt-tekst voor geanimeerde afbeelding",
+          "altRec": "Alt-tekst voor geanimeerd gebied",
+          "delete": "Wissen",
+          "h": "Hoog",
+          "new": "Voeg een nieuw geanimeerd gebied toe...",
+          "w": "Wijd",
+          "x": "Links",
+          "y": "Superieur"
+        }
+      },
+      "label": "Animatie",
+      "prev": "De animatie is nog niet geïnitialiseerd..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "Dit is de hoogte van de pixelanimatiecontainer",
+          "label": "Animatie hoogte",
+          "placeholder": "Voorbeeld: 200"
+        },
+        "image": {
+          "help": "Dit is de afbeelding die in het item wordt weergegeven. U kunt een van uw geüploade afbeeldingen kiezen of een nieuwe uploaden.",
+          "label": "URL van afbeelding",
+          "placeholder": "Klik hier om de afbeelding te selecteren"
+        },
+        "prev": "Voorvertoning van afbeelding",
+        "width": {
+          "help": "Dit is de breedte van de animatiecontainer in pixels",
+          "label": "Animatie breedte",
+          "placeholder": "Voorbeeld: 400"
+        }
+      },
+      "label": "Animatie"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "Dit is de afbeelding van het animatie-item.",
+          "label": "URL van afbeelding",
+          "placeholder": "Klik hier om de afbeelding te selecteren"
+        },
+        "prev": "Voorbeeld"
+      },
+      "label": "Item van de animatie.",
+      "prev": "Animatie-item nog niet ingesteld..."
+    },
+    "AudioTermContainer": {
+      "label": "Audio-termen"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "U moet de URL invoeren van de audio die u wilt afspelen in de inhoudseenheid.",
+          "label": "URL van audiobestand",
+          "placeholder": "Voer een geldige indiemedia URL in..."
+        },
+        "definition": {
+          "help": "Deze definitie moet de letterlijke transcriptie van de audio zijn.",
+          "label": "Definitie",
+          "placeholder": "Schrijf de definitie..."
+        },
+        "term": {
+          "help": "Dit is de term die links van de widget wordt geplaatst",
+          "label": "Term",
+          "placeholder": "Schrijf hier je term..."
+        }
+      },
+      "label": "Audio-term",
+      "prev": "Audio-term nog niet vastgesteld..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "De afspraak kan rechts of links uitgelijnd lijken",
+          "label": "Afstemming van afspraken",
+          "values": {
+            "left": "Aan de linkerkant",
+            "right": "Naar rechts"
+          }
+        },
+        "caption": {
+          "help": "De ondertitel van het citaat staat onder het citaat. Het wordt voornamelijk gebruikt om de auteur of auteurs van het citaat aan te duiden",
+          "label": "Ondertitel van het citaat",
+          "placeholder": "Voorbeeld: Carl Sagan"
+        },
+        "quote": {
+          "help": "Deze tekst is het woordelijk citaat",
+          "label": "Tekst citeren",
+          "placeholder": "Voorbeeld: 'Het ontbreken van bewijs is geen bewijs van afwezigheid.'"
+        },
+        "source": {
+          "help": "Originele bron van het citaat (Jaar, boek, tijdschrift... enz)",
+          "label": "Oorsprong van het citaat",
+          "placeholder": "Voorbeeld:1990"
+        }
+      },
+      "label": "Citaat",
+      "prev": "Quote nog niet vastgesteld..."
+    },
+    "ButtonTextContainer": {
+      "label": "Knoppen met tekst"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "Dit is de afbeelding die op de knop verschijnt. U kunt een van uw geüploade afbeeldingen kiezen of een nieuwe uploaden.",
+          "label": "URL van knopafbeelding",
+          "placeholder": "Voeg hier uw URL in"
+        },
+        "preview": "Afbeelding van de knop Voorvertoning",
+        "text": {
+          "help": "In deze teksteditor kunt u de inhoud van de tekst schrijven die aan de knop is gekoppeld",
+          "label": "Sms",
+          "placeholder": "Schrijf hier je tekst..."
+        }
+      },
+      "label": "Knopelement met tekst",
+      "prev": "Het knopelement met tekst is nog niet geïnitialiseerd..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Kleur",
+        "helps": {
+          "animation": "Hiermee bepaalt u een van de vooraf gedefinieerde animaties voor het vak met de ingesloten elementen (enkel of vouwbaar).",
+          "colorTheme": "Hex-indeling #FFFFFF vereist. <strong> Als het niet is gevuld, neemt de kleur van het thema van de eenheid de standaardwaarde aan.</strong>",
+          "styles": "Hiermee bepaalt u een van de vooraf gedefinieerde stijlen voor het vak met de ingesloten elementen.",
+          "textTitle": "Dit is de tekst die als titel wordt weergegeven. <strong>Als het niet is gevuld, neemt het een standaardwaarde.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Voer hier de kleur in",
+          "textTitle": "Voer hier de titel in"
+        },
+        "styles": {
+          "animation": "Animatiestijl",
+          "attention": "Aandacht",
+          "collapsible": "Opklapbaar",
+          "danger": "Gevaar",
+          "label": "Stijl",
+          "more": "Meer informatie",
+          "note": "Notitie",
+          "simple": "Eenvoudig"
+        },
+        "textTitle": "Titel"
+      },
+      "label": "Uitstekend"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "De afbeelding verschijnt bovenaan de widget, boven de opties.",
+          "label": "URL van afbeelding",
+          "placeholder": "Voer de URL van de afbeelding in..."
+        },
+        "options": {
+          "help": "Deze 4 opties verschijnen onder de afbeelding. Er kan er maar één correct zijn.",
+          "label": "Opties",
+          "placeholder": "Voer een optie in"
+        },
+        "preview": "Voorbeeld van afbeelding",
+        "text": {
+          "help": "Deze tekst verschijnt boven de afbeelding als tekst of vraag.",
+          "label": "Sms",
+          "placeholder": "Schrijf hier de tekst..."
+        }
+      },
+      "label": "Kies een optie",
+      "prev": "Een optie kiezen die niet is ingesteld ..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "Kolommen",
+      "form": {
+        "width": {
+          "1": "Breedte van de eerste kolom",
+          "help": "De andere kolom neemt de resterende breedte in beslag"
+        }
+      },
+      "label": "Zin"
+    },
+    "CorrectWord": {
+      "label": "Juist woord"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "Beschrijvende afbeelding van de vraag",
+          "label": "URL van afbeelding",
+          "placeholder": "Voeg hier uw afbeeldings-URL in..."
+        },
+        "preview": "Voorbeeld van afbeelding",
+        "question": {
+          "help": "Dit is de vraag die aan de gebruiker wordt getoond.",
+          "label": "Tekst van de vraag",
+          "placeholder": "Tekst van de vraag"
+        },
+        "word": {
+          "help": "Dit woord zal het antwoord op de vraag zijn",
+          "label": "Antwoorden",
+          "placeholder": "Schrijf een woord..."
+        }
+      },
+      "label": "Correct woordelement",
+      "prev": "Het juiste woord is nog niet vastgesteld..."
+    },
+    "CouplesContainer": {
+      "label": "Paren",
+      "prev": "Koppels nog niet gevestigd..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "Deze afbeelding wordt gekoppeld aan de tekst die als paar in dit formulier is ingevoerd.",
+          "label": "URL van afbeelding",
+          "placeholder": "Voer hier de URL van de afbeelding in..."
+        },
+        "legend": {
+          "first": "Eerste element",
+          "second": "Tweede element"
+        },
+        "preview": "Voorbeeld van afbeelding",
+        "text": {
+          "help": "Deze tekst wordt gekoppeld aan de afbeelding die als paar in dit formulier wordt ingevoerd.",
+          "label": "Sms",
+          "placeholder": "Schrijf een tekst..."
+        },
+        "type": {
+          "image": "Beeld",
+          "label": "Vent",
+          "text": "Sms"
+        }
+      },
+      "label": "Paar",
+      "prev": "Koppel nog niet opgericht..."
+    },
+    "DragdropContainer": {
+      "label": "Slepen en neerzetten"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "De definitie verschijnt rechts van het interactieve element en de student moet de term naar de definitie slepen",
+          "label": "Definitie",
+          "placeholder": "Voorbeeld: Alle mensen hebben het recht om zichzelf te uiten zonder lastiggevallen te worden om wat ze denken"
+        },
+        "term": {
+          "help": "De term verschijnt links van het interactieve element en is degene die de student moet slepen en neerzetten in de definitie.",
+          "label": "Term",
+          "placeholder": "Voorbeeld: Vrijheid van meningsuiting"
+        }
+      },
+      "label": "Term-definitie",
+      "prev": "Object niet vastgesteld..."
+    },
+    "FourColumnsLayout": {
+      "label": "Vier kolommen"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Je moet minstens 2 antwoorden schrijven en markeren welke van hen correct is.",
+          "label": "Mogelijke antwoorden"
+        },
+        "questionPreview": {
+          "help": "Zo komt de vraag eruit te zien in de content unit.",
+          "label": "Bekijk een voorbeeld van de tekst van de vraag.",
+          "placeholder": "Vraagtekst met lege ___ sleuf."
+        },
+        "questionText": {
+          "help": "U moet de vraagtekst typen met de gewenste spatie met het speciale trefwoord [leeg].",
+          "label": "Tekst van de vraag",
+          "placeholder": "Vraagtekst met leeg element"
+        }
+      },
+      "label": "Vul de leemte vraag",
+      "prev": "Kwestie van het opvullen van de leemte die nog niet is vastgesteld..."
+    },
+    "GenericWidget": {
+      "label": "Widget"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "Het antwoord op de vraag",
+          "label": "Antwoorden",
+          "placeholder": "Schrijf hier je antwoord"
+        },
+        "attempts": {
+          "help": "Aantal pogingen om het antwoord te raden. Het moet een getal tussen 1 en 9 zijn.",
+          "label": "Pogingen"
+        },
+        "question": {
+          "help": "De vraag die beantwoord moet worden",
+          "label": "Vraag",
+          "placeholder": "Schrijf hier uw vraag"
+        }
+      },
+      "label": "Raad het woord",
+      "prev": "Denk dat het woord nog niet is geïnitialiseerd ..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Als u een tekst opstelt, is dit het bijschrift van de afbeelding",
+          "label": "Bijschrift bij afbeelding",
+          "placeholder": "Voer een bijschrift in."
+        },
+        "image": {
+          "help": "Dit is de afbeelding die in het item wordt weergegeven.",
+          "label": "URL van afbeelding",
+          "placeholder": "Klik hier om de afbeelding te selecteren"
+        },
+        "preview": "Voorbeeld"
+      },
+      "label": "Afbeelding met tekst hierboven",
+      "prev": "Afbeelding met bovenstaande tekst nog niet vastgesteld..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Beeld en geluid"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "Het audiobestand wordt afgespeeld wanneer op de afbeelding wordt geklikt.",
+          "label": "URL van audiobestand",
+          "placeholder": "Voer een geldige indiemedia URL in..."
+        },
+        "image": {
+          "help": "Afbeelding verschijnt als eerste",
+          "label": "URL van afbeelding",
+          "placeholder": "Voer de URL van de afbeelding in..."
+        },
+        "preview": "Voorbeeld van afbeelding",
+        "text": {
+          "help": "De tekst wordt boven de afbeelding weergegeven wanneer u de muisaanwijzer erop plaatst.",
+          "label": "Afbeeldingstekst",
+          "placeholder": "Schrijf een tekst..."
+        }
+      },
+      "label": "Beeld- en geluidsitem",
+      "prev": "Beeld en geluid item nog niet vastgesteld ..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "Dit is de afbeelding die in het item wordt weergegeven. U kunt een van uw geüploade afbeeldingen kiezen of een nieuwe uploaden.",
+          "label": "URL van afbeelding",
+          "placeholder": "Klik hier om de afbeelding te selecteren"
+        },
+        "layout": {
+          "help": "De richting van een afbeeldings- en tekstblok bepaalt waar elk van de elementen in het blok wordt weergegeven.",
+          "label": "Oriëntatie",
+          "values": {
+            "0": "Tekst rechts, afbeelding links",
+            "1": "Tekst links, afbeelding rechts"
+          }
+        },
+        "preview": "Voorbeeld van afbeelding",
+        "text": {
+          "help": "Je moet een tekst schrijven.",
+          "label": "In deze teksteditor kun je de inhoud van het blok schrijven.",
+          "placeholder": "Schrijf een tekst..."
+        }
+      },
+      "label": "Afbeelding en tekst",
+      "prev": "Beeld en tekst nog niet vastgesteld..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Gebruik tekstinvoer om de URL in te voeren van de interactieve video die is gemaakt met de interactieve videotool.",
+          "label": "Video-URL",
+          "placeholder": "Voorbeeld: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Interactieve video",
+      "prev": "Interactieve video nog niet vastgesteld"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "Deze legenda wordt onder de formule en als tekstblok weergegeven",
+          "label": "Formule legende",
+          "placeholder": "Voorbeeld: Kwadratische formule"
+        },
+        "formula": {
+          "help": "Gebruik het tekstgebied om de formule te typen. Onder dit gebied verschijnt een voorbeeld van de formule als deze correct is of de tekst in het rood als de formule niet correct is",
+          "label": "Formule in LaTex-indeling",
+          "placeholder": "Voorbeeld: \\text{De kwadratische formule is }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "LaTeX formule",
+      "prev": "Formule nog niet vastgesteld..."
+    },
+    "MissingWords": {
+      "label": "Ontbrekende woorden"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Wissen",
+          "new": "Nieuw antwoord toevoegen...",
+          "text": "Antwoorden"
+        },
+        "sentence": {
+          "help": "U moet de tekst van de zin inclusief de opening schrijven met behulp van de speciale markering [leeg].",
+          "label": "Tekst van de zin",
+          "placeholder": "Zinstekst met markering [leeg]"
+        },
+        "sentencePreview": {
+          "help": "Dit is hoe je naar de zin in de inhoudseenheid zou kijken.",
+          "label": "Voorvertoning van zin",
+          "placeholder": "Zinstekst met de marker ___ "
+        }
+      },
+      "label": "Element ontbrekende woorden",
+      "prev": "Het ontbrekende woordelement is nog niet vastgesteld..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "Deze tekst verschijnt als knoptekst, die moet worden geactiveerd om het modale venster te openen.",
+          "label": "Knoptekst",
+          "placeholder": "Schrijf de tekst..."
+        }
+      },
+      "label": "Modaal venster"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "Dit zal de achtergrondafbeelding van de puzzel zijn. U kunt een van uw geüploade afbeeldingen kiezen.",
+          "label": "URL van afbeelding",
+          "placeholder": "Voeg hier de URL van de afbeelding in...",
+          "preview": "Voorbeeld van puzzel"
+        },
+        "pieces": {
+          "altImg": "Alt-tekst voor bijsnijden",
+          "altRec": "Alt-tekst voor positie",
+          "delete": "Wissen",
+          "h": "Hoog",
+          "new": "Voeg nieuw stuk toe...",
+          "w": "Wijd",
+          "x": "Links",
+          "y": "Superieur"
+        }
+      },
+      "label": "Puzzel",
+      "prev": "De puzzel is nog niet geïnitialiseerd..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Groepstitel",
+          "label": "Titel",
+          "placeholder": "Voorbeeld: Law Module"
+        }
+      },
+      "label": "Groep",
+      "prev": "Groep nog niet estabecido ..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Inhoudsopgave"
+    },
+    "RelatedUnitsItem": {
+      "current": "Huidige eenheid",
+      "form": {
+        "current": {
+          "title": "Dit is de huidige eenheid"
+        },
+        "title": {
+          "help": "Titel van het bericht",
+          "label": "Titel",
+          "placeholder": "Voorbeeld: Mensenrechten"
+        },
+        "url": {
+          "help": "Bestemmings-URL",
+          "label": "Url",
+          "placeholder": "Voorbeeld: https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Ingang",
+      "prev": "Inzending nog niet vastgesteld..."
+    },
+    "SchemaContainer": {
+      "label": "Plan"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "Dit zal het gedeeltelijke beeld van de regeling zijn.",
+          "label": "URL van afbeelding",
+          "placeholder": "Klik hier om de afbeelding te selecteren"
+        },
+        "prev": "Voorbeeld van afbeelding"
+      },
+      "label": "Overzichtsitem",
+      "prev": "Item van esuqema nog niet vastgesteld..."
+    },
+    "SentenceOrderContainer": {
+      "label": "Sorteren van zinnen"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Wissen",
+          "help": "Antwoorden die worden geconstrueerd uit de ingevoerde woorden",
+          "legend": "Lijst met antwoorden",
+          "new": "Voeg een nieuwe reactie toe...",
+          "text": "Antwoorden"
+        },
+        "words": {
+          "delete": "Wissen",
+          "help": "De antwoorden moeten uit deze woorden kunnen worden geconstrueerd",
+          "legend": "Woordenlijst",
+          "new": "Een nieuw woord toevoegen...",
+          "text": "Woord"
+        }
+      },
+      "label": "Sorteerelement voor woordgroepen",
+      "prev": "Het zinsorteerelement is nog niet geïnitialiseerd..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "Hiermee stelt u de uitlijning van de afbeelding in wanneer de weergave niet \"Pas de oorspronkelijke afmetingen aan de beschikbare ruimte aan\" is.",
+          "label": "Uitlijning van afbeeldingen",
+          "values": {
+            "center": "Gericht",
+            "left": "Links",
+            "right": "Rechts"
+          }
+        },
+        "aspect": {
+          "help": "De afbeelding kan worden weergegeven met de oorspronkelijke afmetingen (indien mogelijk) of kan worden aangepast aan de breedte van het scherm (schaal de afbeelding). Als de afmetingen groter en breder zijn dan het scherm kan weergeven, wordt het altijd automatisch aangepast aan het scherm",
+          "label": "Uiterlijk van de afbeelding",
+          "values": {
+            "custom": "Gewoonte",
+            "fit": "Pas de oorspronkelijke afmetingen aan de beschikbare ruimte aan",
+            "original": "Originele afmetingen"
+          }
+        },
+        "image": {
+          "help": "Dit is de afbeelding die in het item wordt weergegeven.",
+          "label": "URL van afbeelding",
+          "placeholder": "Voer hier de URL van de afbeelding in"
+        },
+        "preview": "Voorbeeld",
+        "size": {
+          "height": "Hoog",
+          "heightPlaceholder": "Hoogte afbeelding...",
+          "keepRatio": "Beeldverhouding behouden",
+          "width": "Wijd",
+          "widthPlaceholder": "Beeldbreedte..."
+        }
+      },
+      "label": "Beeld",
+      "prev": "Beeld nog niet vastgesteld..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Je moet minstens 2 antwoorden schrijven en markeren welke van hen correct is.",
+          "label": "Mogelijke antwoorden"
+        },
+        "questionText": {
+          "help": "Dit is de tekst van de vraag die wordt weergegeven in de inhoudseenheid.",
+          "label": "Tekst van de vraag",
+          "placeholder": "Tekst van de eenvoudige vraag..."
+        }
+      },
+      "label": "Eenvoudige vraag",
+      "prev": "Simpele vraag nog niet gesteld..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "Dit is de naam die in de tabbladtitel wordt weergegeven.",
+          "label": "Tabbladnaam",
+          "placeholder": "Voorbeeld: Professionele vaardigheden"
+        }
+      },
+      "label": "Wimper"
+    },
+    "Table": {
+      "empty": "De tabel is nog niet geïnitialiseerd",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "Kolomnaam is leeg of al gedefinieerd",
+            "label": "Kolomnaam",
+            "placeholder": "Typ hier de kolomnaam..."
+          },
+          "columnPosition": {
+            "error": "Kolompositie buiten bereik",
+            "label": "Kolom positie"
+          },
+          "label": "Nieuwe kolom toevoegen",
+          "submit": "Kolom toevoegen"
+        },
+        "addRow": "Nieuwe rij toevoegen",
+        "deleteColumn": "Kolom wissen",
+        "deleteRow": "Rij wissen"
+      },
+      "help": {
+        "edit": "Selecteer een cel die u wilt bewerken. Als u tijdens het bewerken nieuwe regels wilt toevoegen, drukt u op de Shift-toets terwijl u op Enter drukt."
+      },
+      "label": "Plank",
+      "prev": "Tabel nog niet vastgesteld..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Wimpers",
+      "label": "Tabbladmenu"
+    },
+    "TermClassification": {
+      "label": "Classificatie",
+      "prev": "Classificatie"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "Dit is de kolom waarop de termen betrekking hebben.",
+          "label": "Kolom",
+          "placeholder": "Kolom"
+        },
+        "terms": {
+          "help": "In dit bericht moet je de woorden schrijven die gerelateerd zijn aan de term, gescheiden door een puntkomma elk. Bijvoorbeeld: deze; zijn; sommige; woorden",
+          "label": "Woorden",
+          "placeholder": "Schrijf woorden gescheiden door puntkomma's"
+        }
+      },
+      "label": "Classificatie-item",
+      "prev": "Object nog niet vastgesteld..."
+    },
+    "Test": {
+      "label": "Test Type",
+      "questionSelect": "Selecteer een vraagtype dat u aan de quiz wilt toevoegen"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Je moet een tekst schrijven.",
+        "label": "In deze teksteditor kun je de inhoud van het blok schrijven.",
+        "placeholder": "Voer een tekst in...",
+        "styles": {
+          "attention": "Aandacht",
+          "default": "Geen stijl",
+          "help": "Hiermee bepaalt u de indeling van het vak dat de tekst omringt",
+          "label": "Tekstblokstijl",
+          "more": "Meer informatie",
+          "note": "Notitie"
+        }
+      },
+      "label": "Tekstblok",
+      "prev": "Tekst nog niet vastgesteld..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Drie kolommen"
+    },
+    "TrueFalseContainer": {
+      "label": "Waar/onwaar",
+      "prev": "Waar/onwaar nog niet vastgesteld..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Vals",
+          "help": "Kies tussen waar of onwaar als correct antwoord",
+          "label": "Juist antwoord",
+          "true": "Waar"
+        },
+        "questionText": {
+          "help": "Dit is de tekst van het item.",
+          "label": "Tekst van het item",
+          "placeholder": "Tekst van het object..."
+        }
+      },
+      "label": "Waar/onwaar object",
+      "prev": "Waar/onwaar object nog niet vastgesteld..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Vals",
+          "help": "Kies tussen waar of onwaar als correct antwoord",
+          "label": "Juist antwoord",
+          "true": "Waar"
+        },
+        "questionText": {
+          "help": "Dit is de tekst van de vraag die wordt weergegeven in de inhoudseenheid.",
+          "label": "Tekst van de tekstvraag",
+          "placeholder": "Tekst van de vraag..."
+        }
+      },
+      "label": "Waar of niet waar vraag",
+      "prev": "Vraag of het waar of niet waar is nbo al vastgesteld..."
+    },
+    "TwoColumnsLayout": {
+      "label": "Twee kolommen"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Standaard ondertitels weergeven",
+          "no": "Nee",
+          "yes": "Ja"
+        },
+        "url": {
+          "help": "Gebruik tekstinvoer om de URL van je video in te voeren (youtube, vimeo...)",
+          "label": "Video-URL",
+          "placeholder": "Voorbeeld: https://example.com/video.mp4"
+        }
+      },
+      "label": "Video",
+      "prev": "Video nog niet ingesteld..."
+    }
+  }
+}

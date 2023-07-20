@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Mostrar/Ocultar categorías",
+    "viewImage": "Ver imagen"
+  },
+  "common": {
+    "alt": {
+      "help": "Este é o texto alternativo de descrición para a imaxe en materia de accesibilidade",
+      "label": "Texto alternativo para a imaxe",
+      "placeholder": "Texto alternativo"
+    },
+    "captions": {
+      "help": "URL de INDIeMedia do ficheiro que contén a transcrición do diálogo, efectos de son, pistas musicais e outra información de audio para cando o espectador é xordo ou ten problemas de audición, ou se o video/audio está silenciado. Os subtítulos tamén se mostran sobre o video.",
+      "label": "Subtítulos (CC)",
+      "placeholder": "Exemplo: https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "URL de INDIeMedia do ficheiro que contén descricións de texto do que sucede no video para cando a parte do video non está dispoñible porque o espectador é cego e non usa unha pantalla. As descricións son lidas por un lector de pantalla ou convertidas nunha pista de audio separada.",
+      "label": "Descrición",
+      "placeholder": "Exemplo: https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Descargando unidade, por favor espere",
+      "title": "Descargando"
+    },
+    "feedback": {
+      "help": "Intdouce el feedback que recibirá el alumno tanto si responde correcta o incorrectamente",
+      "label": "Feedback",
+      "negative": "Feedback negativo...",
+      "positive": "Feedback positivo..."
+    },
+    "generate": {
+      "description": "Generando, por favor espere",
+      "title": "Generando"
+    },
+    "help": {
+      "button": "Por defecto",
+      "help": "Este texto será o que apareza encima do widget para que o usuario entenda cómo interaccionar co widget. <strong>Se se deixa en branco tomará o valor por defecto.</strong>",
+      "label": "Axuda",
+      "placeholder": "Texto de axuda por defecto"
+    },
+    "language": {
+      "EL": "Grego",
+      "EN": "Inglés",
+      "ES": "Español",
+      "FR": "Francés",
+      "LT": "Lituano"
+    },
+    "loading": {
+      "description": "Cargando, por favor espere",
+      "title": "Cargando"
+    },
+    "name": {
+      "help": "Este será o nome da instancia do widget para as analíticas de aprendizaxe",
+      "label": "Nome",
+      "placeholder": "Nombre de la instancia del widget"
+    },
+    "navbar": {
+      "options": "Expandir/contraer opcións"
+    },
+    "preview": {
+      "description": "Tu vista previa está siendo generada, por favor espere",
+      "generated": {
+        "description": "Tu vista previa está lista. Se tivemos no te redirecciona á vista previa, hai clic no enlace que aparece a continuación:",
+        "title": "Vista previa generada correctamente"
+      },
+      "title": "Generando vista previa"
+    },
+    "publish": {
+      "description": "A unidade está sendo xerada para a súa descarga, por favor espere",
+      "title": "Publicando unidade"
+    },
+    "publishToNetlify": {
+      "description": "Tu unidad está sendo subida a Netlify, por favor espere",
+      "title": "Publicando unidade en Netlify"
+    },
+    "save": {
+      "description": "Guardando, por favor espere",
+      "title": "Guardando"
+    },
+    "scorm": {
+      "description": "Tu paquete SCORM está siendo generado, por favor espere",
+      "title": "Generando paquete SCORM"
+    },
+    "selectType": "Selecciona un tipo das seguintes opcións",
+    "unit": {
+      "settings": "Introduce os datos da unidade"
+    }
+  },
+  "dialog": {
+    "translate": "Traducir unidade"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "O acordeón está baleiro. Debes engadir contido usando o botón de engadir á dereita."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "O contedor está baleiro. Debes engadir polo menos un elemento ao contedor."
+      },
+      "title": {
+        "invalid": "O título do contedor non é válido. Debes establecer un."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "A URL establecida para a imaxe de fondo non é correcta. Debes proporcionar unha URL de indieauthor válida."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "O texto alternativo para a imaxe animada debe estar establecido."
+        },
+        "altRec": {
+          "invalid": "O texto alternativo para a rexión animada debe estar establecido."
+        },
+        "empty": "A animación debe ter polo menos unha rexión animada.",
+        "h": {
+          "invalid": "A altura debe estar establecida e debe ser un número válido."
+        },
+        "w": {
+          "invalid": "O largo debe estar establecido e debe ser un número válido."
+        },
+        "x": {
+          "invalid": "A coordenada máis á esquerda debe estar establecida e debe ser un número válido."
+        },
+        "y": {
+          "invalid": "A superior debe estar establecida e debe ser un número válido."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "A animación está baleiro. Debes engadir polo menos un ítem usando o botón de engadir."
+      },
+      "height": {
+        "invalid": "O alto da animación debe ser maior que 0."
+      },
+      "image": {
+        "invalid": "A URL establecida para a imaxe non é válida. Debes asegurarte de proporcionar unha URL válida de indiemedia no campo imaxe."
+      },
+      "width": {
+        "invalid": "O largo da animación debe ser maior que 0."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "A URL establecida para a imaxe non é válida. Debes asegurarte de proporcionar unha URL válida de indiemedia no campo imaxe."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "Debes engadir polo menos un termo-definición de audio"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "Debes proporcionar unha URL válida de indiemedia"
+      },
+      "definition": {
+        "invalid": "Debes proporcionar unha definición."
+      },
+      "term": {
+        "invalid": "Debes proporcionar un termo."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "Non hai escrito o contido da cita. Debes, polo menos, escribi-lo contido."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "Debes proporcionar polo menos un elemento de tipo texto e botón."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "A URL establecida para a imaxe non é válida. Debes asegurarte de que proporcionas unha URL IndieMedia válida no campo de imaxe do botón."
+      },
+      "text": {
+        "invalid": "O texto está baleiro. Debes escribir o copiar un texto."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "A venda destacada está vacía. Debe agregar polo menos un elemento simple."
+      },
+      "text": {
+        "invalid": "O texto esta baleiro. Debes escribir un pequeno texto."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "Denes proporcionar unha imaxe válidade no campo URL."
+      },
+      "options": {
+        "noCorrect": "Debes seleccionar polo menos unha correcta",
+        "notEnougOptions": "Debes introducir 4 opcións"
+      },
+      "text": {
+        "invalid": "O texto está baleiro. Debes introducir un texto."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Tódalas columnas da disposición deben conter polo menos un elemento arrastrándoo desde a paleta da esquerda."
+      },
+      "width": {
+        "invalid": "Ancho de columna inválido"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "Debes proporcionar un texto alternativo para a imaxe"
+      },
+      "audioblob": {
+        "invalid": "O contido da ficheiro de audio non é correcto. Debes seleccionar unha arquivo válido."
+      },
+      "captions": {
+        "invalid": "A URL establecida para os subtitulos non é válida. Debes asegurarte de proporcionar unha URL válida de indieta"
+      },
+      "captionsblob": {
+        "invalid": "O contido do ficheiro de subtítulos non é correcto. Debes seleccionar un arquivo válido."
+      },
+      "descriptions": {
+        "invalid": "A URL establecida para a descrición non é válida. Debes asegurarte de proporcionar unha URL válida de indieta"
+      },
+      "imageblob": {
+        "invalid": "O contido da imaxe non é correcto. Debes seleccionar unha imaxe válida."
+      },
+      "name": {
+        "invalid": "Debes proporcionar un nome para esta instancia.",
+        "notUniqueName": "O nome da instancia debe ser único en todo o contido."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "Debes proporcionar polo menos un elemento do tipo Correct Word."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "A URL estácida para a imaxe non é válida. Debes proporcionar unha URL de indieauthor válida."
+      },
+      "question": {
+        "invalid": "O texto da pregunta está baleiro."
+      },
+      "word": {
+        "invalid": "O texto da resposta está baleiro."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "Debes agregar polo menos unha parella"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "A URL introducida para a imaxe non é válida. Débese asegurar de proporcionar unha URL válida de indiemedia no campo da imaxe."
+      },
+      "text": {
+        "invalid": "O texto esta vacina. Debes escribir un pequeno texto."
+      },
+      "type": {
+        "invalid": "O tipo establecido para o elemento non é válido. Debes asegurarte de que a opción 'Texto' o 'Imagen' estea seleccionada."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "El elemento está baleiro. Debes engadir polo menos un ítem termo-definición usando o botón de engadir á dereita."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "O campo definición está baleiro. Debes escribir unha definición."
+      },
+      "term": {
+        "invalid": "O campo termo está baleiro. Debes escribir un termo."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "Debes seleccionar unha resposta correcta",
+        "notEnoughAnswers": "Debes escribir polo menos 2 posibles respostas"
+      },
+      "question": {
+        "empty": "O texto da pregunta non pode estar baleiro",
+        "onlyOneBlank": "Debes incluír só un espazo en branco na pregunta"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "A resposta non debe estar baleiro"
+      },
+      "attempts": {
+        "invalid": "Os intentos deben ser un número entre 1 e 9"
+      },
+      "question": {
+        "invalid": "A pregunta non debe estar baleiro"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "A URL establecida para a imaxe non é válida. Debes asegurarte de proporcionar unha URL válida de indiemedia no campo imaxe."
+      },
+      "text": {
+        "invalid": "O texto está baleiro. debes escribir un texto"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "O número de columnas debe ser 1,2 ou 3"
+      },
+      "data": {
+        "empty": "Debes proporcionar polo menos un elemento de imaxe e son."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "Debes proporcionar unha URL de indiemedia válida"
+      },
+      "image": {
+        "invalid": "A URL introducida para a imaxe non é válida. Débese asegurar de proporcionar unha URL válida de indiemedia no campo da imaxe."
+      },
+      "text": {
+        "invalid": "O texto esta vacina. Debes escribir un pequeno texto."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "A URL establecida para a imaxe non é válida. Debes asegurarte de proporcionar unha URL válida de indiemedia no campo imaxe."
+      },
+      "text": {
+        "invalid": "O texto está baleiro. Debes redactar o copiar un texto."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "A URL configurada para o video non é válida. Débese asegurar de proporcionar unha a partir do vídeo interactivo de indieopen."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "Debes proporcionar unha leira da fórmula."
+      },
+      "formula": {
+        "invalid": "Debes proporcionar unha fórmula no formato LaTex."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "Debes proporcionar polo menos un elemento de palabras faltantes."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "Debes escribir polo menos unha resposta correcta",
+        "invalid": "O texto da resposta está baleiro"
+      },
+      "sentence": {
+        "empty": "A frase non debe estar baleiro",
+        "onlyOneBlank": "Debes incluír soamente un marcador de foco na frase"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "O modal está baleiro. Debe agregar polo menos un elemento simple."
+      },
+      "text": {
+        "invalid": "O texto esta vacina. Debes escribir un pequeno texto."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "A URL establecida para a imaxe de fondo non é correcta. Debes proporcionar unha URL de indieauthor válida."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "O texto alternativo para o percorrido debe estar establecido."
+        },
+        "altRec": {
+          "invalid": "O texto alternativo para a posición debe estar establecido."
+        },
+        "empty": "O rompecabezas debe ter polo menos unha peza.",
+        "h": {
+          "invalid": "A altura debe estar establecida e debe ser un número válido."
+        },
+        "w": {
+          "invalid": "O largo debe estar establecido e debe ser un número válido."
+        },
+        "x": {
+          "invalid": "A coordenada máis á esquerda debe estar establecida e debe ser un número válido."
+        },
+        "y": {
+          "invalid": "A superior debe estar establecida e debe ser un número válido."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "El elemento está baleiro. Debes engadir polo menos unha entrada utilizando o botón de engadir á dereita."
+      },
+      "title": {
+        "invalid": "O campo título está baleiro. Debes escribir un título."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "Hai polo menos un enlace duplicado. Debes proporcionar un enlace único para cada entrada.",
+        "empty": "El elemento está baleiro. Debes engadir polo menos unha entrada utilizando o botón de engadir á dereita.",
+        "multipleCurrent": "Hai polo menos dúas entradas actuais. Debes proporcionar soamente unha entrada actual."
+      },
+      "moreThanOne": "Debes proporcionar como moito un elemento de táboa de contido."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "O campo título está baleiro. Debes escribir un título."
+      },
+      "url": {
+        "invalid": "O campo url debe estar establecido co seguinte formato: https://[orixe]/[autor]/[unidade]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "O esquema está baleiro. Debes engadir polo menos un ítem usando o botón de engadir da dereita."
+      },
+      "height": {
+        "invalid": "A altura da animación debe ser maior que 0."
+      },
+      "image": {
+        "invalid": "A URL establecida para a imaxe completa non é válida. Debes asegurarte de proporcionar unha URL válida de indiemedia."
+      },
+      "width": {
+        "invalid": "A largura da animación debe ser maior que 0."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "A URL establecida para a imaxe non é válida. Debes asegurarte de proporcionar unha URL válida de indiemedia no campo imaxe."
+      },
+      "text": {
+        "invalid": "O texto está baleiro. Debes escribir un pequeno texto."
+      }
+    },
+    "section": {
+      "emptyData": "Unha sección non pode estar vacía. Debes engadir polo menos un elemento.",
+      "invalidBookmark": "A sección debe ter un marcador válido.",
+      "invalidImage": "A sección debe ter unha imaxe de fondo.",
+      "invalidName": "A sección debe ter un nome.",
+      "typeImageNotSelected": "Se o tipo seleccionado é Imaxe de fondo, debes establecer a imaxe."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "Debes proporcionar polo menos un elemento de ordenamento de frases."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "Debes escribir polo menos unha resposta correcta",
+        "impossible": "A frase non pode ser construída a partir das palabras establecidas",
+        "invalid": "O texto da resposta está baleiro"
+      },
+      "words": {
+        "empty": "Debes escribir polo menos unha palabra válida",
+        "invalid": "O texto da palabra está baleiro"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "A URL establecida para a imaxe non é válida. Debes asegurarte de proporcionar unha URL válida de indiemedia no campo imaxe.",
+        "sizeNotSet": "O largo e o alto da imaxe deben estar establecidos cando o seu aspecto é \"Personalizado\""
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "Debes seleccionar unha resposta correcta",
+        "notEnoughAnswers": "Debes escribir polo menos 2 posibles respostas"
+      },
+      "question": {
+        "empty": "O texto da pregunta non pode estar baleiro"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "A pestaña está baleiro. Debes engadir polo menos un elemento á pestaña."
+      },
+      "name": {
+        "invalid": "O nome da pestaña non é válido. Debes establecer un."
+      }
+    },
+    "Table": {
+      "empty": "A táboa non ten columnas establecidas"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "O menú de pestañas non contén pestañas. Debes engadir polo menos unha."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Hai columnas duplicadas. Revisa tus items.",
+        "duplicatedTerms": "Hai termos duplicados entre tus columnas. Revisa os termos"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "A columna non debe estar vacía"
+      },
+      "terms": {
+        "empty": "Os termos non poden estar baleiros.",
+        "invalid": "Os termos non cumpren o formato requirido. Por favor, separa os termos con punto e coma (;)."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "A proba está baleiro. Debes agregar polo menos unha pregunta."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "O texto está baleiro. Debes escribir un pequeno texto."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "Debes agregar al menos un elemento verdadero o falso"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "O texto da pregunta non pode estar baleiro"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "O texto da pregunta non pode estar baleiro"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "A URL establecida para o vídeo non é válida. Debes asegurarte de proporcionar unha URL válida de IndieMedia ou Youtube.",
+        "localInvalid": "A URL establecida para o vídeo non é válida. Debes asegurarte de proporcionar unha URL válida de YouTube."
+      }
+    }
+  },
+  "footer": {
+    "content": "Podes engadir novas seccións facendo uso da barra de xeramentas superior"
+  },
+  "general": {
+    "areYouSure": "Estás seguro?",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "confirm": "Confirmar",
+    "delete": "Eliminar",
+    "discard": "Descartar",
+    "false": "Falso",
+    "load": "Cargar",
+    "modelDetected": "Queres cargar unha unidade previa?",
+    "true": "Verdadero"
+  },
+  "header": {
+    "addSection": "Añadir sección",
+    "clear": "Limpar contido",
+    "download": "Descargar unidade",
+    "importSection": "Importar sección",
+    "install": "Instalar aplicación",
+    "preview": "Previsualizar contido",
+    "publish": "Publicar contido",
+    "publishToNetlify": "Publicar contido en Netlify",
+    "redo": "Rehacer acción",
+    "save": "Guardar contido",
+    "scorm": "Exportar en formato SCORM",
+    "translate": "Traducir unidade",
+    "undo": "Deshacer acción",
+    "upload": "Subir unidade",
+    "validate": "Validar unidade"
+  },
+  "items": {
+    "add": "Añadir contido",
+    "delete": "Eliminar elemento",
+    "duplicate": "Duplicar elemento",
+    "edit": "Editar contido",
+    "export": "Exportar elemento"
+  },
+  "messages": {
+    "changesSaved": "Cambios gardados correctamente.",
+    "confirmClearContent": "Vas a eliminar o contido por completo. Asegúrate de que é o que realmente desexas facer.",
+    "confirmLoadModel": "Unha unidade previa foi atopada. Escolle se desexas cargala ou descartala.",
+    "contentCleared": "Contido eliminado correctamente.",
+    "contentErrors": "¡Ups! Hai erros en tu contido. Revisa as mensaxes de erro e segue as súas indicacións para arranxalos.",
+    "couldNotExportElement": "O elemento non puido ser exportado",
+    "couldNotExportSection": "A sección non puido ser exportada",
+    "deletedSection": "Sección eliminada correctamente",
+    "emptyContent": "Non has engadido contido.",
+    "errorMessage": "Error",
+    "exportedElement": "Elemento exportado con éxito",
+    "exportedSection": "Sección exportada con éxito",
+    "importedElement": "Elemento importado con éxito",
+    "importedSection": "Sección importada con éxito",
+    "loadError": "Non se puido cargar a unidade",
+    "noElement": "Non hai elementos que importar",
+    "noErrors": "Ben! Non hai erros. Podes proceder a gardar o contido.",
+    "noRedo": "Nada que rehacer",
+    "noSection": "Non hai seccións que importar",
+    "noUndo": "Nada que deshacer",
+    "previewError": "Non se puido previsualizar a unidade",
+    "publishError": "Non se puido publicar a unidade",
+    "savedUnit": "Unidade gardada con éxito",
+    "saveError": "Non se puido gardar a unidade",
+    "successMessage": "Ok",
+    "translateError": "Non se puido traducir a unidade",
+    "warningMessage": "Atención"
+  },
+  "netlify": {
+    "button": {
+      "text": "Conectar"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Crear sitio",
+        "help": "Seleccione un dos sitios dispoñibles na súa conta Netlify",
+        "label": "Por favor, seleccione un sitio dispoñible do seu Netlify para subir a Unidade"
+      },
+      "title": "Rechea os campos para conectar con Netlify ",
+      "token": {
+        "help": "Escriba o seu token de acceso persoal de Netlify, pode atopalo na sección de Applications da configuración de conta de Netlify",
+        "label": "Inseri o token de acceso persoal:",
+        "placeholder": "Inserte aquí su token de acceso personal de Netlify"
+      }
+    },
+    "error": {
+      "message": "Token inválido"
+    },
+    "success": {
+      "message": "A unidade foi subida a Netlify con éxito, accede a ela facendo clic no seguinte enlace: ",
+      "message_2": "Ten en conta que, se a unidade ten moito contido, a publicación pode tardar uns minutos.",
+      "title": "Unidade subida a Netlify"
+    }
+  },
+  "palette": {
+    "containers": "Contedores",
+    "exerciseElement": "Exercicios",
+    "interactiveElements": "Elementos interactivos",
+    "items": "ítems",
+    "layouts": "Disposicións",
+    "question": "Preguntas",
+    "simpleElements": "Elementos"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Bloque de código",
+        "screenReader": "Texto de axuda para lectores de pantalla"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Eliminar sección",
+    "duplicate": "Duplicar sección",
+    "edit": "Editar información",
+    "expandContract": "Expandir o contraer",
+    "export": "Exportar sección",
+    "form": {
+      "bookmark": {
+        "help": "Este marcador aparecerá na parte superior da unidade como marcador de sección. Debe ter un máximo de 40 caracteres.",
+        "label": "Marcador da sección",
+        "placeholder": "Escribe un marcador ..."
+      },
+      "image": {
+        "help": "",
+        "label": "URL da imaxe de fondo",
+        "placeholder": "Introduce la URL de la imagen ..."
+      },
+      "name": {
+        "help": "Este é o nome que terá a sección no contido.",
+        "label": "Nome da sección",
+        "placeholder": "Escribe un nombre ..."
+      },
+      "preview": "Vista previa da imaxe de fondo",
+      "type": {
+        "bc": "Cor de fondo (por defecto)",
+        "bi": "Imagen de fondo",
+        "help": "Se o tipo se establece a 'cor de fondo', a cor por defecto aparecerá por detrás do título mentres que en 'Imaxe de fondo' debes establecer unha imaxe de fondo para a sección de cabeceira.",
+        "label": "Tipo de fondo"
+      }
+    },
+    "import": "Importar elemento",
+    "label": "Sección",
+    "moveDown": "Desprazar sección cara a abaixo",
+    "moveUp": "Desprazar sección cara a arriba"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Activar/Desactivar analíticas na unidade",
+        "label": "Analíticas",
+        "no": "Non",
+        "yes": "Si"
+      },
+      "author": {
+        "help": "Escribe aquí o autor da unidade.",
+        "label": "Autor da unidade",
+        "placeholder": "Escribe o autor da unidade"
+      },
+      "background": {
+        "help": "La imagen debería ser aproximadamente de 1900 x 550 píxeles.",
+        "label": "Imagen del tema"
+      },
+      "color": {
+        "help": "Formato hexadecimal #FFFFFF requirido",
+        "label": "Color del tema",
+        "placeholder": "Introduce aquí a cor do tema"
+      },
+      "email": {
+        "help": "Este é o correo electrónico do autor.",
+        "label": "Email",
+        "placeholder": "Escribe el email del autor"
+      },
+      "institution": {
+        "help": "Nome da institución",
+        "label": "Institución",
+        "placeholder": "Escribe o nome da institución"
+      },
+      "language": {
+        "help": "Idioma da unidade.",
+        "label": "Idioma"
+      },
+      "license": {
+        "BY": "Recoñecemento 4.0 Internacional (CC BY 4.0)",
+        "BYNC": "Recoñecemento-NoComercial-SinObraDerivada 4.0 Internacional (CC BY-NC-ND 4.0)",
+        "BYNCND": "Recoñecemento-NoComercial-SinObraDerivada 4.0 Internacional (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Recoñecemento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)",
+        "BYND": "Recoñecemento-SinObraDerivada 4.0 Internacional (CC BY-ND 4.0)",
+        "BYSA": "Recoñecemento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)",
+        "help": "Licenza da unidade",
+        "label": "Licenza",
+        "PRIVATE": "Tódolos dereitos reservados"
+      },
+      "resource": {
+        "help": "Escribe o identificador do recurso",
+        "label": "ID de recurso:",
+        "placeholder": "Escribe o identificador de recurso"
+      },
+      "theme": {
+        "help": "Escolle o tema da unidade.",
+        "label": "Tema"
+      },
+      "title": {
+        "help": "Este é o título da unidade.",
+        "label": "Título da unidade",
+        "placeholder": "Escribe un título"
+      },
+      "type": {
+        "help": "Este é o tipo de unidade.",
+        "interoperability": "Interoperabilidade",
+        "label": "Tipo de unidade",
+        "open": "Aberta"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "Este é o idioma orixe da unidade",
+        "label": "Idioma origen"
+      },
+      "target": {
+        "help": "O idioma destino ao que será traducida a unidade",
+        "label": "Idioma destino"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Menú acordeón"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "Establece o título do grupo de contido. Aparecerá no título do menú despelgable.",
+          "label": "Título do contido",
+          "placeholder": "Exemplo: Habilidades profesionais"
+        }
+      },
+      "label": "Grupo de contido"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "Esta será a imaxe de fondo da animación. Podes escoller unha de tus imaxes subidas.",
+          "label": "URL de la imagen",
+          "placeholder": "Inseri la URL de la imagen aquí...",
+          "preview": "Vista previa da animación"
+        },
+        "pieces": {
+          "altImg": "Texto alternativo para a imaxe animada",
+          "altRec": "Texto alternativo para a rexión animada",
+          "delete": "Borrar",
+          "h": "Alto",
+          "new": "Engadir nova rexión animada...",
+          "w": "Largo",
+          "x": "Esquerdo",
+          "y": "Superior"
+        }
+      },
+      "label": "Animación",
+      "prev": "A animación non foi inicializada aínda..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "Esta será a altura do contedor da animación en píxeles",
+          "label": "Altura da animación",
+          "placeholder": "Exemplo: 200"
+        },
+        "image": {
+          "help": "Esta será a imaxe que apareza no elemento. Podes escoller unha de tus imaxes subidas ou ben subir unha nova.",
+          "label": "URL de la imagen",
+          "placeholder": "Haz click aquí para seleccionar la imagen"
+        },
+        "prev": "Vista previa da imaxe preview",
+        "width": {
+          "help": "Esta será a largura do contedor da animación en píxeles",
+          "label": "Largura da animación",
+          "placeholder": "Exemplo: 400"
+        }
+      },
+      "label": "Animación"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "Esta será a imaxe do item da animación.",
+          "label": "URL de la imagen",
+          "placeholder": "Haz click aquí para seleccionar la imagen"
+        },
+        "prev": "Vista previa"
+      },
+      "label": "Item da animación.",
+      "prev": "Item da animación non establecido aínda..."
+    },
+    "AudioTermContainer": {
+      "label": "Audio-términos"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "Débese introduci-la URL do audio que se desexa reproducir na unidade de contido.",
+          "label": "URL del fichero de audio",
+          "placeholder": "Introduce unha URL válida de indiemedia ..."
+        },
+        "definition": {
+          "help": "Esta definición debe ser a transcrición textual do audio.",
+          "label": "Definición",
+          "placeholder": "Escribe a definición ..."
+        },
+        "term": {
+          "help": "Este será o termo colocado á esquerda do widget",
+          "label": "Término",
+          "placeholder": "Escribe aquí tu término..."
+        }
+      },
+      "label": "Audio-término",
+      "prev": "Audio-termo non establecido aínda ..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "A cita pode aparecer aliñada á dereita ou á esquerda",
+          "label": "Aliñación da cita",
+          "values": {
+            "left": "Á esquerda",
+            "right": "Á dereita"
+          }
+        },
+        "caption": {
+          "help": "O subtítulo da cita aparece debaixo da cita. Utilízase principalmente para indica-lo autor ou os autores da cita",
+          "label": "Subtítulo da cita",
+          "placeholder": "Exemplo: Carl Sagan"
+        },
+        "quote": {
+          "help": "Este texto é a cita textual",
+          "label": "Texto da cita",
+          "placeholder": "Exemplo: 'A ausencia de evidencia non é unha evidencia da ausencia.'"
+        },
+        "source": {
+          "help": "Fonte orixinal da cita (Ano, libro, revista... etc)",
+          "label": "Orixe da cita",
+          "placeholder": "Exemplo: Ano 1990"
+        }
+      },
+      "label": "Cita",
+      "prev": "Cita no establecida todavía..."
+    },
+    "ButtonTextContainer": {
+      "label": "Botones con texto"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "Esta será a imaxe que aparecerá no botón. Podes elixir unha de tus imaxes subidas ou subir unha nova.",
+          "label": "URL de la imagen del botón",
+          "placeholder": "Inserta tu URL aquí"
+        },
+        "preview": "Vista previa da imaxe do botón",
+        "text": {
+          "help": "Neste editor de texto podes escribir o contido do texto asociado ao botón",
+          "label": "Texto",
+          "placeholder": "Escribe tu texto aquí..."
+        }
+      },
+      "label": "Elemento de botones con texto",
+      "prev": "O elemento de botons con texto non foi inicializado aínda ..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Cor",
+        "helps": {
+          "animation": "Determina unha das animacións predefinidas para a caixa cos elementos embebidos (simple ou plegable).",
+          "colorTheme": "Formato hexadecimal #FFFFFF requirido. <strong> Se non se rechea tomará o valor por defecto a cor do tema da unidade.</strong>",
+          "styles": "Determina un dos estilos predefinidos para a caixa cos elementos embebidos.",
+          "textTitle": "Este será o texto que aparecerá como título. <strong>Se non se rechea tomará un valor por defecto.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Introduce aquí a cor",
+          "textTitle": "Introduce aquí o título"
+        },
+        "styles": {
+          "animation": "Estilo de animación",
+          "attention": "Atención",
+          "collapsible": "Plegable",
+          "danger": "Peligro",
+          "label": "Estilo",
+          "more": "Saber máis",
+          "note": "Nota",
+          "simple": "Simple"
+        },
+        "textTitle": "Título"
+      },
+      "label": "Destacado"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "A imaxe sairá na parte superior do widget, por riba das opcións.",
+          "label": "URL de la imagen",
+          "placeholder": "Introduce la URL de la imagen..."
+        },
+        "options": {
+          "help": "Estas 4 opcións aparecerán debaixo da imaxe. Só unha pode ser correcta.",
+          "label": "Opcións",
+          "placeholder": "Escribe unha opción"
+        },
+        "preview": "Vista previa de la imagen",
+        "text": {
+          "help": "Este texto aparecerá por riba da imaxe en forma de texto ou pregunta.",
+          "label": "Texto",
+          "placeholder": "Escribe o texto aquí..."
+        }
+      },
+      "label": "Escoller unha opción",
+      "prev": "Escoller unha opción non establecido ..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "columnas",
+      "form": {
+        "width": {
+          "1": "Largo da primeira columna",
+          "help": "A outra columna ocupará o largo restante"
+        }
+      },
+      "label": "Disposición"
+    },
+    "CorrectWord": {
+      "label": "Palabra correcta"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "Imaxe descritiva da pregunta",
+          "label": "URL de la imagen",
+          "placeholder": "Inserta tu URL de la imagen aquí..."
+        },
+        "preview": "Vista previa de la imagen",
+        "question": {
+          "help": "Esta é a pregunta que será mostrada ao usuario.",
+          "label": "Texto da pregunta",
+          "placeholder": "Texto da pregunta"
+        },
+        "word": {
+          "help": "Esta palabra será a resposta á pregunta",
+          "label": "Resposta",
+          "placeholder": "Escribe unha palabra..."
+        }
+      },
+      "label": "Elemento de palabra correcta",
+      "prev": "A palabra correcta non foi establecida aínda..."
+    },
+    "CouplesContainer": {
+      "label": "Parellas",
+      "prev": "Parellas non establecidas aínda ..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "Esta imaxe estará asociada co texto que se introduza como parella neste formulario.",
+          "label": "URL de la imagen",
+          "placeholder": "Introduce la URL de la imagen aquí ..."
+        },
+        "legend": {
+          "first": "Primer elemento",
+          "second": "Segundo elemento"
+        },
+        "preview": "Vista previa de la imagen",
+        "text": {
+          "help": "Este texto estará asociado coa imaxe que se introduza como parella neste formulario.",
+          "label": "Texto",
+          "placeholder": "Escribe un texto..."
+        },
+        "type": {
+          "image": "Imagen",
+          "label": "Tipo",
+          "text": "Texto"
+        }
+      },
+      "label": "Parella",
+      "prev": "Parella no establecida aínda ..."
+    },
+    "DragdropContainer": {
+      "label": "Arrastrar e soltar"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "A definición aparece á dereita do elemento interactivo e o alumno deberá arrastra-lo termo á definición",
+          "label": "Definición",
+          "placeholder": "Exemplo: Todos os seres humanos teñen dereito de expresarse sen ser hostigados debido ao que opinan"
+        },
+        "term": {
+          "help": "O termo aparece á esquerda do elemento interactivo e será o que teña que arrastra-lo alumno e soltalo na definición.",
+          "label": "Término",
+          "placeholder": "Exemplo: Liberdade de expresión"
+        }
+      },
+      "label": "Termo-definición",
+      "prev": "Ítem no establecido..."
+    },
+    "FourColumnsLayout": {
+      "label": "Catro columnas"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Debes escribir polo menos 2 respostas e marcar cal delas é a correcta.",
+          "label": "Posibles respostas"
+        },
+        "questionPreview": {
+          "help": "Así é como se verá a pregunta na unidade de contido.",
+          "label": "Vista previa do texto da pregunta.",
+          "placeholder": "Texto da pregunta co foco ___ en branco."
+        },
+        "questionText": {
+          "help": "Debe escribir o texto da pregunta co espazo en branco que desexa coa palabra clave especial [brank].",
+          "label": "Texto da pregunta",
+          "placeholder": "Texto da pregunta co elemento [brank] en branco"
+        }
+      },
+      "label": "Pregunta de rechear o foco",
+      "prev": "Pregunta de rechear o foco non establecida aínda ..."
+    },
+    "GenericWidget": {
+      "label": "Widget"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "A resposta á pregunta",
+          "label": "Resposta",
+          "placeholder": "Escribe tu respuesta aquí"
+        },
+        "attempts": {
+          "help": "Número de intentos para adiviñar a resposta. Debe ser un número entre 1 e 9.",
+          "label": "Intentos"
+        },
+        "question": {
+          "help": "A pregunta a ser respondida",
+          "label": "Pregunta",
+          "placeholder": "Escribe tu pregunta aquí"
+        }
+      },
+      "label": "Adivina la palabra",
+      "prev": "Adiviña a palabra non foi inicializado aínda..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Se estableces un texto, esta será a leira da imaxe",
+          "label": "Leienda de la imagen",
+          "placeholder": "Introduce unha leira.."
+        },
+        "image": {
+          "help": "Esta será a imaxe que aparecerá no elemento.",
+          "label": "URL de la imagen",
+          "placeholder": "Haz click aquí para seleccionar la imagen"
+        },
+        "preview": "Vista previa"
+      },
+      "label": "Imagen con texto encima",
+      "prev": "Imaxe con texto encima non establecidos aínda..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Imagen y sonido"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "O ficheiro de audio reproducirase cando se faga click na imaxe.",
+          "label": "URL del fichero de audio",
+          "placeholder": "Escribe unha URL válida de indiemedia ..."
+        },
+        "image": {
+          "help": "A imaxe aparecerá primeiro",
+          "label": "URL de la imagen",
+          "placeholder": "Introduce la URL de la imagen..."
+        },
+        "preview": "Vista previa de la imagen",
+        "text": {
+          "help": "O texto aparecerá por riba da imaxe cando se pase o ratón por riba.",
+          "label": "Texto da imaxe",
+          "placeholder": "Escribe un texto..."
+        }
+      },
+      "label": "Ítem de imaxe e son",
+      "prev": "Ítem de imaxe e son non establecido aínda ..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "Esta será a imaxe que apareza no elemento. Podes escoller unha de tus imaxes subidas ou ben subir unha nova.",
+          "label": "URL de la imagen",
+          "placeholder": "Haz click aquí para seleccionar la imagen"
+        },
+        "layout": {
+          "help": "A orientación dun bloque de imaxe e texto establece dóndelle aparece cada un dos elementos no bloque.",
+          "label": "Orientación",
+          "values": {
+            "0": "Texto á dereita, imaxe á esquerda",
+            "1": "Texto á esquerda, imaxe á dereita"
+          }
+        },
+        "preview": "Vista previa de la imagen",
+        "text": {
+          "help": "Debes escribir obrigatoriamente un texto.",
+          "label": "Neste editor de texto podes escribir o contido do bloque.",
+          "placeholder": "Escribe un texto..."
+        }
+      },
+      "label": "Imaxe e texto",
+      "prev": "Imaxe e texto non establecidos aínda..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Use o ingreso de texto para introducir a URL do video interactivo creado coa xeramenta de video interactivo.",
+          "label": "URL del vídeo",
+          "placeholder": "Exemplo: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Vídeo interactivo",
+      "prev": "Vídeo interactivo no establecido aínda"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "Esta lei aparecerá baixo a fórmula e como bloque de texto",
+          "label": "Leienda da fórmula",
+          "placeholder": "Exemplo: Fórmula cuadrática"
+        },
+        "formula": {
+          "help": "Usa a área de texto para escribir a fórmula. Debaixo desta área aparecerá un previo da fórmula en caso de que sexa correcta ou o texto en vermello se a fórmula non é correcta",
+          "label": "Fórmula en formato LaTex",
+          "placeholder": "Ejemplo: \\text{La Fórmula Cuadrática es }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "Fórmula LaTeX",
+      "prev": "Fórmula no establecida aínda..."
+    },
+    "MissingWords": {
+      "label": "Palabras faltantes"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Borrar",
+          "new": "Engadir nova resposta...",
+          "text": "Resposta"
+        },
+        "sentence": {
+          "help": "Necesitas escribir o texto da frase incluíndo o oco mediante o uso do marcador especial [brank].",
+          "label": "Texto da frase",
+          "placeholder": "Texto da frase co marcador [brank]"
+        },
+        "sentencePreview": {
+          "help": "Así é como verías a frase na unidade de contido.",
+          "label": "Vista previa da frase",
+          "placeholder": "Texto da frase co marcador ___ "
+        }
+      },
+      "label": "Elemento de palabras faltantes",
+      "prev": "O elemento de palabras faltantes non foi establecido aínda..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "Este texto aparecerá como texto do botón, o cal debe ser accionado para abrir a vendana modal.",
+          "label": "Texto do botón",
+          "placeholder": "Escribe o texto..."
+        }
+      },
+      "label": "Ventá modal"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "Esta será a imaxe de fondo do rompecabezas. Podes escoller unha de tus imaxes subidas.",
+          "label": "URL de la imagen",
+          "placeholder": "Inseri la URL de la imagen aquí...",
+          "preview": "Vista previa do rompecabezas"
+        },
+        "pieces": {
+          "altImg": "Texto alternativo para o percorrido",
+          "altRec": "Texto alternativo para a posición",
+          "delete": "Borrar",
+          "h": "Alto",
+          "new": "Engadir nova peza...",
+          "w": "Largo",
+          "x": "Esquerdo",
+          "y": "Superior"
+        }
+      },
+      "label": "Rompecabezas",
+      "prev": "O rompecabezas non foi inicializado aínda..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Título do grupo",
+          "label": "Título",
+          "placeholder": "Exemplo: Módulo de Dereito"
+        }
+      },
+      "label": "Grupo",
+      "prev": "Grupo no estabecido aínda ..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Táboa de contido"
+    },
+    "RelatedUnitsItem": {
+      "current": "Unidade actual",
+      "form": {
+        "current": {
+          "title": "Esta é a unidade actual"
+        },
+        "title": {
+          "help": "Título da entrada",
+          "label": "Título",
+          "placeholder": "Exemplo: Dereitos humanos"
+        },
+        "url": {
+          "help": "URL de destino",
+          "label": "URL",
+          "placeholder": "Exemplo: https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Entrada",
+      "prev": "Entrada no establecida todavía ..."
+    },
+    "SchemaContainer": {
+      "label": "Esquema"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "Esta será a imaxe parcial do esquema.",
+          "label": "URL de la imagen",
+          "placeholder": "Haz click aquí para seleccionar la imagen"
+        },
+        "prev": "Vista previa de la imagen"
+      },
+      "label": "Ítem de esquema",
+      "prev": "Ítem de esuqema no establecido todavía..."
+    },
+    "SentenceOrderContainer": {
+      "label": "Ordenamento de frases"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Borrar",
+          "help": "Respostas que se construirán a partir das palabras introducidas",
+          "legend": "Lista de respostas",
+          "new": "Engadir unha nova resposta...",
+          "text": "Resposta"
+        },
+        "words": {
+          "delete": "Borrar",
+          "help": "As respostas deberían poder construírse a partir destas palabras",
+          "legend": "Lista de palabras",
+          "new": "Engadir unha nova palabra...",
+          "text": "Palabra"
+        }
+      },
+      "label": "Elemento de ordenamento de frases",
+      "prev": "O elemento de ordenamento de frases non foi inicializado aínda..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "Establece a aliñación da imaxe cando o aspecto non é \"Axusta as dimensións orixinais ao espazo dispoñible\".",
+          "label": "Aliñación da imaxe",
+          "values": {
+            "center": "Centrada",
+            "left": "Esquerda",
+            "right": "Dereita"
+          }
+        },
+        "aspect": {
+          "help": "A imaxe pódese mostrar coas dimensións orixinais (cando sexa posible) ou pode axustarse ó largo da pantalla (escala-la imaxe). Se as dimensións son máis altas e máis largas do que pode mostrar a pantalla, sempre axustarase automaticamente á pantalla",
+          "label": "Aspecto de la imagen",
+          "values": {
+            "custom": "Personalizado",
+            "fit": "Axusta as dimensións orixinais ao espazo dispoñible",
+            "original": "Dimensións orixinais"
+          }
+        },
+        "image": {
+          "help": "Esta será a imaxe que aparecerá no elemento.",
+          "label": "URL de la imagen",
+          "placeholder": "Introduce la URL de la imagen aquí"
+        },
+        "preview": "Vista previa",
+        "size": {
+          "height": "Alto",
+          "heightPlaceholder": "Alto da imaxe...",
+          "keepRatio": "Manter proporción da imaxe",
+          "width": "Largo",
+          "widthPlaceholder": "Largo da imaxe..."
+        }
+      },
+      "label": "Imagen",
+      "prev": "Imagen no establecida todavía ..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Debes escribir polo menos 2 respostas e marcar cal delas é a correcta.",
+          "label": "Posibles respostas"
+        },
+        "questionText": {
+          "help": "Este é o texto da pregunta mostrarase na unidade de contido.",
+          "label": "Texto da pregunta",
+          "placeholder": "Texto da pregunta simple..."
+        }
+      },
+      "label": "Pregunta simple",
+      "prev": "Pregunta simple no establecida aínda ..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "Este será o nome que apareza no título da pestaña.",
+          "label": "Nome da pestaña",
+          "placeholder": "Exemplo: Habilidades profesionais"
+        }
+      },
+      "label": "Pestana"
+    },
+    "Table": {
+      "empty": "A táboa aínda non foi inicializada",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "O nome da columna está baleiro ou xa está definido",
+            "label": "Nombre de columna",
+            "placeholder": "Escribe o nome de columna aquí..."
+          },
+          "columnPosition": {
+            "error": "Posición de columna fóra de rango",
+            "label": "Posición de columna"
+          },
+          "label": "Añadir nueva columna",
+          "submit": "Añadir columna"
+        },
+        "addRow": "Añadir nueva fila",
+        "deleteColumn": "Borrar columna",
+        "deleteRow": "Borrar fila"
+      },
+      "help": {
+        "edit": "Selecciona unha cela para editala. Para engadir novas liñas mentres editas, presiona a tecla shift mentres presionas intro."
+      },
+      "label": "Táboa",
+      "prev": "Táboa no establecida aínda..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Pestañas",
+      "label": "Menú de pestañas"
+    },
+    "TermClassification": {
+      "label": "Clasificación",
+      "prev": "Clasificación"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "Esta é a columna á cal estarán relacionados os termos",
+          "label": "Columna",
+          "placeholder": "Columna"
+        },
+        "terms": {
+          "help": "Nesta entrada debes escribir as palabras que están relacionadas co termo separadas por un punto e coma cada unha. Por exemplo: estas; son; algunhas; palabras",
+          "label": "Palabras",
+          "placeholder": "Escribe as palabras separadas por un punto e coma"
+        }
+      },
+      "label": "Item de clasificación",
+      "prev": "Item no establecido todavía ..."
+    },
+    "Test": {
+      "label": "Tipo Test",
+      "questionSelect": "Selecciona un tipo de pregunta que queiras engadir ao test"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Debes escribir obrigatoriamente un texto.",
+        "label": "Neste editor de texto podes escribir o contido do bloque.",
+        "placeholder": "Introduce un texto...",
+        "styles": {
+          "attention": "Atención",
+          "default": "Sen estilo",
+          "help": "Determina o deseño da caixa que envolve ó texto",
+          "label": "Estilo del bloque de texto",
+          "more": "Saber máis",
+          "note": "Nota"
+        }
+      },
+      "label": "Bloque de texto",
+      "prev": "Texto no establecido aínda..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Tres columnas"
+    },
+    "TrueFalseContainer": {
+      "label": "Verdadero/falso",
+      "prev": "Verdadeiro/falso no establecido todavía ..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Falso",
+          "help": "Selecciona entre verdaero o falso como resposta correcta",
+          "label": "Resposta correcta",
+          "true": "Verdadero"
+        },
+        "questionText": {
+          "help": "Este é o texto do ítem.",
+          "label": "Texto do ítem",
+          "placeholder": "Texto do ítem..."
+        }
+      },
+      "label": "Item verdadero/falso",
+      "prev": "Item verdadero/falso no establecido todavía ..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Falso",
+          "help": "Selecciona entre verdaero o falso como resposta correcta",
+          "label": "Resposta correcta",
+          "true": "Verdadero"
+        },
+        "questionText": {
+          "help": "Este é o texto da pregunta mostrarase na unidade de contido.",
+          "label": "Texto da pregunta text",
+          "placeholder": "Texto da pregunta..."
+        }
+      },
+      "label": "Pregunta de verdadero o falso",
+      "prev": "Pregunta de verdadeiro o falso nunca todavía ..."
+    },
+    "TwoColumnsLayout": {
+      "label": "Dos columnas"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Mostrar subtítulos por defecto",
+          "no": "Non",
+          "yes": "Si"
+        },
+        "url": {
+          "help": "Usa a entrada de texto para introducir a URL de tu vídeo (youtube, vimeo...)",
+          "label": "URL del vídeo",
+          "placeholder": "Exemplo: https://example.com/video.mp4"
+        }
+      },
+      "label": "Vídeo",
+      "prev": "Vídeo no establecido todavía..."
+    }
+  }
+}

@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Kategoriak erakutsi/ ezkutatu",
+    "viewImage": "Ikusi irudia"
+  },
+  "common": {
+    "alt": {
+      "help": "Hauxe da irisgarritasunaren arloko irudiaren deskribapen-testu alternatiboa",
+      "label": "Irudirako testu alternatiboa",
+      "placeholder": "Testu alternatiboa"
+    },
+    "captions": {
+      "help": "INDIeMedia-ren URL, elkarrizketaren transkripzioa, soinu-efektuak, musika-pistak eta beste audio-informazio bat biltzen dituena, ikuslea gorra den edo entzumen-arazoak dituenerako, edo bideo/ audioa isilduta dagoen jakiteko. Azpitituluak ere bideoaren gainean daude ikusgai.",
+      "label": "Azpitituluak (CC)",
+      "placeholder": "Adibidea: https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "INDIeMedia fitxategiak bideoan gertatzen denaren testu-deskribapenak biltzen ditu, bideoaren zatia eskuragarri ez dagoenerako, ikuslea itsua delako eta pantailarik erabiltzen ez duelako. Deskribapenak pantaila-irakurgailu batek irakurtzen ditu edo audio-pista bereizi bihurtzen ditu.",
+      "label": "Deskribapena",
+      "placeholder": "Adibidea: https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Unitatea deskargatzen, mesedez itxaron",
+      "title": "Deskargatzen"
+    },
+    "feedback": {
+      "help": "Ikasleak jasoko duen feedback-a eman, bai zuzen edo oker erantzuten duen",
+      "label": "Feedback",
+      "negative": "Feedback negatiboa...",
+      "positive": "Feedback positiboa..."
+    },
+    "generate": {
+      "description": "Sortzen, mesedez, itxaron",
+      "title": "Sortzen"
+    },
+    "help": {
+      "button": "Lehenetsita",
+      "help": "Testu hori widget-aren gainean agertuko da, erabiltzaileak widget-arekin nola interakzionatu uler dezan. <strong>Zuri uzten bada, balioa lehenetsita hartuko du.</strong>",
+      "label": "Laguntza",
+      "placeholder": "Lehentasun-laguntzaren testua"
+    },
+    "language": {
+      "EL": "Greziar",
+      "EN": "Ingelesa",
+      "ES": "Espainol",
+      "FR": "Frantziar",
+      "LT": "Lituaniar"
+    },
+    "loading": {
+      "description": "Kargatzen, mesedez, itxaron",
+      "title": "Kargatzen"
+    },
+    "name": {
+      "help": "Hori izango da ikaskuntza-analitiketarako widget-aren eskaeraren izena",
+      "label": "Izena",
+      "placeholder": "Widget-aren eskaeraren izena"
+    },
+    "navbar": {
+      "options": "Aukerak zabaldu/ hartu"
+    },
+    "preview": {
+      "description": "Zure aurreko ikustaldia sortzen ari dira, mesedez itxaron",
+      "generated": {
+        "description": "Zure aurreko bista prest. Zure nabigatzaileak ez bazaitu aldez aurreko bistara itzuli, egin klik jarraian agertzen den estekan:",
+        "title": "Aldez aurretik behar bezala sortutako bista"
+      },
+      "title": "Aurretiazko ikustaldia sortuz"
+    },
+    "publish": {
+      "description": "Zure unitatea sortzen ari dira deskargatzeko, mesedez itxaron",
+      "title": "Unitatea argitaratzen"
+    },
+    "publishToNetlify": {
+      "description": "Zure unitatea Netlifyra igotzen ari dira, mesedez itxarote",
+      "title": "Netlify-n unitatea argitaratzen"
+    },
+    "save": {
+      "description": "Zaindari, mesedez itxoin",
+      "title": "Zaindaria"
+    },
+    "scorm": {
+      "description": "Zure SCORM paketea sortzen ari dira, mesedez",
+      "title": "SCORM paketea sortzen"
+    },
+    "selectType": "Aukeratu honako aukera hauetako batzuk",
+    "unit": {
+      "settings": "Unitateko datuak sartu"
+    }
+  },
+  "dialog": {
+    "translate": "Unitatea itzuli"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "Akordeoia hutsik. Edukia gehitu behar duzu, eskuinari gehitzeko botoia erabiliz."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "Edukiontzia hutsik. Edukiontziari gutxienez elementu bat erantsi behar diok."
+      },
+      "title": {
+        "invalid": "Edukiontziaren izenburuak ez du balio. Bat ezarri behar duzu."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "Hondoko irudirako ezarritako URL ez da zuzena. Balio duen indieauthor URL bat eman behar duzu."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Irudi animaturako testu alternatiboak ezarrita egon behar du."
+        },
+        "altRec": {
+          "invalid": "Eskualde animaturako testu alternatiboak ezarrita egon behar du."
+        },
+        "empty": "Animazioak gutxienez eskualde animatu bat izan behar du.",
+        "h": {
+          "invalid": "Altuerak ezarrita egon behar du eta baliozko zenbakia izan behar du."
+        },
+        "w": {
+          "invalid": "Zabalera ezarrita egon behar da eta baliozko zenbakia izan behar du."
+        },
+        "x": {
+          "invalid": "Ezkerraldean koordena-koordenadak ezarrita egon behar du eta zenbaki baliagarria izan behar du."
+        },
+        "y": {
+          "invalid": "Goikoak ezarrita egon behar du eta baliozko zenbakia izan behar du."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "Animazioa hutsik. Gutxienez item bat gehitu behar duzu gehitzeko botoia erabiliz."
+      },
+      "height": {
+        "invalid": "Animazioaren gainak 0 baino handiagoa izan behar du."
+      },
+      "image": {
+        "invalid": "Irudirako ezarritako URLa ez da baliozkoa. Irudi-eremuan indiemedia-URL baliozkoa emango duzula ziurtatu behar duzu."
+      },
+      "width": {
+        "invalid": "Animazioaren zabalera 0 baino handiagoa izan behar da."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "Irudirako ezarritako URLa ez da baliozkoa. Irudi-eremuan indiemedia-URL baliozkoa emango duzula ziurtatu behar duzu."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "Audio-definizio termino bat gehitu behar duzu gutxienez"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "Indiemedia-URL baliozkoa eman behar duzu"
+      },
+      "definition": {
+        "invalid": "Definizio bat eman behar duzu."
+      },
+      "term": {
+        "invalid": "Hitz bat eman behar duzu."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "Ez duzu hitzorduaren edukia idatzi. Edukia idatzi behar duzu behintzat."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "Testu eta botoi motako elementu bat eman behar duzu, gutxienez."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "Irudirako ezarritako URLa ez da baliozkoa. Ziurtatu behar duzu BOTOIaren irudi-eremuan baliozko URL IndieMedia ematen duzula."
+      },
+      "text": {
+        "invalid": "Testua hutsik. Testu bat idatzi edo kopiatu behar duzu."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "Leiho nabarmena hutsik. Elementu sinple bat erantsi behar du, gutxienez."
+      },
+      "text": {
+        "invalid": "Testua hutsik. Testu txiki bat idatzi behar duzu."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "UrL eremuan balio handiko irudia ematen duzu."
+      },
+      "options": {
+        "noCorrect": "Gutxienez zuzen bat aukeratu behar duzu",
+        "notEnougOptions": "4 aukera sartu behar dituzu"
+      },
+      "text": {
+        "invalid": "Testua hutsik. Testu bat sartu behar duzu."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Xedapenaren zutabe guztiek elementu bat izan behar dute gutxienez, ezkerreko paletatik arrastatuz."
+      },
+      "width": {
+        "invalid": "Zutabe elbarriaren zabalera"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "Irudirako testu alternatibo bat eman behar duzu"
+      },
+      "audioblob": {
+        "invalid": "Audio fitxategiaren edukia ez da zuzena. Baliozko artxibo bat aukeratu behar duzu."
+      },
+      "captions": {
+        "invalid": "Azpitituluetarako ezarritako URL ez da baliozkoa. Indiemedia-URL baliozkoa emango duzula ziurtatu behar duzu"
+      },
+      "captionsblob": {
+        "invalid": "Azpitituluen fitxategiaren edukia ez da zuzena. Baliozko artxibo bat aukeratu behar duzu."
+      },
+      "descriptions": {
+        "invalid": "Deskribapenerako ezarritako URLa ez da baliozkoa. Indiemedia-URL baliozkoa emango duzula ziurtatu behar duzu"
+      },
+      "imageblob": {
+        "invalid": "Irudiaren edukia ez da zuzena. Baliozko irudi bat aukeratu behar duzu."
+      },
+      "name": {
+        "invalid": "Izen bat eman behar diok instantzia honi.",
+        "notUniqueName": "Eskaeraren izenak bakarra izan behar du eduki osoan."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "Correct Word motako elementu bat eman behar duzu gutxienez."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "Irudirako sakrtotutako URLa ez da baliozkoa. Balio duen indieauthor URL bat eman behar duzu."
+      },
+      "question": {
+        "invalid": "Galderaren testua hutsik."
+      },
+      "word": {
+        "invalid": "Erantzunaren testua hutsik."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "Gutxienez bikote bat gehitu behar duzu"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "Irudirako sartutako URLa ez da baliozkoa. Irudiaren eremuan indiemedia-URL baliozkoa emango dela ziurtatu behar da."
+      },
+      "text": {
+        "invalid": "Testua hutsik. Testu txiki bat idatzi behar duzu."
+      },
+      "type": {
+        "invalid": "Elementurako ezarritako tasa ez da baliozkoa. Ziurtatu behar duzu 'Texto' edo 'Imagen' aukera aukeratuta dagoela."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "Elementua hutsik. Gutxienez item-definizio bat gehitu behar duzu, eskuinari gehitzeko botoia erabiliz."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "Definizio-eremua hutsik. Definizio bat idatzi behar duzu."
+      },
+      "term": {
+        "invalid": "Eremua hutsik. Hitz bat idatzi behar duzu."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "Erantzun zuzena aukeratu behar duzu",
+        "notEnoughAnswers": "Gutxienez 2 erantzun posible idatzi behar dituzu"
+      },
+      "question": {
+        "empty": "Galderaren testua ezin da hutsik egon",
+        "onlyOneBlank": "Galderan espazio zuri bat bakarrik sartu behar duzu"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "Erantzunak ez du hutsik egon behar"
+      },
+      "attempts": {
+        "invalid": "Saiakerak 1 eta 9 arteko zenbakia izan behar dira"
+      },
+      "question": {
+        "invalid": "Galderak ez du hutsik egon behar"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "Irudirako ezarritako URLa ez da baliozkoa. Irudi-eremuan indiemedia-URL baliozkoa emango duzula ziurtatu behar duzu."
+      },
+      "text": {
+        "invalid": "Testua hutsik. testu bat idatzi behar duzu"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "Zutabeen kopurua 1,2 edo 3 izan behar da."
+      },
+      "data": {
+        "empty": "Irudi eta soinu elementu bat eman behar duzu gutxienez."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "Balio duen indiemedia-URL bat eman behar duzu"
+      },
+      "image": {
+        "invalid": "Irudirako sartutako URLa ez da baliozkoa. Irudiaren eremuan indiemedia-URL baliozkoa emango dela ziurtatu behar da."
+      },
+      "text": {
+        "invalid": "Testua hutsik. Testu txiki bat idatzi behar duzu."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "Irudirako ezarritako URLa ez da baliozkoa. Irudi-eremuan indiemedia-URL baliozkoa emango duzula ziurtatu behar duzu."
+      },
+      "text": {
+        "invalid": "Testua hutsik. Testu bat idatzi edo kopiatu behar duzu."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "Bideorako konfiguratutako URLa ez da baliozkoa. Bideo interaktibotik bat emango dela ziurtatu behar da."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "Formularen legenda bat eman behar duzu."
+      },
+      "formula": {
+        "invalid": "LaTex formatuan formula bat eman behar duzu."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "Falta diren hitzen elementu bat eman behar duzu, gutxienez."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "Erantzun zuzena idatzi behar duzu gutxienez",
+        "invalid": "Erantzunaren testua hutsik"
+      },
+      "sentence": {
+        "empty": "Esaldiak ez du hutsik egon behar",
+        "onlyOneBlank": "Esaldian hutsune-markagailu bat besterik ez duzu sartu behar"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "Moda hutsik. Elementu sinple bat erantsi behar du, gutxienez."
+      },
+      "text": {
+        "invalid": "Testua hutsik. Testu txiki bat idatzi behar duzu."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "Hondoko irudirako ezarritako URL ez da zuzena. Balio duen indieauthor URL bat eman behar duzu."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Murrizketarako testu alternatiboak ezarrita egon behar du."
+        },
+        "altRec": {
+          "invalid": "Posiziorako testu alternatiboak ezarrita egon behar du."
+        },
+        "empty": "Buru-hausgarriak gutxienez pieza bat izan behar du.",
+        "h": {
+          "invalid": "Altuerak ezarrita egon behar du eta baliozko zenbakia izan behar du."
+        },
+        "w": {
+          "invalid": "Zabalera ezarrita egon behar da eta baliozko zenbakia izan behar du."
+        },
+        "x": {
+          "invalid": "Ezkerraldean koordena-koordenadak ezarrita egon behar du eta zenbaki baliagarria izan behar du."
+        },
+        "y": {
+          "invalid": "Goikoak ezarrita egon behar du eta baliozko zenbakia izan behar du."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "Elementua hutsik. Sarrera bat gehitu behar duzu, gutxienez, eskuinari gehitzeko botoia erabiliz."
+      },
+      "title": {
+        "invalid": "Titulua hutsik. Izenburu bat idatzi behar duzu."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "Gutxienez lotura bikoiztu bat. Sarrera bakoitzerako esteka bakarra eman behar duzu.",
+        "empty": "Elementua hutsik. Sarrera bat gehitu behar duzu, gutxienez, eskuinari gehitzeko botoia erabiliz.",
+        "multipleCurrent": "Gutxienez bi sarrera daude gaur egun. Gaur egungo sarrera bat besterik ez duzu eman behar."
+      },
+      "moreThanOne": "Eduki-taulako elementu bat eman behar duzu, asko jota."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "Titulua hutsik. Izenburu bat idatzi behar duzu."
+      },
+      "url": {
+        "invalid": "Url eremuak formatu honekin egon behar du: https://[origen]/[egilea]/[unitatea]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "Eskema hutsik. Gutxienez item bat gehitu behar duzu, eskuineko eransteko botoia erabiliz."
+      },
+      "height": {
+        "invalid": "Animazioaren altuerak 0 baino handiagoa izan behar du."
+      },
+      "image": {
+        "invalid": "Irudi osorako ezarritako URLa ez da baliozkoa. Indiemedia-URL baliozkoa emango duzula ziurtatu behar duzu."
+      },
+      "width": {
+        "invalid": "Animazioaren zabalera 0 baino handiagoa izan behar da."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "Irudirako ezarritako URLa ez da baliozkoa. Irudi-eremuan indiemedia-URL baliozkoa emango duzula ziurtatu behar duzu."
+      },
+      "text": {
+        "invalid": "Testua hutsik. Testu txiki bat idatzi behar duzu."
+      }
+    },
+    "section": {
+      "emptyData": "Atal bat ezin da hutsik egon. Gutxienez elementu bat gehitu behar duzu.",
+      "invalidBookmark": "Atalak balio izan behar du.",
+      "invalidImage": "Atalak hondoko irudia izan behar du.",
+      "invalidName": "Atalak izen bat izan behar du.",
+      "typeImageNotSelected": "Aukeratutako tipoa hondoko irudia bada, irudia ezarri behar duzu."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "Esaldiak ordenatzeko elementu bat eman behar duzu, gutxienez."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "Erantzun zuzena idatzi behar duzu gutxienez",
+        "impossible": "Esaldia ezin da ezarritako hitzetatik eraiki",
+        "invalid": "Erantzunaren testua hutsik"
+      },
+      "words": {
+        "empty": "Baliozko hitz bat idatzi behar duzu gutxienez",
+        "invalid": "Hitzaren testua hutsik"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "Irudirako ezarritako URLa ez da baliozkoa. Irudi-eremuan indiemedia-URL baliozkoa emango duzula ziurtatu behar duzu.",
+        "sizeNotSet": "Irudiaren zabalera eta gaina ezarrita egon behar dira, itxura \"pertsonalizatua\" denean."
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "Erantzun zuzena aukeratu behar duzu",
+        "notEnoughAnswers": "Gutxienez 2 erantzun posible idatzi behar dituzu"
+      },
+      "question": {
+        "empty": "Galderaren testua ezin da hutsik egon"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "Betilea hutsik. Betileari elementu bat erantsi behar diozu, gutxienez."
+      },
+      "name": {
+        "invalid": "Betilearen izenak ez du balio. Bat ezarri behar duzu."
+      }
+    },
+    "Table": {
+      "empty": "Taulak ez du zutaberik"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "Betileen menuak ez du betilerik. Gutxienez bat gehitu behar duzu."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Zutabe bikoiztuak daude. Aztertu zure itemak.",
+        "duplicatedTerms": "Zure zutabeen artean termino bikoiztuak daude. Ea berrikusten dituen terminoak"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "Zutabeak ez du hutsik egon behar"
+      },
+      "terms": {
+        "empty": "Terminoak ezin dira hutsik egon.",
+        "invalid": "Terminoek ez dute eskatutako formatua betetzen. Mesedez, puntu eta koma (;)."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "Proba hutsik. Galdera bat erantsi behar duzu, gutxienez."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "Testua hutsik. Testu txiki bat idatzi behar duzu."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "Elementu egiazko edo faltsu bat erantsi behar duzu gutxienez"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "Galderaren testua ezin da hutsik egon"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "Galderaren testua ezin da hutsik egon"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "Bideorako ezarritako URL ez da baliozkoa. IndieMedia edo Youtubeko URL baliozkoa emango duzula ziurtatu behar duzu.",
+        "localInvalid": "Bideorako ezarritako URL ez da baliozkoa. YouTubeko URL baliozkoa emango duzula ziurtatu behar duzu."
+      }
+    }
+  },
+  "footer": {
+    "content": "Atal berriak gehi ditzakezu goiko erreminten barra erabiliz"
+  },
+  "general": {
+    "areYouSure": "Seguru zaude?",
+    "cancel": "Ezeztatu",
+    "close": "Itxi",
+    "confirm": "Baieztatu",
+    "delete": "Ezabatu",
+    "discard": "Baztertu",
+    "false": "Faltsua",
+    "load": "Kargatu",
+    "modelDetected": "Aldez aurreko unitate bat kargatu nahi duzu?",
+    "true": "Egiazkoa"
+  },
+  "header": {
+    "addSection": "Gehitu sekzioa",
+    "clear": "Edukia garbitu",
+    "download": "Unitatea deskargatu",
+    "importSection": "Atala inportatu",
+    "install": "Aplikazioa instalatzea",
+    "preview": "Edukia aurreikiketan",
+    "publish": "Edukia argitaratu",
+    "publishToNetlify": "Netlify-n edukia argitaratzea",
+    "redo": "Ekintza berregiteak",
+    "save": "Edukia gorde",
+    "scorm": "Esportatu SCORM formatuan",
+    "translate": "Unitatea itzuli",
+    "undo": "Ekintza desegitea",
+    "upload": "Unitatea igo",
+    "validate": "Unitatea baliozkotu"
+  },
+  "items": {
+    "add": "Edukia gehitu",
+    "delete": "Elementua ezabatzea",
+    "duplicate": "Elementua bikoiztea",
+    "edit": "Edukia editatu",
+    "export": "Elementua esportatu"
+  },
+  "messages": {
+    "changesSaved": "Behar bezala gordetako aldaketak.",
+    "confirmClearContent": "Edukia erabat ezabatuko duzu. Egiazta ezazu hori dela benetan egin nahi duzuna.",
+    "confirmLoadModel": "Aurretiazko unitate bat aurkitu dute. Aukeratu kargatu edo baztertu nahi duzun.",
+    "contentCleared": "Behar bezala ezabatutako edukia.",
+    "contentErrors": "Ups! Zure edukian akatsak daude. Aztertu akats-mezuak eta jarraitu haien argibideak horiek konpontzeko.",
+    "couldNotExportElement": "Elementua ezin izan zen esportatu",
+    "couldNotExportSection": "Sekzioa ezin izan zen esportatu",
+    "deletedSection": "Behar bezala ezabatutako atala",
+    "emptyContent": "Ez duzu edukirik erantsi.",
+    "errorMessage": "Errorea",
+    "exportedElement": "Arrakastaz esportatutako elementua",
+    "exportedSection": "Arrakastaz esportatutako atala",
+    "importedElement": "Arrakastaz inportatutako elementua",
+    "importedSection": "Arrakastaz inportatutako atala",
+    "loadError": "Ezin izan zen unitatea kargatu",
+    "noElement": "Ez inportatzeko elementurik",
+    "noErrors": "Ondo! Ez akatsik. Edukia gorde dezakezu.",
+    "noRedo": "Berregiteko ezer ez",
+    "noSection": "Ez inportatzeko atalik",
+    "noUndo": "Desegiteko ezer ez",
+    "previewError": "Ezin izan zen unitatea aurreikusi",
+    "publishError": "Ezin izan zen unitatea argitaratu",
+    "savedUnit": "Arrakastaz gordetako unitatea",
+    "saveError": "Ezin izan zen unitatea gorde",
+    "successMessage": "Ok",
+    "translateError": "Ezin izan da unitatea itzuli",
+    "warningMessage": "Arreta"
+  },
+  "netlify": {
+    "button": {
+      "text": "Konektatu"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Lekua sortu",
+        "help": "Netlify kontuan eskuragarri dagoen guneetako bat hautatu",
+        "label": "Mesedez, aukeratu bere Netlify-tik unitatea igotzeko"
+      },
+      "title": "Bete zelaiak Netlifyrekin konektatzeko ",
+      "token": {
+        "help": "Netlify-ko sarbide pertsonaleko tokena idatzi, Netlify-ren kontuaren konfigurazioaren Applications atalean aurki dezakezu",
+        "label": "Sartu sarbide pertsonaleko token-a:",
+        "placeholder": "Netlify-ko sarbide pertsonaleko tokena hemen sartu"
+      }
+    },
+    "error": {
+      "message": "Token elbarritua"
+    },
+    "success": {
+      "message": "Unitatea Netlifyra igo da arrakastaz, eta hurrengo estekan klik eginez sartzen da: ",
+      "message_2": "Kontuan izan unitateak eduki handia badu, argitalpenak minutu batzuk beharko dituela.",
+      "title": "Netlifyra igotako unitatea"
+    }
+  },
+  "palette": {
+    "containers": "Edukiontziak",
+    "exerciseElement": "Ariketak",
+    "interactiveElements": "Elementu interaktiboak",
+    "items": "itemak",
+    "layouts": "Xedapenak",
+    "question": "Galderak",
+    "simpleElements": "Elementuak"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Kode-blokea",
+        "screenReader": "Pantaila-irakurleentzako laguntza-testua"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Atala ezabatzea",
+    "duplicate": "Atala bikoiztea",
+    "edit": "Informazioa editatu",
+    "expandContract": "Hedatzea edo kokatzea",
+    "export": "Esportatu atala",
+    "form": {
+      "bookmark": {
+        "help": "Markagailu hori unitatearen goiko aldean agertuko da, sekzio-markagailu gisa. Gehienez 40 karaktere izan behar ditu.",
+        "label": "Atalaren markagailua",
+        "placeholder": "Markagailu bat idatzi..."
+      },
+      "image": {
+        "help": "",
+        "label": "Sakoneko irudiaren URL",
+        "placeholder": "Irudiaren URL-a sartu..."
+      },
+      "name": {
+        "help": "Hori da atalak edukian izango duen izena.",
+        "label": "Atalaren izena",
+        "placeholder": "Idatzi izen bat..."
+      },
+      "preview": "Atzealdeko irudiaren atariko bista",
+      "type": {
+        "bc": "Hondoko kolorea (lehenetsita)",
+        "bi": "Atzealdeko irudia",
+        "help": "Tipoa 'color de fondo'-ra ezartzen bada, kolorea tituluaren atzetik agertuko da, eta 'Imagen de fondo'-n, berriz, hondoko irudi bat ezarri behar duzu buruburuko sekziorako.",
+        "label": "Hondo mota"
+      }
+    },
+    "import": "Elementua inportatzea",
+    "label": "Atala",
+    "moveDown": "Beherantz sekzioa mugitu",
+    "moveUp": "Sekzioa gorantz mugitu"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Unitatean analitikak aktibatzea/ desaktibatzea",
+        "label": "Analitikak",
+        "no": "Ez",
+        "yes": "Bai"
+      },
+      "author": {
+        "help": "Idatzi hemen unitatearen egileak.",
+        "label": "Unitatearen egilea",
+        "placeholder": "Unitatearen egileak idazten du"
+      },
+      "background": {
+        "help": "Irudiak 1900 x 550 pixel inguru izan beharko luke.",
+        "label": "Gaiaren irudia"
+      },
+      "color": {
+        "help": "Behar #FFFFFF formatu hexadekala",
+        "label": "Gaiaren kolorea",
+        "placeholder": "Sartu hemen gaiaren kolorea"
+      },
+      "email": {
+        "help": "Hauxe da egilearen posta elektronikoa.",
+        "label": "E-posta",
+        "placeholder": "Idatzi egilearen e-posta"
+      },
+      "institution": {
+        "help": "Erakundearen izena",
+        "label": "Erakundea",
+        "placeholder": "Erakundearen izena idatzi"
+      },
+      "language": {
+        "help": "Unitatearen hizkuntza.",
+        "label": "Hizkuntza"
+      },
+      "license": {
+        "BY": "Aitorpena 4.0 Nazioartekoa (CC BY 4.0)",
+        "BYNC": "Aitorpena-EzKomertzial-SinObraDerivada 4.0 Internacional (CC BY-NC-ND 4.0)",
+        "BYNCND": "Aitorpena-EzKomertzial-SinObraDerivada 4.0 Internacional (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Aitorpena-EzKomertziala-Partekatu Igua Nazioarteko 4.0 (CC BY-NC-SA 4.0)",
+        "BYND": "Aitorpena-SinObraDerivada 4.0 Nazioartekoa (CC BY-ND 4.0)",
+        "BYSA": "Aitorpena-PartekatuIgual Nazioarteko 4.0 (CC BY-SA 4.0)",
+        "help": "Unitatearen lizentzia",
+        "label": "Lizentzia",
+        "PRIVATE": "Eskubide guztiak erreserbatuta"
+      },
+      "resource": {
+        "help": "Idatzi baliabidearen identifikatzailea",
+        "label": "Errekurtsoaren IDa:",
+        "placeholder": "Idatzi baliabidearen identifikatzailea"
+      },
+      "theme": {
+        "help": "Aukeratu batasunaren gaia.",
+        "label": "Gaia"
+      },
+      "title": {
+        "help": "Hauxe da unitatearen izenburua.",
+        "label": "Unitatearen izenburua",
+        "placeholder": "Izenburu bat idatzi"
+      },
+      "type": {
+        "help": "Hauxe da unitate mota.",
+        "interoperability": "Elkarreragiletasuna",
+        "label": "Unitate mota",
+        "open": "Irekia"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "Hauxe da unitatearen jatorria",
+        "label": "Jatorrizko hizkuntza"
+      },
+      "target": {
+        "help": "Unitatea zein hizkuntzatarako itzuliko den",
+        "label": "Helmuga-hizkuntza"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Akordeoi menua"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "Eduki-taldearen titulua ezartzen du. Menu despelgagarriaren tituluan agertuko da.",
+          "label": "Edukiaren izenburua",
+          "placeholder": "Adibidea: Trebetasun profesionalak"
+        }
+      },
+      "label": "Eduki-taldea"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "Hau izango da animazioaren hondoko irudia. Zure irudietako bat aukera dezakezu.",
+          "label": "Irudiaren URL",
+          "placeholder": "Sartu irudiaren URL-a hemen...",
+          "preview": "Animazioaren aldez aurreko bista"
+        },
+        "pieces": {
+          "altImg": "Irudi animaturako testu alternatiboa",
+          "altRec": "Testu alternatiboa eskualde animaturako",
+          "delete": "Ezabatu",
+          "h": "Altu",
+          "new": "Gehitu eskualde animatu berria...",
+          "w": "Zabal",
+          "x": "Izquierdo",
+          "y": "Goi-mailakoa"
+        }
+      },
+      "label": "Animazioa",
+      "prev": "Animazioa ez da oraindik hasi..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "Hau izango da animazioaren edukiontziaren altuera pixeletan",
+          "label": "Animazioaren altuera",
+          "placeholder": "Adibidea: 200"
+        },
+        "image": {
+          "help": "Hori izango da elementuan agertzen den irudia. Zure irudietako bat igo dezakezu edo berri bat igo.",
+          "label": "Irudiaren URL",
+          "placeholder": "Egin klik hemen irudia aukeratzeko"
+        },
+        "prev": "Preview irudiaren aurreko bista",
+        "width": {
+          "help": "Hau izango da pixeletako animazioaren edukiontziaren zabalera",
+          "label": "Animazioaren zabalera",
+          "placeholder": "Adibidea: 400"
+        }
+      },
+      "label": "Animazioa"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "Hau izango da animazioaren itemaren irudia.",
+          "label": "Irudiaren URL",
+          "placeholder": "Egin klik hemen irudia aukeratzeko"
+        },
+        "prev": "Aurrebista"
+      },
+      "label": "Animazioaren Item.",
+      "prev": "Oraindik ezarri gabeko animazioaren Item..."
+    },
+    "AudioTermContainer": {
+      "label": "Audio-terminoak"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "Eduki-unitatean erreproduzitu nahi den audioaren URL sartu behar da.",
+          "label": "Audio-fitxategiaren URL",
+          "placeholder": "Sartu indiemedia-URL bat..."
+        },
+        "definition": {
+          "help": "Definizio horrek audioaren testu-transkripzioa izan behar du.",
+          "label": "Definizioa",
+          "placeholder": "Idatzi definizioa ..."
+        },
+        "term": {
+          "help": "Hori izango da widget-aren ezkerraldean jarritako terminoa",
+          "label": "Terminoa",
+          "placeholder": "Idatzi hemen zure hitza..."
+        }
+      },
+      "label": "Audio-terminoa",
+      "prev": "Oraindik ezarri gabeko Audio-terminoa..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "Hitzordua eskuinean edo ezkerrean lerrokatuta ager daiteke",
+          "label": "Hitzorduaren lerrokatzea",
+          "values": {
+            "left": "Ezkerretara",
+            "right": "Eskuinetara"
+          }
+        },
+        "caption": {
+          "help": "Hitzorduaren azpititulua hitzorduaren azpian agertzen da. Batez ere, hitzorduaren egilea edo egileak adierazteko erabiltzen da.",
+          "label": "Hitzorduaren azpititulua",
+          "placeholder": "Adibidea: Carl Sagan"
+        },
+        "quote": {
+          "help": "Testu hau testu-hitzordua da",
+          "label": "Hitzorduaren testua",
+          "placeholder": "Adibidea: 'Ebidentziarik eza ez da absentziaren ebidentzia bat'."
+        },
+        "source": {
+          "help": "Aipuaren jatorrizko iturria (Urtea, liburua, aldizkaria... etab)",
+          "label": "Hitzorduaren jatorria",
+          "placeholder": "Adibidea: 1990 urtea"
+        }
+      },
+      "label": "Hitzordu",
+      "prev": "Oraindik ezarri gabeko hitzordua..."
+    },
+    "ButtonTextContainer": {
+      "label": "Testudun botoiak"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "Hauxe izango da botoian agertuko den irudia. Zure irudietako bat aukeratu dezakezu edo berri bat igo.",
+          "label": "Botoiaren irudiaren URL",
+          "placeholder": "Sartu zure URL hemen"
+        },
+        "preview": "Botoiaren irudiaren aurreko bista",
+        "text": {
+          "help": "Testu-editore honetan botoiari lotutako testuaren edukia idatz dezakezu",
+          "label": "Testua",
+          "placeholder": "Idatzi zure testua hemen..."
+        }
+      },
+      "label": "Testudun botoi-elementua",
+      "prev": "Testudun botoi-elementua ez da oraindik inizializatu..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Kolore",
+        "helps": {
+          "animation": "Kutxarako aurrez zehaztutako animazioetako bat zehazten du, osagai txertatuta (simplea edo tolesgarria).",
+          "colorTheme": "Behar #FFFFFF formatu hexadekala. <strong> Betetzen ez bada, unitatearen gaiaren koloreak hartuko du balioa lehenetsita.</strong>",
+          "styles": "Kutxarako aldez aurretik zehaztutako estiloetako bat zehazten du, elementu txertatuekin.",
+          "textTitle": "Hori izango da izenburu gisa agertuko den testua. <strong>Betetzen ez bada, lehenetsitako balioa hartuko du.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Sartu hemen kolorea",
+          "textTitle": "Sartu hemen izenburua"
+        },
+        "styles": {
+          "animation": "Animazio estiloa",
+          "attention": "Arreta",
+          "collapsible": "Tolesgarria",
+          "danger": "Arriskua",
+          "label": "Estiloa",
+          "more": "Gehiago jakin",
+          "note": "Oharra",
+          "simple": "Sinplea"
+        },
+        "textTitle": "Titulua"
+      },
+      "label": "Nabarmen"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "Irudia widget-aren goialdean aterako da, aukeren gainetik.",
+          "label": "Irudiaren URL",
+          "placeholder": "Irudiaren URL-a sartu..."
+        },
+        "options": {
+          "help": "4 aukera horiek irudiaren azpian agertuko dira. Bat bakarrik izan daiteke zuzena.",
+          "label": "Aukerak",
+          "placeholder": "Idatzi aukera bat"
+        },
+        "preview": "Irudiaren aurreko bista",
+        "text": {
+          "help": "Testu hori irudiaren gainetik agertuko da, testu edo galdera moduan.",
+          "label": "Testua",
+          "placeholder": "Idatzi testua hemen..."
+        }
+      },
+      "label": "Aukera bat aukeratu",
+      "prev": "Zehaztu gabeko aukera bat aukeratzea..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "zutabeak",
+      "form": {
+        "width": {
+          "1": "Lehen zutabearen zabalera",
+          "help": "Beste zutabeak gainerako zabalera hartuko du"
+        }
+      },
+      "label": "Xedapena"
+    },
+    "CorrectWord": {
+      "label": "Hitz zuzena"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "Galderaren irudi deskribatzailea",
+          "label": "Irudiaren URL",
+          "placeholder": "Sartu zure URL-a hemen..."
+        },
+        "preview": "Irudiaren aurreko bista",
+        "question": {
+          "help": "Hori da erabiltzaileari erakutsiko zaion galdera.",
+          "label": "Galderaren testua",
+          "placeholder": "Galderaren testua"
+        },
+        "word": {
+          "help": "Hitz hori izango da galderaren erantzuna",
+          "label": "Erantzuna",
+          "placeholder": "Hitz bat idatzi..."
+        }
+      },
+      "label": "Hitz zuzenaren elementua",
+      "prev": "Hitz zuzena ez da oraindik ezarri..."
+    },
+    "CouplesContainer": {
+      "label": "Bikoteak",
+      "prev": "Oraindik ezarri gabeko bikoteak..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "Irudi hori bikote gisa inprimaki honetan sartzen den testuarekin lotuta egongo da.",
+          "label": "Irudiaren URL",
+          "placeholder": "Sartu irudiaren URL-a hemen ..."
+        },
+        "legend": {
+          "first": "Lehen elementua",
+          "second": "Bigarren elementua"
+        },
+        "preview": "Irudiaren aurreko bista",
+        "text": {
+          "help": "Testu hori bikote gisa inprimaki honetan sartzen den irudiarekin lotuta egongo da.",
+          "label": "Testua",
+          "placeholder": "Idatzi testu bat..."
+        },
+        "type": {
+          "image": "Irudia",
+          "label": "Mota",
+          "text": "Testua"
+        }
+      },
+      "label": "Bikotea",
+      "prev": "Oraindik ezarri gabeko bikotea..."
+    },
+    "DragdropContainer": {
+      "label": "Arrastaka eta askatu"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "Definizioa elementu interaktiboaren eskuinean agertzen da eta ikasleak terminoa definiziora eraman beharko du.",
+          "label": "Definizioa",
+          "placeholder": "Adibidea: Gizaki guztiek dute adierazteko eskubidea, uste dutena dela eta, ez dutela ezer esan nahi"
+        },
+        "term": {
+          "help": "Hitza elementu interaktiboaren ezkerraldean agertzen da eta ikasleak arrastaka eraman eta definizioan askatu behar duena izango da.",
+          "label": "Terminoa",
+          "placeholder": "Adibidea: Adierazpen askatasuna"
+        }
+      },
+      "label": "Definizio terminoa",
+      "prev": "Ezarri gabeko Item..."
+    },
+    "FourColumnsLayout": {
+      "label": "Lau zutabe"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Gutxienez 2 erantzun idatzi behar dituzu eta horietako zein den zuzena zehaztu.",
+          "label": "Balizko erantzunak"
+        },
+        "questionPreview": {
+          "help": "Horrela ikusiko da galdera eduki-batasunean.",
+          "label": "Galderaren testuaren aldez aurreko bista.",
+          "placeholder": "Galderaren testua ___ en blanco hutsunearekin."
+        },
+        "questionText": {
+          "help": "Galderaren testua nahi duen espazio zuriarekin idatzi behar du, [blank] hitzarekin.",
+          "label": "Galderaren testua",
+          "placeholder": "Galderaren testua [blank] elementu zuriarekin"
+        }
+      },
+      "label": "Hutsunea betetzearen galdera",
+      "prev": "Oraindik ezarri gabeko hutsunea betetzeari buruzko galdera..."
+    },
+    "GenericWidget": {
+      "label": "Widget"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "Galderaren erantzuna",
+          "label": "Erantzuna",
+          "placeholder": "Idatzi zure erantzuna hemen"
+        },
+        "attempts": {
+          "help": "Erantzuna asmatzeko saiakera kopurua. 1 eta 9 zenbaki arteko zenbakia izan behar du.",
+          "label": "Saiakerak"
+        },
+        "question": {
+          "help": "Erantzun beharreko galdera",
+          "label": "Galdera",
+          "placeholder": "Idatzi zure galdera hemen"
+        }
+      },
+      "label": "Asmatu hitza",
+      "prev": "Igar ezazu hitza oraindik ez dela inizializatu..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Testu bat ezartzen baduzu, hau izango da irudiaren kondaira",
+          "label": "Irudiaren legenda",
+          "placeholder": "Kondaira bat sartzen du."
+        },
+        "image": {
+          "help": "Hori izango da elementuan agertuko den irudia.",
+          "label": "Irudiaren URL",
+          "placeholder": "Egin klik hemen irudia aukeratzeko"
+        },
+        "preview": "Aurrebista"
+      },
+      "label": "Gainean testua duen irudia",
+      "prev": "Gainean oraindik ezarri gabeko testua duen irudia..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Irudia eta soinua"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "Audio-fitxategia irudian klik egiten denean erreproduzituko da.",
+          "label": "Audio-fitxategiaren URL",
+          "placeholder": "Idatzi indiemediako URL bat..."
+        },
+        "image": {
+          "help": "Irudia lehen agertuko da",
+          "label": "Irudiaren URL",
+          "placeholder": "Irudiaren URL-a sartu..."
+        },
+        "preview": "Irudiaren aurreko bista",
+        "text": {
+          "help": "Testua irudiaren gainetik agertuko da sagua gainetik pasatzen denean.",
+          "label": "Irudiaren testua",
+          "placeholder": "Idatzi testu bat..."
+        }
+      },
+      "label": "Irudi eta soinuaren Item",
+      "prev": "Oraindik ezarri gabeko irudi eta soinuaren Item......"
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "Hori izango da elementuan agertzen den irudia. Zure irudietako bat igo dezakezu edo berri bat igo.",
+          "label": "Irudiaren URL",
+          "placeholder": "Egin klik hemen irudia aukeratzeko"
+        },
+        "layout": {
+          "help": "Irudi- eta testu-bloke baten orientazioak elementu bakoitza blokean non agertzen den ezartzen du.",
+          "label": "Orientazioa",
+          "values": {
+            "0": "Testua eskuinean, irudia ezkerrean",
+            "1": "Testua ezkerrean, irudia eskuinean"
+          }
+        },
+        "preview": "Irudiaren aurreko bista",
+        "text": {
+          "help": "Nahitaez idatzi behar duzu testu bat.",
+          "label": "Testu-argitaratzaile honetan blokearen edukia idatz dezakezu.",
+          "placeholder": "Idatzi testu bat..."
+        }
+      },
+      "label": "Irudia eta testua",
+      "prev": "Oraindik ezarri gabeko irudia eta testua..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Bideo interaktiboko tresnarekin sortutako bideo interaktiboaren URL sartzeko testu-sarrera erabiltzen du.",
+          "label": "Bideoaren URL",
+          "placeholder": "Adibidea: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Bideo interaktiboa",
+      "prev": "Oraindik ezarri gabeko bideo interaktiboa"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "Kondaira hau formularen eta testu-blokearen pean agertuko da",
+          "label": "Formularen legenda",
+          "placeholder": "Adibidea: Formula koadratikoa"
+        },
+        "formula": {
+          "help": "Testu-arloa erabiltzen du formula idazteko. Eremu horren azpian, formularen aldez aurreko bat agertuko da, zuzena bada edo testu gorria, formula zuzena ez bada.",
+          "label": "Formula LaTex formatuan",
+          "placeholder": "Adibidea: \\text{Formula kuadratikoa }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "LaTeX Formula",
+      "prev": "Oraindik ezarri gabeko formula..."
+    },
+    "MissingWords": {
+      "label": "Hitz faltagarriak"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Ezabatu",
+          "new": "Erantzun berria gehitu...",
+          "text": "Erantzuna"
+        },
+        "sentence": {
+          "help": "Esaldiaren testua idatzi behar duzu, markagailu berezia erabiliz [blank] hutsunea barne.",
+          "label": "Esaldiaren testua",
+          "placeholder": "Esaldiaren testua [blank]"
+        },
+        "sentencePreview": {
+          "help": "Horrela ikusiko zenuke esaldia eduki-batasunean.",
+          "label": "Esaldiaren aurretiko bista",
+          "placeholder": "Esaldiaren testua ___ "
+        }
+      },
+      "label": "Falta diren hitzen elementua",
+      "prev": "Falta diren hitzen elementua oraindik ez da ezarri..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "Testu hori botoiaren testu gisa agertuko da, eta leiho modala irekitzeko eragin behar da.",
+          "label": "Botoiaren testua",
+          "placeholder": "Idatzi testua..."
+        }
+      },
+      "label": "Leiho modala"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "Hau izango da buru-hausleen hondoko irudia. Zure irudietako bat aukera dezakezu.",
+          "label": "Irudiaren URL",
+          "placeholder": "Sartu irudiaren URL-a hemen...",
+          "preview": "Buru-hauskataren aurreko bista"
+        },
+        "pieces": {
+          "altImg": "Murrizketarako testu alternatiboa",
+          "altRec": "Jarrerarako testu alternatiboa",
+          "delete": "Ezabatu",
+          "h": "Altu",
+          "new": "Gehitu pieza berria...",
+          "w": "Zabal",
+          "x": "Izquierdo",
+          "y": "Goi-mailakoa"
+        }
+      },
+      "label": "Buru-hausgarriak",
+      "prev": "Buru-hausgarriak ez dira oraindik hasi..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Taldearen izenburua",
+          "label": "Titulua",
+          "placeholder": "Adibidea: Zuzenbide modulua"
+        }
+      },
+      "label": "Taldea",
+      "prev": "Oraindik ez talderik..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Eduki-taula"
+    },
+    "RelatedUnitsItem": {
+      "current": "Egungo unitatea",
+      "form": {
+        "current": {
+          "title": "Hau da gaur egungo batasuna"
+        },
+        "title": {
+          "help": "Sarreraren izenburua",
+          "label": "Titulua",
+          "placeholder": "Adibidea: Giza eskubideak"
+        },
+        "url": {
+          "help": "Helmugako URL",
+          "label": "URL",
+          "placeholder": "Adibidea: https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Sarrera",
+      "prev": "Oraindik ezarri gabeko sarrera..."
+    },
+    "SchemaContainer": {
+      "label": "Eskema"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "Hau izango da eskemaren irudi partziala.",
+          "label": "Irudiaren URL",
+          "placeholder": "Egin klik hemen irudia aukeratzeko"
+        },
+        "prev": "Irudiaren aurreko bista"
+      },
+      "label": "Eskema-Item",
+      "prev": "Oraindik ezarri gabeko esuqema-Item-a..."
+    },
+    "SentenceOrderContainer": {
+      "label": "Esaldiak ordenatzea"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Ezabatu",
+          "help": "Sartutako hitzetatik abiatuta eraikiko diren erantzunak",
+          "legend": "Erantzunen zerrenda",
+          "new": "Erantzun berri bat erantsi...",
+          "text": "Erantzuna"
+        },
+        "words": {
+          "delete": "Ezabatu",
+          "help": "Erantzunak hitz hauetatik abiatuta eraiki beharko lirateke",
+          "legend": "Hitzen zerrenda",
+          "new": "Gehitu hitz berri bat...",
+          "text": "Hitza"
+        }
+      },
+      "label": "Esaldiak ordenatzeko elementua",
+      "prev": "Esaldiak ordenatzeko elementua ez da oraindik inizializatu..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "Irudiaren lerrokatzea ezartzen du, itxura ez denean \"jatorrizko dimentsioak eskuragarri dagoen espaziora egokitzen\".",
+          "label": "Irudiaren lerrokatzea",
+          "values": {
+            "center": "Zentratua",
+            "left": "Ezker",
+            "right": "Eskuin"
+          }
+        },
+        "aspect": {
+          "help": "Irudia jatorrizko dimentsioekin erakutsi daiteke (ahal denean) edo pantailaren zabalerara egokitu daiteke (irudia eskalatu). Dimentsioak pantailak erakutsi ditzakeen baino altuagoak eta zabalagoak badira, pantailara automatikoki egokituko da beti.",
+          "label": "Irudiaren itxura",
+          "values": {
+            "custom": "Pertsonalizatua",
+            "fit": "Ea egokitzen dituen jatorrizko dimentsioak eskuragarri dagoen espaziora",
+            "original": "Jatorrizko neurriak"
+          }
+        },
+        "image": {
+          "help": "Hori izango da elementuan agertuko den irudia.",
+          "label": "Irudiaren URL",
+          "placeholder": "Sartu irudiaren URL-a hemen"
+        },
+        "preview": "Aurrebista",
+        "size": {
+          "height": "Altu",
+          "heightPlaceholder": "Irudiaren gaina...",
+          "keepRatio": "Irudiaren proportzioa mantentzea",
+          "width": "Zabal",
+          "widthPlaceholder": "Irudiaren zabalera..."
+        }
+      },
+      "label": "Irudia",
+      "prev": "Oraindik ezarri gabeko irudia..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Gutxienez 2 erantzun idatzi behar dituzu eta horietako zein den zuzena zehaztu.",
+          "label": "Balizko erantzunak"
+        },
+        "questionText": {
+          "help": "Hori da galderaren testua, eduki-batasunean erakutsiko dena.",
+          "label": "Galderaren testua",
+          "placeholder": "Galdera sinplearen testua..."
+        }
+      },
+      "label": "Galdera sinplea",
+      "prev": "Oraindik ezarri gabeko galdera sinplea..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "Hauxe izango da betilearen izenburuan agertzen den izena.",
+          "label": "Betilearen izena",
+          "placeholder": "Adibidea: Trebetasun profesionalak"
+        }
+      },
+      "label": "Betile"
+    },
+    "Table": {
+      "empty": "Taula oraindik ez dute hasierakoa izan",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "Zutabearen izena hutsik edo dagoeneko definituta",
+            "label": "Zutabearen izena",
+            "placeholder": "Idatzi zutabe izena hemen..."
+          },
+          "columnPosition": {
+            "error": "Zutabe-posizioa mailaz kanpo",
+            "label": "Zutabearen posizioa"
+          },
+          "label": "Zutabe berria gehitu",
+          "submit": "Zutabea gehitu"
+        },
+        "addRow": "Gehitu ilara berria",
+        "deleteColumn": "Zutabea ezabatu",
+        "deleteRow": "Ezabatu ilara"
+      },
+      "help": {
+        "edit": "Aukeratu ziega bat editatzeko. Lerro berriak gehitzeko, editatzen duzun bitartean, shift tekla presionatzeko presioa egiten du, intro presioak egiten dituzun bitartean."
+      },
+      "label": "Taula",
+      "prev": "Oraindik ezarri gabeko taula..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Betileak",
+      "label": "Betileen menua"
+    },
+    "TermClassification": {
+      "label": "Sailkapen",
+      "prev": "Sailkapen"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "Hori da terminoak erlazionatuta izango dituen zutabea.",
+          "label": "Zutabea",
+          "placeholder": "Zutabea"
+        },
+        "terms": {
+          "help": "Sarrera honetan, puntu bat eta bakoitzak komatutako hitzekin zerikusia duten hitzak idatzi behar dituzu. Adibidez: hauek; dira; batzuk; hitzak",
+          "label": "Hitzak",
+          "placeholder": "Puntu batez bereizitako hitzak idazten ditu eta koma"
+        }
+      },
+      "label": "Sailkapeneko Item",
+      "prev": "Item oraindik ezarri gabe..."
+    },
+    "Test": {
+      "label": "Test Mota",
+      "questionSelect": "Aukeratu testari erantsi nahi diozun galdera mota bat"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Nahitaez idatzi behar duzu testu bat.",
+        "label": "Testu-argitaratzaile honetan blokearen edukia idatz dezakezu.",
+        "placeholder": "Sartu testu bat...",
+        "styles": {
+          "attention": "Arreta",
+          "default": "Estilorik gabe",
+          "help": "Testua inguratzen duen kutxaren diseinua zehazten du",
+          "label": "Testu-blokearen estiloa",
+          "more": "Gehiago jakin",
+          "note": "Oharra"
+        }
+      },
+      "label": "Testu-blokea",
+      "prev": "Oraindik ezarri gabeko testua..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Hiru zutabe"
+    },
+    "TrueFalseContainer": {
+      "label": "Egiazkoa/ faltsua",
+      "prev": "Oraindik ezarri gabeko egiazko/faltsua..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Faltsua",
+          "help": "Hautatu verdaeroaren edo faltsuaren artean erantzun zuzen gisa",
+          "label": "Erantzun zuzena",
+          "true": "Egiazkoa"
+        },
+        "questionText": {
+          "help": "Hauxe da itemaren testua.",
+          "label": "Itemaren testua",
+          "placeholder": "Itemaren testua..."
+        }
+      },
+      "label": "Item egiazkoa/ faltsua",
+      "prev": "Item egiazkoa/faltsua, oraindik ezarri gabea..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Faltsua",
+          "help": "Hautatu verdaeroaren edo faltsuaren artean erantzun zuzen gisa",
+          "label": "Erantzun zuzena",
+          "true": "Egiazkoa"
+        },
+        "questionText": {
+          "help": "Hori da galderaren testua, eduki-batasunean erakutsiko dena.",
+          "label": "Galderaren testua",
+          "placeholder": "Galderaren testua..."
+        }
+      },
+      "label": "Benetako edo gezurreko galdera",
+      "prev": "Oraindik ezarritako benetako nbo faltsuaren galdera..."
+    },
+    "TwoColumnsLayout": {
+      "label": "Bi zutabe"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Lehenetsitako azpitituluak erakutsi",
+          "no": "Ez",
+          "yes": "Bai"
+        },
+        "url": {
+          "help": "Erabili testu-sarrera zure bideoaren URL-a sartzeko (youtube, vimeo...)",
+          "label": "Bideoaren URL",
+          "placeholder": "Adibidea: https://example.com/video.mp4"
+        }
+      },
+      "label": "Bideoa",
+      "prev": "Oraindik zehaztu gabeko bideoa..."
+    }
+  }
+}

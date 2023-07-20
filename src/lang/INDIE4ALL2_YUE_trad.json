@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "顯示/隱藏類別",
+    "viewImage": "見圖片"
+  },
+  "common": {
+    "alt": {
+      "help": "係圖像喺輔助功能方面嘅替代描述文本",
+      "label": "圖像嘅可選文字",
+      "placeholder": "可選文字"
+    },
+    "captions": {
+      "help": "包含對話、音效、音樂曲目同其他音頻信息嘅文字記錄嘅文件嘅INDIeMedia URL，用于觀看者失聰或聽力障礙，抑或視頻/音頻被靜音。 字幕都顯示喺視頻上方。",
+      "label": "字幕（抄送）",
+      "placeholder": "示例：https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "文件嘅INDIeMedia URL，其中包含視頻中由于觀看者係盲人並且唔使用屏幕而無法播放視頻部分時發生嘅情況嘅文本描述。 描述由屏幕閱讀器閱讀或轉換為單獨嘅音軌。",
+      "label": "描述",
+      "placeholder": "示例：https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "下載驅動器緊，請稍候",
+      "title": "下載"
+    },
+    "feedback": {
+      "help": "解釋學生將收到嘅反饋，無論佢答正確還是錯誤",
+      "label": "反饋",
+      "negative": "負面反饋...",
+      "positive": "正面反饋..."
+    },
+    "generate": {
+      "description": "正在生成，請稍候",
+      "title": "生成"
+    },
+    "help": {
+      "button": "違約",
+      "help": "此文本將顯示喺細部件上方，以便用戶了解如何與其交互。 <strong>如果留空，將顯示默認文本。</strong>",
+      "label": "幫手",
+      "placeholder": "默認幫助文本"
+    },
+    "language": {
+      "EL": "希臘文",
+      "EN": "英文",
+      "ES": "西班牙文",
+      "FR": "法文",
+      "LT": "立陶宛文"
+    },
+    "loading": {
+      "description": "正在加載中，請稍候",
+      "title": "裝載"
+    },
+    "name": {
+      "help": "將係用于學習分析嘅小部件實例嘅名稱",
+      "label": "名字",
+      "placeholder": "小組件實例名稱"
+    },
+    "navbar": {
+      "options": "展開/折疊選項"
+    },
+    "preview": {
+      "description": "正在生成預覽，請稍候",
+      "generated": {
+        "description": "預覽版已準備就緒。 如果您的瀏覽器未將您重定向到預覽版，請單擊下面的連結：",
+        "title": "預覽生成成功"
+      },
+      "title": "生成預覽"
+    },
+    "publish": {
+      "description": "正在生成您的驅動器以供下載，請稍候",
+      "title": "出版單位"
+    },
+    "publishToNetlify": {
+      "description": "您的單位正在上傳到Netlify，請稍候",
+      "title": "Netlify嘅出版單位"
+    },
+    "save": {
+      "description": "正在保存，請稍候",
+      "title": "儲蓄"
+    },
+    "scorm": {
+      "description": "正在生成您的SCORM包，請稍候",
+      "title": "生成SCORM包"
+    },
+    "selectType": "從以下選項中選擇一種類型",
+    "unit": {
+      "settings": "輸入單位詳細信息"
+    }
+  },
+  "dialog": {
+    "translate": "翻譯單元"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "手風琴係空嘅。 你必須使用右側嘅添加按鈕添加內容。"
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "容器為吉。 必須至少向容器添加一個項目。"
+      },
+      "title": {
+        "invalid": "容器標題無效。 你必須建立一個。"
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "為背景圖像設置嘅URL唔正確。 你必須提供有效的獨立作者URL。"
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "必須設置動畫圖像嘅替代文本。"
+        },
+        "altRec": {
+          "invalid": "必須設置動畫區域嘅替代文本。"
+        },
+        "empty": "動畫必須至少有一個動畫區域。",
+        "h": {
+          "invalid": "必須設置高度，並且必須係有效的數字。"
+        },
+        "w": {
+          "invalid": "必須設置寬度，並且必須係有效的數字。"
+        },
+        "x": {
+          "invalid": "必須設置最左側嘅坐標，並且必須係有效的數字。"
+        },
+        "y": {
+          "invalid": "必須設置頂部數字，並且必須係有效的數字。"
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "動畫為空。 你必須使用添加按鈕至少添加一個項目。"
+      },
+      "height": {
+        "invalid": "動畫嘅高度必須大於0。"
+      },
+      "image": {
+        "invalid": "為圖像設置嘅URL無效。 你需要確保喺圖像字段中提供有效的獨立媒體URL。"
+      },
+      "width": {
+        "invalid": "動畫嘅寬度必須大於0。"
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "為圖像設置嘅URL無效。 你需要確保喺圖像字段中提供有效的獨立媒體URL。"
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "必須至少添加一個音頻術語定義"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "你必須提供有效的獨立媒體網址"
+      },
+      "definition": {
+        "invalid": "你必須提供定義。"
+      },
+      "term": {
+        "invalid": "你必須提供一個術語。"
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "你尚未編寫報價嘅内容。 你至少必須寫下內容。"
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "必須至少提供一個文本和按鈕類型元素。"
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "為圖像設置嘅URL無效。 你必須確保喺掣嘅圖像字段中提供有效的IndieMedia URL。"
+      },
+      "text": {
+        "invalid": "文本為吉。 你必須編寫或複製文本。"
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "突出顯示嘅窗口為空。 必須至少添加一個簡單元素。"
+      },
+      "text": {
+        "invalid": "文本為吉。 你必須寫一個小文本。"
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "Denes喺URL字段中提供有效的圖像。"
+      },
+      "options": {
+        "noCorrect": "你必須至少選擇一個正確嘅",
+        "notEnougOptions": "你必須輸入4個選項"
+      },
+      "text": {
+        "invalid": "文本為吉。 你必須輸入文本。"
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "布局中嘅所有列必須至少包含一個元素，方法係由左側嘅調色板中拖動該元素。"
+      },
+      "width": {
+        "invalid": "列寬無效"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "你必須為圖像提供替代文本"
+      },
+      "audioblob": {
+        "invalid": "音頻文件嘅內容不正確。 你必須選擇一個有效的文件。"
+      },
+      "captions": {
+        "invalid": "為字幕設置嘅URL無效。 你必須確保提供有效的獨立媒體網址"
+      },
+      "captionsblob": {
+        "invalid": "字幕文件嘅內容不正確。 你必須選擇一個有效的文件。"
+      },
+      "descriptions": {
+        "invalid": "為說明設置嘅URL無效。 你必須確保提供有效的獨立媒體網址"
+      },
+      "imageblob": {
+        "invalid": "圖像嘅內容不正確。 你必須選擇有效的映像。"
+      },
+      "name": {
+        "invalid": "必須為此實例提供一個名稱。",
+        "notUniqueName": "實例名稱喺所有內容中必須係唯一嘅。"
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "你必須至少提供一個正確單詞項目。"
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "為圖像設置嘅URL無效。 你必須提供有效的獨立作者URL。"
+      },
+      "question": {
+        "invalid": "問題嘅文本係空嘅。"
+      },
+      "word": {
+        "invalid": "響應嘅文本為空。"
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "你必須添加至少一對"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "為圖像輸入嘅URL無效。 你需要確保喺圖像字段中提供有效的獨立媒體URL。"
+      },
+      "text": {
+        "invalid": "文本為吉。 你必須寫一篇簡短嘅文本。"
+      },
+      "type": {
+        "invalid": "為項目設置嘅類型無效。 你需要確保選擇了“文本”或“圖像”選項。"
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "該項為空。 你必須使用右側嘅添加按鈕添加至少一個術語定義項。"
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "定義字段為吉。 你必須編寫定義。"
+      },
+      "term": {
+        "invalid": "術語字段為空。 你必須寫一個術語。"
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "您必須選擇一個正確的答案",
+        "notEnoughAnswers": "你必須至少寫下2個可能嘅答案"
+      },
+      "question": {
+        "empty": "問題文本不能為空",
+        "onlyOneBlank": "問題中只能包含一個空格"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "答案不能為空"
+      },
+      "attempts": {
+        "invalid": "嘗試必須係1到9之間嘅數字"
+      },
+      "question": {
+        "invalid": "問題不能為空"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "為圖像設置嘅URL無效。 你需要確保喺圖像字段中提供有效的獨立媒體URL。"
+      },
+      "text": {
+        "invalid": "文本為吉。 你必須寫一篇課文"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "列數必須為1、2或3"
+      },
+      "data": {
+        "empty": "你必須至少提供一個圖像和聲音元素。"
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "你必須提供有效的獨立媒體網址"
+      },
+      "image": {
+        "invalid": "為圖像輸入嘅URL無效。 你需要確保喺圖像字段中提供有效的獨立媒體URL。"
+      },
+      "text": {
+        "invalid": "文本為吉。 你必須寫一篇簡短嘅文本。"
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "為圖像設置嘅URL無效。 你需要確保喺圖像字段中提供有效的獨立媒體URL。"
+      },
+      "text": {
+        "invalid": "文本為吉。 你必須編寫或複製文本。"
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "為視頻配置嘅網址無效。 你應該確保由獨立開放互動視頻中提供一個。"
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "必須為公式提供圖例。"
+      },
+      "formula": {
+        "invalid": "你必須提供LaTex格式嘅公式。"
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "你必須至少提供一個缺少嘅單詞項。"
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "你必須至少寫一個正確答案",
+        "invalid": "響應文本為空"
+      },
+      "sentence": {
+        "empty": "短語不得為空",
+        "onlyOneBlank": "你應該喺句子中僅包含空格標記"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "模式為空。 必須至少添加一個簡單元素。"
+      },
+      "text": {
+        "invalid": "文本為吉。 你必須寫一個小文本。"
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "為背景圖像設置嘅URL唔正確。 你必須提供有效的獨立作者URL。"
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "必須設置剪輯嘅替代文本。"
+        },
+        "altRec": {
+          "invalid": "必須設置位置嘅替代文本。"
+        },
+        "empty": "拼圖必須至少有一塊。",
+        "h": {
+          "invalid": "必須設置高度，並且必須係有效的數字。"
+        },
+        "w": {
+          "invalid": "必須設置寬度，並且必須係有效的數字。"
+        },
+        "x": {
+          "invalid": "必須設置最左側嘅坐標，並且必須係有效的數字。"
+        },
+        "y": {
+          "invalid": "必須設置頂部數字，並且必須係有效的數字。"
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "該項為空。 你必須使用右側嘅添加按鈕添加至少一個條目。"
+      },
+      "title": {
+        "invalid": "標題字段為空。 你必須寫一個標題。"
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "至少有一個重複嘅連結。 你必須為每個帖子提供唯一嘅連結。",
+        "empty": "該項為空。 你必須使用右側嘅添加按鈕添加至少一個條目。",
+        "multipleCurrent": "當前至少有兩個條目。 你只能提供一個當前條目。"
+      },
+      "moreThanOne": "你最多只能提供一個目錄項目。"
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "標題字段為空。 你必須寫一個標題。"
+      },
+      "url": {
+        "invalid": "url字段必須設置為以下格式：https://[來源]/[作者]/[單位]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "架構為空。 你必須使用右側嘅添加按鈕添加至少一個項目。"
+      },
+      "height": {
+        "invalid": "動畫嘅高度必須大於0。"
+      },
+      "image": {
+        "invalid": "為完整圖像設置嘅URL無效。 你需要確保提供有效的獨立媒體URL。"
+      },
+      "width": {
+        "invalid": "動畫嘅寬度必須大於0。"
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "為圖像設置嘅URL無效。 你需要確保喺圖像字段中提供有效的獨立媒體URL。"
+      },
+      "text": {
+        "invalid": "文本為吉。 你必須寫一個小文本。"
+      }
+    },
+    "section": {
+      "emptyData": "節不能為空。 必須至少添加一個項目。",
+      "invalidBookmark": "該部分必須具有有效的書籤。",
+      "invalidImage": "該部分必須具有背景圖像。",
+      "invalidName": "該部分必須具有名稱。",
+      "typeImageNotSelected": "如果所選類型為“背景圖像”，則必須設置圖像。"
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "你必須至少提供一個句子排序元素。"
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "你必須至少寫一個正確答案",
+        "impossible": "句子不能由已建立的單詞構成",
+        "invalid": "響應文本為空"
+      },
+      "words": {
+        "empty": "必須至少鍵入一個有效單詞",
+        "invalid": "單詞文本為吉"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "為圖像設置嘅URL無效。 你需要確保喺圖像字段中提供有效的獨立媒體URL。",
+        "sizeNotSet": "当圖像嘅外觀為“自定義”時，必須設置圖像嘅寬度同高度"
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "您必須選擇一個正確的答案",
+        "notEnoughAnswers": "你必須至少寫下2個可能嘅答案"
+      },
+      "question": {
+        "empty": "問題文本不能為空"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "該選項卡為空。 必須至少向選項卡添加一個項目。"
+      },
+      "name": {
+        "invalid": "選項卡名稱無效。 你必須建立一個。"
+      }
+    },
+    "Table": {
+      "empty": "表未設置列"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "選項卡餐牌唔包含選項卡。 你必須至少添加一個。"
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "有重複嘅列。 檢查您的物品。",
+        "duplicatedTerms": "列之間存在重複嘅術語。 查看條款"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "列不得為空"
+      },
+      "terms": {
+        "empty": "術語不能為空。",
+        "invalid": "條款唔符合要求嘅格式。 請用分號（;)。"
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "測試為空。 你必須至少添加一個問題。"
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "文本為吉。 你必須寫一篇簡短嘅文本。"
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "必須至少添加一個true或false元素"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "問題文本不能為空"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "問題文本不能為空"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "視頻嘅網址無效。 您必須確保提供來自IndieMedia或Youtube的有效URL。",
+        "localInvalid": "視頻嘅網址無效。 你需要確保提供有效的YouTube網址。"
+      }
+    }
+  },
+  "footer": {
+    "content": "你可以使用頂部工具欄添加新部分"
+  },
+  "general": {
+    "areYouSure": "是否確定？",
+    "cancel": "取消",
+    "close": "關閉",
+    "confirm": "確認",
+    "delete": "消除",
+    "discard": "丟棄",
+    "false": "假",
+    "load": "負荷",
+    "modelDetected": "你想加載以前嘅設備啊？",
+    "true": "真"
+  },
+  "header": {
+    "addSection": "添加部分",
+    "clear": "抹掉內容",
+    "download": "下載單位",
+    "importSection": "導入部分",
+    "install": "安裝應用",
+    "preview": "預覽內容",
+    "publish": "發佈內容",
+    "publishToNetlify": "在Netlify中發佈內容",
+    "redo": "重做操作",
+    "save": "保存內容",
+    "scorm": "以SCORM格式導出",
+    "translate": "翻譯單元",
+    "undo": "撤消操作",
+    "upload": "上傳單位",
+    "validate": "驗證單位"
+  },
+  "items": {
+    "add": "添加內容",
+    "delete": "刪除項目",
+    "duplicate": "重複項",
+    "edit": "編輯內容",
+    "export": "導出項目"
+  },
+  "messages": {
+    "changesSaved": "已成功保存更改。",
+    "confirmClearContent": "你將完全刪除內容。 確保係你真正想做嘅。",
+    "confirmLoadModel": "已搵到以前嘅單位。 選擇係要加载仲係丟棄它。",
+    "contentCleared": "已成功刪除內容。",
+    "contentErrors": "哢嚓！ 您的內容中有錯誤。 查看錯誤消息並按照其說明進行修復。",
+    "couldNotExportElement": "無法導出項目",
+    "couldNotExportSection": "無法導出該部分",
+    "deletedSection": "已成功刪除節",
+    "emptyContent": "你尚未添加內容。",
+    "errorMessage": "錯誤",
+    "exportedElement": "已成功導出項目",
+    "exportedSection": "已成功導出部分",
+    "importedElement": "已成功導入項目",
+    "importedSection": "已成功導入部分",
+    "loadError": "無法加載設備",
+    "noElement": "冇要導入嘅項目",
+    "noErrors": "幾好! 冇錯誤。 你可以繼續保存內容。",
+    "noRedo": "無需重做",
+    "noSection": "冇要導入嘅部分",
+    "noUndo": "無需撤消任何操作",
+    "previewError": "無法預覽設備",
+    "publishError": "無法發佈該單位",
+    "savedUnit": "已成功保存單位",
+    "saveError": "無法保存設備",
+    "successMessage": "仲可以",
+    "translateError": "該單位無法翻譯",
+    "warningMessage": "注意力"
+  },
+  "netlify": {
+    "button": {
+      "text": "連接"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "創建站點",
+        "help": "選擇您的Netlify帳戶中的可用站點之一",
+        "label": "請從您的Netlify中選擇一個可用的站點以上傳單元"
+      },
+      "title": "填寫字段以連接到Netlify ",
+      "token": {
+        "help": "輸入您的個人Netlify訪問令牌。 你可以喺Netlify账户設置嘅“應用程序”部分搵到它",
+        "label": "插入個人訪問令牌：",
+        "placeholder": "在此處插入您的Netlify個人訪問令牌"
+      }
+    },
+    "error": {
+      "message": "令牌無效"
+    },
+    "success": {
+      "message": "該單位已成功上傳到Netlify。 透過單擊以下連結訪問它： ",
+      "message_2": "請記住，如果您的單元包含大量內容，則可能需要幾分鐘才能發佈。",
+      "title": "單位上傳到網絡"
+    }
+  },
+  "palette": {
+    "containers": "器皿",
+    "exerciseElement": "習題",
+    "interactiveElements": "互動元素",
+    "items": "項目",
+    "layouts": "規定",
+    "question": "問題",
+    "simpleElements": "元素"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "代碼塊",
+        "screenReader": "屏幕閱讀器嘅幫助文本"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "刪除部分",
+    "duplicate": "重複部分",
+    "edit": "編輯信息",
+    "expandContract": "展開或摺疊",
+    "export": "導出部分",
+    "form": {
+      "bookmark": {
+        "help": "此標記將作為部分標記顯示喺設備嘅頂部。 它最多必須包含40個字符。",
+        "label": "節書簽",
+        "placeholder": "寫一個書籤..."
+      },
+      "image": {
+        "help": "",
+        "label": "背景圖片網址",
+        "placeholder": "輸入圖像嘅網址..."
+      },
+      "name": {
+        "help": "係該部分將在內容中具有的名稱。",
+        "label": "部分名稱",
+        "placeholder": "寫一個名..."
+      },
+      "preview": "預覽背景圖像",
+      "type": {
+        "bc": "背景色（默認）",
+        "bi": "背景圖",
+        "help": "如果類型設置為“背景顏色”，則默認顏色將顯示喺標題後面，而在“背景圖像”中，你必須為部分標題建立背景圖像。",
+        "label": "背景類型"
+      }
+    },
+    "import": "導入項目",
+    "label": "部分",
+    "moveDown": "向下轆部分",
+    "moveUp": "向上轆部分"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "啟用/禁用設備中嘅分析",
+        "label": "分析學",
+        "no": "唔係",
+        "yes": "係"
+      },
+      "author": {
+        "help": "該單位嘅作者應該寫喺呢度。",
+        "label": "單位作者",
+        "placeholder": "該單位嘅作者寫道"
+      },
+      "background": {
+        "help": "圖像應約為1900 x 550像素。",
+        "label": "主題圖片"
+      },
+      "color": {
+        "help": "十六進制格式#FFFFFF必需",
+        "label": "主題顏色",
+        "placeholder": "在此處輸入主題顏色"
+      },
+      "email": {
+        "help": "係作者嘅電子郵件地址。",
+        "label": "電子郵件",
+        "placeholder": "輸入作者嘅電子郵件地址"
+      },
+      "institution": {
+        "help": "機構名稱",
+        "label": "機構",
+        "placeholder": "輸入機構名稱"
+      },
+      "language": {
+        "help": "單位嘅語言。",
+        "label": "語言"
+      },
+      "license": {
+        "BY": "國際4.0認可（ CC BY 4.0 ）",
+        "BYNC": "署名-非商業性使用-禁止派生4.0國際（ CC BY-NC-ND 4.0 ）",
+        "BYNCND": "署名-非商業性使用-禁止派生4.0國際（ CC BY-NC-ND 4.0 ）",
+        "BYNCSA": "署名-非商業性使用-相同方式共享4.0國際（ CC BY-NC-SA 4.0 ）",
+        "BYND": "署名-無派生4.0國際（ CC BY-ND 4.0 ）",
+        "BYSA": "署名-相同方式共享4.0國際（ CC BY-SA 4.0 ）",
+        "help": "單位許可證",
+        "label": "許可證",
+        "PRIVATE": "保留所有權利"
+      },
+      "resource": {
+        "help": "輸入資源ID",
+        "label": "資源ID：",
+        "placeholder": "輸入資源ID"
+      },
+      "theme": {
+        "help": "選擇單位嘅主題。",
+        "label": "主題"
+      },
+      "title": {
+        "help": "係單位嘅標題。",
+        "label": "單位名稱",
+        "placeholder": "輸入標題"
+      },
+      "type": {
+        "help": "這是單位類型。",
+        "interoperability": "互操作性",
+        "label": "驅動器類型",
+        "open": "打開"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "係單元嘅源語言",
+        "label": "源語言"
+      },
+      "target": {
+        "help": "單位將翻譯成嘅目標語言",
+        "label": "目標語言"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "手風琴餐牌"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "設置內容組嘅標題。 它將出現喺下拉餐牌嘅標題中。",
+          "label": "內容標題",
+          "placeholder": "示例：專業技能"
+        }
+      },
+      "label": "內容組"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "将係動畫嘅背景圖像。 你可以選擇上傳嘅圖像之一。",
+          "label": "圖片網址",
+          "placeholder": "在此處插入圖像嘅URL...",
+          "preview": "動畫預覽"
+        },
+        "pieces": {
+          "altImg": "動畫圖像嘅替代文本",
+          "altRec": "動畫區域嘅可選文字",
+          "delete": "擦除",
+          "h": "高",
+          "new": "添加新嘅動畫區域...",
+          "w": "寬",
+          "x": "左",
+          "y": "優越"
+        }
+      },
+      "label": "動畫",
+      "prev": "動畫尚未初始化..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "將係像素動畫容器嘅高度",
+          "label": "動畫高度",
+          "placeholder": "示例：200"
+        },
+        "image": {
+          "help": "將係項目中顯示嘅圖像。 你可以選擇上傳嘅圖之一或上傳新圖。",
+          "label": "圖片網址",
+          "placeholder": "單擊此處選擇圖像"
+        },
+        "prev": "預覽圖像預覽",
+        "width": {
+          "help": "將係動畫容器嘅寬度（以像素為單位）",
+          "label": "動畫寬度",
+          "placeholder": "示例：400"
+        }
+      },
+      "label": "動畫"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "将係動畫項目嘅圖像。",
+          "label": "圖片網址",
+          "placeholder": "單擊此處選擇圖像"
+        },
+        "prev": "預覽"
+      },
+      "label": "動畫項。",
+      "prev": "動畫項目尚未設置..."
+    },
+    "AudioTermContainer": {
+      "label": "音頻術語"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "你必須喺內容單位中輸入要播放嘅音頻嘅URL。",
+          "label": "音頻文件網址",
+          "placeholder": "請輸入有效的獨立媒體網址..."
+        },
+        "definition": {
+          "help": "此定義應該係音頻嘅逐字转录。",
+          "label": "定義",
+          "placeholder": "寫定義..."
+        },
+        "term": {
+          "help": "將係放置喺細部件左側嘅術語",
+          "label": "術語",
+          "placeholder": "喺呢度寫下你嘅術語..."
+        }
+      },
+      "label": "音頻術語",
+      "prev": "音頻術語尚未建立..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "拍拖可以顯示為右對正或左對正",
+          "label": "預約對正",
+          "values": {
+            "left": "在左側",
+            "right": "向右"
+          }
+        },
+        "caption": {
+          "help": "報價嘅副標題顯示喺報價下方。 它主要用于表示引文嘅作者或作者",
+          "label": "報價嘅副標題",
+          "placeholder": "示例：卡尔·萨根"
+        },
+        "quote": {
+          "help": "本文為逐字引文",
+          "label": "引用文本",
+          "placeholder": "示例：徜徉冇證據唔係缺席嘅证据。"
+        },
+        "source": {
+          "help": "引用的原始來源（年份，書籍，雜誌... 等）",
+          "label": "報價嘅由來",
+          "placeholder": "示例：1990"
+        }
+      },
+      "label": "報價",
+      "prev": "報價尚未確定..."
+    },
+    "ButtonTextContainer": {
+      "label": "帶文本嘅掣"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "將係將顯示喺掣上嘅圖像。 你可以選擇上傳嘅圖之一或上傳新圖。",
+          "label": "按鈕圖像網址",
+          "placeholder": "在此處插入您的網址"
+        },
+        "preview": "“預覽”按鈕圖像",
+        "text": {
+          "help": "在此文本編輯器中，您可以編寫與按鈕關聯的文本內容",
+          "label": "發短信",
+          "placeholder": "喺呢度寫下你嘅文字..."
+        }
+      },
+      "label": "帶文本嘅掣元素",
+      "prev": "帶有文本嘅按鈕元素尚未初始化..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "顏色",
+        "helps": {
+          "animation": "確定包含嵌入元素（單個或可摺疊）的框的預定義動畫之一。",
+          "colorTheme": "十六進制格式#FFFFFF必需的。 <strong> 如果未填充，則單位主題嘅顏色將採用默認值。</strong>",
+          "styles": "確定包含嵌入元素嘅框嘅預定義款式之一。",
+          "textTitle": "將係將顯示為標題嘅文本。 <strong>如果未填充，它將採用默認值。</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "在此處輸入顏色",
+          "textTitle": "在此輸入標題"
+        },
+        "styles": {
+          "animation": "動畫風格",
+          "attention": "注意力",
+          "collapsible": "濕陷性",
+          "danger": "危險",
+          "label": "風格",
+          "more": "瞭解更多信息",
+          "note": "注意",
+          "simple": "簡單"
+        },
+        "textTitle": "標題"
+      },
+      "label": "優秀"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "圖像將顯示喺細部件頂部嘅選項上方。",
+          "label": "圖片網址",
+          "placeholder": "輸入圖像嘅網址..."
+        },
+        "options": {
+          "help": "4個選項將顯示喺圖像下方。 只有一個係正確嘅。",
+          "label": "選項",
+          "placeholder": "輸入一個選項"
+        },
+        "preview": "圖像預覽",
+        "text": {
+          "help": "此文本將作為文本或問題顯示喺圖像上方。",
+          "label": "發短信",
+          "placeholder": "喺呢度寫文字..."
+        }
+      },
+      "label": "選擇一個選項",
+      "prev": "選擇一個未設置嘅選項..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "列",
+      "form": {
+        "width": {
+          "1": "第一列嘅寬度",
+          "help": "另一列將佔用剩餘寬度"
+        }
+      },
+      "label": "處理"
+    },
+    "CorrectWord": {
+      "label": "正確嘅單詞"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "問題嘅描述性圖像",
+          "label": "圖片網址",
+          "placeholder": "在此處插入您的圖像URL..."
+        },
+        "preview": "圖像預覽",
+        "question": {
+          "help": "係將向用戶顯示嘅問題。",
+          "label": "問題文本",
+          "placeholder": "問題文本"
+        },
+        "word": {
+          "help": "呢個詞將係問題嘅答案",
+          "label": "答",
+          "placeholder": "寫一個字..."
+        }
+      },
+      "label": "正確嘅單詞元素",
+      "prev": "正確嘅詞尚未確定..."
+    },
+    "CouplesContainer": {
+      "label": "夫婦",
+      "prev": "尚未建立的夫婦..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "此圖像將與此表單中成對輸入嘅文本相關聯。",
+          "label": "圖片網址",
+          "placeholder": "在此處輸入圖像嘅URL..."
+        },
+        "legend": {
+          "first": "頭炮元素",
+          "second": "第二個要素"
+        },
+        "preview": "圖像預覽",
+        "text": {
+          "help": "此文本將與此表單中成對輸入嘅圖像相關聯。",
+          "label": "發短信",
+          "placeholder": "寫一篇課文..."
+        },
+        "type": {
+          "image": "圖像",
+          "label": "傢伙",
+          "text": "發短信"
+        }
+      },
+      "label": "夫婦",
+      "prev": "夫婦尚未建立..."
+    },
+    "DragdropContainer": {
+      "label": "拖放"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "定義顯示在交互式元素的右側，學生必須將術語拖到定義中",
+          "label": "定義",
+          "placeholder": "示例：所有人都有權表達自己，而唔會因為佢哋嘅諗法而受到騷擾"
+        },
+        "term": {
+          "help": "該術語顯示喺交互式元素嘅左側，並且係學生必須將其拖放到定義中嘅術語。",
+          "label": "術語",
+          "placeholder": "示例：言論自由"
+        }
+      },
+      "label": "術語定義",
+      "prev": "項目未建立..."
+    },
+    "FourColumnsLayout": {
+      "label": "四列"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "你必須至少寫2個答案並標記其中邊個係正確嘅。",
+          "label": "可能嘅答案"
+        },
+        "questionPreview": {
+          "help": "就係問題喺內容單位中個樣。",
+          "label": "預覽問題嘅文本。",
+          "placeholder": "帶有空白___插槽嘅問題文本。"
+        },
+        "questionText": {
+          "help": "你必須使用特殊關鍵字[blank]鍵入帶有所需空格的問題文本。",
+          "label": "問題文本",
+          "placeholder": "帶有空白元素嘅問題文本"
+        }
+      },
+      "label": "填補空白問題",
+      "prev": "填補空白的問題尚未確定..."
+    },
+    "GenericWidget": {
+      "label": "控件"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "問題的答案",
+          "label": "答",
+          "placeholder": "喺呢度寫下你嘅答案"
+        },
+        "attempts": {
+          "help": "嘗試猜測答案嘅次數。 它必須係1到9之間嘅數字。",
+          "label": "嘗試"
+        },
+        "question": {
+          "help": "要答嘅問題",
+          "label": "問題",
+          "placeholder": "喺呢度寫下您的問題"
+        }
+      },
+      "label": "猜字",
+      "prev": "估吓呢個詞仲未初始化..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "如果您建立文本，將係圖像嘅標題",
+          "label": "圖片說明",
+          "placeholder": "請輸入標題。"
+        },
+        "image": {
+          "help": "係將顯示喺項目中嘅圖像。",
+          "label": "圖片網址",
+          "placeholder": "單擊此處選擇圖像"
+        },
+        "preview": "預覽"
+      },
+      "label": "上面帶有文字嘅圖",
+      "prev": "上面文字嘅圖尚未建立..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "圖像和聲音"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "單擊圖像時將播放音頻文件。",
+          "label": "音頻文件網址",
+          "placeholder": "請輸入有效的獨立媒體網址..."
+        },
+        "image": {
+          "help": "圖像將首先出現",
+          "label": "圖片網址",
+          "placeholder": "輸入圖像嘅網址..."
+        },
+        "preview": "圖像預覽",
+        "text": {
+          "help": "当你把鼠標懸停喺圖像上時，文本將顯示喺圖像上方。",
+          "label": "圖像文本",
+          "placeholder": "寫一篇課文..."
+        }
+      },
+      "label": "圖像和聲音項目",
+      "prev": "圖像和聲音項目尚未建立..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "將係項目中顯示嘅圖像。 你可以選擇上傳嘅圖之一或上傳新圖。",
+          "label": "圖片網址",
+          "placeholder": "單擊此處選擇圖像"
+        },
+        "layout": {
+          "help": "圖像同文本塊嘅方向肯定塊中每個元素嘅顯示位置。",
+          "label": "取向",
+          "values": {
+            "0": "右側為文本，左側為圖像",
+            "1": "左側為文本，右側為圖像"
+          }
+        },
+        "preview": "圖像預覽",
+        "text": {
+          "help": "你必須寫一篇課文。",
+          "label": "在此文本編輯器中，您可以編寫塊的內容。",
+          "placeholder": "寫一篇課文..."
+        }
+      },
+      "label": "圖像同文本",
+      "prev": "圖像和文本尚未建立..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "使用文本輸入輸入使用交互式視頻工具創建嘅交互式視頻嘅URL。",
+          "label": "視頻網址",
+          "placeholder": "示例：https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "互動視頻",
+      "prev": "交互式視頻尚未建立"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "此圖例將顯示在公式下方，並顯示為文本塊",
+          "label": "公式圖例",
+          "placeholder": "示例：二次公式"
+        },
+        "formula": {
+          "help": "使用文本區域鍵入公式。 在此區域下方將顯示公式的預覽（如果正確），如果公式不正確，則顯示為紅色文本",
+          "label": "乳膠格式嘅公式",
+          "placeholder": "示例：\\text{二次公式是}x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "拉特克斯配方",
+      "prev": "公式尚未建立..."
+    },
+    "MissingWords": {
+      "label": "缺少單詞"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "擦除",
+          "new": "添加新回覆...",
+          "text": "答"
+        },
+        "sentence": {
+          "help": "你需要使用特殊標記[空白]編寫句子嘅文本，包括間隙。",
+          "label": "句子文本",
+          "placeholder": "帶標記嘅句子文本[空白]"
+        },
+        "sentencePreview": {
+          "help": "就係你喺內容單位中查看短語嘅方式。",
+          "label": "短語預覽",
+          "placeholder": "帶有標記___嘅句子文本 "
+        }
+      },
+      "label": "缺少單詞元素",
+      "prev": "缺失嘅單詞元素尚未確定..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "此文本將顯示為按鈕文本，必須激活按鈕文本才能打開模式窗口。",
+          "label": "按鈕文本",
+          "placeholder": "寫文本..."
+        }
+      },
+      "label": "模態窗口"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "将係拼圖嘅背景圖像。 你可以選擇上傳嘅圖像之一。",
+          "label": "圖片網址",
+          "placeholder": "在此處插入圖像嘅URL...",
+          "preview": "拼圖預覽"
+        },
+        "pieces": {
+          "altImg": "用于裁剪嘅替代文本",
+          "altRec": "位置嘅可選文字",
+          "delete": "擦除",
+          "h": "高",
+          "new": "添加新作品...",
+          "w": "寬",
+          "x": "左",
+          "y": "優越"
+        }
+      },
+      "label": "難題",
+      "prev": "謎題尚未初始化..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "組標題",
+          "label": "標題",
+          "placeholder": "示例：法律糢塊"
+        }
+      },
+      "label": "群",
+      "prev": "集團尚未建立..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "目錄"
+    },
+    "RelatedUnitsItem": {
+      "current": "當前單位",
+      "form": {
+        "current": {
+          "title": "這是當前單位"
+        },
+        "title": {
+          "help": "帖子標題",
+          "label": "標題",
+          "placeholder": "示例：人權"
+        },
+        "url": {
+          "help": "目標網址",
+          "label": "網址",
+          "placeholder": "示例：https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "入口",
+      "prev": "條目尚未建立..."
+    },
+    "SchemaContainer": {
+      "label": "方案"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "將係方案嘅部分圖像。",
+          "label": "圖片網址",
+          "placeholder": "單擊此處選擇圖像"
+        },
+        "prev": "圖像預覽"
+      },
+      "label": "大綱項",
+      "prev": "尚未建立嘅esuqema項目..."
+    },
+    "SentenceOrderContainer": {
+      "label": "短語排序"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "擦除",
+          "help": "將根據輸入嘅單詞構建嘅答案",
+          "legend": "答案列表",
+          "new": "添加新響應...",
+          "text": "答"
+        },
+        "words": {
+          "delete": "擦除",
+          "help": "答案應該能夠由呢啲詞中構建出嚟",
+          "legend": "單詞列表",
+          "new": "添加一個新字詞...",
+          "text": "詞"
+        }
+      },
+      "label": "短語排序元素",
+      "prev": "句子排序元素尚未初始化..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "設置外觀唔係“把原始尺寸調整到可用空間”時圖像嘅對正方式。",
+          "label": "圖像對正",
+          "values": {
+            "center": "集中",
+            "left": "左",
+            "right": "右 "
+          }
+        },
+        "aspect": {
+          "help": "圖像可以以原始尺寸顯示（如果可能），也可以根據屏幕寬度進行調整（縮放圖像）。 如果尺寸比屏幕可以顯示嘅尺寸更高更寬，它將始終自動調整到屏幕",
+          "label": "圖像外觀",
+          "values": {
+            "custom": "習慣",
+            "fit": "將原始尺寸調整為可用空間",
+            "original": "原始尺寸"
+          }
+        },
+        "image": {
+          "help": "將係將顯示喺項目中嘅圖像。",
+          "label": "圖片網址",
+          "placeholder": "在此處輸入圖像嘅網址"
+        },
+        "preview": "預覽",
+        "size": {
+          "height": "高",
+          "heightPlaceholder": "圖像高度...",
+          "keepRatio": "保持圖像比例",
+          "width": "寬",
+          "widthPlaceholder": "圖像寬度..."
+        }
+      },
+      "label": "圖像",
+      "prev": "映像尚未建立..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "你必須至少寫2個答案並標記其中邊個係正確嘅。",
+          "label": "可能嘅答案"
+        },
+        "questionText": {
+          "help": "係問題嘅文本將顯示喺內容單位中。",
+          "label": "問題文本",
+          "placeholder": "簡單問題的文本..."
+        }
+      },
+      "label": "簡單的問題",
+      "prev": "簡單嘅問題尚未設置..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "將係選項卡標題中顯示嘅名稱。",
+          "label": "選項卡名稱",
+          "placeholder": "示例：專業技能"
+        }
+      },
+      "label": "睫毛"
+    },
+    "Table": {
+      "empty": "表尚未初始化",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "列名為空或已定義",
+            "label": "列名",
+            "placeholder": "在此處鍵入列名稱..."
+          },
+          "columnPosition": {
+            "error": "超出範圍嘅列位置",
+            "label": "列位置"
+          },
+          "label": "添加新列",
+          "submit": "添加列"
+        },
+        "addRow": "添加新行",
+        "deleteColumn": "清除列",
+        "deleteRow": "清除行"
+      },
+      "help": {
+        "edit": "選擇要編輯嘅單位格。 要在編輯時添加新行，請喺按Enter嘅同時按shift鍵。"
+      },
+      "label": "板",
+      "prev": "表尚未建立..."
+    },
+    "TabsContainer": {
+      "itemLabel": "睫毛",
+      "label": "選項卡餐牌"
+    },
+    "TermClassification": {
+      "label": "分類",
+      "prev": "分類"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "係術語將與之相關嘅列。",
+          "label": "列",
+          "placeholder": "列"
+        },
+        "terms": {
+          "help": "在這篇文章中，您必須寫下與該術語相關的單詞，每個單詞用分號分隔。 例如：這些; 是; 一啲; 的話",
+          "label": "的話",
+          "placeholder": "寫下用分號分隔嘅單詞"
+        }
+      },
+      "label": "分類項",
+      "prev": "項目尚未建立..."
+    },
+    "Test": {
+      "label": "測試類型",
+      "questionSelect": "選擇要添加到測驗的問題類型"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "你必須寫一篇課文。",
+        "label": "在此文本編輯器中，您可以編寫塊的內容。",
+        "placeholder": "輸入文本...",
+        "styles": {
+          "attention": "注意力",
+          "default": "無款式",
+          "help": "確定文本周圍嘅框嘅布局",
+          "label": "文本塊款式",
+          "more": "瞭解更多信息",
+          "note": "注意"
+        }
+      },
+      "label": "文本塊",
+      "prev": "文本尚未建立..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "三列"
+    },
+    "TrueFalseContainer": {
+      "label": "對/錯",
+      "prev": "真/假尚未確定..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "假",
+          "help": "在真或假之間選擇正確答案",
+          "label": "正確答案",
+          "true": "真"
+        },
+        "questionText": {
+          "help": "係項目嘅文本。",
+          "label": "項目文本",
+          "placeholder": "項目文本..."
+        }
+      },
+      "label": "對/假項目",
+      "prev": "真/假項目尚未確定..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "假",
+          "help": "在真或假之間選擇正確答案",
+          "label": "正確答案",
+          "true": "真"
+        },
+        "questionText": {
+          "help": "係問題嘅文本將顯示喺內容單位中。",
+          "label": "文本問題嘅文本",
+          "placeholder": "問題文本..."
+        }
+      },
+      "label": "對或錯問題",
+      "prev": "真假nbo嘅問題尚未確定..."
+    },
+    "TwoColumnsLayout": {
+      "label": "兩列"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "顯示默認字幕",
+          "no": "唔係",
+          "yes": "係"
+        },
+        "url": {
+          "help": "使用文本輸入輸入視頻的URL（youtube，vimeo...）",
+          "label": "視頻網址",
+          "placeholder": "示例：https://example.com/video.mp4"
+        }
+      },
+      "label": "視頻",
+      "prev": "視頻尚未設置..."
+    }
+  }
+}

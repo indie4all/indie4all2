@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Vis/skjul kategorier",
+    "viewImage": "Se billede"
+  },
+  "common": {
+    "alt": {
+      "help": "Dette er den alternative beskrivelsestekst til billedet med hensyn til tilgængelighed",
+      "label": "Alternativ tekst til billedet",
+      "placeholder": "Alternativ tekst"
+    },
+    "captions": {
+      "help": "INDIeMedia URL til filen, der indeholder transskription af dialog, lydeffekter, musiknumre og anden lydinformation, når seeren er døv eller hørehæmmet, eller hvis videoen/lyden er slået fra. Undertekster vises også over videoen.",
+      "label": "Undertekster (CC)",
+      "placeholder": "Eksempel: https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "INDIeMedia URL til den fil, der indeholder tekstbeskrivelser af, hvad der sker i videoen, når den del af videoen ikke er tilgængelig, fordi seeren er blind og ikke bruger en skærm. Beskrivelserne læses af en skærmlæser eller konverteres til et separat lydspor.",
+      "label": "Beskrivelse: __________",
+      "placeholder": "Eksempel: https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Download drev, vent venligst",
+      "title": "Downloade"
+    },
+    "feedback": {
+      "help": "Fortolk den feedback, som den studerende vil modtage, om han svarer korrekt eller forkert",
+      "label": "Feedback",
+      "negative": "Negativ feedback...",
+      "positive": "Positiv feedback..."
+    },
+    "generate": {
+      "description": "Generer, vent venligst",
+      "title": "Generere"
+    },
+    "help": {
+      "button": "Standard",
+      "help": "Denne tekst vises over widgeten, så brugeren forstår, hvordan man interagerer med den. <strong>Hvis den efterlades tom, vises standardteksten.</strong>",
+      "label": "Hjælp",
+      "placeholder": "Standardtekst i Hjælp"
+    },
+    "language": {
+      "EL": "Græsk",
+      "EN": "Engelsk",
+      "ES": "Spansk",
+      "FR": "Fransk",
+      "LT": "Litauisk"
+    },
+    "loading": {
+      "description": "Indlæser, vent venligst",
+      "title": "Pålæsning"
+    },
+    "name": {
+      "help": "Dette vil være navnet på widgetforekomsten til læringsanalyse",
+      "label": "Navn",
+      "placeholder": "Navn på widgetforekomst"
+    },
+    "navbar": {
+      "options": "Indstillinger for udvid/skjul"
+    },
+    "preview": {
+      "description": "Din forhåndsvisning genereres, vent venligst",
+      "generated": {
+        "description": "Din forhåndsvisning er klar. Hvis din browser ikke omdirigerer dig til forhåndsvisningen, skal du klikke på linket nedenfor:",
+        "title": "Forhåndsvisning genereret med succes"
+      },
+      "title": "Generering af forhåndsvisning"
+    },
+    "publish": {
+      "description": "Dit drev genereres til download, vent venligst",
+      "title": "Forlagsenhed"
+    },
+    "publishToNetlify": {
+      "description": "Din enhed uploades til Netlify, vent venligst",
+      "title": "Forlagsenhed i Netlify"
+    },
+    "save": {
+      "description": "Gemmer, vent venligst",
+      "title": "Besparelse"
+    },
+    "scorm": {
+      "description": "Din SCORM-pakke genereres, vent venligst",
+      "title": "Generering af SCORM-pakke"
+    },
+    "selectType": "Vælg en type blandt følgende indstillinger:",
+    "unit": {
+      "settings": "Indtast enhedsoplysninger"
+    }
+  },
+  "dialog": {
+    "translate": "Oversæt enhed"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "Harmonikaen er tom. Du skal tilføje indhold ved hjælp af knappen Tilføj til højre."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "Beholderen er tom. Du skal føje mindst én vare til containeren."
+      },
+      "title": {
+        "invalid": "Containertitlen er ugyldig. Du skal oprette en."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "Den URL-adresse, der er angivet for baggrundsbilledet, er forkert. Du skal angive en gyldig indieauthor-URL."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Den alternative tekst til det animerede billede skal indstilles."
+        },
+        "altRec": {
+          "invalid": "Den alternative tekst til det animerede område skal indstilles."
+        },
+        "empty": "Animationen skal have mindst ét animeret område.",
+        "h": {
+          "invalid": "Højden skal indstilles og skal være et gyldigt nummer."
+        },
+        "w": {
+          "invalid": "Bredden skal indstilles og skal være et gyldigt tal."
+        },
+        "x": {
+          "invalid": "Koordinaten længst til venstre skal indstilles og skal være et gyldigt tal."
+        },
+        "y": {
+          "invalid": "Det øverste tal skal angives og skal være et gyldigt nummer."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "Animationen er tom. Du skal tilføje mindst ét element ved hjælp af knappen Tilføj."
+      },
+      "height": {
+        "invalid": "Animationens højde skal være større end 0."
+      },
+      "image": {
+        "invalid": "Den URL-adresse, der er angivet for billedet, er ugyldig. Du skal sørge for at angive en gyldig indiemedia URL i billedfeltet."
+      },
+      "width": {
+        "invalid": "Animationens bredde skal være større end 0."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "Den URL-adresse, der er angivet for billedet, er ugyldig. Du skal sørge for at angive en gyldig indiemedia URL i billedfeltet."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "Du skal tilføje mindst én definition af lydudtryk"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "Du skal angive en gyldig indiemedia-URL"
+      },
+      "definition": {
+        "invalid": "Du skal give en definition."
+      },
+      "term": {
+        "invalid": "Du skal angive et udtryk."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "Du har ikke skrevet indholdet af citatet. Du skal i det mindste skrive indholdet."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "Du skal angive mindst ét tekst- og knaptypeelement."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "Den URL-adresse, der er angivet for billedet, er ugyldig. Du skal sikre dig, at du angiver en gyldig IndieMedia-URL i billedfeltet på knappen."
+      },
+      "text": {
+        "invalid": "Teksten er tom. Du skal skrive eller kopiere en tekst."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "Det fremhævede vindue er tomt. Du skal tilføje mindst et enkelt element."
+      },
+      "text": {
+        "invalid": "Teksten er tom. Du skal skrive en lille tekst."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "Denes angiver et gyldigt billede i URL-feltet."
+      },
+      "options": {
+        "noCorrect": "Du skal vælge mindst én korrekt",
+        "notEnougOptions": "Du skal indtaste 4 muligheder"
+      },
+      "text": {
+        "invalid": "Teksten er tom. Du skal indtaste en tekst."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Alle kolonner i layoutet skal indeholde mindst ét element ved at trække det fra paletten til venstre."
+      },
+      "width": {
+        "invalid": "Ugyldig kolonnebredde"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "Du skal angive alternativ tekst til billedet"
+      },
+      "audioblob": {
+        "invalid": "Indholdet af lydfilen er ikke korrekt. Du skal vælge en gyldig fil."
+      },
+      "captions": {
+        "invalid": "Den URL-adresse, der er angivet for underteksterne, er ugyldig. Du skal sørge for at angive en gyldig indiemedia URL"
+      },
+      "captionsblob": {
+        "invalid": "Indholdet af undertekstfilen er ikke korrekt. Du skal vælge en gyldig fil."
+      },
+      "descriptions": {
+        "invalid": "Den URL-adresse, der er angivet for beskrivelsen, er ugyldig. Du skal sørge for at angive en gyldig indiemedia URL"
+      },
+      "imageblob": {
+        "invalid": "Billedets indhold er ikke korrekt. Du skal vælge et gyldigt billede."
+      },
+      "name": {
+        "invalid": "Du skal angive et navn til denne forekomst.",
+        "notUniqueName": "Forekomstnavnet skal være entydigt på tværs af alt indhold."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "Du skal angive mindst ét korrekt Word-element."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "Den URL-adresse, der er angivet for billedet, er ugyldig. Du skal angive en gyldig indieauthor-URL."
+      },
+      "question": {
+        "invalid": "Teksten i spørgsmålet er tom."
+      },
+      "word": {
+        "invalid": "Teksten i svaret er tom."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "Du skal tilføje mindst ét par"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "Den URL, der er indtastet for billedet, er ugyldig. Du skal sikre dig, at du angiver en gyldig indiemedia-URL i billedfeltet."
+      },
+      "text": {
+        "invalid": "Teksten er tom. Du skal skrive en kort tekst."
+      },
+      "type": {
+        "invalid": "Den type, der er angivet for elementet, er ugyldig. Du skal sørge for, at indstillingen 'Tekst' eller 'Billede' er valgt."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "Varen er tom. Du skal tilføje mindst ét orddefinitionselement ved hjælp af knappen Tilføj til højre."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "Definitionsfeltet er tomt. Du skal skrive en definition."
+      },
+      "term": {
+        "invalid": "Termfeltet er tomt. Du skal skrive et udtryk."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "Du skal vælge et korrekt svar",
+        "notEnoughAnswers": "Du skal skrive mindst 2 mulige svar"
+      },
+      "question": {
+        "empty": "Teksten i spørgsmålet må ikke være tom",
+        "onlyOneBlank": "Du må kun medtage ét tomt mellemrum i spørgsmålet"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "Svaret må ikke være tomt"
+      },
+      "attempts": {
+        "invalid": "Forsøg skal være et tal mellem 1 og 9"
+      },
+      "question": {
+        "invalid": "Spørgsmålet må ikke være tomt"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "Den URL-adresse, der er angivet for billedet, er ugyldig. Du skal sørge for at angive en gyldig indiemedia URL i billedfeltet."
+      },
+      "text": {
+        "invalid": "Teksten er tom. Du skal skrive en tekst"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "Antallet af kolonner skal være 1,2 eller 3"
+      },
+      "data": {
+        "empty": "Du skal angive mindst ét billed- og lydelement."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "Du skal angive en gyldig indiemedia-URL"
+      },
+      "image": {
+        "invalid": "Den URL, der er indtastet for billedet, er ugyldig. Du skal sikre dig, at du angiver en gyldig indiemedia-URL i billedfeltet."
+      },
+      "text": {
+        "invalid": "Teksten er tom. Du skal skrive en kort tekst."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "Den URL-adresse, der er angivet for billedet, er ugyldig. Du skal sørge for at angive en gyldig indiemedia URL i billedfeltet."
+      },
+      "text": {
+        "invalid": "Teksten er tom. Du skal skrive eller kopiere en tekst."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "Den webadresse, der er konfigureret til videoen, er ugyldig. Du skal sørge for at give en fra indieopen interaktive videoer."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "Du skal angive en forklaring til formlen."
+      },
+      "formula": {
+        "invalid": "Du skal angive en formel i LaTex-formatet."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "Du skal angive mindst ét element, der mangler ord."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "Du skal skrive mindst ét korrekt svar",
+        "invalid": "Svarteksten er tom"
+      },
+      "sentence": {
+        "empty": "Sætningen må ikke være tom",
+        "onlyOneBlank": "Du bør kun medtage et mellemrumsmærke i sætningen"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "Modalen er tom. Du skal tilføje mindst et enkelt element."
+      },
+      "text": {
+        "invalid": "Teksten er tom. Du skal skrive en lille tekst."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "Den URL-adresse, der er angivet for baggrundsbilledet, er forkert. Du skal angive en gyldig indieauthor-URL."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Den alternative tekst til klippet skal indstilles."
+        },
+        "altRec": {
+          "invalid": "Alt-teksten for positionen skal indstilles."
+        },
+        "empty": "Puslespillet skal have mindst én brik.",
+        "h": {
+          "invalid": "Højden skal indstilles og skal være et gyldigt nummer."
+        },
+        "w": {
+          "invalid": "Bredden skal indstilles og skal være et gyldigt tal."
+        },
+        "x": {
+          "invalid": "Koordinaten længst til venstre skal indstilles og skal være et gyldigt tal."
+        },
+        "y": {
+          "invalid": "Det øverste tal skal angives og skal være et gyldigt nummer."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "Varen er tom. Du skal tilføje mindst én post ved hjælp af knappen Tilføj til højre."
+      },
+      "title": {
+        "invalid": "Titelfeltet er tomt. Du skal skrive en titel."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "Der er mindst ét duplikatlink. Du skal angive et unikt link til hvert indlæg.",
+        "empty": "Varen er tom. Du skal tilføje mindst én post ved hjælp af knappen Tilføj til højre.",
+        "multipleCurrent": "Der er mindst to aktuelle poster. Du skal kun angive én aktuel post."
+      },
+      "moreThanOne": "Du skal højst angive ét indholdsfortegnelseselement."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "Titelfeltet er tomt. Du skal skrive en titel."
+      },
+      "url": {
+        "invalid": "URL-feltet skal indstilles til følgende format: https://[kilde]/[forfatter]/[enhed]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "Skemaet er tomt. Du skal tilføje mindst ét element ved hjælp af knappen Tilføj til højre."
+      },
+      "height": {
+        "invalid": "Animationens højde skal være større end 0."
+      },
+      "image": {
+        "invalid": "Den URL-adresse, der er angivet for hele billedet, er ugyldig. Du skal sørge for at angive en gyldig indiemedia URL."
+      },
+      "width": {
+        "invalid": "Animationens bredde skal være større end 0."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "Den URL-adresse, der er angivet for billedet, er ugyldig. Du skal sørge for at angive en gyldig indiemedia URL i billedfeltet."
+      },
+      "text": {
+        "invalid": "Teksten er tom. Du skal skrive en lille tekst."
+      }
+    },
+    "section": {
+      "emptyData": "En sektion må ikke være tom. Du skal tilføje mindst ét element.",
+      "invalidBookmark": "Sektionen skal have et gyldigt bogmærke.",
+      "invalidImage": "Sektionen skal have et baggrundsbillede.",
+      "invalidName": "Sektionen skal have et navn.",
+      "typeImageNotSelected": "Hvis den valgte type er Baggrundsbillede, skal du indstille billedet."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "Du skal angive mindst ét sætningssorteringselement."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "Du skal skrive mindst ét korrekt svar",
+        "impossible": "Sætningen kan ikke konstrueres ud fra de etablerede ord",
+        "invalid": "Svarteksten er tom"
+      },
+      "words": {
+        "empty": "Du skal skrive mindst ét gyldigt ord",
+        "invalid": "Word-tekst er tom"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "Den URL-adresse, der er angivet for billedet, er ugyldig. Du skal sørge for at angive en gyldig indiemedia URL i billedfeltet.",
+        "sizeNotSet": "Billedets bredde og højde skal indstilles, når dets udseende er \"Brugerdefineret\""
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "Du skal vælge et korrekt svar",
+        "notEnoughAnswers": "Du skal skrive mindst 2 mulige svar"
+      },
+      "question": {
+        "empty": "Teksten i spørgsmålet må ikke være tom"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "Fanen er tom. Du skal føje mindst ét element til fanen."
+      },
+      "name": {
+        "invalid": "Fanenavnet er ugyldigt. Du skal oprette en."
+      }
+    },
+    "Table": {
+      "empty": "Tabellen har ingen kolonner indstillet"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "Fanemenuen indeholder ikke faner. Du skal tilføje mindst én."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Der er dublerede kolonner. Tjek dine varer.",
+        "duplicatedTerms": "Der er dublerede udtryk mellem dine kolonner. Gennemgå vilkårene"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "Kolonnen må ikke være tom"
+      },
+      "terms": {
+        "empty": "Vilkår må ikke være tomme.",
+        "invalid": "Vilkårene overholder ikke det krævede format. Adskil venligst termer med semikolon (;)."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "Testen er tom. Du skal tilføje mindst ét spørgsmål."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "Teksten er tom. Du skal skrive en kort tekst."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "Du skal tilføje mindst ét sandt eller falsk element"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "Teksten i spørgsmålet må ikke være tom"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "Teksten i spørgsmålet må ikke være tom"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "Webadressen til videoen er ugyldig. Du skal sørge for at angive en gyldig URL fra IndieMedia eller Youtube.",
+        "localInvalid": "Webadressen til videoen er ugyldig. Du skal sørge for, at du angiver en gyldig YouTube-webadresse."
+      }
+    }
+  },
+  "footer": {
+    "content": "Du kan tilføje nye sektioner ved hjælp af den øverste værktøjslinje"
+  },
+  "general": {
+    "areYouSure": "Er du sikker?",
+    "cancel": "Aflyse",
+    "close": "Lukke",
+    "confirm": "Bekræfte",
+    "delete": "Eliminere",
+    "discard": "Kassere",
+    "false": "Falsk",
+    "load": "Læs",
+    "modelDetected": "Vil du indlæse en tidligere enhed?",
+    "true": "Sand"
+  },
+  "header": {
+    "addSection": "Tilføj sektion",
+    "clear": "Slet indhold",
+    "download": "Download enhed",
+    "importSection": "Afsnittet Import",
+    "install": "Installer app",
+    "preview": "Se eksempel på indhold",
+    "publish": "Udgiv indhold",
+    "publishToNetlify": "Udgiv indhold i Netlify",
+    "redo": "Fortryd handling",
+    "save": "Gem indhold",
+    "scorm": "Eksport i SCORM-format",
+    "translate": "Oversæt enhed",
+    "undo": "Fortryd handling",
+    "upload": "Upload enhed",
+    "validate": "Godkend enhed"
+  },
+  "items": {
+    "add": "Tilføj indhold",
+    "delete": "Slet element",
+    "duplicate": "Duplikeret element",
+    "edit": "Rediger indhold",
+    "export": "Eksportér vare"
+  },
+  "messages": {
+    "changesSaved": "Ændringer gemt med succes.",
+    "confirmClearContent": "Du vil slette indholdet helt. Sørg for, at det er det, du virkelig vil gøre.",
+    "confirmLoadModel": "En tidligere enhed er blevet fundet. Vælg, om du vil indlæse det eller kassere det.",
+    "contentCleared": "Indhold blev slettet.",
+    "contentErrors": "Ups! Der er fejl i dit indhold. Gennemse fejlmeddelelserne, og følg deres instruktioner for at rette dem.",
+    "couldNotExportElement": "Varen kunne ikke eksporteres",
+    "couldNotExportSection": "Sektionen kunne ikke eksporteres",
+    "deletedSection": "Afsnittet blev slettet",
+    "emptyContent": "Du har ikke tilføjet indhold.",
+    "errorMessage": "Fejl",
+    "exportedElement": "Varen er eksporteret korrekt",
+    "exportedSection": "Sektion eksporteret med succes",
+    "importedElement": "Varen er importeret korrekt",
+    "importedSection": "Sektion importeret med succes",
+    "loadError": "Enheden kunne ikke indlæses",
+    "noElement": "Ingen varer at importere",
+    "noErrors": "Ikke dårligt! Der er ingen fejl. Du kan fortsætte med at gemme indholdet.",
+    "noRedo": "Intet at gøre om",
+    "noSection": "Ingen sektioner at importere",
+    "noUndo": "Intet at fortryde",
+    "previewError": "Enheden kunne ikke forhåndsvises",
+    "publishError": "Enheden kunne ikke offentliggøres",
+    "savedUnit": "Enheden blev gemt",
+    "saveError": "Enheden kunne ikke gemmes",
+    "successMessage": "Ok",
+    "translateError": "Enheden kunne ikke oversættes",
+    "warningMessage": "Opmærksomhed"
+  },
+  "netlify": {
+    "button": {
+      "text": "Forbinde"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Opret websted",
+        "help": "Vælg et af de tilgængelige websteder på din Netlify-konto",
+        "label": "Vælg et tilgængeligt websted fra din Netlify for at uploade enheden"
+      },
+      "title": "Udfyld felterne for at oprette forbindelse til Netlify ",
+      "token": {
+        "help": "Indtast dit personlige Netlify-adgangstoken. Du kan finde det i afsnittet Applikationer i Netlify-kontoindstillingerne",
+        "label": "Indsæt det personlige adgangstoken:",
+        "placeholder": "Indsæt dit Netlify personlige adgangstoken her"
+      }
+    },
+    "error": {
+      "message": "Ugyldigt token"
+    },
+    "success": {
+      "message": "Enheden er blevet uploadet til Netlify med succes. Få adgang til det ved at klikke på følgende link: ",
+      "message_2": "Husk, at hvis din enhed har meget indhold, kan det tage et par minutter at publicere.",
+      "title": "Enhed uploadet til Netlify"
+    }
+  },
+  "palette": {
+    "containers": "Containere",
+    "exerciseElement": "Øvelser",
+    "interactiveElements": "Interaktive elementer",
+    "items": "Elementer",
+    "layouts": "Bestemmelser",
+    "question": "Spørgsmål",
+    "simpleElements": "Elementer"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Kode blok",
+        "screenReader": "Hjælpetekst til skærmlæsere"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Afsnittet Slet",
+    "duplicate": "Dupliker sektion",
+    "edit": "Rediger oplysninger",
+    "expandContract": "Udvid eller skjul",
+    "export": "Eksport sektion",
+    "form": {
+      "bookmark": {
+        "help": "Denne markør vises øverst på enheden som en sektionsmarkør. Det må højst indeholde 40 tegn.",
+        "label": "Afsnit bogmærke",
+        "placeholder": "Skriv et bogmærke..."
+      },
+      "image": {
+        "help": "",
+        "label": "URL-adresse til baggrundsbillede",
+        "placeholder": "Indtast billedets URL..."
+      },
+      "name": {
+        "help": "Dette er det navn, som sektionen vil have i indholdet.",
+        "label": "Navn på afsnit",
+        "placeholder": "Skriv et navn..."
+      },
+      "preview": "Se et eksempel på baggrundsbilledet",
+      "type": {
+        "bc": "Baggrundsfarve (standard)",
+        "bi": "Baggrundsbillede",
+        "help": "Hvis typen er indstillet til 'baggrundsfarve', vises standardfarven bag titlen, mens du i 'Baggrundsbillede' skal oprette et baggrundsbillede til sektionsoverskriften.",
+        "label": "Type baggrund"
+      }
+    },
+    "import": "Importer vare",
+    "label": "Afsnit",
+    "moveDown": "Rul sektionen ned",
+    "moveUp": "Rul sektionen op"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Aktiver/deaktiver analyser i enheden",
+        "label": "Analytics",
+        "no": "Nej",
+        "yes": "Ja"
+      },
+      "author": {
+        "help": "Forfatteren af enheden skal skrive her.",
+        "label": "Enhed forfatter",
+        "placeholder": "Forfatteren af enheden skriver"
+      },
+      "background": {
+        "help": "Billedet skal være ca. 1900 x 550 pixels.",
+        "label": "Tema billede"
+      },
+      "color": {
+        "help": "Hexadecimalt format #FFFFFF påkrævet",
+        "label": "Temafarve",
+        "placeholder": "Indtast temafarven her"
+      },
+      "email": {
+        "help": "Dette er forfatterens e-mail-adresse.",
+        "label": "E-mail",
+        "placeholder": "Indtast forfatterens e-mail-adresse"
+      },
+      "institution": {
+        "help": "Institutionens navn",
+        "label": "Institution",
+        "placeholder": "Indtast navnet på institutionen"
+      },
+      "language": {
+        "help": "Enhedens sprog.",
+        "label": "Sprog"
+      },
+      "license": {
+        "BY": "International 4.0-anerkendelse (CC BY 4.0)",
+        "BYNC": "Navngivelse-Ikke-kommerciel-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCND": "Navngivelse-Ikke-kommerciel-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Navngivelse-Ikke-kommerciel-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
+        "BYND": "Navngivelse-NoDerivs 4.0 International (CC BY-ND 4.0)",
+        "BYSA": "Navngivelse-ShareAlike 4.0 International (CC BY-SA 4.0)",
+        "help": "Enhed licens",
+        "label": "Licens",
+        "PRIVATE": "Alle rettigheder forbeholdes"
+      },
+      "resource": {
+        "help": "Angiv ressource-id'et",
+        "label": "Ressource-id:",
+        "placeholder": "Angiv ressource-id'et"
+      },
+      "theme": {
+        "help": "Vælg enhedens tema.",
+        "label": "Tema"
+      },
+      "title": {
+        "help": "Dette er enhedens titel.",
+        "label": "Enhedens titel",
+        "placeholder": "Indtast en titel"
+      },
+      "type": {
+        "help": "Dette er enhedstypen.",
+        "interoperability": "Interoperabilitet",
+        "label": "Drevtype",
+        "open": "Åben"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "Dette er enhedens kildesprog",
+        "label": "Kildesprog"
+      },
+      "target": {
+        "help": "Det målsprog, som enheden skal oversættes til",
+        "label": "Målsprog"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Harmonika menu"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "Angiver titlen på indholdsgruppen. Det vises i titlen på rullemenuen.",
+          "label": "Indholds titel",
+          "placeholder": "Eksempel: Faglige færdigheder"
+        }
+      },
+      "label": "Indholdsgruppe"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "Dette vil være baggrundsbilledet af animationen. Du kan vælge et af dine uploadede billeder.",
+          "label": "URL-adresse til billede",
+          "placeholder": "Indsæt billedets URL her...",
+          "preview": "Eksempel på animation"
+        },
+        "pieces": {
+          "altImg": "Alternativ tekst til animeret billede",
+          "altRec": "Alternativ tekst til animeret område",
+          "delete": "Slette",
+          "h": "Høj",
+          "new": "Tilføj nyt animeret område...",
+          "w": "Bred",
+          "x": "Venstre",
+          "y": "Overlegen"
+        }
+      },
+      "label": "Animation",
+      "prev": "Animationen er ikke blevet initialiseret endnu..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "Dette vil være højden på pixelanimationsbeholderen",
+          "label": "Animationshøjde",
+          "placeholder": "Eksempel: 200"
+        },
+        "image": {
+          "help": "Dette vil være det billede, der vises i elementet. Du kan vælge et af dine uploadede billeder eller uploade et nyt.",
+          "label": "URL-adresse til billede",
+          "placeholder": "Klik her for at vælge billedet"
+        },
+        "prev": "Se eksempel på billede",
+        "width": {
+          "help": "Dette vil være bredden af animationsbeholderen i pixels",
+          "label": "Animationsbredde",
+          "placeholder": "Eksempel: 400"
+        }
+      },
+      "label": "Animation"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "Dette vil være billedet af animationselementet.",
+          "label": "URL-adresse til billede",
+          "placeholder": "Klik her for at vælge billedet"
+        },
+        "prev": "Preview"
+      },
+      "label": "Element af animationen.",
+      "prev": "Animationselementet er ikke indstillet endnu..."
+    },
+    "AudioTermContainer": {
+      "label": "Audio-termer"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "Du skal indtaste URL'en til den lyd, du vil afspille i indholdsenheden.",
+          "label": "URL-adresse til lydfil",
+          "placeholder": "Indtast en gyldig indiemedia URL..."
+        },
+        "definition": {
+          "help": "Denne definition skal være den ordrette transskription af lyden.",
+          "label": "Definition",
+          "placeholder": "Skriv definitionen..."
+        },
+        "term": {
+          "help": "Dette vil være udtrykket placeret til venstre for widgeten",
+          "label": "Udtryk",
+          "placeholder": "Skriv dit udtryk her..."
+        }
+      },
+      "label": "Audio-sigt",
+      "prev": "Audio-term ikke etableret endnu..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "Aftalen kan vises højrejusteret eller venstrejusteret",
+          "label": "Tilpasning af udnævnelse",
+          "values": {
+            "left": "Til venstre",
+            "right": "Til højre"
+          }
+        },
+        "caption": {
+          "help": "Undertitlen på citatet vises under citatet. Det bruges hovedsageligt til at angive forfatteren eller forfatterne af citatet",
+          "label": "Undertitel på citatet",
+          "placeholder": "Eksempel: Carl Sagan"
+        },
+        "quote": {
+          "help": "Denne tekst er det ordrette citat",
+          "label": "Citat tekst",
+          "placeholder": "Eksempel: \"Manglende beviser er ikke bevis for fravær.\""
+        },
+        "source": {
+          "help": "Oprindelig kilde til citatet (år, bog, magasin... osv.)",
+          "label": "Citatets oprindelse",
+          "placeholder": "Eksempel:1990"
+        }
+      },
+      "label": "Citere",
+      "prev": "Citat endnu ikke etableret ..."
+    },
+    "ButtonTextContainer": {
+      "label": "Knapper med tekst"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "Dette vil være det billede, der vises på knappen. Du kan vælge et af dine uploadede billeder eller uploade et nyt.",
+          "label": "URL-adresse til knapbillede",
+          "placeholder": "Indsæt din URL her"
+        },
+        "preview": "Billede af knappen Vis eksempel",
+        "text": {
+          "help": "I denne teksteditor kan du skrive indholdet af teksten, der er knyttet til knappen",
+          "label": "Tekst",
+          "placeholder": "Skriv din tekst her..."
+        }
+      },
+      "label": "Knapelement med tekst",
+      "prev": "Knapelementet med tekst er ikke initialiseret endnu..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Farve",
+        "helps": {
+          "animation": "Bestemmer en af de foruddefinerede animationer for boksen med de integrerede elementer (enkelt eller foldbar).",
+          "colorTheme": "Hex-format #FFFFFF påkrævet. <strong> Hvis den ikke er fyldt, vil farven på enhedens tema tage standardværdien.</strong>",
+          "styles": "Bestemmer en af de foruddefinerede typografier for boksen med de integrerede elementer.",
+          "textTitle": "Dette vil være den tekst, der vises som en titel. <strong>Hvis det ikke er fyldt, tager det en standardværdi.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Indtast farven her",
+          "textTitle": "Indtast titlen her"
+        },
+        "styles": {
+          "animation": "Animationsstil",
+          "attention": "Opmærksomhed",
+          "collapsible": "Sammenklappelig",
+          "danger": "Fare",
+          "label": "Stil",
+          "more": "Lær mere",
+          "note": "Seddel",
+          "simple": "Simpel"
+        },
+        "textTitle": "Titel"
+      },
+      "label": "Udestående"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "Billedet vises øverst på widgetten over indstillingerne.",
+          "label": "URL-adresse til billede",
+          "placeholder": "Indtast billedets URL..."
+        },
+        "options": {
+          "help": "Disse 4 muligheder vises under billedet. Kun én kan være korrekt.",
+          "label": "Indstillinger",
+          "placeholder": "Indtast en indstilling"
+        },
+        "preview": "Eksempel på billede",
+        "text": {
+          "help": "Denne tekst vises over billedet som tekst eller spørgsmål.",
+          "label": "Tekst",
+          "placeholder": "Skriv teksten her..."
+        }
+      },
+      "label": "Vælg en mulighed",
+      "prev": "Valg af en indstilling ikke indstillet ..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "Kolonner",
+      "form": {
+        "width": {
+          "1": "Bredden af den første kolonne",
+          "help": "Den anden kolonne optager den resterende bredde"
+        }
+      },
+      "label": "Bortskaffelse"
+    },
+    "CorrectWord": {
+      "label": "Korrekt ord"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "Beskrivende billede af spørgsmålet",
+          "label": "URL-adresse til billede",
+          "placeholder": "Indsæt dit billedes URL her..."
+        },
+        "preview": "Eksempel på billede",
+        "question": {
+          "help": "Dette er det spørgsmål, der vil blive vist til brugeren.",
+          "label": "Spørgsmål tekst",
+          "placeholder": "Spørgsmål tekst"
+        },
+        "word": {
+          "help": "Dette ord vil være svaret på spørgsmålet",
+          "label": "Svare",
+          "placeholder": "Skriv et ord..."
+        }
+      },
+      "label": "Korrekt ordelement",
+      "prev": "Det korrekte ord er endnu ikke etableret..."
+    },
+    "CouplesContainer": {
+      "label": "Par",
+      "prev": "Par, der endnu ikke er etableret..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "Dette billede vil blive knyttet til teksten, der indtastes som et par i denne formular.",
+          "label": "URL-adresse til billede",
+          "placeholder": "Indtast billedets URL her..."
+        },
+        "legend": {
+          "first": "Første element",
+          "second": "Andet element"
+        },
+        "preview": "Eksempel på billede",
+        "text": {
+          "help": "Denne tekst vil blive knyttet til det billede, der indtastes som et par i denne formular.",
+          "label": "Tekst",
+          "placeholder": "Skriv en tekst..."
+        },
+        "type": {
+          "image": "Billede",
+          "label": "Fyr",
+          "text": "Tekst"
+        }
+      },
+      "label": "Par",
+      "prev": "Par ikke etableret endnu. . ."
+    },
+    "DragdropContainer": {
+      "label": "Træk og slip"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "Definitionen vises til højre for det interaktive element, og eleven skal trække ordet til definitionen",
+          "label": "Definition",
+          "placeholder": "Eksempel: Alle mennesker har ret til at udtrykke sig uden at blive chikaneret på grund af det, de tror"
+        },
+        "term": {
+          "help": "Udtrykket vises til venstre for det interaktive element og vil være det, som den studerende skal trække og slippe det i definitionen.",
+          "label": "Udtryk",
+          "placeholder": "Eksempel: Ytringsfrihed"
+        }
+      },
+      "label": "Term-definition",
+      "prev": "Varen er ikke etableret..."
+    },
+    "FourColumnsLayout": {
+      "label": "Fire kolonner"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Du skal skrive mindst 2 svar og markere, hvilken af dem der er korrekt.",
+          "label": "Mulige svar"
+        },
+        "questionPreview": {
+          "help": "Sådan vil spørgsmålet se ud i indholdsenheden.",
+          "label": "Se et eksempel på teksten i spørgsmålet.",
+          "placeholder": "Spørgsmålstekst med tom ___ plads."
+        },
+        "questionText": {
+          "help": "Du skal skrive spørgsmålsteksten med det tomme mellemrum, du ønsker, med det specielle nøgleord [tom].",
+          "label": "Spørgsmål tekst",
+          "placeholder": "Spørgsmålstekst med tomt element"
+        }
+      },
+      "label": "Udfyld hulspørgsmålet",
+      "prev": "Spørgsmålet om at udfylde hullet er endnu ikke etableret..."
+    },
+    "GenericWidget": {
+      "label": "Widget"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "Svaret på spørgsmålet",
+          "label": "Svare",
+          "placeholder": "Skriv dit svar her"
+        },
+        "attempts": {
+          "help": "Antal forsøg på at gætte svaret. Det skal være et tal mellem 1 og 9.",
+          "label": "Forsøg"
+        },
+        "question": {
+          "help": "Det spørgsmål, der skal besvares",
+          "label": "Spørgsmål",
+          "placeholder": "Skriv dit spørgsmål her"
+        }
+      },
+      "label": "Gæt ordet",
+      "prev": "Gæt ordet er ikke blevet initialiseret endnu ..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Hvis du opretter en tekst, vil dette være billedteksten til billedet",
+          "label": "Billedtekst",
+          "placeholder": "Indtast venligst en billedtekst."
+        },
+        "image": {
+          "help": "Dette er det billede, der vises i elementet.",
+          "label": "URL-adresse til billede",
+          "placeholder": "Klik her for at vælge billedet"
+        },
+        "preview": "Preview"
+      },
+      "label": "Billede med tekst ovenfor",
+      "prev": "Billede med tekst ovenfor endnu ikke etableret..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Billede og lyd"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "Lydfilen afspilles, når der klikkes på billedet.",
+          "label": "URL-adresse til lydfil",
+          "placeholder": "Indtast en gyldig indiemedia URL..."
+        },
+        "image": {
+          "help": "Billedet vises først",
+          "label": "URL-adresse til billede",
+          "placeholder": "Indtast billedets URL..."
+        },
+        "preview": "Eksempel på billede",
+        "text": {
+          "help": "Teksten vises over billedet, når du holder markøren over det.",
+          "label": "Billede tekst",
+          "placeholder": "Skriv en tekst..."
+        }
+      },
+      "label": "Billed- og lydelement",
+      "prev": "Billed- og lydelement endnu ikke etableret ..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "Dette vil være det billede, der vises i elementet. Du kan vælge et af dine uploadede billeder eller uploade et nyt.",
+          "label": "URL-adresse til billede",
+          "placeholder": "Klik her for at vælge billedet"
+        },
+        "layout": {
+          "help": "Retningen af et billede og en tekstblok bestemmer, hvor hvert af elementerne i blokken vises.",
+          "label": "Orientering",
+          "values": {
+            "0": "Tekst til højre, billede til venstre",
+            "1": "Tekst til venstre, billede til højre"
+          }
+        },
+        "preview": "Eksempel på billede",
+        "text": {
+          "help": "Du skal skrive en tekst.",
+          "label": "I denne teksteditor kan du skrive indholdet af blokken.",
+          "placeholder": "Skriv en tekst..."
+        }
+      },
+      "label": "Billede og tekst",
+      "prev": "Billede og tekst endnu ikke etableret..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Brug tekstinput til at angive URL-adressen på den interaktive video, der er oprettet med det interaktive videoværktøj.",
+          "label": "URL-adresse til video",
+          "placeholder": "Eksempel: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Interaktiv video",
+      "prev": "Interaktiv video endnu ikke etableret"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "Denne forklaring vises under formlen og som en tekstblok",
+          "label": "Forklaring af formel",
+          "placeholder": "Eksempel: Kvadratisk formel"
+        },
+        "formula": {
+          "help": "Brug tekstområdet til at skrive formlen. Under dette område vises en forhåndsvisning af formlen, hvis den er korrekt, eller teksten i rødt, hvis formlen ikke er korrekt",
+          "label": "Formel i LaTex-format",
+          "placeholder": "Eksempel: \\text{Den kvadratiske formel er }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "LaTeX-formel",
+      "prev": "Formel endnu ikke etableret..."
+    },
+    "MissingWords": {
+      "label": "Manglende ord"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Slette",
+          "new": "Tilføj nyt svar...",
+          "text": "Svare"
+        },
+        "sentence": {
+          "help": "Du skal skrive teksten i sætningen inklusive hullet ved hjælp af den specielle markør [blank].",
+          "label": "Sætningstekst",
+          "placeholder": "Sætningstekst med markør [tom]"
+        },
+        "sentencePreview": {
+          "help": "Sådan ser du på sætningen i indholdsenheden.",
+          "label": "Eksempel på sætning",
+          "placeholder": "Sætningstekst med markøren ___ "
+        }
+      },
+      "label": "Elementet Manglende ord",
+      "prev": "Det manglende ordelement er endnu ikke fastslået..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "Denne tekst vises som knaptekst, som skal aktiveres for at åbne modalvinduet.",
+          "label": "Knap tekst",
+          "placeholder": "Skriv teksten..."
+        }
+      },
+      "label": "Modal vindue"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "Dette vil være baggrundsbilledet af puslespillet. Du kan vælge et af dine uploadede billeder.",
+          "label": "URL-adresse til billede",
+          "placeholder": "Indsæt billedets URL her...",
+          "preview": "Forhåndsvisning af puslespil"
+        },
+        "pieces": {
+          "altImg": "Alternativ tekst til beskæring",
+          "altRec": "Alternativ tekst til placering",
+          "delete": "Slette",
+          "h": "Høj",
+          "new": "Tilføj nyt stykke...",
+          "w": "Bred",
+          "x": "Venstre",
+          "y": "Overlegen"
+        }
+      },
+      "label": "Forvirre",
+      "prev": "Puslespillet er ikke blevet initialiseret endnu ..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Gruppens titel",
+          "label": "Titel",
+          "placeholder": "Eksempel: Juramodul"
+        }
+      },
+      "label": "Gruppe",
+      "prev": "Gruppe endnu ikke etableret ..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Indholdsfortegnelse"
+    },
+    "RelatedUnitsItem": {
+      "current": "Nuværende enhed",
+      "form": {
+        "current": {
+          "title": "Dette er den aktuelle enhed"
+        },
+        "title": {
+          "help": "Indlæg titel",
+          "label": "Titel",
+          "placeholder": "Eksempel: Menneskerettigheder"
+        },
+        "url": {
+          "help": "URL-adresse til destination",
+          "label": "URL-adresse",
+          "placeholder": "Eksempel: https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Indgang",
+      "prev": "Indgang ikke etableret endnu..."
+    },
+    "SchemaContainer": {
+      "label": "Plan"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "Dette vil være det delvise billede af ordningen.",
+          "label": "URL-adresse til billede",
+          "placeholder": "Klik her for at vælge billedet"
+        },
+        "prev": "Eksempel på billede"
+      },
+      "label": "Dispositionselement",
+      "prev": "Element af esuqema endnu ikke etableret..."
+    },
+    "SentenceOrderContainer": {
+      "label": "Sætning sortering"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Slette",
+          "help": "Svar, der vil blive konstrueret ud fra de indtastede ord",
+          "legend": "Liste over svar",
+          "new": "Tilføj et nyt svar...",
+          "text": "Svare"
+        },
+        "words": {
+          "delete": "Slette",
+          "help": "Svarene skal kunne konstrueres ud fra disse ord",
+          "legend": "Ordliste",
+          "new": "Tilføj et nyt ord...",
+          "text": "Ord"
+        }
+      },
+      "label": "Element til sortering af sætninger",
+      "prev": "Sætningssorteringselementet er ikke initialiseret endnu..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "Indstiller justeringen af billedet, når udseendet ikke er \"Juster de originale dimensioner til den ledige plads\".",
+          "label": "Justering af billede",
+          "values": {
+            "center": "Fokuseret",
+            "left": "Venstre",
+            "right": "Højre"
+          }
+        },
+        "aspect": {
+          "help": "Billedet kan vises med de originale dimensioner (når det er muligt), eller det kan justeres til skærmens bredde (skaler billedet). Hvis dimensionerne er højere og bredere, end skærmen kan vise, justeres den altid automatisk til skærmen",
+          "label": "Billedets udseende",
+          "values": {
+            "custom": "Sædvane",
+            "fit": "Juster de oprindelige dimensioner til den ledige plads",
+            "original": "Oprindelige dimensioner"
+          }
+        },
+        "image": {
+          "help": "Dette vil være det billede, der vises i elementet.",
+          "label": "URL-adresse til billede",
+          "placeholder": "Indtast billedets URL her"
+        },
+        "preview": "Preview",
+        "size": {
+          "height": "Høj",
+          "heightPlaceholder": "Billedets højde...",
+          "keepRatio": "Bevar billedforholdet",
+          "width": "Bred",
+          "widthPlaceholder": "Billedbredde..."
+        }
+      },
+      "label": "Billede",
+      "prev": "Billedet er ikke etableret endnu..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Du skal skrive mindst 2 svar og markere, hvilken af dem der er korrekt.",
+          "label": "Mulige svar"
+        },
+        "questionText": {
+          "help": "Dette er teksten til spørgsmålet, der vises i indholdsenheden.",
+          "label": "Spørgsmål tekst",
+          "placeholder": "Tekst til det enkle spørgsmål..."
+        }
+      },
+      "label": "Simpelt spørgsmål",
+      "prev": "Simpelt spørgsmål ikke indstillet endnu ..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "Dette vil være det navn, der vises i fanebladets titel.",
+          "label": "Fanenavn",
+          "placeholder": "Eksempel: Faglige færdigheder"
+        }
+      },
+      "label": "Øjenvippe"
+    },
+    "Table": {
+      "empty": "Tabellen er endnu ikke initialiseret",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "Kolonnenavnet er tomt eller allerede defineret",
+            "label": "Kolonnens navn",
+            "placeholder": "Skriv kolonnenavnet her..."
+          },
+          "columnPosition": {
+            "error": "Kolonneplacering uden for området",
+            "label": "Kolonne placering"
+          },
+          "label": "Tilføj ny kolonne",
+          "submit": "Tilføj kolonne"
+        },
+        "addRow": "Tilføj ny række",
+        "deleteColumn": "Ryd kolonne",
+        "deleteRow": "Ryd række"
+      },
+      "help": {
+        "edit": "Vælg en celle, der skal redigeres. Hvis du vil tilføje nye linjer under redigering, skal du trykke på Skift-tasten, mens du trykker på Enter."
+      },
+      "label": "Bræt",
+      "prev": "Tabel endnu ikke etableret..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Øjenvipper",
+      "label": "Faneblad"
+    },
+    "TermClassification": {
+      "label": "Klassifikation",
+      "prev": "Klassifikation"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "Dette er den kolonne, som vilkårene vil være relateret til.",
+          "label": "Kolonne",
+          "placeholder": "Kolonne"
+        },
+        "terms": {
+          "help": "I dette indlæg skal du skrive de ord, der er relateret til udtrykket adskilt af et semikolon hver. For eksempel: disse; er; nogle; Ord",
+          "label": "Ord",
+          "placeholder": "Skriv ord adskilt af semikolon"
+        }
+      },
+      "label": "Klassifikation vare",
+      "prev": "Varen er ikke etableret endnu..."
+    },
+    "Test": {
+      "label": "Testtype",
+      "questionSelect": "Vælg en spørgsmålstype, du vil føje til quizzen"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Du skal skrive en tekst.",
+        "label": "I denne teksteditor kan du skrive indholdet af blokken.",
+        "placeholder": "Indtast en tekst...",
+        "styles": {
+          "attention": "Opmærksomhed",
+          "default": "Ingen stil",
+          "help": "Bestemmer layoutet af den boks, der omgiver teksten",
+          "label": "Tekstblok typografi",
+          "more": "Lær mere",
+          "note": "Seddel"
+        }
+      },
+      "label": "Tekstblok",
+      "prev": "Teksten er endnu ikke fastlagt..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Tre kolonner"
+    },
+    "TrueFalseContainer": {
+      "label": "Sand/falsk",
+      "prev": "Sand/falsk ikke etableret endnu..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Falsk",
+          "help": "Vælg mellem sandt eller falsk som korrekt svar",
+          "label": "Korrekt svar",
+          "true": "Sand"
+        },
+        "questionText": {
+          "help": "Dette er teksten til varen.",
+          "label": "Elementtekst",
+          "placeholder": "Elementtekst..."
+        }
+      },
+      "label": "Sand/falsk vare",
+      "prev": "Sand/falsk vare ikke etableret endnu..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Falsk",
+          "help": "Vælg mellem sandt eller falsk som korrekt svar",
+          "label": "Korrekt svar",
+          "true": "Sand"
+        },
+        "questionText": {
+          "help": "Dette er teksten til spørgsmålet, der vises i indholdsenheden.",
+          "label": "Tekst af tekstspørgsmålet",
+          "placeholder": "Teksten til spørgsmålet..."
+        }
+      },
+      "label": "Sandt eller falsk spørgsmål",
+      "prev": "Spørgsmål om sandt eller falsk nbo etableret endnu..."
+    },
+    "TwoColumnsLayout": {
+      "label": "To kolonner"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Vis standard undertekster",
+          "no": "Nej",
+          "yes": "Ja"
+        },
+        "url": {
+          "help": "Brug tekstinput til at indtaste webadressen til din video (youtube, vimeo ...)",
+          "label": "URL-adresse til video",
+          "placeholder": "Eksempel: https://example.com/video.mp4"
+        }
+      },
+      "label": "Video",
+      "prev": "Video ikke indstillet endnu..."
+    }
+  }
+}

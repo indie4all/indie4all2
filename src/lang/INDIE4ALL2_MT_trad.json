@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Uri / Aħbi l-Kategoriji",
+    "viewImage": "Ara l-immaġni"
+  },
+  "common": {
+    "alt": {
+      "help": "Dan huwa t-test ta' deskrizzjoni alternattiva għall-immaġni f'termini ta' aċċessibbiltà",
+      "label": "Test Alt għall-immaġni",
+      "placeholder": "Test Alt"
+    },
+    "captions": {
+      "help": "INDIeMedia URL tal-fajl li fih it-traskrizzjoni ta 'djalogu, effetti tal-ħoss, binarji tal-mużika u informazzjoni awdjo oħra għal meta t-telespettatur ikun trux jew iebes tas-smigħ, jew jekk il-vidjo / awdjo jiġi mmutilat. Is-sottotitoli jintwerew ukoll fuq il-vidjo.",
+      "label": "Sottotitoli (CC)",
+      "placeholder": "Eżempju: https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "URL INDIeMedia tal-fajl li fih deskrizzjonijiet tat-test ta 'dak li jiġri fil-video għal meta l-parti tal-vidjo ma tkunx disponibbli minħabba li t-telespettatur huwa għomja u ma jużax skrin. Id-deskrizzjonijiet jinqraw minn qarrej tal-iskrin jew jiġu kkonvertiti f'binarju tal-awdjo separat.",
+      "label": "Deskrizzjoni",
+      "placeholder": "Eżempju: https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Tniżżil tad-drajv, stenna ftit",
+      "title": "Tniżżil"
+    },
+    "feedback": {
+      "help": "Interpreta l-feedback li l-istudent jirċievi jekk iweġibx b'mod korrett jew żbaljat",
+      "label": "Feedback",
+      "negative": "Feedback negattiv...",
+      "positive": "Feedback pożittiv..."
+    },
+    "generate": {
+      "description": "Meta tiġġenera, jekk jogħġbok stenna",
+      "title": "Ġenerazzjoni"
+    },
+    "help": {
+      "button": "Default",
+      "help": "Dan it-test jidher 'il fuq mill-widget u għalhekk l-utent jifhem kif jinteraġixxi miegħu. <strong>Jekk jitħalla vojt, jidher it-test default.</strong>",
+      "label": "Għajnuna",
+      "placeholder": "Test tal-għajnuna default"
+    },
+    "language": {
+      "EL": "Grieg",
+      "EN": "Ingliż",
+      "ES": "Spanjol",
+      "FR": "Franċiż",
+      "LT": "Litwan"
+    },
+    "loading": {
+      "description": "Tagħbija, jekk jogħġbok stenna",
+      "title": "Tagħbija"
+    },
+    "name": {
+      "help": "Dan se jkun l-isem tal-istanza widget għat-tagħlim tal-analitika",
+      "label": "Isem",
+      "placeholder": "Isem l-istanza Widget"
+    },
+    "navbar": {
+      "options": "Espandi/ikkollassa l-għażliet"
+    },
+    "preview": {
+      "description": "Il-previżjoni tiegħek qed tiġi ġġenerata, stenna ftit",
+      "generated": {
+        "description": "Il-previżjoni tiegħek lesta. Jekk il-brawżer tiegħek ma jidderieġikx mill-ġdid lejn il-previżjoni, ikklikkja l-link hawn taħt:",
+        "title": "Previżjoni ġġenerata b'suċċess"
+      },
+      "title": "Previżjoni tal-ġenerazzjoni"
+    },
+    "publish": {
+      "description": "Id-drajv tiegħek qed jiġi ġġenerat biex jitniżżel, stenna ftit",
+      "title": "Unità tal-pubblikazzjoni"
+    },
+    "publishToNetlify": {
+      "description": "L-unità tiegħek qed tittella' fuq Netlify, stenna ftit",
+      "title": "Unità tal-pubblikazzjoni f'Netlify"
+    },
+    "save": {
+      "description": "Issejvja, stenna ftit",
+      "title": "Tissejvja"
+    },
+    "scorm": {
+      "description": "Il-pakkett SCORM tiegħek qed jiġi ġġenerat, jekk jogħġbok stenna",
+      "title": "Ġenerazzjoni tal-pakkett SCORM"
+    },
+    "selectType": "Agħżel tip mill-għażliet li ġejjin",
+    "unit": {
+      "settings": "Daħħal id-dettalji tal-unità"
+    }
+  },
+  "dialog": {
+    "translate": "Unità tat-traduzzjoni"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "Il-accordion huwa vojt. Għandek iżżid il-kontenut billi tuża l-buttuna żid fuq il-lemin."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "Il-kontenitur vojt. Għandek iżżid mill-inqas oġġett wieħed mal-kontenitur."
+      },
+      "title": {
+        "invalid": "It-titlu tal-kontenitur huwa invalidu. Trid tistabbilixxi waħda."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "Il-URL issettjat għall-immaġni ta' l-isfond mhux korrett. Għandek tipprovdi URL indieauthor validu."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "It-test alt għall-immaġni animata għandu jiġi ssettjat."
+        },
+        "altRec": {
+          "invalid": "It-test alt għaż-żona animata għandu jiġi ssettjat."
+        },
+        "empty": "L-animazzjoni għandu jkollha mill-inqas żona animata waħda.",
+        "h": {
+          "invalid": "L-għoli għandu jiġi ssettjat u għandu jkun numru validu."
+        },
+        "w": {
+          "invalid": "Il-wisa' għandha tiġi ssettjata u għandha tkun numru validu."
+        },
+        "x": {
+          "invalid": "Il-koordinat l-aktar xellugi għandu jiġi ssettjat u għandu jkun numru validu."
+        },
+        "y": {
+          "invalid": "In-numru ta' fuq għandu jiġi ssettjat u għandu jkun numru validu."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "L-animazzjoni hija vojta. Għandek iżżid mill-inqas item wieħed billi tuża l-buttuna żid."
+      },
+      "height": {
+        "invalid": "L-għoli tal-animazzjoni għandu jkun akbar minn 0."
+      },
+      "image": {
+        "invalid": "Is-sett tal-URL għall-immaġni huwa invalidu. Trid tiżgura li tipprovdi URL indiemedia validu fil-qasam tal-immaġni."
+      },
+      "width": {
+        "invalid": "Il-wisa 'tal-animazzjoni għandha tkun akbar minn 0."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "Is-sett tal-URL għall-immaġni huwa invalidu. Trid tiżgura li tipprovdi URL indiemedia validu fil-qasam tal-immaġni."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "Għandek iżżid mill-inqas definizzjoni waħda tat-terminu awdjo"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "Għandek tipprovdi URL indiemedia validu"
+      },
+      "definition": {
+        "invalid": "Għandek tipprovdi definizzjoni."
+      },
+      "term": {
+        "invalid": "Għandek tipprovdi terminu."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "Ma ktibtx il-kontenut tal-kwotazzjoni. Għall-inqas, għandek tikteb il-kontenut."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "Għandek tipprovdi mill-inqas test wieħed u element tat-tip tal-buttuna."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "Is-sett tal-URL għall-immaġni huwa invalidu. Għandek tiżgura li tipprovdi URL indieMedia validu fil-qasam tal-immaġni tal-buttuna."
+      },
+      "text": {
+        "invalid": "It-test vojt. Jeħtieġ tikteb jew tikkopja test."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "It-tieqa enfasizzata hija vojta. Għandek iżżid mill-inqas element sempliċi wieħed."
+      },
+      "text": {
+        "invalid": "It-test vojt. Għandek tikteb test żgħir."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "Id-dens jipprovdu immaġni valida fil-qasam tal-URL."
+      },
+      "options": {
+        "noCorrect": "Agħżel mill-inqas korrett wieħed",
+        "notEnougOptions": "Jeħtieġ iddaħħal 4 għażliet"
+      },
+      "text": {
+        "invalid": "It-test vojt. Għandek iddaħħal test."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Il-kolonni kollha fit-tqassim għandu jkun fihom mill-inqas element wieħed billi jitkaxkru mill-paletta fuq ix-xellug."
+      },
+      "width": {
+        "invalid": "Wisa' tal-kolonna invalida"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "Jeħtieġ tipprovdi test alt għall-immaġni"
+      },
+      "audioblob": {
+        "invalid": "Il-kontenut tal-fajl ta' l-awdjo mhux korrett. Agħżel fajl validu."
+      },
+      "captions": {
+        "invalid": "Is-sett tal-URL għas-sottotitoli huwa invalidu. Għandek tiżgura li tipprovdi URL indiemedia validu"
+      },
+      "captionsblob": {
+        "invalid": "Il-kontenut tal-fajl tas-sottotitolu mhux korrett. Agħżel fajl validu."
+      },
+      "descriptions": {
+        "invalid": "Is-sett tal-URL għad-deskrizzjoni huwa invalidu. Għandek tiżgura li tipprovdi URL indiemedia validu"
+      },
+      "imageblob": {
+        "invalid": "Il-kontenut tal-immaġni mhux korrett. Agħżel immaġni valida."
+      },
+      "name": {
+        "invalid": "Għandek tipprovdi isem għal dan il-każ.",
+        "notUniqueName": "L-isem tal-istanza għandu jkun uniku fil-kontenut kollu."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "Għandek tipprovdi mill-inqas oġġett wieħed tal-Kelma Korretta."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "Is-sett tal-URL għall-immaġni huwa invalidu. Għandek tipprovdi URL indieauthor validu."
+      },
+      "question": {
+        "invalid": "It-test tal-mistoqsija huwa vojt."
+      },
+      "word": {
+        "invalid": "It-test tar-risposta huwa vojt."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "Għandek iżżid mill-inqas par wieħed"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "Il-URL imdaħħal għall-immaġni huwa invalidu. Trid tiżgura li tipprovdi URL indiemedia validu fil-qasam tal-immaġni."
+      },
+      "text": {
+        "invalid": "It-test vojt. Għandek tikteb test qasir."
+      },
+      "type": {
+        "invalid": "It-tip issettjat għall-item huwa invalidu. Jeħtieġ li tiżgura li tintgħażel l-għażla 'Test' jew 'Immaġni'."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "L-item vojt. Għandek iżżid mill-inqas oġġett wieħed ta' definizzjoni tat-terminu billi tuża l-buttuna żid fuq il-lemin."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "Il-qasam tad-definizzjoni huwa vojt. Għandek tikteb definizzjoni."
+      },
+      "term": {
+        "invalid": "It-terminu qasam huwa vojt. Għandek tikteb terminu."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "Agħżel tweġiba korretta",
+        "notEnoughAnswers": "Għandek tikteb mill-inqas 2 tweġibiet possibbli"
+      },
+      "question": {
+        "empty": "It-test tal-mistoqsija ma jistax ikun vojt",
+        "onlyOneBlank": "Trid tinkludi spazju vojt wieħed biss fil-mistoqsija"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "Ir-risposta m'għandhiex tkun vojta"
+      },
+      "attempts": {
+        "invalid": "It-tentattivi għandhom ikunu numru bejn 1 u 9"
+      },
+      "question": {
+        "invalid": "Il-mistoqsija m'għandhiex tkun vojta"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "Is-sett tal-URL għall-immaġni huwa invalidu. Trid tiżgura li tipprovdi URL indiemedia validu fil-qasam tal-immaġni."
+      },
+      "text": {
+        "invalid": "It-test vojt. Jeħtieġ tikteb test"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "In-numru ta' kolonni għandu jkun 1,2 jew 3"
+      },
+      "data": {
+        "empty": "Għandek tipprovdi mill-inqas immaġni waħda u element tal-ħoss."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "Għandek tipprovdi URL indiemedia validu"
+      },
+      "image": {
+        "invalid": "Il-URL imdaħħal għall-immaġni huwa invalidu. Trid tiżgura li tipprovdi URL indiemedia validu fil-qasam tal-immaġni."
+      },
+      "text": {
+        "invalid": "It-test vojt. Għandek tikteb test qasir."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "Is-sett tal-URL għall-immaġni huwa invalidu. Trid tiżgura li tipprovdi URL indiemedia validu fil-qasam tal-immaġni."
+      },
+      "text": {
+        "invalid": "It-test vojt. Jeħtieġ tikteb jew tikkopja test."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "Il-URL ikkonfigurat għall-vidjo huwa invalidu. Għandek tiżgura li tipprovdi wieħed minn vidjows interattivi indieopen."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "Trid tipprovdi leġġenda għall-formula."
+      },
+      "formula": {
+        "invalid": "Trid tipprovdi formula fil-format LaTex."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "Għandek tipprovdi mill-inqas oġġett wieħed ta' kliem nieqes."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "Għandek tikteb mill-inqas tweġiba waħda korretta",
+        "invalid": "It-test tar-rispons huwa vojt"
+      },
+      "sentence": {
+        "empty": "Il-frażi m'għandhiex tkun vojta",
+        "onlyOneBlank": "Għandek tinkludi biss markatur tal-vojt fis-sentenza"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "Il-modali huwa vojt. Għandek iżżid mill-inqas element sempliċi wieħed."
+      },
+      "text": {
+        "invalid": "It-test vojt. Għandek tikteb test żgħir."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "Il-URL issettjat għall-immaġni ta' l-isfond mhux korrett. Għandek tipprovdi URL indieauthor validu."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "It-test alternattiv għall-qtugħ għandu jiġi ssettjat."
+        },
+        "altRec": {
+          "invalid": "It-test alt għall-pożizzjoni għandu jiġi ssettjat."
+        },
+        "empty": "Il-puzzle għandu jkollu mill-inqas biċċa waħda.",
+        "h": {
+          "invalid": "L-għoli għandu jiġi ssettjat u għandu jkun numru validu."
+        },
+        "w": {
+          "invalid": "Il-wisa' għandha tiġi ssettjata u għandha tkun numru validu."
+        },
+        "x": {
+          "invalid": "Il-koordinat l-aktar xellugi għandu jiġi ssettjat u għandu jkun numru validu."
+        },
+        "y": {
+          "invalid": "In-numru ta' fuq għandu jiġi ssettjat u għandu jkun numru validu."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "L-item vojt. Għandek iżżid mill-inqas entrata waħda billi tuża l-buttuna żid fuq il-lemin."
+      },
+      "title": {
+        "invalid": "Il-qasam tat-titlu huwa vojt. Għandek tikteb titlu."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "Hemm mill-inqas link duplikat wieħed. Għandek tipprovdi link unika għal kull kariga.",
+        "empty": "L-item vojt. Għandek iżżid mill-inqas entrata waħda billi tuża l-buttuna żid fuq il-lemin.",
+        "multipleCurrent": "Hemm mill-inqas żewġ entrati attwali. Għandek tipprovdi entrata kurrenti waħda biss."
+      },
+      "moreThanOne": "Għandek tipprovdi mhux aktar minn tabella waħda tal-oġġett tal-kontenut."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "Il-qasam tat-titlu huwa vojt. Għandek tikteb titlu."
+      },
+      "url": {
+        "invalid": "Il-qasam tal-url għandu jiġi ssettjat għall-format li ġej: https://[sors]/[awtur]/[unità]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "L-iskema hija vojta. Għandek iżżid mill-inqas item wieħed billi tuża l-buttuna żid fuq il-lemin."
+      },
+      "height": {
+        "invalid": "L-għoli tal-animazzjoni għandu jkun akbar minn 0."
+      },
+      "image": {
+        "invalid": "Is-sett tal-URL għall-immaġni sħiħa huwa invalidu. Trid tiżgura li tipprovdi URL indiemedia validu."
+      },
+      "width": {
+        "invalid": "Il-wisa 'tal-animazzjoni għandha tkun akbar minn 0."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "Is-sett tal-URL għall-immaġni huwa invalidu. Trid tiżgura li tipprovdi URL indiemedia validu fil-qasam tal-immaġni."
+      },
+      "text": {
+        "invalid": "It-test vojt. Għandek tikteb test żgħir."
+      }
+    },
+    "section": {
+      "emptyData": "Sezzjoni ma tistax tkun vojta. Għandek iżżid mill-inqas oġġett wieħed.",
+      "invalidBookmark": "It-taqsima għandu jkollha bookmark validu.",
+      "invalidImage": "It-taqsima għandu jkollha immaġni ta' l-isfond.",
+      "invalidName": "It-taqsima għandu jkollha isem.",
+      "typeImageNotSelected": "Jekk it-tip magħżul huwa Immaġni ta' l-Isfond, jeħtieġlek tissettja l-immaġni."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "Għandek tipprovdi mill-inqas element wieħed ta' għażla ta' sentenzi."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "Għandek tikteb mill-inqas tweġiba waħda korretta",
+        "impossible": "Is-sentenza ma tistax tinbena mill-kliem stabbilit",
+        "invalid": "It-test tar-rispons huwa vojt"
+      },
+      "words": {
+        "empty": "Trid tittajpja mill-inqas kelma waħda valida",
+        "invalid": "It-test tal-kelma huwa vojt"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "Is-sett tal-URL għall-immaġni huwa invalidu. Trid tiżgura li tipprovdi URL indiemedia validu fil-qasam tal-immaġni.",
+        "sizeNotSet": "Il-wisa 'u l-għoli tal-immaġni għandhom jiġu ssettjati meta d-dehra tagħha tkun \"Custom\""
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "Agħżel tweġiba korretta",
+        "notEnoughAnswers": "Għandek tikteb mill-inqas 2 tweġibiet possibbli"
+      },
+      "question": {
+        "empty": "It-test tal-mistoqsija ma jistax ikun vojt"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "It-tab hija vojta. Għandek iżżid mill-inqas oġġett wieħed mat-tab."
+      },
+      "name": {
+        "invalid": "L-isem tat-tab huwa invalidu. Trid tistabbilixxi waħda."
+      }
+    },
+    "Table": {
+      "empty": "It-tabella m'għandha l-ebda sett ta' kolonni"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "Il-menu tat-tab ma fihx tabs. Għandek iżżid mill-inqas wieħed."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Hemm kolonni duplikati. Iċċekkja l-items tiegħek.",
+        "duplicatedTerms": "Hemm termini duplikati bejn il-kolonni tiegħek. Irrevedi t-termini"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "Il-kolonna m'għandhiex tkun vojta"
+      },
+      "terms": {
+        "empty": "It-termini ma jistgħux ikunu vojta.",
+        "invalid": "It-termini ma jikkonformawx mal-format meħtieġ. Jekk jogħġbok issepara t-termini b'semikolons (;)."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "It-test huwa vojt. Għandek iżżid mill-inqas mistoqsija waħda."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "It-test vojt. Għandek tikteb test qasir."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "Għandek iżżid mill-inqas element wieħed veru jew falz"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "It-test tal-mistoqsija ma jistax ikun vojt"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "It-test tal-mistoqsija ma jistax ikun vojt"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "Il-URL għall-vidjo huwa invalidu. Għandek tiżgura li tipprovdi URL validu minn IndieMedia jew Youtube.",
+        "localInvalid": "Il-URL għall-vidjo huwa invalidu. Trid tiżgura li tipprovdi URL validu fuq YouTube."
+      }
+    }
+  },
+  "footer": {
+    "content": "Tista' żżid sezzjonijiet ġodda billi tuża t-toolbar ta' fuq"
+  },
+  "general": {
+    "areYouSure": "Żgur?",
+    "cancel": "Ikkanċella",
+    "close": "Qrib",
+    "confirm": "Jikkonferma",
+    "delete": "Jeliminaw",
+    "discard": "Warrab",
+    "false": "Falza",
+    "load": "Tagħbija",
+    "modelDetected": "Tixtieq tgħabbi unità preċedenti?",
+    "true": "Vera"
+  },
+  "header": {
+    "addSection": "Żid sezzjoni",
+    "clear": "Ħassar il-kontenut",
+    "download": "Niżżel l-unità",
+    "importSection": "Taqsima tal-importazzjoni",
+    "install": "Installa l-app",
+    "preview": "Previżjoni tal-kontenut",
+    "publish": "Ippubblika l-kontenut",
+    "publishToNetlify": "Ippubblika l-kontenut f'Netlify",
+    "redo": "Azzjoni ta' redo",
+    "save": "Issejvja l-kontenut",
+    "scorm": "Esportazzjoni f'format SCORM",
+    "translate": "Unità tat-traduzzjoni",
+    "undo": "Neħħi l-Azzjoni",
+    "upload": "Unità tat-tlugħ",
+    "validate": "Ivvalida l-Unità"
+  },
+  "items": {
+    "add": "Żid il-kontenut",
+    "delete": "Ħassar l-item",
+    "duplicate": "Oġġett duplikat",
+    "edit": "Editja l-kontenut",
+    "export": "Oġġett ta' esportazzjoni"
+  },
+  "messages": {
+    "changesSaved": "Bidliet issejvjati b'suċċess.",
+    "confirmClearContent": "Int ser tħassar il-kontenut kompletament. Kun żgur li huwa dak li verament trid tagħmel.",
+    "confirmLoadModel": "Instabet unità preċedenti. Agħżel jekk tixtieqx tgħabbiha jew tarmih.",
+    "contentCleared": "Il-kontenut tħassar b'suċċess.",
+    "contentErrors": "Ups! Hemm żbalji fil-kontenut tiegħek. Irrevedi l-messaġġi ta' żball u segwi l-istruzzjonijiet tagħhom biex tirranġahom.",
+    "couldNotExportElement": "L-oġġett ma setax jiġi esportat",
+    "couldNotExportSection": "It-taqsima ma setgħetx tiġi esportata",
+    "deletedSection": "Taqsima mħassra b'suċċess",
+    "emptyContent": "Ma żidtx kontenut.",
+    "errorMessage": "Żball",
+    "exportedElement": "Oġġett esportat b'suċċess",
+    "exportedSection": "Taqsima esportata b'suċċess",
+    "importedElement": "Item importat b'suċċess",
+    "importedSection": "Taqsima importata b'suċċess",
+    "loadError": "L-unità ma setgħetx titgħabba",
+    "noElement": "Ebda item għall-importazzjoni",
+    "noErrors": "Mhux ħażin! M'hemm l-ebda żball. Tista' tipproċedi biex tissejvja l-kontenut.",
+    "noRedo": "Xejn biex terġa 'tagħmel",
+    "noSection": "L-ebda sezzjoni għall-importazzjoni",
+    "noUndo": "Xejn x'treġġa' lura",
+    "previewError": "L-unità ma setgħetx tiġi mbassra",
+    "publishError": "L-unità ma setgħetx tiġi ppubblikata",
+    "savedUnit": "Unità ssejvjata b'suċċess",
+    "saveError": "L-unità ma setgħetx tiġi ssejvjata",
+    "successMessage": "Kollox sew",
+    "translateError": "L-unità ma setgħetx tiġi tradotta",
+    "warningMessage": "Attenzjoni"
+  },
+  "netlify": {
+    "button": {
+      "text": "Ikkonnettja"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Oħloq sit",
+        "help": "Agħżel wieħed mis-siti disponibbli fil-kont Netlify tiegħek",
+        "label": "Agħżel sit disponibbli min-Netlify tiegħek biex ittella' l-Unità"
+      },
+      "title": "Imla l-oqsma biex tikkonnettja ma' Netlify ",
+      "token": {
+        "help": "Daħħal it-token tal-aċċess Netlify personali tiegħek. Tista 'ssibha fit-taqsima Applikazzjonijiet tal-issettjar tal-kont Netlify",
+        "label": "Daħħal it-token ta 'aċċess personali:",
+        "placeholder": "Daħħal it-token tal-aċċess personali Netlify tiegħek hawn"
+      }
+    },
+    "error": {
+      "message": "Token invalidu"
+    },
+    "success": {
+      "message": "L-unità ttellgħet fuq Netlify b'suċċess. Aċċessah billi tikklikkja fuq il-link li ġej: ",
+      "message_2": "Żomm f'moħħok li jekk l-unità tiegħek għandha ħafna kontenut, tista 'tieħu ftit minuti biex tippubblika.",
+      "title": "Unità mtella' fuq Netlify"
+    }
+  },
+  "palette": {
+    "containers": "Kontenituri",
+    "exerciseElement": "Teżerċita",
+    "interactiveElements": "Elementi interattivi",
+    "items": "Oġġetti",
+    "layouts": "Dispożizzjonijiet",
+    "question": "Kwistjonijiet",
+    "simpleElements": "Elementi"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Blokka tal-kodiċi",
+        "screenReader": "Test ta' l-għajnuna għall-qarrejja ta' l-iskrin"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Ħassar is-sezzjoni",
+    "duplicate": "Sezzjoni duplikata",
+    "edit": "Editja l-informazzjoni",
+    "expandContract": "Espandi jew kollass",
+    "export": "Taqsima tal-esportazzjoni",
+    "form": {
+      "bookmark": {
+        "help": "Dan il-markatur jidher fin-naħa ta' fuq tal-unità bħala markatur tas-sezzjoni. Għandu jkollu massimu ta' 40 karattru.",
+        "label": "Marka tal-ktieb tas-sezzjoni",
+        "placeholder": "Ikteb bookmark..."
+      },
+      "image": {
+        "help": "",
+        "label": "URL tal-immaġni tal-isfond",
+        "placeholder": "Daħħal il-URL tal-immaġni..."
+      },
+      "name": {
+        "help": "Dan huwa l-isem li t-taqsima se jkollha fil-kontenut.",
+        "label": "Isem it-Taqsima",
+        "placeholder": "Ikteb isem..."
+      },
+      "preview": "Previżjoni ta' l-immaġni ta' l-isfond",
+      "type": {
+        "bc": "Kulur ta' l-isfond (default)",
+        "bi": "Immaġni ta' l-isfond",
+        "help": "Jekk it-tip huwa ssettjat għal 'kulur ta' l-isfond', il-kulur default jidher wara t-titlu waqt li f''Immaġni ta' l-isfond' trid tistabbilixxi immaġni ta' sfond għall-intestatura tat-taqsima.",
+        "label": "Tip ta' sfond"
+      }
+    },
+    "import": "Oġġett ta' importazzjoni",
+    "label": "Sezzjoni",
+    "moveDown": "Skrollja s-sezzjoni 'l isfel",
+    "moveUp": "Skrollja s-sezzjoni 'l fuq"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Attiva/Itfi l-analitika fl-unità",
+        "label": "Analitika",
+        "no": "Le",
+        "yes": "Iva"
+      },
+      "author": {
+        "help": "L-awtur tal-unità għandu jikteb hawn.",
+        "label": "Awtur tal-unità",
+        "placeholder": "L-awtur tal-unità jikteb"
+      },
+      "background": {
+        "help": "L-immaġni għandha tkun madwar 1900 x 550 pixels.",
+        "label": "Immaġni tat-tema"
+      },
+      "color": {
+        "help": "Il-format eżadeċimali #FFFFFF meħtieġ",
+        "label": "Kulur tat-tema",
+        "placeholder": "Daħħal il-kulur tat-tema hawn"
+      },
+      "email": {
+        "help": "Dan huwa l-indirizz elettroniku tal-awtur.",
+        "label": "Email",
+        "placeholder": "Daħħal l-indirizz elettroniku tal-awtur"
+      },
+      "institution": {
+        "help": "Isem l-istituzzjoni",
+        "label": "Istituzzjoni",
+        "placeholder": "Daħħal l-isem tal-istituzzjoni"
+      },
+      "language": {
+        "help": "Il-lingwa tal-unità.",
+        "label": "Lingwa"
+      },
+      "license": {
+        "BY": "Rikonoxximent Internazzjonali 4.0 (CC B'4.0)",
+        "BYNC": "Attribution-NonCommercial-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCND": "Attribution-NonCommercial-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
+        "BYND": "Attribution-NoDerivs 4.0 International (CC BY-ND 4.0)",
+        "BYSA": "Attribution-ShareAlike 4.0 Internazzjonali (CC BY-SA 4.0)",
+        "help": "Liċenzja tal-Unità",
+        "label": "Liċenzja",
+        "PRIVATE": "Id-drittijiet kollha riżervati"
+      },
+      "resource": {
+        "help": "Daħħal l-ID tar-riżorsi",
+        "label": "ID tar-Riżorsi:",
+        "placeholder": "Daħħal l-ID tar-riżorsi"
+      },
+      "theme": {
+        "help": "Agħżel it-tema tal-unità.",
+        "label": "Tema"
+      },
+      "title": {
+        "help": "Dan huwa t-titlu tal-unità.",
+        "label": "Titolu tal-Unità",
+        "placeholder": "Daħħal titlu"
+      },
+      "type": {
+        "help": "Dan huwa t-tip ta' unità.",
+        "interoperability": "Interoperabilità",
+        "label": "Tip ta' Drajv",
+        "open": "Miftuħa"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "Din hija l-lingwa tas-sors tal-unità",
+        "label": "Lingwa tas-sors"
+      },
+      "target": {
+        "help": "Il-lingwa fil-mira li fiha se tiġi tradotta l-unità",
+        "label": "Lingwa fil-mira"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Menù tal-accordion"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "Jissettja t-titlu tal-grupp tal-kontenut. Se jidher fit-titlu tal-menu drop-down.",
+          "label": "Titolu tal-kontenut",
+          "placeholder": "Eżempju: Ħiliet professjonali"
+        }
+      },
+      "label": "Grupp tal-kontenut"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "Din se tkun l-immaġni tal-isfond tal-animazzjoni. Tista' tagħżel waħda mill-immaġnijiet imtella' tiegħek.",
+          "label": "URL tal-immaġni",
+          "placeholder": "Daħħal il-URL tal-immaġni hawn...",
+          "preview": "Previżjoni tal-animazzjoni"
+        },
+        "pieces": {
+          "altImg": "Test Alt għal immaġni animata",
+          "altRec": "Test Alt għar-reġjun animat",
+          "delete": "Tħassar",
+          "h": "Għoli",
+          "new": "Żid reġjun animat ġdid...",
+          "w": "Wiesgħa",
+          "x": "Xellug",
+          "y": "Superjuri"
+        }
+      },
+      "label": "Animazzjoni",
+      "prev": "L-animazzjoni għadha ma ġietx inizjalizzata..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "Dan se jkun l-għoli tal-kontenitur tal-animazzjoni pixel",
+          "label": "Għoli tal-animazzjoni",
+          "placeholder": "Eżempju: 200"
+        },
+        "image": {
+          "help": "Din se tkun l-immaġni li tidher fl-oġġett. Tista' tagħżel waħda mill-immaġnijiet imtella' tiegħek jew ittella' waħda ġdida.",
+          "label": "URL tal-immaġni",
+          "placeholder": "Ikklikkja hawn biex tagħżel l-immaġni"
+        },
+        "prev": "Previżjoni tal-previżjoni tal-immaġni",
+        "width": {
+          "help": "Din se tkun il-wisa 'tal-kontenitur tal-animazzjoni f'pixels",
+          "label": "Wisa 'tal-animazzjoni",
+          "placeholder": "Eżempju: 400"
+        }
+      },
+      "label": "Animazzjoni"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "Din se tkun l-immaġni tal-oġġett tal-animazzjoni.",
+          "label": "URL tal-immaġni",
+          "placeholder": "Ikklikkja hawn biex tagħżel l-immaġni"
+        },
+        "prev": "Previżjoni"
+      },
+      "label": "Oġġett tal-animazzjoni.",
+      "prev": "L-item ta' l-animazzjoni għadu mhux issettjat..."
+    },
+    "AudioTermContainer": {
+      "label": "Termini awdjo"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "Għandek iddaħħal il-URL tal-awdjo li tixtieq taqra fl-unità tal-kontenut.",
+          "label": "URL tal-fajl ta' l-awdjo",
+          "placeholder": "Daħħal URL indiemedia validu..."
+        },
+        "definition": {
+          "help": "Din id-definizzjoni għandha tkun it-traskrizzjoni verbatim tal-awdjo.",
+          "label": "Definizzjoni",
+          "placeholder": "Ikteb id-definizzjoni..."
+        },
+        "term": {
+          "help": "Dan se jkun it-terminu mqiegħed fuq ix-xellug tal-widget",
+          "label": "Terminu",
+          "placeholder": "Ikteb it-terminu tiegħek hawn..."
+        }
+      },
+      "label": "Terminu awdjo",
+      "prev": "Awdjo-terminu għadu mhux stabbilit..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "Il-ħatra tista' tidher allinjata mal-lemin jew allinjata max-xellug",
+          "label": "Allinjament tal-ħatra",
+          "values": {
+            "left": "Fuq ix-xellug",
+            "right": "Fuq il-lemin"
+          }
+        },
+        "caption": {
+          "help": "Is-sottotitolu tal-kwotazzjoni jidher taħt il-kwotazzjoni. Jintuża prinċipalment biex jindika l-awtur jew l-awturi taċ-ċitazzjoni",
+          "label": "Sottotitolu tal-kwotazzjoni",
+          "placeholder": "Eżempju: Carl Sagan"
+        },
+        "quote": {
+          "help": "Dan it-test huwa l-kwotazzjoni verbatim",
+          "label": "Test tal-kwotazzjoni",
+          "placeholder": "Eżempju: \"In-nuqqas ta' evidenza mhijiex evidenza ta' assenza.\""
+        },
+        "source": {
+          "help": "Sors oriġinali tal-kwotazzjoni (Sena, ktieb, rivista ... eċċ)",
+          "label": "Oriġini tal-kwotazzjoni",
+          "placeholder": "Eżempju: 1990"
+        }
+      },
+      "label": "Kwotazzjoni",
+      "prev": "Kwotazzjoni li għadha mhix stabbilita..."
+    },
+    "ButtonTextContainer": {
+      "label": "Buttuni bit-test"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "Din se tkun l-immaġni li tidher fuq il-buttuna. Tista' tagħżel waħda mill-immaġnijiet imtella' tiegħek jew ittella' waħda ġdida.",
+          "label": "URL tal-immaġni tal-buttuna",
+          "placeholder": "Daħħal il-URL tiegħek hawn"
+        },
+        "preview": "Previżjoni tal-immaġni tal-buttuna",
+        "text": {
+          "help": "F'dan l-editur tat-test tista' tikteb il-kontenut tat-test assoċjat mal-buttuna",
+          "label": "Test",
+          "placeholder": "Ikteb it-test tiegħek hawn..."
+        }
+      },
+      "label": "Element tal-buttuna bit-test",
+      "prev": "L-element tal-buttuna bit-test għadu ma ġiex inizjalizzat..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Kulur",
+        "helps": {
+          "animation": "Jiddetermina waħda mill-animazzjonijiet predefiniti għall-kaxxa bl-elementi inkorporati (singoli jew jintrewa).",
+          "colorTheme": "Il-format Hex #FFFFFF meħtieġ. <strong> Jekk ma jimtelax, il-kulur tat-tema tal-unità jieħu l-valur default.</strong>",
+          "styles": "Jiddetermina wieħed mill-istili predefiniti għall-kaxxa bl-elementi inkorporati.",
+          "textTitle": "Dan se jkun it-test li se jidher bħala titlu. <strong>Jekk ma timtelax tieħu valur default.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Daħħal il-kulur hawn",
+          "textTitle": "Daħħal it-titlu hawn"
+        },
+        "styles": {
+          "animation": "Stil ta 'animazzjoni",
+          "attention": "Attenzjoni",
+          "collapsible": "Kollapsibbli",
+          "danger": "Perikolu",
+          "label": "Stil",
+          "more": "Tgħallem aktar",
+          "note": "Nota",
+          "simple": "Sempliċi"
+        },
+        "textTitle": "Titolu"
+      },
+      "label": "Pendenti"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "L-immaġni tidher fil-quċċata tal-widget, 'il fuq mill-għażliet.",
+          "label": "URL tal-immaġni",
+          "placeholder": "Daħħal il-URL tal-immaġni..."
+        },
+        "options": {
+          "help": "Dawn l-4 għażliet se jidhru taħt l-immaġni. Wieħed biss jista' jkun korrett.",
+          "label": "Għażliet",
+          "placeholder": "Daħħal għażla"
+        },
+        "preview": "Previżjoni tal-immaġni",
+        "text": {
+          "help": "Dan it-test jidher 'il fuq mill-immaġni bħala test jew mistoqsija.",
+          "label": "Test",
+          "placeholder": "Ikteb it-test hawn..."
+        }
+      },
+      "label": "Agħżel għażla",
+      "prev": "L-għażla ta' għażla mhux issettjata ..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "Kolonni",
+      "form": {
+        "width": {
+          "1": "Wisa' tal-ewwel kolonna",
+          "help": "Il-kolonna l-oħra se tokkupa l-wisa' li jifdal"
+        }
+      },
+      "label": "Disponiment"
+    },
+    "CorrectWord": {
+      "label": "Kelma korretta"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "Immaġni deskrittiva tal-mistoqsija",
+          "label": "URL tal-immaġni",
+          "placeholder": "Daħħal il-URL tal-immaġni tiegħek hawn..."
+        },
+        "preview": "Previżjoni tal-immaġni",
+        "question": {
+          "help": "Din hija l-mistoqsija li se tintwera lill-utent.",
+          "label": "Test tal-mistoqsija",
+          "placeholder": "Test tal-mistoqsija"
+        },
+        "word": {
+          "help": "Din il-kelma se tkun ir-risposta għad-domanda",
+          "label": "Tweġiba",
+          "placeholder": "Ikteb kelma..."
+        }
+      },
+      "label": "Element verbali korrett",
+      "prev": "Il-kelma t-tajba għadha ma ġietx stabbilita..."
+    },
+    "CouplesContainer": {
+      "label": "Koppji",
+      "prev": "Koppji li għadhom mhux stabbiliti..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "Din l-immaġni se tkun assoċjata mat-test imdaħħal bħala par f'din il-formola.",
+          "label": "URL tal-immaġni",
+          "placeholder": "Daħħal il-URL tal-immaġni hawn..."
+        },
+        "legend": {
+          "first": "L-ewwel element",
+          "second": "It-tieni element"
+        },
+        "preview": "Previżjoni tal-immaġni",
+        "text": {
+          "help": "Dan it-test se jkun assoċjat mal-immaġni li tiddaħħal bħala par f'din il-formola.",
+          "label": "Test",
+          "placeholder": "Ikteb test..."
+        },
+        "type": {
+          "image": "Immaġni",
+          "label": "Guy",
+          "text": "Test"
+        }
+      },
+      "label": "Koppja",
+      "prev": "Koppja għadha mhix stabbilita..."
+    },
+    "DragdropContainer": {
+      "label": "Iddreggja u qatra"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "Id-definizzjoni tidher fuq il-lemin tal-element interattiv u l-istudent għandu jkaxkar it-terminu għad-definizzjoni",
+          "label": "Definizzjoni",
+          "placeholder": "Eżempju: Il-bnedmin kollha għandhom id-dritt li jesprimu ruħhom mingħajr ma jiġu ffastidjati minħabba dak li jaħsbu"
+        },
+        "term": {
+          "help": "It-terminu jidher fuq ix-xellug tal-element interattiv u se jkun dak li l-istudent irid ikaxkar u jwaqqgħu fid-definizzjoni.",
+          "label": "Terminu",
+          "placeholder": "Eżempju: Libertà tal-espressjoni"
+        }
+      },
+      "label": "Definizzjoni tat-terminu",
+      "prev": "Item mhux stabbilit..."
+    },
+    "FourColumnsLayout": {
+      "label": "Erba 'kolonni"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Għandek tikteb mill-inqas 2 tweġibiet u timmarka liema minnhom hija korretta.",
+          "label": "Tweġibiet possibbli"
+        },
+        "questionPreview": {
+          "help": "Dan huwa kif se tidher il-mistoqsija fl-unità tal-kontenut.",
+          "label": "Previżjoni tat-test tal-mistoqsija.",
+          "placeholder": "Test tal-mistoqsija bi slot vojt ___ ."
+        },
+        "questionText": {
+          "help": "Għandek tittajpja t-test tal-mistoqsija bl-ispazju vojt li trid bil-kelma prinċipali speċjali [vojt].",
+          "label": "Test tal-mistoqsija",
+          "placeholder": "Test tal-mistoqsija b'element vojt"
+        }
+      },
+      "label": "Imla l-mistoqsija tal-vojt",
+      "prev": "Kwistjoni li timla l-vojt għadu mhux stabbilit..."
+    },
+    "GenericWidget": {
+      "label": "Widget"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "Fuq ir-risposta għad-domanda",
+          "label": "Tweġiba",
+          "placeholder": "Ikteb it-tweġiba tiegħek hawn"
+        },
+        "attempts": {
+          "help": "Numru ta' tentattivi biex wieħed jaħseb it-tweġiba. Għandu jkun numru bejn 1 u 9.",
+          "label": "Attentati"
+        },
+        "question": {
+          "help": "Fuq il-mistoqsija li għandha tingħata risposta",
+          "label": "In kwistjoni",
+          "placeholder": "Ikteb il-mistoqsija tiegħek hawn"
+        }
+      },
+      "label": "Aqta' l-kelma",
+      "prev": "Aqta' l-kelma għadha ma ġietx inizjalizzata..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Jekk tistabbilixxi test, dan ikun il-caption tal-immaġni",
+          "label": "Caption tal-immaġni",
+          "placeholder": "Daħħal caption."
+        },
+        "image": {
+          "help": "Din hija l-immaġni li se tidher fl-oġġett.",
+          "label": "URL tal-immaġni",
+          "placeholder": "Ikklikkja hawn biex tagħżel l-immaġni"
+        },
+        "preview": "Previżjoni"
+      },
+      "label": "Immaġni bit-test ta' hawn fuq",
+      "prev": "L-immaġni bit-test ta' hawn fuq għadha mhix stabbilita..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Immaġni u ħoss"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "Il-fajl ta' l-awdjo jaqra meta l-immaġni tkun ikklikkjata.",
+          "label": "URL tal-fajl ta' l-awdjo",
+          "placeholder": "Daħħal URL indiemedia validu..."
+        },
+        "image": {
+          "help": "L-immaġni tidher l-ewwel",
+          "label": "URL tal-immaġni",
+          "placeholder": "Daħħal il-URL tal-immaġni..."
+        },
+        "preview": "Previżjoni tal-immaġni",
+        "text": {
+          "help": "It-test jidher 'il fuq mill-immaġni meta tgħaddi fuqu.",
+          "label": "Test tal-immaġni",
+          "placeholder": "Ikteb test..."
+        }
+      },
+      "label": "Immaġni u item tal-ħoss",
+      "prev": "L-immaġni u l-item tal-ħoss għadhom mhux stabbiliti ..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "Din se tkun l-immaġni li tidher fl-oġġett. Tista' tagħżel waħda mill-immaġnijiet imtella' tiegħek jew ittella' waħda ġdida.",
+          "label": "URL tal-immaġni",
+          "placeholder": "Ikklikkja hawn biex tagħżel l-immaġni"
+        },
+        "layout": {
+          "help": "L-orjentazzjoni ta' immaġni u blokka tat-test tistabbilixxi fejn jidher kull wieħed mill-elementi fil-blokka.",
+          "label": "Orjentazzjoni",
+          "values": {
+            "0": "Test fuq il-lemin, immaġni fuq ix-xellug",
+            "1": "Test fuq ix-xellug, immaġni fuq il-lemin"
+          }
+        },
+        "preview": "Previżjoni tal-immaġni",
+        "text": {
+          "help": "Għandek tikteb test.",
+          "label": "F'dan l-editur tat-test tista' tikteb il-kontenut tal-blokka.",
+          "placeholder": "Ikteb test..."
+        }
+      },
+      "label": "Immaġni u test",
+      "prev": "L-immaġni u t-test għadhom mhux stabbiliti..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Uża l-input tat-test biex iddaħħal il-URL tal-vidjo interattiv maħluq bl-għodda interattiva tal-vidjo.",
+          "label": "URL tal-vidjo",
+          "placeholder": "Eżempju: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Vidjo interattiv",
+      "prev": "Vidjo interattiv għadu mhux stabbilit"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "Din il-leġġenda tidher taħt il-formula u bħala blokka ta 'test",
+          "label": "Leġġenda tal-formula",
+          "placeholder": "Eżempju: Formula kwadratika"
+        },
+        "formula": {
+          "help": "Uża ż-żona tat-test biex tittajpja l-formula. Taħt din iż-żona tidher previżjoni tal-formula jekk tkun korretta jew it-test bl-aħmar jekk il-formula ma tkunx korretta",
+          "label": "Formula fil-format LaTex",
+          "placeholder": "Eżempju: \\text{Il-Formula Kwadratika hija }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "Formula LaTeX",
+      "prev": "Il-formula għadha mhix stabbilita..."
+    },
+    "MissingWords": {
+      "label": "Kliem nieqes"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Tħassar",
+          "new": "Żid tweġiba ġdida...",
+          "text": "Tweġiba"
+        },
+        "sentence": {
+          "help": "Trid tikteb it-test tas-sentenza inkluż il-vojt billi tuża l-markatur speċjali [vojt].",
+          "label": "Test tas-sentenza",
+          "placeholder": "Test tas-sentenza bil-markatur [vojt]"
+        },
+        "sentencePreview": {
+          "help": "Dan huwa kif tħares lejn il-frażi fl-unità tal-kontenut.",
+          "label": "Previżjoni tal-frażi",
+          "placeholder": "Test tas-sentenza bil-markatur ___ "
+        }
+      },
+      "label": "Element ta' kliem nieqes",
+      "prev": "L-element tal-kelma nieqes għadu ma ġiex stabbilit..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "Dan it-test jidher bħala test tal-buttuna, li għandu jiġi attivat biex tinfetaħ it-tieqa modali.",
+          "label": "Test tal-buttuna",
+          "placeholder": "Ikteb it-test..."
+        }
+      },
+      "label": "Tieqa modali"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "Din se tkun l-immaġni tal-isfond tal-puzzle. Tista' tagħżel waħda mill-immaġnijiet imtella' tiegħek.",
+          "label": "URL tal-immaġni",
+          "placeholder": "Daħħal il-URL tal-immaġni hawn...",
+          "preview": "Previżjoni tal-puzzle"
+        },
+        "pieces": {
+          "altImg": "Test alt għall-ħsad",
+          "altRec": "Test Alt għall-pożizzjoni",
+          "delete": "Tħassar",
+          "h": "Għoli",
+          "new": "Żid biċċa ġdida...",
+          "w": "Wiesgħa",
+          "x": "Xellug",
+          "y": "Superjuri"
+        }
+      },
+      "label": "Puzzle",
+      "prev": "Il-puzzle għadu ma ġiex inizjalizzat ..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Titlu tal-grupp",
+          "label": "Titolu",
+          "placeholder": "Eżempju: Modulu tal-Liġi"
+        }
+      },
+      "label": "Grupp",
+      "prev": "Grupp għadu mhux estabecido ..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Tabella tal-Kontenut"
+    },
+    "RelatedUnitsItem": {
+      "current": "Unità kurrenti",
+      "form": {
+        "current": {
+          "title": "Din hija l-unità attwali"
+        },
+        "title": {
+          "help": "Titolu tal-post",
+          "label": "Titolu",
+          "placeholder": "Eżempju: Id-drittijiet tal-bniedem"
+        },
+        "url": {
+          "help": "URL tad-destinazzjoni",
+          "label": "URL",
+          "placeholder": "Eżempju: https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Dħul",
+      "prev": "Dħul għadu mhux stabbilit..."
+    },
+    "SchemaContainer": {
+      "label": "Iskema"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "Din se tkun l-immaġni parzjali tal-iskema.",
+          "label": "URL tal-immaġni",
+          "placeholder": "Ikklikkja hawn biex tagħżel l-immaġni"
+        },
+        "prev": "Previżjoni tal-immaġni"
+      },
+      "label": "Item tal-kontorn",
+      "prev": "Oġġett ta' esuqema għadu mhux stabbilit..."
+    },
+    "SentenceOrderContainer": {
+      "label": "L-għażla tal-frażijiet"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Tħassar",
+          "help": "Tweġibiet li se jinbnew mill-kliem imdaħħal",
+          "legend": "Lista ta' tweġibiet",
+          "new": "Żid rispons ġdid...",
+          "text": "Tweġiba"
+        },
+        "words": {
+          "delete": "Tħassar",
+          "help": "It-tweġibiet għandhom ikunu jistgħu jinbnew minn dan il-kliem",
+          "legend": "Lista tal-kliem",
+          "new": "Żid kelma ġdida...",
+          "text": "Kelma"
+        }
+      },
+      "label": "Element tal-issortjar tal-frażijiet",
+      "prev": "L-element tal-issortjar tas-sentenza għadu ma ġiex inizjalizzat..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "Jissettja l-allinjament tal-immaġni meta d-dehra ma tkunx \"Aġġusta d-dimensjonijiet oriġinali għall-ispazju disponibbli\".",
+          "label": "Allinjament tal-immaġni",
+          "values": {
+            "center": "Iffukat",
+            "left": "Xellug",
+            "right": "Lemin"
+          }
+        },
+        "aspect": {
+          "help": "L-immaġni tista 'tintwera bid-dimensjonijiet oriġinali (meta possibbli) jew tista' tiġi aġġustata għall-wisa 'tal-iskrin (skala l-immaġni). jekk id-dimensjonijiet huma itwal u usa 'mill-iskrin jista' juri li dejjem jaġġusta awtomatikament għall-iskrin",
+          "label": "Dehra tal-immaġni",
+          "values": {
+            "custom": "Personalizzat",
+            "fit": "Aġġusta d-dimensjonijiet oriġinali għall-ispazju disponibbli",
+            "original": "Dimensjonijiet oriġinali"
+          }
+        },
+        "image": {
+          "help": "Din se tkun l-immaġni li tidher fl-oġġett.",
+          "label": "URL tal-immaġni",
+          "placeholder": "Daħħal il-URL tal-immaġni hawn"
+        },
+        "preview": "Previżjoni",
+        "size": {
+          "height": "Għoli",
+          "heightPlaceholder": "Għoli tal-immaġni...",
+          "keepRatio": "Żomm il-proporzjon tal-immaġni",
+          "width": "Wiesgħa",
+          "widthPlaceholder": "Wisa' tal-immaġni..."
+        }
+      },
+      "label": "Immaġni",
+      "prev": "L-immaġni għadha mhix stabbilita..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Għandek tikteb mill-inqas 2 tweġibiet u timmarka liema minnhom hija korretta.",
+          "label": "Tweġibiet possibbli"
+        },
+        "questionText": {
+          "help": "Dan huwa t-test tal-mistoqsija li se jintwera fl-unità tal-kontenut.",
+          "label": "Test tal-mistoqsija",
+          "placeholder": "Test tal-mistoqsija sempliċi ..."
+        }
+      },
+      "label": "Mistoqsija sempliċi",
+      "prev": "Mistoqsija sempliċi għadha mhix issettjata..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "Dan se jkun l-isem li jidher fit-titlu tat-tab.",
+          "label": "Isem it-tab",
+          "placeholder": "Eżempju: Ħiliet professjonali"
+        }
+      },
+      "label": "Xagħar tal-għajnejn"
+    },
+    "Table": {
+      "empty": "It-tabella għadha ma ġietx inizjalizzata",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "L-isem tal-kolonna huwa vojt jew diġà definit",
+            "label": "Isem il-kolonna",
+            "placeholder": "Ittajpja l-isem tal-kolonna hawn..."
+          },
+          "columnPosition": {
+            "error": "Pożizzjoni tal-kolonna barra mill-firxa",
+            "label": "Pożizzjoni tal-kolonna"
+          },
+          "label": "Żid kolonna ġdida",
+          "submit": "Żid kolonna"
+        },
+        "addRow": "Żid ringiela ġdida",
+        "deleteColumn": "Kolonna ċara",
+        "deleteRow": "Ringiela ċara"
+      },
+      "help": {
+        "edit": "Agħżel ċellola biex teditja. Biex iżżid linji ġodda waqt l-editjar, agħfas it-tast shift waqt li tagħfas Enter."
+      },
+      "label": "Bord",
+      "prev": "It-tabella għadha mhix stabbilita..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Xagħar tal-għajnejn",
+      "label": "Menù tat-tab"
+    },
+    "TermClassification": {
+      "label": "Klassifikazzjoni",
+      "prev": "Klassifikazzjoni"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "Din hija l-kolonna li magħha se jkunu relatati t-termini.",
+          "label": "Kolonna",
+          "placeholder": "Kolonna"
+        },
+        "terms": {
+          "help": "F'din il-kariga trid tikteb il-kliem li huma relatati mat-terminu separat b'semikolon kull wieħed. Pereżempju: dawn; Huma; Xi; Kliem",
+          "label": "Kliem",
+          "placeholder": "Ikteb kliem separat minn semikolons"
+        }
+      },
+      "label": "Oġġett ta' klassifikazzjoni",
+      "prev": "Item għadu mhux stabbilit..."
+    },
+    "Test": {
+      "label": "Tip ta' Test",
+      "questionSelect": "Agħżel tip ta' mistoqsija li tixtieq iżżid mal-kwizz"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Għandek tikteb test.",
+        "label": "F'dan l-editur tat-test tista' tikteb il-kontenut tal-blokka.",
+        "placeholder": "Daħħal test...",
+        "styles": {
+          "attention": "Attenzjoni",
+          "default": "L-ebda stil",
+          "help": "Jiddetermina t-tqassim tal-kaxxa li ddawwar it-test",
+          "label": "Stil tal-blokka tat-test",
+          "more": "Tgħallem aktar",
+          "note": "Nota"
+        }
+      },
+      "label": "Blokka tat-test",
+      "prev": "It-test għadu mhux stabbilit..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Tliet kolonni"
+    },
+    "TrueFalseContainer": {
+      "label": "Veru/falz",
+      "prev": "Veru/falz għadu mhux stabbilit..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Falza",
+          "help": "Agħżel bejn veru jew falz bħala tweġiba korretta",
+          "label": "Tweġiba korretta",
+          "true": "Vera"
+        },
+        "questionText": {
+          "help": "Dan huwa t-test tal-oġġett.",
+          "label": "Test tal-oġġett",
+          "placeholder": "Test ta' l-oġġett..."
+        }
+      },
+      "label": "Oġġett veru/falz",
+      "prev": "Oġġett veru/falz għadu mhux stabbilit..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Falza",
+          "help": "Agħżel bejn veru jew falz bħala tweġiba korretta",
+          "label": "Tweġiba korretta",
+          "true": "Vera"
+        },
+        "questionText": {
+          "help": "Dan huwa t-test tal-mistoqsija li se jintwera fl-unità tal-kontenut.",
+          "label": "Test tal-mistoqsija dwar it-test",
+          "placeholder": "Test tal-mistoqsija..."
+        }
+      },
+      "label": "Mistoqsija vera jew falza",
+      "prev": "Kwistjoni ta 'nbo veru jew falz stabbilit s'issa ..."
+    },
+    "TwoColumnsLayout": {
+      "label": "Żewġ kolonni"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Uri sottotitoli default",
+          "no": "Le",
+          "yes": "Iva"
+        },
+        "url": {
+          "help": "Uża l-input tat-test biex iddaħħal il-URL tal-vidjo tiegħek (youtube, vimeo...)",
+          "label": "URL tal-vidjo",
+          "placeholder": "Eżempju: https://example.com/video.mp4"
+        }
+      },
+      "label": "Vidjo",
+      "prev": "Il-vidjo għadu mhux issettjat..."
+    }
+  }
+}

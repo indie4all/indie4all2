@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Visa/dölj kategorier",
+    "viewImage": "Se bild"
+  },
+  "common": {
+    "alt": {
+      "help": "Detta är den alternativa beskrivningstexten för bilden när det gäller tillgänglighet",
+      "label": "Alt-text för bilden",
+      "placeholder": "Alt-text"
+    },
+    "captions": {
+      "help": "INDIeMedia-URL för filen som innehåller transkriptionen av dialog, ljudeffekter, musikspår och annan ljudinformation för när tittaren är döv eller hörselskadad, eller om videon / ljudet är avstängt. Undertexter visas också ovanför videon.",
+      "label": "Undertexter (CC)",
+      "placeholder": "Exempel: https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "INDIeMedia-URL till filen som innehåller textbeskrivningar av vad som händer i videon när den del av videon inte är tillgänglig eftersom tittaren är blind och inte använder en skärm. Beskrivningarna läses upp av en skärmläsare eller konverteras till ett separat ljudspår.",
+      "label": "Beskrivning",
+      "placeholder": "Exempel: https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Ladda ner enhet, vänta",
+      "title": "Ladda ner"
+    },
+    "feedback": {
+      "help": "Tolka den feedback som studenten kommer att få om han svarar korrekt eller felaktigt",
+      "label": "Feedback",
+      "negative": "Negativ feedback...",
+      "positive": "Positiv feedback..."
+    },
+    "generate": {
+      "description": "Generera, vänta",
+      "title": "Generera"
+    },
+    "help": {
+      "button": "Standard",
+      "help": "Den här texten visas ovanför widgeten så att användaren förstår hur man interagerar med den. <strong>Om den lämnas tom visas standardtexten.</strong>",
+      "label": "Hjälp",
+      "placeholder": "Standardhjälptext"
+    },
+    "language": {
+      "EL": "Grekiska",
+      "EN": "Engelska",
+      "ES": "Spanska",
+      "FR": "Franska",
+      "LT": "Litauiska"
+    },
+    "loading": {
+      "description": "Laddar, vänta",
+      "title": "Lastning"
+    },
+    "name": {
+      "help": "Detta blir namnet på widgetinstansen för inlärningsanalys",
+      "label": "Namn",
+      "placeholder": "Namn på widgetinstans"
+    },
+    "navbar": {
+      "options": "Alternativ för expandera/komprimera"
+    },
+    "preview": {
+      "description": "Din förhandsgranskning genereras, vänta",
+      "generated": {
+        "description": "Förhandsgranskningen är klar. Om webbläsaren inte omdirigerar dig till förhandsgranskningen klickar du på länken nedan:",
+        "title": "Förhandsgranskningen har genererats"
+      },
+      "title": "Generera förhandsgranskning"
+    },
+    "publish": {
+      "description": "Din enhet genereras för nedladdning, vänta",
+      "title": "Förlagsenhet"
+    },
+    "publishToNetlify": {
+      "description": "Din enhet laddas upp till Netlify, vänta",
+      "title": "Publiceringsenhet i Netlify"
+    },
+    "save": {
+      "description": "Spara, vänta",
+      "title": "Besparing"
+    },
+    "scorm": {
+      "description": "Ditt SCORM-paket genereras, vänta",
+      "title": "Generera SCORM-paket"
+    },
+    "selectType": "Välj en typ bland följande alternativ",
+    "unit": {
+      "settings": "Ange enhetsinformation"
+    }
+  },
+  "dialog": {
+    "translate": "Översätt enhet"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "Dragspelet är tomt. Du måste lägga till innehåll med knappen Lägg till till till höger."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "Behållaren är tom. Du måste lägga till minst ett objekt i behållaren."
+      },
+      "title": {
+        "invalid": "Behållarens titel är ogiltig. Du måste upprätta en."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "URL:en som angetts för bakgrundsbilden är felaktig. Du måste ange en giltig indieauthor-URL."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Alt-texten för den animerade bilden måste anges."
+        },
+        "altRec": {
+          "invalid": "Alt-texten för det animerade området måste anges."
+        },
+        "empty": "Animeringen måste ha minst ett animerat område.",
+        "h": {
+          "invalid": "Höjden måste ställas in och måste vara ett giltigt nummer."
+        },
+        "w": {
+          "invalid": "Bredden måste ställas in och måste vara ett giltigt nummer."
+        },
+        "x": {
+          "invalid": "Koordinaten längst till vänster måste anges och måste vara ett giltigt nummer."
+        },
+        "y": {
+          "invalid": "Det översta numret måste anges och måste vara ett giltigt nummer."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "Animeringen är tom. Du måste lägga till minst ett objekt med knappen Lägg till."
+      },
+      "height": {
+        "invalid": "Animeringens höjd måste vara större än 0."
+      },
+      "image": {
+        "invalid": "URL:en som angetts för bilden är ogiltig. Du måste se till att du anger en giltig indiemedia-URL i bildfältet."
+      },
+      "width": {
+        "invalid": "Animeringens bredd måste vara större än 0."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "URL:en som angetts för bilden är ogiltig. Du måste se till att du anger en giltig indiemedia-URL i bildfältet."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "Du måste lägga till minst en ljudtermdefinition"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "Du måste ange en giltig indiemedia-URL"
+      },
+      "definition": {
+        "invalid": "Du måste ange en definition."
+      },
+      "term": {
+        "invalid": "Du måste ange en term."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "Du har inte skrivit innehållet i citatet. Du måste åtminstone skriva innehållet."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "Du måste ange minst ett text- och knapptypselement."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "URL:en som angetts för bilden är ogiltig. Du måste se till att du anger en giltig IndieMedia-URL i knappens bildfält."
+      },
+      "text": {
+        "invalid": "Texten är tom. Du måste skriva eller kopiera en text."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "Det markerade fönstret är tomt. Du måste lägga till minst ett enkelt element."
+      },
+      "text": {
+        "invalid": "Texten är tom. Du måste skriva en liten text."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "Denes anger en giltig bild i URL-fältet."
+      },
+      "options": {
+        "noCorrect": "Du måste välja minst en korrekt",
+        "notEnougOptions": "Du måste ange 4 alternativ"
+      },
+      "text": {
+        "invalid": "Texten är tom. Du måste ange en text."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Alla kolumner i layouten måste innehålla minst ett element genom att dra det från paletten till vänster."
+      },
+      "width": {
+        "invalid": "Ogiltig kolumnbredd"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "Du måste ange alternativ text för bilden"
+      },
+      "audioblob": {
+        "invalid": "Innehållet i ljudfilen är inte korrekt. Du måste välja en giltig fil."
+      },
+      "captions": {
+        "invalid": "Webbadressen som ställts in för undertexterna är ogiltig. Du måste se till att du anger en giltig indiemedia-URL"
+      },
+      "captionsblob": {
+        "invalid": "Innehållet i undertextfilen är inte korrekt. Du måste välja en giltig fil."
+      },
+      "descriptions": {
+        "invalid": "URL:en som angetts för beskrivningen är ogiltig. Du måste se till att du anger en giltig indiemedia-URL"
+      },
+      "imageblob": {
+        "invalid": "Innehållet i bilden är inte korrekt. Du måste välja en giltig bild."
+      },
+      "name": {
+        "invalid": "Du måste ange ett namn för den här instansen.",
+        "notUniqueName": "Instansnamnet måste vara unikt för allt innehåll."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "Du måste ange minst ett korrekt Word-objekt."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "URL:en som angetts för bilden är ogiltig. Du måste ange en giltig indieauthor-URL."
+      },
+      "question": {
+        "invalid": "Texten i frågan är tom."
+      },
+      "word": {
+        "invalid": "Texten i svaret är tom."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "Du måste lägga till minst ett par"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "URL:en som angetts för bilden är ogiltig. Du måste se till att du anger en giltig indiemedia-URL i bildfältet."
+      },
+      "text": {
+        "invalid": "Texten är tom. Du måste skriva en kort text."
+      },
+      "type": {
+        "invalid": "Typuppsättningen för objektet är ogiltig. Du måste se till att alternativet \"Text\" eller \"Bild\" är valt."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "Objektet är tomt. Du måste lägga till minst ett termdefinitionsobjekt med knappen Lägg till till till höger."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "Definitionsfältet är tomt. Du måste skriva en definition."
+      },
+      "term": {
+        "invalid": "Termfältet är tomt. Du måste skriva en term."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "Du måste välja ett korrekt svar",
+        "notEnoughAnswers": "Du måste skriva minst 2 möjliga svar"
+      },
+      "question": {
+        "empty": "Texten i frågan får inte vara tom",
+        "onlyOneBlank": "Du får bara ta med ett blanksteg i frågan"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "Svaret får inte vara tomt"
+      },
+      "attempts": {
+        "invalid": "Försök måste vara ett tal mellan 1 och 9"
+      },
+      "question": {
+        "invalid": "Frågan får inte vara tom"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "URL:en som angetts för bilden är ogiltig. Du måste se till att du anger en giltig indiemedia-URL i bildfältet."
+      },
+      "text": {
+        "invalid": "Texten är tom. Du måste skriva en text"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "Antalet kolumner måste vara 1,2 eller 3"
+      },
+      "data": {
+        "empty": "Du måste ange minst ett bild- och ljudelement."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "Du måste ange en giltig indiemedia-URL"
+      },
+      "image": {
+        "invalid": "URL:en som angetts för bilden är ogiltig. Du måste se till att du anger en giltig indiemedia-URL i bildfältet."
+      },
+      "text": {
+        "invalid": "Texten är tom. Du måste skriva en kort text."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "URL:en som angetts för bilden är ogiltig. Du måste se till att du anger en giltig indiemedia-URL i bildfältet."
+      },
+      "text": {
+        "invalid": "Texten är tom. Du måste skriva eller kopiera en text."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "URL:en som konfigurerats för videon är ogiltig. Du bör se till att tillhandahålla en från indieopen interaktiva videor."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "Du måste ange en förklaring för formeln."
+      },
+      "formula": {
+        "invalid": "Du måste ange en formel i LaTex-format."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "Du måste ange minst ett saknat ordobjekt."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "Du måste skriva minst ett rätt svar",
+        "invalid": "Svarstexten är tom"
+      },
+      "sentence": {
+        "empty": "Frasen får inte vara tom",
+        "onlyOneBlank": "Du bör bara inkludera en mellanrumsmarkör i meningen"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "Modalen är tom. Du måste lägga till minst ett enkelt element."
+      },
+      "text": {
+        "invalid": "Texten är tom. Du måste skriva en liten text."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "URL:en som angetts för bakgrundsbilden är felaktig. Du måste ange en giltig indieauthor-URL."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Den alternativa texten för urklippet måste ställas in."
+        },
+        "altRec": {
+          "invalid": "Alt-texten för positionen måste anges."
+        },
+        "empty": "Pusslet måste ha minst en bit.",
+        "h": {
+          "invalid": "Höjden måste ställas in och måste vara ett giltigt nummer."
+        },
+        "w": {
+          "invalid": "Bredden måste ställas in och måste vara ett giltigt nummer."
+        },
+        "x": {
+          "invalid": "Koordinaten längst till vänster måste anges och måste vara ett giltigt nummer."
+        },
+        "y": {
+          "invalid": "Det översta numret måste anges och måste vara ett giltigt nummer."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "Objektet är tomt. Du måste lägga till minst en post med knappen Lägg till till till höger."
+      },
+      "title": {
+        "invalid": "Titelfältet är tomt. Du måste skriva en titel."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "Det finns minst en dubblettlänk. Du måste ange en unik länk för varje inlägg.",
+        "empty": "Objektet är tomt. Du måste lägga till minst en post med knappen Lägg till till till höger.",
+        "multipleCurrent": "Det finns minst två aktuella poster. Du får bara ange en aktuell post."
+      },
+      "moreThanOne": "Du måste ange högst ett innehållsförteckningsobjekt."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "Titelfältet är tomt. Du måste skriva en titel."
+      },
+      "url": {
+        "invalid": "URL-fältet måste vara inställt på följande format: https://[källa]/[författare]/[enhet]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "Schemat är tomt. Du måste lägga till minst ett objekt med knappen Lägg till till till höger."
+      },
+      "height": {
+        "invalid": "Animeringens höjd måste vara större än 0."
+      },
+      "image": {
+        "invalid": "URL:en som angetts för hela bilden är ogiltig. Du måste se till att du anger en giltig indiemedia-URL."
+      },
+      "width": {
+        "invalid": "Animeringens bredd måste vara större än 0."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "URL:en som angetts för bilden är ogiltig. Du måste se till att du anger en giltig indiemedia-URL i bildfältet."
+      },
+      "text": {
+        "invalid": "Texten är tom. Du måste skriva en liten text."
+      }
+    },
+    "section": {
+      "emptyData": "Ett avsnitt får inte vara tomt. Du måste lägga till minst ett objekt.",
+      "invalidBookmark": "Avsnittet måste ha ett giltigt bokmärke.",
+      "invalidImage": "Avsnittet måste ha en bakgrundsbild.",
+      "invalidName": "Avsnittet måste ha ett namn.",
+      "typeImageNotSelected": "Om den valda typen är Bakgrundsbild måste du ange bilden."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "Du måste ange minst ett meningssorteringselement."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "Du måste skriva minst ett rätt svar",
+        "impossible": "Meningen kan inte konstrueras från de etablerade orden",
+        "invalid": "Svarstexten är tom"
+      },
+      "words": {
+        "empty": "Du måste skriva minst ett giltigt ord",
+        "invalid": "Word-texten är tom"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "URL:en som angetts för bilden är ogiltig. Du måste se till att du anger en giltig indiemedia-URL i bildfältet.",
+        "sizeNotSet": "Bildens bredd och höjd måste ställas in när dess utseende är \"Anpassad\""
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "Du måste välja ett korrekt svar",
+        "notEnoughAnswers": "Du måste skriva minst 2 möjliga svar"
+      },
+      "question": {
+        "empty": "Texten i frågan får inte vara tom"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "Fliken är tom. Du måste lägga till minst ett objekt på fliken."
+      },
+      "name": {
+        "invalid": "Fliknamnet är ogiltigt. Du måste upprätta en."
+      }
+    },
+    "Table": {
+      "empty": "Tabellen har inga kolumner inställda"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "Flikmenyn innehåller inga flikar. Du måste lägga till minst en."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Det finns dubblettkolumner. Kontrollera dina artiklar.",
+        "duplicatedTerms": "Det finns dubbla termer mellan kolumnerna. Granska villkoren"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "Kolumnen får inte vara tom"
+      },
+      "terms": {
+        "empty": "Villkoren får inte vara tomma.",
+        "invalid": "Villkoren överensstämmer inte med det format som krävs. Avgränsa termer med semikolon (;)."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "Testet är tomt. Du måste lägga till minst en fråga."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "Texten är tom. Du måste skriva en kort text."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "Du måste lägga till minst ett sant eller falskt element"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "Texten i frågan får inte vara tom"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "Texten i frågan får inte vara tom"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "Webbadressen till videon är ogiltig. Du måste se till att ange en giltig webbadress från IndieMedia eller Youtube.",
+        "localInvalid": "Webbadressen till videon är ogiltig. Du måste se till att du anger en giltig YouTube-webbadress."
+      }
+    }
+  },
+  "footer": {
+    "content": "Du kan lägga till nya avsnitt med hjälp av det övre verktygsfältet"
+  },
+  "general": {
+    "areYouSure": "Är du säker?",
+    "cancel": "Annullera",
+    "close": "Stänga",
+    "confirm": "Bekräfta",
+    "delete": "Eliminera",
+    "discard": "Kasta bort",
+    "false": "Falsk",
+    "load": "Last",
+    "modelDetected": "Vill du ladda en tidigare enhet?",
+    "true": "Sann"
+  },
+  "header": {
+    "addSection": "Lägg till avsnitt",
+    "clear": "Radera innehåll",
+    "download": "Ladda ner enhet",
+    "importSection": "Avsnittet Importera",
+    "install": "Installera app",
+    "preview": "Förhandsgranska innehåll",
+    "publish": "Publicera innehåll",
+    "publishToNetlify": "Publicera innehåll i Netlify",
+    "redo": "Gör om åtgärd",
+    "save": "Spara innehåll",
+    "scorm": "Exportera i SCORM-format",
+    "translate": "Översätt enhet",
+    "undo": "Ångra åtgärd",
+    "upload": "Ladda upp enhet",
+    "validate": "Validera enhet"
+  },
+  "items": {
+    "add": "Lägg till innehåll",
+    "delete": "Ta bort objekt",
+    "duplicate": "Duplicera objekt",
+    "edit": "Redigera innehåll",
+    "export": "Exportera objekt"
+  },
+  "messages": {
+    "changesSaved": "Ändringar har sparats.",
+    "confirmClearContent": "Du kommer att ta bort innehållet helt. Se till att det är vad du verkligen vill göra.",
+    "confirmLoadModel": "En tidigare enhet har hittats. Välj om du vill ladda den eller kassera den.",
+    "contentCleared": "Innehållet har tagits bort.",
+    "contentErrors": "Ups! Det finns fel i ditt innehåll. Granska felmeddelandena och följ deras instruktioner för att åtgärda dem.",
+    "couldNotExportElement": "Objektet kunde inte exporteras",
+    "couldNotExportSection": "Avsnittet kunde inte exporteras",
+    "deletedSection": "Avsnittet har tagits bort",
+    "emptyContent": "Du har inte lagt till innehåll.",
+    "errorMessage": "Fel",
+    "exportedElement": "Objektet har exporterats",
+    "exportedSection": "Avsnittet har exporterats",
+    "importedElement": "Objektet har importerats",
+    "importedSection": "Avsnittet har importerats",
+    "loadError": "Enheten kunde inte laddas",
+    "noElement": "Inga objekt att importera",
+    "noErrors": "Inte illa! Det finns inga misstag. Du kan fortsätta att spara innehållet.",
+    "noRedo": "Inget att göra om",
+    "noSection": "Inga avsnitt att importera",
+    "noUndo": "Inget att ångra",
+    "previewError": "Enheten kunde inte förhandsgranskas",
+    "publishError": "Enheten kunde inte publiceras",
+    "savedUnit": "Enheten har sparats",
+    "saveError": "Enheten kunde inte sparas",
+    "successMessage": "Okej",
+    "translateError": "Enheten kunde inte översättas",
+    "warningMessage": "Uppmärksamhet"
+  },
+  "netlify": {
+    "button": {
+      "text": "Ansluta"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Skapa webbplats",
+        "help": "Välj en av de tillgängliga webbplatserna i ditt Netlify-konto",
+        "label": "Välj en tillgänglig webbplats från din Netlify för att ladda upp enheten"
+      },
+      "title": "Fyll i fälten för att ansluta till Netlify ",
+      "token": {
+        "help": "Ange din personliga Netlify-åtkomsttoken. Du hittar den i avsnittet Program i Netlifys kontoinställningar",
+        "label": "Infoga den personliga åtkomsttoken:",
+        "placeholder": "Sätt in din personliga åtkomsttoken från Netlify här"
+      }
+    },
+    "error": {
+      "message": "Ogiltig token"
+    },
+    "success": {
+      "message": "Enheten har laddats upp till Netlify framgångsrikt. Öppna den genom att klicka på följande länk: ",
+      "message_2": "Tänk på att om din enhet har mycket innehåll kan det ta några minuter att publicera.",
+      "title": "Enhet uppladdad till Netlify"
+    }
+  },
+  "palette": {
+    "containers": "Behållare",
+    "exerciseElement": "Övningar",
+    "interactiveElements": "Interaktiva element",
+    "items": "Objekt",
+    "layouts": "Proviant",
+    "question": "Frågor",
+    "simpleElements": "Element"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Blockera kod",
+        "screenReader": "Hjälptext för skärmläsare"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Ta bort avsnitt",
+    "duplicate": "Duplicera avsnitt",
+    "edit": "Redigera information",
+    "expandContract": "Expandera eller komprimera",
+    "export": "Exportera avsnitt",
+    "form": {
+      "bookmark": {
+        "help": "Denna markör visas högst upp på enheten som en sektionsmarkör. Den får innehålla högst 40 tecken.",
+        "label": "Avsnitt bokmärke",
+        "placeholder": "Skriv ett bokmärke..."
+      },
+      "image": {
+        "help": "",
+        "label": "URL för bakgrundsbild",
+        "placeholder": "Ange webbadressen till bilden..."
+      },
+      "name": {
+        "help": "Det här är namnet som avsnittet kommer att ha i innehållet.",
+        "label": "Avsnittets namn",
+        "placeholder": "Skriv ett namn..."
+      },
+      "preview": "Förhandsgranska bakgrundsbilden",
+      "type": {
+        "bc": "Bakgrundsfärg (standard)",
+        "bi": "Bakgrundsbild",
+        "help": "Om typen är inställd på \"bakgrundsfärg\" visas standardfärgen bakom titeln medan du i \"Bakgrundsbild\" måste skapa en bakgrundsbild för avsnittsrubriken.",
+        "label": "Typ av bakgrund"
+      }
+    },
+    "import": "Importera objekt",
+    "label": "Sektion",
+    "moveDown": "Bläddra nedåt",
+    "moveUp": "Bläddra avsnittet uppåt"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Aktivera/inaktivera analys i enheten",
+        "label": "Analytics",
+        "no": "Nej",
+        "yes": "Ja"
+      },
+      "author": {
+        "help": "Enhetens författare ska skriva här.",
+        "label": "Enhetens författare",
+        "placeholder": "Enhetens författare skriver:"
+      },
+      "background": {
+        "help": "Bilden ska vara ungefär 1900 x 550 pixlar.",
+        "label": "Tema bild"
+      },
+      "color": {
+        "help": "Hexadecimalt format #FFFFFF krävs",
+        "label": "Tema färg",
+        "placeholder": "Ange temafärgen här"
+      },
+      "email": {
+        "help": "Detta är författarens e-postadress.",
+        "label": "E-post",
+        "placeholder": "Ange författarens e-postadress"
+      },
+      "institution": {
+        "help": "Institutionens namn",
+        "label": "Institution",
+        "placeholder": "Ange institutionens namn"
+      },
+      "language": {
+        "help": "Enhetens språk.",
+        "label": "Språk"
+      },
+      "license": {
+        "BY": "Internationellt 4.0-erkännande (CC BY 4.0)",
+        "BYNC": "Erkännande-IckeKommersiell-NoDerivs 4.0 Internationellt (CC BY-NC-ND 4.0)",
+        "BYNCND": "Erkännande-IckeKommersiell-NoDerivs 4.0 Internationellt (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Erkännande-Ickekommersiell-DelaLika 4.0 Internationellt (CC BY-NC-SA 4.0)",
+        "BYND": "Erkännande-NoDerivs 4.0 Internationellt (CC BY-ND 4.0)",
+        "BYSA": "Erkännande-DelaLika 4.0 Internationellt (CC BY-SA 4.0)",
+        "help": "Enhetslicens",
+        "label": "Licens",
+        "PRIVATE": "Alla rättigheter förbehållna"
+      },
+      "resource": {
+        "help": "Ange resurs-ID",
+        "label": "Resurs-ID:",
+        "placeholder": "Ange resurs-ID"
+      },
+      "theme": {
+        "help": "Välj enhetens tema.",
+        "label": "Tema"
+      },
+      "title": {
+        "help": "Detta är enhetens titel.",
+        "label": "Enhetens titel",
+        "placeholder": "Ange en titel"
+      },
+      "type": {
+        "help": "Detta är enhetstypen.",
+        "interoperability": "Interoperabilitet",
+        "label": "Typ av enhet",
+        "open": "Öppna"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "Detta är enhetens källspråk",
+        "label": "Källspråk"
+      },
+      "target": {
+        "help": "Det målspråk som enheten ska översättas till",
+        "label": "Målspråk"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Dragspel meny"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "Anger innehållsgruppens rubrik. Det kommer att visas i titeln på rullgardinsmenyn.",
+          "label": "Innehållets titel",
+          "placeholder": "Exempel: Professionella färdigheter"
+        }
+      },
+      "label": "Gruppen Innehåll"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "Detta kommer att vara bakgrundsbilden av animationen. Du kan välja en av dina uppladdade bilder.",
+          "label": "URL till bild",
+          "placeholder": "Sätt in webbadressen till bilden här...",
+          "preview": "Förhandsgranskning av animering"
+        },
+        "pieces": {
+          "altImg": "Alt-text för animerad bild",
+          "altRec": "Alt-text för animerat område",
+          "delete": "Radera",
+          "h": "Hög",
+          "new": "Lägg till ny animerad region...",
+          "w": "Bred",
+          "x": "Vänster",
+          "y": "Överlägsen"
+        }
+      },
+      "label": "Animation",
+      "prev": "Animeringen har inte initierats ännu..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "Detta blir höjden på pixelanimeringsbehållaren",
+          "label": "Animeringens höjd",
+          "placeholder": "Exempel: 200"
+        },
+        "image": {
+          "help": "Detta kommer att vara bilden som visas i objektet. Du kan välja en av dina uppladdade bilder eller ladda upp en ny.",
+          "label": "URL till bild",
+          "placeholder": "Klicka här för att välja bilden"
+        },
+        "prev": "Förhandsgranska förhandsvisning av bild",
+        "width": {
+          "help": "Detta kommer att vara bredden på animeringsbehållaren i pixlar",
+          "label": "Animeringens bredd",
+          "placeholder": "Exempel: 400"
+        }
+      },
+      "label": "Animation"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "Detta kommer att vara bilden av animeringsobjektet.",
+          "label": "URL till bild",
+          "placeholder": "Klicka här för att välja bilden"
+        },
+        "prev": "Förhandsvisning"
+      },
+      "label": "Objekt i animeringen.",
+      "prev": "Animeringsobjektet är inte inställt ännu..."
+    },
+    "AudioTermContainer": {
+      "label": "Ljud-termer"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "Du måste ange webbadressen till det ljud du vill spela upp i innehållsenheten.",
+          "label": "URL för ljudfil",
+          "placeholder": "Ange en giltig indiemedia-URL..."
+        },
+        "definition": {
+          "help": "Denna definition bör vara den ordagranna transkriptionen av ljudet.",
+          "label": "Definition",
+          "placeholder": "Skriv definitionen..."
+        },
+        "term": {
+          "help": "Detta kommer att vara termen placerad till vänster om widgeten",
+          "label": "Term",
+          "placeholder": "Skriv din term här..."
+        }
+      },
+      "label": "Ljud-term",
+      "prev": "Ljudterm inte fastställd ännu ..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "Den avtalade tiden kan visas högerjusterad eller vänsterjusterad",
+          "label": "Justering av avtalade tider",
+          "values": {
+            "left": "Till vänster",
+            "right": "Till höger"
+          }
+        },
+        "caption": {
+          "help": "Citatets underrubrik visas under citatet. Det används främst för att ange författaren eller författarna till citatet",
+          "label": "Undertext av citatet",
+          "placeholder": "Exempel: Carl Sagan"
+        },
+        "quote": {
+          "help": "Denna text är det ordagranna citatet",
+          "label": "Citera text",
+          "placeholder": "Exempel: \"Avsaknad av bevis är inte bevis på frånvaro.\""
+        },
+        "source": {
+          "help": "Ursprunglig källa till citatet (År, bok, tidskrift ... osv.)",
+          "label": "Citatets ursprung",
+          "placeholder": "Exempel:1990"
+        }
+      },
+      "label": "Citera",
+      "prev": "Citat ännu inte fastställt..."
+    },
+    "ButtonTextContainer": {
+      "label": "Knappar med text"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "Detta är bilden som kommer att visas på knappen. Du kan välja en av dina uppladdade bilder eller ladda upp en ny.",
+          "label": "URL för knappbild",
+          "placeholder": "Infoga din URL här"
+        },
+        "preview": "Bild av knappen Förhandsvisa",
+        "text": {
+          "help": "I den här textredigeraren kan du skriva innehållet i texten som är associerad med knappen",
+          "label": "SMS",
+          "placeholder": "Skriv din text här..."
+        }
+      },
+      "label": "Knappelement med text",
+      "prev": "Knappelementet med text har inte initierats ännu..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Färg",
+        "helps": {
+          "animation": "Anger en av de fördefinierade animeringarna för rutan med de inbäddade elementen (enkla eller vikbara).",
+          "colorTheme": "Hexformat #FFFFFF krävs. <strong> Om den inte är fylld tar färgen på enhetens tema standardvärdet.</strong>",
+          "styles": "Anger ett av de fördefinierade formaten för rutan med inbäddade element.",
+          "textTitle": "Detta kommer att vara texten som kommer att visas som en titel. <strong>Om den inte är fylld tar det ett standardvärde.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Ange färgen här",
+          "textTitle": "Ange titeln här"
+        },
+        "styles": {
+          "animation": "Animeringsstil",
+          "attention": "Uppmärksamhet",
+          "collapsible": "Hopfällbar",
+          "danger": "Fara",
+          "label": "Stil",
+          "more": "Lära sig mer",
+          "note": "Not",
+          "simple": "Enkel"
+        },
+        "textTitle": "Titel"
+      },
+      "label": "Enastående"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "Bilden visas högst upp i widgeten, ovanför alternativen.",
+          "label": "URL till bild",
+          "placeholder": "Ange webbadressen till bilden..."
+        },
+        "options": {
+          "help": "Dessa 4 alternativ visas under bilden. Endast en kan vara korrekt.",
+          "label": "Alternativ",
+          "placeholder": "Ange ett alternativ"
+        },
+        "preview": "Förhandsgranskning av bild",
+        "text": {
+          "help": "Den här texten visas ovanför bilden som text eller fråga.",
+          "label": "SMS",
+          "placeholder": "Skriv texten här..."
+        }
+      },
+      "label": "Välj ett alternativ",
+      "prev": "Att välja ett alternativ är inte inställt ..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "Kolumner",
+      "form": {
+        "width": {
+          "1": "Bredd på den första kolumnen",
+          "help": "Den andra kolumnen upptar den återstående bredden"
+        }
+      },
+      "label": "Förfogande"
+    },
+    "CorrectWord": {
+      "label": "Rätt ord"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "Beskrivande bild av frågan",
+          "label": "URL till bild",
+          "placeholder": "Infoga din bild-URL här..."
+        },
+        "preview": "Förhandsgranskning av bild",
+        "question": {
+          "help": "Det här är frågan som kommer att visas för användaren.",
+          "label": "Frågetext",
+          "placeholder": "Frågetext"
+        },
+        "word": {
+          "help": "Detta ord kommer att vara svaret på frågan",
+          "label": "Svar",
+          "placeholder": "Skriv ett ord ..."
+        }
+      },
+      "label": "Rätt ordelement",
+      "prev": "Det korrekta ordet har ännu inte fastställts ..."
+    },
+    "CouplesContainer": {
+      "label": "Par",
+      "prev": "Par som ännu inte är etablerade..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "Den här bilden kommer att associeras med texten som anges som ett par i detta formulär.",
+          "label": "URL till bild",
+          "placeholder": "Ange webbadressen till bilden här..."
+        },
+        "legend": {
+          "first": "Första elementet",
+          "second": "Andra elementet"
+        },
+        "preview": "Förhandsgranskning av bild",
+        "text": {
+          "help": "Denna text kommer att associeras med bilden som anges som ett par i det här formuläret.",
+          "label": "SMS",
+          "placeholder": "Skriv en text..."
+        },
+        "type": {
+          "image": "Bild",
+          "label": "Kille",
+          "text": "SMS"
+        }
+      },
+      "label": "Par",
+      "prev": "Par inte etablerat ännu..."
+    },
+    "DragdropContainer": {
+      "label": "Dra och släpp"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "Definitionen visas till höger om det interaktiva elementet och eleven måste dra termen till definitionen",
+          "label": "Definition",
+          "placeholder": "Exempel: Alla människor har rätt att uttrycka sig utan att bli trakasserade på grund av vad de tycker"
+        },
+        "term": {
+          "help": "Termen visas till vänster om det interaktiva elementet och kommer att vara den som eleven måste dra och släppa den i definitionen.",
+          "label": "Term",
+          "placeholder": "Exempel: Yttrandefrihet"
+        }
+      },
+      "label": "Definition av term",
+      "prev": "Objektet har inte fastställts..."
+    },
+    "FourColumnsLayout": {
+      "label": "Fyra kolumner"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Du måste skriva minst 2 svar och markera vilken av dem som är korrekt.",
+          "label": "Möjliga svar"
+        },
+        "questionPreview": {
+          "help": "Så här kommer frågan att se ut i innehållsenheten.",
+          "label": "Förhandsgranska texten i frågan.",
+          "placeholder": "Frågetext med tom ___ plats."
+        },
+        "questionText": {
+          "help": "Du måste skriva frågetexten med det tomma utrymme du vill ha med specialnyckelordet [blank].",
+          "label": "Frågetext",
+          "placeholder": "Frågetext med tomt element"
+        }
+      },
+      "label": "Fyll gapfrågan",
+      "prev": "Frågan om att fylla luckan är ännu inte fastställd ..."
+    },
+    "GenericWidget": {
+      "label": "Manick"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "Svaret på frågan",
+          "label": "Svar",
+          "placeholder": "Skriv ditt svar här"
+        },
+        "attempts": {
+          "help": "Antal försök att gissa svaret. Det måste vara ett tal mellan 1 och 9.",
+          "label": "Försök"
+        },
+        "question": {
+          "help": "Frågan som ska besvaras",
+          "label": "Fråga",
+          "placeholder": "Skriv din fråga här"
+        }
+      },
+      "label": "Gissa ordet",
+      "prev": "Antar att ordet inte har initierats ännu ..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Om du skapar en text kommer detta att vara bildtexten på bilden",
+          "label": "Bildtext",
+          "placeholder": "Ange en bildtext."
+        },
+        "image": {
+          "help": "Det här är bilden som kommer att visas i objektet.",
+          "label": "URL till bild",
+          "placeholder": "Klicka här för att välja bilden"
+        },
+        "preview": "Förhandsvisning"
+      },
+      "label": "Bild med text ovan",
+      "prev": "Bild med texten ovan ännu inte fastställd..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Bild och ljud"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "Ljudfilen spelas upp när du klickar på bilden.",
+          "label": "URL för ljudfil",
+          "placeholder": "Ange en giltig indiemedia-URL..."
+        },
+        "image": {
+          "help": "Bilden visas först",
+          "label": "URL till bild",
+          "placeholder": "Ange webbadressen till bilden..."
+        },
+        "preview": "Förhandsgranskning av bild",
+        "text": {
+          "help": "Texten visas ovanför bilden när du håller muspekaren över den.",
+          "label": "Bildtext",
+          "placeholder": "Skriv en text..."
+        }
+      },
+      "label": "Bild- och ljudobjekt",
+      "prev": "Bild- och ljudobjekt ännu inte fastställt ..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "Detta kommer att vara bilden som visas i objektet. Du kan välja en av dina uppladdade bilder eller ladda upp en ny.",
+          "label": "URL till bild",
+          "placeholder": "Klicka här för att välja bilden"
+        },
+        "layout": {
+          "help": "Orienteringen för en bild och ett textblock fastställer var och en av elementen i blocket visas.",
+          "label": "Orientering",
+          "values": {
+            "0": "Text till höger, bild till vänster",
+            "1": "Text till vänster, bild till höger"
+          }
+        },
+        "preview": "Förhandsgranskning av bild",
+        "text": {
+          "help": "Du måste skriva en text.",
+          "label": "I den här textredigeraren kan du skriva innehållet i blocket.",
+          "placeholder": "Skriv en text..."
+        }
+      },
+      "label": "Bild och text",
+      "prev": "Bild och text ännu ej fastställda..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Använd textinmatning för att ange webbadressen till den interaktiva videon som skapats med det interaktiva videoverktyget.",
+          "label": "Webbadress till video",
+          "placeholder": "Exempel: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Interaktiv video",
+      "prev": "Interaktiv video ännu inte etablerad"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "Den här förklaringen visas under formeln och som ett textblock",
+          "label": "Förklaring av formel",
+          "placeholder": "Exempel: Kvadratisk formel"
+        },
+        "formula": {
+          "help": "Använd textområdet för att skriva formeln. Under detta område visas en förhandsgranskning av formeln om den är korrekt eller texten i rött om formeln inte är korrekt",
+          "label": "Formel i LaTex-format",
+          "placeholder": "Exempel: \\text{Den kvadratiska formeln är }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "LaTeX-formel",
+      "prev": "Formel ännu inte fastställd ..."
+    },
+    "MissingWords": {
+      "label": "Saknade ord"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Radera",
+          "new": "Lägg till nytt svar...",
+          "text": "Svar"
+        },
+        "sentence": {
+          "help": "Du måste skriva texten i meningen inklusive gapet med hjälp av specialmarkören [blank].",
+          "label": "Text i meningen",
+          "placeholder": "Meningstext med markör [blank]"
+        },
+        "sentencePreview": {
+          "help": "Så här skulle du se på frasen i innehållsenheten.",
+          "label": "Förhandsgranskning av fras",
+          "placeholder": "Meningstext med markören ___ "
+        }
+      },
+      "label": "Element för saknade ord",
+      "prev": "Det saknade ordelementet har ännu inte fastställts ..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "Denna text visas som knapptext, som måste aktiveras för att öppna det modala fönstret.",
+          "label": "Knapptext",
+          "placeholder": "Skriv texten..."
+        }
+      },
+      "label": "Modalt fönster"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "Detta kommer att vara bakgrundsbilden av pusslet. Du kan välja en av dina uppladdade bilder.",
+          "label": "URL till bild",
+          "placeholder": "Sätt in webbadressen till bilden här...",
+          "preview": "Förhandsgranskning av pussel"
+        },
+        "pieces": {
+          "altImg": "Alt-text för beskärning",
+          "altRec": "Alt-text för position",
+          "delete": "Radera",
+          "h": "Hög",
+          "new": "Lägg till ny bit...",
+          "w": "Bred",
+          "x": "Vänster",
+          "y": "Överlägsen"
+        }
+      },
+      "label": "Pussel",
+      "prev": "Pusslet har inte initierats ännu ..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Gruppens titel",
+          "label": "Titel",
+          "placeholder": "Exempel: Lagmodul"
+        }
+      },
+      "label": "Grupp",
+      "prev": "Grupp ännu inte estabecido ..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Innehållsförteckning"
+    },
+    "RelatedUnitsItem": {
+      "current": "Nuvarande enhet",
+      "form": {
+        "current": {
+          "title": "Detta är den aktuella enheten"
+        },
+        "title": {
+          "help": "Post titel",
+          "label": "Titel",
+          "placeholder": "Exempel: Mänskliga rättigheter"
+        },
+        "url": {
+          "help": "Mål-URL",
+          "label": "URL",
+          "placeholder": "Exempel: https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Ingång",
+      "prev": "Entry inte fastställd ännu..."
+    },
+    "SchemaContainer": {
+      "label": "Schema"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "Detta kommer att vara den partiella bilden av systemet.",
+          "label": "URL till bild",
+          "placeholder": "Klicka här för att välja bilden"
+        },
+        "prev": "Förhandsgranskning av bild"
+      },
+      "label": "Disposition objekt",
+      "prev": "Punkt av esuqema ännu inte fastställd ..."
+    },
+    "SentenceOrderContainer": {
+      "label": "Sortering av fraser"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Radera",
+          "help": "Svar som kommer att konstrueras från de inmatade orden",
+          "legend": "Lista med svar",
+          "new": "Lägg till ett nytt svar...",
+          "text": "Svar"
+        },
+        "words": {
+          "delete": "Radera",
+          "help": "Svaren ska kunna konstrueras från dessa ord",
+          "legend": "Ordlista",
+          "new": "Lägg till ett nytt ord...",
+          "text": "Ord"
+        }
+      },
+      "label": "Sorteringselement för fraser",
+      "prev": "Meningssorteringselementet har inte initierats ännu..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "Ställer in justeringen av bilden när utseendet inte är \"Justera de ursprungliga dimensionerna till det tillgängliga utrymmet\".",
+          "label": "Bildjustering",
+          "values": {
+            "center": "Fokuserad",
+            "left": "Vänster",
+            "right": "Höger"
+          }
+        },
+        "aspect": {
+          "help": "Bilden kan visas med originalmåtten (när det är möjligt) eller justeras till skärmens bredd (skala bilden). Om måtten är högre och bredare än skärmen kan visa kommer den alltid automatiskt att anpassas till skärmen",
+          "label": "Bildens utseende",
+          "values": {
+            "custom": "Sed",
+            "fit": "Justera de ursprungliga dimensionerna till det tillgängliga utrymmet",
+            "original": "Ursprungliga dimensioner"
+          }
+        },
+        "image": {
+          "help": "Detta kommer att vara bilden som kommer att visas i objektet.",
+          "label": "URL till bild",
+          "placeholder": "Ange bildens URL här"
+        },
+        "preview": "Förhandsvisning",
+        "size": {
+          "height": "Hög",
+          "heightPlaceholder": "Bildhöjd...",
+          "keepRatio": "Behåll bildförhållandet",
+          "width": "Bred",
+          "widthPlaceholder": "Bildbredd..."
+        }
+      },
+      "label": "Bild",
+      "prev": "Bilden är inte fastställd ännu..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Du måste skriva minst 2 svar och markera vilken av dem som är korrekt.",
+          "label": "Möjliga svar"
+        },
+        "questionText": {
+          "help": "Detta är texten i frågan kommer att visas i innehållsenheten.",
+          "label": "Frågetext",
+          "placeholder": "Text av den enkla frågan ..."
+        }
+      },
+      "label": "Enkel fråga",
+      "prev": "Enkel fråga inte ställd ännu ..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "Detta kommer att vara namnet som visas i flikrubriken.",
+          "label": "Flikens namn",
+          "placeholder": "Exempel: Professionella färdigheter"
+        }
+      },
+      "label": "Ögonfrans"
+    },
+    "Table": {
+      "empty": "Tabellen har ännu inte initierats",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "Kolumnnamnet är tomt eller redan definierat",
+            "label": "Kolumnens namn",
+            "placeholder": "Skriv kolumnnamnet här..."
+          },
+          "columnPosition": {
+            "error": "Kolumnposition utanför intervallet",
+            "label": "Kolumnens placering"
+          },
+          "label": "Lägg till ny kolumn",
+          "submit": "Lägg till kolumn"
+        },
+        "addRow": "Lägg till ny rad",
+        "deleteColumn": "Rensa kolumn",
+        "deleteRow": "Rensa rad"
+      },
+      "help": {
+        "edit": "Markera en cell som du vill redigera. Om du vill lägga till nya rader medan du redigerar håller du ned skifttangenten samtidigt som du trycker på Retur."
+      },
+      "label": "Bräde",
+      "prev": "Tabellen är ännu inte fastställd..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Ögonfransar",
+      "label": "Flik-menyn"
+    },
+    "TermClassification": {
+      "label": "Klassificering",
+      "prev": "Klassificering"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "Det här är den kolumn som termerna kommer att relateras till.",
+          "label": "Spalt",
+          "placeholder": "Spalt"
+        },
+        "terms": {
+          "help": "I det här inlägget måste du skriva de ord som är relaterade till termen åtskilda av ett semikolon vardera. Till exempel: dessa; är; några; ord",
+          "label": "Ord",
+          "placeholder": "Skriv ord avgränsade med semikolon"
+        }
+      },
+      "label": "Klassificering objekt",
+      "prev": "Objektet är inte fastställt ännu..."
+    },
+    "Test": {
+      "label": "Typ av test",
+      "questionSelect": "Välj en frågetyp som du vill lägga till i testet"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Du måste skriva en text.",
+        "label": "I den här textredigeraren kan du skriva innehållet i blocket.",
+        "placeholder": "Ange en text...",
+        "styles": {
+          "attention": "Uppmärksamhet",
+          "default": "Ingen stil",
+          "help": "Anger layouten för rutan som omger texten",
+          "label": "Format för textblock",
+          "more": "Lära sig mer",
+          "note": "Not"
+        }
+      },
+      "label": "Blockera text",
+      "prev": "Texten ännu inte fastställd..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Tre kolumner"
+    },
+    "TrueFalseContainer": {
+      "label": "Sant/falskt",
+      "prev": "Sant/falskt inte fastställt ännu..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Falsk",
+          "help": "Välj mellan sant eller falskt som rätt svar",
+          "label": "Rätt svar",
+          "true": "Sann"
+        },
+        "questionText": {
+          "help": "Detta är texten i objektet.",
+          "label": "Artikeltext",
+          "placeholder": "Artikeltext..."
+        }
+      },
+      "label": "Sant/falskt-objekt",
+      "prev": "Sant/falskt-objektet har inte fastställts ännu..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Falsk",
+          "help": "Välj mellan sant eller falskt som rätt svar",
+          "label": "Rätt svar",
+          "true": "Sann"
+        },
+        "questionText": {
+          "help": "Detta är texten i frågan kommer att visas i innehållsenheten.",
+          "label": "Textfrågans text",
+          "placeholder": "Frågans text..."
+        }
+      },
+      "label": "Sann eller falsk fråga",
+      "prev": "Fråga om sant eller falskt nbo etablerat ännu ..."
+    },
+    "TwoColumnsLayout": {
+      "label": "Två kolumner"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Visa standardundertexter",
+          "no": "Nej",
+          "yes": "Ja"
+        },
+        "url": {
+          "help": "Använd textinmatning för att ange webbadressen till din video (youtube, vimeo ...)",
+          "label": "Webbadress till video",
+          "placeholder": "Exempel: https://example.com/video.mp4"
+        }
+      },
+      "label": "Video",
+      "prev": "Videon är inte inställd ännu..."
+    }
+  }
+}

@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Zobraziť/skryť kategórie",
+    "viewImage": "Pozri obrázok"
+  },
+  "common": {
+    "alt": {
+      "help": "Toto je alternatívny popisný text obrázka z hľadiska prístupnosti",
+      "label": "Alternatívny text obrázka",
+      "placeholder": "Alternatívny text"
+    },
+    "captions": {
+      "help": "INDIeMedia URL súboru obsahujúceho prepis dialógov, zvukových efektov, hudobných stôp a iných zvukových informácií, keď je divák nepočujúci alebo nedoslýchavý, alebo ak je video / zvuk stlmený. Titulky sa zobrazujú aj nad videom.",
+      "label": "Titulky (CC)",
+      "placeholder": "Príklad: https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "INDIeMedia URL súboru obsahujúceho textové popisy toho, čo sa stane vo videu, keď časť videa nie je k dispozícii, pretože divák je nevidiaci a nepoužíva obrazovku. Popisy číta čítačka obrazovky alebo sa konvertujú na samostatnú zvukovú stopu.",
+      "label": "Popis",
+      "placeholder": "Príklad: https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Sťahuje sa disk, počkajte, prosím",
+      "title": "Sťahovanie"
+    },
+    "feedback": {
+      "help": "Interpretujte spätnú väzbu, ktorú študent dostane, či odpovie správne alebo nesprávne",
+      "label": "Spätná väzba",
+      "negative": "Negatívna spätná väzba...",
+      "positive": "Pozitívna spätná väzba..."
+    },
+    "generate": {
+      "description": "Generovanie, počkajte, prosím",
+      "title": "Generovanie"
+    },
+    "help": {
+      "button": "Predvolený",
+      "help": "Tento text sa zobrazí nad miniaplikáciou, aby používateľ pochopil, ako s ním interagovať. <strong>Ak ponecháte prázdny, zobrazí sa predvolený text.</strong>",
+      "label": "Pomoc",
+      "placeholder": "Predvolený text Pomocníka"
+    },
+    "language": {
+      "EL": "Gréčtina",
+      "EN": "Angličtina",
+      "ES": "Španielčina",
+      "FR": "Francúzština",
+      "LT": "Litovčina"
+    },
+    "loading": {
+      "description": "Načítava sa, počkajte, prosím",
+      "title": "Nakladanie"
+    },
+    "name": {
+      "help": "Toto bude názov inštancie miniaplikácie pre vzdelávaciu analytiku",
+      "label": "Meno",
+      "placeholder": "Názov inštancie miniaplikácie"
+    },
+    "navbar": {
+      "options": "Možnosti rozbalenia alebo zbalenia"
+    },
+    "preview": {
+      "description": "Vaša ukážka sa generuje, počkajte, prosím",
+      "generated": {
+        "description": "Ukážka je pripravená. Ak vás prehliadač nepresmeruje na verziu Preview, kliknite na odkaz nižšie:",
+        "title": "Úspešne vygenerovaná ukážka"
+      },
+      "title": "Generovanie ukážky"
+    },
+    "publish": {
+      "description": "Váš disk sa generuje na stiahnutie, počkajte, prosím",
+      "title": "Vydavateľská jednotka"
+    },
+    "publishToNetlify": {
+      "description": "Vaša jednotka sa nahráva do Netlify, počkajte, prosím",
+      "title": "Vydavateľská jednotka v Netlify"
+    },
+    "save": {
+      "description": "Šetrite, počkajte, prosím",
+      "title": "Úspora"
+    },
+    "scorm": {
+      "description": "Váš balík SCORM sa generuje, počkajte, prosím",
+      "title": "Generovanie balíka SCORM"
+    },
+    "selectType": "Vyberte typ z nasledujúcich možností",
+    "unit": {
+      "settings": "Zadajte podrobnosti o jednotke"
+    }
+  },
+  "dialog": {
+    "translate": "Preložiť jednotku"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "Akordeón je prázdny. Obsah musíte pridať pomocou tlačidla Pridať vpravo."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "Nádoba je prázdna. Do kontajnera musíte pridať aspoň jednu položku."
+      },
+      "title": {
+        "invalid": "Názov kontajnera je neplatný. Musíte si ho zriadiť."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "Webová adresa nastavená pre obrázok na pozadí je nesprávna. Musíte zadať platnú adresu URL nezávislého autora."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Alternatívny text animovaného obrázka musí byť nastavený."
+        },
+        "altRec": {
+          "invalid": "Musí byť nastavený alternatívny text pre animovanú oblasť."
+        },
+        "empty": "Animácia musí mať aspoň jednu animovanú oblasť.",
+        "h": {
+          "invalid": "Výška musí byť nastavená a musí to byť platné číslo."
+        },
+        "w": {
+          "invalid": "Šírka musí byť nastavená a musí to byť platné číslo."
+        },
+        "x": {
+          "invalid": "Musí byť nastavená súradnica úplne vľavo a musí to byť platné číslo."
+        },
+        "y": {
+          "invalid": "Musí byť nastavené najvyššie číslo a musí to byť platné číslo."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "Animácia je prázdna. Musíte pridať aspoň jednu položku pomocou tlačidla Pridať."
+      },
+      "height": {
+        "invalid": "Výška animácie musí byť väčšia ako 0."
+      },
+      "image": {
+        "invalid": "Webová adresa nastavená pre obrázok je neplatná. Musíte sa uistiť, že ste v poli obrázka zadali platnú adresu URL indiemedia."
+      },
+      "width": {
+        "invalid": "Šírka animácie musí byť väčšia ako 0."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "Webová adresa nastavená pre obrázok je neplatná. Musíte sa uistiť, že ste v poli obrázka zadali platnú adresu URL indiemedia."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "Musíte pridať aspoň jeden zvukový výrazový rozlíšenie"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "Musíte zadať platnú adresu URL indiemedia"
+      },
+      "definition": {
+        "invalid": "Musíte uviesť definíciu."
+      },
+      "term": {
+        "invalid": "Musíte uviesť termín."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "Nenapísali ste obsah citátu. Musíte aspoň napísať obsah."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "Musíte zadať aspoň jeden prvok typu textu a tlačidla."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "Webová adresa nastavená pre obrázok je neplatná. Musíte sa uistiť, že v obrazovom poli tlačidla zadáte platnú adresu URL IndieMedia."
+      },
+      "text": {
+        "invalid": "Text je prázdny. Musíte napísať alebo skopírovať text."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "Zvýraznené okno je prázdne. Musíte pridať aspoň jeden jednoduchý prvok."
+      },
+      "text": {
+        "invalid": "Text je prázdny. Musíte napísať malý text."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "Denes poskytujú platný obrázok v poli URL."
+      },
+      "options": {
+        "noCorrect": "Musíte vybrať aspoň jednu správnu",
+        "notEnougOptions": "Musíte zadať 4 možnosti"
+      },
+      "text": {
+        "invalid": "Text je prázdny. Musíte zadať text."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Všetky stĺpce v rozložení musia obsahovať aspoň jeden prvok jeho potiahnutím z palety vľavo."
+      },
+      "width": {
+        "invalid": "Neplatná šírka stĺpca"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "Pre obrázok musíte zadať alternatívny text"
+      },
+      "audioblob": {
+        "invalid": "Obsah zvukového súboru nie je správny. Musíte vybrať platný súbor."
+      },
+      "captions": {
+        "invalid": "Webová adresa nastavená pre titulky je neplatná. Musíte sa uistiť, že ste zadali platnú adresu URL indiemedia"
+      },
+      "captionsblob": {
+        "invalid": "Obsah súboru s titulkami nie je správny. Musíte vybrať platný súbor."
+      },
+      "descriptions": {
+        "invalid": "Webová adresa nastavená pre popis je neplatná. Musíte sa uistiť, že ste zadali platnú adresu URL indiemedia"
+      },
+      "imageblob": {
+        "invalid": "Obsah obrázka nie je správny. Musíte vybrať platný obrázok."
+      },
+      "name": {
+        "invalid": "Musíte uviesť názov tejto inštancie.",
+        "notUniqueName": "Názov inštancie musí byť jedinečný pre celý obsah."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "Musíte zadať aspoň jednu správnu položku programu Word."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "Webová adresa nastavená pre obrázok je neplatná. Musíte zadať platnú adresu URL nezávislého autora."
+      },
+      "question": {
+        "invalid": "Text otázky je prázdny."
+      },
+      "word": {
+        "invalid": "Text odpovede je prázdny."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "Musíte pridať aspoň jeden pár"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "Webová adresa zadaná pre obrázok je neplatná. Musíte sa uistiť, že ste do poľa obrázka zadali platnú adresu URL indiemedia."
+      },
+      "text": {
+        "invalid": "Text je prázdny. Musíte napísať krátky text."
+      },
+      "type": {
+        "invalid": "Typ nastavený pre položku je neplatný. Musíte sa uistiť, že je vybratá možnosť \"Text\" alebo \"Obrázok\"."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "Položka je prázdna. Musíte pridať aspoň jednu položku definície výrazu pomocou tlačidla Pridať vpravo."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "Pole definície je prázdne. Musíte napísať definíciu."
+      },
+      "term": {
+        "invalid": "Pole výrazu je prázdne. Musíte napísať termín."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "Musíte vybrať správnu odpoveď",
+        "notEnoughAnswers": "Musíte napísať aspoň 2 možné odpovede"
+      },
+      "question": {
+        "empty": "Text otázky nemôže byť prázdny",
+        "onlyOneBlank": "Do otázky musíte zahrnúť iba jednu prázdnu medzeru"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "Odpoveď nesmie byť prázdna"
+      },
+      "attempts": {
+        "invalid": "Pokusy musia mať číslo od 1 do 9"
+      },
+      "question": {
+        "invalid": "Otázka nesmie byť prázdna"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "Webová adresa nastavená pre obrázok je neplatná. Musíte sa uistiť, že ste v poli obrázka zadali platnú adresu URL indiemedia."
+      },
+      "text": {
+        "invalid": "Text je prázdny. Musíte napísať text"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "Počet kolón musí byť 1,2 alebo 3"
+      },
+      "data": {
+        "empty": "Musíte poskytnúť aspoň jeden obrazový a zvukový prvok."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "Musíte zadať platnú adresu URL indiemedia"
+      },
+      "image": {
+        "invalid": "Webová adresa zadaná pre obrázok je neplatná. Musíte sa uistiť, že ste do poľa obrázka zadali platnú adresu URL indiemedia."
+      },
+      "text": {
+        "invalid": "Text je prázdny. Musíte napísať krátky text."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "Webová adresa nastavená pre obrázok je neplatná. Musíte sa uistiť, že ste v poli obrázka zadali platnú adresu URL indiemedia."
+      },
+      "text": {
+        "invalid": "Text je prázdny. Musíte napísať alebo skopírovať text."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "Webová adresa nakonfigurovaná pre video je neplatná. Mali by ste sa uistiť, že ho poskytnete z indieopen interaktívnych videí."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "Musíte poskytnúť legendu vzorca."
+      },
+      "formula": {
+        "invalid": "Musíte zadať vzorec vo formáte LaTex."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "Musíte zadať aspoň jednu chýbajúcu položku slova."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "Musíte napísať aspoň jednu správnu odpoveď",
+        "invalid": "Text odpovede je prázdny"
+      },
+      "sentence": {
+        "empty": "Veta nesmie byť prázdna",
+        "onlyOneBlank": "Do vety by ste mali zahrnúť iba značku medzery"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "Modál je prázdny. Musíte pridať aspoň jeden jednoduchý prvok."
+      },
+      "text": {
+        "invalid": "Text je prázdny. Musíte napísať malý text."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "Webová adresa nastavená pre obrázok na pozadí je nesprávna. Musíte zadať platnú adresu URL nezávislého autora."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Musí byť nastavený alternatívny text orezania."
+        },
+        "altRec": {
+          "invalid": "Musí byť nastavený alternatívny text pozície."
+        },
+        "empty": "Puzzle musí mať aspoň jeden dielik.",
+        "h": {
+          "invalid": "Výška musí byť nastavená a musí to byť platné číslo."
+        },
+        "w": {
+          "invalid": "Šírka musí byť nastavená a musí to byť platné číslo."
+        },
+        "x": {
+          "invalid": "Musí byť nastavená súradnica úplne vľavo a musí to byť platné číslo."
+        },
+        "y": {
+          "invalid": "Musí byť nastavené najvyššie číslo a musí to byť platné číslo."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "Položka je prázdna. Musíte pridať aspoň jeden záznam pomocou tlačidla Pridať vpravo."
+      },
+      "title": {
+        "invalid": "Pole názvu je prázdne. Musíte napísať názov."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "Existuje aspoň jeden duplicitný odkaz. Ku každému príspevku musíte poskytnúť jedinečný odkaz.",
+        "empty": "Položka je prázdna. Musíte pridať aspoň jeden záznam pomocou tlačidla Pridať vpravo.",
+        "multipleCurrent": "V súčasnosti existujú aspoň dva záznamy. Musíte zadať iba jeden aktuálny záznam."
+      },
+      "moreThanOne": "Musíte poskytnúť najviac jednu položku obsahu."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "Pole názvu je prázdne. Musíte napísať názov."
+      },
+      "url": {
+        "invalid": "Pole URL musí byť nastavené na nasledujúci formát: https://[zdroj]/[autor]/[jednotka]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "Schéma je prázdna. Musíte pridať aspoň jednu položku pomocou tlačidla Pridať vpravo."
+      },
+      "height": {
+        "invalid": "Výška animácie musí byť väčšia ako 0."
+      },
+      "image": {
+        "invalid": "Webová adresa nastavená pre celý obrázok je neplatná. Musíte sa uistiť, že ste zadali platnú adresu URL indiemedia."
+      },
+      "width": {
+        "invalid": "Šírka animácie musí byť väčšia ako 0."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "Webová adresa nastavená pre obrázok je neplatná. Musíte sa uistiť, že ste v poli obrázka zadali platnú adresu URL indiemedia."
+      },
+      "text": {
+        "invalid": "Text je prázdny. Musíte napísať malý text."
+      }
+    },
+    "section": {
+      "emptyData": "Sekcia nemôže byť prázdna. Musíte pridať aspoň jednu položku.",
+      "invalidBookmark": "Sekcia musí mať platnú záložku.",
+      "invalidImage": "Sekcia musí mať obrázok na pozadí.",
+      "invalidName": "Sekcia musí mať názov.",
+      "typeImageNotSelected": "Ak je vybratým typom Obrázok na pozadí, musíte obrázok nastaviť."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "Musíte uviesť aspoň jeden prvok triedenia viet."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "Musíte napísať aspoň jednu správnu odpoveď",
+        "impossible": "Veta nemôže byť zostavená zo zavedených slov",
+        "invalid": "Text odpovede je prázdny"
+      },
+      "words": {
+        "empty": "Musíte zadať aspoň jedno platné slovo",
+        "invalid": "Text programu Word je prázdny"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "Webová adresa nastavená pre obrázok je neplatná. Musíte sa uistiť, že ste v poli obrázka zadali platnú adresu URL indiemedia.",
+        "sizeNotSet": "Šírka a výška obrázka musí byť nastavená, keď je jeho vzhľad \"Custom\""
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "Musíte vybrať správnu odpoveď",
+        "notEnoughAnswers": "Musíte napísať aspoň 2 možné odpovede"
+      },
+      "question": {
+        "empty": "Text otázky nemôže byť prázdny"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "Karta je prázdna. Na kartu musíte pridať aspoň jednu položku."
+      },
+      "name": {
+        "invalid": "Názov karty je neplatný. Musíte si ho zriadiť."
+      }
+    },
+    "Table": {
+      "empty": "Tabuľka neobsahuje žiadne stĺpce nastavené"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "Ponuka kariet neobsahuje karty. Musíte pridať aspoň jednu."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Existujú duplicitné stĺpce. Skontrolujte svoje položky.",
+        "duplicatedTerms": "Medzi stĺpcami sú duplicitné výrazy. Prečítajte si podmienky"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "Stĺpec nesmie byť prázdny"
+      },
+      "terms": {
+        "empty": "Výrazy nemôžu byť prázdne.",
+        "invalid": "Podmienky nie sú v súlade s požadovaným formátom. Výrazy oddeľte bodkočiarkou (;)."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "Test je prázdny. Musíte pridať aspoň jednu otázku."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "Text je prázdny. Musíte napísať krátky text."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "Musíte pridať aspoň jeden prvok true alebo false"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "Text otázky nemôže byť prázdny"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "Text otázky nemôže byť prázdny"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "Webová adresa videa je neplatná. Musíte sa uistiť, že ste zadali platnú adresu URL z IndieMedia alebo Youtube.",
+        "localInvalid": "Webová adresa videa je neplatná. Musíte sa uistiť, že ste zadali platnú webovú adresu YouTube."
+      }
+    }
+  },
+  "footer": {
+    "content": "Nové sekcie môžete pridávať pomocou horného panela s nástrojmi"
+  },
+  "general": {
+    "areYouSure": "Si si istý?",
+    "cancel": "Zrušiť",
+    "close": "Zavrieť",
+    "confirm": "Potvrdiť",
+    "delete": "Eliminovať",
+    "discard": "Odhodiť",
+    "false": "Nepravda",
+    "load": "Naložiť",
+    "modelDetected": "Chcete načítať predchádzajúcu jednotku?",
+    "true": "Pravdivý"
+  },
+  "header": {
+    "addSection": "Pridať sekciu",
+    "clear": "Vymazanie obsahu",
+    "download": "Stiahnuť jednotku",
+    "importSection": "Sekcia Import",
+    "install": "Inštalovať aplikáciu",
+    "preview": "Ukážka obsahu",
+    "publish": "Publikovanie obsahu",
+    "publishToNetlify": "Publikovanie obsahu v službe Netlify",
+    "redo": "Akcia Zopakovať",
+    "save": "Uloženie obsahu",
+    "scorm": "Export vo formáte SCORM",
+    "translate": "Preložiť jednotku",
+    "undo": "Akcia Späť",
+    "upload": "Jednotka nahrávania",
+    "validate": "Overenie jednotky"
+  },
+  "items": {
+    "add": "Pridanie obsahu",
+    "delete": "Odstránenie položky",
+    "duplicate": "Duplicitná položka",
+    "edit": "Úprava obsahu",
+    "export": "Exportovať položku"
+  },
+  "messages": {
+    "changesSaved": "Zmeny sa úspešne uložili.",
+    "confirmClearContent": "Obsah úplne odstránite. Uistite sa, že je to to, čo naozaj chcete robiť.",
+    "confirmLoadModel": "Našla sa predchádzajúca jednotka. Vyberte, či ho chcete načítať alebo zahodiť.",
+    "contentCleared": "Obsah bol úspešne odstránený.",
+    "contentErrors": "Ups! Vo vašom obsahu sú chyby. Skontrolujte chybové hlásenia a opravte ich podľa príslušných pokynov.",
+    "couldNotExportElement": "Položku nebolo možné exportovať",
+    "couldNotExportSection": "Sekciu nebolo možné exportovať",
+    "deletedSection": "Sekcia bola úspešne odstránená",
+    "emptyContent": "Nepridali ste obsah.",
+    "errorMessage": "Chyba",
+    "exportedElement": "Úspešne exportovaná položka",
+    "exportedSection": "Úspešne exportovaná sekcia",
+    "importedElement": "Úspešne importovaná položka",
+    "importedSection": "Úspešne importovaná sekcia",
+    "loadError": "Jednotku nebolo možné naložiť",
+    "noElement": "Žiadne položky na import",
+    "noErrors": "Ujde to! Neexistujú žiadne chyby. Môžete pokračovať v ukladaní obsahu.",
+    "noRedo": "Nie je čo opakovať",
+    "noSection": "Žiadne sekcie na import",
+    "noUndo": "Nie je čo vrátiť späť",
+    "previewError": "Jednotku nebolo možné zobraziť",
+    "publishError": "Jednotka nemohla byť zverejnená",
+    "savedUnit": "Jednotka bola úspešne uložená",
+    "saveError": "Jednotku sa nepodarilo zachrániť",
+    "successMessage": "Ok",
+    "translateError": "Jednotku nebolo možné preložiť",
+    "warningMessage": "Pozornosť"
+  },
+  "netlify": {
+    "button": {
+      "text": "Pripojiť"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Vytvoriť lokalitu",
+        "help": "Vyberte jednu z dostupných lokalít vo svojom účte Netlify",
+        "label": "Vyberte dostupnú stránku z vášho Netlify a nahrajte jednotku"
+      },
+      "title": "Vyplňte polia na pripojenie k Netlify ",
+      "token": {
+        "help": "Zadajte svoj osobný prístupový token Netlify. Nájdete ho v sekcii Aplikácie v nastaveniach účtu Netlify",
+        "label": "Vložte token osobného prístupu:",
+        "placeholder": "Sem vložte svoj osobný prístupový token Netlify"
+      }
+    },
+    "error": {
+      "message": "Neplatný token"
+    },
+    "success": {
+      "message": "Jednotka bola úspešne nahraná do Netlify. Prístup k nemu získate kliknutím na nasledujúci odkaz: ",
+      "message_2": "Majte na pamäti, že ak má vaša jednotka veľa obsahu, publikovanie môže trvať niekoľko minút.",
+      "title": "Jednotka nahraná do Netlify"
+    }
+  },
+  "palette": {
+    "containers": "Kontajnery",
+    "exerciseElement": "Cvičenia",
+    "interactiveElements": "Interaktívne prvky",
+    "items": "Položky",
+    "layouts": "Ustanovenia",
+    "question": "Otázky",
+    "simpleElements": "Prvky"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Blok kódu",
+        "screenReader": "Text Pomocníka pre aplikácie na čítanie z obrazovky"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Odstrániť sekciu",
+    "duplicate": "Duplicitná sekcia",
+    "edit": "Úprava informácií",
+    "expandContract": "Rozbalenie alebo zbalenie",
+    "export": "Sekcia exportu",
+    "form": {
+      "bookmark": {
+        "help": "Táto značka sa zobrazí v hornej časti jednotky ako značka sekcie. Musí mať maximálne 40 znakov.",
+        "label": "Záložka sekcie",
+        "placeholder": "Napíšte záložku..."
+      },
+      "image": {
+        "help": "",
+        "label": "URL adresa obrázka na pozadí",
+        "placeholder": "Zadajte adresu URL obrázka..."
+      },
+      "name": {
+        "help": "Toto je názov, ktorý bude mať sekcia v obsahu.",
+        "label": "Názov sekcie",
+        "placeholder": "Napíšte meno..."
+      },
+      "preview": "Zobrazenie ukážky obrázka na pozadí",
+      "type": {
+        "bc": "Farba pozadia (predvolené)",
+        "bi": "Obrázok na pozadí",
+        "help": "Ak je typ nastavený na \"farbu pozadia\", predvolená farba sa zobrazí za nadpisom, zatiaľ čo v časti \"Obrázok na pozadí\" musíte vytvoriť obrázok pozadia pre nadpis sekcie.",
+        "label": "Typ pozadia"
+      }
+    },
+    "import": "Importovať položku",
+    "label": "Sekcia",
+    "moveDown": "Posunúť sekciu nadol",
+    "moveUp": "Posunúť sekciu nahor"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Zapnutie/zakázanie analytiky v jednotke",
+        "label": "Analytics",
+        "no": "Nie",
+        "yes": "Áno"
+      },
+      "author": {
+        "help": "Tu by mal napísať autor jednotky.",
+        "label": "Autor jednotky",
+        "placeholder": "Autor jednotky píše:"
+      },
+      "background": {
+        "help": "Obrázok by mal mať približne 1900 x 550 pixelov.",
+        "label": "Obrázok motívu"
+      },
+      "color": {
+        "help": "Vyžaduje #FFFFFF hexadecimálny formát",
+        "label": "Farba motívu",
+        "placeholder": "Tu zadajte farbu motívu"
+      },
+      "email": {
+        "help": "Toto je e-mailová adresa autora.",
+        "label": "E-mail",
+        "placeholder": "Zadajte e-mailovú adresu autora"
+      },
+      "institution": {
+        "help": "Názov inštitúcie",
+        "label": "Inštitúcia",
+        "placeholder": "Zadajte názov inštitúcie"
+      },
+      "language": {
+        "help": "Jazyk jednotky.",
+        "label": "Jazyk"
+      },
+      "license": {
+        "BY": "Medzinárodné uznanie 4.0 (CC BY 4.0)",
+        "BYNC": "Attribution-NonCommercial-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCND": "Attribution-NonCommercial-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
+        "BYND": "Attribution-NoDerivs 4.0 International (CC BY-ND 4.0)",
+        "BYSA": "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+        "help": "Jednotková licencia",
+        "label": "Licencia",
+        "PRIVATE": "Všetky práva vyhradené"
+      },
+      "resource": {
+        "help": "Zadajte ID zdroja",
+        "label": "Identifikácia zdroja:",
+        "placeholder": "Zadajte ID zdroja"
+      },
+      "theme": {
+        "help": "Vyberte tému jednotky.",
+        "label": "Téma"
+      },
+      "title": {
+        "help": "Toto je názov jednotky.",
+        "label": "Názov jednotky",
+        "placeholder": "Zadajte názov"
+      },
+      "type": {
+        "help": "Toto je typ jednotky.",
+        "interoperability": "Interoperabilita",
+        "label": "Typ jednotky",
+        "open": "Otvorený"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "Toto je zdrojový jazyk jednotky",
+        "label": "Zdrojový jazyk"
+      },
+      "target": {
+        "help": "Cieľový jazyk, do ktorého bude lekcia preložená",
+        "label": "Cieľový jazyk"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Akordeónové menu"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "Nastaví názov skupiny obsahu. Zobrazí sa v názve rozbaľovacej ponuky.",
+          "label": "Názov obsahu",
+          "placeholder": "Príklad: Profesionálne zručnosti"
+        }
+      },
+      "label": "Skupina obsahu"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "Toto bude obrázok na pozadí animácie. Môžete si vybrať jeden zo svojich nahraných obrázkov.",
+          "label": "Webová adresa obrázka",
+          "placeholder": "Sem vložte adresu URL obrázka ...",
+          "preview": "Ukážka animácie"
+        },
+        "pieces": {
+          "altImg": "Alternatívny text pre animovaný obrázok",
+          "altRec": "Alternatívny text pre animovanú oblasť",
+          "delete": "Vymazať",
+          "h": "Vysoký",
+          "new": "Pridať novú animovanú oblasť...",
+          "w": "Široký",
+          "x": "Vľavo",
+          "y": "Nadriadený"
+        }
+      },
+      "label": "Animácia",
+      "prev": "Animácia ešte nebola inicializovaná..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "Bude to výška kontajnera pixelovej animácie",
+          "label": "Výška animácie",
+          "placeholder": "Príklad: 200"
+        },
+        "image": {
+          "help": "Toto bude obrázok, ktorý sa zobrazí v položke. Môžete si vybrať jeden zo svojich nahraných obrázkov alebo nahrať nový.",
+          "label": "Webová adresa obrázka",
+          "placeholder": "Kliknutím sem vyberte obrázok"
+        },
+        "prev": "Ukážka ukážky obrázka",
+        "width": {
+          "help": "Bude to šírka kontajnera animácie v pixeloch",
+          "label": "Šírka animácie",
+          "placeholder": "Príklad: 400"
+        }
+      },
+      "label": "Animácia"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "Toto bude obrázok položky animácie.",
+          "label": "Webová adresa obrázka",
+          "placeholder": "Kliknutím sem vyberte obrázok"
+        },
+        "prev": "Náhľad"
+      },
+      "label": "Položka animácie.",
+      "prev": "Položka animácie ešte nie je nastavená..."
+    },
+    "AudioTermContainer": {
+      "label": "Zvukové podmienky"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "V jednotke obsahu musíte zadať adresu URL zvuku, ktorý chcete prehrať.",
+          "label": "URL adresa zvukového súboru",
+          "placeholder": "Zadajte platnú adresu URL indiemedie..."
+        },
+        "definition": {
+          "help": "Táto definícia by mala byť doslovným prepisom zvuku.",
+          "label": "Definícia",
+          "placeholder": "Napíšte definíciu..."
+        },
+        "term": {
+          "help": "Toto bude výraz umiestnený naľavo od miniaplikácie",
+          "label": "Termín",
+          "placeholder": "Tu napíšte svoj termín..."
+        }
+      },
+      "label": "Audio-termín",
+      "prev": "Audio-termín ešte nebol stanovený..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "Plánovaná činnosť sa môže zobraziť zarovnaná doprava alebo doľava",
+          "label": "Zosúladenie vymenovania",
+          "values": {
+            "left": "Vľavo",
+            "right": "Vpravo"
+          }
+        },
+        "caption": {
+          "help": "Podnadpis citátu sa zobrazí pod cenovou ponukou. Používa sa hlavne na označenie autora alebo autorov citácie",
+          "label": "Podnadpis citátu",
+          "placeholder": "Príklad: Carl Sagan"
+        },
+        "quote": {
+          "help": "Tento text je doslovnou citáciou",
+          "label": "Text citácie",
+          "placeholder": "Príklad: \"Absencia dôkazov nie je dôkazom neprítomnosti.\""
+        },
+        "source": {
+          "help": "Pôvodný zdroj citátu (Rok, kniha, časopis... atď.)",
+          "label": "Pôvod citácie",
+          "placeholder": "Príklad:1990"
+        }
+      },
+      "label": "Citát",
+      "prev": "Citát ešte nebol stanovený..."
+    },
+    "ButtonTextContainer": {
+      "label": "Tlačidlá s textom"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "Toto bude obrázok, ktorý sa zobrazí na tlačidle. Môžete si vybrať jeden zo svojich nahraných obrázkov alebo nahrať nový.",
+          "label": "URL adresa obrázka tlačidla",
+          "placeholder": "Sem vložte svoju adresu URL"
+        },
+        "preview": "Obrázok tlačidla Ukážka",
+        "text": {
+          "help": "V tomto textovom editore môžete napísať obsah textu spojeného s tlačidlom",
+          "label": "Text",
+          "placeholder": "Tu napíšte svoj text..."
+        }
+      },
+      "label": "Prvok tlačidla s textom",
+      "prev": "Prvok tlačidla s textom ešte nebol inicializovaný..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Farba",
+        "helps": {
+          "animation": "Určuje jednu z preddefinovaných animácií pre krabicu s vloženými prvkami (jednoduchými alebo skladacími).",
+          "colorTheme": "Vyžaduje sa #FFFFFF hexadecimálny formát. <strong> Ak nie je vyplnená, farba motívu jednotky bude mať predvolenú hodnotu.</strong>",
+          "styles": "Určuje jeden z preddefinovaných štýlov pre pole s vloženými prvkami.",
+          "textTitle": "Toto bude text, ktorý sa zobrazí ako názov. <strong>Ak nie je vyplnená, bude mať predvolenú hodnotu.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Tu zadajte farbu",
+          "textTitle": "Tu zadajte názov"
+        },
+        "styles": {
+          "animation": "Štýl animácie",
+          "attention": "Pozornosť",
+          "collapsible": "Skladací",
+          "danger": "Nebezpečenstvo",
+          "label": "Štýl",
+          "more": "Zistiť viac",
+          "note": "Nota",
+          "simple": "Jednoduchý"
+        },
+        "textTitle": "Titul"
+      },
+      "label": "Nezaplatený"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "Obrázok sa zobrazí v hornej časti miniaplikácie nad možnosťami.",
+          "label": "Webová adresa obrázka",
+          "placeholder": "Zadajte adresu URL obrázka..."
+        },
+        "options": {
+          "help": "Tieto 4 možnosti sa zobrazia pod obrázkom. Iba jeden môže byť správny.",
+          "label": "Možnosti",
+          "placeholder": "Zadajte možnosť"
+        },
+        "preview": "Ukážka obrázka",
+        "text": {
+          "help": "Tento text sa zobrazí nad obrázkom ako text alebo otázka.",
+          "label": "Text",
+          "placeholder": "Sem napíšte text..."
+        }
+      },
+      "label": "Vyberte možnosť",
+      "prev": "Výber možnosti nie je nastavený ..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "Stĺpce",
+      "form": {
+        "width": {
+          "1": "Šírka prvého stĺpca",
+          "help": "Druhý stĺpec zaberie zostávajúcu šírku"
+        }
+      },
+      "label": "Likvidácia"
+    },
+    "CorrectWord": {
+      "label": "Správne slovo"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "Popisný obrázok otázky",
+          "label": "Webová adresa obrázka",
+          "placeholder": "Sem vložte adresu URL obrázka ..."
+        },
+        "preview": "Ukážka obrázka",
+        "question": {
+          "help": "Toto je otázka, ktorá sa používateľovi zobrazí.",
+          "label": "Text otázky",
+          "placeholder": "Text otázky"
+        },
+        "word": {
+          "help": "Toto slovo bude odpoveďou na otázku",
+          "label": "Odpoveď",
+          "placeholder": "Napíšte slovo..."
+        }
+      },
+      "label": "Správny prvok slova",
+      "prev": "Správne slovo ešte nebolo stanovené..."
+    },
+    "CouplesContainer": {
+      "label": "Páry",
+      "prev": "Páry ešte neboli založené..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "Tento obrázok bude priradený k textu zadanému ako pár v tomto formulári.",
+          "label": "Webová adresa obrázka",
+          "placeholder": "Tu zadajte adresu URL obrázka..."
+        },
+        "legend": {
+          "first": "Prvý prvok",
+          "second": "Druhý prvok"
+        },
+        "preview": "Ukážka obrázka",
+        "text": {
+          "help": "Tento text bude priradený k obrázku, ktorý je zadaný ako pár v tomto formulári.",
+          "label": "Text",
+          "placeholder": "Napíšte text..."
+        },
+        "type": {
+          "image": "Obraz",
+          "label": "Chlap",
+          "text": "Text"
+        }
+      },
+      "label": "Pár",
+      "prev": "Pár ešte nie je založený..."
+    },
+    "DragdropContainer": {
+      "label": "Presunutie myšou"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "Definícia sa zobrazí napravo od interaktívneho prvku a študent musí presunúť výraz do definície",
+          "label": "Definícia",
+          "placeholder": "Príklad: Všetky ľudské bytosti majú právo vyjadriť sa bez toho, aby boli obťažované kvôli tomu, čo si myslia"
+        },
+        "term": {
+          "help": "Výraz sa zobrazí naľavo od interaktívneho prvku a bude to ten, ktorý študent musí presunúť do definície.",
+          "label": "Termín",
+          "placeholder": "Príklad: sloboda prejavu"
+        }
+      },
+      "label": "Definícia pojmu",
+      "prev": "Položka nie je stanovená..."
+    },
+    "FourColumnsLayout": {
+      "label": "Štyri stĺpce"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Musíte napísať aspoň 2 odpovede a označiť, ktorá z nich je správna.",
+          "label": "Možné odpovede"
+        },
+        "questionPreview": {
+          "help": "Takto bude otázka vyzerať v obsahovej jednotke.",
+          "label": "Pozrite si ukážku textu otázky.",
+          "placeholder": "Text otázky s prázdnym slotom ___."
+        },
+        "questionText": {
+          "help": "Musíte zadať text otázky s prázdnym miestom, ktoré chcete, so špeciálnym kľúčovým slovom [prázdne].",
+          "label": "Text otázky",
+          "placeholder": "Text otázky s prázdnym prvkom"
+        }
+      },
+      "label": "Vyplňte otázku medzery",
+      "prev": "Otázka vyplnenia medzery ešte nebola stanovená..."
+    },
+    "GenericWidget": {
+      "label": "Miniaplikácia"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "Odpoveď na otázku",
+          "label": "Odpoveď",
+          "placeholder": "Tu napíšte svoju odpoveď"
+        },
+        "attempts": {
+          "help": "Počet pokusov uhádnuť odpoveď. Musí to byť číslo od 1 do 9.",
+          "label": "Pokusy"
+        },
+        "question": {
+          "help": "O otázke, ktorú treba zodpovedať",
+          "label": "Otázka",
+          "placeholder": "Tu napíšte svoju otázku"
+        }
+      },
+      "label": "Hádajte slovo",
+      "prev": "Hádam slovo ešte nebolo inicializované..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Ak vytvoríte text, bude to titulok obrázka",
+          "label": "Titulok k obrázku",
+          "placeholder": "Zadajte popis."
+        },
+        "image": {
+          "help": "Toto je obrázok, ktorý sa zobrazí v položke.",
+          "label": "Webová adresa obrázka",
+          "placeholder": "Kliknutím sem vyberte obrázok"
+        },
+        "preview": "Náhľad"
+      },
+      "label": "Obrázok s textom vyššie",
+      "prev": "Obrázok s textom vyššie ešte nie je stanovený..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Obraz a zvuk"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "Zvukový súbor sa prehrá po kliknutí na obrázok.",
+          "label": "URL adresa zvukového súboru",
+          "placeholder": "Zadajte platnú adresu URL indiemedie..."
+        },
+        "image": {
+          "help": "Obrázok sa zobrazí ako prvý",
+          "label": "Webová adresa obrázka",
+          "placeholder": "Zadajte adresu URL obrázka..."
+        },
+        "preview": "Ukážka obrázka",
+        "text": {
+          "help": "Text sa zobrazí nad obrázkom, keď naň umiestnite kurzor myši.",
+          "label": "Text obrázka",
+          "placeholder": "Napíšte text..."
+        }
+      },
+      "label": "Obrazová a zvuková položka",
+      "prev": "Obrazová a zvuková položka ešte nie je stanovená ..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "Toto bude obrázok, ktorý sa zobrazí v položke. Môžete si vybrať jeden zo svojich nahraných obrázkov alebo nahrať nový.",
+          "label": "Webová adresa obrázka",
+          "placeholder": "Kliknutím sem vyberte obrázok"
+        },
+        "layout": {
+          "help": "Orientácia obrazového a textového bloku určuje, kde sa objaví každý z prvkov v bloku.",
+          "label": "Orientácia",
+          "values": {
+            "0": "Text vpravo, obrázok vľavo",
+            "1": "Text vľavo, obrázok vpravo"
+          }
+        },
+        "preview": "Ukážka obrázka",
+        "text": {
+          "help": "Musíte napísať text.",
+          "label": "V tomto textovom editore môžete napísať obsah bloku.",
+          "placeholder": "Napíšte text..."
+        }
+      },
+      "label": "Obrázok a text",
+      "prev": "Obrázok a text ešte nie sú stanovené..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Pomocou textového vstupu zadajte adresu URL interaktívneho videa vytvoreného pomocou nástroja na interaktívne video.",
+          "label": "Webová adresa videa",
+          "placeholder": "Príklad: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Interaktívne video",
+      "prev": "Interaktívne video ešte nebolo vytvorené"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "Táto legenda sa zobrazí pod vzorcom a ako blok textu",
+          "label": "Legenda vzorca",
+          "placeholder": "Príklad: Kvadratický vzorec"
+        },
+        "formula": {
+          "help": "Na zadanie vzorca použite textovú oblasť. Pod touto oblasťou sa zobrazí ukážka vzorca, ak je správny, alebo text v červenej farbe, ak vzorec nie je správny",
+          "label": "Vzorec vo formáte LaTex",
+          "placeholder": "Príklad: \\text{Kvadratický vzorec je }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "Vzorec LaTeX",
+      "prev": "Vzorec ešte nebol stanovený..."
+    },
+    "MissingWords": {
+      "label": "Chýbajúce slová"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Vymazať",
+          "new": "Pridať novú odpoveď...",
+          "text": "Odpoveď"
+        },
+        "sentence": {
+          "help": "Musíte napísať text vety vrátane medzery pomocou špeciálnej značky [blanker].",
+          "label": "Text vety",
+          "placeholder": "Text vety so značkou [blank]"
+        },
+        "sentencePreview": {
+          "help": "Takto by ste sa pozerali na frázu v jednotke obsahu.",
+          "label": "Ukážka frázy",
+          "placeholder": "Text vety so značkou ___ "
+        }
+      },
+      "label": "Prvok chýbajúcich slov",
+      "prev": "Chýbajúci slovný prvok ešte nebol stanovený..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "Tento text sa zobrazí ako text tlačidla, ktorý musí byť aktivovaný na otvorenie modálneho okna.",
+          "label": "Text tlačidla",
+          "placeholder": "Napíšte text..."
+        }
+      },
+      "label": "Prepravné okno"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "Toto bude obrázok na pozadí puzzle. Môžete si vybrať jeden zo svojich nahraných obrázkov.",
+          "label": "Webová adresa obrázka",
+          "placeholder": "Sem vložte adresu URL obrázka ...",
+          "preview": "Ukážka puzzle"
+        },
+        "pieces": {
+          "altImg": "Alternatívny text na orezanie",
+          "altRec": "Alternatívny text pre pozíciu",
+          "delete": "Vymazať",
+          "h": "Vysoký",
+          "new": "Pridať nový kúsok...",
+          "w": "Široký",
+          "x": "Vľavo",
+          "y": "Nadriadený"
+        }
+      },
+      "label": "Hádanka",
+      "prev": "Puzzle ešte nebolo inicializované..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Názov skupiny",
+          "label": "Titul",
+          "placeholder": "Príklad: Modul práva"
+        }
+      },
+      "label": "Skupina",
+      "prev": "Skupina, ktorá ešte nie je estabecido ..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Obsah"
+    },
+    "RelatedUnitsItem": {
+      "current": "Aktuálna jednotka",
+      "form": {
+        "current": {
+          "title": "Toto je aktuálna jednotka"
+        },
+        "title": {
+          "help": "Názov príspevku",
+          "label": "Titul",
+          "placeholder": "Príklad: Ľudské práva"
+        },
+        "url": {
+          "help": "Koncová webová adresa",
+          "label": "URL adresa",
+          "placeholder": "Príklad: https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Vchod",
+      "prev": "Zápis ešte nebol stanovený..."
+    },
+    "SchemaContainer": {
+      "label": "Schéma"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "Toto bude čiastočný obraz schémy.",
+          "label": "Webová adresa obrázka",
+          "placeholder": "Kliknutím sem vyberte obrázok"
+        },
+        "prev": "Ukážka obrázka"
+      },
+      "label": "Položka prehľadu",
+      "prev": "Položka esuqema ešte nebola stanovená..."
+    },
+    "SentenceOrderContainer": {
+      "label": "Triedenie fráz"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Vymazať",
+          "help": "Odpovede, ktoré budú vytvorené zo zadaných slov",
+          "legend": "Zoznam odpovedí",
+          "new": "Pridať novú odpoveď...",
+          "text": "Odpoveď"
+        },
+        "words": {
+          "delete": "Vymazať",
+          "help": "Odpovede by sa mali dať vyvodiť z týchto slov",
+          "legend": "Zoznam slov",
+          "new": "Pridať nové slovo...",
+          "text": "Slovo"
+        }
+      },
+      "label": "Prvok zoradenia fráz",
+      "prev": "Prvok triedenia viet ešte nebol inicializovaný..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "Nastaví zarovnanie obrázka, keď vzhľad nie je \"Upraviť pôvodné rozmery podľa dostupného priestoru\".",
+          "label": "Zarovnanie obrazu",
+          "values": {
+            "center": "Zamerané",
+            "left": "Vľavo",
+            "right": "Doprava"
+          }
+        },
+        "aspect": {
+          "help": "Obrázok môže byť zobrazený s pôvodnými rozmermi (ak je to možné) alebo môže byť nastavený na šírku obrazovky (mierka obrazu). Ak sú rozmery vyššie a širšie, ako dokáže obrazovka zobraziť, vždy sa automaticky prispôsobí obrazovke",
+          "label": "Vzhľad obrázka",
+          "values": {
+            "custom": "Zvyk",
+            "fit": "Prispôsobte pôvodné rozmery dostupnému priestoru",
+            "original": "Pôvodné rozmery"
+          }
+        },
+        "image": {
+          "help": "Toto bude obrázok, ktorý sa zobrazí v položke.",
+          "label": "Webová adresa obrázka",
+          "placeholder": "Sem zadajte adresu URL obrázka"
+        },
+        "preview": "Náhľad",
+        "size": {
+          "height": "Vysoký",
+          "heightPlaceholder": "Výška obrázka...",
+          "keepRatio": "Zachovanie pomeru obrazu",
+          "width": "Široký",
+          "widthPlaceholder": "Šírka obrázka..."
+        }
+      },
+      "label": "Obraz",
+      "prev": "Obrázok ešte nebol vytvorený..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Musíte napísať aspoň 2 odpovede a označiť, ktorá z nich je správna.",
+          "label": "Možné odpovede"
+        },
+        "questionText": {
+          "help": "Toto je text otázky, ktorý sa zobrazí v obsahovej jednotke.",
+          "label": "Text otázky",
+          "placeholder": "Text jednoduchej otázky..."
+        }
+      },
+      "label": "Jednoduchá otázka",
+      "prev": "Jednoduchá otázka ešte nebola stanovená..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "Toto bude názov, ktorý sa zobrazí v názve karty.",
+          "label": "Názov karty",
+          "placeholder": "Príklad: Profesionálne zručnosti"
+        }
+      },
+      "label": "Mihalnica"
+    },
+    "Table": {
+      "empty": "Tabuľka ešte nebola inicializovaná",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "Názov stĺpca je prázdny alebo už definovaný",
+            "label": "Názov stĺpca",
+            "placeholder": "Sem zadajte názov stĺpca..."
+          },
+          "columnPosition": {
+            "error": "Pozícia stĺpca mimo rozsahu",
+            "label": "Pozícia stĺpca"
+          },
+          "label": "Pridať nový stĺpec",
+          "submit": "Pridať stĺpec"
+        },
+        "addRow": "Pridať nový riadok",
+        "deleteColumn": "Vymazať stĺpec",
+        "deleteRow": "Vymazať riadok"
+      },
+      "help": {
+        "edit": "Vyberte bunku, ktorú chcete upraviť. Ak chcete počas úprav pridať nové riadky, stlačte kláves Shift a zároveň stlačte kláves Enter."
+      },
+      "label": "Doska",
+      "prev": "Tabuľka ešte nebola stanovená..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Riasy",
+      "label": "Ponuka kariet"
+    },
+    "TermClassification": {
+      "label": "Klasifikácia",
+      "prev": "Klasifikácia"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "Toto je stĺpec, na ktorý budú podmienky odkazovať.",
+          "label": "Stĺpec",
+          "placeholder": "Stĺpec"
+        },
+        "terms": {
+          "help": "V tomto príspevku musíte napísať slová, ktoré súvisia s pojmom oddeleným bodkočiarkou. Napríklad: tieto; sú; niekoľko; Slová",
+          "label": "Slová",
+          "placeholder": "Písanie slov oddelených bodkočiarkami"
+        }
+      },
+      "label": "Položka klasifikácie",
+      "prev": "Položka ešte nie je stanovená..."
+    },
+    "Test": {
+      "label": "Typ skúšky",
+      "questionSelect": "Vyberte typ otázky, ktorú chcete pridať do kvízu"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Musíte napísať text.",
+        "label": "V tomto textovom editore môžete napísať obsah bloku.",
+        "placeholder": "Zadajte textovú správu...",
+        "styles": {
+          "attention": "Pozornosť",
+          "default": "Žiadny štýl",
+          "help": "Určuje rozloženie rámčeka, ktoré obklopuje text",
+          "label": "Štýl textového bloku",
+          "more": "Zistiť viac",
+          "note": "Nota"
+        }
+      },
+      "label": "Textový blok",
+      "prev": "Text ešte nie je stanovený..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Tri stĺpce"
+    },
+    "TrueFalseContainer": {
+      "label": "Pravda/lož",
+      "prev": "Pravda/lož ešte nie je stanovená..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Nepravda",
+          "help": "Vyberte si medzi správnou odpoveďou true alebo false",
+          "label": "Správna odpoveď",
+          "true": "Pravdivý"
+        },
+        "questionText": {
+          "help": "Toto je text položky.",
+          "label": "Text položky",
+          "placeholder": "Text položky..."
+        }
+      },
+      "label": "Pravda/nepravda položka",
+      "prev": "Pravda/nepravda položka ešte nebola stanovená..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Nepravda",
+          "help": "Vyberte si medzi správnou odpoveďou true alebo false",
+          "label": "Správna odpoveď",
+          "true": "Pravdivý"
+        },
+        "questionText": {
+          "help": "Toto je text otázky, ktorý sa zobrazí v obsahovej jednotke.",
+          "label": "Znenie textovej otázky",
+          "placeholder": "Text otázky..."
+        }
+      },
+      "label": "Pravdivá alebo nepravdivá otázka",
+      "prev": "Otázka pravdivosti alebo nepravdy nbo je zatiaľ stanovená..."
+    },
+    "TwoColumnsLayout": {
+      "label": "Dva stĺpce"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Zobraziť predvolené titulky",
+          "no": "Nie",
+          "yes": "Áno"
+        },
+        "url": {
+          "help": "Pomocou textového vstupu zadajte adresu URL svojho videa (youtube, vimeo...)",
+          "label": "Webová adresa videa",
+          "placeholder": "Príklad: https://example.com/video.mp4"
+        }
+      },
+      "label": "Video",
+      "prev": "Video ešte nie je nastavené..."
+    }
+  }
+}

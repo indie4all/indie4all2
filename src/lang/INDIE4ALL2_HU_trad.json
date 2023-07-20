@@ -1,0 +1,1510 @@
+{
+  "buttons": {
+    "toggleCategories": "Kategóriák megjelenítése/elrejtése",
+    "viewImage": "Lásd a képet"
+  },
+  "common": {
+    "alt": {
+      "help": "Ez a kép alternatív leíró szövege a hozzáférhetőség szempontjából",
+      "label": "A kép helyettesítő szövege",
+      "placeholder": "Helyettesítő szöveg"
+    },
+    "captions": {
+      "help": "A párbeszéd, hangeffektusok, zeneszámok és egyéb hanginformációk átiratát tartalmazó fájl INDIeMedia URL-je arra az esetre, ha a néző siket vagy nagyothalló, vagy ha a videó/hang el van némítva. A feliratok a videó felett is megjelennek.",
+      "label": "Feliratok (CC)",
+      "placeholder": "Példa: https://indiemedia.upct.es/subs.vtt"
+    },
+    "descriptions": {
+      "help": "INDIeMedia annak a fájlnak az URL-je, amely szöveges leírásokat tartalmaz arról, hogy mi történik a videóban, ha a videó egy része nem érhető el, mert a néző vak és nem használ képernyőt. A leírásokat képernyőolvasó olvassa fel, vagy külön hangsávvá alakítja.",
+      "label": "Leírás: __________",
+      "placeholder": "Példa: https://indiemedia.upct.es/descriptions.vtt"
+    },
+    "download": {
+      "description": "Töltse le a meghajtót, kérjük, várjon",
+      "title": "Letöltés"
+    },
+    "feedback": {
+      "help": "Értelmezze a visszajelzést, amelyet a hallgató kap, függetlenül attól, hogy helyesen vagy helytelenül válaszol-e",
+      "label": "Visszacsatolás",
+      "negative": "Negatív visszajelzés...",
+      "positive": "Pozitív visszajelzés..."
+    },
+    "generate": {
+      "description": "Generálás, kérjük, várjon",
+      "title": "Generáló"
+    },
+    "help": {
+      "button": "Alapértelmezett",
+      "help": "Ez a szöveg megjelenik a widget felett, így a felhasználó megérti, hogyan kell vele interakcióba lépni. <strong>Ha üresen hagyja, az alapértelmezett szöveg jelenik meg.</strong>",
+      "label": "Segítség",
+      "placeholder": "Alapértelmezett súgószöveg"
+    },
+    "language": {
+      "EL": "Görög",
+      "EN": "Angol",
+      "ES": "Spanyol",
+      "FR": "Francia",
+      "LT": "Litván"
+    },
+    "loading": {
+      "description": "Betöltés, kérjük, várjon",
+      "title": "Berakás"
+    },
+    "name": {
+      "help": "Ez lesz a widgetpéldány neve a tanulási elemzéshez",
+      "label": "Név",
+      "placeholder": "Widget-példány neve"
+    },
+    "navbar": {
+      "options": "Kibontási/összecsukási beállítások"
+    },
+    "preview": {
+      "description": "Az előnézet létrehozása folyamatban van, kérjük, várjon",
+      "generated": {
+        "description": "Az előnézet elkészült. Ha böngészője nem irányítja át az előzetes verzióra, kattintson az alábbi linkre:",
+        "title": "Az előnézet sikeresen létrejött"
+      },
+      "title": "Előnézet létrehozása"
+    },
+    "publish": {
+      "description": "A meghajtó letöltésre készül, kérjük, várjon",
+      "title": "Kiadói egység"
+    },
+    "publishToNetlify": {
+      "description": "Az egységed feltöltés alatt áll a Netlify-ra, várj",
+      "title": "Kiadói egység a Netlify-ban"
+    },
+    "save": {
+      "description": "Megtakarítás, kérjük, várjon",
+      "title": "Megtakarítás"
+    },
+    "scorm": {
+      "description": "SCORM csomagja jön létre, kérjük, várjon",
+      "title": "SCORM-csomag létrehozása"
+    },
+    "selectType": "Válasszon típust az alábbi lehetőségek közül",
+    "unit": {
+      "settings": "Adja meg az egység adatait"
+    }
+  },
+  "dialog": {
+    "translate": "Fordítási egység"
+  },
+  "errors": {
+    "AcordionContainer": {
+      "data": {
+        "empty": "A harmonika üres. A tartalmat a jobb oldalon található hozzáadás gombbal kell hozzáadnia."
+      }
+    },
+    "AcordionContent": {
+      "data": {
+        "empty": "A tartály üres. Legalább egy elemet hozzá kell adnia a tárolóhoz."
+      },
+      "title": {
+        "invalid": "A tároló címe érvénytelen. Létre kell hoznia egyet."
+      }
+    },
+    "Animation": {
+      "image": {
+        "invalid": "A háttérképhez beállított URL-cím helytelen. Meg kell adnia egy érvényes független szerző URL-címét."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "Az animált kép helyettesítő szövegét be kell állítani."
+        },
+        "altRec": {
+          "invalid": "Az animált terület helyettesítő szövegét be kell állítani."
+        },
+        "empty": "Az animációnak legalább egy animált területtel kell rendelkeznie.",
+        "h": {
+          "invalid": "A magasságot be kell állítani, és érvényes számnak kell lennie."
+        },
+        "w": {
+          "invalid": "A szélességet be kell állítani, és érvényes számnak kell lennie."
+        },
+        "x": {
+          "invalid": "A bal szélső koordinátát be kell állítani, és érvényes számnak kell lennie."
+        },
+        "y": {
+          "invalid": "A felső számot be kell állítani, és érvényes számnak kell lennie."
+        }
+      }
+    },
+    "AnimationContainer": {
+      "data": {
+        "empty": "Az animáció üres. Legalább egy elemet hozzá kell adnia a hozzáadás gombbal."
+      },
+      "height": {
+        "invalid": "Az animáció magasságának 0-nál nagyobbnak kell lennie."
+      },
+      "image": {
+        "invalid": "A képhez beállított URL-cím érvénytelen. Győződjön meg arról, hogy érvényes indiemedia URL-t ad meg a képmezőben."
+      },
+      "width": {
+        "invalid": "Az animáció szélességének 0-nál nagyobbnak kell lennie."
+      }
+    },
+    "AnimationItem": {
+      "image": {
+        "invalid": "A képhez beállított URL-cím érvénytelen. Győződjön meg arról, hogy érvényes indiemedia URL-t ad meg a képmezőben."
+      }
+    },
+    "AudioTermContainer": {
+      "data": {
+        "empty": "Legalább egy hangkifejezés-definíciót hozzá kell adnia"
+      }
+    },
+    "AudioTermItem": {
+      "audio": {
+        "invalid": "Meg kell adnia egy érvényes független média URL-címet"
+      },
+      "definition": {
+        "invalid": "Meg kell adnia egy definíciót."
+      },
+      "term": {
+        "invalid": "Meg kell adnia egy kifejezést."
+      }
+    },
+    "Blockquote": {
+      "quote": {
+        "invalid": "Nem írta meg az idézet tartalmát. Legalább meg kell írnia a tartalmat."
+      }
+    },
+    "ButtonTextContainer": {
+      "data": {
+        "empty": "Legalább egy szöveg- és gombtípuselemet meg kell adnia."
+      }
+    },
+    "ButtonTextItem": {
+      "image": {
+        "invalid": "A képhez beállított URL-cím érvénytelen. Győződjön meg arról, hogy érvényes IndieMedia URL-címet ad meg a gomb képmezőjében."
+      },
+      "text": {
+        "invalid": "A szöveg üres. Szöveget kell írnia vagy másolnia."
+      }
+    },
+    "Callout": {
+      "data": {
+        "empty": "A kijelölt ablak üres. Legalább egy egyszerű elemet hozzá kell adnia."
+      },
+      "text": {
+        "invalid": "A szöveg üres. Írnia kell egy kis szöveget."
+      }
+    },
+    "ChooseOption": {
+      "image": {
+        "invalid": "A Denes érvényes képet ad meg az URL mezőben."
+      },
+      "options": {
+        "noCorrect": "Legalább egy helyeset ki kell választania",
+        "notEnougOptions": "4 opciót kell megadnia"
+      },
+      "text": {
+        "invalid": "A szöveg üres. Be kell írnia egy szöveget."
+      }
+    },
+    "ColumnLayout": {
+      "data": {
+        "empty": "Az elrendezés minden oszlopának tartalmaznia kell legalább egy elemet a bal oldali palettáról húzva."
+      },
+      "width": {
+        "invalid": "Érvénytelen oszlopszélesség"
+      }
+    },
+    "common": {
+      "alt": {
+        "invalid": "A képhez helyettesítő szöveget kell megadnia"
+      },
+      "audioblob": {
+        "invalid": "A hangfájl tartalma nem megfelelő. Ki kell választania egy érvényes fájlt."
+      },
+      "captions": {
+        "invalid": "A feliratokhoz beállított URL érvénytelen. Győződjön meg arról, hogy érvényes független média URL-címet adott meg"
+      },
+      "captionsblob": {
+        "invalid": "A feliratfájl tartalma helytelen. Ki kell választania egy érvényes fájlt."
+      },
+      "descriptions": {
+        "invalid": "A leíráshoz beállított URL-cím érvénytelen. Győződjön meg arról, hogy érvényes független média URL-címet adott meg"
+      },
+      "imageblob": {
+        "invalid": "A kép tartalma nem megfelelő. Ki kell választania egy érvényes képet."
+      },
+      "name": {
+        "invalid": "Meg kell adnia egy nevet ennek a példánynak.",
+        "notUniqueName": "A példány nevének egyedinek kell lennie az összes tartalomban."
+      }
+    },
+    "CorrectWordContainer": {
+      "data": {
+        "empty": "Legalább egy helyes Word-elemet meg kell adnia."
+      }
+    },
+    "CorrectWordItem": {
+      "image": {
+        "invalid": "A képhez beállított URL-cím érvénytelen. Meg kell adnia egy érvényes független szerző URL-címét."
+      },
+      "question": {
+        "invalid": "A kérdés szövege üres."
+      },
+      "word": {
+        "invalid": "A válasz szövege üres."
+      }
+    },
+    "CouplesContainer": {
+      "data": {
+        "empty": "Legalább egy párt hozzá kell adnia"
+      }
+    },
+    "CouplesItem": {
+      "image": {
+        "invalid": "A képhez megadott URL érvénytelen. Győződjön meg arról, hogy érvényes indiemedia URL-címet ad meg a képmezőben."
+      },
+      "text": {
+        "invalid": "A szöveg üres. Rövid szöveget kell írnia."
+      },
+      "type": {
+        "invalid": "Az elemhez beállított típus érvénytelen. Győződjön meg arról, hogy a \"Szöveg\" vagy a \"Kép\" opció van kiválasztva."
+      }
+    },
+    "DragdropContainer": {
+      "data": {
+        "empty": "Az elem üres. Legalább egy kifejezésdefiníciós elemet hozzá kell adnia a jobb oldalon található hozzáadás gombbal."
+      }
+    },
+    "DragpdropItem": {
+      "definition": {
+        "invalid": "A definíciós mező üres. Meg kell írnia egy definíciót."
+      },
+      "term": {
+        "invalid": "A kifejezés mező üres. Meg kell írnia egy kifejezést."
+      }
+    },
+    "GapQuestion": {
+      "answers": {
+        "noCorrect": "Ki kell választania a helyes választ",
+        "notEnoughAnswers": "Legalább 2 lehetséges választ kell írnia"
+      },
+      "question": {
+        "empty": "A kérdés szövege nem lehet üres",
+        "onlyOneBlank": "A kérdésben csak egy szóköz szerepelhet"
+      }
+    },
+    "GuessWord": {
+      "answer": {
+        "invalid": "A válasz nem lehet üres"
+      },
+      "attempts": {
+        "invalid": "A kísérleteknek 1 és 9 közötti számúnak kell lenniük"
+      },
+      "question": {
+        "invalid": "A kérdés nem lehet üres"
+      }
+    },
+    "Image": {
+      "image": {
+        "invalid": "A képhez beállított URL-cím érvénytelen. Győződjön meg arról, hogy érvényes indiemedia URL-t ad meg a képmezőben."
+      },
+      "text": {
+        "invalid": "A szöveg üres. Szöveget kell írnia"
+      }
+    },
+    "ImageAndSoundContainer": {
+      "columns": {
+        "invalid": "Az oszlopok számának 1,2-nek vagy 3-nak kell lennie"
+      },
+      "data": {
+        "empty": "Legalább egy kép- és hangelemet meg kell adnia."
+      }
+    },
+    "ImageAndSoundItem": {
+      "audio": {
+        "invalid": "Meg kell adnia egy érvényes független média URL-címet"
+      },
+      "image": {
+        "invalid": "A képhez megadott URL érvénytelen. Győződjön meg arról, hogy érvényes indiemedia URL-címet ad meg a képmezőben."
+      },
+      "text": {
+        "invalid": "A szöveg üres. Rövid szöveget kell írnia."
+      }
+    },
+    "ImageAndText": {
+      "image": {
+        "invalid": "A képhez beállított URL-cím érvénytelen. Győződjön meg arról, hogy érvényes indiemedia URL-t ad meg a képmezőben."
+      },
+      "text": {
+        "invalid": "A szöveg üres. Szöveget kell írnia vagy másolnia."
+      }
+    },
+    "InteractiveVideo": {
+      "videourl": {
+        "invalid": "A videóhoz konfigurált URL érvénytelen. Győződjön meg róla, hogy indieopen interaktív videókból ad meg egyet."
+      }
+    },
+    "LatexFormula": {
+      "caption": {
+        "invalid": "Meg kell adnia egy jelmagyarázatot a képlethez."
+      },
+      "formula": {
+        "invalid": "LaTex formátumú képletet kell megadnia."
+      }
+    },
+    "MissingWords": {
+      "data": {
+        "empty": "Legalább egy hiányzó szóelemet meg kell adnia."
+      }
+    },
+    "MissingWordsItem": {
+      "combinations": {
+        "empty": "Legalább egy helyes választ kell írnia",
+        "invalid": "A válasz szövege üres"
+      },
+      "sentence": {
+        "empty": "A kifejezés nem lehet üres",
+        "onlyOneBlank": "A mondatban csak hézagjelölőt kell elhelyezni"
+      }
+    },
+    "Modal": {
+      "data": {
+        "empty": "A modális üres. Legalább egy egyszerű elemet hozzá kell adnia."
+      },
+      "text": {
+        "invalid": "A szöveg üres. Írnia kell egy kis szöveget."
+      }
+    },
+    "Puzzle": {
+      "image": {
+        "invalid": "A háttérképhez beállított URL-cím helytelen. Meg kell adnia egy érvényes független szerző URL-címét."
+      },
+      "piece": {
+        "altImg": {
+          "invalid": "A vágás helyettesítő szövegét be kell állítani."
+        },
+        "altRec": {
+          "invalid": "A pozíció helyettesítő szövegét be kell állítani."
+        },
+        "empty": "A puzzle-nek legalább egy darabból kell állnia.",
+        "h": {
+          "invalid": "A magasságot be kell állítani, és érvényes számnak kell lennie."
+        },
+        "w": {
+          "invalid": "A szélességet be kell állítani, és érvényes számnak kell lennie."
+        },
+        "x": {
+          "invalid": "A bal szélső koordinátát be kell állítani, és érvényes számnak kell lennie."
+        },
+        "y": {
+          "invalid": "A felső számot be kell állítani, és érvényes számnak kell lennie."
+        }
+      }
+    },
+    "RelatedUnitsAssociation": {
+      "data": {
+        "empty": "Az elem üres. Legalább egy bejegyzést hozzá kell adnia a jobb oldalon található hozzáadás gombbal."
+      },
+      "title": {
+        "invalid": "A cím mező üres. Meg kell írnia egy címet."
+      }
+    },
+    "RelatedUnitsContainer": {
+      "data": {
+        "duplicated": "Legalább egy ismétlődő hivatkozás van. Minden bejegyzéshez egyedi linket kell megadnia.",
+        "empty": "Az elem üres. Legalább egy bejegyzést hozzá kell adnia a jobb oldalon található hozzáadás gombbal.",
+        "multipleCurrent": "Legalább két aktuális bejegyzés van. Csak egy aktuális bejegyzést kell megadnia."
+      },
+      "moreThanOne": "Legfeljebb egy tartalomjegyzék-elemet kell megadnia."
+    },
+    "RelatedUnitsItem": {
+      "title": {
+        "invalid": "A cím mező üres. Meg kell írnia egy címet."
+      },
+      "url": {
+        "invalid": "Az url mezőt a következő formátumra kell beállítani: https://[forrás]/[szerző]/[egység]"
+      }
+    },
+    "SchemaContainer": {
+      "data": {
+        "empty": "A séma üres. Legalább egy elemet hozzá kell adnia a jobb oldalon található hozzáadás gombbal."
+      },
+      "height": {
+        "invalid": "Az animáció magasságának 0-nál nagyobbnak kell lennie."
+      },
+      "image": {
+        "invalid": "A teljes képhez beállított URL érvénytelen. Győződjön meg arról, hogy érvényes indiemedia URL-címet adott meg."
+      },
+      "width": {
+        "invalid": "Az animáció szélességének 0-nál nagyobbnak kell lennie."
+      }
+    },
+    "SchemaItem": {
+      "image": {
+        "invalid": "A képhez beállított URL-cím érvénytelen. Győződjön meg arról, hogy érvényes indiemedia URL-t ad meg a képmezőben."
+      },
+      "text": {
+        "invalid": "A szöveg üres. Írnia kell egy kis szöveget."
+      }
+    },
+    "section": {
+      "emptyData": "Egy szakasz nem lehet üres. Legalább egy elemet hozzá kell adnia.",
+      "invalidBookmark": "A szakasznak érvényes könyvjelzővel kell rendelkeznie.",
+      "invalidImage": "A szakasznak háttérképpel kell rendelkeznie.",
+      "invalidName": "A szakasznak névvel kell rendelkeznie.",
+      "typeImageNotSelected": "Ha a kiválasztott típus Háttérkép, be kell állítania a képet."
+    },
+    "SentenceOrderContainer": {
+      "data": {
+        "empty": "Legalább egy mondatrendezési elemet meg kell adnia."
+      }
+    },
+    "SentenceOrderItem": {
+      "answers": {
+        "empty": "Legalább egy helyes választ kell írnia",
+        "impossible": "A mondat nem konstruálható a megállapított szavakból",
+        "invalid": "A válasz szövege üres"
+      },
+      "words": {
+        "empty": "Legalább egy érvényes szót be kell írnia",
+        "invalid": "A Word szövege üres"
+      }
+    },
+    "SimpleImage": {
+      "image": {
+        "invalid": "A képhez beállított URL-cím érvénytelen. Győződjön meg arról, hogy érvényes indiemedia URL-t ad meg a képmezőben.",
+        "sizeNotSet": "A kép szélességét és magasságát akkor kell beállítani, ha megjelenése \"Egyéni\""
+      }
+    },
+    "SimpleQuestion": {
+      "answers": {
+        "noCorrect": "Ki kell választania a helyes választ",
+        "notEnoughAnswers": "Legalább 2 lehetséges választ kell írnia"
+      },
+      "question": {
+        "empty": "A kérdés szövege nem lehet üres"
+      }
+    },
+    "TabContent": {
+      "data": {
+        "empty": "A lap üres. Legalább egy elemet hozzá kell adnia a laphoz."
+      },
+      "name": {
+        "invalid": "A lap neve érvénytelen. Létre kell hoznia egyet."
+      }
+    },
+    "Table": {
+      "empty": "A táblázatban nincsenek oszlopok beállítva"
+    },
+    "TabsContainer": {
+      "data": {
+        "empty": "A lapmenü nem tartalmaz lapokat. Legalább egyet hozzá kell adnia."
+      }
+    },
+    "TermClassification": {
+      "data": {
+        "duplicatedColumn": "Vannak ismétlődő oszlopok. Ellenőrizze a tételeket.",
+        "duplicatedTerms": "Az oszlopok között ismétlődő kifejezések találhatók. A feltételek áttekintése"
+      }
+    },
+    "TermClassificationItem": {
+      "column": {
+        "empty": "Az oszlop nem lehet üres"
+      },
+      "terms": {
+        "empty": "A feltételek nem lehetnek üresek.",
+        "invalid": "A feltételek nem felelnek meg az előírt formátumnak. Kérjük, pontosvesszővel (;)) válassza el a kifejezéseket."
+      }
+    },
+    "Test": {
+      "data": {
+        "empty": "A teszt üres. Legalább egy kérdést hozzá kell adnia."
+      }
+    },
+    "TextBlock": {
+      "text": {
+        "invalid": "A szöveg üres. Rövid szöveget kell írnia."
+      }
+    },
+    "TrueFalseContainer": {
+      "data": {
+        "empty": "Legalább egy igaz vagy hamis elemet hozzá kell adnia"
+      }
+    },
+    "TrueFalseItem": {
+      "question": {
+        "empty": "A kérdés szövege nem lehet üres"
+      }
+    },
+    "TrueFalseQuestion": {
+      "question": {
+        "empty": "A kérdés szövege nem lehet üres"
+      }
+    },
+    "Video": {
+      "videourl": {
+        "invalid": "A videó URL-je érvénytelen. Ügyelned kell arra, hogy érvényes URL-t adj meg az IndieMedia vagy a Youtube szolgáltatásból.",
+        "localInvalid": "A videó URL-je érvénytelen. Meg kell győződnöd arról, hogy érvényes YouTube-URL-t adtál meg."
+      }
+    }
+  },
+  "footer": {
+    "content": "Új szakaszokat a felső eszköztár segítségével adhat hozzá"
+  },
+  "general": {
+    "areYouSure": "Biztos vagy benne?",
+    "cancel": "Érvénytelenít",
+    "close": "Bezár",
+    "confirm": "Megerősít",
+    "delete": "Megsemmisít",
+    "discard": "Eldob",
+    "false": "Téves",
+    "load": "Rakomány",
+    "modelDetected": "Szeretne betölteni egy korábbi egységet?",
+    "true": "Igaz"
+  },
+  "header": {
+    "addSection": "Szakasz hozzáadása",
+    "clear": "Tartalom törlése",
+    "download": "Letöltési egység",
+    "importSection": "Importálás szakasz",
+    "install": "Alkalmazás telepítése",
+    "preview": "Tartalom előnézete",
+    "publish": "Tartalom közzététele",
+    "publishToNetlify": "Tartalom közzététele a Netlify szolgáltatásban",
+    "redo": "Művelet megismétlése",
+    "save": "Tartalom mentése",
+    "scorm": "Exportálás SCORM formátumban",
+    "translate": "Fordítási egység",
+    "undo": "Művelet visszavonása",
+    "upload": "Feltöltési egység",
+    "validate": "Egység érvényesítése"
+  },
+  "items": {
+    "add": "Tartalom hozzáadása",
+    "delete": "Elem törlése",
+    "duplicate": "Elem megkettőzése",
+    "edit": "Tartalom szerkesztése",
+    "export": "Elem exportálása"
+  },
+  "messages": {
+    "changesSaved": "A módosítások mentése sikeres.",
+    "confirmClearContent": "Teljesen törölni fogja a tartalmat. Győződjön meg róla, hogy valóban ezt akarja tenni.",
+    "confirmLoadModel": "Egy korábbi egységet találtak. Válassza ki, hogy betölti vagy elveti.",
+    "contentCleared": "A tartalom sikeresen törölve.",
+    "contentErrors": "Szünetmentes tápegység! Hibák vannak a tartalomban. Tekintse át a hibaüzeneteket, és kövesse az utasításokat a javításukhoz.",
+    "couldNotExportElement": "Az elem nem exportálható",
+    "couldNotExportSection": "A szakasz nem exportálható",
+    "deletedSection": "A szakasz sikeresen törölve",
+    "emptyContent": "Nem adott hozzá tartalmat.",
+    "errorMessage": "Hiba",
+    "exportedElement": "Sikeresen exportált elem",
+    "exportedSection": "A szakasz sikeres exportálása",
+    "importedElement": "Elem sikeres importálása",
+    "importedSection": "Szakasz sikeres importálása",
+    "loadError": "Az egységet nem lehetett betölteni",
+    "noElement": "Nincs importálható elem",
+    "noErrors": "Nem rossz! Nincsenek hibák. Folytathatja a tartalom mentését.",
+    "noRedo": "Nincs mit újracsinálni",
+    "noSection": "Nincs importálandó szakasz",
+    "noUndo": "Nincs mit visszavonni",
+    "previewError": "Az egység előnézetét nem lehetett megtekinteni",
+    "publishError": "Az egységet nem lehetett közzétenni",
+    "savedUnit": "Sikeresen mentett egység",
+    "saveError": "Az egységet nem sikerült menteni",
+    "successMessage": "Oké",
+    "translateError": "Az egységet nem lehetett lefordítani",
+    "warningMessage": "Figyelem"
+  },
+  "netlify": {
+    "button": {
+      "text": "Összeköt"
+    },
+    "config": {
+      "chooseSite": {
+        "default": "Webhely létrehozása",
+        "help": "Válassza ki Netlify-fiókjának egyik elérhető webhelyét",
+        "label": "Kérjük, válasszon ki egy elérhető webhelyet a Netlify-ból az egység feltöltéséhez"
+      },
+      "title": "Töltse ki a mezőket a Netlify-hoz való csatlakozáshoz ",
+      "token": {
+        "help": "Adja meg személyes Netlify hozzáférési jogkivonatát. Ezt a Netlify fiókbeállítások Alkalmazások részében találja",
+        "label": "Szúrja be a személyes hozzáférési jogkivonatot:",
+        "placeholder": "Helyezze ide Netlify személyes hozzáférési jogkivonatát"
+      }
+    },
+    "error": {
+      "message": "Érvénytelen token"
+    },
+    "success": {
+      "message": "Az egységet sikeresen feltöltötték a Netlify-ra. Az alábbi linkre kattintva érheti el: ",
+      "message_2": "Ne feledd, hogy ha az egységed sok tartalommal rendelkezik, a közzététel eltarthat néhány percig.",
+      "title": "A Netlify-ra feltöltött egység"
+    }
+  },
+  "palette": {
+    "containers": "Konténerek",
+    "exerciseElement": "Ünnepély",
+    "interactiveElements": "Interaktív elemek",
+    "items": "Elemek",
+    "layouts": "Rendelkezések",
+    "question": "Kérdések",
+    "simpleElements": "Elemek"
+  },
+  "plugins": {
+    "trumbowyg": {
+      "templates": {
+        "code": "Kódblokk",
+        "screenReader": "Súgószöveg képernyőolvasókhoz"
+      }
+    }
+  },
+  "sections": {
+    "deleteSection": "Szakasz törlése",
+    "duplicate": "Duplikált szakasz",
+    "edit": "Adatok szerkesztése",
+    "expandContract": "Kibontás vagy összecsukás",
+    "export": "Export szakasz",
+    "form": {
+      "bookmark": {
+        "help": "Ez a jelölő szakaszjelölőként jelenik meg az egység tetején. Legfeljebb 40 karakterből állhat.",
+        "label": "Szakasz könyvjelzője",
+        "placeholder": "Könyvjelző írása..."
+      },
+      "image": {
+        "help": "",
+        "label": "Háttérkép URL-címe",
+        "placeholder": "Adja meg a kép URL-címét..."
+      },
+      "name": {
+        "help": "Ez lesz a szakasz neve a tartalomban.",
+        "label": "Szakasz neve",
+        "placeholder": "Írj egy nevet..."
+      },
+      "preview": "A háttérkép előnézetének megtekintése",
+      "type": {
+        "bc": "Háttérszín (alapértelmezett)",
+        "bi": "Háttérkép",
+        "help": "Ha a típus \"háttérszínre\" van állítva, akkor az alapértelmezett szín jelenik meg a cím mögött, míg a \"Háttérkép\" mezőben háttérképet kell létrehoznia a szakasz fejlécéhez.",
+        "label": "A háttér típusa"
+      }
+    },
+    "import": "Elem importálása",
+    "label": "Szakasz",
+    "moveDown": "Görgessen lefelé a szakaszon",
+    "moveUp": "Szakasz görgetése felfelé"
+  },
+  "units": {
+    "form": {
+      "analytics": {
+        "help": "Elemzés engedélyezése/letiltása az egységben",
+        "label": "Analytics",
+        "no": "Nem",
+        "yes": "Igen"
+      },
+      "author": {
+        "help": "Az egység szerzőjének itt kell írnia.",
+        "label": "Egység szerzője",
+        "placeholder": "Az egység szerzője írja"
+      },
+      "background": {
+        "help": "A képnek körülbelül 1900 x 550 képpont méretűnek kell lennie.",
+        "label": "Téma kép"
+      },
+      "color": {
+        "help": "Hexadecimális formátum #FFFFFF szükséges",
+        "label": "Téma színe",
+        "placeholder": "Írja be ide a téma színét"
+      },
+      "email": {
+        "help": "Ez a szerző e-mail címe.",
+        "label": "E-mail",
+        "placeholder": "Adja meg a szerző e-mail címét"
+      },
+      "institution": {
+        "help": "Az intézmény neve",
+        "label": "Intézmény",
+        "placeholder": "Adja meg az intézmény nevét"
+      },
+      "language": {
+        "help": "Az egység nyelve.",
+        "label": "Nyelv"
+      },
+      "license": {
+        "BY": "Nemzetközi 4.0 elismerés (CC BY 4.0)",
+        "BYNC": "Attribution-NonCommercial-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCND": "Attribution-NonCommercial-NoDerivs 4.0 International (CC BY-NC-ND 4.0)",
+        "BYNCSA": "Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
+        "BYND": "Attribution-NoDerivs 4.0 International (CC BY-ND 4.0)",
+        "BYSA": "Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+        "help": "Egységlicenc",
+        "label": "Licenc",
+        "PRIVATE": "Minden jog fenntartva"
+      },
+      "resource": {
+        "help": "Adja meg az erőforrás-azonosítót",
+        "label": "Erőforrás-azonosító:",
+        "placeholder": "Adja meg az erőforrás-azonosítót"
+      },
+      "theme": {
+        "help": "Válassza ki az egység témáját.",
+        "label": "Téma"
+      },
+      "title": {
+        "help": "Ez az egység címe.",
+        "label": "Egység címe",
+        "placeholder": "Adjon meg egy címet"
+      },
+      "type": {
+        "help": "Ez az egység típusa.",
+        "interoperability": "Interoperabilitás",
+        "label": "Meghajtó típusa",
+        "open": "Nyitott"
+      }
+    },
+    "translate": {
+      "source": {
+        "help": "Ez az egység forrásnyelve",
+        "label": "Forrásnyelv"
+      },
+      "target": {
+        "help": "A célnyelv, amelyre az egységet lefordítják",
+        "label": "Célnyelv"
+      }
+    }
+  },
+  "widgets": {
+    "AcordionContainer": {
+      "label": "Harmonika menü"
+    },
+    "AcordionContent": {
+      "form": {
+        "title": {
+          "help": "Beállítja a tartalmi csoport címét. Ez megjelenik a legördülő menü címében.",
+          "label": "Tartalom címe",
+          "placeholder": "Példa: Szakmai készségek"
+        }
+      },
+      "label": "Tartalmi csoport"
+    },
+    "Animation": {
+      "form": {
+        "image": {
+          "help": "Ez lesz az animáció háttérképe. Kiválaszthat egyet a feltöltött képek közül.",
+          "label": "Kép URL-címe",
+          "placeholder": "Illessze be ide a kép URL-jét...",
+          "preview": "Animációs előnézet"
+        },
+        "pieces": {
+          "altImg": "Helyettesítő szöveg animált képhez",
+          "altRec": "Helyettesítő szöveg animált területhez",
+          "delete": "Töröl",
+          "h": "Magas",
+          "new": "Új animált régió hozzáadása...",
+          "w": "Széles",
+          "x": "Balra",
+          "y": "Felettes"
+        }
+      },
+      "label": "Animáció",
+      "prev": "Az animáció még nincs inicializálva..."
+    },
+    "AnimationContainer": {
+      "form": {
+        "height": {
+          "help": "Ez lesz a pixel animációs tároló magassága",
+          "label": "Animáció magassága",
+          "placeholder": "Példa: 200"
+        },
+        "image": {
+          "help": "Ez lesz az elemben megjelenő kép. Választhatsz egyet a feltöltött képek közül, vagy feltölthetsz egy újat.",
+          "label": "Kép URL-címe",
+          "placeholder": "Kattintson ide a kép kiválasztásához"
+        },
+        "prev": "Előnézeti kép előnézete",
+        "width": {
+          "help": "Ez lesz az animációs tároló szélessége pixelben",
+          "label": "Animáció szélessége",
+          "placeholder": "Példa: 400"
+        }
+      },
+      "label": "Animáció"
+    },
+    "AnimationItem": {
+      "form": {
+        "image": {
+          "help": "Ez lesz az animációs elem képe.",
+          "label": "Kép URL-címe",
+          "placeholder": "Kattintson ide a kép kiválasztásához"
+        },
+        "prev": "Előnézet"
+      },
+      "label": "Az animáció eleme.",
+      "prev": "Az animációs elem még nincs beállítva..."
+    },
+    "AudioTermContainer": {
+      "label": "Audio-kifejezések"
+    },
+    "AudioTermItem": {
+      "form": {
+        "audio": {
+          "help": "Meg kell adnia a tartalomegységben lejátszani kívánt hang URL-címét.",
+          "label": "Hangfájl URL-címe",
+          "placeholder": "Kérjük, adjon meg egy érvényes indiemedia URL-t..."
+        },
+        "definition": {
+          "help": "Ennek a meghatározásnak a hang szó szerinti átírásának kell lennie.",
+          "label": "Definíció",
+          "placeholder": "Írja meg a definíciót..."
+        },
+        "term": {
+          "help": "Ez lesz a widget bal oldalán elhelyezett kifejezés",
+          "label": "Kifejezés",
+          "placeholder": "Írja ide a kifejezését..."
+        }
+      },
+      "label": "Audio-term",
+      "prev": "Az audio-kifejezés még nincs kialakítva..."
+    },
+    "Blockquote": {
+      "form": {
+        "alignment": {
+          "help": "A találkozó jobbra vagy balra igazított lehet",
+          "label": "Találkozó igazítása",
+          "values": {
+            "left": "A bal oldalon",
+            "right": "Jobbra"
+          }
+        },
+        "caption": {
+          "help": "Az idézet alcíme az idézet alatt jelenik meg. Elsősorban az idézet szerzőjének vagy szerzőinek megjelölésére szolgál",
+          "label": "Az idézet alcíme",
+          "placeholder": "Példa: Carl Sagan"
+        },
+        "quote": {
+          "help": "Ez a szöveg a szó szerinti idézet",
+          "label": "Idézet szövege",
+          "placeholder": "Példa: \"A bizonyíték hiánya nem bizonyíték a távollétre.\""
+        },
+        "source": {
+          "help": "Az idézet eredeti forrása (év, könyv, magazin... stb)",
+          "label": "Az idézet eredete",
+          "placeholder": "Példa:1990"
+        }
+      },
+      "label": "Idéz",
+      "prev": "Az idézet még nincs megállapítva..."
+    },
+    "ButtonTextContainer": {
+      "label": "Gombok szöveggel"
+    },
+    "ButtonTextItem": {
+      "form": {
+        "image": {
+          "help": "Ez lesz a kép, amely megjelenik a gombon. Választhatsz egyet a feltöltött képek közül, vagy feltölthetsz egy újat.",
+          "label": "Gomb képének URL-címe",
+          "placeholder": "Írja be ide az URL-címét"
+        },
+        "preview": "Az Előnézet gomb képe",
+        "text": {
+          "help": "Ebben a szövegszerkesztőben írhatja a gombhoz társított szöveg tartalmát",
+          "label": "SMS",
+          "placeholder": "Írja ide a szöveget..."
+        }
+      },
+      "label": "Gomb elem szöveggel",
+      "prev": "A szöveget tartalmazó gombelem még nincs inicializálva..."
+    },
+    "Callout": {
+      "form": {
+        "colorTheme": "Szín",
+        "helps": {
+          "animation": "Meghatározza a doboz egyik előre definiált animációját a beágyazott elemekkel (egy vagy összecsukható).",
+          "colorTheme": "Hex formátum #FFFFFF szükséges. <strong> Ha nincs kitöltve, az egység témájának színe az alapértelmezett értéket veszi fel.</strong>",
+          "styles": "Meghatározza a beágyazott elemeket tartalmazó doboz egyik előre definiált stílusát.",
+          "textTitle": "Ez lesz az a szöveg, amely címként jelenik meg. <strong>Ha nincs kitöltve, akkor alapértelmezett értéket vesz fel.</strong>"
+        },
+        "placeholder": {
+          "colorTheme": "Írja be ide a színt",
+          "textTitle": "Írja be ide a címet"
+        },
+        "styles": {
+          "animation": "Animációs stílus",
+          "attention": "Figyelem",
+          "collapsible": "Összecsukható",
+          "danger": "Veszély",
+          "label": "Stílus",
+          "more": "Tudj meg többet",
+          "note": "Jegyzet",
+          "simple": "Egyszerű"
+        },
+        "textTitle": "Cím"
+      },
+      "label": "Kiemelkedő"
+    },
+    "ChooseOption": {
+      "form": {
+        "image": {
+          "help": "A kép a widget tetején, az opciók felett jelenik meg.",
+          "label": "Kép URL-címe",
+          "placeholder": "Adja meg a kép URL-címét..."
+        },
+        "options": {
+          "help": "Ez a 4 lehetőség a kép alatt jelenik meg. Csak az egyik lehet helyes.",
+          "label": "Beállítások",
+          "placeholder": "Adjon meg egy lehetőséget"
+        },
+        "preview": "Kép előnézete",
+        "text": {
+          "help": "Ez a szöveg szövegként vagy kérdésként jelenik meg a kép felett.",
+          "label": "SMS",
+          "placeholder": "Írja ide a szöveget..."
+        }
+      },
+      "label": "Válasszon egy lehetőséget",
+      "prev": "Nincs beállítva opció kiválasztása ..."
+    },
+    "ColumnLayout": {
+      "columnsLabel": "Oszlopok",
+      "form": {
+        "width": {
+          "1": "Az első oszlop szélessége",
+          "help": "A másik oszlop a fennmaradó szélességet foglalja el"
+        }
+      },
+      "label": "Megszabadulás"
+    },
+    "CorrectWord": {
+      "label": "Helyes szó"
+    },
+    "CorrectWordItem": {
+      "form": {
+        "image": {
+          "help": "A kérdés leíró képe",
+          "label": "Kép URL-címe",
+          "placeholder": "Illessze be ide a kép URL-jét ..."
+        },
+        "preview": "Kép előnézete",
+        "question": {
+          "help": "Ez a kérdés jelenik meg a felhasználó számára.",
+          "label": "A kérdés szövege",
+          "placeholder": "A kérdés szövege"
+        },
+        "word": {
+          "help": "Ez a szó lesz a válasz a kérdésre",
+          "label": "Válasz",
+          "placeholder": "Írj egy szót..."
+        }
+      },
+      "label": "Helyes szóelem",
+      "prev": "A helyes szót még nem állapították meg..."
+    },
+    "CouplesContainer": {
+      "label": "Párok",
+      "prev": "Még nem alapított párok..."
+    },
+    "CouplesItem": {
+      "form": {
+        "image": {
+          "help": "Ez a kép az űrlapon párként beírt szöveghez lesz társítva.",
+          "label": "Kép URL-címe",
+          "placeholder": "Írja be ide a kép URL-jét..."
+        },
+        "legend": {
+          "first": "Első elem",
+          "second": "Második elem"
+        },
+        "preview": "Kép előnézete",
+        "text": {
+          "help": "Ez a szöveg az űrlapon párként megadott képhez lesz társítva.",
+          "label": "SMS",
+          "placeholder": "Írj egy szöveget..."
+        },
+        "type": {
+          "image": "Kép",
+          "label": "Fickó",
+          "text": "SMS"
+        }
+      },
+      "label": "Pár",
+      "prev": "A pár még nem jött létre..."
+    },
+    "DragdropContainer": {
+      "label": "Fogd és vidd"
+    },
+    "DragdropItem": {
+      "form": {
+        "definition": {
+          "help": "A definíció az interaktív elemtől jobbra jelenik meg, és a tanulónak át kell húznia a kifejezést a definícióhoz",
+          "label": "Definíció",
+          "placeholder": "Példa: Minden emberi lénynek joga van kifejezni magát anélkül, hogy zaklatnák azért, amit gondol"
+        },
+        "term": {
+          "help": "A kifejezés az interaktív elem bal oldalán jelenik meg, és ez lesz az, amelyet a hallgatónak át kell húznia a definícióba.",
+          "label": "Kifejezés",
+          "placeholder": "Példa: A véleménynyilvánítás szabadsága"
+        }
+      },
+      "label": "Fogalommeghatározás",
+      "prev": "A tétel nincs megállapítva..."
+    },
+    "FourColumnsLayout": {
+      "label": "Négy oszlop"
+    },
+    "GapQuestion": {
+      "form": {
+        "answers": {
+          "help": "Legalább 2 választ kell írnia, és meg kell jelölnie, hogy melyikük helyes.",
+          "label": "Lehetséges válaszok"
+        },
+        "questionPreview": {
+          "help": "Így fog kinézni a kérdés a tartalmi egységben.",
+          "label": "Tekintse meg a kérdés szövegének előnézetét.",
+          "placeholder": "Kérdés szövege üres ___ résszel."
+        },
+        "questionText": {
+          "help": "A kérdés szövegét a kívánt szóközzel kell beírnia a [blank] speciális kulcsszóval.",
+          "label": "A kérdés szövege",
+          "placeholder": "Kérdés szövege üres elemmel"
+        }
+      },
+      "label": "Töltse ki a hiánypótló kérdést",
+      "prev": "A hiány pótlásának kérdése még nem állapítható meg..."
+    },
+    "GenericWidget": {
+      "label": "Widget"
+    },
+    "GuessWord": {
+      "form": {
+        "answer": {
+          "help": "A válasz a kérdésre",
+          "label": "Válasz",
+          "placeholder": "Írja ide válaszát"
+        },
+        "attempts": {
+          "help": "A válasz kitalálására tett kísérletek száma. 1 és 9 közötti számnak kell lennie.",
+          "label": "Kísérlet"
+        },
+        "question": {
+          "help": "A megválaszolandó kérdésről",
+          "label": "Kérdés",
+          "placeholder": "Írja ide kérdését"
+        }
+      },
+      "label": "Találd ki a szót",
+      "prev": "Gondolom, a szó még nincs inicializálva..."
+    },
+    "Image": {
+      "form": {
+        "caption": {
+          "help": "Ha létrehoz egy szöveget, ez lesz a kép felirata",
+          "label": "Képaláírás",
+          "placeholder": "Kérjük, adjon meg egy feliratot."
+        },
+        "image": {
+          "help": "Ez a kép fog megjelenni az elemben.",
+          "label": "Kép URL-címe",
+          "placeholder": "Kattintson ide a kép kiválasztásához"
+        },
+        "preview": "Előnézet"
+      },
+      "label": "Kép a fenti szöveggel",
+      "prev": "Kép a fenti szöveggel még nincs létrehozva..."
+    },
+    "ImageAndSoundContainer": {
+      "label": "Kép és hang"
+    },
+    "ImageAndSoundItem": {
+      "form": {
+        "audio": {
+          "help": "A hangfájl lejátszásra kerül, amikor a képre kattint.",
+          "label": "Hangfájl URL-címe",
+          "placeholder": "Kérjük, adjon meg egy érvényes indiemedia URL-t..."
+        },
+        "image": {
+          "help": "Először a kép jelenik meg",
+          "label": "Kép URL-címe",
+          "placeholder": "Adja meg a kép URL-címét..."
+        },
+        "preview": "Kép előnézete",
+        "text": {
+          "help": "A szöveg akkor jelenik meg a kép felett, ha fölé viszi az egérmutatót.",
+          "label": "Kép szövege",
+          "placeholder": "Írj egy szöveget..."
+        }
+      },
+      "label": "Kép és hang elem",
+      "prev": "A kép- és hangelem még nincs létrehozva ..."
+    },
+    "ImageAndText": {
+      "form": {
+        "image": {
+          "help": "Ez lesz az elemben megjelenő kép. Választhatsz egyet a feltöltött képek közül, vagy feltölthetsz egy újat.",
+          "label": "Kép URL-címe",
+          "placeholder": "Kattintson ide a kép kiválasztásához"
+        },
+        "layout": {
+          "help": "A kép- és szövegblokk tájolása határozza meg, hogy a blokk egyes elemei hol jelennek meg.",
+          "label": "Tájékozódás",
+          "values": {
+            "0": "Szöveg a jobb oldalon, kép a bal oldalon",
+            "1": "Szöveg a bal oldalon, kép a jobb oldalon"
+          }
+        },
+        "preview": "Kép előnézete",
+        "text": {
+          "help": "Szöveget kell írnia.",
+          "label": "Ebben a szövegszerkesztőben írhatja a blokk tartalmát.",
+          "placeholder": "Írj egy szöveget..."
+        }
+      },
+      "label": "Kép és szöveg",
+      "prev": "A kép és a szöveg még nincs megállapítva..."
+    },
+    "InteractiveVideo": {
+      "form": {
+        "url": {
+          "help": "Szövegbevitel használatával adja meg az interaktív videó eszközzel létrehozott interaktív videó URL-címét.",
+          "label": "Videó URL-címe",
+          "placeholder": "Példa: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
+        }
+      },
+      "label": "Interaktív videó",
+      "prev": "Az interaktív videó még nincs létrehozva"
+    },
+    "LatexFormula": {
+      "form": {
+        "caption": {
+          "help": "Ez a jelmagyarázat a képlet alatt és szövegblokkként jelenik meg",
+          "label": "Képlet jelmagyarázata",
+          "placeholder": "Példa: Másodfokú képlet"
+        },
+        "formula": {
+          "help": "A képlet beírásához használja a szövegterületet. Ez alatt a terület alatt megjelenik a képlet előnézete, ha helyes, vagy a piros szöveg, ha a képlet nem helyes",
+          "label": "Képlet LaTex formátumban",
+          "placeholder": "Példa: \\text{A másodfokú képlet }x = \\frac {-b \\pm \\sqrt {b^2 - 4ac}}{2a}"
+        }
+      },
+      "label": "LaTeX képlet",
+      "prev": "A képlet még nem alakult ki..."
+    },
+    "MissingWords": {
+      "label": "Hiányzó szavak"
+    },
+    "MissingWordsItem": {
+      "form": {
+        "combinations": {
+          "delete": "Töröl",
+          "new": "Új válasz hozzáadása...",
+          "text": "Válasz"
+        },
+        "sentence": {
+          "help": "Meg kell írnia a mondat szövegét, beleértve a rést is, a speciális jelölő [üres] használatával.",
+          "label": "Mondat szövege",
+          "placeholder": "Mondatszöveg jelölővel [üres]"
+        },
+        "sentencePreview": {
+          "help": "Így nézné ki a kifejezést a tartalmi egységben.",
+          "label": "Kifejezés előnézete",
+          "placeholder": "Mondatszöveg a jelölővel ___ "
+        }
+      },
+      "label": "Hiányzó szavak elem",
+      "prev": "A hiányzó szóelem még nincs megállapítva..."
+    },
+    "Modal": {
+      "form": {
+        "text": {
+          "help": "Ez a szöveg gombszövegként jelenik meg, amelyet aktiválni kell a modális ablak megnyitásához.",
+          "label": "Gomb szövege",
+          "placeholder": "Írja meg a szöveget..."
+        }
+      },
+      "label": "Modális ablak"
+    },
+    "Puzzle": {
+      "form": {
+        "image": {
+          "help": "Ez lesz a puzzle háttérképe. Kiválaszthat egyet a feltöltött képek közül.",
+          "label": "Kép URL-címe",
+          "placeholder": "Illessze be ide a kép URL-jét...",
+          "preview": "Puzzle előnézet"
+        },
+        "pieces": {
+          "altImg": "Helyettesítő szöveg vágáshoz",
+          "altRec": "Helyettesítő szöveg a pozícióhoz",
+          "delete": "Töröl",
+          "h": "Magas",
+          "new": "Adj hozzá új darabot...",
+          "w": "Széles",
+          "x": "Balra",
+          "y": "Felettes"
+        }
+      },
+      "label": "Rejtvény",
+      "prev": "A rejtvény még nincs inicializálva..."
+    },
+    "RelatedUnitsAssociation": {
+      "form": {
+        "title": {
+          "help": "Csoport címe",
+          "label": "Cím",
+          "placeholder": "Példa: Jogi modul"
+        }
+      },
+      "label": "Csoport",
+      "prev": "A csoport még nem estabecido ..."
+    },
+    "RelatedUnitsContainer": {
+      "label": "Tartalomjegyzék"
+    },
+    "RelatedUnitsItem": {
+      "current": "Jelenlegi egység",
+      "form": {
+        "current": {
+          "title": "Ez az aktuális egység"
+        },
+        "title": {
+          "help": "Bejegyzés címe",
+          "label": "Cím",
+          "placeholder": "Példa: Emberi jogok"
+        },
+        "url": {
+          "help": "Cél URL",
+          "label": "URL",
+          "placeholder": "Példa: https://opencontent.upct.es/21801/7896/"
+        }
+      },
+      "label": "Bejárat",
+      "prev": "A bejegyzés még nem állapítható meg..."
+    },
+    "SchemaContainer": {
+      "label": "Cselszövés"
+    },
+    "SchemaItem": {
+      "form": {
+        "image": {
+          "help": "Ez lesz a rendszer részleges képe.",
+          "label": "Kép URL-címe",
+          "placeholder": "Kattintson ide a kép kiválasztásához"
+        },
+        "prev": "Kép előnézete"
+      },
+      "label": "Szerkezeti elem",
+      "prev": "Az esuqema tétele még nincs megállapítva..."
+    },
+    "SentenceOrderContainer": {
+      "label": "Kifejezések rendezése"
+    },
+    "SentenceOrderItem": {
+      "form": {
+        "answers": {
+          "delete": "Töröl",
+          "help": "A beírt szavakból felépített válaszok",
+          "legend": "A válaszok listája",
+          "new": "Új válasz hozzáadása...",
+          "text": "Válasz"
+        },
+        "words": {
+          "delete": "Töröl",
+          "help": "A válaszokat ezekből a szavakból kell felépíteni",
+          "legend": "Szólista",
+          "new": "Új szó hozzáadása...",
+          "text": "Szó"
+        }
+      },
+      "label": "Kifejezésrendezési elem",
+      "prev": "A mondatrendezési elem még nincs inicializálva..."
+    },
+    "SimpleImage": {
+      "form": {
+        "align": {
+          "help": "Beállítja a kép igazítását, ha a megjelenés nem \"Állítsa be az eredeti méreteket a rendelkezésre álló területhez\".",
+          "label": "Kép igazítása",
+          "values": {
+            "center": "Koncentrált",
+            "left": "Balra",
+            "right": "Jobbra"
+          }
+        },
+        "aspect": {
+          "help": "A kép megjeleníthető az eredeti méretekkel (ha lehetséges), vagy beállítható a képernyő szélességéhez (a kép méretezése). Ha a méretek magasabbak és szélesebbek, mint amit a képernyő meg tud jeleníteni, akkor mindig automatikusan igazodik a képernyőhöz",
+          "label": "Kép megjelenése",
+          "values": {
+            "custom": "Szokás",
+            "fit": "Állítsa be az eredeti méreteket a rendelkezésre álló helyhez",
+            "original": "Eredeti méretek"
+          }
+        },
+        "image": {
+          "help": "Ez lesz az a kép, amely megjelenik az elemben.",
+          "label": "Kép URL-címe",
+          "placeholder": "Itt adja meg a kép URL-jét"
+        },
+        "preview": "Előnézet",
+        "size": {
+          "height": "Magas",
+          "heightPlaceholder": "Képmagasság...",
+          "keepRatio": "Képarány fenntartása",
+          "width": "Széles",
+          "widthPlaceholder": "Képszélesség..."
+        }
+      },
+      "label": "Kép",
+      "prev": "A kép még nincs kialakítva..."
+    },
+    "SimpleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Legalább 2 választ kell írnia, és meg kell jelölnie, hogy melyikük helyes.",
+          "label": "Lehetséges válaszok"
+        },
+        "questionText": {
+          "help": "Ez a kérdés szövege jelenik meg a tartalmi egységben.",
+          "label": "A kérdés szövege",
+          "placeholder": "Az egyszerű kérdés szövege..."
+        }
+      },
+      "label": "Egyszerű kérdés",
+      "prev": "Egyszerű kérdés még nincs beállítva..."
+    },
+    "TabContent": {
+      "form": {
+        "name": {
+          "help": "Ez lesz a lap címében megjelenő név.",
+          "label": "Lap neve",
+          "placeholder": "Példa: Szakmai készségek"
+        }
+      },
+      "label": "Szempilla"
+    },
+    "Table": {
+      "empty": "A tábla még nincs inicializálva",
+      "form": {
+        "addColumn": {
+          "columnName": {
+            "error": "Az oszlop neve üres vagy már definiálva van",
+            "label": "Oszlop neve",
+            "placeholder": "Írja ide az oszlop nevét..."
+          },
+          "columnPosition": {
+            "error": "Tartományon kívüli oszloppozíció",
+            "label": "Oszlop pozíciója"
+          },
+          "label": "Új oszlop hozzáadása",
+          "submit": "Oszlop hozzáadása"
+        },
+        "addRow": "Új sor hozzáadása",
+        "deleteColumn": "Oszlop törlése",
+        "deleteRow": "Sor törlése"
+      },
+      "help": {
+        "edit": "Jelölje ki a szerkeszteni kívánt cellát. Ha szerkesztés közben új sorokat szeretne hozzáadni, nyomja le a shift billentyűt az Enter billentyű lenyomása közben."
+      },
+      "label": "Beszáll",
+      "prev": "A táblázat még nem készült el..."
+    },
+    "TabsContainer": {
+      "itemLabel": "Szempilla",
+      "label": "Lap menü"
+    },
+    "TermClassification": {
+      "label": "Osztályozás",
+      "prev": "Osztályozás"
+    },
+    "TermClassificationItem": {
+      "form": {
+        "column": {
+          "help": "Ez az az oszlop, amelyhez a kifejezések kapcsolódnak.",
+          "label": "Oszlop",
+          "placeholder": "Oszlop"
+        },
+        "terms": {
+          "help": "Ebben a bejegyzésben meg kell írnia azokat a szavakat, amelyek a kifejezéshez kapcsolódnak, pontosvesszővel elválasztva. Például: ezek; van; néhány; szöveg",
+          "label": "Szöveg",
+          "placeholder": "Pontosvesszővel elválasztott szavak írása"
+        }
+      },
+      "label": "Besorolási tétel",
+      "prev": "A tétel még nincs meghatározva..."
+    },
+    "Test": {
+      "label": "Teszt típusa",
+      "questionSelect": "Válassza ki a kvízhez hozzáadni kívánt kérdéstípust"
+    },
+    "TextBlock": {
+      "form": {
+        "help": "Szöveget kell írnia.",
+        "label": "Ebben a szövegszerkesztőben írhatja a blokk tartalmát.",
+        "placeholder": "Írjon be egy szöveget...",
+        "styles": {
+          "attention": "Figyelem",
+          "default": "Nincs stílus",
+          "help": "Meghatározza a szöveget körülvevő mező elrendezését",
+          "label": "Szövegblokk stílusa",
+          "more": "Tudj meg többet",
+          "note": "Jegyzet"
+        }
+      },
+      "label": "Szövegblokk",
+      "prev": "A szöveg még nem készült el..."
+    },
+    "ThreeColumnsLayout": {
+      "label": "Három oszlop"
+    },
+    "TrueFalseContainer": {
+      "label": "Igaz/hamis",
+      "prev": "Igaz/hamis még nincs megállapítva..."
+    },
+    "TrueFalseItem": {
+      "form": {
+        "answer": {
+          "false": "Téves",
+          "help": "Válasszon az igaz vagy a hamis közül helyes válaszként",
+          "label": "Helyes válasz",
+          "true": "Igaz"
+        },
+        "questionText": {
+          "help": "Ez az elem szövege.",
+          "label": "Elem szövege",
+          "placeholder": "Tétel szövege..."
+        }
+      },
+      "label": "Igaz/hamis elem",
+      "prev": "Igaz/hamis tétel még nincs megállapítva..."
+    },
+    "TrueFalseQuestion": {
+      "form": {
+        "answer": {
+          "false": "Téves",
+          "help": "Válasszon az igaz vagy a hamis közül helyes válaszként",
+          "label": "Helyes válasz",
+          "true": "Igaz"
+        },
+        "questionText": {
+          "help": "Ez a kérdés szövege jelenik meg a tartalmi egységben.",
+          "label": "A szöveges kérdés szövege",
+          "placeholder": "A kérdés szövege..."
+        }
+      },
+      "label": "Igaz vagy hamis kérdés",
+      "prev": "Igaz vagy hamis NBO kérdése..."
+    },
+    "TwoColumnsLayout": {
+      "label": "Két oszlop"
+    },
+    "Video": {
+      "form": {
+        "defaultCaptions": {
+          "label": "Alapértelmezett feliratok megjelenítése",
+          "no": "Nem",
+          "yes": "Igen"
+        },
+        "url": {
+          "help": "Szövegbevitellel adja meg a videó URL-jét (youtube, vimeo...)",
+          "label": "Videó URL-címe",
+          "placeholder": "Példa: https://example.com/video.mp4"
+        }
+      },
+      "label": "Video",
+      "prev": "A videó még nincs beállítva..."
+    }
+  }
+}

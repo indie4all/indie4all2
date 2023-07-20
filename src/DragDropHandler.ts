@@ -12,6 +12,7 @@ import WidgetContainerElement from './model/widgets/WidgetContainerElement/Widge
 import Section from './model/section/Section';
 import ModelElement from './model/ModelElement';
 import Config from './Config';
+import I18n from './I18n';
 
 export default class DragDropHandler {
     private palette: HTMLElement;
@@ -173,7 +174,7 @@ export default class DragDropHandler {
         const elementToBeAppended = widget.createElement();
         $(el).replaceWith(elementToBeAppended);
         if (parent instanceof WidgetColumnsLayout)
-          parentContainerIndex = parseInt(target.dataset.index);
+            parentContainerIndex = parseInt(target.dataset.index);
         this.model.appendObject(widget, inPositionElementId, parentContainerId, parentContainerIndex);
         this.undoredo.pushCommand(new ActionAddElement(this.model, {
             element: widget,
@@ -206,35 +207,49 @@ export default class DragDropHandler {
 
         const onClick = aggregateWidget.bind(this);
 
-         $("#check-select-all").on('change', function() {
+        $("#check-select-all").on('change', function () {
             $(".d-flex .input-checkbox ").prop('checked', $("#check-select-all").prop('checked'));
-          });
+        });
 
-        $(".d-flex .input-checkbox").on("click", function() {
-            $("#check-select-all").prop('checked',  $(".d-flex .input-checkbox:checked").length ===  $(".d-flex .input-checkbox").length);
+        $(".d-flex .input-checkbox").on("click", function () {
+            $("#check-select-all").prop('checked', $(".d-flex .input-checkbox:checked").length === $(".d-flex .input-checkbox").length);
             $(this).prop("checked", !$(this).prop("checked"));
-        }); 
+        });
 
         $(".widget-button").on("click", function () {
             const checkbox = $(this).find("input[type='checkbox']");
             checkbox.prop("checked", !checkbox.prop("checked"));
         });
 
-        $("#modal-bank-widgets .btn-submit").on("click", async function() {
-            if($("#checkbox-random").prop("checked")) {
+        $("#modal-bank-widgets .btn-submit").on("click", async function (e) {
+            if ($("#checkbox-random").prop("checked")) {
                 const num = $("#number-of-random-widgets").val() as number;
-                
-                for (let count = 0; count < num; count++) {
-                  const indexAleatorio = Math.floor(Math.random() * $(".input-checkbox:checked").length);
-                  await onClick($(".input-checkbox:checked")[indexAleatorio].parentElement);
+                const total = $(".input-checkbox:checked").length;
+                if (num > total) {
+                    const { default: alertErrorTemplate } = await import("./views/alertError.hbs");
+                    $("#modal-bank-widgets .errors").html(alertErrorTemplate({
+                        errorText:
+                            I18n.getInstance().translate('widgets.Bank.modal.maximumRandomWidgetsExceeded')
+                    }));
+                    e.preventDefault();
+                    return;
+                }
+
+                const indexes = [];
+                while (indexes.length < num) {
+                    const indexAleatorio = Math.floor(Math.random() * total);
+                    if (!indexes.includes(indexAleatorio)) {
+                        indexes.push(indexAleatorio);
+                        await onClick($(".input-checkbox:checked")[indexAleatorio].parentElement);
+                    }
                 }
             }
             else {
-                $("#modal-bank-widgets .panel-bank-widgets input[type='checkbox']:checked").each( (index,elem) => {
-                 onClick(elem.parentElement);
-            });
-        }
-        $("#modal-bank-widgets").modal('hide');
+                $("#modal-bank-widgets .panel-bank-widgets input[type='checkbox']:checked").each((index, elem) => {
+                    onClick(elem.parentElement);
+                });
+            }
+            $("#modal-bank-widgets").modal('hide');
         });
 
         $('#modal-bank-widgets').on('hidden.bs.modal', function () {
@@ -243,7 +258,7 @@ export default class DragDropHandler {
         });
 
         $("#button-search-bank-widget").on('click', function () {
-            
+
             const searchTerm = ($(" #modal-bank-widgets input[type='search']").val() as string).toLowerCase();
             const searchGroup = ($(" #modal-bank-widgets .select-group option:selected").val() as string).trim();
             const searchType = ($(" #modal-bank-widgets .select-type option:selected").val() as string).trim();
@@ -255,15 +270,15 @@ export default class DragDropHandler {
                 const title = $(this).find('h3').text().toLowerCase();
                 const group = $(this).find("input[name='group']").val() as string;
                 const type = $(this).find("input[name='type']").val() as string;
-                
+
                 result[0] = title.includes(searchTerm);
                 result[1] = searchGroup === "default" || group === searchGroup;
                 result[2] = searchType === "default" || type === searchType;
-                
+
                 if (result.every(elem => elem)) {
-                  $(this).removeClass("d-none").addClass("d-flex");
+                    $(this).removeClass("d-none").addClass("d-flex");
                 } else {
-                  $(this).removeClass("d-flex").addClass("d-none");
+                    $(this).removeClass("d-flex").addClass("d-none");
                 }
             })
         })

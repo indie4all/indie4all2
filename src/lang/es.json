@@ -833,7 +833,8 @@
                 "placeholderType" : "Tipo",
                 "randomTextPrev" : "Introducir ",
                 "randomTextBefore" : " widgets aleatorios de los seleccionados",
-                "selectAllText" : "Seleccionar todos"
+                "selectAllText" : "Seleccionar todos",
+                "maximumRandomWidgetsExceeded": "El número de widgets aleatorios no puede ser superior al número de widgets seleccionado"
             },
             "modalTitle": "Banco de Widgets",
             "search": "Buscar"

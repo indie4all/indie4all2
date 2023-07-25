@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Banco de widgets",
     "containers": "Contentores",
     "exerciseElement": "Exercícios",
     "interactiveElements": "Elementos interativos",
@@ -862,6 +863,22 @@
       },
       "label": "Audio-termo",
       "prev": "Termo de áudio ainda não estabelecido..."
+    },
+    "Bank": {
+      "label": "Bancada",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "O número de widgets aleatórios não pode exceder o número de widgets selecionados",
+        "modalTitle": "Banco de widgets",
+        "placeholderGroup": "Grupo",
+        "placeholderTitle": "Pesquisar por título do widget",
+        "placeholderType": "Cara",
+        "randomTextBefore": " Widgets aleatórios dos selecionados",
+        "randomTextPrev": "Apresentar ",
+        "search": "Achar",
+        "selectAllText": "Selecionar tudo"
+      },
+      "modalTitle": "Banco de widgets",
+      "search": "Achar"
     },
     "Blockquote": {
       "form": {

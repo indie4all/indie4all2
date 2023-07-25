@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Banca Widget",
     "containers": "Contenitori",
     "exerciseElement": "Esercizi",
     "interactiveElements": "Elementi interattivi",
@@ -862,6 +863,22 @@
       },
       "label": "Termine audio",
       "prev": "Termine audio non ancora stabilito..."
+    },
+    "Bank": {
+      "label": "Panca",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Il numero di widget casuali non può superare il numero di widget selezionati",
+        "modalTitle": "Banca Widget",
+        "placeholderGroup": "Gruppo",
+        "placeholderTitle": "Ricerca per titolo del widget",
+        "placeholderType": "Tizio",
+        "randomTextBefore": " Widget casuali da quelli selezionati",
+        "randomTextPrev": "Introdurre ",
+        "search": "Per trovare",
+        "selectAllText": "Seleziona tutto"
+      },
+      "modalTitle": "Banca Widget",
+      "search": "Per trovare"
     },
     "Blockquote": {
       "form": {

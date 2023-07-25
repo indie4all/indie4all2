@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Widget-pankki",
     "containers": "Säiliöt",
     "exerciseElement": "Harjoitukset",
     "interactiveElements": "Interaktiiviset elementit",
@@ -862,6 +863,22 @@
       },
       "label": "Audio-termi",
       "prev": "Äänitermiä ei ole vielä vahvistettu..."
+    },
+    "Bank": {
+      "label": "Penkki",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Satunnaisten widgetien määrä ei voi ylittää valittujen widgetien määrää",
+        "modalTitle": "Widget-pankki",
+        "placeholderGroup": "Ryhmä",
+        "placeholderTitle": "Etsi widgetin otsikon perusteella",
+        "placeholderType": "Kundi",
+        "randomTextBefore": " Satunnaiset widgetit valituista",
+        "randomTextPrev": "Esitellä ",
+        "search": "Löytää",
+        "selectAllText": "Valitse kaikki"
+      },
+      "modalTitle": "Widget-pankki",
+      "search": "Löytää"
     },
     "Blockquote": {
       "form": {

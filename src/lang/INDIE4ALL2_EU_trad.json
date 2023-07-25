@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Widgets bankua",
     "containers": "Edukiontziak",
     "exerciseElement": "Ariketak",
     "interactiveElements": "Elementu interaktiboak",
@@ -862,6 +863,22 @@
       },
       "label": "Audio-terminoa",
       "prev": "Oraindik ezarri gabeko Audio-terminoa..."
+    },
+    "Bank": {
+      "label": "Bankua",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Ausazko widget kopurua ezin da izan hautatutako widget kopurua baino handiagoa",
+        "modalTitle": "Widgets bankua",
+        "placeholderGroup": "Taldea",
+        "placeholderTitle": "Widget tituluaren arabera bilatu",
+        "placeholderType": "Mota",
+        "randomTextBefore": " Hautatutakoen ausazko widget-ak",
+        "randomTextPrev": "Sartu ",
+        "search": "Bilatu",
+        "selectAllText": "Guztiak aukeratu"
+      },
+      "modalTitle": "Widgets bankua",
+      "search": "Bilatu"
     },
     "Blockquote": {
       "form": {

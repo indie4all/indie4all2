@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Widget Bank",
     "containers": "Behållare",
     "exerciseElement": "Övningar",
     "interactiveElements": "Interaktiva element",
@@ -862,6 +863,22 @@
       },
       "label": "Ljud-term",
       "prev": "Ljudterm inte fastställd ännu ..."
+    },
+    "Bank": {
+      "label": "Bänk",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Antalet slumpmässiga widgets får inte överstiga antalet valda widgets",
+        "modalTitle": "Widget Bank",
+        "placeholderGroup": "Grupp",
+        "placeholderTitle": "Sök efter widgettitel",
+        "placeholderType": "Kille",
+        "randomTextBefore": " Slumpmässiga widgets från de valda",
+        "randomTextPrev": "Introducera ",
+        "search": "Att hitta",
+        "selectAllText": "Markera alla"
+      },
+      "modalTitle": "Widget Bank",
+      "search": "Att hitta"
     },
     "Blockquote": {
       "form": {

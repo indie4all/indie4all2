@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Widgetbank",
     "containers": "Containers",
     "exerciseElement": "Oefeningen",
     "interactiveElements": "Interactieve elementen",
@@ -862,6 +863,22 @@
       },
       "label": "Audio-term",
       "prev": "Audio-term nog niet vastgesteld..."
+    },
+    "Bank": {
+      "label": "Bank",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Het aantal willekeurige widgets mag niet groter zijn dan het aantal geselecteerde widgets",
+        "modalTitle": "Widgetbank",
+        "placeholderGroup": "Groep",
+        "placeholderTitle": "Zoeken op widgettitel",
+        "placeholderType": "Vent",
+        "randomTextBefore": " Willekeurige widgets van de geselecteerde widgets",
+        "randomTextPrev": "Voorstellen ",
+        "search": "Zoeken naar",
+        "selectAllText": "Alles selecteren"
+      },
+      "modalTitle": "Widgetbank",
+      "search": "Zoeken naar"
     },
     "Blockquote": {
       "form": {

@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Logrīku banka",
     "containers": "Konteineri",
     "exerciseElement": "Vingrinājumi",
     "interactiveElements": "Interaktīvie elementi",
@@ -862,6 +863,22 @@
       },
       "label": "Audio termins",
       "prev": "Audio-termins vēl nav izveidots..."
+    },
+    "Bank": {
+      "label": "Sols",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Nejaušo logrīku skaits nedrīkst pārsniegt atlasīto logrīku skaitu",
+        "modalTitle": "Logrīku banka",
+        "placeholderGroup": "Grupa",
+        "placeholderTitle": "Meklēt pēc logrīka nosaukuma",
+        "placeholderType": "Puisis",
+        "randomTextBefore": " Nejauši logrīki no atlasītajiem",
+        "randomTextPrev": "Ieviest ",
+        "search": "Atrast",
+        "selectAllText": "Atlasīt visus"
+      },
+      "modalTitle": "Logrīku banka",
+      "search": "Atrast"
     },
     "Blockquote": {
       "form": {

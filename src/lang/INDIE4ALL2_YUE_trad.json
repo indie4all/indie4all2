@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "細部件庫",
     "containers": "器皿",
     "exerciseElement": "習題",
     "interactiveElements": "互動元素",
@@ -862,6 +863,22 @@
       },
       "label": "音頻術語",
       "prev": "音頻術語尚未建立..."
+    },
+    "Bank": {
+      "label": "板凳",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "隨機小部件嘅數量不能超過所選小部件嘅數量",
+        "modalTitle": "細部件庫",
+        "placeholderGroup": "群",
+        "placeholderTitle": "按小部件標題搜索",
+        "placeholderType": "傢伙",
+        "randomTextBefore": " 來自所選小部件嘅隨機小部件",
+        "randomTextPrev": "介紹 ",
+        "search": "搵到",
+        "selectAllText": "全選"
+      },
+      "modalTitle": "細部件庫",
+      "search": "搵到"
     },
     "Blockquote": {
       "form": {

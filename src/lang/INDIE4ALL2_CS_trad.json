@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Widget Bank",
     "containers": "Kontejnery",
     "exerciseElement": "Cvičení",
     "interactiveElements": "Interaktivní prvky",
@@ -862,6 +863,22 @@
       },
       "label": "Zvukový termín",
       "prev": "Termín zvuku zatím není stanoven..."
+    },
+    "Bank": {
+      "label": "Lavice",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Počet náhodných widgetů nesmí překročit počet vybraných widgetů",
+        "modalTitle": "Widget Bank",
+        "placeholderGroup": "Skupina",
+        "placeholderTitle": "Hledat podle názvu widgetu",
+        "placeholderType": "Chlapík",
+        "randomTextBefore": " Náhodné widgety z vybraných",
+        "randomTextPrev": "Představit ",
+        "search": "Zjistit",
+        "selectAllText": "Vybrat vše"
+      },
+      "modalTitle": "Widget Bank",
+      "search": "Zjistit"
     },
     "Blockquote": {
       "form": {

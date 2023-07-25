@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Widget Bank",
     "containers": "Beholdere",
     "exerciseElement": "Øvelser",
     "interactiveElements": "Interaktive elementer",
@@ -862,6 +863,22 @@
       },
       "label": "Audio-term",
       "prev": "Audio-term ikke etablert ennå ..."
+    },
+    "Bank": {
+      "label": "Benk",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Antall tilfeldige widgets kan ikke overstige antall valgte widgets",
+        "modalTitle": "Widget Bank",
+        "placeholderGroup": "Gruppe",
+        "placeholderTitle": "Søk etter widgettittel",
+        "placeholderType": "Fyr",
+        "randomTextBefore": " Tilfeldige widgets fra de valgte",
+        "randomTextPrev": "Innføre ",
+        "search": "Å finne",
+        "selectAllText": "Merk alt"
+      },
+      "modalTitle": "Widget Bank",
+      "search": "Å finne"
     },
     "Blockquote": {
       "form": {

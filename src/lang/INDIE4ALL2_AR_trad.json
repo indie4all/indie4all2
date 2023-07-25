@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "بنك القطعة",
     "containers": "حاويات",
     "exerciseElement": "التمارين",
     "interactiveElements": "العناصر التفاعلية",
@@ -771,9 +772,6 @@
     }
   },
   "widgets": {
-    "Bank" : {
-      "label": "Bank Of Widgets"
-    },
     "AcordionContainer": {
       "label": "قائمة الأكورديون"
     },
@@ -865,6 +863,22 @@
       },
       "label": "مصطلح صوتي",
       "prev": "مصطلح صوتي لم يتم تأسيسه بعد ..."
+    },
+    "Bank": {
+      "label": "مصطبة",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "لا يمكن أن يتجاوز عدد الأدوات العشوائية عدد الأدوات المحددة",
+        "modalTitle": "بنك القطعة",
+        "placeholderGroup": "مجموعة",
+        "placeholderTitle": "البحث عن طريق عنوان القطعة",
+        "placeholderType": "الرجل",
+        "randomTextBefore": " الحاجيات عشوائية من تلك المحددة",
+        "randomTextPrev": "قدم ",
+        "search": "أبحث",
+        "selectAllText": "حدد الكل"
+      },
+      "modalTitle": "بنك القطعة",
+      "search": "أبحث"
     },
     "Blockquote": {
       "form": {

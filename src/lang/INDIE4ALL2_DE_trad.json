@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Widget-Bank",
     "containers": "Container",
     "exerciseElement": "Übungen",
     "interactiveElements": "Interaktive Elemente",
@@ -862,6 +863,22 @@
       },
       "label": "Audio-Begriff",
       "prev": "Audio-Begriff noch nicht etabliert..."
+    },
+    "Bank": {
+      "label": "Bank",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Die Anzahl der zufälligen Widgets darf die Anzahl der ausgewählten Widgets nicht überschreiten",
+        "modalTitle": "Widget-Bank",
+        "placeholderGroup": "Gruppe",
+        "placeholderTitle": "Suche nach Widget-Titel",
+        "placeholderType": "Kerl",
+        "randomTextBefore": " Zufällige Widgets aus den ausgewählten",
+        "randomTextPrev": "Einführen ",
+        "search": "Finden",
+        "selectAllText": "Alles auswählen"
+      },
+      "modalTitle": "Widget-Bank",
+      "search": "Finden"
     },
     "Blockquote": {
       "form": {

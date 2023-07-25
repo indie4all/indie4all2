@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "ウィジェットバンク",
     "containers": "コンテナー",
     "exerciseElement": "演習",
     "interactiveElements": "インタラクティブな要素",
@@ -862,6 +863,22 @@
       },
       "label": "オーディオ用語",
       "prev": "オーディオ用語はまだ確立されていません..."
+    },
+    "Bank": {
+      "label": "ベンチ",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "ランダムなウィジェットの数は、選択したウィジェットの数を超えることはできません",
+        "modalTitle": "ウィジェットバンク",
+        "placeholderGroup": "群",
+        "placeholderTitle": "ウィジェットのタイトルで検索",
+        "placeholderType": "やつ",
+        "randomTextBefore": " 選択したウィジェットからのランダムなウィジェット",
+        "randomTextPrev": "紹介 ",
+        "search": "見つけます",
+        "selectAllText": "すべて選択"
+      },
+      "modalTitle": "ウィジェットバンク",
+      "search": "見つけます"
     },
     "Blockquote": {
       "form": {

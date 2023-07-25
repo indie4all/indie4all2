@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Valdiklių bankas",
     "containers": "Konteineriai",
     "exerciseElement": "Pratimai",
     "interactiveElements": "Interaktyvūs elementai",
@@ -862,6 +863,22 @@
       },
       "label": "Garso terminas",
       "prev": "Garso terminas dar nenustatytas..."
+    },
+    "Bank": {
+      "label": "Suolas",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Atsitiktinių valdiklių skaičius negali viršyti pasirinktų valdiklių skaičiaus",
+        "modalTitle": "Valdiklių bankas",
+        "placeholderGroup": "Grupė",
+        "placeholderTitle": "Paieška pagal valdiklio pavadinimą",
+        "placeholderType": "Vaikinas",
+        "randomTextBefore": " Atsitiktiniai valdikliai iš pasirinktų",
+        "randomTextPrev": "Pristatyti ",
+        "search": "Rasti",
+        "selectAllText": "Pažymėti viską"
+      },
+      "modalTitle": "Valdiklių bankas",
+      "search": "Rasti"
     },
     "Blockquote": {
       "form": {

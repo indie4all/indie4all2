@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Widget Bank",
     "containers": "Konténerek",
     "exerciseElement": "Ünnepély",
     "interactiveElements": "Interaktív elemek",
@@ -862,6 +863,22 @@
       },
       "label": "Audio-term",
       "prev": "Az audio-kifejezés még nincs kialakítva..."
+    },
+    "Bank": {
+      "label": "Pad",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "A véletlenszerű widgetek száma nem haladhatja meg a kiválasztott widgetek számát",
+        "modalTitle": "Widget Bank",
+        "placeholderGroup": "Csoport",
+        "placeholderTitle": "Keresés a widget címe alapján",
+        "placeholderType": "Fickó",
+        "randomTextBefore": " Véletlenszerű widgetek a kiválasztottakból",
+        "randomTextPrev": "Bevezet ",
+        "search": "Találni",
+        "selectAllText": "Az összes kijelölése"
+      },
+      "modalTitle": "Widget Bank",
+      "search": "Találni"
     },
     "Blockquote": {
       "form": {

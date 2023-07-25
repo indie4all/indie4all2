@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Widget banka",
     "containers": "Kontejnere",
     "exerciseElement": "Vježbe",
     "interactiveElements": "Interaktivni elementi",
@@ -862,6 +863,22 @@
       },
       "label": "Audio-pojam",
       "prev": "Audio-pojam još nije uspostavljen..."
+    },
+    "Bank": {
+      "label": "Klupa",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Broj slučajnih widgeta ne može biti veći od odabranog broja widgeta",
+        "modalTitle": "Widget banka",
+        "placeholderGroup": "Grupa",
+        "placeholderTitle": "Pretraži po naslovu widgeta",
+        "placeholderType": "Momak",
+        "randomTextBefore": " Slučajni widgeti odabranih",
+        "randomTextPrev": "Uvesti ",
+        "search": "Naći",
+        "selectAllText": "Odaberi sve"
+      },
+      "modalTitle": "Widget banka",
+      "search": "Naći"
     },
     "Blockquote": {
       "form": {

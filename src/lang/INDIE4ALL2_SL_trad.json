@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Banka pripomočkov",
     "containers": "Posode",
     "exerciseElement": "Vaje",
     "interactiveElements": "Interaktivni elementi",
@@ -862,6 +863,22 @@
       },
       "label": "Avdio-term",
       "prev": "Zvočni izraz še ni vzpostavljen..."
+    },
+    "Bank": {
+      "label": "Klop",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Število naključnih pripomočkov ne sme presegati števila izbranih pripomočkov",
+        "modalTitle": "Banka pripomočkov",
+        "placeholderGroup": "Skupina",
+        "placeholderTitle": "Iskanje po naslovu pripomočka",
+        "placeholderType": "Fant",
+        "randomTextBefore": " Naključni pripomočki izbranih",
+        "randomTextPrev": "Uvesti ",
+        "search": "Najti",
+        "selectAllText": "Izberi vse"
+      },
+      "modalTitle": "Banka pripomočkov",
+      "search": "Najti"
     },
     "Blockquote": {
       "form": {

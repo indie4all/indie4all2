@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Vidina pank",
     "containers": "Konteinerid",
     "exerciseElement": "Harjutusi",
     "interactiveElements": "Interaktiivsed elemendid",
@@ -862,6 +863,22 @@
       },
       "label": "Audio-termin",
       "prev": "Audio-term pole veel kindlaks tehtud..."
+    },
+    "Bank": {
+      "label": "Pink",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Juhuslike vidinate arv ei tohi ületada valitud vidinate arvu",
+        "modalTitle": "Vidina pank",
+        "placeholderGroup": "Rühm",
+        "placeholderTitle": "Otsi vidina pealkirja järgi",
+        "placeholderType": "Kutt",
+        "randomTextBefore": " Juhuslikud vidinad valitud vidinatest",
+        "randomTextPrev": "Tutvustada ",
+        "search": "Otsima",
+        "selectAllText": "Vali kõik"
+      },
+      "modalTitle": "Vidina pank",
+      "search": "Otsima"
     },
     "Blockquote": {
       "form": {

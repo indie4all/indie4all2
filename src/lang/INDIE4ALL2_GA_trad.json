@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Banc Giuirléidí",
     "containers": "Coimeádáin",
     "exerciseElement": "Cleachtaí",
     "interactiveElements": "Eilimintí idirghníomhacha",
@@ -862,6 +863,22 @@
       },
       "label": "Téarma fuaime",
       "prev": "Téarma fuaime nach bhfuil bunaithe fós..."
+    },
+    "Bank": {
+      "label": "Binse",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Ní féidir le líon na ngiuirléidí randamacha dul thar líon na ngiuirléidí a roghnaíodh",
+        "modalTitle": "Banc Giuirléidí",
+        "placeholderGroup": "Grúpa",
+        "placeholderTitle": "Cuardaigh de réir teideal Giuirléidí",
+        "placeholderType": "Fear",
+        "randomTextBefore": " Giuirléidí randamacha uathu siúd a roghnaíodh",
+        "randomTextPrev": "Tabhair isteach ",
+        "search": "Aimsigh",
+        "selectAllText": "Roghnaigh gach rud"
+      },
+      "modalTitle": "Banc Giuirléidí",
+      "search": "Aimsigh"
     },
     "Blockquote": {
       "form": {

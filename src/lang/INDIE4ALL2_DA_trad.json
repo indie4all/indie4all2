@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Widget Bank",
     "containers": "Containere",
     "exerciseElement": "Øvelser",
     "interactiveElements": "Interaktive elementer",
@@ -862,6 +863,22 @@
       },
       "label": "Audio-sigt",
       "prev": "Audio-term ikke etableret endnu..."
+    },
+    "Bank": {
+      "label": "Bænk",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Antallet af tilfældige widgets må ikke overstige antallet af valgte widgets",
+        "modalTitle": "Widget Bank",
+        "placeholderGroup": "Gruppe",
+        "placeholderTitle": "Søg efter widgettitel",
+        "placeholderType": "Fyr",
+        "randomTextBefore": " Tilfældige widgets fra de valgte",
+        "randomTextPrev": "Introducere ",
+        "search": "At finde",
+        "selectAllText": "Vælg alle"
+      },
+      "modalTitle": "Widget Bank",
+      "search": "At finde"
     },
     "Blockquote": {
       "form": {

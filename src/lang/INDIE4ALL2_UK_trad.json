@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Банк віджетів",
     "containers": "Контейнери",
     "exerciseElement": "Вправи",
     "interactiveElements": "Інтерактивні елементи",
@@ -862,6 +863,22 @@
       },
       "label": "Аудіо-термін",
       "prev": "Аудіо-термін ще не встановлений..."
+    },
+    "Bank": {
+      "label": "Лавці",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Кількість випадкових віджетів не може перевищувати кількість вибраних віджетів",
+        "modalTitle": "Банк віджетів",
+        "placeholderGroup": "Група",
+        "placeholderTitle": "Пошук за назвою віджета",
+        "placeholderType": "Парубок",
+        "randomTextBefore": " Випадкові віджети з вибраних",
+        "randomTextPrev": "Ввести ",
+        "search": "Знаходити",
+        "selectAllText": "Виділити все"
+      },
+      "modalTitle": "Банк віджетів",
+      "search": "Знаходити"
     },
     "Blockquote": {
       "form": {

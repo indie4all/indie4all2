@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Уиджет Банк",
     "containers": "Контейнери",
     "exerciseElement": "Упражнения",
     "interactiveElements": "Интерактивни елементи",
@@ -862,6 +863,22 @@
       },
       "label": "Аудио-термин",
       "prev": "Аудио-терминът все още не е установен..."
+    },
+    "Bank": {
+      "label": "Пейка",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Броят на случайните уиджети не може да надвишава броя на избраните уиджети",
+        "modalTitle": "Уиджет Банк",
+        "placeholderGroup": "Група",
+        "placeholderTitle": "Търсене по заглавие на джаджа",
+        "placeholderType": "Човек",
+        "randomTextBefore": " Случайни уиджети от избраните",
+        "randomTextPrev": "Представям ",
+        "search": "Да намериш",
+        "selectAllText": "Избери всички"
+      },
+      "modalTitle": "Уиджет Банк",
+      "search": "Да намериш"
     },
     "Blockquote": {
       "form": {

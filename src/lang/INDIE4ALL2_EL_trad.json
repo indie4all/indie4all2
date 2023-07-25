@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Τράπεζα Widget",
     "containers": "Δοχεία",
     "exerciseElement": "Ασκησεισ",
     "interactiveElements": "Διαδραστικά στοιχεία",
@@ -862,6 +863,22 @@
       },
       "label": "Ηχητικός όρος",
       "prev": "Ο ηχητικός όρος δεν έχει ακόμη καθοριστεί..."
+    },
+    "Bank": {
+      "label": "Πάγκος",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Ο αριθμός των τυχαίων widget δεν μπορεί να υπερβαίνει τον αριθμό των επιλεγμένων widget",
+        "modalTitle": "Τράπεζα Widget",
+        "placeholderGroup": "Ομάδα",
+        "placeholderTitle": "Αναζήτηση με βάση τον τίτλο του Widget",
+        "placeholderType": "Τύπος",
+        "randomTextBefore": " Τυχαία γραφικά στοιχεία από αυτά που έχουν επιλεγεί",
+        "randomTextPrev": "Εισάγω ",
+        "search": "Να βρω",
+        "selectAllText": "Επιλογή όλων"
+      },
+      "modalTitle": "Τράπεζα Widget",
+      "search": "Να βρω"
     },
     "Blockquote": {
       "form": {

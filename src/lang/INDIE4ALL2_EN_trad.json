@@ -424,7 +424,7 @@
     },
     "SchemaContainer": {
       "data": {
-        "empty": "The diagram is empty. You must add at least one item using the add button on the right."
+        "empty": "The schema is empty. You must add at least one item using the add button on the right."
       },
       "height": {
         "invalid": "The height of the animation must be greater than 0."
@@ -589,7 +589,7 @@
     "confirmClearContent": "You're going to delete the content entirely. Make sure it's what you really want to do.",
     "confirmLoadModel": "A previous unit has been found. Choose whether you want to load it or discard it.",
     "contentCleared": "Content successfully deleted.",
-    "contentErrors": "Ups! There are errors in your content. Review the error messages and follow their instructions to fix them.",
+    "contentErrors": "Oops! There are errors in your content. Review the error messages and follow their instructions to fix them.",
     "couldNotExportElement": "The item could not be exported",
     "couldNotExportSection": "The section could not be exported",
     "deletedSection": "Section successfully deleted",
@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Widget Bank",
     "containers": "Containers",
     "exerciseElement": "Exercises",
     "interactiveElements": "Interactive elements",
@@ -771,9 +772,6 @@
     }
   },
   "widgets": {
-    "Bank" : {
-      "label" : "Bank Of Widgets"
-    },
     "AcordionContainer": {
       "label": "Accordion menu"
     },
@@ -865,6 +863,22 @@
       },
       "label": "Audio-term",
       "prev": "Audio-term not established yet..."
+    },
+    "Bank": {
+      "label": "Bench",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "The number of random widgets cannot exceed the number of widgets selected",
+        "modalTitle": "Widget Bank",
+        "placeholderGroup": "Group",
+        "placeholderTitle": "Search by Widget title",
+        "placeholderType": "Guy",
+        "randomTextBefore": " Random widgets from those selected",
+        "randomTextPrev": "Introduce ",
+        "search": "Search",
+        "selectAllText": "Select all"
+      },
+      "modalTitle": "Widget Bank",
+      "search": "Search"
     },
     "Blockquote": {
       "form": {
@@ -1279,19 +1293,19 @@
       "prev": "Entry not established yet..."
     },
     "SchemaContainer": {
-      "label": "Diagram"
+      "label": "Schema"
     },
     "SchemaItem": {
       "form": {
         "image": {
-          "help": "This will be the partial image of the diagram.",
+          "help": "This will be the partial image of the schema.",
           "label": "Image URL",
           "placeholder": "Click here to select the image"
         },
         "prev": "Image preview"
       },
-      "label": "Diagram item",
-      "prev": "Diagram item not yet established..."
+      "label": "Schema item",
+      "prev": "Schema item not yet established..."
     },
     "SentenceOrderContainer": {
       "label": "Ordering sentences"

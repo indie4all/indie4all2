@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Banca widget",
     "containers": "Containere",
     "exerciseElement": "Exerciţii",
     "interactiveElements": "Elemente interactive",
@@ -862,6 +863,22 @@
       },
       "label": "Termen audio",
       "prev": "Termenul audio nu a fost încă stabilit..."
+    },
+    "Bank": {
+      "label": "Bancă",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Numărul de widget-uri aleatorii nu poate depăși numărul de widget-uri selectate",
+        "modalTitle": "Banca widget",
+        "placeholderGroup": "Grup",
+        "placeholderTitle": "Căutare după titlul widgetului",
+        "placeholderType": "Tip",
+        "randomTextBefore": " Widget-uri aleatorii din cele selectate",
+        "randomTextPrev": "Prezenta ",
+        "search": "A găsi",
+        "selectAllText": "Selectați tot"
+      },
+      "modalTitle": "Banca widget",
+      "search": "A găsi"
     },
     "Blockquote": {
       "form": {

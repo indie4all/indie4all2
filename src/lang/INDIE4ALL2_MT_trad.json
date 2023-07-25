@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Widget Bank",
     "containers": "Kontenituri",
     "exerciseElement": "Teżerċita",
     "interactiveElements": "Elementi interattivi",
@@ -862,6 +863,22 @@
       },
       "label": "Terminu awdjo",
       "prev": "Awdjo-terminu għadu mhux stabbilit..."
+    },
+    "Bank": {
+      "label": "Bank",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "In-numru ta 'widgets każwali ma jistax jaqbeż in-numru ta' widgets magħżula",
+        "modalTitle": "Widget Bank",
+        "placeholderGroup": "Grupp",
+        "placeholderTitle": "Fittex bit-titlu Widget",
+        "placeholderType": "Guy",
+        "randomTextBefore": " Widgets każwali minn dawk magħżula",
+        "randomTextPrev": "Jintroduċu ",
+        "search": "Biex issib",
+        "selectAllText": "Agħżel kollox"
+      },
+      "modalTitle": "Widget Bank",
+      "search": "Biex issib"
     },
     "Blockquote": {
       "form": {

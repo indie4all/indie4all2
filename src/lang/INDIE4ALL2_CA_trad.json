@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Banc de ginys",
     "containers": "Contenidors",
     "exerciseElement": "Exercicis",
     "interactiveElements": "Elements interactius",
@@ -862,6 +863,22 @@
       },
       "label": "Període d'àudio",
       "prev": "Terme d'àudio encara no establert..."
+    },
+    "Bank": {
+      "label": "Banc",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "El nombre de ginys aleatoris no pot superar el nombre de ginys seleccionats",
+        "modalTitle": "Banc de ginys",
+        "placeholderGroup": "Grup",
+        "placeholderTitle": "Cerca per títol del widget",
+        "placeholderType": "Xicot",
+        "randomTextBefore": " Ginys aleatoris dels seleccionats",
+        "randomTextPrev": "Introduir ",
+        "search": "Trobar",
+        "selectAllText": "Selecciona-ho tot"
+      },
+      "modalTitle": "Banc de ginys",
+      "search": "Trobar"
     },
     "Blockquote": {
       "form": {

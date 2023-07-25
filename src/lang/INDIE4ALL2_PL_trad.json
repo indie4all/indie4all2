@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Bank widżetów",
     "containers": "Pojemniki",
     "exerciseElement": "Ćwiczenia",
     "interactiveElements": "Elementy interaktywne",
@@ -862,6 +863,22 @@
       },
       "label": "Audio-term",
       "prev": "Termin audio nie został jeszcze ustalony..."
+    },
+    "Bank": {
+      "label": "Ławka",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Liczba losowych widżetów nie może przekroczyć liczby wybranych widżetów",
+        "modalTitle": "Bank widżetów",
+        "placeholderGroup": "Grupa",
+        "placeholderTitle": "Szukaj według tytułu widżetu",
+        "placeholderType": "Facet",
+        "randomTextBefore": " Losowe widżety z wybranych",
+        "randomTextPrev": "Przedstawić ",
+        "search": "Aby znaleźć",
+        "selectAllText": "Zaznacz wszystko"
+      },
+      "modalTitle": "Bank widżetów",
+      "search": "Aby znaleźć"
     },
     "Blockquote": {
       "form": {

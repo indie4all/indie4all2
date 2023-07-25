@@ -640,6 +640,7 @@
     }
   },
   "palette": {
+    "bankWidgets": "Banka miniaplikácií",
     "containers": "Kontajnery",
     "exerciseElement": "Cvičenia",
     "interactiveElements": "Interaktívne prvky",
@@ -862,6 +863,22 @@
       },
       "label": "Audio-termín",
       "prev": "Audio-termín ešte nebol stanovený..."
+    },
+    "Bank": {
+      "label": "Lavička",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Počet náhodných widgetov nesmie prekročiť počet vybraných widgetov",
+        "modalTitle": "Banka miniaplikácií",
+        "placeholderGroup": "Skupina",
+        "placeholderTitle": "Vyhľadávanie podľa názvu miniaplikácie",
+        "placeholderType": "Chlap",
+        "randomTextBefore": " Náhodné widgety z vybraných",
+        "randomTextPrev": "Zavádzať ",
+        "search": "Nájsť",
+        "selectAllText": "Vybrať všetko"
+      },
+      "modalTitle": "Banka miniaplikácií",
+      "search": "Nájsť"
     },
     "Blockquote": {
       "form": {

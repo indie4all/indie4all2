@@ -14,7 +14,9 @@ import netlifyUrlTemplate from "./views/netlify-url.hbs";
 export default class GUI {
 
     private static GUI: GUI
-    private static ALLOWED_LANGUAGES = ["EN", "ES", "FR", "EL", "LT"];
+    private static ALLOWED_LANGUAGES = ["AR", "BG", "CA", "CS", "DA", "DE", "EL", "EN", "ES", "ET", "EU", "FI",
+        "FR", "GA", "GL", "HR", "HU", "IT", "JA", "LT", "LV", "MT", "NB", "NL",
+        "PL", "PT", "RO", "SK", "SL", "SV", "UK", "YUE"];
 
     private container: HTMLElement;
     private palette: HTMLElement;

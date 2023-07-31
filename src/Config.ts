@@ -1,6 +1,8 @@
 import { ConfigOptions } from "./types";
 
 export default class Config {
+    // Base path for analytics queries
+    private static analyticsBasePath: string = '';
     // Enable service worker for Progressive Web Applications
     private static enablePWA: boolean = true;
     // Key to encrypt sensitive data. If null, no encryption is done.
@@ -59,18 +61,29 @@ export default class Config {
             this.setResourceProxyBackendURL(options.resourceProxyBackendURL);
         if (Array.isArray(options.allowedResourceOrigins))
             this.setAllowedResourceOrigins(options.allowedResourceOrigins);
-        if (typeof options.bankOfWidgetsURL === "string")
+        if (typeof options.bankOfWidgetsURL === 'string')
             this.setBankOfWidgetsURL(options.bankOfWidgetsURL);
         if (Array.isArray(options.additionalVideoResourceRules))
             this.setAdditionalVideoResourceRules(options.additionalVideoResourceRules);
         if (typeof options.enableWidgetEditor === 'boolean')
             this.setWidgetEditorEnabled(options.enableWidgetEditor)
+        if (typeof options.analyticsBasePath === 'string')
+            this.setAnalyticsBasePath(options.analyticsBasePath)
     }
-    static setWidgetEditorEnabled(value: boolean) {
+
+    public static setAnalyticsBasePath(value: string) {
+        this.analyticsBasePath = value;
+    }
+
+    public static getAnalyticsBasePath(): string {
+        return this.analyticsBasePath;
+    }
+
+    public static setWidgetEditorEnabled(value: boolean) {
         this.enableWidgetEditor = value;
     }
 
-    static isWidgetEditorEnabled(): boolean {
+    public static isWidgetEditorEnabled(): boolean {
         return this.enableWidgetEditor;
     }
 

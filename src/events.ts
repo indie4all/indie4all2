@@ -1,4 +1,5 @@
 /* global $ */
+import Config from './Config';
 import I18n from './I18n';
 import { IApi } from './IApi';
 import Author from './modes/Author';
@@ -166,10 +167,10 @@ export function init(api: IApi) {
     });
 
     $(document).ready(function () {
-        navigator.sendBeacon("/entrance")
+        navigator.sendBeacon(Config.getAnalyticsBasePath() + "/entrance")
     });
 
     document.addEventListener('visibilitychange', function (event) {
-        navigator.sendBeacon(document.visibilityState === "hidden" ? "/exit" : "/entrance")
+        navigator.sendBeacon(Config.getAnalyticsBasePath() + (document.visibilityState === "hidden" ? "/exit" : "/entrance"))
     });
 }

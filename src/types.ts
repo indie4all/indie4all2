@@ -2,6 +2,8 @@
 
 /** API configuration options. **/
 export interface ConfigOptions {
+    // Base path for analytics
+    analyticsBasePath?: string,
     // Enable service worker for Progressive Web Applications
     enablePWA?: boolean
     // Key to encrypt sensitive data. If null, no encryption is done.
@@ -25,13 +27,13 @@ export interface ConfigOptions {
     // Server URL to remotely create a local resource and get its corresponding URL
     resourceBackendURL?: string
     // Server URL to get the list of widgets available in the bank of widgets
-     bankOfWidgetsURL?: string
+    bankOfWidgetsURL?: string
     // List of permitted origins for hosting resources
     allowedResourceOrigins?: []
     // Additional rules to validate video resources
     additionalVideoResourceRules?: []
-        //Enable mode of Widget Editor
-    enableWidgetEditor : boolean;
+    //Enable mode of Widget Editor
+    enableWidgetEditor: boolean;
 
 }
 

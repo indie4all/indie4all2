@@ -1,10 +1,9 @@
-import Utils from "../../../Utils";
 import './styles.scss';
 import WidgetContainerElement from "../WidgetContainerElement/WidgetContainerElement";
 import ModelManager from "../../ModelManager";
 import icon from "./icon.png";
 import WidgetElement from "../WidgetElement/WidgetElement";
-import { FormEditData, InputWidgetCalloutData, WidgetCalloutParams} from "../../../types";
+import { FormEditData, InputWidgetCalloutData, WidgetCalloutParams } from "../../../types";
 
 
 export default class WidgetCallout extends WidgetContainerElement {
@@ -44,7 +43,7 @@ export default class WidgetCallout extends WidgetContainerElement {
         const data = {
             instanceId: this.id,
             textTitle: this.params.text,
-            style : this.params.style,
+            style: this.params.style,
             colorTheme: this.params.colorTheme,
             animation: this.params.animation
         };
@@ -56,13 +55,13 @@ export default class WidgetCallout extends WidgetContainerElement {
 
     getTexts() {
         return {
-            "style": this.params.style, "name": this.params.text, "animation": this.params.animation, "colorTheme": this.params.colorTheme,
+            "text": this.params.text,
             "children": this.data.map(child => child.getTexts())
         }
     }
 
     preview(): string {
-        return this.params?.text ? this.params?.text :  this.translate("widgets.Callout.label");
+        return this.params?.text ? this.params?.text : this.translate("widgets.Callout.label");
     }
 
     toJSON(): any {
@@ -73,7 +72,7 @@ export default class WidgetCallout extends WidgetContainerElement {
     }
 
     settingsOpened(): void {
-       this.events();
+        this.events();
     }
 
     updateModelFromForm(form: any): void {
@@ -84,10 +83,7 @@ export default class WidgetCallout extends WidgetContainerElement {
     }
 
     updateTexts(texts: any): void {
-        this.params.text = texts.textTitle;
-        this.params.style = texts.style;
-        this.params.colorTheme = texts.colorTheme;
-        this.params.animation = texts.animation;
+        this.params.text = texts.text;
         (texts.children as any[]).forEach((text, idx) => this.data[idx].updateTexts(text));
     }
 
@@ -100,22 +96,22 @@ export default class WidgetCallout extends WidgetContainerElement {
     validateForm(form: any): string[] {
         var keys: string[] = [];
         return keys;
-    } 
+    }
 
     public async events() {
         await import("@melloware/coloris/dist/coloris.css");
         const { default: Coloris } = await import("@melloware/coloris");
         Coloris.init();
         const $colorPicker = $("#custom-callout-color-picker");
-        Coloris.coloris({ el: '#custom-callout-color-picker', parent: '#modal-settings-body', alpha: false, formatToggle: false }); 
-        
+        Coloris.coloris({ el: '#custom-callout-color-picker', parent: '#modal-settings-body', alpha: false, formatToggle: false });
+
         $(`#callout-block-style`).on("change", () => {
-           const elem = $(`#callout-block-style option:selected`);
-           $(`#textTitle`).val($.trim(elem.text()));
-           $(`#custom-callout-color-picker`).trigger('change');
+            const elem = $(`#callout-block-style option:selected`);
+            $(`#textTitle`).val($.trim(elem.text()));
+            $(`#custom-callout-color-picker`).trigger('change');
         })
 
-        $(`#custom-callout-color-picker`).on('change', function(){
+        $(`#custom-callout-color-picker`).on('change', function () {
             $colorPicker.val($(this).val() ?? '').closest(".clr-field").css('color', $(this).val() as string);
         })
     }

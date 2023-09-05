@@ -9,6 +9,7 @@ import modelRouter from "./routes/model";
 import resourceRouter from "./routes/resource";
 import translationRouter from "./routes/translation";
 import widgetRouter from "./routes/widget";
+import questionsRouter from "./routes/questions";
 import cleanPreviewsCron from "./cron/cleanPreviews";
 import { AnalyticsService } from './services/analytics/AnalyticsService';
 const logger = JetLogger(LoggerModes.Console);
@@ -66,6 +67,7 @@ app.use("/model", modelRouter);
 app.use("/resource", resourceRouter);
 app.use("/translation", translationRouter);
 app.use("/widgets", widgetRouter);
+app.use("/questions", questionsRouter);
 
 app.listen(config.get("server.port"), function () {
     logger.imp("---------------");

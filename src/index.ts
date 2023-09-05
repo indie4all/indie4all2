@@ -4,7 +4,7 @@ import { dom, library } from '@fortawesome/fontawesome-svg-core'
 import {
     faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle,
     faCloudDownloadAlt, faCloudUploadAlt, faCopy, faDownload, faEdit, faEye, faGlobe, faFileExport,
-    faFileImport, faLanguage, faPlusCircle, faTimes, faTimesCircle, faRedo, faSave, faSpinner, faN,faTrashAlt, faUndo
+    faFileImport, faLanguage, faPlusCircle, faTimes, faTimesCircle, faRedo, faSave, faSpinner, faN, faTag, faTrashAlt, faUndo
 } from '@fortawesome/free-solid-svg-icons'
 import "./styles/overrides.css"
 import { init as init_events } from './events'
@@ -29,7 +29,7 @@ const start = async (options?: ConfigOptions) => {
     // Enable FontAwesome icons
     library.add(faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle,
         faCloudDownloadAlt, faCloudUploadAlt, faCopy, faDownload, faEdit, faEye, faGlobe, faFileExport,
-        faFileImport, faLanguage, faPlusCircle, faTimes, faTimesCircle, faRedo, faSave, faSpinner,faN, faTrashAlt, faUndo);
+        faFileImport, faLanguage, faPlusCircle, faTimes, faTimesCircle, faRedo, faSave, faSpinner,faN, faTag, faTrashAlt, faUndo);
     // Watch for changes to replace icons
     dom.watch();
     await I18n.init();

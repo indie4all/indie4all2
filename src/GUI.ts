@@ -10,6 +10,8 @@ import loadingTemplate from "./views/loading.hbs"
 import settingsTemplate from "./views/modal-settings.hbs"
 import previewGeneratedTemplate from "./views/preview-generated.hbs"
 import netlifyUrlTemplate from "./views/netlify-url.hbs";
+import ModelManager from "./model/ModelManager";
+import  "./styles/question-bank-modal.scss";
 
 export default class GUI {
 
@@ -42,7 +44,6 @@ export default class GUI {
         this.author = author;
         this.container = container;
         this.palette = palette;
-        this.categories = categories;
         this.i18n = I18n.getInstance();
         this.dragDropHandler = new DragDropHandler(palette, container, author.getModel());
         $(this.palette).append(categories.map(cat => cat.render()).join(''));
@@ -139,6 +140,142 @@ export default class GUI {
         $("#modal-settings .btn-submit").on('click', function () {
             $("#modal-settings input[type='submit']").trigger('click');
         });
+    }
+
+
+    async openModalQuestionsBank(dataElementId: string) {
+        const { default: modalTemplate } = await import('./views/modal-questions-bank.hbs');
+        const headers = new Headers();
+        headers.append("Accept", "application/json");
+        let data = await fetch(Config.getQuestionsBankURL(), { method: 'GET', headers, redirect: 'follow' })
+            .then(res => res.json());
+
+        const mapeo = {
+            "SingleAnswer" : "SimpleQuestion",
+            "MultipleAnswer" : "MultipleQuestion",
+            "TrueFalse" : "TrueFalseQuestion"
+        }
+        data.map((elem: any) => {
+            elem["answers"] = JSON.stringify(elem["answers"]).trim();
+            elem["img"] = ModelManager.getWidgetElement(mapeo[elem.type]).icon
+        });
+        const groups = [...new Set(data.map(objeto => objeto.group.name))].filter(elem => elem != null);
+        const types = [...new Set(data.map(objeto => mapeo[objeto.type]))];
+        $("#modal-questions-bank").remove();
+        
+        $(this.container).after(modalTemplate({ groups: groups, types: types, data: data}));
+        $("#modal-questions-bank").modal({ keyboard: false, focus: true, backdrop: 'static' });
+
+        const aggregateWidget = async function (button: HTMLElement) {
+            const question = $(button).find(".question-text").text() as string;
+            const type = $(button).find("input[name=type]").val() as string; 
+            const correct = $(button).find("input[name=correct]").val() as string;
+            let answers = $(button).find("input[name=answers]").val() as string;
+            answers = JSON.parse(answers);
+            let datos = {}
+            if(answers.length > 0) {
+                datos = {
+                    "question": question,
+                    "answers" : answers,
+                    "feedback" : {
+                        "positive" : "",
+                        "negative" : ""
+                    }
+                }
+            }
+            else {
+                datos = {
+                    "question": question,
+                    "answer" : correct,
+                    "feedback" : {
+                        "positive" : "",
+                        "negative" : ""
+                    }
+                }
+            }
+            // TODO: addContent añade un elemento vacío, queremos COPIAR un elemento de una paleta
+            //this.author.addContent(dataElementId, obj2.widget);
+            let widget = (await ModelManager.create(mapeo[type], { data: datos} )).clone();
+            console.log(widget);
+            this.author.addModelElement(widget, dataElementId);
+        }
+
+        const onClick = aggregateWidget.bind(this);
+
+        $("#check-select-all").on('change', function () {
+            $(".d-flex .input-checkbox ").prop('checked', $("#check-select-all").prop('checked'));
+        });
+
+        $(".d-flex .input-checkbox").on("click", function () {
+            $("#check-select-all").prop('checked', $(".d-flex .input-checkbox:checked").length === $(".d-flex .input-checkbox").length);
+            $(this).prop("checked", !$(this).prop("checked"));
+        });
+
+        $(".widget-button").on("click", function () {
+            const checkbox = $(this).find("input[type='checkbox']");
+            checkbox.prop("checked", !checkbox.prop("checked"));
+        });
+
+        $("#modal-questions-bank .btn-submit").on("click", async function (e) {
+            if ($("#checkbox-random").prop("checked")) {
+                const num = $("#number-of-random-questions").val() as number;
+                const total = $(".input-checkbox:checked").length;
+                if (num > total) {
+                    const { default: alertErrorTemplate } = await import("./views/alertError.hbs");
+                    $("#modal-bank-widgets .errors").html(alertErrorTemplate({
+                        errorText:
+                            I18n.getInstance().translate('widgets.Bank.modal.maximumRandomWidgetsExceeded')
+                    }));
+                    e.preventDefault();
+                    return;
+                }
+
+                const indexes = [];
+                while (indexes.length < num) {
+                    const indexAleatorio = Math.floor(Math.random() * total);
+                    if (!indexes.includes(indexAleatorio)) {
+                        indexes.push(indexAleatorio);
+                        await onClick($(".input-checkbox:checked")[indexAleatorio].parentElement);
+                    }
+                }
+            }
+            else {
+                $("#modal-questions-bank .panel-questions-bank input[type='checkbox']:checked").each((index, elem) => {
+                    onClick(elem.parentElement);
+                });
+            }
+            $("#modal-questions-bank").modal('hide');
+        });
+
+        $("#button-search-questions-bank").on('click', function () {
+
+            const searchTerm = ($(" #modal-questions-bank input[type='search']").val() as string).toLowerCase();
+            const searchGroup = ($(" #modal-questions-bank .select-group option:selected").val() as string).trim();
+            const searchType = ($(" #modal-questions-bank .select-type option:selected").val() as string).trim();
+
+            $('.widget-button').each(function () {
+
+                const result: boolean[] = [];
+
+                const title = $(this).find('.question-item').text().toLowerCase();
+                const tags = $(this).find('.badge').toArray().map( (elem: any) => $(elem).text())
+                const group = $(this).find("input[name='group']").val() as string;
+                const type = $(this).find("input[name='type']").val() as string;
+
+                console.log(tags, searchTerm);
+
+                result[0] = title.includes(searchTerm) || tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+                result[1] = searchGroup === "default" || group === searchGroup;
+                result[2] = searchType === "default" || mapeo[type] === searchType;
+
+                if (result.every(elem => elem)) {
+                    $(this).removeClass("d-none").addClass("d-flex");
+                } else {
+                    $(this).removeClass("d-flex").addClass("d-none");
+                }
+            })
+        })
+
     }
 
     async openSettings(dataElementId: string) {

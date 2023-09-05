@@ -124,6 +124,11 @@ export function init(api: IApi) {
         api.toggleCategory(category);
     });
 
+    $('body').on('click', '.author-bank-questions', function () {
+        const id = $(this).closest('[data-id]').data('id');
+        api.openQuestionsBank(id);
+    });
+
     // Enable PWA application support if available in the browser
     window.addEventListener('beforeinstallprompt', (event) => {
         // Prevent the mini-infobar from appearing on mobile.

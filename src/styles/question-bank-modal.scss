@@ -1,0 +1,101 @@
+#modal-questions-bank {
+
+    input[type=checkbox] {
+        transform: scale(1.5);
+    }
+
+    #button-search-questions-bank {
+        @media screen and (max-width: 992px) {
+            width: 100%;
+        }
+    }
+
+    .list-tags {
+        list-style: none;
+        display: flex;
+        padding-inline-start: 0;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+
+        li {
+            margin: 0 5px;
+        }
+
+    }
+
+    .question-text {
+        margin-bottom: 4px;
+    }
+
+    .fa-tag {
+        margin-right: 4px;
+        transform: rotate(90deg);
+    }
+
+    .select-filter {
+
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        color: #495057;
+
+        @media screen and (max-width: 992px) {
+            padding: 0.375rem 0.75rem !important;
+            margin-bottom: 10px;
+        }
+    }
+    
+    #filter-questions-bank {
+        display: flex;
+        padding : 0;
+    }
+
+    .widget-button {
+        border-radius: 15px;
+        display: flex;
+        padding-right: 30px !important;
+        @media screen and (max-width: 575px) {
+           display: block !important;
+           padding-right: 0 !important;
+        }
+    } 
+    .panel-questions-bank {
+        max-height: 500px;
+        overflow-y: scroll;
+    }
+    
+    .options-questions-bank{
+        display: flex; 
+        justify-content: space-between;
+
+        @media screen and (max-width: 992px) {
+            flex-direction: column;
+        }
+    }
+
+   .random-label {
+     padding-left: 5px;
+   }
+
+   .select-all-label {
+     padding-right: 35px;
+     display: flex; 
+     align-items:center; 
+     justify-content: flex-end;
+
+     .select-all-input {
+        margin-left: 10px;
+     }
+
+     @media screen and (max-width: 992px) {
+        flex-direction: row-reverse;
+        padding-right: 0px;
+        padding-left: 5px !important;
+        row-gap: 1em;
+        
+        .select-all-input{
+            margin-right: 10px;
+            margin-left: 0;
+        }
+    }
+   }
+}

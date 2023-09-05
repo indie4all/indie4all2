@@ -24,5 +24,6 @@ export interface IApi {
     redo();
     clear();
     translate();
+    openQuestionsBank(id: string);
 
 }

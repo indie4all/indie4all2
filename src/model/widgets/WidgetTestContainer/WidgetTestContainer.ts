@@ -1,9 +1,11 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
 import ModelManager from "../../ModelManager";
+import template from "./template.hbs";
 import icon from "./icon.png";
 import { FormEditData, InputWidgetTestContainerData } from "../../../types";
 import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
+import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
 
 export default class WidgetTestContainer extends WidgetContainerSpecificElement {
 
@@ -23,6 +25,23 @@ export default class WidgetTestContainer extends WidgetContainerSpecificElement 
             name: WidgetTestContainer.widget + "-" + this.id,
             help: ""
         };
+    }
+
+    createElement(): string {
+        const constructor = WidgetTestContainer;
+        const children = this.data ? this.data.map((child: WidgetSpecificItemElement ) => child.createElement()).join('') : "";
+        return template({
+            id: this.id,
+            widget: constructor.widget,
+            icon: constructor.icon,
+            label: this.preview(),
+            canAdd: constructor.addable,
+            canEdit: constructor.editable,
+            canDelete: constructor.deletable,
+            canCopy: constructor.copyable,
+            children,
+            cssClass: Utils.toKebabCase(constructor.name)
+        });  
     }
 
     clone(): WidgetTestContainer {

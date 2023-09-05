@@ -81,5 +81,8 @@ export default abstract class Author implements IApi {
 
     redo() { this.undoredo.redo(); }
 
+    async openQuestionsBank(id: string) {
+        this.GUI.openModalQuestionsBank(id);
+    }
 
 }

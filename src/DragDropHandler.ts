@@ -71,9 +71,7 @@ export default class DragDropHandler {
     drop(el: HTMLElement, target: HTMLElement, source: HTMLElement, sibling: HTMLElement) {
         if (!target) return;
         if (this.allowGenerate(source, target)) {
-            if (el.dataset.widget === "Bank") {
-                this.openBankModal(el, target, sibling);
-            }
+            if (el.dataset.widget === "Bank") this.openBankModal(el, target, sibling);
             // Add a new element to the container
             else this.onCreateElement(el, target, sibling);
         } else if (source != target) {
@@ -295,4 +293,5 @@ export default class DragDropHandler {
             });
         return res;
     }
+
 }

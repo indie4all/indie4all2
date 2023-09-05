@@ -28,6 +28,8 @@ export interface ConfigOptions {
     resourceBackendURL?: string
     // Server URL to get the list of widgets available in the bank of widgets
     bankOfWidgetsURL?: string
+    // Server URL to get the list of questions available in the bank of questions
+    questionsBankURL?: string
     // List of permitted origins for hosting resources
     allowedResourceOrigins?: []
     // Additional rules to validate video resources

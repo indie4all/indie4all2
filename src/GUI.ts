@@ -11,7 +11,7 @@ import settingsTemplate from "./views/modal-settings.hbs"
 import previewGeneratedTemplate from "./views/preview-generated.hbs"
 import netlifyUrlTemplate from "./views/netlify-url.hbs";
 import ModelManager from "./model/ModelManager";
-import  "./styles/question-bank-modal.scss";
+import "./styles/question-bank-modal.scss";
 
 export default class GUI {
 
@@ -151,9 +151,9 @@ export default class GUI {
             .then(res => res.json());
 
         const mapeo = {
-            "SingleAnswer" : "SimpleQuestion",
-            "MultipleAnswer" : "MultipleQuestion",
-            "TrueFalse" : "TrueFalseQuestion"
+            "SingleAnswer": "SimpleQuestion",
+            "MultipleAnswer": "MultipleQuestion",
+            "TrueFalse": "TrueFalseQuestion"
         }
         data.map((elem: any) => {
             elem["answers"] = JSON.stringify(elem["answers"]).trim();
@@ -162,41 +162,38 @@ export default class GUI {
         const groups = [...new Set(data.map(objeto => objeto.group.name))].filter(elem => elem != null);
         const types = [...new Set(data.map(objeto => mapeo[objeto.type]))];
         $("#modal-questions-bank").remove();
-        
-        $(this.container).after(modalTemplate({ groups: groups, types: types, data: data}));
+
+        $(this.container).after(modalTemplate({ groups: groups, types: types, data: data }));
         $("#modal-questions-bank").modal({ keyboard: false, focus: true, backdrop: 'static' });
 
         const aggregateWidget = async function (button: HTMLElement) {
             const question = $(button).find(".question-text").text() as string;
-            const type = $(button).find("input[name=type]").val() as string; 
+            const type = $(button).find("input[name=type]").val() as string;
             const correct = $(button).find("input[name=correct]").val() as string;
             let answers = $(button).find("input[name=answers]").val() as string;
             answers = JSON.parse(answers);
             let datos = {}
-            if(answers.length > 0) {
+            if (answers.length > 0) {
                 datos = {
                     "question": question,
-                    "answers" : answers,
-                    "feedback" : {
-                        "positive" : "",
-                        "negative" : ""
+                    "answers": answers,
+                    "feedback": {
+                        "positive": "",
+                        "negative": ""
                     }
                 }
             }
             else {
                 datos = {
                     "question": question,
-                    "answer" : correct,
-                    "feedback" : {
-                        "positive" : "",
-                        "negative" : ""
+                    "answer": correct,
+                    "feedback": {
+                        "positive": "",
+                        "negative": ""
                     }
                 }
             }
-            // TODO: addContent añade un elemento vacío, queremos COPIAR un elemento de una paleta
-            //this.author.addContent(dataElementId, obj2.widget);
-            let widget = (await ModelManager.create(mapeo[type], { data: datos} )).clone();
-            console.log(widget);
+            let widget = (await ModelManager.create(mapeo[type], { data: datos })).clone();
             this.author.addModelElement(widget, dataElementId);
         }
 
@@ -258,7 +255,7 @@ export default class GUI {
                 const result: boolean[] = [];
 
                 const title = $(this).find('.question-text').text().toLowerCase();
-                const tags = $(this).find('.badge').toArray().map( (elem: any) => $(elem).text())
+                const tags = $(this).find('.badge').toArray().map((elem: any) => $(elem).text())
                 const group = $(this).find("input[name='group']").val() as string;
                 const type = $(this).find("input[name='type']").val() as string;
 

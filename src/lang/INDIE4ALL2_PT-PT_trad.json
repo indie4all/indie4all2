@@ -1264,6 +1264,21 @@
       },
       "label": "Janela modal"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Você deve escrever pelo menos 2 respostas e marcar pelo menos uma correta.",
+          "label": "Respostas possíveis"
+        },
+        "questionText": {
+          "help": "Este é o texto da pergunta que será exibido na unidade de conteúdo.",
+          "label": "Texto da pergunta",
+          "placeholder": "Texto da pergunta múltipla..."
+        }
+      },
+      "label": "Pergunta múltipla",
+      "prev": "Pergunta múltipla ainda não estabelecida..."
+    },
     "Puzzle": {
       "form": {
         "image": {

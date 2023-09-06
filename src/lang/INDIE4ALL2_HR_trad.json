@@ -1264,6 +1264,21 @@
       },
       "label": "Modalni prozor"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Morate napisati najmanje 2 odgovora i označiti barem jedan točan.",
+          "label": "Mogući odgovori"
+        },
+        "questionText": {
+          "help": "Ovo je tekst pitanja koje će biti prikazano u jedinici sadržaja.",
+          "label": "Tekst pitanja",
+          "placeholder": "Tekst višestrukog pitanja..."
+        }
+      },
+      "label": "Višestruko pitanje",
+      "prev": "Višestruko pitanje još nije uspostavljeno..."
+    },
     "Puzzle": {
       "form": {
         "image": {

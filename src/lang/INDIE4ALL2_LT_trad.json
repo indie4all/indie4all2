@@ -1264,6 +1264,21 @@
       },
       "label": "Modalinis langas"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Turite parašyti bent 2 atsakymus ir pažymėti bent vieną teisingą.",
+          "label": "Galimi atsakymai"
+        },
+        "questionText": {
+          "help": "Tai yra klausimo tekstas, kuris bus rodomas turinio vienete.",
+          "label": "Klausimo tekstas",
+          "placeholder": "Kelių klausimų tekstas..."
+        }
+      },
+      "label": "Keli klausimai",
+      "prev": "Keli klausimai dar nenustatyti..."
+    },
     "Puzzle": {
       "form": {
         "image": {

@@ -1264,6 +1264,21 @@
       },
       "label": "Modální okno"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Musíte napsat alespoň 2 odpovědi a označit alespoň jednu správně.",
+          "label": "Možné odpovědi"
+        },
+        "questionText": {
+          "help": "To znamená, že text otázky se zobrazí v jednotce obsahu.",
+          "label": "Text otázky",
+          "placeholder": "Text mnohonásobné otázky..."
+        }
+      },
+      "label": "Více otázek",
+      "prev": "Více otázek ještě nebylo stanoveno..."
+    },
     "Puzzle": {
       "form": {
         "image": {

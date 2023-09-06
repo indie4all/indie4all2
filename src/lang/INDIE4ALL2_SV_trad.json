@@ -1264,6 +1264,21 @@
       },
       "label": "Modalt fönster"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Du måste skriva minst 2 svar och markera minst ett rätt.",
+          "label": "Möjliga svar"
+        },
+        "questionText": {
+          "help": "Detta är texten i frågan kommer att visas i innehållsenheten.",
+          "label": "Frågetext",
+          "placeholder": "Text av flera frågor ..."
+        }
+      },
+      "label": "Flera frågor",
+      "prev": "Flera frågor inte etablerade ännu ..."
+    },
     "Puzzle": {
       "form": {
         "image": {

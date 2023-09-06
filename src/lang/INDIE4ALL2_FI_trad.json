@@ -1264,6 +1264,21 @@
       },
       "label": "Modaalinen ikkuna"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Sinun on kirjoitettava vähintään 2 vastausta ja merkittävä vähintään yksi oikein.",
+          "label": "Mahdolliset vastaukset"
+        },
+        "questionText": {
+          "help": "Tämä on kysymyksen teksti, joka näkyy sisältöyksikössä.",
+          "label": "Kysymyksen teksti",
+          "placeholder": "Usean kysymyksen teksti..."
+        }
+      },
+      "label": "Useita kysymyksiä",
+      "prev": "Useita kysymyksiä ei ole vielä vahvistettu..."
+    },
     "Puzzle": {
       "form": {
         "image": {

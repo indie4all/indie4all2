@@ -1264,6 +1264,21 @@
       },
       "label": "模態窗口"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "你必須至少寫2個答案並至少標記一個正確。",
+          "label": "可能嘅答案"
+        },
+        "questionText": {
+          "help": "係問題嘅文本將顯示喺內容單位中。",
+          "label": "問題文本",
+          "placeholder": "多個問題的文本..."
+        }
+      },
+      "label": "多個問題",
+      "prev": "多個問題尚未建立..."
+    },
     "Puzzle": {
       "form": {
         "image": {

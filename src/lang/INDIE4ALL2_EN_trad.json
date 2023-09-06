@@ -1264,6 +1264,21 @@
       },
       "label": "Modal window"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "You must write at least 2 answers and mark at least one correct.",
+          "label": "Possible answers"
+        },
+        "questionText": {
+          "help": "This is the text of the question will be displayed in the content unit.",
+          "label": "Question text",
+          "placeholder": "Text of the multiple question..."
+        }
+      },
+      "label": "Multiple question",
+      "prev": "Multiple question not established yet..."
+    },
     "Puzzle": {
       "form": {
         "image": {

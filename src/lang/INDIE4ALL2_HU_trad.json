@@ -1264,6 +1264,21 @@
       },
       "label": "Modális ablak"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Legalább 2 választ kell írnia, és legalább egyet helyesnek kell jelölnie.",
+          "label": "Lehetséges válaszok"
+        },
+        "questionText": {
+          "help": "Ez a kérdés szövege jelenik meg a tartalmi egységben.",
+          "label": "A kérdés szövege",
+          "placeholder": "A többszörös kérdés szövege..."
+        }
+      },
+      "label": "Több kérdés",
+      "prev": "Több kérdés még nem állapítható meg..."
+    },
     "Puzzle": {
       "form": {
         "image": {

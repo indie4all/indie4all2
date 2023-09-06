@@ -1264,6 +1264,21 @@
       },
       "label": "Modales Fenster"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Sie müssen mindestens 2 Antworten schreiben und mindestens eine als richtig markieren.",
+          "label": "Mögliche Antworten"
+        },
+        "questionText": {
+          "help": "Dies ist der Text der Frage, der in der Inhaltseinheit angezeigt wird.",
+          "label": "Text der Frage",
+          "placeholder": "Text der Mehrfachfrage..."
+        }
+      },
+      "label": "Mehrere Fragen",
+      "prev": "Mehrfachfrage noch nicht geklärt ..."
+    },
     "Puzzle": {
       "form": {
         "image": {

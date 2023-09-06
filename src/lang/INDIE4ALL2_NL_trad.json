@@ -1264,6 +1264,21 @@
       },
       "label": "Modaal venster"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Je moet minstens 2 antwoorden schrijven en er minstens één correct markeren.",
+          "label": "Mogelijke antwoorden"
+        },
+        "questionText": {
+          "help": "Dit is de tekst van de vraag die wordt weergegeven in de inhoudseenheid.",
+          "label": "Tekst van de vraag",
+          "placeholder": "Tekst van de meervoudige vraag..."
+        }
+      },
+      "label": "Meerdere vragen",
+      "prev": "Meervoudige vraag nog niet vastgesteld..."
+    },
     "Puzzle": {
       "form": {
         "image": {

@@ -1264,6 +1264,21 @@
       },
       "label": "Leiho modala"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Gutxienez 2 erantzun idatzi behar dituzu eta gutxienez zuzen bat markatu.",
+          "label": "Balizko erantzunak"
+        },
+        "questionText": {
+          "help": "Hori da galderaren testua, eduki-batasunean erakutsiko dena.",
+          "label": "Galderaren testua",
+          "placeholder": "Galdera anizkoitzaren testua..."
+        }
+      },
+      "label": "Galdera anizkoitza",
+      "prev": "Oraindik ezarri gabeko galdera anizkoitza..."
+    },
     "Puzzle": {
       "form": {
         "image": {

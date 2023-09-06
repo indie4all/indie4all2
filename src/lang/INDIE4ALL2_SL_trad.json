@@ -1264,6 +1264,21 @@
       },
       "label": "Modalno okno"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Napisati morate vsaj 2 odgovora in označiti vsaj enega pravilnega.",
+          "label": "Možni odgovori"
+        },
+        "questionText": {
+          "help": "To je besedilo vprašanja, ki bo prikazano v vsebinski enoti.",
+          "label": "Besedilo vprašanja",
+          "placeholder": "Besedilo večkratnega vprašanja..."
+        }
+      },
+      "label": "Več vprašanj",
+      "prev": "Več vprašanj še ni bilo zastavljenih ..."
+    },
     "Puzzle": {
       "form": {
         "image": {

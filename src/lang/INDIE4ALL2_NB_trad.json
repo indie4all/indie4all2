@@ -1264,6 +1264,21 @@
       },
       "label": "Modalt vindu"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Du må skrive minst 2 svar og markere minst ett riktig.",
+          "label": "Mulige svar"
+        },
+        "questionText": {
+          "help": "Dette er teksten til spørsmålet vil bli vist i innholdsenheten.",
+          "label": "Spørsmål tekst",
+          "placeholder": "Tekst av flere spørsmål ..."
+        }
+      },
+      "label": "Flere spørsmål",
+      "prev": "Flere spørsmål ikke etablert ennå ..."
+    },
     "Puzzle": {
       "form": {
         "image": {

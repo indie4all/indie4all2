@@ -1264,6 +1264,21 @@
       },
       "label": "Modaalne aken"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Peate kirjutama vähemalt 2 vastust ja märkima vähemalt ühe õige.",
+          "label": "Võimalikud vastused"
+        },
+        "questionText": {
+          "help": "See on küsimuse tekst, mis kuvatakse sisuüksuses.",
+          "label": "Küsimuse tekst",
+          "placeholder": "Mitme küsimuse tekst..."
+        }
+      },
+      "label": "Mitu küsimust",
+      "prev": "Mitu küsimust pole veel kindlaks tehtud ..."
+    },
     "Puzzle": {
       "form": {
         "image": {

@@ -1264,6 +1264,21 @@
       },
       "label": "Finestra modal"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Has d'escriure almenys 2 respostes i puntuar almenys una correcta.",
+          "label": "Possibles respostes"
+        },
+        "questionText": {
+          "help": "És a dir, el text de la pregunta es mostrarà a la unitat de contingut.",
+          "label": "Text de la pregunta",
+          "placeholder": "Text de la pregunta múltiple..."
+        }
+      },
+      "label": "Pregunta múltiple",
+      "prev": "Pregunta múltiple encara no establerta..."
+    },
     "Puzzle": {
       "form": {
         "image": {

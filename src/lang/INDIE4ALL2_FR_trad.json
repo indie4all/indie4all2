@@ -1264,6 +1264,21 @@
       },
       "label": "Fenêtre modale"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Vous devez écrire au moins 2 réponses et en marquer au moins une correcte.",
+          "label": "Réponses possibles"
+        },
+        "questionText": {
+          "help": "C’est le texte de la question qui sera affiché dans l’unité de contenu.",
+          "label": "Texte de la question",
+          "placeholder": "Texte de la question multiple..."
+        }
+      },
+      "label": "Questions multiples",
+      "prev": "Question multiple pas encore établie..."
+    },
     "Puzzle": {
       "form": {
         "image": {

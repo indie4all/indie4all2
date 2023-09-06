@@ -1264,6 +1264,21 @@
       },
       "label": "Fereastra modală"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Trebuie să scrieți cel puțin 2 răspunsuri și să marcați cel puțin unul corect.",
+          "label": "Răspunsuri posibile"
+        },
+        "questionText": {
+          "help": "Acesta este textul întrebării care va fi afișat în unitatea de conținut.",
+          "label": "Textul întrebării",
+          "placeholder": "Textul întrebării multiple..."
+        }
+      },
+      "label": "Întrebare multiplă",
+      "prev": "Întrebarea multiplă nu a fost încă stabilită ..."
+    },
     "Puzzle": {
       "form": {
         "image": {

@@ -1264,6 +1264,21 @@
       },
       "label": "Modal vindue"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Du skal skrive mindst 2 svar og markere mindst et korrekt.",
+          "label": "Mulige svar"
+        },
+        "questionText": {
+          "help": "Dette er teksten til spørgsmålet, der vises i indholdsenheden.",
+          "label": "Spørgsmål tekst",
+          "placeholder": "Teksten til de mange spørgsmål..."
+        }
+      },
+      "label": "Flere spørgsmål",
+      "prev": "Flere spørgsmål ikke etableret endnu..."
+    },
     "Puzzle": {
       "form": {
         "image": {

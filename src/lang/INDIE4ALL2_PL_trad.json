@@ -1264,6 +1264,21 @@
       },
       "label": "Okno modalne"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Musisz napisać co najmniej 2 odpowiedzi i zaznaczyć co najmniej jedną poprawną.",
+          "label": "Możliwe odpowiedzi"
+        },
+        "questionText": {
+          "help": "Jest to tekst pytania, który zostanie wyświetlony w jednostce treści.",
+          "label": "Tekst pytania",
+          "placeholder": "Tekst wielokrotnego pytania..."
+        }
+      },
+      "label": "Wiele pytań",
+      "prev": "Wiele pytań nie zostało jeszcze ustalonych..."
+    },
     "Puzzle": {
       "form": {
         "image": {

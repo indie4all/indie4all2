@@ -1264,6 +1264,21 @@
       },
       "label": "Finestra modale"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Devi scrivere almeno 2 risposte e contrassegnarne almeno una corretta.",
+          "label": "Possibili risposte"
+        },
+        "questionText": {
+          "help": "Questo è il testo della domanda che verrà visualizzato nell'unità di contenuto.",
+          "label": "Testo della domanda",
+          "placeholder": "Testo della domanda multipla..."
+        }
+      },
+      "label": "Domanda multipla",
+      "prev": "Domanda multipla non ancora stabilita..."
+    },
     "Puzzle": {
       "form": {
         "image": {

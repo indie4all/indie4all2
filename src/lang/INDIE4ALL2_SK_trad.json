@@ -1264,6 +1264,21 @@
       },
       "label": "Prepravné okno"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Musíte napísať aspoň 2 odpovede a označiť aspoň jednu správnu.",
+          "label": "Možné odpovede"
+        },
+        "questionText": {
+          "help": "Toto je text otázky, ktorý sa zobrazí v obsahovej jednotke.",
+          "label": "Text otázky",
+          "placeholder": "Text viacnásobnej otázky..."
+        }
+      },
+      "label": "Viacnásobná otázka",
+      "prev": "Viacnásobná otázka ešte nebola stanovená..."
+    },
     "Puzzle": {
       "form": {
         "image": {

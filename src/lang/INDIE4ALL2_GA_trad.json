@@ -1264,6 +1264,21 @@
       },
       "label": "Fuinneog mhódúil"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Ní mór duit 2 fhreagra ar a laghad a scríobh agus ceann amháin ar a laghad a mharcáil i gceart.",
+          "label": "Freagraí féideartha"
+        },
+        "questionText": {
+          "help": "Is é seo téacs na ceiste a thaispeánfar san aonad ábhair.",
+          "label": "Téacs na gceisteanna",
+          "placeholder": "Téacs na ceiste il..."
+        }
+      },
+      "label": "Ceist iolrach",
+      "prev": "Ceist iolrach nach bhfuil bunaithe fós..."
+    },
     "Puzzle": {
       "form": {
         "image": {

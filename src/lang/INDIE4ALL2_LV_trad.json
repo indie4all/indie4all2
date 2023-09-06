@@ -1264,6 +1264,21 @@
       },
       "label": "Modālais logs"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Jums jāuzraksta vismaz 2 atbildes un jāatzīmē vismaz viena pareiza.",
+          "label": "Iespējamās atbildes"
+        },
+        "questionText": {
+          "help": "Tas ir jautājuma teksts, kas tiks parādīts satura vienībā.",
+          "label": "Jautājuma teksts",
+          "placeholder": "Daudzkārtējā jautājuma teksts..."
+        }
+      },
+      "label": "Vairāki jautājumi",
+      "prev": "Vairāki jautājumi vēl nav noskaidroti..."
+    },
     "Puzzle": {
       "form": {
         "image": {

@@ -219,7 +219,7 @@ export default class GUI {
                 const total = $(".input-checkbox:checked").length;
                 if (num > total) {
                     const { default: alertErrorTemplate } = await import("./views/alertError.hbs");
-                    $("#modal-bank-widgets .errors").html(alertErrorTemplate({
+                    $("#modal-questions-bank .errors").html(alertErrorTemplate({
                         errorText:
                             I18n.getInstance().translate('widgets.Bank.modal.maximumRandomWidgetsExceeded')
                     }));

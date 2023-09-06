@@ -892,6 +892,7 @@
       "prev": "Audio-pojam još nije uspostavljen..."
     },
     "Bank": {
+      "add": "Dodati",
       "label": "Klupa",
       "modal": {
         "maximumRandomWidgetsExceeded": "Broj slučajnih widgeta ne može biti veći od odabranog broja widgeta",
@@ -1284,6 +1285,23 @@
       },
       "label": "Zagonetka",
       "prev": "Zagonetka još nije inicijalizirana..."
+    },
+    "QuestionsBank": {
+      "add": "Dodati",
+      "label": "Uvoz iz banke pitanja",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Broj slučajnih pitanja ne može biti veći od broja odabranih pitanja",
+        "modalTitle": "Banka pitanja",
+        "placeholderGroup": "Grupa",
+        "placeholderTitle": "Pretraživanje prema naslovu ili oznaci pitanja",
+        "placeholderType": "Momak",
+        "randomTextBefore": " Nasumična pitanja odabranih",
+        "randomTextPrev": "Uvesti ",
+        "search": "Naći",
+        "selectAllText": "Odaberi sve"
+      },
+      "modalTitle": "Banka pitanja",
+      "search": "Naći"
     },
     "RelatedUnitsAssociation": {
       "form": {

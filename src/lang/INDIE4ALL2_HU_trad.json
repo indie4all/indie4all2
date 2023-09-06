@@ -892,6 +892,7 @@
       "prev": "Az audio-kifejezés még nincs kialakítva..."
     },
     "Bank": {
+      "add": "Hozzáad",
       "label": "Pad",
       "modal": {
         "maximumRandomWidgetsExceeded": "A véletlenszerű widgetek száma nem haladhatja meg a kiválasztott widgetek számát",
@@ -1284,6 +1285,23 @@
       },
       "label": "Rejtvény",
       "prev": "A rejtvény még nincs inicializálva..."
+    },
+    "QuestionsBank": {
+      "add": "Hozzáad",
+      "label": "Importálás a kérdésbankból",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "A véletlenszerű kérdések száma nem haladhatja meg a kiválasztott kérdések számát",
+        "modalTitle": "Kérdés bank",
+        "placeholderGroup": "Csoport",
+        "placeholderTitle": "Keresés cím vagy kérdéscímke alapján",
+        "placeholderType": "Fickó",
+        "randomTextBefore": " Véletlenszerű kérdések a kiválasztottaktól",
+        "randomTextPrev": "Bevezet ",
+        "search": "Találni",
+        "selectAllText": "Az összes kijelölése"
+      },
+      "modalTitle": "Kérdés bank",
+      "search": "Találni"
     },
     "RelatedUnitsAssociation": {
       "form": {

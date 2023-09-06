@@ -892,6 +892,7 @@
       "prev": "Audio-term not established yet..."
     },
     "Bank": {
+      "add": "Add",
       "label": "Bench",
       "modal": {
         "maximumRandomWidgetsExceeded": "The number of random widgets cannot exceed the number of widgets selected",
@@ -1284,6 +1285,23 @@
       },
       "label": "Puzzle",
       "prev": "The puzzle hasn't been initialized yet..."
+    },
+    "QuestionsBank": {
+      "add": "Add",
+      "label": "Import from Question Bank",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "The number of random questions cannot exceed the number of questions selected",
+        "modalTitle": "Question Bank",
+        "placeholderGroup": "Group",
+        "placeholderTitle": "Search by title or question tag",
+        "placeholderType": "Guy",
+        "randomTextBefore": " Random questions from those selected",
+        "randomTextPrev": "Introduce ",
+        "search": "To find",
+        "selectAllText": "Select all"
+      },
+      "modalTitle": "Question Bank",
+      "search": "To find"
     },
     "RelatedUnitsAssociation": {
       "form": {

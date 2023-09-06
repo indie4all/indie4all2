@@ -892,6 +892,7 @@
       "prev": "Terme d'àudio encara no establert..."
     },
     "Bank": {
+      "add": "Sumar",
       "label": "Banc",
       "modal": {
         "maximumRandomWidgetsExceeded": "El nombre de ginys aleatoris no pot superar el nombre de ginys seleccionats",
@@ -1284,6 +1285,23 @@
       },
       "label": "Trencaclosques",
       "prev": "El trencaclosques encara no s'ha inicialitzat..."
+    },
+    "QuestionsBank": {
+      "add": "Sumar",
+      "label": "Importació des del banc de preguntes",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "El nombre de preguntes aleatòries no pot superar el nombre de preguntes seleccionades",
+        "modalTitle": "Banc de preguntes",
+        "placeholderGroup": "Grup",
+        "placeholderTitle": "Cerca per títol o etiqueta de pregunta",
+        "placeholderType": "Xicot",
+        "randomTextBefore": " Preguntes aleatòries dels seleccionats",
+        "randomTextPrev": "Introduir ",
+        "search": "Trobar",
+        "selectAllText": "Selecciona-ho tot"
+      },
+      "modalTitle": "Banc de preguntes",
+      "search": "Trobar"
     },
     "RelatedUnitsAssociation": {
       "form": {

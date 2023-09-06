@@ -892,6 +892,7 @@
       "prev": "Téarma fuaime nach bhfuil bunaithe fós..."
     },
     "Bank": {
+      "add": "Cuir Leis",
       "label": "Binse",
       "modal": {
         "maximumRandomWidgetsExceeded": "Ní féidir le líon na ngiuirléidí randamacha dul thar líon na ngiuirléidí a roghnaíodh",
@@ -1284,6 +1285,23 @@
       },
       "label": "Puzal",
       "prev": "Níor túsaíodh an puzal go fóill..."
+    },
+    "QuestionsBank": {
+      "add": "Cuir Leis",
+      "label": "Iompórtáil ó Bhanc na gCeisteanna",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Ní féidir le líon na gceisteanna randamacha dul thar líon na gceisteanna a roghnaíodh",
+        "modalTitle": "Banc na gCeisteanna",
+        "placeholderGroup": "Grúpa",
+        "placeholderTitle": "Cuardaigh de réir teidil nó clibe ceiste",
+        "placeholderType": "Fear",
+        "randomTextBefore": " Ceisteanna randamacha uathu siúd a roghnaíodh",
+        "randomTextPrev": "Tabhair isteach ",
+        "search": "Aimsigh",
+        "selectAllText": "Roghnaigh gach rud"
+      },
+      "modalTitle": "Banc na gCeisteanna",
+      "search": "Aimsigh"
     },
     "RelatedUnitsAssociation": {
       "form": {

@@ -892,6 +892,7 @@
       "prev": "مصطلح صوتي لم يتم تأسيسه بعد ..."
     },
     "Bank": {
+      "add": "جمع",
       "label": "مصطبة",
       "modal": {
         "maximumRandomWidgetsExceeded": "لا يمكن أن يتجاوز عدد الأدوات العشوائية عدد الأدوات المحددة",
@@ -1284,6 +1285,23 @@
       },
       "label": "لغز",
       "prev": "لم تتم تهيئة اللغز بعد ..."
+    },
+    "QuestionsBank": {
+      "add": "جمع",
+      "label": "الاستيراد من بنك الأسئلة",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "لا يمكن أن يتجاوز عدد الأسئلة العشوائية عدد الأسئلة المحددة",
+        "modalTitle": "بنك الأسئلة",
+        "placeholderGroup": "مجموعة",
+        "placeholderTitle": "البحث حسب العنوان أو علامة السؤال",
+        "placeholderType": "الرجل",
+        "randomTextBefore": " أسئلة عشوائية من أولئك الذين تم اختيارهم",
+        "randomTextPrev": "قدم ",
+        "search": "أبحث",
+        "selectAllText": "حدد الكل"
+      },
+      "modalTitle": "بنك الأسئلة",
+      "search": "أبحث"
     },
     "RelatedUnitsAssociation": {
       "form": {

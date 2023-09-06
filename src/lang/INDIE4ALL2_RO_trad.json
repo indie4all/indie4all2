@@ -892,6 +892,7 @@
       "prev": "Termenul audio nu a fost încă stabilit..."
     },
     "Bank": {
+      "add": "Adăuga",
       "label": "Bancă",
       "modal": {
         "maximumRandomWidgetsExceeded": "Numărul de widget-uri aleatorii nu poate depăși numărul de widget-uri selectate",
@@ -1284,6 +1285,23 @@
       },
       "label": "Puzzle",
       "prev": "Puzzle-ul nu a fost încă inițializat ..."
+    },
+    "QuestionsBank": {
+      "add": "Adăuga",
+      "label": "Import din banca de întrebări",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Numărul de întrebări aleatorii nu poate depăși numărul de întrebări selectate",
+        "modalTitle": "Banca de întrebări",
+        "placeholderGroup": "Grup",
+        "placeholderTitle": "Căutați după titlu sau etichetă de întrebare",
+        "placeholderType": "Tip",
+        "randomTextBefore": " Întrebări aleatorii de la cei selectați",
+        "randomTextPrev": "Prezenta ",
+        "search": "A găsi",
+        "selectAllText": "Selectați tot"
+      },
+      "modalTitle": "Banca de întrebări",
+      "search": "A găsi"
     },
     "RelatedUnitsAssociation": {
       "form": {

@@ -892,6 +892,7 @@
       "prev": "Äänitermiä ei ole vielä vahvistettu..."
     },
     "Bank": {
+      "add": "Lisätä",
       "label": "Penkki",
       "modal": {
         "maximumRandomWidgetsExceeded": "Satunnaisten widgetien määrä ei voi ylittää valittujen widgetien määrää",
@@ -1284,6 +1285,23 @@
       },
       "label": "Pulma",
       "prev": "Palapeliä ei ole vielä alustettu..."
+    },
+    "QuestionsBank": {
+      "add": "Lisätä",
+      "label": "Tuonti kysymyspankista",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Satunnaisten kysymysten määrä ei voi ylittää valittujen kysymysten määrää",
+        "modalTitle": "Kysymyspankki",
+        "placeholderGroup": "Ryhmä",
+        "placeholderTitle": "Hae otsikon tai kysymystunnisteen perusteella",
+        "placeholderType": "Kundi",
+        "randomTextBefore": " Satunnaisia kysymyksiä valituilta",
+        "randomTextPrev": "Esitellä ",
+        "search": "Löytää",
+        "selectAllText": "Valitse kaikki"
+      },
+      "modalTitle": "Kysymyspankki",
+      "search": "Löytää"
     },
     "RelatedUnitsAssociation": {
       "form": {

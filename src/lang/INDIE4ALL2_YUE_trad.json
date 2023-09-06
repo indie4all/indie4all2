@@ -892,6 +892,7 @@
       "prev": "音頻術語尚未建立..."
     },
     "Bank": {
+      "add": "加",
       "label": "板凳",
       "modal": {
         "maximumRandomWidgetsExceeded": "隨機小部件嘅數量不能超過所選小部件嘅數量",
@@ -1284,6 +1285,23 @@
       },
       "label": "難題",
       "prev": "謎題尚未初始化..."
+    },
+    "QuestionsBank": {
+      "add": "加",
+      "label": "從題庫導入",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "隨機問題嘅數量不能超過所選問題嘅數量",
+        "modalTitle": "題庫",
+        "placeholderGroup": "群",
+        "placeholderTitle": "按標題或問題標籤搜索",
+        "placeholderType": "傢伙",
+        "randomTextBefore": " 來自選定者嘅隨機問題",
+        "randomTextPrev": "介紹 ",
+        "search": "搵到",
+        "selectAllText": "全選"
+      },
+      "modalTitle": "題庫",
+      "search": "搵到"
     },
     "RelatedUnitsAssociation": {
       "form": {

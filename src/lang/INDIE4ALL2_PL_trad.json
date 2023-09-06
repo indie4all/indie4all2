@@ -892,6 +892,7 @@
       "prev": "Termin audio nie został jeszcze ustalony..."
     },
     "Bank": {
+      "add": "Dodawać",
       "label": "Ławka",
       "modal": {
         "maximumRandomWidgetsExceeded": "Liczba losowych widżetów nie może przekroczyć liczby wybranych widżetów",
@@ -1284,6 +1285,23 @@
       },
       "label": "Łamigłówka",
       "prev": "Układanka nie została jeszcze zainicjowana..."
+    },
+    "QuestionsBank": {
+      "add": "Dodawać",
+      "label": "Import z Question Bank",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Liczba losowych pytań nie może przekroczyć liczby wybranych pytań",
+        "modalTitle": "Bank pytań",
+        "placeholderGroup": "Grupa",
+        "placeholderTitle": "Wyszukiwanie według tytułu lub tagu pytania",
+        "placeholderType": "Facet",
+        "randomTextBefore": " Losowe pytania od wybranych",
+        "randomTextPrev": "Przedstawić ",
+        "search": "Aby znaleźć",
+        "selectAllText": "Zaznacz wszystko"
+      },
+      "modalTitle": "Bank pytań",
+      "search": "Aby znaleźć"
     },
     "RelatedUnitsAssociation": {
       "form": {

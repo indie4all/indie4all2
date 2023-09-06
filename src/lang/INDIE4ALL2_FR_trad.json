@@ -892,6 +892,7 @@
       "prev": "Audio-term pas encore établi..."
     },
     "Bank": {
+      "add": "Ajouter",
       "label": "Banc",
       "modal": {
         "maximumRandomWidgetsExceeded": "Le nombre de widgets aléatoires ne peut pas dépasser le nombre de widgets sélectionnés",
@@ -1284,6 +1285,23 @@
       },
       "label": "Puzzle",
       "prev": "Le puzzle n’a pas encore été initialisé..."
+    },
+    "QuestionsBank": {
+      "add": "Ajouter",
+      "label": "Importer à partir de la banque de questions",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Le nombre de questions aléatoires ne peut pas dépasser le nombre de questions sélectionnées",
+        "modalTitle": "Banque de questions",
+        "placeholderGroup": "Groupe",
+        "placeholderTitle": "Recherche par titre ou balise de question",
+        "placeholderType": "Mec",
+        "randomTextBefore": " Questions aléatoires de ceux sélectionnés",
+        "randomTextPrev": "Introduire ",
+        "search": "Trouver",
+        "selectAllText": "Sélectionner tout"
+      },
+      "modalTitle": "Banque de questions",
+      "search": "Trouver"
     },
     "RelatedUnitsAssociation": {
       "form": {

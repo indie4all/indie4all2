@@ -892,6 +892,7 @@
       "prev": "Ljudterm inte fastställd ännu ..."
     },
     "Bank": {
+      "add": "Addera",
       "label": "Bänk",
       "modal": {
         "maximumRandomWidgetsExceeded": "Antalet slumpmässiga widgets får inte överstiga antalet valda widgets",
@@ -1284,6 +1285,23 @@
       },
       "label": "Pussel",
       "prev": "Pusslet har inte initierats ännu ..."
+    },
+    "QuestionsBank": {
+      "add": "Addera",
+      "label": "Importera från frågebanken",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Antalet slumpmässiga frågor får inte överstiga antalet valda frågor",
+        "modalTitle": "Frågebank",
+        "placeholderGroup": "Grupp",
+        "placeholderTitle": "Sök efter titel eller frågetagg",
+        "placeholderType": "Kille",
+        "randomTextBefore": " Slumpmässiga frågor från de valda",
+        "randomTextPrev": "Introducera ",
+        "search": "Att hitta",
+        "selectAllText": "Markera alla"
+      },
+      "modalTitle": "Frågebank",
+      "search": "Att hitta"
     },
     "RelatedUnitsAssociation": {
       "form": {

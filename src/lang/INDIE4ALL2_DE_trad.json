@@ -892,6 +892,7 @@
       "prev": "Audio-Begriff noch nicht etabliert..."
     },
     "Bank": {
+      "add": "Hinzufügen",
       "label": "Bank",
       "modal": {
         "maximumRandomWidgetsExceeded": "Die Anzahl der zufälligen Widgets darf die Anzahl der ausgewählten Widgets nicht überschreiten",
@@ -1284,6 +1285,23 @@
       },
       "label": "Rätsel",
       "prev": "Das Rätsel wurde noch nicht initialisiert..."
+    },
+    "QuestionsBank": {
+      "add": "Hinzufügen",
+      "label": "Aus der Fragendatenbank importieren",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Die Anzahl der zufälligen Fragen darf die Anzahl der ausgewählten Fragen nicht überschreiten",
+        "modalTitle": "Fragendatenbank",
+        "placeholderGroup": "Gruppe",
+        "placeholderTitle": "Suche nach Titel oder Frage-Tag",
+        "placeholderType": "Kerl",
+        "randomTextBefore": " Zufällige Fragen der Ausgewählten",
+        "randomTextPrev": "Einführen ",
+        "search": "Finden",
+        "selectAllText": "Alles auswählen"
+      },
+      "modalTitle": "Fragendatenbank",
+      "search": "Finden"
     },
     "RelatedUnitsAssociation": {
       "form": {

@@ -892,6 +892,7 @@
       "prev": "Audio-termín ešte nebol stanovený..."
     },
     "Bank": {
+      "add": "Sčítať",
       "label": "Lavička",
       "modal": {
         "maximumRandomWidgetsExceeded": "Počet náhodných widgetov nesmie prekročiť počet vybraných widgetov",
@@ -1284,6 +1285,23 @@
       },
       "label": "Hádanka",
       "prev": "Puzzle ešte nebolo inicializované..."
+    },
+    "QuestionsBank": {
+      "add": "Sčítať",
+      "label": "Import z banky otázok",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Počet náhodných otázok nesmie prekročiť počet vybraných otázok",
+        "modalTitle": "Banka otázok",
+        "placeholderGroup": "Skupina",
+        "placeholderTitle": "Vyhľadávanie podľa názvu alebo značky otázky",
+        "placeholderType": "Chlap",
+        "randomTextBefore": " Náhodné otázky od vybraných",
+        "randomTextPrev": "Zavádzať ",
+        "search": "Nájsť",
+        "selectAllText": "Vybrať všetko"
+      },
+      "modalTitle": "Banka otázok",
+      "search": "Nájsť"
     },
     "RelatedUnitsAssociation": {
       "form": {

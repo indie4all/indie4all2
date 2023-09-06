@@ -892,6 +892,7 @@
       "prev": "Аудіо-термін ще не встановлений..."
     },
     "Bank": {
+      "add": "Додати",
       "label": "Лавці",
       "modal": {
         "maximumRandomWidgetsExceeded": "Кількість випадкових віджетів не може перевищувати кількість вибраних віджетів",
@@ -1284,6 +1285,23 @@
       },
       "label": "Пазл",
       "prev": "Головоломка ще не ініціалізована..."
+    },
+    "QuestionsBank": {
+      "add": "Додати",
+      "label": "Імпорт з банку питань",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Кількість випадкових питань не може перевищувати кількість вибраних питань",
+        "modalTitle": "Банк питань",
+        "placeholderGroup": "Група",
+        "placeholderTitle": "Пошук за назвою або тегом запитання",
+        "placeholderType": "Парубок",
+        "randomTextBefore": " Випадкові запитання від обраних",
+        "randomTextPrev": "Ввести ",
+        "search": "Знаходити",
+        "selectAllText": "Виділити все"
+      },
+      "modalTitle": "Банк питань",
+      "search": "Знаходити"
     },
     "RelatedUnitsAssociation": {
       "form": {

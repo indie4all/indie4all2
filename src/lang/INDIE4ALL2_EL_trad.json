@@ -892,6 +892,7 @@
       "prev": "Ο ηχητικός όρος δεν έχει ακόμη καθοριστεί..."
     },
     "Bank": {
+      "add": "Προσθέτω",
       "label": "Πάγκος",
       "modal": {
         "maximumRandomWidgetsExceeded": "Ο αριθμός των τυχαίων widget δεν μπορεί να υπερβαίνει τον αριθμό των επιλεγμένων widget",
@@ -1284,6 +1285,23 @@
       },
       "label": "Γρίφος",
       "prev": "Το παζλ δεν έχει αρχικοποιηθεί ακόμα..."
+    },
+    "QuestionsBank": {
+      "add": "Προσθέτω",
+      "label": "Εισαγωγή από την Τράπεζα Ερωτήσεων",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Ο αριθμός των τυχαίων ερωτήσεων δεν μπορεί να υπερβαίνει τον αριθμό των επιλεγμένων ερωτήσεων",
+        "modalTitle": "Τράπεζα ερωτήσεων",
+        "placeholderGroup": "Ομάδα",
+        "placeholderTitle": "Αναζήτηση με βάση τον τίτλο ή την ετικέτα ερώτησης",
+        "placeholderType": "Τύπος",
+        "randomTextBefore": " Τυχαίες ερωτήσεις από αυτούς που επιλέχθηκαν",
+        "randomTextPrev": "Εισάγω ",
+        "search": "Να βρω",
+        "selectAllText": "Επιλογή όλων"
+      },
+      "modalTitle": "Τράπεζα ερωτήσεων",
+      "search": "Να βρω"
     },
     "RelatedUnitsAssociation": {
       "form": {

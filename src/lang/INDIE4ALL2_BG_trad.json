@@ -892,6 +892,7 @@
       "prev": "Аудио-терминът все още не е установен..."
     },
     "Bank": {
+      "add": "Добавям",
       "label": "Пейка",
       "modal": {
         "maximumRandomWidgetsExceeded": "Броят на случайните уиджети не може да надвишава броя на избраните уиджети",
@@ -1284,6 +1285,23 @@
       },
       "label": "Озадачавам",
       "prev": "Пъзелът още не е инициализиран..."
+    },
+    "QuestionsBank": {
+      "add": "Добавям",
+      "label": "Импортиране от банка за въпроси",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Броят на случайните въпроси не може да надвишава броя на избраните въпроси",
+        "modalTitle": "Въпрос банка",
+        "placeholderGroup": "Група",
+        "placeholderTitle": "Търсене по заглавие или етикет за въпрос",
+        "placeholderType": "Човек",
+        "randomTextBefore": " Случайни въпроси от избраните",
+        "randomTextPrev": "Представям ",
+        "search": "Да намериш",
+        "selectAllText": "Избери всички"
+      },
+      "modalTitle": "Въпрос банка",
+      "search": "Да намериш"
     },
     "RelatedUnitsAssociation": {
       "form": {

@@ -892,6 +892,7 @@
       "prev": "Awdjo-terminu għadu mhux stabbilit..."
     },
     "Bank": {
+      "add": "Żid",
       "label": "Bank",
       "modal": {
         "maximumRandomWidgetsExceeded": "In-numru ta 'widgets każwali ma jistax jaqbeż in-numru ta' widgets magħżula",
@@ -1284,6 +1285,23 @@
       },
       "label": "Puzzle",
       "prev": "Il-puzzle għadu ma ġiex inizjalizzat ..."
+    },
+    "QuestionsBank": {
+      "add": "Żid",
+      "label": "Importazzjoni minn Question Bank",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "In-numru ta' mistoqsijiet aleatorji ma jistax jaqbeż in-numru ta' mistoqsijiet magħżula",
+        "modalTitle": "Bank tal-Mistoqsijiet",
+        "placeholderGroup": "Grupp",
+        "placeholderTitle": "Fittex skont it-titlu jew it-tikketta tal-mistoqsija",
+        "placeholderType": "Guy",
+        "randomTextBefore": " Mistoqsijiet każwali minn dawk magħżula",
+        "randomTextPrev": "Jintroduċu ",
+        "search": "Biex issib",
+        "selectAllText": "Agħżel kollox"
+      },
+      "modalTitle": "Bank tal-Mistoqsijiet",
+      "search": "Biex issib"
     },
     "RelatedUnitsAssociation": {
       "form": {

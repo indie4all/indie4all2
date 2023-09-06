@@ -892,6 +892,7 @@
       "prev": "Termine audio non ancora stabilito..."
     },
     "Bank": {
+      "add": "Aggiungere",
       "label": "Panca",
       "modal": {
         "maximumRandomWidgetsExceeded": "Il numero di widget casuali non può superare il numero di widget selezionati",
@@ -1284,6 +1285,23 @@
       },
       "label": "Rompicapo",
       "prev": "Il puzzle non è stato ancora inizializzato..."
+    },
+    "QuestionsBank": {
+      "add": "Aggiungere",
+      "label": "Importazione da Question Bank",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Il numero di domande casuali non può superare il numero di domande selezionate",
+        "modalTitle": "Banca delle domande",
+        "placeholderGroup": "Gruppo",
+        "placeholderTitle": "Ricerca per titolo o tag di domanda",
+        "placeholderType": "Tizio",
+        "randomTextBefore": " Domande casuali da parte degli intervistati",
+        "randomTextPrev": "Introdurre ",
+        "search": "Per trovare",
+        "selectAllText": "Seleziona tutto"
+      },
+      "modalTitle": "Banca delle domande",
+      "search": "Per trovare"
     },
     "RelatedUnitsAssociation": {
       "form": {

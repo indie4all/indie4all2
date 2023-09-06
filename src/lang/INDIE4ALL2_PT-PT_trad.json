@@ -892,6 +892,7 @@
       "prev": "Termo de áudio ainda não estabelecido..."
     },
     "Bank": {
+      "add": "Adicionar",
       "label": "Bancada",
       "modal": {
         "maximumRandomWidgetsExceeded": "O número de widgets aleatórios não pode exceder o número de widgets selecionados",
@@ -1284,6 +1285,23 @@
       },
       "label": "Quebra-cabeça",
       "prev": "O quebra-cabeça ainda não foi inicializado..."
+    },
+    "QuestionsBank": {
+      "add": "Adicionar",
+      "label": "Importação do Banco de Perguntas",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "O número de perguntas aleatórias não pode exceder o número de perguntas selecionadas",
+        "modalTitle": "Banco de perguntas",
+        "placeholderGroup": "Grupo",
+        "placeholderTitle": "Pesquisar por título ou etiqueta de pergunta",
+        "placeholderType": "Cara",
+        "randomTextBefore": " Perguntas aleatórias dos selecionados",
+        "randomTextPrev": "Apresentar ",
+        "search": "Achar",
+        "selectAllText": "Selecionar tudo"
+      },
+      "modalTitle": "Banco de perguntas",
+      "search": "Achar"
     },
     "RelatedUnitsAssociation": {
       "form": {

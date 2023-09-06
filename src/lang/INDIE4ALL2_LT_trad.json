@@ -892,6 +892,7 @@
       "prev": "Garso terminas dar nenustatytas..."
     },
     "Bank": {
+      "add": "Pridėti",
       "label": "Suolas",
       "modal": {
         "maximumRandomWidgetsExceeded": "Atsitiktinių valdiklių skaičius negali viršyti pasirinktų valdiklių skaičiaus",
@@ -1284,6 +1285,23 @@
       },
       "label": "Dėlionę",
       "prev": "Dėlionė dar nebuvo inicijuota..."
+    },
+    "QuestionsBank": {
+      "add": "Pridėti",
+      "label": "Importavimas iš klausimų banko",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Atsitiktinių klausimų skaičius negali viršyti pasirinktų klausimų skaičiaus",
+        "modalTitle": "Klausimų bankas",
+        "placeholderGroup": "Grupė",
+        "placeholderTitle": "Paieška pagal pavadinimą arba klausimo žymę",
+        "placeholderType": "Vaikinas",
+        "randomTextBefore": " Atsitiktiniai klausimai iš atrinktųjų",
+        "randomTextPrev": "Pristatyti ",
+        "search": "Rasti",
+        "selectAllText": "Pažymėti viską"
+      },
+      "modalTitle": "Klausimų bankas",
+      "search": "Rasti"
     },
     "RelatedUnitsAssociation": {
       "form": {

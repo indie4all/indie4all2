@@ -892,6 +892,7 @@
       "prev": "Audio-term nog niet vastgesteld..."
     },
     "Bank": {
+      "add": "Toevoegen",
       "label": "Bank",
       "modal": {
         "maximumRandomWidgetsExceeded": "Het aantal willekeurige widgets mag niet groter zijn dan het aantal geselecteerde widgets",
@@ -1284,6 +1285,23 @@
       },
       "label": "Puzzel",
       "prev": "De puzzel is nog niet geïnitialiseerd..."
+    },
+    "QuestionsBank": {
+      "add": "Toevoegen",
+      "label": "Importeren uit vragenbank",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Het aantal willekeurige vragen mag niet groter zijn dan het aantal geselecteerde vragen",
+        "modalTitle": "Vragenbank",
+        "placeholderGroup": "Groep",
+        "placeholderTitle": "Zoeken op titel of vraagtag",
+        "placeholderType": "Vent",
+        "randomTextBefore": " Willekeurige vragen van de geselecteerde",
+        "randomTextPrev": "Voorstellen ",
+        "search": "Zoeken naar",
+        "selectAllText": "Alles selecteren"
+      },
+      "modalTitle": "Vragenbank",
+      "search": "Zoeken naar"
     },
     "RelatedUnitsAssociation": {
       "form": {

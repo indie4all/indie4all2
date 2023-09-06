@@ -892,6 +892,7 @@
       "prev": "Audio-term ikke etablert ennå ..."
     },
     "Bank": {
+      "add": "Tilføye",
       "label": "Benk",
       "modal": {
         "maximumRandomWidgetsExceeded": "Antall tilfeldige widgets kan ikke overstige antall valgte widgets",
@@ -1284,6 +1285,23 @@
       },
       "label": "Gåte",
       "prev": "Puslespillet har ikke blitt initialisert ennå ..."
+    },
+    "QuestionsBank": {
+      "add": "Tilføye",
+      "label": "Importere fra spørsmålsbanken",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Antall tilfeldige spørsmål kan ikke overstige antall valgte spørsmål",
+        "modalTitle": "Spørsmål Bank",
+        "placeholderGroup": "Gruppe",
+        "placeholderTitle": "Søk etter tittel eller spørsmålskode",
+        "placeholderType": "Fyr",
+        "randomTextBefore": " Tilfeldige spørsmål fra de utvalgte",
+        "randomTextPrev": "Innføre ",
+        "search": "Å finne",
+        "selectAllText": "Merk alt"
+      },
+      "modalTitle": "Spørsmål Bank",
+      "search": "Å finne"
     },
     "RelatedUnitsAssociation": {
       "form": {

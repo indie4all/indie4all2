@@ -892,6 +892,7 @@
       "prev": "Zvočni izraz še ni vzpostavljen..."
     },
     "Bank": {
+      "add": "Dodati",
       "label": "Klop",
       "modal": {
         "maximumRandomWidgetsExceeded": "Število naključnih pripomočkov ne sme presegati števila izbranih pripomočkov",
@@ -1284,6 +1285,23 @@
       },
       "label": "Uganka",
       "prev": "Uganka še ni bila inicializirana..."
+    },
+    "QuestionsBank": {
+      "add": "Dodati",
+      "label": "Uvoz iz banke vprašanj",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Število naključnih vprašanj ne sme presegati števila izbranih vprašanj",
+        "modalTitle": "Banka vprašanj",
+        "placeholderGroup": "Skupina",
+        "placeholderTitle": "Iskanje po naslovu ali vprašaju",
+        "placeholderType": "Fant",
+        "randomTextBefore": " Naključna vprašanja izbranih",
+        "randomTextPrev": "Uvesti ",
+        "search": "Najti",
+        "selectAllText": "Izberi vse"
+      },
+      "modalTitle": "Banka vprašanj",
+      "search": "Najti"
     },
     "RelatedUnitsAssociation": {
       "form": {

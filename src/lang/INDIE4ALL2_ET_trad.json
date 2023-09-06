@@ -892,6 +892,7 @@
       "prev": "Audio-term pole veel kindlaks tehtud..."
     },
     "Bank": {
+      "add": "Lisama",
       "label": "Pink",
       "modal": {
         "maximumRandomWidgetsExceeded": "Juhuslike vidinate arv ei tohi ületada valitud vidinate arvu",
@@ -1284,6 +1285,23 @@
       },
       "label": "Puzzle",
       "prev": "Puslet pole veel initsialiseeritud..."
+    },
+    "QuestionsBank": {
+      "add": "Lisama",
+      "label": "Import küsimuste pangast",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Juhuslike küsimuste arv ei tohi ületada valitud küsimuste arvu",
+        "modalTitle": "Küsimuste pank",
+        "placeholderGroup": "Rühm",
+        "placeholderTitle": "Otsing pealkirja või küsimuse sildi järgi",
+        "placeholderType": "Kutt",
+        "randomTextBefore": " Juhuslikud küsimused valitutelt",
+        "randomTextPrev": "Tutvustada ",
+        "search": "Otsima",
+        "selectAllText": "Vali kõik"
+      },
+      "modalTitle": "Küsimuste pank",
+      "search": "Otsima"
     },
     "RelatedUnitsAssociation": {
       "form": {

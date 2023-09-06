@@ -892,6 +892,7 @@
       "prev": "オーディオ用語はまだ確立されていません..."
     },
     "Bank": {
+      "add": "足す",
       "label": "ベンチ",
       "modal": {
         "maximumRandomWidgetsExceeded": "ランダムなウィジェットの数は、選択したウィジェットの数を超えることはできません",
@@ -1284,6 +1285,23 @@
       },
       "label": "謎",
       "prev": "パズルはまだ初期化されていません..."
+    },
+    "QuestionsBank": {
+      "add": "足す",
+      "label": "質問バンクからのインポート",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "ランダムな質問の数は、選択した質問の数を超えることはできません",
+        "modalTitle": "質問バンク",
+        "placeholderGroup": "群",
+        "placeholderTitle": "タイトルまたは質問タグで検索",
+        "placeholderType": "やつ",
+        "randomTextBefore": " 選ばれた人からのランダムな質問",
+        "randomTextPrev": "紹介 ",
+        "search": "見つけます",
+        "selectAllText": "すべて選択"
+      },
+      "modalTitle": "質問バンク",
+      "search": "見つけます"
     },
     "RelatedUnitsAssociation": {
       "form": {

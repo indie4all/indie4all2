@@ -892,6 +892,7 @@
       "prev": "Termín zvuku zatím není stanoven..."
     },
     "Bank": {
+      "add": "Přidat",
       "label": "Lavice",
       "modal": {
         "maximumRandomWidgetsExceeded": "Počet náhodných widgetů nesmí překročit počet vybraných widgetů",
@@ -1284,6 +1285,23 @@
       },
       "label": "Hádanka",
       "prev": "Hádanka ještě nebyla inicializována..."
+    },
+    "QuestionsBank": {
+      "add": "Přidat",
+      "label": "Import z banky otázek",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Počet náhodných otázek nesmí překročit počet vybraných otázek",
+        "modalTitle": "Banka otázek",
+        "placeholderGroup": "Skupina",
+        "placeholderTitle": "Vyhledávání podle názvu nebo značky otázky",
+        "placeholderType": "Chlapík",
+        "randomTextBefore": " Náhodné otázky od vybraných",
+        "randomTextPrev": "Představit ",
+        "search": "Zjistit",
+        "selectAllText": "Vybrat vše"
+      },
+      "modalTitle": "Banka otázek",
+      "search": "Zjistit"
     },
     "RelatedUnitsAssociation": {
       "form": {

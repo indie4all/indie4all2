@@ -864,7 +864,8 @@
                 "maximumRandomWidgetsExceeded": "El número de widgets aleatorios no puede ser superior al número de widgets seleccionado"
             },
             "modalTitle": "Banco de Widgets",
-            "search": "Buscar"
+            "search": "Buscar",
+            "add" : "Añadir"
         },
         "Blockquote": {
             "form": {
@@ -1157,6 +1158,23 @@
                     "h": "Alto"
                 }
             }
+        },
+        "QuestionsBank": {
+            "label": "Importar del Banco de Preguntas",
+            "modal" : {
+                "modalTitle" : "Banco de Preguntas",
+                "search" : "Buscar",
+                "placeholderTitle" : "Buscar por título o etiqueta de pregunta",
+                "placeholderGroup" : "Grupo",
+                "placeholderType" : "Tipo",
+                "randomTextPrev" : "Introducir ",
+                "randomTextBefore" : " preguntas aleatorias de las seleccionadas",
+                "selectAllText" : "Seleccionar todas",
+                "maximumRandomWidgetsExceeded": "El número de preguntas aleatorias no puede ser superior al número de preguntas seleccionadas"
+            },
+            "modalTitle": "Banco de Preguntas",
+            "search": "Buscar",
+            "add" : "Añadir"
         },
         "Animation": {
             "label": "Animación",

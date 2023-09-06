@@ -257,14 +257,13 @@ export default class GUI {
 
                 const result: boolean[] = [];
 
-                const title = $(this).find('.question-item').text().toLowerCase();
+                const title = $(this).find('.question-text').text().toLowerCase();
                 const tags = $(this).find('.badge').toArray().map( (elem: any) => $(elem).text())
                 const group = $(this).find("input[name='group']").val() as string;
                 const type = $(this).find("input[name='type']").val() as string;
 
-                console.log(tags, searchTerm);
 
-                result[0] = title.includes(searchTerm) || tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+                result[0] = title.includes(searchTerm) || tags.some(tag => tag.toLowerCase().includes(searchTerm));
                 result[1] = searchGroup === "default" || group === searchGroup;
                 result[2] = searchType === "default" || mapeo[type] === searchType;
 

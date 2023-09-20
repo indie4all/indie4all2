@@ -32,19 +32,23 @@
                 </div> 
                 <div class="panel-bank-widgets">
                     {{#each data}}
-                    <button class="col-md-12 mb-3 align-items-center p-3 border border-secondary widget-button d-flex" >
-                        <div class="col-xs-12 col-sm-1">
-                            <img src="{{{ img }}}">
-                        </div>
-                        <div class="col-xs-12 col-sm-11 pl-4">
-                            <h3  class="h5"> {{ name }} </h3>
-                            <p class="mb-0"> {{ description }} </p>
-                        </div>
-                        <input type="checkbox" class="input-checkbox">
-                        <input type="hidden" name="type" value="{{ type }}">
-                        <input type="hidden" name="group" value="{{ group }}">
-                        <input type="hidden" name="content" value="{{ content }}">
-                    </button>
+                        <button class="col-md-12 mb-3 align-items-center p-3 border border-secondary widget-button d-flex" >
+                            <div class="col-xs-12 col-sm-1">
+                                <img src="{{{ img }}}">
+                            </div>
+                            <div class="col-xs-12 col-sm-11 pl-4">
+                                <h3  class="h5"> {{ name }} </h3>
+                                <p class="mb-0"> {{ description }} </p>
+                            </div>
+                            <input type="checkbox" class="input-checkbox">
+                            <input type="hidden" name="type" value="{{ type }}">
+                            <input type="hidden" name="group" value="{{ group }}">
+                            <input type="hidden" name="content" value="{{ content }}">
+                        </button>
+                    {{else}}
+                       <div class="alert-no-widgets">
+                            <span> {{ translate "widgets.Bank.modal.notFound"}} </span>
+                       </div>
                     {{/each}}
                 </div>
             </div>

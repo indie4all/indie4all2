@@ -10,6 +10,15 @@
         }
     }
 
+    .alert-no-widgets {
+        display: flex;
+        justify-content: center;
+        padding: 15px;
+        font-weight: 600;
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
     .select-filter {
 
         border: 1px solid #ced4da;
@@ -38,7 +47,7 @@
     } 
     .panel-bank-widgets {
         max-height: 500px;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
     
     .options-bank-widgets {

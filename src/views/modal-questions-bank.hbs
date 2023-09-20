@@ -52,6 +52,10 @@
                         <input type="hidden" name="answers" value="{{ answers }}">
                         <input type="hidden" name="correct" value="{{ correct }}">
                     </button>
+                    {{else}}
+                       <div class="alert-no-widgets">
+                            <span> {{ translate "widgets.QuestionsBank.modal.notFound"}} </span>
+                       </div>
                     {{/each}}
                 </div>
             </div>

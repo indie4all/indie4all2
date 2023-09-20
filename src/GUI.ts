@@ -196,7 +196,6 @@ export default class GUI {
             // TODO: addContent añade un elemento vacío, queremos COPIAR un elemento de una paleta
             //this.author.addContent(dataElementId, obj2.widget);
             let widget = (await ModelManager.create(mapeo[type], { data: datos} )).clone();
-            console.log(widget);
             this.author.addModelElement(widget, dataElementId);
         }
 

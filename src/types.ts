@@ -644,6 +644,26 @@ export interface WidgetMultipleQuestionData {
     question?: string
 }
 
+export interface InputWidgetRouletteData  {
+    data?: InputWidgetElementData[],
+    params?: InputWidgetRouletteParams
+}
+
+export interface InputWidgetRouletteParams {
+    name?: string,
+    lifes?: number,
+    time?: number
+}
+
+export interface InputWidgetRouletteItemData  {
+    data?: InputWidgetElementData[],
+    params?: InputWidgetRouletteItemParams
+}
+
+export interface InputWidgetRouletteItemParams {
+    nameCategory ?: string
+}
+
 export interface InputWidgetSimpleQuestionData extends InputWidgetElementData {
     data?: WidgetSimpleQuestionData
 }

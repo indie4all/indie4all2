@@ -10,6 +10,15 @@
         }
     }
 
+    .alert-no-widgets {
+        display: flex;
+        justify-content: center;
+        padding: 15px;
+        font-weight: 600;
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
     .list-tags {
         list-style: none;
         display: flex;
@@ -60,7 +69,7 @@
     } 
     .panel-questions-bank {
         max-height: 500px;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
     
     .options-questions-bank{

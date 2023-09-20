@@ -5,6 +5,7 @@ import Utils from "../../../Utils";
 export default abstract class WidgetContainerElement extends WidgetElement {
 
     data: WidgetElement[];
+
     constructor(values?: any) { super(values); }
 
     createElement(): string {

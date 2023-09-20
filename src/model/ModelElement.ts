@@ -11,6 +11,7 @@ export default abstract class ModelElement {
     protected static deletable : boolean = true;
 
 
+
     id: string;
     params: any;
     data: any;

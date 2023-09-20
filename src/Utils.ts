@@ -246,4 +246,21 @@ export default class Utils {
             return false;
         }
     }
+
+    static checkIfDuplicateValueInObject(values: any[], ...args) : boolean {
+
+        const valueArr = values.map(function(item){ 
+
+            let count = 0;
+            let value = item;
+            while(args[count] && value[args[count]]) {
+                value = value[args[count]];
+                count++;
+            }
+            return value;
+        });
+        return valueArr.some(function(item, idx){ 
+            return valueArr.indexOf(item) != idx 
+        });
+    }
 }

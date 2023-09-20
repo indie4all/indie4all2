@@ -28,6 +28,6 @@ export default {
             json.push(elem);
         }
 
-        res.send(json);
+        res.send([]);
     }
 }

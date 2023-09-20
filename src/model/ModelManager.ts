@@ -89,6 +89,8 @@ import WidgetRelatedUnitsAssociation from "./widgets/WidgetRelatedUnitsAssociati
 import WidgetCallout from "./widgets/WidgetCallout/WidgetCallout";
 import WidgetBank from "./widgets/WidgetBank/WidgetBank";
 import WidgetSpecificContainerElement from "./widgets/WidgetSpecificContainerElement/WidgetSpecificContainerElement";
+import WidgetRoulette from "./widgets/WidgetRoulette/WidgetRoulette";
+import WidgetRouletteItem from "./widgets/WidgetRouletteItem/WidgetRouletteItem";
 
 export default class ModelManager {
 
@@ -152,6 +154,8 @@ export default class ModelManager {
         [WidgetTermClassificationItem.widget]: WidgetTermClassificationItem,
         // Tests
         [WidgetTestContainer.widget]: WidgetTestContainer,
+        [WidgetRoulette.widget]: WidgetRoulette,
+        [WidgetRouletteItem.widget]: WidgetRouletteItem,
         [WidgetGapQuestion.widget]: WidgetGapQuestion,
         [WidgetSimpleQuestion.widget]: WidgetSimpleQuestion,
         [WidgetMultipleQuestion.widget]: WidgetMultipleQuestion,
@@ -206,6 +210,8 @@ export default class ModelManager {
         [WidgetRelatedUnitsContainer.widget]: { "allows": [WidgetRelatedUnitsItem, WidgetRelatedUnitsAssociation] },
         [WidgetRelatedUnitsAssociation.widget]: { "allows": [WidgetRelatedUnitsItem] },
         [WidgetTestContainer.widget]: { "allows": [WidgetGapQuestion, WidgetSimpleQuestion, WidgetMultipleQuestion, WidgetTrueFalseQuestion] },
+        [WidgetRouletteItem.widget] : {  "allows": [WidgetGapQuestion, WidgetSimpleQuestion, WidgetMultipleQuestion, WidgetTrueFalseQuestion] },
+        [WidgetRoulette.widget]: { "allows": [WidgetRouletteItem] },
     }
 
     static canHave(parent: typeof ModelElement, child: typeof ModelElement) {

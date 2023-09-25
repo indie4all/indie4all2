@@ -13,6 +13,7 @@ import Section from './model/section/Section';
 import ModelElement from './model/ModelElement';
 import Config from './Config';
 import I18n from './I18n';
+import { filter } from 'compression';
 
 export default class DragDropHandler {
     private palette: HTMLElement;
@@ -183,6 +184,7 @@ export default class DragDropHandler {
     async openBankModal(el: HTMLElement, target: HTMLElement, sibling: HTMLElement) {
         $(el).hide();
         const { default: modalTemplate } = await import('./model/widgets/WidgetBank/modal.hbs');
+        const { default: modalFilter } = await import('./model/widgets/WidgetBank/filter_modal.hbs');
         let data = await this.connectWithBank();
         data.map(elem => {
             elem["img"] = ModelManager.getWidgetElement(elem.type).icon
@@ -203,7 +205,32 @@ export default class DragDropHandler {
 
         }
 
+        const deleteFilterHTML = function() {
+            $(this).parent().remove();
+        }
+
+        const changeSearchType = function() {
+            if ($(this).val() === "tipo") {
+                $(this).parent().find(".searchTerm").removeClass("d-block").addClass("d-none");
+                $(this).parent().find(".searchTermByType").removeClass("d-none").addClass("d-block");
+            }
+            else {
+                $(this).parent().find(".searchTerm").removeClass("d-none").addClass("d-block");
+                $(this).parent().find(".searchTermByType").removeClass("d-block").addClass("d-none");
+            }
+        }
+
+        $(".searchType").on("change", changeSearchType);
+
+        const createFilterHTML = function() {
+            $("#search-filters").append(modalFilter({types: types}));
+            $(".delete-filter-button").last().on("click",deleteFilterHTML)
+            $(".searchType").last().on("change", changeSearchType);
+        }
+
         const onClick = aggregateWidget.bind(this);
+
+        $("#button-add-filter-widget").on("click", createFilterHTML);
 
         $("#check-select-all").on('change', function () {
             $(".d-flex .input-checkbox ").prop('checked', $("#check-select-all").prop('checked'));
@@ -257,27 +284,46 @@ export default class DragDropHandler {
 
         $("#button-search-bank-widget").on('click', function () {
 
-            const searchTerm = ($(" #modal-bank-widgets input[type='search']").val() as string).toLowerCase();
-            const searchGroup = ($(" #modal-bank-widgets .select-group option:selected").val() as string).trim();
-            const searchType = ($(" #modal-bank-widgets .select-type option:selected").val() as string).trim();
-
             $('.widget-button').each(function () {
 
-                const result: boolean[] = [];
+                let result : boolean = true;
 
                 const title = $(this).find('h3').text().toLowerCase();
-                const group = $(this).find("input[name='group']").val() as string;
                 const type = $(this).find("input[name='type']").val() as string;
+                const tags = $(this).find('.badge').toArray().map( (elem: any) => $(elem).text())
 
-                result[0] = title.includes(searchTerm);
-                result[1] = searchGroup === "default" || group === searchGroup;
-                result[2] = searchType === "default" || type === searchType;
+                console.log(tags);
+            
+                $(".search-condition").each( (i, elem) => {
 
-                if (result.every(elem => elem)) {
-                    $(this).removeClass("d-none").addClass("d-flex");
-                } else {
-                    $(this).removeClass("d-flex").addClass("d-none");
-                }
+                    let searchTerm = ($(elem).find('.searchTerm').val() as string).toLowerCase();
+                    let searchType = ($(elem).find('.searchType').val() as string).toLowerCase().trim();
+                    let searchBoolean = $(elem).find('.searchBoolean').val() as string;
+                    let searchTermByType = $(elem).find('.searchTermByType').val()
+
+                    let resultFilter = true;
+                    if(searchType === "nombre") resultFilter = title.includes(searchTerm);
+                    if(searchType === "tag") resultFilter = tags.some(tag => tag.toLowerCase().includes(searchTerm));
+                    if (searchType === "tipo") resultFilter = (type === searchTermByType);
+
+                    switch (searchBoolean) {
+                        case '0':
+                            result = result && resultFilter
+                            break;
+                        case '1':
+                            result = result || resultFilter
+                            break;
+                        case '2': 
+                            result = result && !resultFilter
+                            break;
+                        default:
+                            result = result && resultFilter
+                    }
+                })
+        
+
+                if(result) $(this).removeClass("d-none").addClass("d-flex");
+                else $(this).removeClass("d-flex").addClass("d-none");
             })
         })
 

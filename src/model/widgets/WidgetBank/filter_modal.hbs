@@ -1,0 +1,19 @@
+<div class="search-condition d-flex col-12 p-0">
+    <select class="form-control col-lg-2 searchBoolean">
+        <option value="0"> AND </option>
+        <option value="1"> OR </option>
+        <option value="2"> AND NOT </option>
+    </select>
+    <select class="form-control col-lg-2 searchType">
+        <option value="nombre">Nombre</option>
+        <option value="tag">Etiqueta</option>
+        <option value="tipo">Tipo</option>
+    </select>
+    <input type="search" class="form-control ds-input col-lg-7 col-md-10 searchTerm"> 
+    <select class="form-control ds-input col-lg-7 col-md-10 searchTermByType d-none">
+        {{#each types}}
+            <option> {{ this }} </option>
+        {{/each}}
+    </select>
+    <button class="btn col-lg-1 delete-filter-button"> <i class="fas fa-trash-alt"></i></button>
+</div>

@@ -10,6 +10,29 @@
         }
     }
 
+    .list-tags {
+        list-style: none;
+        display: inline-block;
+        padding-inline-start: 0;
+        margin-bottom: 0;
+        margin-top: 5px;
+
+        li {
+            display: inline-block;
+            margin: 0 5px;
+        
+            i {
+                margin-right: 5px;
+            }
+        }
+
+    }
+
+    .fa-tag {
+        margin-right: 4px;
+        transform: rotate(90deg);
+    }
+    
     .alert-no-widgets {
         display: flex;
         justify-content: center;

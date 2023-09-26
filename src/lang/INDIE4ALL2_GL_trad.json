@@ -898,6 +898,7 @@
     },
     "Bank": {
       "add": "Añadir",
+      "add": "Añadir",
       "label": "Banco",
       "modal": {
         "addFilter": "Añadir filtro",
@@ -1293,6 +1294,21 @@
       },
       "label": "Pregunta múltiple",
       "prev": "Pregunta múltiple non establecida aínda ..."
+    },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Debes escribir polo menos 2 respostas e marcar polo menos unha correcta.",
+          "label": "Posibles respostas"
+        },
+        "questionText": {
+          "help": "Este é o texto da pregunta mostrarase na unidade de contido.",
+          "label": "Texto da pregunta",
+          "placeholder": "Texto da pregunta múltiple..."
+        }
+      },
+      "label": "Pregunta múltiple",
+      "prev": "Pregunta múltiple no establecida aínda ..."
     },
     "Puzzle": {
       "form": {

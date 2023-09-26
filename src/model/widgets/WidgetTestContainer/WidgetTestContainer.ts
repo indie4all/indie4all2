@@ -6,6 +6,7 @@ import icon from "./icon.png";
 import { FormEditData, InputWidgetTestContainerData } from "../../../types";
 import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
+import Config from "../../../Config";
 
 export default class WidgetTestContainer extends WidgetContainerSpecificElement {
 
@@ -29,7 +30,7 @@ export default class WidgetTestContainer extends WidgetContainerSpecificElement 
 
     createElement(): string {
         const constructor = WidgetTestContainer;
-        const children = this.data ? this.data.map((child: WidgetSpecificItemElement ) => child.createElement()).join('') : "";
+        const children = this.data ? this.data.map((child: WidgetSpecificItemElement) => child.createElement()).join('') : "";
         return template({
             id: this.id,
             widget: constructor.widget,
@@ -39,9 +40,10 @@ export default class WidgetTestContainer extends WidgetContainerSpecificElement 
             canEdit: constructor.editable,
             canDelete: constructor.deletable,
             canCopy: constructor.copyable,
+            canLoadFromBank: !!Config.getQuestionsBankURL(),
             children,
             cssClass: Utils.toKebabCase(constructor.name)
-        });  
+        });
     }
 
     clone(): WidgetTestContainer {

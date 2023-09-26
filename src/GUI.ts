@@ -11,7 +11,7 @@ import settingsTemplate from "./views/modal-settings.hbs"
 import previewGeneratedTemplate from "./views/preview-generated.hbs"
 import netlifyUrlTemplate from "./views/netlify-url.hbs";
 import ModelManager from "./model/ModelManager";
-import  "./styles/question-bank-modal.scss";
+import "./styles/question-bank-modal.scss";
 
 export default class GUI {
 
@@ -152,9 +152,9 @@ export default class GUI {
             .then(res => res.json());
 
         const mapeo = {
-            "SingleAnswer" : "SimpleQuestion",
-            "MultipleAnswer" : "MultipleQuestion",
-            "TrueFalse" : "TrueFalseQuestion"
+            "SingleAnswer": "SimpleQuestion",
+            "MultipleAnswer": "MultipleQuestion",
+            "TrueFalse": "TrueFalseQuestion"
         }
         
         data.map((elem: any) => {
@@ -170,28 +170,28 @@ export default class GUI {
 
         const aggregateWidget = async function (button: HTMLElement) {
             const question = $(button).find(".question-text").text() as string;
-            const type = $(button).find("input[name=type]").val() as string; 
+            const type = $(button).find("input[name=type]").val() as string;
             const correct = $(button).find("input[name=correct]").val() as string;
             let answers = $(button).find("input[name=answers]").val() as string;
             answers = JSON.parse(answers);
             let datos = {}
-            if(answers.length > 0) {
+            if (answers.length > 0) {
                 datos = {
                     "question": question,
-                    "answers" : answers,
-                    "feedback" : {
-                        "positive" : "",
-                        "negative" : ""
+                    "answers": answers,
+                    "feedback": {
+                        "positive": "",
+                        "negative": ""
                     }
                 }
             }
             else {
                 datos = {
                     "question": question,
-                    "answer" : correct,
-                    "feedback" : {
-                        "positive" : "",
-                        "negative" : ""
+                    "answer": correct,
+                    "feedback": {
+                        "positive": "",
+                        "negative": ""
                     }
                 }
             }
@@ -253,7 +253,7 @@ export default class GUI {
                 const total = $(".input-checkbox:checked").length;
                 if (num > total) {
                     const { default: alertErrorTemplate } = await import("./views/alertError.hbs");
-                    $("#modal-bank-widgets .errors").html(alertErrorTemplate({
+                    $("#modal-questions-bank .errors").html(alertErrorTemplate({
                         errorText:
                             I18n.getInstance().translate('widgets.Bank.modal.maximumRandomWidgetsExceeded')
                     }));

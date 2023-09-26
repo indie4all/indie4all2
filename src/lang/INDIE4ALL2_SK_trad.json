@@ -449,6 +449,11 @@
         "invalid": "Pole URL musí byť nastavené na nasledujúci formát: https://[zdroj]/[autor]/[jednotka]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Opakované názvy kategórií. Každá kategória musí mať jedinečný názov",
+      "limitExcedeed": "Prekročený limit kategórie. Povolených je maximálne 8 kategórií",
+      "nameCategoryNotEstablished": "Názov kategórie ešte nie je nastavený..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Schéma je prázdna. Musíte pridať aspoň jednu položku pomocou tlačidla Pridať vpravo."
@@ -895,9 +900,19 @@
       "add": "Sčítať",
       "label": "Lavička",
       "modal": {
+        "addFilter": "Pridať filter",
+        "filter": {
+          "optionAND": "A",
+          "optionANDNOT": "A NIE",
+          "optionName": "Meno",
+          "optionOR": "Alebo",
+          "optionTag": "Štítok",
+          "optionType": "Chlap"
+        },
         "maximumRandomWidgetsExceeded": "Počet náhodných widgetov nesmie prekročiť počet vybraných widgetov",
         "modalTitle": "Banka miniaplikácií",
         "placeholderGroup": "Skupina",
+        "placeholderTag": "Vyhľadávanie podľa názvu značky",
         "placeholderTitle": "Vyhľadávanie podľa názvu miniaplikácie",
         "placeholderType": "Chlap",
         "randomTextBefore": " Náhodné widgety z vybraných",
@@ -1351,6 +1366,23 @@
       },
       "label": "Vchod",
       "prev": "Zápis ešte nebol stanovený..."
+    },
+    "Roulette": {
+      "label": "Ruleta",
+      "modal": {
+        "lifes": "Životy",
+        "small_lifes": "Počet životov, ktoré sú k dispozícii na hranie",
+        "small_time": "Čas, ktorý je k dispozícii na odpoveď",
+        "time": "Čas"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategória",
+      "modal": {
+        "label": "Názov kategórie",
+        "placeholder": "Názov kategórie",
+        "small_label": "Toto bude názov kategórie, ktorá sa objaví v rulete"
+      }
     },
     "SchemaContainer": {
       "label": "Schéma"

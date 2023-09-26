@@ -449,6 +449,11 @@
         "invalid": "Das URL-Feld muss auf das folgende Format gesetzt werden: https://[Quelle]/[Autor]/[Einheit]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Wiederholte Kategorienamen. Jede Kategorie muss einen eindeutigen Namen haben",
+      "limitExcedeed": "Kategorielimit überschritten. Es sind maximal 8 Kategorien zulässig",
+      "nameCategoryNotEstablished": "Kategoriename noch nicht festgelegt..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Das Schema ist leer. Sie müssen mindestens ein Element hinzufügen, indem Sie auf die Schaltfläche \"Hinzufügen\" auf der rechten Seite klicken."
@@ -895,9 +900,19 @@
       "add": "Hinzufügen",
       "label": "Bank",
       "modal": {
+        "addFilter": "Filter hinzufügen",
+        "filter": {
+          "optionAND": "Und",
+          "optionANDNOT": "UND NICHT",
+          "optionName": "Name",
+          "optionOR": "Oder",
+          "optionTag": "Etikett",
+          "optionType": "Kerl"
+        },
         "maximumRandomWidgetsExceeded": "Die Anzahl der zufälligen Widgets darf die Anzahl der ausgewählten Widgets nicht überschreiten",
         "modalTitle": "Widget-Bank",
         "placeholderGroup": "Gruppe",
+        "placeholderTag": "Suche nach Tag-Namen",
         "placeholderTitle": "Suche nach Widget-Titel",
         "placeholderType": "Kerl",
         "randomTextBefore": " Zufällige Widgets aus den ausgewählten",
@@ -1351,6 +1366,23 @@
       },
       "label": "Eingang",
       "prev": "Eintrag noch nicht festgelegt..."
+    },
+    "Roulette": {
+      "label": "Roulette",
+      "modal": {
+        "lifes": "Leben",
+        "small_lifes": "Anzahl der Leben, die zum Spielen zur Verfügung stehen",
+        "small_time": "Verfügbare Zeit für eine Antwort",
+        "time": "Zeit"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategorie",
+      "modal": {
+        "label": "Kategorie-Name",
+        "placeholder": "Kategorie-Name",
+        "small_label": "Dies ist der Name der Kategorie, die im Roulette angezeigt wird"
+      }
     },
     "SchemaContainer": {
       "label": "Schema"

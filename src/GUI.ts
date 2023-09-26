@@ -145,6 +145,7 @@ export default class GUI {
 
     async openModalQuestionsBank(dataElementId: string) {
         const { default: modalTemplate } = await import('./views/modal-questions-bank.hbs');
+        const { default: modalFilter } = await import('./model/widgets/WidgetBank/filter_modal.hbs');
         const headers = new Headers();
         headers.append("Accept", "application/json");
         let data = await fetch(Config.getQuestionsBankURL(), { method: 'GET', headers, redirect: 'follow' })
@@ -155,15 +156,16 @@ export default class GUI {
             "MultipleAnswer": "MultipleQuestion",
             "TrueFalse": "TrueFalseQuestion"
         }
+        
         data.map((elem: any) => {
             elem["answers"] = JSON.stringify(elem["answers"]).trim();
             elem["img"] = ModelManager.getWidgetElement(mapeo[elem.type]).icon
         });
-        const groups = [...new Set(data.map(objeto => objeto.group.name))].filter(elem => elem != null);
+        
         const types = [...new Set(data.map(objeto => mapeo[objeto.type]))];
+        
         $("#modal-questions-bank").remove();
-
-        $(this.container).after(modalTemplate({ groups: groups, types: types, data: data }));
+        $(this.container).after(modalTemplate({ types: types, data: data}));
         $("#modal-questions-bank").modal({ keyboard: false, focus: true, backdrop: 'static' });
 
         const aggregateWidget = async function (button: HTMLElement) {
@@ -193,18 +195,50 @@ export default class GUI {
                     }
                 }
             }
-            let widget = (await ModelManager.create(mapeo[type], { data: datos })).clone();
+            // TODO: addContent añade un elemento vacío, queremos COPIAR un elemento de una paleta
+            //this.author.addContent(dataElementId, obj2.widget);
+            let widget = (await ModelManager.create(mapeo[type], { data: datos} )).clone();
             this.author.addModelElement(widget, dataElementId);
         }
 
         const onClick = aggregateWidget.bind(this);
 
+        
+        const deleteFilterHTML = function() {
+            $(this).parent().remove();
+        }
+
+        const changeSearchType = function() {
+            const filter = $(this).val(); 
+            if (filter === "tipo") {
+                $(this).parent().find(".searchTerm").removeClass("d-block").addClass("d-none");
+                $(this).parent().find(".searchTermByType").removeClass("d-none").addClass("d-block");
+            }
+            else {
+                $(this).parent().find(".searchTermByType").removeClass("d-block").addClass("d-none");
+                const searchTerm = $(this).parent().find(".searchTerm"); 
+                searchTerm.removeClass("d-none").addClass("d-block");
+                if (filter === "tag") searchTerm.attr("placeholder",  I18n.getInstance().translate("widgets.Bank.modal.placeholderTag")[0]);
+                else searchTerm.attr("placeholder", I18n.getInstance().translate("widgets.QuestionsBank.modal.placeholderTitle")[0]);
+            }
+        }
+
+        $(".searchType").on("change", changeSearchType);
+
+        const createFilterHTML = function() {
+            $("#search-filters").append(modalFilter({types: types}));
+            $(".delete-filter-button").last().on("click",deleteFilterHTML)
+            $(".searchType").last().on("change", changeSearchType);
+        }
+
+        $("#button-add-filter-widget").on("click", createFilterHTML);
+
         $("#check-select-all").on('change', function () {
-            $(".d-flex .input-checkbox ").prop('checked', $("#check-select-all").prop('checked'));
+            $(".d-block .input-checkbox ").prop('checked', $("#check-select-all").prop('checked'));
         });
 
-        $(".d-flex .input-checkbox").on("click", function () {
-            $("#check-select-all").prop('checked', $(".d-flex .input-checkbox:checked").length === $(".d-flex .input-checkbox").length);
+        $(".d-block .input-checkbox").on("click", function () {
+            $("#check-select-all").prop('checked', $(".d-block .input-checkbox:checked").length === $(".d-block .input-checkbox").length);
             $(this).prop("checked", !$(this).prop("checked"));
         });
 
@@ -244,31 +278,52 @@ export default class GUI {
             $("#modal-questions-bank").modal('hide');
         });
 
-        $("#button-search-questions-bank").on('click', function () {
-
-            const searchTerm = ($(" #modal-questions-bank input[type='search']").val() as string).toLowerCase();
-            const searchGroup = ($(" #modal-questions-bank .select-group option:selected").val() as string).trim();
-            const searchType = ($(" #modal-questions-bank .select-type option:selected").val() as string).trim();
+        $("#button-search-questions-bank").on('click', function (){
 
             $('.widget-button').each(function () {
 
-                const result: boolean[] = [];
+                let result : boolean = true;
 
                 const title = $(this).find('.question-text').text().toLowerCase();
-                const tags = $(this).find('.badge').toArray().map((elem: any) => $(elem).text())
-                const group = $(this).find("input[name='group']").val() as string;
                 const type = $(this).find("input[name='type']").val() as string;
+                const tags = $(this).find('.badge').toArray().map( (elem: any) => $(elem).text())
 
+            
 
-                result[0] = title.includes(searchTerm) || tags.some(tag => tag.toLowerCase().includes(searchTerm));
-                result[1] = searchGroup === "default" || group === searchGroup;
-                result[2] = searchType === "default" || mapeo[type] === searchType;
+            
+                $(".search-condition").each( (i, elem) => {
 
-                if (result.every(elem => elem)) {
-                    $(this).removeClass("d-none").addClass("d-flex");
-                } else {
-                    $(this).removeClass("d-flex").addClass("d-none");
-                }
+                    let searchTerm = ($(elem).find('.searchTerm').val() as string).toLowerCase();
+                    let searchType = ($(elem).find('.searchType').val() as string).toLowerCase().trim();
+                    let searchBoolean = $(elem).find('.searchBoolean').val() as string;
+                    let searchTermByType = $(elem).find('.searchTermByType').val() as string
+                    searchTermByType = Object.keys(mapeo).find(key => mapeo[key] === searchTermByType);
+
+                    let resultFilter = true;
+                    if(searchType === "nombre") resultFilter = title.includes(searchTerm);
+                    if(searchType === "tag") resultFilter = tags.some(tag => tag.toLowerCase().includes(searchTerm));
+                    if (searchType === "tipo") resultFilter = (type === searchTermByType);
+
+                
+
+                    switch (searchBoolean) {
+                        case '0':
+                            result = result && resultFilter
+                            break;
+                        case '1':
+                            result = result || resultFilter
+                            break;
+                        case '2': 
+                            result = result && !resultFilter
+                            break;
+                        default:
+                            result = result && resultFilter
+                    }
+                })
+        
+
+                if(result) $(this).removeClass("d-none").addClass("d-block");
+                else $(this).removeClass("d-block").addClass("d-none");
             })
         })
 

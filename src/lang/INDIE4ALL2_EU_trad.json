@@ -1,20 +1,24 @@
 {
   "buttons": {
     "toggleCategories": "Erakutsi/ ezkutatu kategoriak",
+    "toggleCategories": "Erakutsi/ ezkutatu kategoriak",
     "viewImage": "Ikusi irudia"
   },
   "common": {
     "alt": {
+      "help": "Hau da irisgarritasunaren arloko irudia deskribatzeko testu alternatiboa.",
       "help": "Hau da irisgarritasunaren arloko irudia deskribatzeko testu alternatiboa.",
       "label": "Irudirako testu alternatiboa",
       "placeholder": "Testu alternatiboa"
     },
     "captions": {
       "help": "INDIeMedia-ren URLa, elkarrizketaren transkripzioa, soinu-efektuak, musika-pistak eta beste audio-informazio bat biltzen dituena, ikuslea gorra den edo entzumen-arazoak dituenerako, edo bideo/ audioa isilduta dagoenerako. Azpitituluak ere bideoaren gainean daude ikusgai.",
+      "help": "INDIeMedia-ren URLa, elkarrizketaren transkripzioa, soinu-efektuak, musika-pistak eta beste audio-informazio bat biltzen dituena, ikuslea gorra den edo entzumen-arazoak dituenerako, edo bideo/ audioa isilduta dagoenerako. Azpitituluak ere bideoaren gainean daude ikusgai.",
       "label": "Azpitituluak (CC)",
       "placeholder": "Adibidea: https://indiemedia.upct.es/subs.vtt"
     },
     "descriptions": {
+      "help": "INDIeMedia-ren fitxategiaren URLa, bideoan gertatzen denaren testu-deskribapenak biltzen dituena, bideoa eskuragarri ez dagoenerako, ikuslea itsua delako eta pantailarik erabiltzen ez duelako. Deskribapenak pantaila-irakurgailu batek irakuri edo aparteko audio-pista batera bihurtzen ditu.",
       "help": "INDIeMedia-ren fitxategiaren URLa, bideoan gertatzen denaren testu-deskribapenak biltzen dituena, bideoa eskuragarri ez dagoenerako, ikuslea itsua delako eta pantailarik erabiltzen ez duelako. Deskribapenak pantaila-irakurgailu batek irakuri edo aparteko audio-pista batera bihurtzen ditu.",
       "label": "Deskribapena",
       "placeholder": "Adibidea: https://indiemedia.upct.es/descriptions.vtt"
@@ -24,6 +28,8 @@
       "title": "Deskargatzen"
     },
     "feedback": {
+      "help": "Sartu ikasleak jasoko duen feedbacka, erantzun zuzena zein okerra izan.",
+      "label": "Feedbacka",
       "help": "Sartu ikasleak jasoko duen feedbacka, erantzun zuzena zein okerra izan.",
       "label": "Feedbacka",
       "negative": "Feedback negatiboa...",
@@ -36,7 +42,9 @@
     "help": {
       "button": "Lehenetsita",
       "help": "Testu hau widget-aren gainean agertuko da, erabiltzaileak widget-arekin nola interakzionatu uler dezan. <strong>Zuriz uzten bada, lehenetsitako balioa hartuko du.</strong>",
+      "help": "Testu hau widget-aren gainean agertuko da, erabiltzaileak widget-arekin nola interakzionatu uler dezan. <strong>Zuriz uzten bada, lehenetsitako balioa hartuko du.</strong>",
       "label": "Laguntza",
+      "placeholder": "Lehenetsitako laguntza-testua"
       "placeholder": "Lehenetsitako laguntza-testua"
     },
     "language": {
@@ -47,10 +55,27 @@
       "DA": "Daniera",
       "DE": "Alemaniera",
       "EL": "Greziera",
+      "AR": "Arabiera",
+      "BG": "Bulgariera",
+      "CA": "Katalana",
+      "CS": "Txekiera",
+      "DA": "Daniera",
+      "DE": "Alemaniera",
+      "EL": "Greziera",
       "EN": "Ingelesa",
       "ES": "Espainiera",
       "ET": "Estoniera",
+      "ES": "Espainiera",
+      "ET": "Estoniera",
       "EU": "Euskara",
+      "FI": "Finlandiera",
+      "FR": "Frantsesa",
+      "GA": "Irlandera",
+      "GL": "Galiziera",
+      "HR": "Kroaziera",
+      "HU": "Hungariera",
+      "IT": "Italiera",
+      "JA": "Japoniera",
       "FI": "Finlandiera",
       "FR": "Frantsesa",
       "GA": "Irlandera",
@@ -199,7 +224,7 @@
     },
     "ButtonTextContainer": {
       "data": {
-        "empty": "Testu eta botoi motako elementu bat eman behar duzu, gutxienez."
+        "empty": "Testu eta botoi motako elementu bat gutxienez eman behar duzu."
       }
     },
     "ButtonTextItem": {
@@ -212,7 +237,7 @@
     },
     "Callout": {
       "data": {
-        "empty": "Nabarmendutako lehioa hutsik dago. Elementu sinple bat erantsi behar duzu, gutxienez."
+        "empty": "Leiho nabarmena hutsik. Elementu sinple bat erantsi behar du, gutxienez."
       },
       "text": {
         "invalid": "Testua hutsik dago. Testu labur bat idatzi behar duzu."
@@ -220,7 +245,7 @@
     },
     "ChooseOption": {
       "image": {
-        "invalid": "UrL eremuan balio handiko irudia ematen duzu."
+        "invalid": "URL eremuan balio handiko irudia ematen duzu."
       },
       "options": {
         "noCorrect": "Zuzena den bat aukeratu behar duzu gutxienez",
@@ -296,7 +321,7 @@
     },
     "DragdropContainer": {
       "data": {
-        "empty": "Elementua hutsik dfago. Gutxienez termino/definizio item bat gehitu behar duzu, eskuineko gehitzeko botoia erabiliz."
+        "empty": "Elementua hutsik. Gutxienez item-definizio bat gehitu behar duzu, eskuinari gehitzeko botoia erabiliz."
       }
     },
     "DragpdropItem": {
@@ -373,7 +398,7 @@
         "invalid": "Formularako testu bat eman behar duzu."
       },
       "formula": {
-        "invalid": "LaTex formatuan formula bat eman behar duzu."
+        "invalid": "Formula bat eman behar duzu LaTex formatuan."
       }
     },
     "MissingWords": {
@@ -435,9 +460,9 @@
     },
     "RelatedUnitsContainer": {
       "data": {
-        "duplicated": "Gutxienez esteka bikoiztu bat dago. Sarrera bakoitzerako esteka bakarra eman behar duzu.",
-        "empty": "Elementua hutsik dago. Sarrera bat gehitu behar duzu, gutxienez, eskuineko gehitzeko botoia erabiliz.",
-        "multipleCurrent": "Gutxienez bi sarrera daude. Sarrera bat besterik ez duzu eman behar."
+        "duplicated": "Gutxienez lotura bikoiztu bat. Sarrera bakoitzerako esteka bakarra eman behar duzu.",
+        "empty": "Elementua hutsik. Sarrera bat gehitu behar duzu, gutxienez, eskuinari gehitzeko botoia erabiliz.",
+        "multipleCurrent": "Gutxienez bi sarrera daude gaur egun. Gaur egungo sarrera bat besterik ez duzu eman behar."
       },
       "moreThanOne": "Eduki-taulako elementu bat eman behar duzu, asko jota."
     },
@@ -448,6 +473,11 @@
       "url": {
         "invalid": "URL eremuak formatu honekin egon behar du: https://[jatorria]/[egilea]/[unitatea]"
       }
+    },
+    "Roulette": {
+      "categoryRepeated": "Errepikatutako kategorien izenak. Kategoria bakoitzak izen bakarra izan behar du",
+      "limitExcedeed": "Gainditutako kategorien muga. Gehienez 8 kategoria izango dira.",
+      "nameCategoryNotEstablished": "Oraindik ezarri gabeko kategoriaren izena..."
     },
     "SchemaContainer": {
       "data": {
@@ -511,7 +541,7 @@
     },
     "TabContent": {
       "data": {
-        "empty": "Betilea hutsik dago. Erlaitzari elementu bat gutxienez erantsi behar diozu."
+        "empty": "Betilea hutsik. Betileari elementu bat erantsi behar diozu, gutxienez."
       },
       "name": {
         "invalid": "Erlaitzaren izenak ez du balio. Bat ezarri behar duzu."
@@ -622,20 +652,20 @@
     "deletedSection": "Atala ondo ezabatu da",
     "emptyContent": "Ez duzu edukirik erantsi.",
     "errorMessage": "Errorea",
-    "exportedElement": "Elementua ondo esportatu da",
-    "exportedSection": "Atala ondo esportatu da.",
-    "importedElement": "Elementua ondo inportatu da.",
-    "importedSection": "Atala ondo inportatu da.",
-    "loadError": "Ezin izan da unitatea kargatu",
-    "noElement": "Ez dago inportatzeko elementurik",
-    "noErrors": "Ondo! Ez dago akatsik. Edukia gorde dezakezu.",
-    "noRedo": "Ez dago berregiteko ezer",
-    "noSection": "Ez dago inportatzeko atalik",
-    "noUndo": "Ez dago desegiteko ezer",
-    "previewError": "Ezin izan da unitatea aurreikusi",
-    "publishError": "Ezin izan da unitatea argitaratu",
-    "savedUnit": "Unitatea ondo gorde da",
-    "saveError": "Ezin izan da unitatea gorde",
+    "exportedElement": "Arrakastaz esportatutako elementua",
+    "exportedSection": "Arrakastaz esportatutako atala",
+    "importedElement": "Arrakastaz inportatutako elementua",
+    "importedSection": "Arrakastaz inportatutako atala",
+    "loadError": "Ezin izan zen unitatea kargatu",
+    "noElement": "Ez inportatzeko elementurik",
+    "noErrors": "Ondo! Ez akatsik. Edukia gorde dezakezu.",
+    "noRedo": "Berregiteko ezer ez",
+    "noSection": "Ez inportatzeko atalik",
+    "noUndo": "Desegiteko ezer ez",
+    "previewError": "Ezin izan zen unitatea aurreikusi",
+    "publishError": "Ezin izan zen unitatea argitaratu",
+    "savedUnit": "Arrakastaz gordetako unitatea",
+    "saveError": "Ezin izan zen unitatea gorde",
     "successMessage": "Ok",
     "translateError": "Ezin izan da unitatea itzuli",
     "warningMessage": "Kontuz"
@@ -652,9 +682,9 @@
       },
       "title": "Bete eremuak Netlifyrekin konektatzeko ",
       "token": {
-        "help": "Idatzi Netlify-ko sarbide pertsonaleko tokena, Netlify-ren kontuaren konfigurazioaren Applications atalean aurki dezakezu",
+        "help": "Netlify-ko sarbide pertsonaleko tokena idatzi, Netlify-ren kontuaren konfigurazioaren Applications atalean aurki dezakezu",
         "label": "Sartu sarbide pertsonaleko token-a:",
-        "placeholder": "Sartu hemen Netlify-ko sarbide pertsonaleko tokena"
+        "placeholder": "Netlify-ko sarbide pertsonaleko tokena hemen sartu"
       }
     },
     "error": {
@@ -667,7 +697,7 @@
     }
   },
   "palette": {
-    "bankWidgets": "Widgets bankua",
+    "bankWidgets": "Widgetsen bankua",
     "containers": "Edukiontziak",
     "exerciseElement": "Ariketak",
     "interactiveElements": "Elementu interaktiboak",
@@ -685,10 +715,10 @@
     }
   },
   "sections": {
-    "deleteSection": "Ezabatu atala",
-    "duplicate": "Bizkoiztu atala",
-    "edit": "Editatu informazioa ",
-    "expandContract": "Hedatu edo uzkurtu",
+    "deleteSection": "Atala ezabatzea",
+    "duplicate": "Atala bikoiztea",
+    "edit": "Informazioa editatu",
+    "expandContract": "Hedatzea edo kokatzea",
     "export": "Esportatu atala",
     "form": {
       "bookmark": {
@@ -698,8 +728,8 @@
       },
       "image": {
         "help": "",
-        "label": "Atzeko irudiaren URLa",
-        "placeholder": "Sartu irudiaren URL-a ..."
+        "label": "Sakoneko irudiaren URL",
+        "placeholder": "Irudiaren URL-a sartu..."
       },
       "name": {
         "help": "Izen hau izango du atalak edukian.",
@@ -815,10 +845,10 @@
     "Animation": {
       "form": {
         "image": {
-          "help": "Hau izango da animazioaren atzeko irudia. Zure irudietako bat aukera ahal duzu.",
-          "label": "Irudiaren URLa",
-          "placeholder": "Sartu hemen irudiaren URL-a ...",
-          "preview": "Animazioaren aurrebista"
+          "help": "Hau izango da animazioaren hondoko irudia. Zure irudietako bat aukera dezakezu.",
+          "label": "Irudiaren URL",
+          "placeholder": "Sartu irudiaren URL-a hemen...",
+          "preview": "Animazioaren aldez aurreko bista"
         },
         "pieces": {
           "altImg": "Irudi animaturako testu alternatiboa",
@@ -895,10 +925,19 @@
       "add": "Gehitu",
       "label": "Bankua",
       "modal": {
+        "addFilter": "Filtroa gehitu",
+        "filter": {
+          "optionAND": "Eta",
+          "optionANDNOT": "ETA EZ",
+          "optionName": "Izena",
+          "optionOR": "O",
+          "optionTag": "Etiketa",
+          "optionType": "Mota"
+        },
         "maximumRandomWidgetsExceeded": "Ausazko widget kopurua ezin da izan hautatutako widget kopurua baino handiagoa",
-        "modalTitle": "Widgets bankua",
+        "modalTitle": "Widgetsen bankua",
         "placeholderGroup": "Taldea",
-        "placeholderTitle": "Bilatu widget tituluaren arabera",
+        "placeholderTitle": "Widget tituluaren arabera bilatu",
         "placeholderType": "Mota",
         "randomTextBefore": " Hautatutakoen ausazko widget-ak",
         "randomTextPrev": "Sartu ",
@@ -924,9 +963,9 @@
           "placeholder": "Adibidea: Carl Sagan"
         },
         "quote": {
-          "help": "Hau da aipamena hitzez hitz",
-          "label": "Aipamenaren testua",
-          "placeholder": "Adibidea: 'Ebidentziaren absentziar ez da absentziaren ebidentzia bat'."
+          "help": "Testu hau testu-hitzordua da",
+          "label": "Hitzorduaren testua",
+          "placeholder": "Adibidea: 'Ebidentziarik eza ez da absentziaren ebidentzia bat'."
         },
         "source": {
           "help": "Aipamenaren jatorrizko iturria (Urtea, liburua, aldizkaria... etab)",
@@ -988,8 +1027,8 @@
       "form": {
         "image": {
           "help": "Irudia widget-aren goialdean aterako da, aukeren gainetik.",
-          "label": "Irudiaren URLa",
-          "placeholder": "Sartu irudiaren URLa ..."
+          "label": "Irudiaren URL",
+          "placeholder": "Irudiaren URL-a sartu..."
         },
         "options": {
           "help": "4 aukera hauek irudiaren azpian agertuko dira. Bat bakarrik izan daiteke zuzena.",
@@ -1003,8 +1042,8 @@
           "placeholder": "Idatzi testua hemen..."
         }
       },
-      "label": "Hautatu aukera bat aukeratu",
-      "prev": "Hautatu zehaztu gabeko aukera bat ..."
+      "label": "Aukera bat aukeratu",
+      "prev": "Zehaztu gabeko aukera bat aukeratzea..."
     },
     "ColumnLayout": {
       "columnsLabel": "zutabeak",
@@ -1107,14 +1146,14 @@
         "questionText": {
           "help": "Galderaren testua idatzi behar duzu nahi duzun espazio zuriarekin, gako-hitz bereziarekin [blank]",
           "label": "Galderaren testua",
-          "placeholder": "Galderaren testua, elementu zuriarekin [blank]"
+          "placeholder": "Galderaren testua [blank] elementu zuriarekin"
         }
       },
       "label": "Hutsunea betetzeko galdera",
       "prev": "Hutsunea betetzeko galdera oraindik ezarri gabe ..."
     },
     "GenericWidget": {
-      "label": "Widget-a"
+      "label": "Widget"
     },
     "GuessWord": {
       "form": {
@@ -1151,7 +1190,7 @@
         "preview": "Aurrebista"
       },
       "label": "Gainean testua duen irudia",
-      "prev": "Gainean testua duen irudia oraindik exarri gabe ..."
+      "prev": "Gainean oraindik ezarri gabeko testua duen irudia..."
     },
     "ImageAndSoundContainer": {
       "label": "Irudia eta soinua"
@@ -1165,7 +1204,7 @@
         },
         "image": {
           "help": "Irudia lehen agertuko da",
-          "label": "Irudiaren URLa",
+          "label": "Irudiaren URL",
           "placeholder": "Irudiaren URL-a sartu..."
         },
         "preview": "Irudiaren aurreko bista",
@@ -1231,7 +1270,7 @@
       "prev": "Formula oraindik ezarri gabe..."
     },
     "MissingWords": {
-      "label": "Faltatzen diren hitzak "
+      "label": "Hitz faltagarriak"
     },
     "MissingWordsItem": {
       "form": {
@@ -1299,24 +1338,7 @@
         }
       },
       "label": "Buru-hausgarriak",
-      "prev": "Buru-hausgarria ez da oraindik hasi..."
-    },
-    "QuestionsBank": {
-      "add": "Gehitu",
-      "label": "Galdera Bankutik inportatzea",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Ausazko galderen kopurua ezin da hautatutako galderen kopurua baino handiagoa izan",
-        "modalTitle": "Galdera Bankua",
-        "placeholderGroup": "Taldea",
-        "placeholderTitle": "Galdeketa-titulu edo-etiketaren arabera bilatu",
-        "placeholderType": "Mota",
-        "randomTextBefore": " hautatutakoen ausazko galderak",
-        "randomTextPrev": "Sartu ",
-        "search": "Bilatu",
-        "selectAllText": "Aukeratu guztiak"
-      },
-      "modalTitle": "Galdera Bankua",
-      "search": "Bilatu"
+      "prev": "Buru-hausgarriak ez dira oraindik hasi..."
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1350,7 +1372,7 @@
         }
       },
       "label": "Sarrera",
-      "prev": "Sarrera oraindik ezarri gabe..."
+      "prev": "Oraindik ezarri gabeko sarrera..."
     },
     "SchemaContainer": {
       "label": "Eskema"
@@ -1376,7 +1398,7 @@
           "delete": "Ezabatu",
           "help": "Sartutako hitzetatik abiatuta eraikiko diren erantzunak",
           "legend": "Erantzunen zerrenda",
-          "new": "Erantzun berri bat erantsi...",
+          "new": "Erantsi erantzun berri bat...",
           "text": "Erantzuna"
         },
         "words": {
@@ -1480,7 +1502,7 @@
     },
     "TabsContainer": {
       "itemLabel": "Betileak",
-      "label": "Erlaitzen menua"
+      "label": "Betileen menua"
     },
     "TermClassification": {
       "label": "Sailkapena",
@@ -1528,7 +1550,7 @@
     },
     "TrueFalseContainer": {
       "label": "Egiazkoa/ faltsua",
-      "prev": "Egiazkoa/faltsua oraindik ezarri gabe..."
+      "prev": "Oraindik ezarri gabeko egiazko/faltsua..."
     },
     "TrueFalseItem": {
       "form": {
@@ -1544,8 +1566,8 @@
           "placeholder": "Itemaren testua..."
         }
       },
-      "label": "Egiazkoa/ faltsua itema",
-      "prev": "Egiazkoa/faltsua itema oraindik ezarri gabe..."
+      "label": "Item egiazkoa/ faltsua",
+      "prev": "Item egiazkoa/faltsua, oraindik ezarri gabea..."
     },
     "TrueFalseQuestion": {
       "form": {

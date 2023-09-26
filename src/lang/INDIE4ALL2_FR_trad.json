@@ -449,6 +449,11 @@
         "invalid": "Le champ url doit être défini au format suivant : https://[source]/[author]/[unit]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Noms de catégories répétés. Chaque catégorie doit avoir un nom unique",
+      "limitExcedeed": "Limite de catégorie dépassée. Un maximum de 8 catégories sont autorisées",
+      "nameCategoryNotEstablished": "Le nom de la catégorie n’est pas encore défini..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Le schéma est vide. Vous devez ajouter au moins un élément à l’aide du bouton Ajouter situé à droite."
@@ -895,9 +900,19 @@
       "add": "Ajouter",
       "label": "Banc",
       "modal": {
+        "addFilter": "Ajouter un filtre",
+        "filter": {
+          "optionAND": "Et",
+          "optionANDNOT": "ET NON",
+          "optionName": "Nom",
+          "optionOR": "Ou",
+          "optionTag": "Étiquette",
+          "optionType": "Mec"
+        },
         "maximumRandomWidgetsExceeded": "Le nombre de widgets aléatoires ne peut pas dépasser le nombre de widgets sélectionnés",
         "modalTitle": "Banque de widgets",
         "placeholderGroup": "Groupe",
+        "placeholderTag": "Recherche par nom de balise",
         "placeholderTitle": "Recherche par titre de widget",
         "placeholderType": "Mec",
         "randomTextBefore": " Widgets aléatoires parmi ceux sélectionnés",
@@ -1351,6 +1366,23 @@
       },
       "label": "Entrée",
       "prev": "L’entrée n’est pas encore établie..."
+    },
+    "Roulette": {
+      "label": "Roulette",
+      "modal": {
+        "lifes": "Vit",
+        "small_lifes": "Nombre de vies disponibles pour jouer",
+        "small_time": "Temps disponible pour répondre",
+        "time": "Heure"
+      }
+    },
+    "RouletteItem": {
+      "label": "Catégorie",
+      "modal": {
+        "label": "Nom de la catégorie",
+        "placeholder": "Nom de la catégorie",
+        "small_label": "Ce sera le nom de la catégorie qui apparaîtra dans la roulette"
+      }
     },
     "SchemaContainer": {
       "label": "Schéma"

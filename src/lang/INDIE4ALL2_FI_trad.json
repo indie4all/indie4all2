@@ -449,6 +449,11 @@
         "invalid": "URL-kentän on oltava seuraavassa muodossa: https://[source]/[author]/[unit]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Toistuvat luokkien nimet. Jokaisella luokalla on oltava yksilöllinen nimi",
+      "limitExcedeed": "Luokan raja ylitetty. Enintään 8 luokkaa sallitaan",
+      "nameCategoryNotEstablished": "Luokan nimeä ei ole vielä määritetty..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Malli on tyhjä. Sinun on lisättävä vähintään yksi kohde oikealla olevalla lisäyspainikkeella."
@@ -895,9 +900,19 @@
       "add": "Lisätä",
       "label": "Penkki",
       "modal": {
+        "addFilter": "Lisää suodatin",
+        "filter": {
+          "optionAND": "Ja",
+          "optionANDNOT": "JA EI",
+          "optionName": "Nimi",
+          "optionOR": "Tai",
+          "optionTag": "Etiketti",
+          "optionType": "Kundi"
+        },
         "maximumRandomWidgetsExceeded": "Satunnaisten widgetien määrä ei voi ylittää valittujen widgetien määrää",
         "modalTitle": "Widget-pankki",
         "placeholderGroup": "Ryhmä",
+        "placeholderTag": "Etsi tunnisteen nimellä",
         "placeholderTitle": "Etsi widgetin otsikon perusteella",
         "placeholderType": "Kundi",
         "randomTextBefore": " Satunnaiset widgetit valituista",
@@ -1351,6 +1366,23 @@
       },
       "label": "Sisäänkäynti",
       "prev": "Merkintää ei ole vielä vahvistettu..."
+    },
+    "Roulette": {
+      "label": "Ruletti",
+      "modal": {
+        "lifes": "Elämää",
+        "small_lifes": "Pelattavissa olevien elämien määrä",
+        "small_time": "Vastaamiseen käytettävissä oleva aika",
+        "time": "Aika"
+      }
+    },
+    "RouletteItem": {
+      "label": "Luokka",
+      "modal": {
+        "label": "Luokan nimi",
+        "placeholder": "Luokan nimi",
+        "small_label": "Tämä on ruletissa esiintyvän luokan nimi"
+      }
     },
     "SchemaContainer": {
       "label": "Järjestelmä"

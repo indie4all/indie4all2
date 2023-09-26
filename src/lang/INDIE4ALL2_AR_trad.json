@@ -449,6 +449,11 @@
         "invalid": "يجب تعيين حقل url إلى التنسيق التالي: https://[المصدر]/[المؤلف]/[الوحدة]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "أسماء الفئات المتكررة. يجب أن يكون لكل فئة اسم فريد",
+      "limitExcedeed": "تم تجاوز حد الفئة. يسمح بحد أقصى 8 فئات",
+      "nameCategoryNotEstablished": "لم يتم تعيين اسم الفئة بعد ..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "المخطط فارغ. يجب عليك إضافة عنصر واحد على الأقل باستخدام زر الإضافة على اليمين."
@@ -895,9 +900,19 @@
       "add": "جمع",
       "label": "مصطبة",
       "modal": {
+        "addFilter": "إضافة فلتر",
+        "filter": {
+          "optionAND": "و",
+          "optionANDNOT": "وليس",
+          "optionName": "اسم",
+          "optionOR": "أو",
+          "optionTag": "تسميه",
+          "optionType": "الرجل"
+        },
         "maximumRandomWidgetsExceeded": "لا يمكن أن يتجاوز عدد الأدوات العشوائية عدد الأدوات المحددة",
         "modalTitle": "بنك القطعة",
         "placeholderGroup": "مجموعة",
+        "placeholderTag": "البحث عن طريق اسم العلامة",
         "placeholderTitle": "البحث عن طريق عنوان القطعة",
         "placeholderType": "الرجل",
         "randomTextBefore": " الحاجيات عشوائية من تلك المحددة",
@@ -1351,6 +1366,23 @@
       },
       "label": "مدخل",
       "prev": "لم يتم تأسيس الإدخال بعد ..."
+    },
+    "Roulette": {
+      "label": "الروليت",
+      "modal": {
+        "lifes": "حياه",
+        "small_lifes": "عدد الأرواح المتاحة للعب",
+        "small_time": "الوقت المتاح للرد",
+        "time": "الوقت"
+      }
+    },
+    "RouletteItem": {
+      "label": "باب",
+      "modal": {
+        "label": "اسم الفئة",
+        "placeholder": "اسم الفئة",
+        "small_label": "سيكون هذا هو اسم الفئة التي ستظهر في لعبة الروليت"
+      }
     },
     "SchemaContainer": {
       "label": "نظام"

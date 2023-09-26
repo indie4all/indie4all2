@@ -449,6 +449,11 @@
         "invalid": "Het url-veld moet worden ingesteld op de volgende indeling: https://[bron]/[auteur]/[eenheid]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Herhaalde categorienamen. Elke categorie moet een unieke naam hebben",
+      "limitExcedeed": "Categorielimiet overschreden. Er zijn maximaal 8 categorieën toegestaan",
+      "nameCategoryNotEstablished": "Categorienaam nog niet ingesteld..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Het schema is leeg. U moet ten minste één item toevoegen met de knop Toevoegen aan de rechterkant."
@@ -895,9 +900,19 @@
       "add": "Toevoegen",
       "label": "Bank",
       "modal": {
+        "addFilter": "Filter toevoegen",
+        "filter": {
+          "optionAND": "En",
+          "optionANDNOT": "EN NIET",
+          "optionName": "Naam",
+          "optionOR": "Of",
+          "optionTag": "Etiket",
+          "optionType": "Vent"
+        },
         "maximumRandomWidgetsExceeded": "Het aantal willekeurige widgets mag niet groter zijn dan het aantal geselecteerde widgets",
         "modalTitle": "Widgetbank",
         "placeholderGroup": "Groep",
+        "placeholderTag": "Zoeken op tagnaam",
         "placeholderTitle": "Zoeken op widgettitel",
         "placeholderType": "Vent",
         "randomTextBefore": " Willekeurige widgets van de geselecteerde widgets",
@@ -1351,6 +1366,23 @@
       },
       "label": "Ingang",
       "prev": "Inzending nog niet vastgesteld..."
+    },
+    "Roulette": {
+      "label": "Roulette",
+      "modal": {
+        "lifes": "Levens",
+        "small_lifes": "Aantal levens beschikbaar om te spelen",
+        "small_time": "Beschikbare tijd om te reageren",
+        "time": "Tijd"
+      }
+    },
+    "RouletteItem": {
+      "label": "Categorie",
+      "modal": {
+        "label": "Naam van categorie",
+        "placeholder": "Naam van categorie",
+        "small_label": "Dit is de naam van de categorie die in de roulette zal verschijnen"
+      }
     },
     "SchemaContainer": {
       "label": "Plan"

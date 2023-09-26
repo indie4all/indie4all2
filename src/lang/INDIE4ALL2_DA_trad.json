@@ -449,6 +449,11 @@
         "invalid": "URL-feltet skal indstilles til følgende format: https://[kilde]/[forfatter]/[enhed]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Gentagne kategorinavne. Hver kategori skal have et entydigt navn",
+      "limitExcedeed": "Kategorigrænsen overskredet. Højst 8 kategorier er tilladt",
+      "nameCategoryNotEstablished": "Kategorinavn endnu ikke angivet..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Skemaet er tomt. Du skal tilføje mindst ét element ved hjælp af knappen Tilføj til højre."
@@ -895,9 +900,19 @@
       "add": "Tilføje",
       "label": "Bænk",
       "modal": {
+        "addFilter": "Tilføj filter",
+        "filter": {
+          "optionAND": "Og",
+          "optionANDNOT": "OG IKKE",
+          "optionName": "Navn",
+          "optionOR": "Eller",
+          "optionTag": "Etiket",
+          "optionType": "Fyr"
+        },
         "maximumRandomWidgetsExceeded": "Antallet af tilfældige widgets må ikke overstige antallet af valgte widgets",
         "modalTitle": "Widget Bank",
         "placeholderGroup": "Gruppe",
+        "placeholderTag": "Søg efter tagnavn",
         "placeholderTitle": "Søg efter widgettitel",
         "placeholderType": "Fyr",
         "randomTextBefore": " Tilfældige widgets fra de valgte",
@@ -1351,6 +1366,23 @@
       },
       "label": "Indgang",
       "prev": "Indgang ikke etableret endnu..."
+    },
+    "Roulette": {
+      "label": "Roulette",
+      "modal": {
+        "lifes": "Liv",
+        "small_lifes": "Antal tilgængelige liv til at spille",
+        "small_time": "Tid til rådighed til at svare",
+        "time": "Tidspunkt"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategori",
+      "modal": {
+        "label": "Kategoriens navn",
+        "placeholder": "Kategoriens navn",
+        "small_label": "Dette vil være navnet på den kategori, der vises i rouletten"
+      }
     },
     "SchemaContainer": {
       "label": "Plan"

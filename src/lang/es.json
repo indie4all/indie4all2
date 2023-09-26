@@ -383,6 +383,11 @@
                 "invalid": "El campo url debe estar establecido con el siguiente formato: https://[origen]/[autor]/[unidad]"
             }
         },
+        "Roulette": {
+            "limitExcedeed" : "Límite de categorías excedido. Se permite un máximo de 8 categorías",
+            "categoryRepeated": "Nombres de categorías repetidos. Cada categoría debe tener un nombre único",
+            "nameCategoryNotEstablished": "Nombre de la categoría no establecido todavía..."
+        },
         "SentenceOrderContainer": {
             "data": {
                 "empty": "Debes proporcionar al menos un elemento de ordenamiento de frases."
@@ -634,7 +639,8 @@
         "layouts": "Disposiciones",
         "question": "Preguntas",
         "simpleElements": "Elementos",
-        "bankWidgets" : "Banco de Widgets"
+        "bankWidgets" : "Banco de Widgets",
+        "prueba": "prueba"
     },
     "sections": {
         "deleteSection": "Eliminar sección",
@@ -855,13 +861,22 @@
             "modal" : {
                 "modalTitle" : "Banco de Widgets",
                 "search" : "Buscar",
-                "placeholderTitle" : "Buscar por título de Widget",
-                "placeholderGroup" : "Grupo",
-                "placeholderType" : "Tipo",
+                "placeholderTitle" : "Buscar por título",
+                "placeholderTag": "Buscar por nombre de etiqueta",
                 "randomTextPrev" : "Introducir ",
                 "randomTextBefore" : " widgets aleatorios de los seleccionados",
                 "selectAllText" : "Seleccionar todos",
-                "maximumRandomWidgetsExceeded": "El número de widgets aleatorios no puede ser superior al número de widgets seleccionado"
+                "maximumRandomWidgetsExceeded": "El número de widgets aleatorios no puede ser superior al número de widgets seleccionado",
+                "notFound": "No se encontraron widgets disponibles en el banco de Widgets",
+                "addFilter" : "Añadir filtro",
+                "filter": {
+                    "optionAND": "Y",
+                    "optionOR" : "O",
+                    "optionANDNOT": "Y NO",
+                    "optionName" : "Nombre",
+                    "optionType" : "Tipo",
+                    "optionTag": "Etiqueta"
+                }
             },
             "modalTitle": "Banco de Widgets",
             "search": "Buscar",
@@ -1164,13 +1179,14 @@
             "modal" : {
                 "modalTitle" : "Banco de Preguntas",
                 "search" : "Buscar",
-                "placeholderTitle" : "Buscar por título o etiqueta de pregunta",
+                "placeholderTitle" : "Buscar por título",
                 "placeholderGroup" : "Grupo",
                 "placeholderType" : "Tipo",
                 "randomTextPrev" : "Introducir ",
                 "randomTextBefore" : " preguntas aleatorias de las seleccionadas",
                 "selectAllText" : "Seleccionar todas",
-                "maximumRandomWidgetsExceeded": "El número de preguntas aleatorias no puede ser superior al número de preguntas seleccionadas"
+                "maximumRandomWidgetsExceeded": "El número de preguntas aleatorias no puede ser superior al número de preguntas seleccionadas",
+                "notFound": "No se encontraron preguntas disponibles en el banco de Preguntas"
             },
             "modalTitle": "Banco de Preguntas",
             "search": "Buscar",
@@ -1281,6 +1297,23 @@
             },
             "label": "Entrada",
             "prev": "Entrada no establecida todavía ..."
+        },
+        "Roulette": {
+            "label": "Ruleta",
+            "modal" : {
+                "lifes" : "Vidas",
+                "small_lifes" : "Número de vidas disponibles para jugar",
+                "time": "Tiempo",
+                "small_time" : " Tiempo disponible para responder"
+            }
+        },
+        "RouletteItem": {
+            "label": "Categoría",
+            "modal" : {
+                "label" : "Nombre de la categoría",
+                "placeholder": "Nombre de la categoría",
+                "small_label": "Este será el nombre de la categoría que aparecerá en la ruleta"
+            }
         },
         "SentenceOrderContainer": {
             "label": "Ordenamiento de frases"

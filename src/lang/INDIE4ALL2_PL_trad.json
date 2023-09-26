@@ -449,6 +449,11 @@
         "invalid": "Pole adresu URL musi mieć następujący format: https://[źródło]/[autor]/[jednostka]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Powtarzające się nazwy kategorii. Każda kategoria musi mieć unikalną nazwę",
+      "limitExcedeed": "Przekroczono limit kategorii. Dozwolonych jest maksymalnie 8 kategorii",
+      "nameCategoryNotEstablished": "Nazwa kategorii nie jest jeszcze ustawiona..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Schemat jest pusty. Musisz dodać co najmniej jeden element za pomocą przycisku dodawania po prawej stronie."
@@ -895,9 +900,19 @@
       "add": "Dodawać",
       "label": "Ławka",
       "modal": {
+        "addFilter": "Dodaj filtr",
+        "filter": {
+          "optionAND": "I",
+          "optionANDNOT": "A NIE",
+          "optionName": "Nazwa",
+          "optionOR": "Lub",
+          "optionTag": "Etykieta",
+          "optionType": "Facet"
+        },
         "maximumRandomWidgetsExceeded": "Liczba losowych widżetów nie może przekroczyć liczby wybranych widżetów",
         "modalTitle": "Bank widżetów",
         "placeholderGroup": "Grupa",
+        "placeholderTag": "Wyszukiwanie według nazwy tagu",
         "placeholderTitle": "Szukaj według tytułu widżetu",
         "placeholderType": "Facet",
         "randomTextBefore": " Losowe widżety z wybranych",
@@ -1351,6 +1366,23 @@
       },
       "label": "Wejście",
       "prev": "Wpis nie został jeszcze ustalony..."
+    },
+    "Roulette": {
+      "label": "Ruletka",
+      "modal": {
+        "lifes": "Życie",
+        "small_lifes": "Liczba żyć do gry",
+        "small_time": "Czas dostępny na udzielenie odpowiedzi",
+        "time": "Godzina"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategoria",
+      "modal": {
+        "label": "Nazwa kategorii",
+        "placeholder": "Nazwa kategorii",
+        "small_label": "Będzie to nazwa kategorii, która pojawi się w ruletce"
+      }
     },
     "SchemaContainer": {
       "label": "Plan"

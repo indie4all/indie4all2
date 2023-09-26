@@ -449,6 +449,11 @@
         "invalid": "Polje URL mora biti nastavljeno na to obliko: https://[vir]/[avtor]/[enota]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Ponovljena imena kategorij. Vsaka kategorija mora imeti edinstveno ime",
+      "limitExcedeed": "Omejitev kategorije je presežena. Dovoljenih je največ 8 kategorij",
+      "nameCategoryNotEstablished": "Ime kategorije še ni nastavljeno ..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Shema je prazna. Z gumbom za dodajanje na desni morate dodati vsaj en element."
@@ -895,9 +900,19 @@
       "add": "Dodati",
       "label": "Klop",
       "modal": {
+        "addFilter": "Dodajanje filtra",
+        "filter": {
+          "optionAND": "In",
+          "optionANDNOT": "IN NE",
+          "optionName": "Ime",
+          "optionOR": "Ali",
+          "optionTag": "Oznaka",
+          "optionType": "Fant"
+        },
         "maximumRandomWidgetsExceeded": "Število naključnih pripomočkov ne sme presegati števila izbranih pripomočkov",
         "modalTitle": "Banka pripomočkov",
         "placeholderGroup": "Skupina",
+        "placeholderTag": "Iskanje po imenu oznake",
         "placeholderTitle": "Iskanje po naslovu pripomočka",
         "placeholderType": "Fant",
         "randomTextBefore": " Naključni pripomočki izbranih",
@@ -1351,6 +1366,23 @@
       },
       "label": "Vhod",
       "prev": "Vstop še ni vzpostavljen..."
+    },
+    "Roulette": {
+      "label": "Ruleta",
+      "modal": {
+        "lifes": "Življenje",
+        "small_lifes": "Število življenj, ki so na voljo za igro",
+        "small_time": "Čas, ki je na voljo za odziv",
+        "time": "Čas"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategorija",
+      "modal": {
+        "label": "Ime kategorije",
+        "placeholder": "Ime kategorije",
+        "small_label": "To bo ime kategorije, ki se bo pojavila v ruleti"
+      }
     },
     "SchemaContainer": {
       "label": "Shema"

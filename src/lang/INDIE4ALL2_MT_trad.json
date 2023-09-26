@@ -449,6 +449,11 @@
         "invalid": "Il-qasam tal-url għandu jiġi ssettjat għall-format li ġej: https://[sors]/[awtur]/[unità]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Ismijiet ta' kategoriji ripetuti. Kull kategorija għandu jkollha isem uniku",
+      "limitExcedeed": "Il-limitu tal-kategorija maqbuż. Massimu ta' 8 kategoriji huma permessi",
+      "nameCategoryNotEstablished": "Isem il-kategorija għadu mhux issettjat..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "L-iskema hija vojta. Għandek iżżid mill-inqas item wieħed billi tuża l-buttuna żid fuq il-lemin."
@@ -895,9 +900,19 @@
       "add": "Żid",
       "label": "Bank",
       "modal": {
+        "addFilter": "Żid filtru",
+        "filter": {
+          "optionAND": "U",
+          "optionANDNOT": "U MHUX",
+          "optionName": "Isem",
+          "optionOR": "Jew",
+          "optionTag": "Tikketta",
+          "optionType": "Guy"
+        },
         "maximumRandomWidgetsExceeded": "In-numru ta 'widgets każwali ma jistax jaqbeż in-numru ta' widgets magħżula",
         "modalTitle": "Widget Bank",
         "placeholderGroup": "Grupp",
+        "placeholderTag": "Fittex bl-isem tat-tikketta",
         "placeholderTitle": "Fittex bit-titlu Widget",
         "placeholderType": "Guy",
         "randomTextBefore": " Widgets każwali minn dawk magħżula",
@@ -1351,6 +1366,23 @@
       },
       "label": "Dħul",
       "prev": "Dħul għadu mhux stabbilit..."
+    },
+    "Roulette": {
+      "label": "Roulette",
+      "modal": {
+        "lifes": "Ħajja",
+        "small_lifes": "Numru ta' ħajjiet disponibbli għal-logħob",
+        "small_time": "Ħin disponibbli għar-rispons",
+        "time": "Ħin"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategorija",
+      "modal": {
+        "label": "Isem il-Kategorija",
+        "placeholder": "Isem il-Kategorija",
+        "small_label": "Dan se jkun l-isem tal-kategorija li se tidher fir-roulette"
+      }
     },
     "SchemaContainer": {
       "label": "Iskema"

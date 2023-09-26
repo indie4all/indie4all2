@@ -449,6 +449,11 @@
         "invalid": "Câmpul url trebuie setat la următorul format: https://[source]/[author]/[unit]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Nume de categorii repetate. Fiecare categorie trebuie să aibă un nume unic",
+      "limitExcedeed": "Limita categoriei a fost depășită. Sunt permise maximum 8 categorii",
+      "nameCategoryNotEstablished": "Numele categoriei nu a fost încă setat..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Schema este goală. Trebuie să adăugați cel puțin un element folosind butonul de adăugare din dreapta."
@@ -895,9 +900,19 @@
       "add": "Adăuga",
       "label": "Bancă",
       "modal": {
+        "addFilter": "Adaugă filtru",
+        "filter": {
+          "optionAND": "Și",
+          "optionANDNOT": "ȘI NU",
+          "optionName": "Nume",
+          "optionOR": "Sau",
+          "optionTag": "Etichetă",
+          "optionType": "Tip"
+        },
         "maximumRandomWidgetsExceeded": "Numărul de widget-uri aleatorii nu poate depăși numărul de widget-uri selectate",
         "modalTitle": "Banca widget",
         "placeholderGroup": "Grup",
+        "placeholderTag": "Căutați după numele etichetei",
         "placeholderTitle": "Căutare după titlul widgetului",
         "placeholderType": "Tip",
         "randomTextBefore": " Widget-uri aleatorii din cele selectate",
@@ -1351,6 +1366,23 @@
       },
       "label": "Intrare",
       "prev": "Intrarea nu a fost încă stabilită..."
+    },
+    "Roulette": {
+      "label": "Ruletă",
+      "modal": {
+        "lifes": "Viaţa",
+        "small_lifes": "Numărul de vieți disponibile pentru a juca",
+        "small_time": "Timp disponibil pentru a răspunde",
+        "time": "Oră"
+      }
+    },
+    "RouletteItem": {
+      "label": "Categorie",
+      "modal": {
+        "label": "Numele categoriei",
+        "placeholder": "Numele categoriei",
+        "small_label": "Acesta va fi numele categoriei care va apărea în ruletă"
+      }
     },
     "SchemaContainer": {
       "label": "Schemă"

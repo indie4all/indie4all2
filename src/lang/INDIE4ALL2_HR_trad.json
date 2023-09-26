@@ -449,6 +449,11 @@
         "invalid": "Polje URL-a mora biti postavljeno na sljedeći oblik: https://[izvor]/[autor]/[jedinica]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Ponovljeni nazivi kategorija. Svaka kategorija mora imati jedinstveni naziv",
+      "limitExcedeed": "Premašeno je ograničenje kategorije. Dopušteno je najviše 8 kategorija",
+      "nameCategoryNotEstablished": "Naziv kategorije još nije postavljen..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Shema je prazna. Morate dodati barem jednu stavku pomoću gumba za dodavanje s desne strane."
@@ -895,9 +900,19 @@
       "add": "Dodati",
       "label": "Klupa",
       "modal": {
+        "addFilter": "Dodaj filtar",
+        "filter": {
+          "optionAND": "I",
+          "optionANDNOT": "I NE",
+          "optionName": "Ime",
+          "optionOR": "Ili",
+          "optionTag": "Etiketa",
+          "optionType": "Momak"
+        },
         "maximumRandomWidgetsExceeded": "Broj slučajnih widgeta ne može biti veći od odabranog broja widgeta",
         "modalTitle": "Widget banka",
         "placeholderGroup": "Grupa",
+        "placeholderTag": "Pretraži po nazivu oznake",
         "placeholderTitle": "Pretraži po naslovu widgeta",
         "placeholderType": "Momak",
         "randomTextBefore": " Slučajni widgeti odabranih",
@@ -1351,6 +1366,23 @@
       },
       "label": "Ulaz",
       "prev": "Unos još nije uspostavljen..."
+    },
+    "Roulette": {
+      "label": "Rulet",
+      "modal": {
+        "lifes": "Živi",
+        "small_lifes": "Broj života dostupnih za igranje",
+        "small_time": "Vrijeme dostupno za odgovor",
+        "time": "Vrijeme"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategorija",
+      "modal": {
+        "label": "Naziv kategorije",
+        "placeholder": "Naziv kategorije",
+        "small_label": "To će biti naziv kategorije koja će se pojaviti u ruletu"
+      }
     },
     "SchemaContainer": {
       "label": "Shema"

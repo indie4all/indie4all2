@@ -449,6 +449,11 @@
         "invalid": "url フィールドは、https://[ソース]/[作成者]/[単位] の形式に設定する必要があります。"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "カテゴリ名の繰り返し。各カテゴリには一意の名前が必要です",
+      "limitExcedeed": "カテゴリの制限を超えました。最大 8 つのカテゴリを使用できます",
+      "nameCategoryNotEstablished": "カテゴリ名がまだ設定されていません..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "スキーマが空です。右側の追加ボタンを使用して、少なくとも 1 つの項目を追加する必要があります。"
@@ -895,9 +900,19 @@
       "add": "足す",
       "label": "ベンチ",
       "modal": {
+        "addFilter": "フィルターの追加",
+        "filter": {
+          "optionAND": "そして",
+          "optionANDNOT": "そしてそうではありません",
+          "optionName": "名前",
+          "optionOR": "又は",
+          "optionTag": "ラベル",
+          "optionType": "やつ"
+        },
         "maximumRandomWidgetsExceeded": "ランダムなウィジェットの数は、選択したウィジェットの数を超えることはできません",
         "modalTitle": "ウィジェットバンク",
         "placeholderGroup": "群",
+        "placeholderTag": "タグ名で検索",
         "placeholderTitle": "ウィジェットのタイトルで検索",
         "placeholderType": "やつ",
         "randomTextBefore": " 選択したウィジェットからのランダムなウィジェット",
@@ -1351,6 +1366,23 @@
       },
       "label": "入り口",
       "prev": "エントリはまだ確立されていません..."
+    },
+    "Roulette": {
+      "label": "ルーレット",
+      "modal": {
+        "lifes": "生活",
+        "small_lifes": "プレイ可能なライフ数",
+        "small_time": "応答可能な時間",
+        "time": "時間"
+      }
+    },
+    "RouletteItem": {
+      "label": "カテゴリ",
+      "modal": {
+        "label": "カテゴリ名",
+        "placeholder": "カテゴリ名",
+        "small_label": "これは、ルーレットに表示されるカテゴリの名前になります"
+      }
     },
     "SchemaContainer": {
       "label": "計画"

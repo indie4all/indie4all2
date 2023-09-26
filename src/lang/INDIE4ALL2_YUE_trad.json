@@ -449,6 +449,11 @@
         "invalid": "url字段必須設置為以下格式：https://[來源]/[作者]/[單位]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "重複的類別名稱。 每個類別必須具有唯一的名稱",
+      "limitExcedeed": "超出類別限制。 最多允許8個類別",
+      "nameCategoryNotEstablished": "類別名稱尚未設置..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "架構為空。 你必須使用右側嘅添加按鈕添加至少一個項目。"
@@ -895,9 +900,19 @@
       "add": "加",
       "label": "板凳",
       "modal": {
+        "addFilter": "添加過濾器",
+        "filter": {
+          "optionAND": "和",
+          "optionANDNOT": "而唔係",
+          "optionName": "名字",
+          "optionOR": "或",
+          "optionTag": "標籤",
+          "optionType": "傢伙"
+        },
         "maximumRandomWidgetsExceeded": "隨機小部件嘅數量不能超過所選小部件嘅數量",
         "modalTitle": "細部件庫",
         "placeholderGroup": "群",
+        "placeholderTag": "按標籤名稱搜索",
         "placeholderTitle": "按小部件標題搜索",
         "placeholderType": "傢伙",
         "randomTextBefore": " 來自所選小部件嘅隨機小部件",
@@ -1351,6 +1366,23 @@
       },
       "label": "入口",
       "prev": "條目尚未建立..."
+    },
+    "Roulette": {
+      "label": "輪盤賭",
+      "modal": {
+        "lifes": "生活",
+        "small_lifes": "可玩嘅生命數",
+        "small_time": "可用響應時間",
+        "time": "時間"
+      }
+    },
+    "RouletteItem": {
+      "label": "類別",
+      "modal": {
+        "label": "類別名稱",
+        "placeholder": "類別名稱",
+        "small_label": "將係將出現喺輪盤賭中嘅類別嘅名稱"
+      }
     },
     "SchemaContainer": {
       "label": "方案"

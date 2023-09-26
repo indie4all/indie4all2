@@ -7,6 +7,7 @@ import Section from "./section/Section";
 import WidgetColumnsLayout from "./widgets/WidgetColumnsLayout/WidgetColumnsLayout";
 import WidgetElement from "./widgets/WidgetElement/WidgetElement";
 import WidgetRelatedUnitsContainer from "./widgets/WidgetRelatedUnitsContainer/WidgetRelatedUnitsContainer";
+import WidgetContainerElement from "./widgets/WidgetContainerElement/WidgetContainerElement";
 
 export class Model {
 
@@ -52,10 +53,11 @@ export class Model {
     }
 
     appendObject(modelObject: ModelElement, inPositionElementId: string, parentContainerId: string, parentContainerIndex: number) {
-        const parent = this.findObject(parentContainerId);
+        const parent : ModelElement = this.findObject(parentContainerId);
         const container = parent instanceof WidgetColumnsLayout ? parent.data[parentContainerIndex] : parent.data;
-        if (!inPositionElementId)
+        if (!inPositionElementId) {
             container.push(modelObject);
+        }
         else {
             const index = Utils.findIndexObjectInArray(container, 'id', inPositionElementId);
             container.splice(index, 0, modelObject);
@@ -158,9 +160,10 @@ export class Model {
             validationErrors.push("common.name.notUniqueName");
 
         validationErrors = validationErrors.concat(element.validateModel());
-        if (validationErrors.length > 0)
+        if (validationErrors.length > 0){
             errors.push({ element: element.id, keys: validationErrors });
-
+            console.log(element.id, validationErrors);
+        }
         if ((<typeof ModelElement>element.constructor).hasChildren()) {
             element.data.flat().forEach((elem: WidgetElement) => this.validateElement(elem, errors));
         }

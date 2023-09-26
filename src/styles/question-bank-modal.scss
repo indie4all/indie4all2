@@ -4,10 +4,17 @@
         transform: scale(1.5);
     }
 
-    #button-search-questions-bank {
-        @media screen and (max-width: 992px) {
-            width: 100%;
-        }
+    button.d-none {
+        display: none !important;
+    }
+
+    .alert-no-widgets {
+        display: flex;
+        justify-content: center;
+        padding: 15px;
+        font-weight: 600;
+        font-size: 20px;
+        margin-top: 20px;
     }
 
     .list-tags {
@@ -60,7 +67,7 @@
     } 
     .panel-questions-bank {
         max-height: 500px;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
     
     .options-questions-bank{

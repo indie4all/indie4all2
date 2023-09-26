@@ -449,6 +449,11 @@
         "invalid": "URL lauke turi būti nustatytas toks formatas: https://[šaltinis]/[autorius]/[vienetas]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Pasikartojantys kategorijų pavadinimai. Kiekviena kategorija turi turėti unikalų pavadinimą",
+      "limitExcedeed": "Viršyta kategorijos riba. Leidžiama naudoti ne daugiau kaip 8 kategorijas",
+      "nameCategoryNotEstablished": "Kategorijos pavadinimas dar nenustatytas..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Schema tuščia. Turite pridėti bent vieną elementą naudodami pridėjimo mygtuką dešinėje."
@@ -895,9 +900,19 @@
       "add": "Pridėti",
       "label": "Suolas",
       "modal": {
+        "addFilter": "Pridėti filtrą",
+        "filter": {
+          "optionAND": "Ir",
+          "optionANDNOT": "IR NE",
+          "optionName": "Vardas, pavadinimas",
+          "optionOR": "Arba",
+          "optionTag": "Etiketė",
+          "optionType": "Vaikinas"
+        },
         "maximumRandomWidgetsExceeded": "Atsitiktinių valdiklių skaičius negali viršyti pasirinktų valdiklių skaičiaus",
         "modalTitle": "Valdiklių bankas",
         "placeholderGroup": "Grupė",
+        "placeholderTag": "Paieška pagal žymos pavadinimą",
         "placeholderTitle": "Paieška pagal valdiklio pavadinimą",
         "placeholderType": "Vaikinas",
         "randomTextBefore": " Atsitiktiniai valdikliai iš pasirinktų",
@@ -1351,6 +1366,23 @@
       },
       "label": "Įėjimas",
       "prev": "Įrašas dar nenustatytas..."
+    },
+    "Roulette": {
+      "label": "Ruletė",
+      "modal": {
+        "lifes": "Gyvenimą",
+        "small_lifes": "Galimų žaisti gyvybių skaičius",
+        "small_time": "Atsakymui pateikti skirtas laikas",
+        "time": "Laikas"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategorija",
+      "modal": {
+        "label": "Kategorijos pavadinimas",
+        "placeholder": "Kategorijos pavadinimas",
+        "small_label": "Tai bus kategorijos, kuri bus rodoma ruletėje, pavadinimas"
+      }
     },
     "SchemaContainer": {
       "label": "Schema"

@@ -449,6 +449,11 @@
         "invalid": "Pole url musí být nastaveno na následující formát: https://[zdroj]/[autor]/[jednotka]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Opakované názvy kategorií. Každá kategorie musí mít jedinečný název",
+      "limitExcedeed": "Byl překročen limit kategorie. Povoleno je maximálně 8 kategorií",
+      "nameCategoryNotEstablished": "Název kategorie ještě není nastaven..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Schéma je prázdné. Musíte přidat alespoň jednu položku pomocí tlačítka Přidat na pravé straně."
@@ -895,9 +900,19 @@
       "add": "Přidat",
       "label": "Lavice",
       "modal": {
+        "addFilter": "Přidat filtr",
+        "filter": {
+          "optionAND": "A",
+          "optionANDNOT": "A NE",
+          "optionName": "Jméno",
+          "optionOR": "Nebo",
+          "optionTag": "Označit",
+          "optionType": "Chlapík"
+        },
         "maximumRandomWidgetsExceeded": "Počet náhodných widgetů nesmí překročit počet vybraných widgetů",
         "modalTitle": "Widget Bank",
         "placeholderGroup": "Skupina",
+        "placeholderTag": "Vyhledávání podle názvu značky",
         "placeholderTitle": "Hledat podle názvu widgetu",
         "placeholderType": "Chlapík",
         "randomTextBefore": " Náhodné widgety z vybraných",
@@ -1351,6 +1366,23 @@
       },
       "label": "Vchod",
       "prev": "Vstup zatím nebyl stanoven..."
+    },
+    "Roulette": {
+      "label": "Ruleta",
+      "modal": {
+        "lifes": "Životy",
+        "small_lifes": "Počet životů, které lze odehrát",
+        "small_time": "Čas, který je k dispozici pro odpověď",
+        "time": "Čas"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategorie",
+      "modal": {
+        "label": "Název kategorie",
+        "placeholder": "Název kategorie",
+        "small_label": "To bude název kategorie, která se objeví v ruletě"
+      }
     },
     "SchemaContainer": {
       "label": "Schéma"

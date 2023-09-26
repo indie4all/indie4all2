@@ -6,45 +6,55 @@
             </div>
             <div id="modal-bank-widgets-body" class="modal-body">
                 <div class="errors"></div>
-                <div class="form-group mb-4 d-lg-flex d-md-block">
-                    <input id="search-bank-widget" type="search" class="form-control ds-input col-lg-6 col-md-12" placeholder="{{ translate "widgets.Bank.modal.placeholderTitle"}}">
-                    <div class="col-lg-5 col-md-12" id="filter-bank-widget">
-                        <select class="select-filter col-md-6 form-select select-group">
-                            <option value="default"> {{ translate "widgets.Bank.modal.placeholderGroup"}} </option> 
-                            {{#each groups}}
-                            <option value="{{ this }}"> {{ this }} </option>
+                <div class="form-group d-lg-flex flex-wrap d-md-block" id="search-filters">
+                    <div class="search-condition d-flex col-12 p-0">
+                        <select name="type" class="form-control col-3 searchType">
+                            <option value="nombre">{{ translate "widgets.Bank.modal.filter.optionName"}}</option>
+                            <option value="tag">{{ translate "widgets.Bank.modal.filter.optionTag"}}</option>
+                            <option value="tipo">{{ translate "widgets.Bank.modal.filter.optionType"}}</option>
+                        </select>
+                        <input id="search-bank-widget" type="search" class="form-control ds-input col-9 searchTerm" placeholder="{{ translate "widgets.Bank.modal.placeholderTitle"}}">
+                        <select class="form-control ds-input col-9 searchTermByType d-none">
+                            {{#each types}}
+                                <option value="{{this}}"> {{ translate (concat 'widgets.'this '.label') }}</option>
                             {{/each}}
                         </select>
-                        <select class="select-filter col-md-6 form-select select-type">
-                             <option value="default" > {{ translate "widgets.Bank.modal.placeholderType"}} </option> 
-                            {{#each types}} 
-                                <option value="{{ this }}"> {{ translate (concat 'widgets.'this '.label') }} </option>
-                            {{/each}}
-                        </select>
-                    </div>
-                    <div class="input-group-append pr-0 pr-md-0">
-                       <button id="button-search-bank-widget" class="btn btn-indie" type="button">{{translate "widgets.Bank.search"}}</button>
                     </div>
                 </div>
-                <div class="form-group options-bank-widgets" >
-                    <label class="col-lg-8 col-md-12 random-label" > <input id="checkbox-random" style="margin-right: 5px;" type="checkbox"> {{ translate "widgets.Bank.modal.randomTextPrev"}} <input id="number-of-random-widgets" style="width: 60px;" type="number" min="1"> {{ translate "widgets.Bank.modal.randomTextBefore"}}</label>
+                <div class="input-group-append pr-0 pr-md-0 mb-3 justify-content-end">
+                       <button id="button-add-filter-widget" class="btn btn-secondary" type="button">{{ translate "widgets.Bank.modal.addFilter"}}</button>
+                       <button id="button-search-bank-widget" class="btn btn-indie" type="button">{{translate "widgets.Bank.search"}}</button>
+                </div>
+                <div class="form-group options-bank-widgets " >
+                    <label class="col-lg-8 col-md-12 random-label" > <input  id="checkbox-random" style="margin-right: 5px;" type="checkbox"> {{ translate "widgets.Bank.modal.randomTextPrev"}} <input id="number-of-random-widgets" style="width: 60px;" type="number" min="1"> {{ translate "widgets.Bank.modal.randomTextBefore"}}</label>
                     <label class="col-lg-4 col-md-12 select-all-label">{{ translate "widgets.Bank.modal.selectAllText"}} <input class="select-all-input" id="check-select-all" type="checkbox">  </label>
                 </div> 
                 <div class="panel-bank-widgets">
                     {{#each data}}
-                    <button class="col-md-12 mb-3 align-items-center p-3 border border-secondary widget-button d-flex" >
-                        <div class="col-xs-12 col-sm-1">
-                            <img src="{{{ img }}}">
-                        </div>
-                        <div class="col-xs-12 col-sm-11 pl-4">
-                            <h3  class="h5"> {{ name }} </h3>
-                            <p class="mb-0"> {{ description }} </p>
-                        </div>
-                        <input type="checkbox" class="input-checkbox">
-                        <input type="hidden" name="type" value="{{ type }}">
-                        <input type="hidden" name="group" value="{{ group }}">
-                        <input type="hidden" name="content" value="{{ content }}">
-                    </button>
+                        <button class="col-md-12 mb-3 align-items-center p-3 border border-secondary widget-button d-md-flex d-block" >
+                            <div class="col-sm-12 col-md-1">
+                                <img src="{{{ img }}}">
+                            </div>
+                            <div class="col-sn-12 col-md-11 pl-4">
+                                <h3  class="h5"> {{ name }} </h3>
+                                <p class="mb-0"> {{ description }} </p>
+                                {{#if tags}}
+                                    <ul class="list-tags justify-content-center justify-content-sm-start">
+                                    {{#each tags}}
+                                        <li><span class="badge badge-primary"><i class="fa-solid fa-tag"></i>{{this}}</span></li>
+                                    {{/each}}
+                                    </ul>
+                                {{/if}}
+                            </div>
+                            <input type="checkbox" class="input-checkbox">
+                            <input type="hidden" name="type" value="{{ type }}">
+                            <input type="hidden" name="group" value="{{ group }}">
+                            <input type="hidden" name="content" value="{{ content }}">
+                        </button>
+                    {{else}}
+                       <div class="alert-no-widgets">
+                            <span> {{ translate "widgets.Bank.modal.notFound"}} </span>
+                       </div>
                     {{/each}}
                 </div>
             </div>

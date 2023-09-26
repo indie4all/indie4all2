@@ -449,6 +449,11 @@
         "invalid": "Az url mezőt a következő formátumra kell beállítani: https://[forrás]/[szerző]/[egység]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Ismétlődő kategórianevek. Minden kategóriának egyedi névvel kell rendelkeznie",
+      "limitExcedeed": "A kategóriakorlát túllépve. Legfeljebb 8 kategória engedélyezett",
+      "nameCategoryNotEstablished": "A kategória neve még nincs beállítva..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "A séma üres. Legalább egy elemet hozzá kell adnia a jobb oldalon található hozzáadás gombbal."
@@ -895,9 +900,19 @@
       "add": "Hozzáad",
       "label": "Pad",
       "modal": {
+        "addFilter": "Szűrő hozzáadása",
+        "filter": {
+          "optionAND": "És",
+          "optionANDNOT": "ÉS NEM",
+          "optionName": "Név",
+          "optionOR": "Vagy",
+          "optionTag": "Címke",
+          "optionType": "Fickó"
+        },
         "maximumRandomWidgetsExceeded": "A véletlenszerű widgetek száma nem haladhatja meg a kiválasztott widgetek számát",
         "modalTitle": "Widget Bank",
         "placeholderGroup": "Csoport",
+        "placeholderTag": "Keresés címkenév alapján",
         "placeholderTitle": "Keresés a widget címe alapján",
         "placeholderType": "Fickó",
         "randomTextBefore": " Véletlenszerű widgetek a kiválasztottakból",
@@ -1351,6 +1366,23 @@
       },
       "label": "Bejárat",
       "prev": "A bejegyzés még nem állapítható meg..."
+    },
+    "Roulette": {
+      "label": "Rulett",
+      "modal": {
+        "lifes": "Életét",
+        "small_lifes": "A játszható életek száma",
+        "small_time": "A válaszadásra rendelkezésre álló idő",
+        "time": "Idő"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategória",
+      "modal": {
+        "label": "Kategória neve",
+        "placeholder": "Kategória neve",
+        "small_label": "Ez lesz a rulettben megjelenő kategória neve"
+      }
     },
     "SchemaContainer": {
       "label": "Cselszövés"

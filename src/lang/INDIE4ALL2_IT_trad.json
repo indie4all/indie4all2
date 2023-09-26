@@ -449,6 +449,11 @@
         "invalid": "Il campo url deve essere impostato sul seguente formato: https://[source]/[author]/[unit]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Nomi di categorie ripetuti. Ogni categoria deve avere un nome univoco",
+      "limitExcedeed": "Limite di categoria superato. Sono ammesse un massimo di 8 categorie",
+      "nameCategoryNotEstablished": "Nome della categoria non ancora impostato..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Lo schema è vuoto. È necessario aggiungere almeno un elemento utilizzando il pulsante Aggiungi a destra."
@@ -895,9 +900,19 @@
       "add": "Aggiungere",
       "label": "Panca",
       "modal": {
+        "addFilter": "Aggiungi filtro",
+        "filter": {
+          "optionAND": "E",
+          "optionANDNOT": "E NON",
+          "optionName": "Nome",
+          "optionOR": "O",
+          "optionTag": "Etichetta",
+          "optionType": "Tizio"
+        },
         "maximumRandomWidgetsExceeded": "Il numero di widget casuali non può superare il numero di widget selezionati",
         "modalTitle": "Banca Widget",
         "placeholderGroup": "Gruppo",
+        "placeholderTag": "Ricerca per nome del tag",
         "placeholderTitle": "Ricerca per titolo del widget",
         "placeholderType": "Tizio",
         "randomTextBefore": " Widget casuali da quelli selezionati",
@@ -1351,6 +1366,23 @@
       },
       "label": "Entrata",
       "prev": "Voce non ancora stabilita..."
+    },
+    "Roulette": {
+      "label": "Roulette",
+      "modal": {
+        "lifes": "Vite",
+        "small_lifes": "Numero di vite disponibili per giocare",
+        "small_time": "Tempo a disposizione per rispondere",
+        "time": "Ore"
+      }
+    },
+    "RouletteItem": {
+      "label": "Categoria",
+      "modal": {
+        "label": "Nome della categoria",
+        "placeholder": "Nome della categoria",
+        "small_label": "Questo sarà il nome della categoria che apparirà nella roulette"
+      }
     },
     "SchemaContainer": {
       "label": "Schema"

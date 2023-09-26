@@ -449,6 +449,11 @@
         "invalid": "The url field must be set to the following format: https://[source]/[author]/[unit]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Repeated category names. Each category must have a unique name",
+      "limitExcedeed": "Category limit exceeded. A maximum of 8 categories are allowed",
+      "nameCategoryNotEstablished": "Category name not yet set..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "The schema is empty. You must add at least one item using the add button on the right."
@@ -895,9 +900,19 @@
       "add": "Add",
       "label": "Bench",
       "modal": {
+        "addFilter": "Add filter",
+        "filter": {
+          "optionAND": "And",
+          "optionANDNOT": "AND NOT",
+          "optionName": "Name",
+          "optionOR": "Or",
+          "optionTag": "Label",
+          "optionType": "Guy"
+        },
         "maximumRandomWidgetsExceeded": "The number of random widgets cannot exceed the number of widgets selected",
         "modalTitle": "Widget Bank",
         "placeholderGroup": "Group",
+        "placeholderTag": "Search by tag name",
         "placeholderTitle": "Search by Widget title",
         "placeholderType": "Guy",
         "randomTextBefore": " Random widgets from those selected",
@@ -1351,6 +1366,23 @@
       },
       "label": "Entry",
       "prev": "Entry not established yet..."
+    },
+    "Roulette": {
+      "label": "Roulette",
+      "modal": {
+        "lifes": "Lives",
+        "small_lifes": "Number of lives available to play",
+        "small_time": "Time available to respond",
+        "time": "Time"
+      }
+    },
+    "RouletteItem": {
+      "label": "Category",
+      "modal": {
+        "label": "Category Name",
+        "placeholder": "Category Name",
+        "small_label": "This will be the name of the category that will appear in the roulette"
+      }
     },
     "SchemaContainer": {
       "label": "Schema"

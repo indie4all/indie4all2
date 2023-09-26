@@ -8,12 +8,12 @@
     <div class="d-flex">
             <div class="form-group col-6 pl-0">
                 <label> {{translate "widgets.Roulette.modal.lifes"}} </label>
-                <input class="form-control" type="number" name="lifes" value="{{ lifes }}">
+                <input class="form-control" type="number" min="1" step="1" name="lifes" value="{{ lifes }}">
                 <small> {{translate "widgets.Roulette.modal.small_lifes"}}</small>
             </div>
             <div class="form-group col-6 pr-0">
                 <label> {{translate "widgets.Roulette.modal.time"}} </label>
-                <input class="form-control" type="time" name="time" value="{{ time }}">
+                <input class="form-control" type="time" name="time" step="1" value="{{ time }}">
                 <small> {{translate "widgets.Roulette.modal.small_time"}}</small>
             </div>
     </div>

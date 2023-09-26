@@ -449,6 +449,11 @@
         "invalid": "URL-fältet måste vara inställt på följande format: https://[källa]/[författare]/[enhet]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Upprepade kategorinamn. Varje kategori måste ha ett unikt namn",
+      "limitExcedeed": "Kategorigränsen har överskridits. Högst 8 kategorier är tillåtna",
+      "nameCategoryNotEstablished": "Kategorinamnet har ännu inte angetts..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Schemat är tomt. Du måste lägga till minst ett objekt med knappen Lägg till till till höger."
@@ -892,11 +897,22 @@
       "prev": "Ljudterm inte fastställd ännu ..."
     },
     "Bank": {
+      "add": "Addera",
       "label": "Bänk",
       "modal": {
+        "addFilter": "Lägg till filter",
+        "filter": {
+          "optionAND": "Och",
+          "optionANDNOT": "OCH INTE",
+          "optionName": "Namn",
+          "optionOR": "Eller",
+          "optionTag": "Etikett",
+          "optionType": "Kille"
+        },
         "maximumRandomWidgetsExceeded": "Antalet slumpmässiga widgets får inte överstiga antalet valda widgets",
         "modalTitle": "Widget Bank",
         "placeholderGroup": "Grupp",
+        "placeholderTag": "Sök efter taggnamn",
         "placeholderTitle": "Sök efter widgettitel",
         "placeholderType": "Kille",
         "randomTextBefore": " Slumpmässiga widgets från de valda",
@@ -1263,6 +1279,21 @@
       },
       "label": "Modalt fönster"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Du måste skriva minst 2 svar och markera minst ett rätt.",
+          "label": "Möjliga svar"
+        },
+        "questionText": {
+          "help": "Detta är texten i frågan kommer att visas i innehållsenheten.",
+          "label": "Frågetext",
+          "placeholder": "Text av flera frågor ..."
+        }
+      },
+      "label": "Flera frågor",
+      "prev": "Flera frågor inte etablerade ännu ..."
+    },
     "Puzzle": {
       "form": {
         "image": {
@@ -1284,6 +1315,23 @@
       },
       "label": "Pussel",
       "prev": "Pusslet har inte initierats ännu ..."
+    },
+    "QuestionsBank": {
+      "add": "Addera",
+      "label": "Importera från frågebanken",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Antalet slumpmässiga frågor får inte överstiga antalet valda frågor",
+        "modalTitle": "Frågebank",
+        "placeholderGroup": "Grupp",
+        "placeholderTitle": "Sök efter titel eller frågetagg",
+        "placeholderType": "Kille",
+        "randomTextBefore": " Slumpmässiga frågor från de valda",
+        "randomTextPrev": "Introducera ",
+        "search": "Att hitta",
+        "selectAllText": "Markera alla"
+      },
+      "modalTitle": "Frågebank",
+      "search": "Att hitta"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1318,6 +1366,23 @@
       },
       "label": "Ingång",
       "prev": "Entry inte fastställd ännu..."
+    },
+    "Roulette": {
+      "label": "Roulett",
+      "modal": {
+        "lifes": "Liv",
+        "small_lifes": "Antal liv tillgängliga att spela",
+        "small_time": "Tid för att svara",
+        "time": "Tid"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategori",
+      "modal": {
+        "label": "Kategorins namn",
+        "placeholder": "Kategorins namn",
+        "small_label": "Detta kommer att vara namnet på kategorin som kommer att visas i rouletten"
+      }
     },
     "SchemaContainer": {
       "label": "Schema"

@@ -449,6 +449,11 @@
         "invalid": "Pole URL musí byť nastavené na nasledujúci formát: https://[zdroj]/[autor]/[jednotka]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Opakované názvy kategórií. Každá kategória musí mať jedinečný názov",
+      "limitExcedeed": "Prekročený limit kategórie. Povolených je maximálne 8 kategórií",
+      "nameCategoryNotEstablished": "Názov kategórie ešte nie je nastavený..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Schéma je prázdna. Musíte pridať aspoň jednu položku pomocou tlačidla Pridať vpravo."
@@ -892,11 +897,22 @@
       "prev": "Audio-termín ešte nebol stanovený..."
     },
     "Bank": {
+      "add": "Sčítať",
       "label": "Lavička",
       "modal": {
+        "addFilter": "Pridať filter",
+        "filter": {
+          "optionAND": "A",
+          "optionANDNOT": "A NIE",
+          "optionName": "Meno",
+          "optionOR": "Alebo",
+          "optionTag": "Štítok",
+          "optionType": "Chlap"
+        },
         "maximumRandomWidgetsExceeded": "Počet náhodných widgetov nesmie prekročiť počet vybraných widgetov",
         "modalTitle": "Banka miniaplikácií",
         "placeholderGroup": "Skupina",
+        "placeholderTag": "Vyhľadávanie podľa názvu značky",
         "placeholderTitle": "Vyhľadávanie podľa názvu miniaplikácie",
         "placeholderType": "Chlap",
         "randomTextBefore": " Náhodné widgety z vybraných",
@@ -1263,6 +1279,21 @@
       },
       "label": "Prepravné okno"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Musíte napísať aspoň 2 odpovede a označiť aspoň jednu správnu.",
+          "label": "Možné odpovede"
+        },
+        "questionText": {
+          "help": "Toto je text otázky, ktorý sa zobrazí v obsahovej jednotke.",
+          "label": "Text otázky",
+          "placeholder": "Text viacnásobnej otázky..."
+        }
+      },
+      "label": "Viacnásobná otázka",
+      "prev": "Viacnásobná otázka ešte nebola stanovená..."
+    },
     "Puzzle": {
       "form": {
         "image": {
@@ -1284,6 +1315,23 @@
       },
       "label": "Hádanka",
       "prev": "Puzzle ešte nebolo inicializované..."
+    },
+    "QuestionsBank": {
+      "add": "Sčítať",
+      "label": "Import z banky otázok",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Počet náhodných otázok nesmie prekročiť počet vybraných otázok",
+        "modalTitle": "Banka otázok",
+        "placeholderGroup": "Skupina",
+        "placeholderTitle": "Vyhľadávanie podľa názvu alebo značky otázky",
+        "placeholderType": "Chlap",
+        "randomTextBefore": " Náhodné otázky od vybraných",
+        "randomTextPrev": "Zavádzať ",
+        "search": "Nájsť",
+        "selectAllText": "Vybrať všetko"
+      },
+      "modalTitle": "Banka otázok",
+      "search": "Nájsť"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1318,6 +1366,23 @@
       },
       "label": "Vchod",
       "prev": "Zápis ešte nebol stanovený..."
+    },
+    "Roulette": {
+      "label": "Ruleta",
+      "modal": {
+        "lifes": "Životy",
+        "small_lifes": "Počet životov, ktoré sú k dispozícii na hranie",
+        "small_time": "Čas, ktorý je k dispozícii na odpoveď",
+        "time": "Čas"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategória",
+      "modal": {
+        "label": "Názov kategórie",
+        "placeholder": "Názov kategórie",
+        "small_label": "Toto bude názov kategórie, ktorá sa objaví v rulete"
+      }
     },
     "SchemaContainer": {
       "label": "Schéma"

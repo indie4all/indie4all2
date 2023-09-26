@@ -449,6 +449,11 @@
         "invalid": "Pole adresu URL musi mieć następujący format: https://[źródło]/[autor]/[jednostka]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Powtarzające się nazwy kategorii. Każda kategoria musi mieć unikalną nazwę",
+      "limitExcedeed": "Przekroczono limit kategorii. Dozwolonych jest maksymalnie 8 kategorii",
+      "nameCategoryNotEstablished": "Nazwa kategorii nie jest jeszcze ustawiona..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Schemat jest pusty. Musisz dodać co najmniej jeden element za pomocą przycisku dodawania po prawej stronie."
@@ -892,11 +897,22 @@
       "prev": "Termin audio nie został jeszcze ustalony..."
     },
     "Bank": {
+      "add": "Dodawać",
       "label": "Ławka",
       "modal": {
+        "addFilter": "Dodaj filtr",
+        "filter": {
+          "optionAND": "I",
+          "optionANDNOT": "A NIE",
+          "optionName": "Nazwa",
+          "optionOR": "Lub",
+          "optionTag": "Etykieta",
+          "optionType": "Facet"
+        },
         "maximumRandomWidgetsExceeded": "Liczba losowych widżetów nie może przekroczyć liczby wybranych widżetów",
         "modalTitle": "Bank widżetów",
         "placeholderGroup": "Grupa",
+        "placeholderTag": "Wyszukiwanie według nazwy tagu",
         "placeholderTitle": "Szukaj według tytułu widżetu",
         "placeholderType": "Facet",
         "randomTextBefore": " Losowe widżety z wybranych",
@@ -1263,6 +1279,21 @@
       },
       "label": "Okno modalne"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Musisz napisać co najmniej 2 odpowiedzi i zaznaczyć co najmniej jedną poprawną.",
+          "label": "Możliwe odpowiedzi"
+        },
+        "questionText": {
+          "help": "Jest to tekst pytania, który zostanie wyświetlony w jednostce treści.",
+          "label": "Tekst pytania",
+          "placeholder": "Tekst wielokrotnego pytania..."
+        }
+      },
+      "label": "Wiele pytań",
+      "prev": "Wiele pytań nie zostało jeszcze ustalonych..."
+    },
     "Puzzle": {
       "form": {
         "image": {
@@ -1284,6 +1315,23 @@
       },
       "label": "Łamigłówka",
       "prev": "Układanka nie została jeszcze zainicjowana..."
+    },
+    "QuestionsBank": {
+      "add": "Dodawać",
+      "label": "Import z Question Bank",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Liczba losowych pytań nie może przekroczyć liczby wybranych pytań",
+        "modalTitle": "Bank pytań",
+        "placeholderGroup": "Grupa",
+        "placeholderTitle": "Wyszukiwanie według tytułu lub tagu pytania",
+        "placeholderType": "Facet",
+        "randomTextBefore": " Losowe pytania od wybranych",
+        "randomTextPrev": "Przedstawić ",
+        "search": "Aby znaleźć",
+        "selectAllText": "Zaznacz wszystko"
+      },
+      "modalTitle": "Bank pytań",
+      "search": "Aby znaleźć"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1318,6 +1366,23 @@
       },
       "label": "Wejście",
       "prev": "Wpis nie został jeszcze ustalony..."
+    },
+    "Roulette": {
+      "label": "Ruletka",
+      "modal": {
+        "lifes": "Życie",
+        "small_lifes": "Liczba żyć do gry",
+        "small_time": "Czas dostępny na udzielenie odpowiedzi",
+        "time": "Godzina"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategoria",
+      "modal": {
+        "label": "Nazwa kategorii",
+        "placeholder": "Nazwa kategorii",
+        "small_label": "Będzie to nazwa kategorii, która pojawi się w ruletce"
+      }
     },
     "SchemaContainer": {
       "label": "Plan"

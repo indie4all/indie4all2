@@ -4,10 +4,8 @@
         transform: scale(1.5);
     }
 
-    #button-search-questions-bank {
-        @media screen and (max-width: 992px) {
-            width: 100%;
-        }
+    button.d-none {
+        display: none !important;
     }
 
     .alert-no-widgets {

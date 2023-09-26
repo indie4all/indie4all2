@@ -449,6 +449,11 @@
         "invalid": "O campo url deve ser definido para o seguinte formato: https://[source]/[author]/[unit]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Nomes de categorias repetidos. Cada categoria deve ter um nome exclusivo",
+      "limitExcedeed": "Limite de categoria excedido. É permitido um máximo de 8 categorias",
+      "nameCategoryNotEstablished": "Nome da categoria ainda não definido..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "O esquema está vazio. Você deve adicionar pelo menos um item usando o botão adicionar à direita."
@@ -892,11 +897,22 @@
       "prev": "Termo de áudio ainda não estabelecido..."
     },
     "Bank": {
+      "add": "Adicionar",
       "label": "Bancada",
       "modal": {
+        "addFilter": "Adicionar filtro",
+        "filter": {
+          "optionAND": "e ainda",
+          "optionANDNOT": "E NÃO",
+          "optionName": "Designação",
+          "optionOR": "Ou",
+          "optionTag": "Rótulo",
+          "optionType": "Cara"
+        },
         "maximumRandomWidgetsExceeded": "O número de widgets aleatórios não pode exceder o número de widgets selecionados",
         "modalTitle": "Banco de widgets",
         "placeholderGroup": "Grupo",
+        "placeholderTag": "Pesquisar por nome de tag",
         "placeholderTitle": "Pesquisar por título do widget",
         "placeholderType": "Cara",
         "randomTextBefore": " Widgets aleatórios dos selecionados",
@@ -1263,6 +1279,21 @@
       },
       "label": "Janela modal"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Você deve escrever pelo menos 2 respostas e marcar pelo menos uma correta.",
+          "label": "Respostas possíveis"
+        },
+        "questionText": {
+          "help": "Este é o texto da pergunta que será exibido na unidade de conteúdo.",
+          "label": "Texto da pergunta",
+          "placeholder": "Texto da pergunta múltipla..."
+        }
+      },
+      "label": "Pergunta múltipla",
+      "prev": "Pergunta múltipla ainda não estabelecida..."
+    },
     "Puzzle": {
       "form": {
         "image": {
@@ -1284,6 +1315,23 @@
       },
       "label": "Quebra-cabeça",
       "prev": "O quebra-cabeça ainda não foi inicializado..."
+    },
+    "QuestionsBank": {
+      "add": "Adicionar",
+      "label": "Importação do Banco de Perguntas",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "O número de perguntas aleatórias não pode exceder o número de perguntas selecionadas",
+        "modalTitle": "Banco de perguntas",
+        "placeholderGroup": "Grupo",
+        "placeholderTitle": "Pesquisar por título ou etiqueta de pergunta",
+        "placeholderType": "Cara",
+        "randomTextBefore": " Perguntas aleatórias dos selecionados",
+        "randomTextPrev": "Apresentar ",
+        "search": "Achar",
+        "selectAllText": "Selecionar tudo"
+      },
+      "modalTitle": "Banco de perguntas",
+      "search": "Achar"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1318,6 +1366,23 @@
       },
       "label": "Entrada",
       "prev": "Entrada ainda não estabelecida..."
+    },
+    "Roulette": {
+      "label": "Roleta",
+      "modal": {
+        "lifes": "Vidas",
+        "small_lifes": "Número de vidas disponíveis para jogar",
+        "small_time": "Tempo disponível para responder",
+        "time": "Hora"
+      }
+    },
+    "RouletteItem": {
+      "label": "Categoria",
+      "modal": {
+        "label": "Nome da categoria",
+        "placeholder": "Nome da categoria",
+        "small_label": "Este será o nome da categoria que aparecerá na roleta"
+      }
     },
     "SchemaContainer": {
       "label": "Regime"

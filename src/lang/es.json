@@ -861,14 +861,22 @@
             "modal" : {
                 "modalTitle" : "Banco de Widgets",
                 "search" : "Buscar",
-                "placeholderTitle" : "Buscar por título de Widget",
-                "placeholderGroup" : "Grupo",
-                "placeholderType" : "Tipo",
+                "placeholderTitle" : "Buscar por título",
+                "placeholderTag": "Buscar por nombre de etiqueta",
                 "randomTextPrev" : "Introducir ",
                 "randomTextBefore" : " widgets aleatorios de los seleccionados",
                 "selectAllText" : "Seleccionar todos",
                 "maximumRandomWidgetsExceeded": "El número de widgets aleatorios no puede ser superior al número de widgets seleccionado",
-                "notFound": "No se encontraron widgets disponibles en el banco de Widgets"
+                "notFound": "No se encontraron widgets disponibles en el banco de Widgets",
+                "addFilter" : "Añadir filtro",
+                "filter": {
+                    "optionAND": "Y",
+                    "optionOR" : "O",
+                    "optionANDNOT": "Y NO",
+                    "optionName" : "Nombre",
+                    "optionType" : "Tipo",
+                    "optionTag": "Etiqueta"
+                }
             },
             "modalTitle": "Banco de Widgets",
             "search": "Buscar",
@@ -1171,7 +1179,7 @@
             "modal" : {
                 "modalTitle" : "Banco de Preguntas",
                 "search" : "Buscar",
-                "placeholderTitle" : "Buscar por título o etiqueta de pregunta",
+                "placeholderTitle" : "Buscar por título",
                 "placeholderGroup" : "Grupo",
                 "placeholderType" : "Tipo",
                 "randomTextPrev" : "Introducir ",

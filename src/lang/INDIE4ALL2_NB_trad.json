@@ -449,6 +449,11 @@
         "invalid": "URL-feltet må settes til følgende format: https://[kilde]/[forfatter]/[enhet]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Gjentatte kategorinavn. Hver kategori må ha et unikt navn",
+      "limitExcedeed": "Kategorigrensen er overskredet. Maksimalt 8 kategorier er tillatt",
+      "nameCategoryNotEstablished": "Kategorinavn ennå ikke angitt..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Skjemaet er tomt. Du må legge til minst ett element ved å bruke legg til-knappen til høyre."
@@ -892,11 +897,22 @@
       "prev": "Audio-term ikke etablert ennå ..."
     },
     "Bank": {
+      "add": "Tilføye",
       "label": "Benk",
       "modal": {
+        "addFilter": "Legg til filter",
+        "filter": {
+          "optionAND": "Og",
+          "optionANDNOT": "OG IKKE",
+          "optionName": "Navn",
+          "optionOR": "Eller",
+          "optionTag": "Etikett",
+          "optionType": "Fyr"
+        },
         "maximumRandomWidgetsExceeded": "Antall tilfeldige widgets kan ikke overstige antall valgte widgets",
         "modalTitle": "Widget Bank",
         "placeholderGroup": "Gruppe",
+        "placeholderTag": "Søk etter kodenavn",
         "placeholderTitle": "Søk etter widgettittel",
         "placeholderType": "Fyr",
         "randomTextBefore": " Tilfeldige widgets fra de valgte",
@@ -1263,6 +1279,21 @@
       },
       "label": "Modalt vindu"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Du må skrive minst 2 svar og markere minst ett riktig.",
+          "label": "Mulige svar"
+        },
+        "questionText": {
+          "help": "Dette er teksten til spørsmålet vil bli vist i innholdsenheten.",
+          "label": "Spørsmål tekst",
+          "placeholder": "Tekst av flere spørsmål ..."
+        }
+      },
+      "label": "Flere spørsmål",
+      "prev": "Flere spørsmål ikke etablert ennå ..."
+    },
     "Puzzle": {
       "form": {
         "image": {
@@ -1284,6 +1315,23 @@
       },
       "label": "Gåte",
       "prev": "Puslespillet har ikke blitt initialisert ennå ..."
+    },
+    "QuestionsBank": {
+      "add": "Tilføye",
+      "label": "Importere fra spørsmålsbanken",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Antall tilfeldige spørsmål kan ikke overstige antall valgte spørsmål",
+        "modalTitle": "Spørsmål Bank",
+        "placeholderGroup": "Gruppe",
+        "placeholderTitle": "Søk etter tittel eller spørsmålskode",
+        "placeholderType": "Fyr",
+        "randomTextBefore": " Tilfeldige spørsmål fra de utvalgte",
+        "randomTextPrev": "Innføre ",
+        "search": "Å finne",
+        "selectAllText": "Merk alt"
+      },
+      "modalTitle": "Spørsmål Bank",
+      "search": "Å finne"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1318,6 +1366,23 @@
       },
       "label": "Inngang",
       "prev": "Oppføring ikke etablert ennå ..."
+    },
+    "Roulette": {
+      "label": "Rulett",
+      "modal": {
+        "lifes": "Liv",
+        "small_lifes": "Antall liv tilgjengelig for å spille",
+        "small_time": "Tid til å svare",
+        "time": "Tid"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategori",
+      "modal": {
+        "label": "Kategori Navn",
+        "placeholder": "Kategori Navn",
+        "small_label": "Dette vil være navnet på kategorien som vises i rouletten"
+      }
     },
     "SchemaContainer": {
       "label": "Ordningen"

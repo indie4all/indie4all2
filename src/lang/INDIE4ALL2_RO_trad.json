@@ -449,6 +449,11 @@
         "invalid": "Câmpul url trebuie setat la următorul format: https://[source]/[author]/[unit]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Nume de categorii repetate. Fiecare categorie trebuie să aibă un nume unic",
+      "limitExcedeed": "Limita categoriei a fost depășită. Sunt permise maximum 8 categorii",
+      "nameCategoryNotEstablished": "Numele categoriei nu a fost încă setat..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Schema este goală. Trebuie să adăugați cel puțin un element folosind butonul de adăugare din dreapta."
@@ -892,11 +897,22 @@
       "prev": "Termenul audio nu a fost încă stabilit..."
     },
     "Bank": {
+      "add": "Adăuga",
       "label": "Bancă",
       "modal": {
+        "addFilter": "Adaugă filtru",
+        "filter": {
+          "optionAND": "Și",
+          "optionANDNOT": "ȘI NU",
+          "optionName": "Nume",
+          "optionOR": "Sau",
+          "optionTag": "Etichetă",
+          "optionType": "Tip"
+        },
         "maximumRandomWidgetsExceeded": "Numărul de widget-uri aleatorii nu poate depăși numărul de widget-uri selectate",
         "modalTitle": "Banca widget",
         "placeholderGroup": "Grup",
+        "placeholderTag": "Căutați după numele etichetei",
         "placeholderTitle": "Căutare după titlul widgetului",
         "placeholderType": "Tip",
         "randomTextBefore": " Widget-uri aleatorii din cele selectate",
@@ -1263,6 +1279,21 @@
       },
       "label": "Fereastra modală"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Trebuie să scrieți cel puțin 2 răspunsuri și să marcați cel puțin unul corect.",
+          "label": "Răspunsuri posibile"
+        },
+        "questionText": {
+          "help": "Acesta este textul întrebării care va fi afișat în unitatea de conținut.",
+          "label": "Textul întrebării",
+          "placeholder": "Textul întrebării multiple..."
+        }
+      },
+      "label": "Întrebare multiplă",
+      "prev": "Întrebarea multiplă nu a fost încă stabilită ..."
+    },
     "Puzzle": {
       "form": {
         "image": {
@@ -1284,6 +1315,23 @@
       },
       "label": "Puzzle",
       "prev": "Puzzle-ul nu a fost încă inițializat ..."
+    },
+    "QuestionsBank": {
+      "add": "Adăuga",
+      "label": "Import din banca de întrebări",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Numărul de întrebări aleatorii nu poate depăși numărul de întrebări selectate",
+        "modalTitle": "Banca de întrebări",
+        "placeholderGroup": "Grup",
+        "placeholderTitle": "Căutați după titlu sau etichetă de întrebare",
+        "placeholderType": "Tip",
+        "randomTextBefore": " Întrebări aleatorii de la cei selectați",
+        "randomTextPrev": "Prezenta ",
+        "search": "A găsi",
+        "selectAllText": "Selectați tot"
+      },
+      "modalTitle": "Banca de întrebări",
+      "search": "A găsi"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1318,6 +1366,23 @@
       },
       "label": "Intrare",
       "prev": "Intrarea nu a fost încă stabilită..."
+    },
+    "Roulette": {
+      "label": "Ruletă",
+      "modal": {
+        "lifes": "Viaţa",
+        "small_lifes": "Numărul de vieți disponibile pentru a juca",
+        "small_time": "Timp disponibil pentru a răspunde",
+        "time": "Oră"
+      }
+    },
+    "RouletteItem": {
+      "label": "Categorie",
+      "modal": {
+        "label": "Numele categoriei",
+        "placeholder": "Numele categoriei",
+        "small_label": "Acesta va fi numele categoriei care va apărea în ruletă"
+      }
     },
     "SchemaContainer": {
       "label": "Schemă"

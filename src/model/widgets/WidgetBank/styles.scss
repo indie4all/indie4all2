@@ -4,12 +4,6 @@
         transform: scale(1.5);
     }
 
-    #button-search-bank-widget {
-        @media screen and (max-width: 992px) {
-            width: 100%;
-        }
-    }
-
     .list-tags {
         list-style: none;
         display: inline-block;
@@ -59,12 +53,15 @@
         padding : 0;
     }
 
+    .d-none {
+        display: none !important;
+    }
+
     .widget-button {
         border-radius: 15px;
-        display: flex;
         padding-right: 30px !important;
+
         @media screen and (max-width: 575px) {
-           display: block !important;
            padding-right: 0 !important;
         }
     } 

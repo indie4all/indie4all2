@@ -449,6 +449,11 @@
         "invalid": "URL-i väli peab olema seatud järgmisele vormingule: https://[allikas]/[autor]/[ühik]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Korduvad kategooriate nimed. Igal kategoorial peab olema kordumatu nimi",
+      "limitExcedeed": "Kategooria limiit on ületatud. Lubatud on maksimaalselt 8 kategooriat",
+      "nameCategoryNotEstablished": "Kategooria nimi pole veel määratud..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Skeem on tühi. Peate lisama vähemalt ühe üksuse, kasutades paremal asuvat lisamisnuppu."
@@ -892,11 +897,22 @@
       "prev": "Audio-term pole veel kindlaks tehtud..."
     },
     "Bank": {
+      "add": "Lisama",
       "label": "Pink",
       "modal": {
+        "addFilter": "Filtri lisamine",
+        "filter": {
+          "optionAND": "Ja",
+          "optionANDNOT": "JA MITTE",
+          "optionName": "Nimi",
+          "optionOR": "Või",
+          "optionTag": "Etikett",
+          "optionType": "Kutt"
+        },
         "maximumRandomWidgetsExceeded": "Juhuslike vidinate arv ei tohi ületada valitud vidinate arvu",
         "modalTitle": "Vidina pank",
         "placeholderGroup": "Rühm",
+        "placeholderTag": "Otsige sildi nime järgi",
         "placeholderTitle": "Otsi vidina pealkirja järgi",
         "placeholderType": "Kutt",
         "randomTextBefore": " Juhuslikud vidinad valitud vidinatest",
@@ -1263,6 +1279,21 @@
       },
       "label": "Modaalne aken"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Peate kirjutama vähemalt 2 vastust ja märkima vähemalt ühe õige.",
+          "label": "Võimalikud vastused"
+        },
+        "questionText": {
+          "help": "See on küsimuse tekst, mis kuvatakse sisuüksuses.",
+          "label": "Küsimuse tekst",
+          "placeholder": "Mitme küsimuse tekst..."
+        }
+      },
+      "label": "Mitu küsimust",
+      "prev": "Mitu küsimust pole veel kindlaks tehtud ..."
+    },
     "Puzzle": {
       "form": {
         "image": {
@@ -1284,6 +1315,23 @@
       },
       "label": "Puzzle",
       "prev": "Puslet pole veel initsialiseeritud..."
+    },
+    "QuestionsBank": {
+      "add": "Lisama",
+      "label": "Import küsimuste pangast",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Juhuslike küsimuste arv ei tohi ületada valitud küsimuste arvu",
+        "modalTitle": "Küsimuste pank",
+        "placeholderGroup": "Rühm",
+        "placeholderTitle": "Otsing pealkirja või küsimuse sildi järgi",
+        "placeholderType": "Kutt",
+        "randomTextBefore": " Juhuslikud küsimused valitutelt",
+        "randomTextPrev": "Tutvustada ",
+        "search": "Otsima",
+        "selectAllText": "Vali kõik"
+      },
+      "modalTitle": "Küsimuste pank",
+      "search": "Otsima"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1318,6 +1366,23 @@
       },
       "label": "Sissepääs",
       "prev": "Kanne pole veel kindlaks tehtud..."
+    },
+    "Roulette": {
+      "label": "Rulett",
+      "modal": {
+        "lifes": "Elu",
+        "small_lifes": "Mängimiseks saadaolevate elude arv",
+        "small_time": "Vastamiseks kasutatav aeg",
+        "time": "Aeg"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategooria",
+      "modal": {
+        "label": "Kategooria nimi",
+        "placeholder": "Kategooria nimi",
+        "small_label": "See on ruletis kuvatava kategooria nimi"
+      }
     },
     "SchemaContainer": {
       "label": "Kava"

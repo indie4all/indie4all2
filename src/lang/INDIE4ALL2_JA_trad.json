@@ -449,6 +449,11 @@
         "invalid": "url フィールドは、https://[ソース]/[作成者]/[単位] の形式に設定する必要があります。"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "カテゴリ名の繰り返し。各カテゴリには一意の名前が必要です",
+      "limitExcedeed": "カテゴリの制限を超えました。最大 8 つのカテゴリを使用できます",
+      "nameCategoryNotEstablished": "カテゴリ名がまだ設定されていません..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "スキーマが空です。右側の追加ボタンを使用して、少なくとも 1 つの項目を追加する必要があります。"
@@ -892,11 +897,22 @@
       "prev": "オーディオ用語はまだ確立されていません..."
     },
     "Bank": {
+      "add": "足す",
       "label": "ベンチ",
       "modal": {
+        "addFilter": "フィルターの追加",
+        "filter": {
+          "optionAND": "そして",
+          "optionANDNOT": "そしてそうではありません",
+          "optionName": "名前",
+          "optionOR": "又は",
+          "optionTag": "ラベル",
+          "optionType": "やつ"
+        },
         "maximumRandomWidgetsExceeded": "ランダムなウィジェットの数は、選択したウィジェットの数を超えることはできません",
         "modalTitle": "ウィジェットバンク",
         "placeholderGroup": "群",
+        "placeholderTag": "タグ名で検索",
         "placeholderTitle": "ウィジェットのタイトルで検索",
         "placeholderType": "やつ",
         "randomTextBefore": " 選択したウィジェットからのランダムなウィジェット",
@@ -1263,6 +1279,21 @@
       },
       "label": "モーダルウィンドウ"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "少なくとも2つの答えを書き、少なくとも1つの正解をマークする必要があります。",
+          "label": "考えられる答え"
+        },
+        "questionText": {
+          "help": "これは、質問のテキストがコンテンツ単位に表示されます。",
+          "label": "質問文",
+          "placeholder": "複数の質問のテキスト..."
+        }
+      },
+      "label": "複数の質問",
+      "prev": "複数の質問がまだ確立されていません..."
+    },
     "Puzzle": {
       "form": {
         "image": {
@@ -1284,6 +1315,23 @@
       },
       "label": "謎",
       "prev": "パズルはまだ初期化されていません..."
+    },
+    "QuestionsBank": {
+      "add": "足す",
+      "label": "質問バンクからのインポート",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "ランダムな質問の数は、選択した質問の数を超えることはできません",
+        "modalTitle": "質問バンク",
+        "placeholderGroup": "群",
+        "placeholderTitle": "タイトルまたは質問タグで検索",
+        "placeholderType": "やつ",
+        "randomTextBefore": " 選ばれた人からのランダムな質問",
+        "randomTextPrev": "紹介 ",
+        "search": "見つけます",
+        "selectAllText": "すべて選択"
+      },
+      "modalTitle": "質問バンク",
+      "search": "見つけます"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1318,6 +1366,23 @@
       },
       "label": "入り口",
       "prev": "エントリはまだ確立されていません..."
+    },
+    "Roulette": {
+      "label": "ルーレット",
+      "modal": {
+        "lifes": "生活",
+        "small_lifes": "プレイ可能なライフ数",
+        "small_time": "応答可能な時間",
+        "time": "時間"
+      }
+    },
+    "RouletteItem": {
+      "label": "カテゴリ",
+      "modal": {
+        "label": "カテゴリ名",
+        "placeholder": "カテゴリ名",
+        "small_label": "これは、ルーレットに表示されるカテゴリの名前になります"
+      }
     },
     "SchemaContainer": {
       "label": "計画"

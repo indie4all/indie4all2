@@ -449,6 +449,11 @@
         "invalid": "URL laukam jābūt iestatītam šādā formātā: https://[source]/[author]/[unit]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Atkārtoti kategoriju nosaukumi. Katrai kategorijai jābūt unikālam nosaukumam",
+      "limitExcedeed": "Pārsniegts kategorijas ierobežojums. Ir atļautas ne vairāk kā 8 kategorijas",
+      "nameCategoryNotEstablished": "Kategorijas nosaukums vēl nav iestatīts..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Shēma ir tukša. Jums jāpievieno vismaz viens vienums, izmantojot pievienošanas pogu labajā pusē."
@@ -892,11 +897,22 @@
       "prev": "Audio-termins vēl nav izveidots..."
     },
     "Bank": {
+      "add": "Pievienot",
       "label": "Sols",
       "modal": {
+        "addFilter": "Pievienot filtru",
+        "filter": {
+          "optionAND": "Un",
+          "optionANDNOT": "UN NEVIS",
+          "optionName": "Vārds",
+          "optionOR": "Vai",
+          "optionTag": "Etiķetes",
+          "optionType": "Puisis"
+        },
         "maximumRandomWidgetsExceeded": "Nejaušo logrīku skaits nedrīkst pārsniegt atlasīto logrīku skaitu",
         "modalTitle": "Logrīku banka",
         "placeholderGroup": "Grupa",
+        "placeholderTag": "Meklēšana pēc atzīmes nosaukuma",
         "placeholderTitle": "Meklēt pēc logrīka nosaukuma",
         "placeholderType": "Puisis",
         "randomTextBefore": " Nejauši logrīki no atlasītajiem",
@@ -1263,6 +1279,21 @@
       },
       "label": "Modālais logs"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Jums jāuzraksta vismaz 2 atbildes un jāatzīmē vismaz viena pareiza.",
+          "label": "Iespējamās atbildes"
+        },
+        "questionText": {
+          "help": "Tas ir jautājuma teksts, kas tiks parādīts satura vienībā.",
+          "label": "Jautājuma teksts",
+          "placeholder": "Daudzkārtējā jautājuma teksts..."
+        }
+      },
+      "label": "Vairāki jautājumi",
+      "prev": "Vairāki jautājumi vēl nav noskaidroti..."
+    },
     "Puzzle": {
       "form": {
         "image": {
@@ -1284,6 +1315,23 @@
       },
       "label": "Puzzle",
       "prev": "Mīkla vēl nav inicializēta..."
+    },
+    "QuestionsBank": {
+      "add": "Pievienot",
+      "label": "Importēt no jautājumu bankas",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Nejaušu jautājumu skaits nedrīkst pārsniegt atlasīto jautājumu skaitu",
+        "modalTitle": "Jautājumu banka",
+        "placeholderGroup": "Grupa",
+        "placeholderTitle": "Meklēšana pēc virsraksta vai jautājuma atzīmes",
+        "placeholderType": "Puisis",
+        "randomTextBefore": " Nejauši jautājumi no atlasītajiem",
+        "randomTextPrev": "Ieviest ",
+        "search": "Atrast",
+        "selectAllText": "Atlasīt visus"
+      },
+      "modalTitle": "Jautājumu banka",
+      "search": "Atrast"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1318,6 +1366,23 @@
       },
       "label": "Ieeja",
       "prev": "Ieraksts vēl nav izveidots..."
+    },
+    "Roulette": {
+      "label": "Rulete",
+      "modal": {
+        "lifes": "Dzīvi",
+        "small_lifes": "Rotaļām pieejamo dzīvību skaits",
+        "small_time": "Atbilžu sniegšanai atvēlētais laiks",
+        "time": "Laiks"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategorija",
+      "modal": {
+        "label": "Kategorijas nosaukums",
+        "placeholder": "Kategorijas nosaukums",
+        "small_label": "Tas būs kategorijas nosaukums, kas parādīsies ruletē"
+      }
     },
     "SchemaContainer": {
       "label": "Shēma"

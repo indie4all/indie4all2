@@ -1,19 +1,19 @@
 <div class="search-condition d-flex col-12 p-0">
-    <select class="form-control col-lg-2 searchBoolean">
-        <option value="0"> AND </option>
-        <option value="1"> OR </option>
-        <option value="2"> AND NOT </option>
+    <select class="col-2 form-control searchBoolean">
+        <option value="0"> {{ translate "widgets.Bank.modal.filter.optionAND"}} </option>
+        <option value="1"> {{ translate "widgets.Bank.modal.filter.optionOR"}} </option>
+        <option value="2"> {{ translate "widgets.Bank.modal.filter.optionANDNOT"}} </option>
     </select>
-    <select class="form-control col-lg-2 searchType">
-        <option value="nombre">Nombre</option>
-        <option value="tag">Etiqueta</option>
-        <option value="tipo">Tipo</option>
+    <select class="col-2 form-control searchType">
+        <option value="nombre">{{ translate "widgets.Bank.modal.filter.optionName"}}</option>
+        <option value="tag">{{ translate "widgets.Bank.modal.filter.optionTag"}}</option>
+        <option value="tipo">{{ translate "widgets.Bank.modal.filter.optionType"}}</option>
     </select>
-    <input type="search" class="form-control ds-input col-lg-7 col-md-10 searchTerm"> 
-    <select class="form-control ds-input col-lg-7 col-md-10 searchTermByType d-none">
+    <input type="search" class="form-control ds-input col-7 searchTerm" placeholder="{{ translate "widgets.Bank.modal.placeholderTitle"}}"> 
+    <select class="form-control ds-input col-7 searchTermByType d-none">
         {{#each types}}
-            <option> {{ this }} </option>
+            <option value="{{this}}"> {{ translate (concat 'widgets.'this '.label') }} </option>
         {{/each}}
     </select>
-    <button class="btn col-lg-1 delete-filter-button"> <i class="fas fa-trash-alt"></i></button>
+    <button class="btn col-1 delete-filter-button"> <i class="fas fa-trash-alt"></i></button>
 </div>

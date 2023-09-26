@@ -210,13 +210,17 @@ export default class DragDropHandler {
         }
 
         const changeSearchType = function() {
-            if ($(this).val() === "tipo") {
+            const filter = $(this).val(); 
+            if (filter === "tipo") {
                 $(this).parent().find(".searchTerm").removeClass("d-block").addClass("d-none");
                 $(this).parent().find(".searchTermByType").removeClass("d-none").addClass("d-block");
             }
             else {
-                $(this).parent().find(".searchTerm").removeClass("d-none").addClass("d-block");
                 $(this).parent().find(".searchTermByType").removeClass("d-block").addClass("d-none");
+                const searchTerm = $(this).parent().find(".searchTerm"); 
+                searchTerm.removeClass("d-none").addClass("d-block");
+                if (filter === "tag") searchTerm.attr("placeholder",  I18n.getInstance().translate("widgets.Bank.modal.placeholderTag")[0]);
+                else searchTerm.attr("placeholder", I18n.getInstance().translate("widgets.Bank.modal.placeholderTitle")[0]);
             }
         }
 
@@ -233,11 +237,11 @@ export default class DragDropHandler {
         $("#button-add-filter-widget").on("click", createFilterHTML);
 
         $("#check-select-all").on('change', function () {
-            $(".d-flex .input-checkbox ").prop('checked', $("#check-select-all").prop('checked'));
+            $(".d-block .input-checkbox ").prop('checked', $("#check-select-all").prop('checked'));
         });
 
-        $(".d-flex .input-checkbox").on("click", function () {
-            $("#check-select-all").prop('checked', $(".d-flex .input-checkbox:checked").length === $(".d-flex .input-checkbox").length);
+        $(".d-block .input-checkbox").on("click", function () {
+            $("#check-select-all").prop('checked', $(".d-block .input-checkbox:checked").length === $(".d-block .input-checkbox").length);
             $(this).prop("checked", !$(this).prop("checked"));
         });
 
@@ -292,7 +296,6 @@ export default class DragDropHandler {
                 const type = $(this).find("input[name='type']").val() as string;
                 const tags = $(this).find('.badge').toArray().map( (elem: any) => $(elem).text())
 
-                console.log(tags);
             
                 $(".search-condition").each( (i, elem) => {
 
@@ -322,8 +325,8 @@ export default class DragDropHandler {
                 })
         
 
-                if(result) $(this).removeClass("d-none").addClass("d-flex");
-                else $(this).removeClass("d-flex").addClass("d-none");
+                if(result) $(this).removeClass("d-none").addClass("d-block");
+                else $(this).removeClass("d-block").addClass("d-none");
             })
         })
 

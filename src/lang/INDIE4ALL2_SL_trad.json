@@ -449,6 +449,11 @@
         "invalid": "Polje URL mora biti nastavljeno na to obliko: https://[vir]/[avtor]/[enota]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Ponovljena imena kategorij. Vsaka kategorija mora imeti edinstveno ime",
+      "limitExcedeed": "Omejitev kategorije je presežena. Dovoljenih je največ 8 kategorij",
+      "nameCategoryNotEstablished": "Ime kategorije še ni nastavljeno ..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Shema je prazna. Z gumbom za dodajanje na desni morate dodati vsaj en element."
@@ -892,11 +897,22 @@
       "prev": "Zvočni izraz še ni vzpostavljen..."
     },
     "Bank": {
+      "add": "Dodati",
       "label": "Klop",
       "modal": {
+        "addFilter": "Dodajanje filtra",
+        "filter": {
+          "optionAND": "In",
+          "optionANDNOT": "IN NE",
+          "optionName": "Ime",
+          "optionOR": "Ali",
+          "optionTag": "Oznaka",
+          "optionType": "Fant"
+        },
         "maximumRandomWidgetsExceeded": "Število naključnih pripomočkov ne sme presegati števila izbranih pripomočkov",
         "modalTitle": "Banka pripomočkov",
         "placeholderGroup": "Skupina",
+        "placeholderTag": "Iskanje po imenu oznake",
         "placeholderTitle": "Iskanje po naslovu pripomočka",
         "placeholderType": "Fant",
         "randomTextBefore": " Naključni pripomočki izbranih",
@@ -1263,6 +1279,21 @@
       },
       "label": "Modalno okno"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Napisati morate vsaj 2 odgovora in označiti vsaj enega pravilnega.",
+          "label": "Možni odgovori"
+        },
+        "questionText": {
+          "help": "To je besedilo vprašanja, ki bo prikazano v vsebinski enoti.",
+          "label": "Besedilo vprašanja",
+          "placeholder": "Besedilo večkratnega vprašanja..."
+        }
+      },
+      "label": "Več vprašanj",
+      "prev": "Več vprašanj še ni bilo zastavljenih ..."
+    },
     "Puzzle": {
       "form": {
         "image": {
@@ -1284,6 +1315,23 @@
       },
       "label": "Uganka",
       "prev": "Uganka še ni bila inicializirana..."
+    },
+    "QuestionsBank": {
+      "add": "Dodati",
+      "label": "Uvoz iz banke vprašanj",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Število naključnih vprašanj ne sme presegati števila izbranih vprašanj",
+        "modalTitle": "Banka vprašanj",
+        "placeholderGroup": "Skupina",
+        "placeholderTitle": "Iskanje po naslovu ali vprašaju",
+        "placeholderType": "Fant",
+        "randomTextBefore": " Naključna vprašanja izbranih",
+        "randomTextPrev": "Uvesti ",
+        "search": "Najti",
+        "selectAllText": "Izberi vse"
+      },
+      "modalTitle": "Banka vprašanj",
+      "search": "Najti"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1318,6 +1366,23 @@
       },
       "label": "Vhod",
       "prev": "Vstop še ni vzpostavljen..."
+    },
+    "Roulette": {
+      "label": "Ruleta",
+      "modal": {
+        "lifes": "Življenje",
+        "small_lifes": "Število življenj, ki so na voljo za igro",
+        "small_time": "Čas, ki je na voljo za odziv",
+        "time": "Čas"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategorija",
+      "modal": {
+        "label": "Ime kategorije",
+        "placeholder": "Ime kategorije",
+        "small_label": "To bo ime kategorije, ki se bo pojavila v ruleti"
+      }
     },
     "SchemaContainer": {
       "label": "Shema"

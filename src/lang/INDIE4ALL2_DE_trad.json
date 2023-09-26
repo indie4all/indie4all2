@@ -449,6 +449,11 @@
         "invalid": "Das URL-Feld muss auf das folgende Format gesetzt werden: https://[Quelle]/[Autor]/[Einheit]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Wiederholte Kategorienamen. Jede Kategorie muss einen eindeutigen Namen haben",
+      "limitExcedeed": "Kategorielimit überschritten. Es sind maximal 8 Kategorien zulässig",
+      "nameCategoryNotEstablished": "Kategoriename noch nicht festgelegt..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Das Schema ist leer. Sie müssen mindestens ein Element hinzufügen, indem Sie auf die Schaltfläche \"Hinzufügen\" auf der rechten Seite klicken."
@@ -892,11 +897,22 @@
       "prev": "Audio-Begriff noch nicht etabliert..."
     },
     "Bank": {
+      "add": "Hinzufügen",
       "label": "Bank",
       "modal": {
+        "addFilter": "Filter hinzufügen",
+        "filter": {
+          "optionAND": "Und",
+          "optionANDNOT": "UND NICHT",
+          "optionName": "Name",
+          "optionOR": "Oder",
+          "optionTag": "Etikett",
+          "optionType": "Kerl"
+        },
         "maximumRandomWidgetsExceeded": "Die Anzahl der zufälligen Widgets darf die Anzahl der ausgewählten Widgets nicht überschreiten",
         "modalTitle": "Widget-Bank",
         "placeholderGroup": "Gruppe",
+        "placeholderTag": "Suche nach Tag-Namen",
         "placeholderTitle": "Suche nach Widget-Titel",
         "placeholderType": "Kerl",
         "randomTextBefore": " Zufällige Widgets aus den ausgewählten",
@@ -1263,6 +1279,21 @@
       },
       "label": "Modales Fenster"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Sie müssen mindestens 2 Antworten schreiben und mindestens eine als richtig markieren.",
+          "label": "Mögliche Antworten"
+        },
+        "questionText": {
+          "help": "Dies ist der Text der Frage, der in der Inhaltseinheit angezeigt wird.",
+          "label": "Text der Frage",
+          "placeholder": "Text der Mehrfachfrage..."
+        }
+      },
+      "label": "Mehrere Fragen",
+      "prev": "Mehrfachfrage noch nicht geklärt ..."
+    },
     "Puzzle": {
       "form": {
         "image": {
@@ -1284,6 +1315,23 @@
       },
       "label": "Rätsel",
       "prev": "Das Rätsel wurde noch nicht initialisiert..."
+    },
+    "QuestionsBank": {
+      "add": "Hinzufügen",
+      "label": "Aus der Fragendatenbank importieren",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Die Anzahl der zufälligen Fragen darf die Anzahl der ausgewählten Fragen nicht überschreiten",
+        "modalTitle": "Fragendatenbank",
+        "placeholderGroup": "Gruppe",
+        "placeholderTitle": "Suche nach Titel oder Frage-Tag",
+        "placeholderType": "Kerl",
+        "randomTextBefore": " Zufällige Fragen der Ausgewählten",
+        "randomTextPrev": "Einführen ",
+        "search": "Finden",
+        "selectAllText": "Alles auswählen"
+      },
+      "modalTitle": "Fragendatenbank",
+      "search": "Finden"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1318,6 +1366,23 @@
       },
       "label": "Eingang",
       "prev": "Eintrag noch nicht festgelegt..."
+    },
+    "Roulette": {
+      "label": "Roulette",
+      "modal": {
+        "lifes": "Leben",
+        "small_lifes": "Anzahl der Leben, die zum Spielen zur Verfügung stehen",
+        "small_time": "Verfügbare Zeit für eine Antwort",
+        "time": "Zeit"
+      }
+    },
+    "RouletteItem": {
+      "label": "Kategorie",
+      "modal": {
+        "label": "Kategorie-Name",
+        "placeholder": "Kategorie-Name",
+        "small_label": "Dies ist der Name der Kategorie, die im Roulette angezeigt wird"
+      }
     },
     "SchemaContainer": {
       "label": "Schema"

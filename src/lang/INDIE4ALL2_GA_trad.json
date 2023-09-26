@@ -449,6 +449,11 @@
         "invalid": "Ní mór an réimse url a shocrú san fhormáid seo a leanas: https://[foinse]/[údar]/[aonad]"
       }
     },
+    "Roulette": {
+      "categoryRepeated": "Ainmneacha catagóire arís agus arís eile. Ní mór ainm uathúil a bheith ar gach catagóir",
+      "limitExcedeed": "Sháraigh teorainn na catagóire. Ceadaítear 8 gcatagóir ar a mhéad",
+      "nameCategoryNotEstablished": "Níl ainm na catagóire socraithe fós..."
+    },
     "SchemaContainer": {
       "data": {
         "empty": "Tá an scéimre folamh. Ní mór duit mír amháin ar a laghad a chur leis an gcnaipe cuir ar dheis."
@@ -892,11 +897,22 @@
       "prev": "Téarma fuaime nach bhfuil bunaithe fós..."
     },
     "Bank": {
+      "add": "Cuir Leis",
       "label": "Binse",
       "modal": {
+        "addFilter": "Cuir scagaire leis",
+        "filter": {
+          "optionAND": "Agus",
+          "optionANDNOT": "AGUS NÍ",
+          "optionName": "Ainm",
+          "optionOR": "Nó",
+          "optionTag": "Lipéad",
+          "optionType": "Fear"
+        },
         "maximumRandomWidgetsExceeded": "Ní féidir le líon na ngiuirléidí randamacha dul thar líon na ngiuirléidí a roghnaíodh",
         "modalTitle": "Banc Giuirléidí",
         "placeholderGroup": "Grúpa",
+        "placeholderTag": "Cuardaigh de réir ainm na clibe",
         "placeholderTitle": "Cuardaigh de réir teideal Giuirléidí",
         "placeholderType": "Fear",
         "randomTextBefore": " Giuirléidí randamacha uathu siúd a roghnaíodh",
@@ -1263,6 +1279,21 @@
       },
       "label": "Fuinneog mhódúil"
     },
+    "MultipleQuestion": {
+      "form": {
+        "answers": {
+          "help": "Ní mór duit 2 fhreagra ar a laghad a scríobh agus ceann amháin ar a laghad a mharcáil i gceart.",
+          "label": "Freagraí féideartha"
+        },
+        "questionText": {
+          "help": "Is é seo téacs na ceiste a thaispeánfar san aonad ábhair.",
+          "label": "Téacs na gceisteanna",
+          "placeholder": "Téacs na ceiste il..."
+        }
+      },
+      "label": "Ceist iolrach",
+      "prev": "Ceist iolrach nach bhfuil bunaithe fós..."
+    },
     "Puzzle": {
       "form": {
         "image": {
@@ -1284,6 +1315,23 @@
       },
       "label": "Puzal",
       "prev": "Níor túsaíodh an puzal go fóill..."
+    },
+    "QuestionsBank": {
+      "add": "Cuir Leis",
+      "label": "Iompórtáil ó Bhanc na gCeisteanna",
+      "modal": {
+        "maximumRandomWidgetsExceeded": "Ní féidir le líon na gceisteanna randamacha dul thar líon na gceisteanna a roghnaíodh",
+        "modalTitle": "Banc na gCeisteanna",
+        "placeholderGroup": "Grúpa",
+        "placeholderTitle": "Cuardaigh de réir teidil nó clibe ceiste",
+        "placeholderType": "Fear",
+        "randomTextBefore": " Ceisteanna randamacha uathu siúd a roghnaíodh",
+        "randomTextPrev": "Tabhair isteach ",
+        "search": "Aimsigh",
+        "selectAllText": "Roghnaigh gach rud"
+      },
+      "modalTitle": "Banc na gCeisteanna",
+      "search": "Aimsigh"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1318,6 +1366,23 @@
       },
       "label": "Bealach Isteach",
       "prev": "Níl iontráil bunaithe fós..."
+    },
+    "Roulette": {
+      "label": "Roulette",
+      "modal": {
+        "lifes": "Saol",
+        "small_lifes": "Líon na saolta atá ar fáil le himirt",
+        "small_time": "Am ar fáil chun freagra a thabhairt",
+        "time": "Am"
+      }
+    },
+    "RouletteItem": {
+      "label": "Catagóir",
+      "modal": {
+        "label": "Ainm catagóire",
+        "placeholder": "Ainm catagóire",
+        "small_label": "Beidh sé seo an t-ainm ar an gcatagóir a bheidh le feiceáil sa roulette"
+      }
     },
     "SchemaContainer": {
       "label": "Scéim"

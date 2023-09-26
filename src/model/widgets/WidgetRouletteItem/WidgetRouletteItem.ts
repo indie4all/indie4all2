@@ -6,6 +6,7 @@ import icon from "./icon.png";
 import { FormEditData, InputWidgetRouletteItemData } from "../../../types";
 import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
 import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
+import Config from "../../../Config";
 
 export default class WidgetRouletteItem extends WidgetContainerSpecificElement {
 
@@ -27,7 +28,7 @@ export default class WidgetRouletteItem extends WidgetContainerSpecificElement {
 
     createElement(): string {
         const constructor = WidgetRouletteItem;
-        const children = this.data ? this.data.map((child: WidgetSpecificItemElement ) => child.createElement()).join('') : "";
+        const children = this.data ? this.data.map((child: WidgetSpecificItemElement) => child.createElement()).join('') : "";
         return template({
             id: this.id,
             widget: constructor.widget,
@@ -37,15 +38,16 @@ export default class WidgetRouletteItem extends WidgetContainerSpecificElement {
             canEdit: constructor.editable,
             canDelete: constructor.deletable,
             canCopy: constructor.copyable,
+            canLoadFromBank: !!Config.getQuestionsBankURL(),
             children,
             cssClass: Utils.toKebabCase(constructor.name)
-        });  
+        });
     }
 
     clone(): WidgetRouletteItem {
         const widget = new WidgetRouletteItem();
         widget.params = structuredClone(this.params);
-       // widget.params.name = WidgetRouletteItem.widget + "-" + widget.id;
+        // widget.params.name = WidgetRouletteItem.widget + "-" + widget.id;
         widget.data = this.data.map(elem => elem.clone());
         return widget;
     }

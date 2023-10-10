@@ -12308,6 +12308,11 @@ div.grid.mask > figure > img {
 				position: absolute;
 				top: 5rem;
 			}
+			
+			.gamification-step {
+				position: absolute;
+    			top: 9.3rem;
+			}
 	}
 
 	@media (max-width: 575.98px) {
@@ -12326,6 +12331,10 @@ div.grid.mask > figure > img {
 			{
 				top: 3.4rem;
 				padding-right: 0.5rem;
+			}
+
+			.gamification-step {
+				top: 7.1rem;
 			}
 		}
 	}
@@ -13020,6 +13029,76 @@ div[class*="row"]:not(.row) > div[class*="col"] > button, .couple > button, .cou
 			outline-offset: 3px;
 		}
 	}
+
+    &.gamification {
+
+        .iconresult {
+            min-width: 4.375rem;
+            &:empty {
+                display: none;
+            }
+        }
+
+        .question {
+
+            display: none;
+            &.gamification-current-step {
+                display: grid;
+            }
+
+            .question-instructions {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        }
+
+        .btn-check {
+            &:checked {
+                &+.btn {
+                    filter: saturate(100%);
+                    font-weight: bold;       
+                }
+            }
+        }
+        
+        .labeltest {
+            filter: saturate(50%);
+            transition: all 0.3s ease-in-out;
+            flex-grow: 1;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            &:nth-of-type(4n+1) {
+                .labeltest {
+                    background-color: #ff7300;
+                    color: black;
+                }
+            }
+
+            &:nth-of-type(4n+2) {
+                .labeltest {
+                    background-color: #ffae00;
+                    color: black;
+                }
+            }
+
+            &:nth-of-type(4n+3) {
+                .labeltest {
+                    background-color: #00ffdf;
+                    color: black;
+                }
+            }
+
+            &:nth-of-type(4n) {
+                .labeltest {
+                    background-color: #00caff;
+                    color: black;
+                }
+            }
+        }
+    }
 }
 /* Contenedores */
 .contenedor {

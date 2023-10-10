@@ -26,7 +26,7 @@ const copyAssets = async function (folder: string, color: string, cover: string,
     const data = `$base-color: ${realColor}; $base-url: "${realCover}"; @import '${themeTemplate}';`
     const result = sass.renderSync({ data, includePaths: [themeTemplate], outputStyle: 'compressed' });
     const css = result.css.toString();
-    await fs.writeFile(folder + '/generator/content/v4-7-7/css/stylesCustom.min.css', css);
+    await fs.writeFile(folder + '/generator/content/v5-0-0/css/stylesCustom.min.css', css);
     // Remove scorm libraries if the unit is not of SCORM type
     if (mode !== "SCORM") {
         logger.info("Removing scorm-related assets");
@@ -47,7 +47,6 @@ const generate = function (model: any, res: Response, onGenerated: Function, mod
     model.analytics = "0";
     const timestamp = (new Date(Date.now() + 600000)).getTime();
     const modelJSON = timestamp + "_" + config.get("file.model.json");
-    const modelXText = timestamp + "_" + config.get("file.model.xtext");
     fs.writeFile(modelJSON, JSON.stringify(model), function (error) {
         if (error) {
             logger.err(error);
@@ -58,7 +57,6 @@ const generate = function (model: any, res: Response, onGenerated: Function, mod
         const outputFolder = `${config.get("folder.previews")}/${timestamp}`;
         exec(`java -Dfile.encoding=UTF-8 -jar ./contentgenerator.jar ${modelJSON} ${outputFolder}`, function (err, stdout, stderr) {
             fs.unlink(modelJSON);
-            fs.exists(modelXText).then(() => fs.unlink(modelXText));
             if (err) {
                 logger.err(err);
                 return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send(err);

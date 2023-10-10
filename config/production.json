@@ -2,7 +2,6 @@
     "file": {
         "model": {
             "json": "output.json",
-            "xtext": "output.upctforma"
         },
         "scorm": "indie-scorm.zip",
         "zip": "generated.zip"

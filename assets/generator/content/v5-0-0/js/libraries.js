@@ -2972,7 +2972,7 @@ b._handlePointerMove(a,c,g,d)};c._handleEnd=function(b,a,c){var g=b.__touch,d=g.
                         let $content = $('<span />').addClass('drag-drop-option').attr('id', 'dragdrop-table-option-' + widgetId + "-option-" + currPosition).html(term);
                         let $state = $("<span />").addClass('dragdrop-state visually-hidden').attr('id', 'dragdrop-table-option-' + widgetId + "-state-" + currPosition).html("")
                         let $prefix = $("<span />").addClass('dragdrop-prefix visually-hidden').attr('id', 'dragdrop-table-option-' + widgetId + "-prefix-" + currPosition).html(i18n("accessibility-option") + " " + currPosition)
-                        let $check = $("<i/>").addClass('dragdrop-check-icon d-none far ms-2')
+                        let $check = $("<i/>").addClass('dragdrop-check-icon d-none fas ms-2')
                             .attr('aria-label', '')
                             .attr('id', 'dragdrop-table-option-' + widgetId + "-check-" + currPosition);
                         $button.toggleClass('has-code', $.parseHTML(term)[0].nodeType !== 3 && $(term).is('code'));
@@ -3208,7 +3208,7 @@ b._handlePointerMove(a,c,g,d)};c._handleEnd=function(b,a,c){var g=b.__touch,d=g.
                     let $content = $('<span />').addClass('drag-drop-option').attr('id', widgetId + "-option-" + currPosition).html(term);
                     let $state = $("<span />").addClass('dragdrop-state visually-hidden').attr('id', widgetId + "-state-" + currPosition).html("")
                     let $prefix = $("<span />").addClass('dragdrop-prefix visually-hidden').attr('id', widgetId + "-prefix-" + currPosition).html(i18n("accessibility-option") + " " + currPosition)
-                    let $check = $("<i/>").addClass('dragdrop-check-icon d-none far ms-2')
+                    let $check = $("<i/>").addClass('dragdrop-check-icon d-none fas ms-2')
                             .attr('aria-label', '')
                             .attr('id', widgetId + "-check-" + currPosition);                        
                     $button.append($content, $state, $prefix, $check);

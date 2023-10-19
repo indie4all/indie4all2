@@ -13,6 +13,8 @@ export default (function ($) {
                 var existingCode = trumbowyg.html();
                 existingCode += '<p>&nbsp;</p>';
                 trumbowyg.html(existingCode);
+                // Write the output to the textarea even if it is empty
+                setTimeout(() => trumbowyg.$ta.val(existingCode), 1);
             }
         }
     }

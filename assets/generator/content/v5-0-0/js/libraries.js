@@ -4821,6 +4821,7 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
                     switch (action) {
                         case "SELECT": $selected.trigger('click'); break;
                         case "REPEAT": $(self).find('.tta-message').append(makeAlert('alert-info', i18n('tta-info-containertest'))); break;
+                        case "RESET": $(self).find('.btn-reset').trigger('click'); break;
                         case "CHECK": $checkAnswerBtn.trigger('click'); break;
                         case "NONE":
                         default:
@@ -6624,7 +6625,6 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
                     highlightContentElement.apply($selectionTabs[0]);
                     $selectionTabs.focus();
                     // Show the tab content associated to this button
-                    console.log("HANDLED!", $selectionTabs);
                     show.apply($selectionTabs[0]);
                 }
                 else {
@@ -8906,4 +8906,351 @@ var DragDropTouch;
     });
 
     offcanvas.show();
+})();
+
+/* global $ */
+/* global i18next */
+/* global setObjetivoCompleto */
+(function () {
+
+    const b64DecodeUnicode = function (str) {
+        return decodeURIComponent(atob(str).split('').map(function (c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+    }
+
+    const generateSelectedQuestions = function (categories, num) {
+        // Get an array of tuples with the index of the category and the index of the question
+        return categories.flatMap((cat, cIdx) => cat.questions.map((q, qIdx) => [cIdx, qIdx]))
+            // Sort the array randomly
+            .sort(() => Math.random() - 0.5)
+            // Get the first num elements
+            .slice(0, num)
+    }
+
+    let onLanguageLoaded = function (err, i18n) {
+
+        $(".widget-roulette").each(function() {
+            // Decode the content of the roulette
+            const $widget = $(this);
+            const id = $widget.attr('id');
+            const content = JSON.parse(b64DecodeUnicode(this.dataset.content));
+            const $circle = $widget.find(".roulette-circle");
+            const numCategories = content.categories.length;
+            const $lifesContainer = $widget.find('.roulette-lifes');
+            const $lifes = $lifesContainer.find(".fa-heart");
+            const degreesPerCategory = 360 / numCategories;
+            let selectedQuestions = generateSelectedQuestions(content.categories, content.lifes);
+            // A copy of the original questions to send from teacher to student in gamification
+            const initialQuestions = [...selectedQuestions];
+            let currentQuestion;
+            $lifes.each(function (index) { if (index < selectedQuestions.length) $(this).removeClass('d-none') });
+            $lifesContainer.attr('aria-label', i18n('roulette-lifes', {num: content.lifes}));
+            let timerStarted = false;
+            let intervalUpdateTimer;
+            let intervalWarnUser;
+            let totalScore = 0;
+
+            // Wait until the gamification js teacher file is loaded to trigger the event
+            setTimeout(() => $widget.trigger('gamificate-roulette-start-teacher', [initialQuestions]), 1000);
+    
+            // Show the corresponding image for the number of categories
+            $widget.find('.roulette-spinner-' + numCategories).toggleClass("d-none", false);
+
+            let initTimer = function() {
+                // Do not show the timer in gamified activities
+                if ($('body').hasClass('gamification'))
+                    return;
+                // Do not show the timer if it is not configured
+                if (!content.time)
+                    return;
+
+                // Add the time in seconds to the current time
+                const time = new Date(Date.now() + content.time * 1000).getTime()
+                let $timer = $widget.find('.roulette-timer');
+                let updateTimer = () => {
+                    const current = Date.now();
+                    // Elapsed time
+                    if (current > time) {
+                        clearInterval(intervalUpdateTimer);
+                        $timer.html(i18n('roulette-timer', {time: `<time>00:00:00</time>`, interpolation: { escapeValue: false }}));
+                        $widget.find('.roulette-info').text(i18n("roulette-finished"));
+                        $widget.addClass("finished");
+                        $widget.find('.roulette-spin').prop('disabled', true);
+                        $widget.find('.btn-check-answer').prop('disabled', true);
+                        return;
+                    }
+                    const remaining = new Date(time - current).toISOString().substring(11, 19);
+                    $timer.html(i18n('roulette-timer', {time: `<time>${remaining}</time>`, interpolation: { escapeValue: false }}));
+                }
+
+                let warn = () => {
+                    const current = Date.now();
+                    if (current > time) {
+                        clearInterval(intervalWarnUser);
+                        return;
+                    }
+                    const remaining = new Date(time - current).toISOString().substring(11, 19);
+                    $widget.find('.roulette-timer-alert').html(i18n('roulette-timer', {time: `<time>${remaining}</time>`, interpolation: { escapeValue: false }}));
+                    setTimeout(() => $widget.find('.roulette-timer-alert').empty(), 500);
+                }
+                intervalUpdateTimer = setInterval(updateTimer, 1000);
+                intervalWarnUser = setInterval(warn, 30000);
+                updateTimer();
+                warn();
+                $timer.removeClass('d-none');
+            }
+
+            $widget.on('change', '.option-value', function (e) {
+                let $question = $(this).closest('.question');
+                $question.find('.iconresult').removeAttr('aria-label').empty();
+                $question.find('.positiveFeedback, .negativeFeedback').addClass('d-none');
+            });
+
+            // Spin the roulette!
+            $widget.on("click", ".roulette-spin", function () {
+                const $spinner = $(this);
+                $spinner.prop('disabled', true);
+                if (!selectedQuestions.length) {
+                    $widget.find('.roulette-info').text(i18n("roulette-finished"));
+                    $widget.addClass("finished");
+                    $widget.find('.btn-check-answer').prop('disabled', true);
+                    $widget.find('.roulette-spin').prop('disabled', true);
+                    return;
+                }
+
+                // Start the timer if it is configured
+                if (!timerStarted) {
+                    initTimer();
+                    timerStarted = true;
+                }
+                
+                // Get the next pair (category, question)
+                const [selectedCategory, selectedQuestion] = selectedQuestions.pop();
+                // Get the selected category
+                const questions = content.categories[selectedCategory].questions;
+                // Get a random question from the selected category
+                currentQuestion = questions[selectedQuestion];
+                // Get the corresponding template for the type of question
+                const $template = $widget.find('.question-' + (currentQuestion.multiple ? "multiple" : "simple"));
+
+                $lifes.not('.fa-regular').first().toggleClass("fa-regular", true).toggleClass("fa-solid", false);
+                $lifesContainer.attr('aria-label', i18n('roulette-lifes', {
+                    num: $lifes.filter(function() { return $(this).is('.fa-solid')}).length}));
+
+                $widget.find('.roulette-info').text(i18n("roulette-spinning"));
+                $widget.find(".question").toggleClass("d-none", true);
+                $widget.find('.iconresult').removeAttr('aria-label').empty();
+                // Uncheck previously selected options
+                $widget.find('.option-value').prop('checked', false);
+                // Hide feedback messages
+                $widget.find(".positiveFeedback, .negativeFeedback").addClass("d-none");
+
+                // Patch needed to restart the animation
+                $circle.css("animation", 'none');
+                $circle[0].offsetHeight; /* trigger reflow */
+                $circle.css("animation", '');
+                const degreesInSelectedCategory = (Math.random() * 0.8 + 0.1) * degreesPerCategory;
+                const lastSpinDegrees = Math.round(selectedCategory * degreesPerCategory + degreesInSelectedCategory);
+                const finalDegrees = 7200 + lastSpinDegrees;
+                $circle[0].style.setProperty('--final', finalDegrees + "deg");
+                //envio los datos de giro al css
+                // Start a 5-second spin animation
+                $circle.css("animation", "rotateAndStop 5s ease-out forwards");
+                // When the animation finishes...
+                $circle.off().on("animationend", function () {
+                    // Enable the check button if it is disabled
+                    $widget.find('.btn-check-answer').prop('disabled', false);
+                    $spinner.prop('disabled', false);
+                    $circle[0].style.setProperty('--final', lastSpinDegrees + "deg");
+                    // Show the question
+                    $template.toggleClass("d-none", false);
+                    $template.find(".question-text").empty().text(currentQuestion.question);
+                    $template.find(".option-text").empty().text(currentQuestion.question);
+                    $template.find(".positiveFeedback").empty().text(currentQuestion.positiveFeedback);
+                    $template.find(".negativeFeedback").empty().text(currentQuestion.negativeFeedback);
+                    $widget.find('.roulette-info').text(i18n("roulette-category", {category: content.categories[selectedCategory].name}));
+                    // Show each option
+                    $template.find(".option").each(function (index) {
+                        if (!currentQuestion.options[index]) {
+                            $(this).toggleClass("d-none", true);
+                            return;
+                        }
+                        $(this).toggleClass("d-none", false);
+                        $(this).find(".option-text").text(currentQuestion.options[index]);
+                        $(this).find(".option-value").val(index);
+
+                    });
+                })
+            });
+
+            // Reset the whole activity
+            $widget.on('click', '.btn-reset', function (e) {
+                $widget.find('.positiveFeedback, .negativeFeedback').addClass('d-none');
+                $widget.find(".question").addClass("d-none");
+                $widget.find('.option').prop('checked', false);
+                $widget.find('.iconresult').removeAttr('aria-label').empty();
+                $widget.find('.roulette-info').empty();
+                $widget.removeClass('finished');
+                $widget.find('.btn-check-answer').prop('disabled', false);
+                $widget.find('.roulette-spin').prop('disabled', false);
+                $lifes.toggleClass("fa-regular", false).toggleClass("fa-solid", true).addClass('d-none');
+                $lifesContainer.attr('aria-label', i18n('roulette-lifes', {num: content.lifes}));
+                $circle[0].style.setProperty('--final', "0deg");
+                selectedQuestions = generateSelectedQuestions(content.categories, content.lifes);
+                $lifes.each(function (index) { if (index < selectedQuestions.length) $(this).removeClass('d-none') });
+                // Reset the timer
+                timerStarted = false;
+                $widget.find('.roulette-timer').addClass('d-none');
+                if (intervalUpdateTimer) clearInterval(intervalUpdateTimer);
+                if (intervalWarnUser) clearInterval(intervalWarnUser);
+            })
+
+            // Check the given answer
+            $widget.on('click', '.btn-check-answer', function (e) {
+                if (!currentQuestion) return;
+                let score = 0;
+                let correct = false;
+                let gamification = $('body').hasClass('gamification') && !$('body').hasClass('gamification-teacher');
+                let $answers = $widget.find('.option-value:visible');
+                let $correctAnswers;
+
+                if (gamification) $(this).prop('disabled', true);
+
+                if (currentQuestion.multiple) {
+                    $correctAnswers = $answers.filter(function () {
+                        const value = parseInt($(this).val()) + 1
+                        return ($(this).prop("checked") && currentQuestion.response.includes(value)) ||
+                            (!$(this).prop("checked") && !currentQuestion.response.includes(value));
+                    });
+                    correct = $correctAnswers.length === $answers.length;
+                    score = $correctAnswers.length / $answers.length;
+                } else {
+                    $correctAnswers = $answers.filter(function () { 
+                        const value = parseInt($(this).val()) + 1
+                        return $(this).prop("checked") && value === currentQuestion.response });
+                    correct = score = $correctAnswers.length > 0 ? true : false;
+                }
+                totalScore += score;
+                // This is the last question: notify gamification results
+                if (!selectedQuestions.length)
+                    $(this).trigger('gamificate', [totalScore == content.lifes, totalScore/content.lifes]);
+
+                if (!gamification) {
+                    const $checkedAnswers = $answers.filter(':checked');
+                    $checkedAnswers.each(function () {
+                        const correct = $correctAnswers.is(this);
+                        const $icon = $(this).closest('.option').find('.iconresult');
+                        $icon
+                            .attr('aria-label', correct ? i18n('TextCorrectAnswer') : i18n('TextIncorrectAnswer'))
+                            .html(correct ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times"></i>');
+                    });
+                    // Show feedback only if there are checked answers
+                    const $template = $widget.find('.question-' + (currentQuestion.multiple ? "multiple" : "simple"));
+                    $template.find('.negativeFeedback:not(:empty)').toggleClass('d-none', $checkedAnswers.length == 0 || correct);
+                    $template.find('.positiveFeedback:not(:empty)').toggleClass('d-none', $checkedAnswers.length == 0 || !correct);
+                    // TODO: currently not checking that all the questions are correct
+                    if (!selectedQuestions.length)
+                        setObjetivoCompleto("objetivo" + id, $widget.data('desc'), $widget.data('desc'));
+                }
+            });
+
+            $widget.on('gamificate-roulette-start-student', function (e, questions) {
+                selectedQuestions = questions;
+                // The student can play now
+                $widget.removeClass("finished");
+                $widget.find('.roulette-spin').prop('disabled', false);
+                $widget.find('.btn-check-answer').prop('disabled', false);
+            });
+
+            let makeAlert = function (type, message) {
+
+                let $dismissButton = $('<button />')
+                    .data('bs-dismiss', 'alert')
+                    .attr('type', 'button')
+                    .attr('aria-hidden', 'false')
+                    .attr('aria-label', i18n('Close')) //
+                    .addClass('close')
+                    .html(' <span aria-hidden="true">&times;</span>');
+
+                let $alert = $("<div />")
+                    .addClass('alert alert-dismissible fade show ' + type)
+                    .html(message)
+                    .append($dismissButton);
+
+                $dismissButton.on('click', function () { $alert.alert('close') });
+                let time = Math.max(6000, message.length * 60);
+                setTimeout(function () { $alert.alert('close') }, time);
+                $alert.alert();
+                return $alert;
+            };
+
+            let onSpeechToAction = function (event, action, entities) {
+
+                if (action === "FINISH")
+                    return;
+
+                let $options = $widget.find('.option-value:visible');
+                let $elems = $widget.find('.roulette-spin');
+                if ($options.length > 0)
+                    $elems = $elems.add($options);
+                let $selected = $elems.filter(function () { return $(this).is(':focus') }).first();
+                let $checkAnswerBtn = $widget.find('.btn-check-answer');
+                
+                if (!$selected.length) {
+                    $selected = $elems.eq(0);
+                    $selected.focus();
+                }
+
+                if (action === "START" || action === "CURRENT")
+                    return;
+                else if (action === "NEXT" || action === "PREVIOUS") {
+                    let position = $elems.index($selected);
+                    let nextPos = action === "NEXT" ? ((position + 1) % $elems.length) : ((position - 1) % $elems.length);
+                    $elems.eq(nextPos).focus();
+                }
+                else if (action === "GOTO") {
+                    let nextPos = (parseInt(entities['target-position']) - 1) % $elems.length;
+                    $elems.eq(nextPos).focus();
+                }
+                else if (action === "CLOSE" && ($(".modal.show").length || $(".alert").length)) {
+                    $(".modal.show").length && $('.modal.show').modal('hide');
+                    $(".alert").length && $('.alert').alert('close')
+                }
+                else if (action === "SCROLL DOWN") window.scrollBy(0, window.innerHeight * 0.4);
+                else if (action === "SCROLL UP") window.scrollBy(0, -window.innerHeight * 0.4);
+                else {
+
+                    switch (action) {
+                        case "SELECT": $selected.trigger('click'); break;
+                        case "RESET": $widget.find('.btn-reset').trigger('click'); break;
+                        case "REPEAT": $(self).find('.tta-message').append(makeAlert('alert-info', i18n('tta-info-containertest'))); break;
+                        case "CHECK": $checkAnswerBtn.trigger('click'); break;
+                        case "NONE":
+                        default:
+                            $(self).find('.tta-message').append(makeAlert('alert-danger', i18n('tta-error-message')));
+                            break;
+                    }
+                }
+            };
+            let gamification = $('body').hasClass('gamification') && !$('body').hasClass('gamification-teacher');
+            if (gamification) {
+                // The student cannot play until they receive the questions from the teacher
+                $widget.addClass("finished");
+                $widget.find('.roulette-spin').prop('disabled', true);
+                $widget.find('.btn-check-answer').prop('disabled', true);
+            }
+            $('#speech-to-action-' + id).on('speech-to-action', onSpeechToAction);
+        })
+    }
+
+    let scriptPath = document.currentScript.src
+    scriptPath = scriptPath.substr(0, scriptPath.lastIndexOf('/'));
+    $(document).ready(function () {
+        let currLang = $('html').attr('lang');
+        fetch(`${scriptPath}/../languages/${currLang}.json`)
+            .then(response => response.json())
+            .then(data => i18next.createInstance({ 'lng': currLang, 'resources': { [currLang]: { 'translation': data } } }, onLanguageLoaded))
+    });
+    
 })();

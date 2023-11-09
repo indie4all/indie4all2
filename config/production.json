@@ -1,7 +1,7 @@
 {
     "file": {
         "model": {
-            "json": "output.json",
+            "json": "output.json"
         },
         "scorm": "indie-scorm.zip",
         "zip": "generated.zip"

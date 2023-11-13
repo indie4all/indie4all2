@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Code block",
-        "screenReader": "Help text for screen readers"
-      }
+        "screenReader": "Help text for screen readers",
+        "text": "Templates"
+      },
+      "whitespace": "Insert White Space"
     }
   },
   "sections": {

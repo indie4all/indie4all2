@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Koodi plokk",
-        "screenReader": "Abitekst ekraanilugejatele"
-      }
+        "screenReader": "Abitekst ekraanilugejatele",
+        "text": "Mallid"
+      },
+      "whitespace": "Sisestage tühik"
     }
   },
   "sections": {

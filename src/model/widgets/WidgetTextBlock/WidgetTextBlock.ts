@@ -50,8 +50,7 @@ export default class WidgetTextBlock extends RichTextEditorMixin(WidgetItemEleme
     }
 
     settingsOpened(): void {
-        var editorElement = $('#f-' + this.id + ' .texteditor');
-        this.initTextEditor(this.data.text, editorElement);
+        this.initTextEditor(this.data.text, '#f-' + this.id + ' .texteditor');
     }
 
     toJSON(): any {
@@ -61,7 +60,7 @@ export default class WidgetTextBlock extends RichTextEditorMixin(WidgetItemEleme
     }
 
     updateModelFromForm(form: any): void {
-        this.data.text = this.clearAndSanitizeHtml(form.textblockText);
+        this.data.text = form.textblockText;
     }
 
     updateTexts(texts: any): void {
@@ -69,13 +68,13 @@ export default class WidgetTextBlock extends RichTextEditorMixin(WidgetItemEleme
     }
 
     validateModel(): string[] {
-        if (this.data.text.length == 0 || this.isEmptyText(this.data.text))
+        if (this.data.text.length == 0)
             return ["TextBlock.text.invalid"];
         return [];
     }
 
     validateForm(form: any): string[] {
-        if (form.textblockText.length == 0 || this.isEmptyText(form.textblockText))
+        if (form.textblockText.length == 0)
             return ["TextBlock.text.invalid"];
         return [];
     }

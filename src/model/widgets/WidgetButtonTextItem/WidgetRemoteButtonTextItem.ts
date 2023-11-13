@@ -40,8 +40,7 @@ export default class WidgetRemoteButtonTextItem extends WidgetButtonTextItem {
     }
 
     settingsOpened() {
-        let $editor = $('#f-' + this.id + ' .texteditor');
-        this.initTextEditor(this.data.text, $editor);
+        this.initTextEditor(this.data.text, '#f-' + this.id + ' .texteditor');
         const $form = $('#f-' + this.id);
         const $iImg = $form.find('input[name=image]');
         const $preview = $form.find('.img-preview');

@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Bloque de código",
-        "screenReader": "Texto de axuda para lectores de pantalla"
-      }
+        "screenReader": "Texto de axuda para lectores de pantalla",
+        "text": "Plantillas"
+      },
+      "whitespace": "Insertar espacio en blanco"
     }
   },
   "sections": {
@@ -897,7 +899,6 @@
       "prev": "Audio-termo non establecido aínda ..."
     },
     "Bank": {
-      "add": "Añadir",
       "add": "Añadir",
       "label": "Banco",
       "modal": {
@@ -1294,21 +1295,6 @@
       },
       "label": "Pregunta múltiple",
       "prev": "Pregunta múltiple non establecida aínda ..."
-    },
-    "MultipleQuestion": {
-      "form": {
-        "answers": {
-          "help": "Debes escribir polo menos 2 respostas e marcar polo menos unha correcta.",
-          "label": "Posibles respostas"
-        },
-        "questionText": {
-          "help": "Este é o texto da pregunta mostrarase na unidade de contido.",
-          "label": "Texto da pregunta",
-          "placeholder": "Texto da pregunta múltiple..."
-        }
-      },
-      "label": "Pregunta múltiple",
-      "prev": "Pregunta múltiple no establecida aínda ..."
     },
     "Puzzle": {
       "form": {

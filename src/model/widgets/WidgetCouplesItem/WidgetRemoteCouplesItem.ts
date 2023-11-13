@@ -61,12 +61,11 @@ export default class WidgetRemoteCouplesItem extends WidgetCouplesItem {
         });
 
         $editors.each(function (idx) {
-            self.initTextEditor(self.data.couples[idx].text, $(this));
+            self.initTextEditor(self.data.couples[idx].text, `#f-${self.id} #text-${idx}-${self.id}`);
         });
 
         $form.on('change.couples', 'input[type=radio]', function () {
             let $anchor = $(this).closest('.couple');
-            $anchor.find('.text textarea').prop('required', this.value !== "image");
             $anchor.find('.text').toggleClass("d-none", this.value === "image");
 
             $anchor.find('.image input').prop('required', this.value === "image");

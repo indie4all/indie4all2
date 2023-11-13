@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Blok kodu",
-        "screenReader": "Tekst pomocy dla czytników ekranu"
-      }
+        "screenReader": "Tekst pomocy dla czytników ekranu",
+        "text": "Szablony"
+      },
+      "whitespace": "Wstaw biały znak"
     }
   },
   "sections": {

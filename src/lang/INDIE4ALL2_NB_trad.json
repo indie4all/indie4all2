@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Kodeblokk",
-        "screenReader": "Hjelpetekst for skjermlesere"
-      }
+        "screenReader": "Hjelpetekst for skjermlesere",
+        "text": "Maler"
+      },
+      "whitespace": "Sett inn mellomrom"
     }
   },
   "sections": {

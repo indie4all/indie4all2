@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Code-Block",
-        "screenReader": "Hilfetext für Screenreader"
-      }
+        "screenReader": "Hilfetext für Screenreader",
+        "text": "Schablonen"
+      },
+      "whitespace": "Leerzeichen einfügen"
     }
   },
   "sections": {

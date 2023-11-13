@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Blockera kod",
-        "screenReader": "Hjälptext för skärmläsare"
-      }
+        "screenReader": "Hjälptext för skärmläsare",
+        "text": "Mallar"
+      },
+      "whitespace": "Infoga tomt utrymme"
     }
   },
   "sections": {

@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Kode blok",
-        "screenReader": "Hjælpetekst til skærmlæsere"
-      }
+        "screenReader": "Hjælpetekst til skærmlæsere",
+        "text": "Skabeloner"
+      },
+      "whitespace": "Indsæt blanktegn"
     }
   },
   "sections": {

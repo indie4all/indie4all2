@@ -1,9 +1,25 @@
 /* global $ */
-import I18n from '../../../I18n';
+import I18n from "../../../I18n";
 
 export default function RichTextEditorMixin<TBase extends abstract new (...args: any[]) => any>(Base: TBase) {
 
+    const editors = {};
+
     abstract class RichTextEditor extends Base {
+
+        // Translate navigator language into TinyMCE language file, otherwise it will be displayed in English
+        getTinyMCELang(lang: string): string {
+            switch (lang) {
+                case 'bg': return 'bg_BG';
+                case 'fr': return 'fr_FR';
+                case 'hu': return 'hu_HU';
+                case 'nb': return 'nb_NO';
+                case 'pt': return 'pt_BR';
+                case 'sl': return 'sl_SI';
+                case 'sv': return 'sv_SE';
+                default: return lang;
+            }
+        }
 
         /**
          * Initialize the text editor (.texteditor)
@@ -11,90 +27,61 @@ export default function RichTextEditorMixin<TBase extends abstract new (...args:
          * @param {string} content Editor text content. Can be empty
          * @param {string} element String that indicates the widget origin that requested the editor
          */
-        initTextEditor(content: string, element: JQuery) {
-            import("trumbowyg")
-                .then(() => import("trumbowyg/dist/ui/trumbowyg.css"))
-                .then(() => import("../../../vendor/trumbowyg/trumbowyg.template"))
-                .then(() => import("../../../vendor/trumbowyg/trumbowyg.whitespace"))
-                .then(() => import("trumbowyg/dist/ui/icons.svg"))
-                .then(({ default: icons }) => {
-                    if (!$.trumbowyg.svgPath)
-                        $.trumbowyg.svgPath = icons;
-                    $(element).trumbowyg({
-                        btns: [
-                            ['undo', 'redo'], // Only supported in Blink browsers
-                            ["Format"],
-                            ['strong', 'em', 'del'],
-                            ['link'],
-                            ['unorderedList', 'orderedList'],
-                            ['removeformat'],
-                            ['justifyLeft', 'justifyCenter', 'justifyRight'],
-                            ['whitespace'],
-                            ['template'],
-                            ['fullscreen']
-                        ],
-                        btnsDef: {
-                            Format: {
-                                dropdown: ['p', 'h1', 'h2', 'h3', 'h4'],
-                                ico: 'p'
-                            }
-                        },
-                        minimalLinks: true,
-                        removeformatPasted: true,
-                        tagsToRemove: ['script', 'link', 'style', 'img', 'applet', 'embed', 'noframes', 'iframe', 'noscript'],
-                        plugins: {
-                            table: {
-                                styler: "table"
-                            },
-                            templates: [
-                                {
-                                    name: I18n.getInstance().translate("plugins.trumbowyg.templates.code"),
-                                    html: "\\begin[language]{}Code\\end"
+        initTextEditor(content: string, selector: string) {
+            const i18n = I18n.getInstance();
+            import("tinymce/tinymce")
+                .then(async ({ default: tinymce }) => {
+                    tinymce.init({
+                        selector,
+                        language: this.getTinyMCELang(i18n.getLang()),
+                        toolbar_mode: 'sliding',
+                        promotion: false,
+                        base_url: '/vendor/tinymce',
+                        plugins: "link, lists, help",
+                        invalid_elements: "script,link,style,img,applet,embed,noframes,iframe,noscript",
+                        toolbar: "undo redo | bold italic | link | alignleft aligncenter alignright | outdent indent | bullist numlist | customAddWhitespace customAddTemplate",
+                        setup: function (editor) {
+                            editors[selector] = editor;
+                            editor.on('init', function () {
+                                editor.setContent(content);
+                            });
+                            editor.ui.registry.addButton('customAddWhitespace', {
+                                icon: 'non-breaking',
+                                tooltip: i18n.value("plugins.trumbowyg.whitespace"),
+                                onAction: (_) => editor.insertContent('<p>&nbsp;&nbsp;</p>')
+                            });
+                            editor.ui.registry.addMenuButton('customAddTemplate', {
+                                icon: 'template',
+                                tooltip: i18n.value("plugins.trumbowyg.templates.text"),
+                                fetch: (callback) => {
+                                    const items = [{
+                                        type: 'menuitem',
+                                        text: i18n.value("plugins.trumbowyg.templates.code"),
+                                        onAction: () => editor.insertContent('\\begin[language]{}Code\\end')
+                                    },
+                                    {
+                                        type: 'menuitem',
+                                        text: i18n.value("plugins.trumbowyg.templates.screenReader"),
+                                        onAction: () => editor.insertContent('\\begin[hidden]{}Help text\\end')
+                                    }];
+                                    // @ts-ignore - TinyMCE types are not up to date
+                                    callback(items);
                                 },
-                                {
-                                    name: I18n.getInstance().translate("plugins.trumbowyg.templates.screenReader"),
-                                    html: "\\begin[hidden]{}Help text\\end"
-                                }
-                            ]
+
+                            });
                         }
                     });
-
-                    // Fix: allow the edition of the trumbowyg link modal
-                    $('.trumbowyg-createLink-dropdown-button').on('mousedown', function () {
-                        $('.trumbowyg-modal-box input, .trumbowyg-modal-box button').off('focusin').on('focusin', function (e) { e.stopPropagation(); });
-                    });
-                    if (content) $(element).trumbowyg('html', content);
                 });
         }
 
-        /**
-         * Clears, optimizes and sanitize the HTML 
-         * 
-         * @param {*} html Html content 
-         */
-        clearAndSanitizeHtml(html: string) {
-            var temporaryDivElement = document.createElement('div');
-            temporaryDivElement.hidden = true;
-            temporaryDivElement.innerHTML = html;
-
-            temporaryDivElement.querySelectorAll("*").forEach(elem => {
-                // Allow the style attribute for now
-                //elem.removeAttribute('style');
-
-                if (elem.innerHTML.trim().length == 0 && elem.tagName !== 'br') {
-                    elem.remove();
-                }
-            });
-
-            var finalHtml = temporaryDivElement.innerHTML;
-
-            temporaryDivElement.remove();
-            return finalHtml;
+        onSubmitEditForm(form: any) {
+            // Save editor content into the textarea
+            Object.keys(editors).forEach(selector => editors[selector].save())
         }
 
-        isEmptyText(text: string) {
-            var emptyTextRegex = /^(<br>$)/;
-            return emptyTextRegex.test(text);
+        onHideEditModal() {
+            // Destroy the editor
+            Object.keys(editors).forEach(selector => editors[selector].remove());
         }
     }
 

@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Bloc de cod",
-        "screenReader": "Text de ajutor pentru cititoarele de ecran"
-      }
+        "screenReader": "Text de ajutor pentru cititoarele de ecran",
+        "text": "Şabloane"
+      },
+      "whitespace": "Inserare spațiu alb"
     }
   },
   "sections": {

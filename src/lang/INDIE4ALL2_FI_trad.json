@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Koodi-lohko",
-        "screenReader": "Näytönlukuohjelmien ohjeteksti"
-      }
+        "screenReader": "Näytönlukuohjelmien ohjeteksti",
+        "text": "Malleja"
+      },
+      "whitespace": "Lisää tyhjä tila"
     }
   },
   "sections": {

@@ -53,8 +53,7 @@ export default class WidgetLocalImageAndText extends WidgetImageAndText {
         const $iBlob = $form.find('input[name=blob]');
         const $preview = $form.find('.img-preview');
         const $sectionPreview = $preview.closest('.form-group');
-        const editorElement = $form.find('.texteditor');
-        this.initTextEditor(this.data.text, editorElement);
+        this.initTextEditor(this.data.text, '#f-' + this.id + ' .texteditor');
         $iImg.prop('required', !this.data.blob);
         $sectionPreview.toggleClass('d-none', !this.data.blob);
         $iImg.on('change', function () {

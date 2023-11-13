@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Kodų blokas",
-        "screenReader": "Ekrano skaitytuvų žinyno tekstas"
-      }
+        "screenReader": "Ekrano skaitytuvų žinyno tekstas",
+        "text": "Šablonai"
+      },
+      "whitespace": "Įterpti tarpą"
     }
   },
   "sections": {

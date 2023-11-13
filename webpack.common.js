@@ -59,6 +59,8 @@ const webConfig = merge(config, {
   plugins: [ 
     new HtmlWebpackPlugin({ template: './src/views/index.hbs', inject: 'head', scriptLoading: 'blocking' }),
     new CopyPlugin({patterns: [
+      { from: "./node_modules/tinymce", to: "./vendor/tinymce"},
+      { from: "./node_modules/tinymce-i18n/langs6", to: "./vendor/tinymce/langs"},
       { from: "./src/manifest.json", to: "."},
       { from: "./src/icon-192.png", to: "."}, 
       { from: "./src/icon-512.png", to: "."}, 

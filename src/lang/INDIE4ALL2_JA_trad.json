@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "コード ブロック",
-        "screenReader": "スクリーンリーダーのヘルプテキスト"
-      }
+        "screenReader": "スクリーンリーダーのヘルプテキスト",
+        "text": "テンプレート"
+      },
+      "whitespace": "空白の挿入"
     }
   },
   "sections": {

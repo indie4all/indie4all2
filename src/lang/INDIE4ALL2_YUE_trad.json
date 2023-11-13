@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "代碼塊",
-        "screenReader": "屏幕閱讀器嘅幫助文本"
-      }
+        "screenReader": "屏幕閱讀器嘅幫助文本",
+        "text": "糢闆"
+      },
+      "whitespace": "插入空格"
     }
   },
   "sections": {

@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Kodni blok",
-        "screenReader": "Besedilo pomoči za bralnike zaslona"
-      }
+        "screenReader": "Besedilo pomoči za bralnike zaslona",
+        "text": "Predloge"
+      },
+      "whitespace": "Vstavljanje praznega prostora"
     }
   },
   "sections": {

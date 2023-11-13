@@ -33,7 +33,7 @@ export default abstract class WidgetImageAndText extends RichTextEditorMixin(Wid
     }
 
     updateModelFromForm(form: any): void {
-        this.data.text = this.clearAndSanitizeHtml(form.textblockText);
+        this.data.text = form.textblockText;
         this.params.name = form.instanceName;
         this.params.help = form.help;
         this.data.alt = form.alt;
@@ -49,7 +49,6 @@ export default abstract class WidgetImageAndText extends RichTextEditorMixin(Wid
     validateModel(): string[] {
         var errors: string[] = [];
         if (this.data.text.length == 0) errors.push("ImageAndText.text.invalid");
-        if (this.isEmptyText(this.data.text)) errors.push("ImageAndText.text.invalid");
         if (!Utils.hasNameInParams(this)) errors.push("common.name.invalid");
         if (Utils.isStringEmptyOrWhitespace(this.data.alt)) errors.push("common.alt.invalid")
         return errors;
@@ -58,7 +57,6 @@ export default abstract class WidgetImageAndText extends RichTextEditorMixin(Wid
     validateForm(form: any): string[] {
         var errors: string[] = [];
         if (form.textblockText.length == 0) errors.push("ImageAndText.text.invalid");
-        if (this.isEmptyText(form.textblockText)) errors.push("TextBlock.text.invalid");
         if (form.instanceName.length == 0) errors.push("common.name.invalid");
         if (Utils.isStringEmptyOrWhitespace(form.alt)) errors.push("common.alt.invalid")
         return errors;

@@ -56,9 +56,7 @@ export default class WidgetLocalImage extends WidgetImage {
         const $sectionPreview = $preview.closest('.form-group');
         $iImg.prop('required', !this.data.blob);
         $sectionPreview.toggleClass('d-none', !this.data.blob);
-
-        var editorElement = $form.find('.texteditor');
-        this.initTextEditor(this.data.text, editorElement);
+        this.initTextEditor(this.data.text, '#f-' + this.id + ' .texteditor');
 
         $iImg.on('change', function () {
             const self = <HTMLInputElement>this;

@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Blok koda",
-        "screenReader": "Tekst pomoći za čitače zaslona"
-      }
+        "screenReader": "Tekst pomoći za čitače zaslona",
+        "text": "Predlošci"
+      },
+      "whitespace": "Umetni prazninu"
     }
   },
   "sections": {

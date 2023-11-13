@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Кодов блок",
-        "screenReader": "Помощен текст за екранни четци"
-      }
+        "screenReader": "Помощен текст за екранни четци",
+        "text": "Шаблони"
+      },
+      "whitespace": "Вмъкни интервал"
     }
   },
   "sections": {

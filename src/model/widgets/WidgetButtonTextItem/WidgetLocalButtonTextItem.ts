@@ -40,8 +40,7 @@ export default class WidgetLocalButtonTextItem extends WidgetButtonTextItem {
     }
 
     settingsOpened(): void {
-        let $editor = $('#f-' + this.id + ' .texteditor');
-        this.initTextEditor(this.data.text, $editor);
+        this.initTextEditor(this.data.text, '#f-' + this.id + ' .texteditor');
         const $form = $('#f-' + this.id);
         const $iImg = $form.find('input[name=image]');
         const $iBlob = $form.find('input[name=blob]');

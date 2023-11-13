@@ -62,8 +62,7 @@ export default class WidgetRemoteImageAndText extends WidgetImageAndText {
         const $iImg = $form.find('input[name=image]');
         const $preview = $form.find('.img-preview');
         const $sectionPreview = $preview.closest('.form-group');
-        const editorElement = $form.find('.texteditor');
-        this.initTextEditor(this.data.text, editorElement);
+        this.initTextEditor(this.data.text, '#f-' + this.id + ' .texteditor');
         $sectionPreview.toggleClass('d-none', !this.data.image);
         $iImg.on('change', function (e) {
             $preview.attr('src', '');

@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Bloco de código",
-        "screenReader": "Texto de ajuda para leitores de tela"
-      }
+        "screenReader": "Texto de ajuda para leitores de tela",
+        "text": "Modelos"
+      },
+      "whitespace": "Inserir espaço em branco"
     }
   },
   "sections": {

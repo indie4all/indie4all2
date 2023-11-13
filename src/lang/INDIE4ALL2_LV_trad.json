@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Kodu bloks",
-        "screenReader": "Palīdzības teksts ekrāna lasītājiem"
-      }
+        "screenReader": "Palīdzības teksts ekrāna lasītājiem",
+        "text": "Veidnes"
+      },
+      "whitespace": "Ievietojiet baltu atstarpi"
     }
   },
   "sections": {

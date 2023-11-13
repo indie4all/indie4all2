@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Codeblok",
-        "screenReader": "Help-tekst voor schermlezers"
-      }
+        "screenReader": "Help-tekst voor schermlezers",
+        "text": "Sjablonen"
+      },
+      "whitespace": "Witruimte invoegen"
     }
   },
   "sections": {

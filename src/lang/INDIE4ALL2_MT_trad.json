@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Blokka tal-kodiċi",
-        "screenReader": "Test ta' l-għajnuna għall-qarrejja ta' l-iskrin"
-      }
+        "screenReader": "Test ta' l-għajnuna għall-qarrejja ta' l-iskrin",
+        "text": "Mudelli"
+      },
+      "whitespace": "Daħħal l-Ispazju Abjad"
     }
   },
   "sections": {

@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Kódblokk",
-        "screenReader": "Súgószöveg képernyőolvasókhoz"
-      }
+        "screenReader": "Súgószöveg képernyőolvasókhoz",
+        "text": "Sablonok"
+      },
+      "whitespace": "Üres hely beszúrása"
     }
   },
   "sections": {

@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Blok kódu",
-        "screenReader": "Text Pomocníka pre aplikácie na čítanie z obrazovky"
-      }
+        "screenReader": "Text Pomocníka pre aplikácie na čítanie z obrazovky",
+        "text": "Šablóny"
+      },
+      "whitespace": "Vloženie bieleho miesta"
     }
   },
   "sections": {

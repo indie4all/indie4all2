@@ -156,16 +156,16 @@ export default class GUI {
             "MultipleAnswer": "MultipleQuestion",
             "TrueFalse": "TrueFalseQuestion"
         }
-        
+
         data.map((elem: any) => {
             elem["answers"] = JSON.stringify(elem["answers"]).trim();
             elem["img"] = ModelManager.getWidgetElement(mapeo[elem.type]).icon
         });
-        
+
         const types = [...new Set(data.map(objeto => mapeo[objeto.type]))];
-        
+
         $("#modal-questions-bank").remove();
-        $(this.container).after(modalTemplate({ types: types, data: data}));
+        $(this.container).after(modalTemplate({ types: types, data: data }));
         $("#modal-questions-bank").modal({ keyboard: false, focus: true, backdrop: 'static' });
 
         const aggregateWidget = async function (button: HTMLElement) {
@@ -197,37 +197,37 @@ export default class GUI {
             }
             // TODO: addContent añade un elemento vacío, queremos COPIAR un elemento de una paleta
             //this.author.addContent(dataElementId, obj2.widget);
-            let widget = (await ModelManager.create(mapeo[type], { data: datos} )).clone();
+            let widget = (await ModelManager.create(mapeo[type], { data: datos })).clone();
             this.author.addModelElement(widget, dataElementId);
         }
 
         const onClick = aggregateWidget.bind(this);
 
-        
-        const deleteFilterHTML = function() {
+
+        const deleteFilterHTML = function () {
             $(this).parent().remove();
         }
 
-        const changeSearchType = function() {
-            const filter = $(this).val(); 
+        const changeSearchType = function () {
+            const filter = $(this).val();
             if (filter === "tipo") {
                 $(this).parent().find(".searchTerm").removeClass("d-block").addClass("d-none");
                 $(this).parent().find(".searchTermByType").removeClass("d-none").addClass("d-block");
             }
             else {
                 $(this).parent().find(".searchTermByType").removeClass("d-block").addClass("d-none");
-                const searchTerm = $(this).parent().find(".searchTerm"); 
+                const searchTerm = $(this).parent().find(".searchTerm");
                 searchTerm.removeClass("d-none").addClass("d-block");
-                if (filter === "tag") searchTerm.attr("placeholder",  I18n.getInstance().translate("widgets.Bank.modal.placeholderTag")[0]);
+                if (filter === "tag") searchTerm.attr("placeholder", I18n.getInstance().translate("widgets.Bank.modal.placeholderTag")[0]);
                 else searchTerm.attr("placeholder", I18n.getInstance().translate("widgets.QuestionsBank.modal.placeholderTitle")[0]);
             }
         }
 
         $(".searchType").on("change", changeSearchType);
 
-        const createFilterHTML = function() {
-            $("#search-filters").append(modalFilter({types: types}));
-            $(".delete-filter-button").last().on("click",deleteFilterHTML)
+        const createFilterHTML = function () {
+            $("#search-filters").append(modalFilter({ types: types }));
+            $(".delete-filter-button").last().on("click", deleteFilterHTML)
             $(".searchType").last().on("change", changeSearchType);
         }
 
@@ -278,20 +278,20 @@ export default class GUI {
             $("#modal-questions-bank").modal('hide');
         });
 
-        $("#button-search-questions-bank").on('click', function (){
+        $("#button-search-questions-bank").on('click', function () {
 
             $('.widget-button').each(function () {
 
-                let result : boolean = true;
+                let result: boolean = true;
 
                 const title = $(this).find('.question-text').text().toLowerCase();
                 const type = $(this).find("input[name='type']").val() as string;
-                const tags = $(this).find('.badge').toArray().map( (elem: any) => $(elem).text())
+                const tags = $(this).find('.badge').toArray().map((elem: any) => $(elem).text())
 
-            
 
-            
-                $(".search-condition").each( (i, elem) => {
+
+
+                $(".search-condition").each((i, elem) => {
 
                     let searchTerm = ($(elem).find('.searchTerm').val() as string).toLowerCase();
                     let searchType = ($(elem).find('.searchType').val() as string).toLowerCase().trim();
@@ -300,11 +300,11 @@ export default class GUI {
                     searchTermByType = Object.keys(mapeo).find(key => mapeo[key] === searchTermByType);
 
                     let resultFilter = true;
-                    if(searchType === "nombre") resultFilter = title.includes(searchTerm);
-                    if(searchType === "tag") resultFilter = tags.some(tag => tag.toLowerCase().includes(searchTerm));
+                    if (searchType === "nombre") resultFilter = title.includes(searchTerm);
+                    if (searchType === "tag") resultFilter = tags.some(tag => tag.toLowerCase().includes(searchTerm));
                     if (searchType === "tipo") resultFilter = (type === searchTermByType);
 
-                
+
 
                     switch (searchBoolean) {
                         case '0':
@@ -313,16 +313,16 @@ export default class GUI {
                         case '1':
                             result = result || resultFilter
                             break;
-                        case '2': 
+                        case '2':
                             result = result && !resultFilter
                             break;
                         default:
                             result = result && resultFilter
                     }
                 })
-        
 
-                if(result) $(this).removeClass("d-none").addClass("d-block");
+
+                if (result) $(this).removeClass("d-none").addClass("d-block");
                 else $(this).removeClass("d-block").addClass("d-none");
             })
         })
@@ -346,13 +346,28 @@ export default class GUI {
             // 3 Open the modal with values put
             $('#modal-settings-body').html(modalContent.inputs);
             $('#modal-settings-tittle').html(modalContent.title);
-            $("#modal-settings").modal({ keyboard: false, focus: true, backdrop: 'static' });
+            $("#modal-settings")
+                // Handle autofocus manually
+                .on('shown.bs.modal', function () {
+                    $(this).off('shown.bs.modal');
+                    $(this).trigger('focus');
+                })
+                // Remove tinyMCE editor when the user cancels the modal
+                .on('hidden.bs.modal', function () {
+                    $(this).off('hidden.bs.modal');
+                    modelElem.onHideEditModal();
+                })
+                // Show the modal and disable bs autofocus, it causes issues with TinyMCE
+                .modal({ keyboard: false, focus: false, backdrop: 'static' });
+
+
             // 4 Associate functions to the modal
             const $form = $("#f-" + dataElementId);
             $form.append("<input type='submit' class='hide' />");
             $("#modal-settings-body").prepend('<div class="errors"></div>');
 
             $form.off('submit').on('submit', async function (e) {
+                modelElem.onSubmitEditForm();
                 e.preventDefault();
                 const formData = Utils.toJSON(this);
                 const errors = model.validateFormElement(modelElem, formData);

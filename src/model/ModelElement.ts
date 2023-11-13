@@ -8,9 +8,7 @@ export default abstract class ModelElement {
     protected static addable: boolean = false;
     protected static copyable: boolean = true;
     protected static editable: boolean = true;
-    protected static deletable : boolean = true;
-
-
+    protected static deletable: boolean = true;
 
     id: string;
     params: any;
@@ -38,10 +36,12 @@ export default abstract class ModelElement {
     settingsOpened(): void { }
     toJSON(): any { return { id: this.id, widget: (<typeof ModelElement>this.constructor).widget } }
     translate(query: string) { return I18n.getInstance().value(query); }
+    onSubmitEditForm(): void { }
+    onHideEditModal(): void { }
 
-    static setAddable(value: boolean) { this.addable = value}
-    static setCopyable(value: boolean) { this.copyable = value}
-    static setEditable(value: boolean) { this.editable = value}
-    static setDeletable(value: boolean) { this.deletable = value}
+    static setAddable(value: boolean) { this.addable = value }
+    static setCopyable(value: boolean) { this.copyable = value }
+    static setEditable(value: boolean) { this.editable = value }
+    static setDeletable(value: boolean) { this.deletable = value }
 
 }

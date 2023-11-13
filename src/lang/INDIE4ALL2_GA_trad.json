@@ -685,8 +685,10 @@
     "trumbowyg": {
       "templates": {
         "code": "Bloc cóid",
-        "screenReader": "Téacs cabhrach do léitheoirí scáileáin"
-      }
+        "screenReader": "Téacs cabhrach do léitheoirí scáileáin",
+        "text": "Teimpléid"
+      },
+      "whitespace": "Ionsáigh Spás Bán"
     }
   },
   "sections": {

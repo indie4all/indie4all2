@@ -178,4 +178,11 @@ export function init(api: IApi) {
     document.addEventListener('visibilitychange', function (event) {
         navigator.sendBeacon(Config.getAnalyticsBasePath() + (document.visibilityState === "hidden" ? "/exit" : "/entrance"))
     });
+
+    // Fix TinyMCE in bootstrap modals
+    document.addEventListener('focusin', (e) => {
+        if ((e.target as HTMLElement).closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root") !== null) {
+            e.stopImmediatePropagation();
+        }
+    });
 }

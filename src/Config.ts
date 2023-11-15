@@ -31,6 +31,8 @@ export default class Config {
     private static bankOfWidgetsURL: string = null;
     // Server URL to get the list of questions available in the bank of questions
     private static questionsBankURL: string = null;
+    // Server URL to get the list of user media files
+    private static mediaResourcesURL: string = null;
     // List of allowed origins for media data
     private static allowedResourceOrigins: string[] = ["http://localhost:8000", "https://indiemedia.upct.es", "http://indieopen.upct.es", "https://multimediarepository.blob.core.windows.net"];
     // Additional rules to check if a video URL is allowed
@@ -73,6 +75,8 @@ export default class Config {
             this.setWidgetEditorEnabled(options.enableWidgetEditor)
         if (typeof options.analyticsBasePath === 'string')
             this.setAnalyticsBasePath(options.analyticsBasePath)
+        if (typeof options.mediaResourcesURL === 'string')
+            this.setMediaResourcesURL(options.mediaResourcesURL)
     }
 
     public static setAnalyticsBasePath(value: string) {
@@ -217,6 +221,14 @@ export default class Config {
 
     public static getAdditionalVideoResourceRules(): ((url: string) => boolean)[] {
         return this.additionalVideoResourceRules;
+    }
+
+    public static getMediaResourcesURL(): string {
+        return this.mediaResourcesURL;
+    }
+
+    public static setMediaResourcesURL(value: string) {
+        this.mediaResourcesURL = value;
     }
 
 }

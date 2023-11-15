@@ -4,8 +4,9 @@ import "./styles.scss";
 import icon from "./icon.png";
 import { FormEditData, InputWidgetImageAndTextData, WidgetImageAndTextData, WidgetImageAndTextParams } from "../../../types";
 import WidgetImageAndText from "./WidgetImageAndText";
+import HasFilePickerElement from "../mixings/HasFilePickerElement";
 
-export default class WidgetRemoteImageAndText extends WidgetImageAndText {
+export default class WidgetRemoteImageAndText extends HasFilePickerElement(WidgetImageAndText) {
 
     static widget = "ImageAndText";
     static category = "interactiveElements";
@@ -73,6 +74,7 @@ export default class WidgetRemoteImageAndText extends WidgetImageAndText {
                 $sectionPreview.toggleClass('d-none', false);
             }
         });
+        this.initFilePicker($iImg);
     }
 
     updateModelFromForm(form: any): void {

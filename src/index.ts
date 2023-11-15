@@ -3,8 +3,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { dom, library } from '@fortawesome/fontawesome-svg-core'
 import {
     faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle,
-    faCloudDownloadAlt, faCloudUploadAlt, faCopy, faDownload, faEdit, faEye, faGlobe, faFileExport,
-    faFileImport, faLanguage, faPlusCircle, faTimes, faTimesCircle, faRedo, faSave, faSpinner, faN, faTag, faTrashAlt, faUndo
+    faCloudDownloadAlt, faCloudUploadAlt, faCopy, faDownload, faEdit, faEye, faFile, faFileAudio, faFolder, faGlobe, faFileExport,
+    faFileImport, faLanguage, faCirclePlay, faPlusCircle, faTimes, faTimesCircle, faRedo, faSave, faSpinner, faN, faTag, faTrashAlt, faUndo
 } from '@fortawesome/free-solid-svg-icons'
 import "./styles/overrides.css"
 import { init as init_events } from './events'
@@ -28,8 +28,8 @@ const start = async (options?: ConfigOptions) => {
     }
     // Enable FontAwesome icons
     library.add(faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle,
-        faCloudDownloadAlt, faCloudUploadAlt, faCopy, faDownload, faEdit, faEye, faGlobe, faFileExport,
-        faFileImport, faLanguage, faPlusCircle, faTimes, faTimesCircle, faRedo, faSave, faSpinner,faN, faTag, faTrashAlt, faUndo);
+        faCloudDownloadAlt, faCloudUploadAlt, faCopy, faDownload, faEdit, faEye, faFile, faFileAudio, faFolder, faGlobe, faFileExport,
+        faFileImport, faLanguage, faCirclePlay, faPlusCircle, faTimes, faTimesCircle, faRedo, faSave, faSpinner, faN, faTag, faTrashAlt, faUndo);
     // Watch for changes to replace icons
     dom.watch();
     await I18n.init();
@@ -41,7 +41,7 @@ const start = async (options?: ConfigOptions) => {
     // Initialize the IndieAuthor api
     //const api = await Api.create(domPalette, domContainer);
     //const api : Author = new BasicAuthor(domPalette,domContainer);
-    const api: IApi = Config.isWidgetEditorEnabled() ? await WidgetEditorAuthor.create(domPalette,domContainer) : await BasicAuthor.create(domPalette,domContainer);
+    const api: IApi = Config.isWidgetEditorEnabled() ? await WidgetEditorAuthor.create(domPalette, domContainer) : await BasicAuthor.create(domPalette, domContainer);
     init_events(api);
     return api;
 }

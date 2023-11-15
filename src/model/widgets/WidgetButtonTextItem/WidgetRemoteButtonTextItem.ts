@@ -3,8 +3,9 @@ import Utils from "../../../Utils";
 import "./styles.scss";
 import { FormEditData, InputWidgetButtonTextItemData } from "../../../types";
 import WidgetButtonTextItem from "./WidgetButtonTextItem";
+import HasFilePickerElement from "../mixings/HasFilePickerElement";
 
-export default class WidgetRemoteButtonTextItem extends WidgetButtonTextItem {
+export default class WidgetRemoteButtonTextItem extends HasFilePickerElement(WidgetButtonTextItem) {
 
     static async create(values?: InputWidgetButtonTextItemData): Promise<WidgetRemoteButtonTextItem> {
         if (values?.data?.blob && !values?.data?.image) {
@@ -54,6 +55,7 @@ export default class WidgetRemoteButtonTextItem extends WidgetButtonTextItem {
                 $sectionPreview.toggleClass('d-none', false);
             }
         });
+        this.initFilePicker($iImg);
     }
 
     updateModelFromForm(form: any): void {

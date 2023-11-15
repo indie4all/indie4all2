@@ -1,0 +1,5 @@
+{{#each pages}}
+<li class="file-picker-page {{#ifeq @index ../currentPage }}active{{/ifeq}}" data-page="{{@index}}">
+    <a class="file-picker-page-link" href="#">{{{this}}}</a>
+</li>
+{{/each}}

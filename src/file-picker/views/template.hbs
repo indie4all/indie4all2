@@ -1,0 +1,23 @@
+<div id="modal-file-picker" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content border-indie">
+            <div class="modal-header modal-indie">
+                <h2 id="modal-file-picker-title" class="modal-title h5">{{ translate "common.file-picker.title" }}</h2>
+            </div>
+            <div id="modal-file-picker-body" class="modal-body px-1">
+                <ol class="file-picker-breadcrumbs"></ol>
+                <div class="file-picker-content row px-4">
+                    <ul class="file-picker-entries file-picker-folders mt-4 col-12 col-md-3"></ul>
+                    <div class="file-picker-files-wrapper pt-4 col-12 col-md-9">
+                        <ul class="file-picker-entries file-picker-files pl-1"></ul>
+                        <ol class="file-picker-pagination"></ol>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ translate "general.cancel" }}</button>
+                <button type="button" class="btn btn-indie btn-submit">{{ translate "general.confirm" }}</button>
+            </div>
+        </div>
+    </div>
+</div>

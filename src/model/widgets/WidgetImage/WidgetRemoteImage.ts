@@ -3,8 +3,9 @@ import Utils from "../../../Utils";
 import "./styles.scss";
 import { FormEditData, InputWidgetImageData } from "../../../types";
 import WidgetImage from "./WidgetImage";
+import HasFilePickerElement from "../mixings/HasFilePickerElement";
 
-export default class WidgetRemoteImage extends WidgetImage {
+export default class WidgetRemoteImage extends HasFilePickerElement(WidgetImage) {
 
     static async create(values?: InputWidgetImageData): Promise<WidgetRemoteImage> {
         if (!values?.data?.image && values?.data?.blob) {
@@ -64,6 +65,7 @@ export default class WidgetRemoteImage extends WidgetImage {
                 $sectionPreview.toggleClass('d-none', false);
             }
         });
+        this.initFilePicker($iImg);
     }
 
     updateModelFromForm(form: any): void {

@@ -3,13 +3,14 @@ import Utils from "../../../Utils";
 import "./styles.scss";
 import { InputWidgetVideoData } from "../../../types";
 import WidgetVideo from "./WidgetVideo";
+import HasFilePickerElement from "../mixings/HasFilePickerElement";
 
-export default class WidgetRemoteVideo extends WidgetVideo {
+export default class WidgetRemoteVideo extends HasFilePickerElement(WidgetVideo) {
 
     private toggleCaptionAndDescriptions(videourl: string) {
         const valid = Utils.isValidResource(videourl);
-        $('#f-' + this.id + ' input[name="captions"]').parent().toggleClass('d-none', !valid);
-        $('#f-' + this.id + ' input[name="descriptions"]').parent().toggleClass('d-none', !valid);
+        $('#f-' + this.id + ' input[name="captions"]').closest('.form-group').toggleClass('d-none', !valid);
+        $('#f-' + this.id + ' input[name="descriptions"]').closest('.form-group').toggleClass('d-none', !valid);
     }
 
     private putOrDeleteCaptionAndDescriptions() {
@@ -35,6 +36,9 @@ export default class WidgetRemoteVideo extends WidgetVideo {
             model.toggleCaptionAndDescriptions(videourl);
             $("#modal-settings-body .errors").html('');
         });
+        this.initFilePicker($('#f-' + model.id + ' input[name="videourl"]'), false);
+        this.initFilePicker($('#f-' + model.id + ' input[name="captions"]'));
+        this.initFilePicker($('#f-' + model.id + ' input[name="descriptions"]'));
     }
 
     updateModelFromForm(form: any): void {

@@ -30,6 +30,8 @@ export interface ConfigOptions {
     bankOfWidgetsURL?: string
     // Server URL to get the list of questions available in the bank of questions
     questionsBankURL?: string
+    // Server URL to get the list of user media files
+    mediaResourcesURL?: string
     // List of permitted origins for hosting resources
     allowedResourceOrigins?: []
     // Additional rules to validate video resources
@@ -644,7 +646,7 @@ export interface WidgetMultipleQuestionData {
     question?: string
 }
 
-export interface InputWidgetRouletteData  {
+export interface InputWidgetRouletteData {
     data?: InputWidgetElementData[],
     params?: InputWidgetRouletteParams
 }
@@ -655,13 +657,13 @@ export interface InputWidgetRouletteParams {
     time?: number
 }
 
-export interface InputWidgetRouletteItemData  {
+export interface InputWidgetRouletteItemData {
     data?: InputWidgetElementData[],
     params?: InputWidgetRouletteItemParams
 }
 
 export interface InputWidgetRouletteItemParams {
-    nameCategory ?: string
+    nameCategory?: string
 }
 
 export interface InputWidgetSimpleQuestionData extends InputWidgetElementData {

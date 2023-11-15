@@ -3,8 +3,9 @@ import Utils from "../../../Utils";
 import './styles.scss';
 import { FormEditData, InputWidgetAudioTermItemData } from "../../../types";
 import WidgetAudioTermItem from "./WidgetAudioTermItem";
+import HasFilePickerElement from "../mixings/HasFilePickerElement";
 
-export default class WidgetRemoteAudioTermItem extends WidgetAudioTermItem {
+export default class WidgetRemoteAudioTermItem extends HasFilePickerElement(WidgetAudioTermItem) {
 
     static async create(values?: InputWidgetAudioTermItemData): Promise<WidgetRemoteAudioTermItem> {
         // TODO Local to remote resources
@@ -47,7 +48,11 @@ export default class WidgetRemoteAudioTermItem extends WidgetAudioTermItem {
         return { inputs: form(data), title: this.translate("widgets.AudioTermItem.label") };
     }
 
-    settingsOpened(): void { }
+    settingsOpened(): void {
+        const $form = $('#f-' + this.id);
+        this.initFilePicker($form.find('input[name="audio"]'));
+        this.initFilePicker($form.find('input[name="captions"]'));
+    }
 
     updateModelFromForm(form: any): void {
         super.updateModelFromForm(form);

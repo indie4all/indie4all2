@@ -3,8 +3,9 @@ import Utils from "../../../Utils";
 import "./styles.scss";
 import { FormEditData, InputWidgetImageAndSoundItemData } from "../../../types";
 import WidgetImageAndSoundItem from "./WidgetImageAndSoundItem";
+import HasFilePickerElement from "../mixings/HasFilePickerElement";
 
-export default class WidgetRemoteImageAndSoundItem extends WidgetImageAndSoundItem {
+export default class WidgetRemoteImageAndSoundItem extends HasFilePickerElement(WidgetImageAndSoundItem) {
 
     static async create(values?: InputWidgetImageAndSoundItemData): Promise<WidgetRemoteImageAndSoundItem> {
         // TODO Local to remote resources
@@ -72,6 +73,9 @@ export default class WidgetRemoteImageAndSoundItem extends WidgetImageAndSoundIt
                 $sectionPreview.toggleClass('d-none', false);
             }
         });
+        this.initFilePicker($iImg);
+        this.initFilePicker($form.find('input[name="audio"]'));
+        this.initFilePicker($form.find('input[name="captions"]'));
     }
 
     updateModelFromForm(form: any): void {

@@ -2,8 +2,9 @@ import "./styles.scss";
 import { FormEditData, InputWidgetPiecesElementData } from "../../../types";
 import WidgetPuzzle from "./WidgetPuzzle";
 import Utils from "../../../Utils";
+import HasFilePickerElement from "../mixings/HasFilePickerElement";
 
-export default class WidgetRemotePuzzle extends WidgetPuzzle {
+export default class WidgetRemotePuzzle extends HasFilePickerElement(WidgetPuzzle) {
 
     static async create(values?: InputWidgetPiecesElementData): Promise<WidgetRemotePuzzle> {
         if (!values?.data?.image && values?.data?.blob) {
@@ -51,6 +52,7 @@ export default class WidgetRemotePuzzle extends WidgetPuzzle {
                 self.loadImage(e.target.value);
         });
         this.data.image && self.loadImage(this.data.image);
+        this.initFilePicker($form.find('input[name="image"]'));
     }
 
     settingsClosed() {

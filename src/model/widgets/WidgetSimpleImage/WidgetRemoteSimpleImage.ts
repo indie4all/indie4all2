@@ -3,8 +3,9 @@ import Utils from "../../../Utils";
 import "./styles.scss";
 import { FormEditData, InputWidgetSimpleImageData } from "../../../types";
 import WidgetSimpleImage from "./WidgetSimpleImage";
+import HasFilePickerElement from "../mixings/HasFilePickerElement";
 
-export default class WidgetRemoteSimpleImage extends WidgetSimpleImage {
+export default class WidgetRemoteSimpleImage extends HasFilePickerElement(WidgetSimpleImage) {
 
     static async create(values?: InputWidgetSimpleImageData): Promise<WidgetSimpleImage> {
         if (values?.data?.blob && !values?.data?.image) {
@@ -53,9 +54,9 @@ export default class WidgetRemoteSimpleImage extends WidgetSimpleImage {
     }
 
     settingsOpened(): void {
+        let $form = $('#f-' + this.id);
         let ratio = 1;
         let imgChanged = false;
-        let $form = $('#f-' + this.id);
         let $preview = $form.find('.image-preview');
         let $size = $form.find('.size');
         let $img = $preview.find('img');
@@ -122,6 +123,8 @@ export default class WidgetRemoteSimpleImage extends WidgetSimpleImage {
                 $img.attr('src', value);
             }
         });
+
+        this.initFilePicker($iImg);
     }
 
     updateModelFromForm(form: any): void {

@@ -29,6 +29,12 @@
       "negative": "Neigiami atsiliepimai...",
       "positive": "Teigiami atsiliepimai..."
     },
+    "file-picker": {
+      "button": "Pasirinkite failą",
+      "no-files": "Failų nerasta",
+      "no-folders": "Katalogų nerasta",
+      "title": "Pasirinkite failą iš saugyklos"
+    },
     "generate": {
       "description": "Generuojate, palaukite",
       "title": "Generuoti"

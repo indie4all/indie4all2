@@ -29,6 +29,12 @@
       "negative": "Negatieve feedback...",
       "positive": "Positieve feedback..."
     },
+    "file-picker": {
+      "button": "Kies Bestand",
+      "no-files": "Geen bestanden gevonden",
+      "no-folders": "Geen directory's gevonden",
+      "title": "Kies een bestand uit de opslagplaats"
+    },
     "generate": {
       "description": "Genereren, even geduld aub",
       "title": "Genereren"

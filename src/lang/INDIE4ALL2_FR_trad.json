@@ -29,6 +29,12 @@
       "negative": "Commentaires négatifs...",
       "positive": "Commentaires positifs..."
     },
+    "file-picker": {
+      "button": "Choisir un fichier",
+      "no-files": "Aucun fichier n’a été trouvé",
+      "no-folders": "Aucun répertoire n’a été trouvé",
+      "title": "Choisir un fichier dans le référentiel"
+    },
     "generate": {
       "description": "Générer, veuillez patienter",
       "title": "Générer"

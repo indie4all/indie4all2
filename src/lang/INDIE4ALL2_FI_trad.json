@@ -29,6 +29,12 @@
       "negative": "Negatiivinen palaute...",
       "positive": "Positiivinen palaute..."
     },
+    "file-picker": {
+      "button": "Valitse Tiedosto",
+      "no-files": "Tiedostoja ei löytynyt",
+      "no-folders": "Hakemistoja ei löytynyt",
+      "title": "Valitse tiedosto arkistosta"
+    },
     "generate": {
       "description": "Luodaan, odota",
       "title": "Tuottaa"

@@ -29,6 +29,12 @@
       "negative": "負帰還...",
       "positive": "正のフィードバック..."
     },
+    "file-picker": {
+      "button": "ファイルを選択",
+      "no-files": "ファイルが見つかりません",
+      "no-folders": "ディレクトリが見つかりません",
+      "title": "リポジトリからファイルを選択する"
+    },
     "generate": {
       "description": "生成中です。お待ちください",
       "title": "生成"

@@ -29,6 +29,12 @@
       "negative": "Feedback negatiboa...",
       "positive": "Feedback positiboa..."
     },
+    "file-picker": {
+      "button": "Artxiboa aukeratu",
+      "no-files": "Ez zen artxiborik aurkitu",
+      "no-folders": "Ez zen direktoriorik aurkitu",
+      "title": "Aukeratu gordailuko artxibo bat"
+    },
     "generate": {
       "description": "Sortzen, mesedez, itxaron",
       "title": "Sortzen"

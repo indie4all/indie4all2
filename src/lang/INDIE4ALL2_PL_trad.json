@@ -29,6 +29,12 @@
       "negative": "Negatywne opinie...",
       "positive": "Pozytywne opinie..."
     },
+    "file-picker": {
+      "button": "Wybierz Plik",
+      "no-files": "Nie znaleziono plików",
+      "no-folders": "Nie znaleziono katalogów",
+      "title": "Wybierz plik z repozytorium"
+    },
     "generate": {
       "description": "Generowanie, proszę czekać",
       "title": "Generowania"

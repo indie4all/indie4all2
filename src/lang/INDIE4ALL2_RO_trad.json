@@ -29,6 +29,12 @@
       "negative": "Feedback negativ...",
       "positive": "Feedback pozitiv..."
     },
+    "file-picker": {
+      "button": "Alegeți fișierul",
+      "no-files": "Nu s-au găsit fișiere",
+      "no-folders": "Nu s-au găsit directoare",
+      "title": "Alegeți un fișier din depozit"
+    },
     "generate": {
       "description": "Generarea, vă rugăm să așteptați",
       "title": "Generatoare"

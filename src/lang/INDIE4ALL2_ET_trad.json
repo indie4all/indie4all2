@@ -29,6 +29,12 @@
       "negative": "Negatiivne tagasiside...",
       "positive": "Positiivne tagasiside..."
     },
+    "file-picker": {
+      "button": "Valige Fail",
+      "no-files": "Faile ei leitud",
+      "no-folders": "Katalooge ei leitud",
+      "title": "Valige hoidlast fail"
+    },
     "generate": {
       "description": "Genereerimine, palun oodake",
       "title": "Teeniva"

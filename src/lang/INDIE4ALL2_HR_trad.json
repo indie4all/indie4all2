@@ -29,6 +29,12 @@
       "negative": "Negativne povratne informacije...",
       "positive": "Pozitivne povratne informacije..."
     },
+    "file-picker": {
+      "button": "Odabir datoteke",
+      "no-files": "Nisu pronađene datoteke",
+      "no-folders": "Nisu pronađeni direktoriji",
+      "title": "Odaberite datoteku iz spremišta"
+    },
     "generate": {
       "description": "Generiranje, pričekajte",
       "title": "Generiranje"

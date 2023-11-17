@@ -29,6 +29,12 @@
       "negative": "Negatīva atgriezeniskā saite...",
       "positive": "Pozitīvas atsauksmes..."
     },
+    "file-picker": {
+      "button": "Izvēlieties Fails",
+      "no-files": "Nav atrasts neviens fails",
+      "no-folders": "Nav atrasts neviens katalogs",
+      "title": "Izvēlieties failu no repozitorija"
+    },
     "generate": {
       "description": "Ģenerējot, lūdzu, pagaidiet",
       "title": "Radot"

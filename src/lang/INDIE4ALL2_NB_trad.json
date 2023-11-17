@@ -29,6 +29,12 @@
       "negative": "Negative tilbakemeldinger...",
       "positive": "Positive tilbakemeldinger..."
     },
+    "file-picker": {
+      "button": "Velg Fil",
+      "no-files": "Fant ingen filer",
+      "no-folders": "Ingen kataloger funnet",
+      "title": "Velg en fil fra depotet"
+    },
     "generate": {
       "description": "Genererer, vennligst vent",
       "title": "Generere"

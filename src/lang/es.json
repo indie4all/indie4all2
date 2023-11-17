@@ -43,6 +43,12 @@
             "title": "Descargando",
             "description": "Descargando unidad, por favor espere"
         },
+        "file-picker": {
+            "title": "Escoge un archivo del repositorio",
+            "button": "Escoger archivo",
+            "no-files": "No se encontraron archivos",
+            "no-folders": "No se encontraron directorios"
+        },
         "generate": {
             "title": "Generando",
             "description": "Generando, por favor espere"

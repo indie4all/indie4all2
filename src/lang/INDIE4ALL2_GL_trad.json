@@ -29,6 +29,12 @@
       "negative": "Feedback negativo...",
       "positive": "Feedback positivo..."
     },
+    "file-picker": {
+      "button": "Escoger archivo",
+      "no-files": "No se encontraron archivos",
+      "no-folders": "No se encontraron directorios",
+      "title": "Escoge un archivo del repositorio"
+    },
     "generate": {
       "description": "Xerando, por favor espere",
       "title": "Xerando"

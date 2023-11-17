@@ -29,6 +29,12 @@
       "negative": "Aiseolas diúltach...",
       "positive": "Aiseolas dearfach..."
     },
+    "file-picker": {
+      "button": "Roghnaigh Comhad",
+      "no-files": "Níor aimsíodh comhaid ar bith",
+      "no-folders": "Níor aimsíodh aon eolairí",
+      "title": "Roghnaigh comhad ón stór"
+    },
     "generate": {
       "description": "Giniúint, fan go fóill",
       "title": "Giniúint"

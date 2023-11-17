@@ -29,6 +29,12 @@
       "negative": "Negativ feedback...",
       "positive": "Positiv feedback..."
     },
+    "file-picker": {
+      "button": "Välj fil",
+      "no-files": "Inga filer hittades",
+      "no-folders": "Inga kataloger hittades",
+      "title": "Välj en fil från databasen"
+    },
     "generate": {
       "description": "Generera, vänta",
       "title": "Generera"

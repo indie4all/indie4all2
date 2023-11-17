@@ -29,6 +29,12 @@
       "negative": "Negative feedback...",
       "positive": "Positive feedback..."
     },
+    "file-picker": {
+      "button": "Choose File",
+      "no-files": "No files found",
+      "no-folders": "No directories found",
+      "title": "Choose a file from the repository"
+    },
     "generate": {
       "description": "Generating, please wait",
       "title": "Generating"

@@ -29,6 +29,12 @@
       "negative": "Negativní zpětná vazba...",
       "positive": "Pozitivní zpětná vazba..."
     },
+    "file-picker": {
+      "button": "Vybrat soubor",
+      "no-files": "Nebyly nalezeny žádné soubory",
+      "no-folders": "Nebyly nalezeny žádné adresáře",
+      "title": "Vyberte soubor z úložiště"
+    },
     "generate": {
       "description": "Generuji, čekejte prosím",
       "title": "Generující"

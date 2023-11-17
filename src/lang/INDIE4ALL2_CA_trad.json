@@ -29,6 +29,12 @@
       "negative": "Retroacció negativa...",
       "positive": "Retroacció positiva..."
     },
+    "file-picker": {
+      "button": "Escollir arxiu",
+      "no-files": "No es van trobar arxius",
+      "no-folders": "No es van trobar directoris",
+      "title": "Escull un arxiu del repositori"
+    },
     "generate": {
       "description": "Es genera. Espera",
       "title": "S'està generant"

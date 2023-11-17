@@ -29,6 +29,12 @@
       "negative": "Negatív visszajelzés...",
       "positive": "Pozitív visszajelzés..."
     },
+    "file-picker": {
+      "button": "Válassza a Fájl lehetőséget",
+      "no-files": "Nem található fájl",
+      "no-folders": "Nem található könyvtár",
+      "title": "Válasszon egy fájlt az adattárból"
+    },
     "generate": {
       "description": "Generálás, kérjük, várjon",
       "title": "Generáló"

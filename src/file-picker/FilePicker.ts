@@ -81,7 +81,9 @@ export default class FilePicker {
 
     async draw(page: number = 0, options: FilePickerDrawOptions = { files: true, folders: true, pages: true, breadcrumbs: true }) {
         const folderId = this.path[this.path.length - 1].id;
-        const response = await fetch(this.repoURL + `/${folderId}?page=${page}`);
+        const headers = new Headers();
+        headers.append("Accept", "application/json");
+        const response = await fetch(this.repoURL + `/${folderId}?page=${page}`, { headers });
         if (response.status == 401) {
             // The token has expired, hide FilePicker and notify the user
             $('#modal-file-picker').hide();

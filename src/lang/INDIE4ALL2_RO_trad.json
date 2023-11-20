@@ -33,7 +33,8 @@
       "button": "Alegeți fișierul",
       "no-files": "Nu s-au găsit fișiere",
       "no-folders": "Nu s-au găsit directoare",
-      "title": "Alegeți un fișier din depozit"
+      "title": "Alegeți un fișier din depozit",
+      "unauthorized": "Nu sunteți autorizat să accesați depozitul de fișiere"
     },
     "generate": {
       "description": "Generarea, vă rugăm să așteptați",

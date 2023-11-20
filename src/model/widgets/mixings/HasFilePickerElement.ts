@@ -12,7 +12,7 @@ export default function HasFilePickerElement<TBase extends abstract new (...args
             if (Config.getMediaResourcesURL()) {
                 const $parent = $input.parent();
                 const $sibling = $input.prev();
-                const text = I18n.getInstance().translate("common.file-picker.button");
+                const text = I18n.getInstance().value("common.file-picker.button");
                 // Wrap the input in a button-prepend structure
                 const $wrapper = $(`<div class="input-group">
                   <div class="input-group-prepend">

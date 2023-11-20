@@ -33,7 +33,8 @@
       "button": "Valitse Tiedosto",
       "no-files": "Tiedostoja ei löytynyt",
       "no-folders": "Hakemistoja ei löytynyt",
-      "title": "Valitse tiedosto arkistosta"
+      "title": "Valitse tiedosto arkistosta",
+      "unauthorized": "Sinulla ei ole oikeutta käyttää tiedostovarastoa"
     },
     "generate": {
       "description": "Luodaan, odota",

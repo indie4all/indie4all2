@@ -33,7 +33,8 @@
       "button": "Izberite Datoteka",
       "no-files": "Ni najdenih datotek",
       "no-folders": "Ni najdenih imenikov",
-      "title": "Izberite datoteko iz skladišča"
+      "title": "Izberite datoteko iz skladišča",
+      "unauthorized": "Niste pooblaščeni za dostop do skladišča datotek"
     },
     "generate": {
       "description": "Generiranje, prosim počakajte",

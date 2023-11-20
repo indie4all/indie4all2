@@ -33,7 +33,8 @@
       "button": "Válassza a Fájl lehetőséget",
       "no-files": "Nem található fájl",
       "no-folders": "Nem található könyvtár",
-      "title": "Válasszon egy fájlt az adattárból"
+      "title": "Válasszon egy fájlt az adattárból",
+      "unauthorized": "Nem jogosult hozzáférni a fájltárhoz"
     },
     "generate": {
       "description": "Generálás, kérjük, várjon",

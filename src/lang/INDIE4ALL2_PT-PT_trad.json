@@ -33,7 +33,8 @@
       "button": "Escolher arquivo",
       "no-files": "Nenhum arquivo encontrado",
       "no-folders": "Nenhum diretório encontrado",
-      "title": "Escolha um arquivo do repositório"
+      "title": "Escolha um arquivo do repositório",
+      "unauthorized": "Você não está autorizado a acessar o repositório de arquivos"
     },
     "generate": {
       "description": "Gerando, por favor aguarde",

@@ -33,7 +33,8 @@
       "button": "Kies Bestand",
       "no-files": "Geen bestanden gevonden",
       "no-folders": "Geen directory's gevonden",
-      "title": "Kies een bestand uit de opslagplaats"
+      "title": "Kies een bestand uit de opslagplaats",
+      "unauthorized": "U bent niet geautoriseerd om toegang te krijgen tot de bestandsopslagplaats"
     },
     "generate": {
       "description": "Genereren, even geduld aub",

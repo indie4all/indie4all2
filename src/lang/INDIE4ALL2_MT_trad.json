@@ -33,7 +33,8 @@
       "button": "Agħżel il-Fajl",
       "no-files": "Ma nstabu l-ebda fajls",
       "no-folders": "Ma nstabu l-ebda direttorji",
-      "title": "Agħżel fajl mir-repożitorju"
+      "title": "Agħżel fajl mir-repożitorju",
+      "unauthorized": "M'intix awtorizzat taċċessa r-repożitorju tal-fajls"
     },
     "generate": {
       "description": "Meta tiġġenera, jekk jogħġbok stenna",

@@ -33,7 +33,8 @@
       "button": "Choisir un fichier",
       "no-files": "Aucun fichier n’a été trouvé",
       "no-folders": "Aucun répertoire n’a été trouvé",
-      "title": "Choisir un fichier dans le référentiel"
+      "title": "Choisir un fichier dans le référentiel",
+      "unauthorized": "Vous n’êtes pas autorisé à accéder au référentiel de fichiers"
     },
     "generate": {
       "description": "Générer, veuillez patienter",

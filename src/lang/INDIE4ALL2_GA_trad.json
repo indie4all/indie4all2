@@ -33,7 +33,8 @@
       "button": "Roghnaigh Comhad",
       "no-files": "Níor aimsíodh comhaid ar bith",
       "no-folders": "Níor aimsíodh aon eolairí",
-      "title": "Roghnaigh comhad ón stór"
+      "title": "Roghnaigh comhad ón stór",
+      "unauthorized": "Níl tú údaraithe chun rochtain a fháil ar an stór comhad"
     },
     "generate": {
       "description": "Giniúint, fan go fóill",

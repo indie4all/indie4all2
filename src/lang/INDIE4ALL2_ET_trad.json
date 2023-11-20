@@ -33,7 +33,8 @@
       "button": "Valige Fail",
       "no-files": "Faile ei leitud",
       "no-folders": "Katalooge ei leitud",
-      "title": "Valige hoidlast fail"
+      "title": "Valige hoidlast fail",
+      "unauthorized": "Teil pole failihoidlale juurdepääsu õigust"
     },
     "generate": {
       "description": "Genereerimine, palun oodake",

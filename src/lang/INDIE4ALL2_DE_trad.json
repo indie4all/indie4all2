@@ -33,7 +33,8 @@
       "button": "Datei auswählen",
       "no-files": "Keine Dateien gefunden",
       "no-folders": "Keine Verzeichnisse gefunden",
-      "title": "Wählen Sie eine Datei aus dem Repository aus"
+      "title": "Wählen Sie eine Datei aus dem Repository aus",
+      "unauthorized": "Sie sind nicht berechtigt, auf das Datei-Repository zuzugreifen"
     },
     "generate": {
       "description": "Generieren, bitte warten",

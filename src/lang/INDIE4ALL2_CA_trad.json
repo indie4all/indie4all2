@@ -33,7 +33,8 @@
       "button": "Escollir arxiu",
       "no-files": "No es van trobar arxius",
       "no-folders": "No es van trobar directoris",
-      "title": "Escull un arxiu del repositori"
+      "title": "Escull un arxiu del repositori",
+      "unauthorized": "No estàs autoritzat per accedir al repositori d'arxius"
     },
     "generate": {
       "description": "Es genera. Espera",

@@ -33,7 +33,8 @@
       "button": "Pasirinkite failą",
       "no-files": "Failų nerasta",
       "no-folders": "Katalogų nerasta",
-      "title": "Pasirinkite failą iš saugyklos"
+      "title": "Pasirinkite failą iš saugyklos",
+      "unauthorized": "Jūs neturite teisės pasiekti failų saugyklos"
     },
     "generate": {
       "description": "Generuojate, palaukite",

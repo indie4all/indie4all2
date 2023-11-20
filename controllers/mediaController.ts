@@ -2,7 +2,7 @@ import { LoggerModes, JetLogger } from 'jet-logger';
 const logger = JetLogger(LoggerModes.Console);
 import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 const TOKEN = "";
 
@@ -42,6 +42,19 @@ const getBytes = async (token: string, mediaFileId: string, thumbnail = false) =
     return response;
 }
 
+/**
+ * Handle connection errors
+ * @param res ExpressJS response object 
+ * @param error Exception error
+ */
+const handleConnectionError = function (res: Response, error: Error) {
+    logger.err(error);
+    const axiosErr = error as AxiosError;
+    axiosErr.response ?
+        res.status(axiosErr.response.status).json({ error: axiosErr.code }) :
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: "Internal server error" });
+}
+
 export default {
     get: async (req: Request, res: Response) => {
         const PAGE_SIZE = 12;
@@ -52,8 +65,12 @@ export default {
             res.status(StatusCodes.BAD_REQUEST).json({ error: "Invalid folder id" });
             return;
         }
-        const content = await getFilesAndFolders(TOKEN, folderId, PAGE_SIZE, currentPage);
-        res.json(content);
+        try {
+            const content = await getFilesAndFolders(TOKEN, folderId, PAGE_SIZE, currentPage);
+            res.json(content);
+        } catch (error) {
+            handleConnectionError(res, error);
+        }
     },
     thumbnail: async (req: Request, res: Response) => {
         let fileId = req.params.fileId;
@@ -67,8 +84,7 @@ export default {
             res.writeHead(200, response.headers)
             res.end(response.data, 'binary');
         } catch (error) {
-            logger.err(error);
-            res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: "Internal server error" });
+            handleConnectionError(res, error);
         }
     },
     content: async (req: Request, res: Response) => {
@@ -83,8 +99,7 @@ export default {
             res.writeHead(200, response.headers)
             res.end(response.data, 'binary');
         } catch (error) {
-            logger.err(error);
-            res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: "Internal server error" });
+            handleConnectionError(res, error);
         }
     }
 }

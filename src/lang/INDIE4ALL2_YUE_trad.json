@@ -33,7 +33,8 @@
       "button": "選擇文件",
       "no-files": "未搵到文件",
       "no-folders": "未搵到目錄",
-      "title": "從存儲庫中選擇一個文件"
+      "title": "從存儲庫中選擇一個文件",
+      "unauthorized": "你無權訪問文件存儲庫"
     },
     "generate": {
       "description": "正在生成，請稍候",

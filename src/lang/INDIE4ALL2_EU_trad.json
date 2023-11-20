@@ -33,7 +33,8 @@
       "button": "Artxiboa aukeratu",
       "no-files": "Ez zen artxiborik aurkitu",
       "no-folders": "Ez zen direktoriorik aurkitu",
-      "title": "Aukeratu gordailuko artxibo bat"
+      "title": "Aukeratu gordailuko artxibo bat",
+      "unauthorized": "Ez duzu baimenik artxiboen gordailura sartzeko"
     },
     "generate": {
       "description": "Sortzen, mesedez, itxaron",

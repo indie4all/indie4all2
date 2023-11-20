@@ -33,7 +33,8 @@
       "button": "Odabir datoteke",
       "no-files": "Nisu pronađene datoteke",
       "no-folders": "Nisu pronađeni direktoriji",
-      "title": "Odaberite datoteku iz spremišta"
+      "title": "Odaberite datoteku iz spremišta",
+      "unauthorized": "Niste ovlašteni pristupiti spremištu datoteka"
     },
     "generate": {
       "description": "Generiranje, pričekajte",

@@ -33,7 +33,8 @@
       "button": "Vybrat soubor",
       "no-files": "Nebyly nalezeny žádné soubory",
       "no-folders": "Nebyly nalezeny žádné adresáře",
-      "title": "Vyberte soubor z úložiště"
+      "title": "Vyberte soubor z úložiště",
+      "unauthorized": "Nemáte oprávnění k přístupu k úložišti souborů."
     },
     "generate": {
       "description": "Generuji, čekejte prosím",

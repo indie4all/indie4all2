@@ -33,7 +33,8 @@
       "button": "Wybierz Plik",
       "no-files": "Nie znaleziono plików",
       "no-folders": "Nie znaleziono katalogów",
-      "title": "Wybierz plik z repozytorium"
+      "title": "Wybierz plik z repozytorium",
+      "unauthorized": "Nie masz uprawnień dostępu do repozytorium plików"
     },
     "generate": {
       "description": "Generowanie, proszę czekać",

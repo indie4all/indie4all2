@@ -33,7 +33,8 @@
       "button": "Velg Fil",
       "no-files": "Fant ingen filer",
       "no-folders": "Ingen kataloger funnet",
-      "title": "Velg en fil fra depotet"
+      "title": "Velg en fil fra depotet",
+      "unauthorized": "Du er ikke autorisert til å få tilgang til fillageret"
     },
     "generate": {
       "description": "Genererer, vennligst vent",

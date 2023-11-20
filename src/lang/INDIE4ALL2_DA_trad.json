@@ -33,7 +33,8 @@
       "button": "Vælg Filer",
       "no-files": "Ingen filer fundet",
       "no-folders": "Ingen mapper fundet",
-      "title": "Vælg en fil fra lageret"
+      "title": "Vælg en fil fra lageret",
+      "unauthorized": "Du har ikke tilladelse til at få adgang til fillageret"
     },
     "generate": {
       "description": "Generer, vent venligst",

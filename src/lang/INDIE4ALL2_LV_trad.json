@@ -33,7 +33,8 @@
       "button": "Izvēlieties Fails",
       "no-files": "Nav atrasts neviens fails",
       "no-folders": "Nav atrasts neviens katalogs",
-      "title": "Izvēlieties failu no repozitorija"
+      "title": "Izvēlieties failu no repozitorija",
+      "unauthorized": "Jūs neesat pilnvarots piekļūt failu krātuvei"
     },
     "generate": {
       "description": "Ģenerējot, lūdzu, pagaidiet",

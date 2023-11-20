@@ -1,4 +1,5 @@
 import I18n from "../I18n";
+import Utils from "../Utils";
 import "./styles.scss";
 import "./types"
 
@@ -32,7 +33,7 @@ export default class FilePicker {
     async renderFiles(files: FilePickerFile[]) {
         const $content = $('#modal-file-picker').find('.file-picker-files');
         if (!files.length) {
-            const text = I18n.getInstance().translate("common.file-picker.no-files");
+            const text = I18n.getInstance().value("common.file-picker.no-files");
             $content.html(`<li class="no-entries">${text}</div>`);
             return;
         }
@@ -58,7 +59,7 @@ export default class FilePicker {
     async renderFolders(folders: FilePickerDirectory[]) {
         const $content = $('#modal-file-picker').find('.file-picker-folders');
         if (!folders.length) {
-            const text = I18n.getInstance().translate("common.file-picker.no-folders");
+            const text = I18n.getInstance().value("common.file-picker.no-folders");
             $content.html(`<li class="no-entries">${text}</div>`);
             return;
         }
@@ -80,11 +81,18 @@ export default class FilePicker {
 
     async draw(page: number = 0, options: FilePickerDrawOptions = { files: true, folders: true, pages: true, breadcrumbs: true }) {
         const folderId = this.path[this.path.length - 1].id;
-        const response = await fetch(this.repoURL + `/${folderId}?page=${page}`).then(res => res.json()) as FilePickerResponse;
+        const response = await fetch(this.repoURL + `/${folderId}?page=${page}`);
+        if (response.status == 401) {
+            // The token has expired, hide FilePicker and notify the user
+            $('#modal-file-picker').hide();
+            Utils.notifyError(I18n.getInstance().value("common.file-picker.unauthorized"));
+            return;
+        }
+        const content = await response.json() as FilePickerResponse;
         options?.breadcrumbs && this.renderBreadcrumbs();
-        options?.files && this.renderFiles(response.mediaFiles.data);
-        options?.folders && this.renderFolders(response.folders.data);
-        options?.pages && this.renderFilePagination(response.mediaFiles.currentPage, response.mediaFiles.totalPages);
+        options?.files && this.renderFiles(content.mediaFiles.data);
+        options?.folders && this.renderFolders(content.folders.data);
+        options?.pages && this.renderFilePagination(content.mediaFiles.currentPage, content.mediaFiles.totalPages);
         $('#modal-file-picker').find('.btn-submit').prop('disabled', true);
     }
 

@@ -33,7 +33,8 @@
       "button": "Escoger archivo",
       "no-files": "No se encontraron archivos",
       "no-folders": "No se encontraron directorios",
-      "title": "Escoge un archivo del repositorio"
+      "title": "Escoge un archivo del repositorio",
+      "unauthorized": "Non estás autorizado para acceder ao repositorio de arquivos"
     },
     "generate": {
       "description": "Xerando, por favor espere",

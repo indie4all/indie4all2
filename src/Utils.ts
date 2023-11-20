@@ -123,6 +123,10 @@ export default class Utils {
         return !!url.match(p);
     }
 
+    static isRelativeURL(url: string): boolean {
+        return url.startsWith("/");
+    }
+
     static isUrlWithinDomains(url: string, allowedDomains: string[]): boolean {
         if (!this.isURL(url))
             return false;
@@ -130,7 +134,7 @@ export default class Utils {
     }
 
     static isValidResource(url: string): boolean {
-        return this.isUrlWithinDomains(url, Config.getAllowedResourceOrigins());
+        return this.isRelativeURL(url) || this.isUrlWithinDomains(url, Config.getAllowedResourceOrigins());
     }
 
     static isValidVideoResource(url: string): boolean {
@@ -247,20 +251,20 @@ export default class Utils {
         }
     }
 
-    static checkIfDuplicateValueInObject(values: any[], ...args) : boolean {
+    static checkIfDuplicateValueInObject(values: any[], ...args): boolean {
 
-        const valueArr = values.map(function(item){ 
+        const valueArr = values.map(function (item) {
 
             let count = 0;
             let value = item;
-            while(args[count] && value[args[count]]) {
+            while (args[count] && value[args[count]]) {
                 value = value[args[count]];
                 count++;
             }
             return value;
         });
-        return valueArr.some(function(item, idx){ 
-            return valueArr.indexOf(item) != idx 
+        return valueArr.some(function (item, idx) {
+            return valueArr.indexOf(item) != idx
         });
     }
 }

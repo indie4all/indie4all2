@@ -8967,6 +8967,7 @@ var DragDropTouch;
             let intervalUpdateTimer;
             let intervalWarnUser;
             let totalScore = 0;
+            let totalCorrect = 0;
 
             // Wait until the gamification js teacher file is loaded to trigger the event
             setTimeout(() => $widget.trigger('gamificate-roulette-start-teacher', [initialQuestions]), 1000);
@@ -8990,8 +8991,10 @@ var DragDropTouch;
                     // Elapsed time
                     if (current > time) {
                         clearInterval(intervalUpdateTimer);
+                        intervalUpdateTimer = null;
                         $timer.html(i18n('roulette-timer', {time: `<time>00:00:00</time>`, interpolation: { escapeValue: false }}));
-                        $widget.find('.roulette-info').text(i18n("roulette-finished"));
+                        let info = i18n("roulette-finished") + " - " + i18n("TextNumberCorrect", {num: totalCorrect});
+                        $widget.find('.roulette-info').text(info);
                         $widget.addClass("finished");
                         $widget.find('.roulette-spin').prop('disabled', true);
                         $widget.find('.btn-check-answer').prop('disabled', true);
@@ -9005,6 +9008,7 @@ var DragDropTouch;
                     const current = Date.now();
                     if (current > time) {
                         clearInterval(intervalWarnUser);
+                        intervalWarnUser = null;
                         return;
                     }
                     const remaining = new Date(time - current).toISOString().substring(11, 19);
@@ -9029,10 +9033,20 @@ var DragDropTouch;
                 const $spinner = $(this);
                 $spinner.prop('disabled', true);
                 if (!selectedQuestions.length) {
-                    $widget.find('.roulette-info').text(i18n("roulette-finished"));
+                    let info = i18n("roulette-finished") + " - " + i18n("TextNumberCorrect", {num: totalCorrect});
+                    $widget.find('.roulette-info').text(info);
                     $widget.addClass("finished");
                     $widget.find('.btn-check-answer').prop('disabled', true);
                     $widget.find('.roulette-spin').prop('disabled', true);
+                    // The game has finished, stop the intervals
+                    if (intervalUpdateTimer) {
+                        clearInterval(intervalUpdateTimer);
+                        intervalUpdateTimer = null;
+                    }
+                    if (intervalWarnUser) {
+                        clearInterval(intervalWarnUser);
+                        intervalWarnUser = null;
+                    }
                     return;
                 }
 
@@ -9116,11 +9130,20 @@ var DragDropTouch;
                 $circle[0].style.setProperty('--final', "0deg");
                 selectedQuestions = generateSelectedQuestions(content.categories, content.lifes);
                 $lifes.each(function (index) { if (index < selectedQuestions.length) $(this).removeClass('d-none') });
+                // Reset the total counts
+                totalScore = 0;
+                totalCorrect = 0;
                 // Reset the timer
                 timerStarted = false;
                 $widget.find('.roulette-timer').addClass('d-none');
-                if (intervalUpdateTimer) clearInterval(intervalUpdateTimer);
-                if (intervalWarnUser) clearInterval(intervalWarnUser);
+                if (intervalUpdateTimer) {
+                    clearInterval(intervalUpdateTimer);
+                    intervalUpdateTimer = null;
+                }
+                if (intervalWarnUser) {
+                    clearInterval(intervalWarnUser);
+                    intervalWarnUser = null;
+                }
             })
 
             // Check the given answer
@@ -9149,6 +9172,7 @@ var DragDropTouch;
                     correct = score = $correctAnswers.length > 0 ? true : false;
                 }
                 totalScore += score;
+                totalCorrect += correct ? 1 : 0;
                 // This is the last question: notify gamification results
                 if (!selectedQuestions.length)
                     $(this).trigger('gamificate', [totalScore == content.lifes, totalScore/content.lifes]);

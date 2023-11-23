@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Sisäkkäiset korostukset eivät ole sallittuja.",
       "data": {
         "empty": "Korostettu ikkuna on tyhjä. Sinun on lisättävä vähintään yksi yksinkertainen elementti."
       },

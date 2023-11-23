@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Zagnieżdżone wyróżnienia są niedozwolone.",
       "data": {
         "empty": "Podświetlone okno jest puste. Musisz dodać co najmniej jeden prosty element."
       },

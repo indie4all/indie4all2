@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Non se permiten elementos destacados anidados.",
       "data": {
         "empty": "A ventá destacada está baleira. Debe agregar polo menos un elemento simple."
       },

@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Les surbrillances imbriquées ne sont pas autorisées.",
       "data": {
         "empty": "La fenêtre en surbrillance est vide. Vous devez ajouter au moins un élément simple."
       },

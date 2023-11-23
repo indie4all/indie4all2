@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Verschachtelte Hervorhebungen sind nicht zulässig.",
       "data": {
         "empty": "Das markierte Fenster ist leer. Sie müssen mindestens ein einfaches Element hinzufügen."
       },

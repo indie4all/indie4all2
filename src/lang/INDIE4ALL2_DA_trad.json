@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Indlejrede højlys er ikke tilladt.",
       "data": {
         "empty": "Det fremhævede vindue er tomt. Du skal tilføje mindst et enkelt element."
       },

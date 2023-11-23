@@ -183,10 +183,20 @@ export default class Utils {
         return await fetch(resourceBackend, { method: 'POST', headers, body: blob, redirect: 'follow' }).then(response => response.text());
     }
 
-    static findAllElements(model: Model): ModelElement[] {
+    // Check if the element is a model or a model element
+    private static isModel(element: Model | ModelElement): element is Model {
+        return (element as Model).sections !== undefined;
+    }
 
-        let result: ModelElement[] = [...model.sections];
-        let children: ModelElement[] = [...model.sections];
+    /**
+     * Get all the descendants of the model or a given model element
+     * @param element Model or model element to get the descendants from
+     * @returns list of ModelElement children
+     */
+    static findAllElements(element: Model | ModelElement): ModelElement[] {
+        let result: ModelElement[] = Utils.isModel(element) ? [...element.sections] : [];
+        let children: ModelElement[] = Utils.isModel(element) ? [...element.sections] : [element];
+
         do {
             children = children
                 .filter(elem => (<typeof ModelElement>elem.constructor).hasChildren())
@@ -196,8 +206,14 @@ export default class Utils {
         return result;
     }
 
-    static findElementsOfType<T extends ModelElement>(model: Model, typeT: new () => T): T[] {
-        return Utils.findAllElements(model).filter(elem => elem instanceof typeT).map(elem => elem as T);
+    /**
+     * Get all the descendants of the model or a given model element of a given type
+     * @param element Model or model element to get the descendants from
+     * @param typeT Type of the descendants to get
+     * @returns list of TypeT children
+     */
+    static findElementsOfType<T extends ModelElement>(element: Model | ModelElement, typeT: new () => T): T[] {
+        return Utils.findAllElements(element).filter(elem => elem instanceof typeT).map(elem => elem as T);
     }
 
     static findAllObjects(model: any): any[] {

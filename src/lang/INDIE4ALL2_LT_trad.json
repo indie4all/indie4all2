@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Įdėtieji akcentai neleidžiami.",
       "data": {
         "empty": "Paryškintas langas tuščias. Turite pridėti bent vieną paprastą elementą."
       },

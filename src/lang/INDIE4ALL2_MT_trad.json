@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Il-punti ewlenin bejta mhumiex permessi.",
       "data": {
         "empty": "It-tieqa enfasizzata hija vojta. Għandek iżżid mill-inqas element sempliċi wieħed."
       },

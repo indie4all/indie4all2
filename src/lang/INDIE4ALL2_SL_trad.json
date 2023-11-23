@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Ugnezdeni poudarki niso dovoljeni.",
       "data": {
         "empty": "Označeno okno je prazno. Dodati morate vsaj en preprost element."
       },

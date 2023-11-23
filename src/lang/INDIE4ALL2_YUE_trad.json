@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "唔允許嵌套突出顯示。",
       "data": {
         "empty": "突出顯示嘅窗口為空。 必須至少添加一個簡單元素。"
       },

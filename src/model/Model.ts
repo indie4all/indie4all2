@@ -7,7 +7,7 @@ import Section from "./section/Section";
 import WidgetColumnsLayout from "./widgets/WidgetColumnsLayout/WidgetColumnsLayout";
 import WidgetElement from "./widgets/WidgetElement/WidgetElement";
 import WidgetRelatedUnitsContainer from "./widgets/WidgetRelatedUnitsContainer/WidgetRelatedUnitsContainer";
-import WidgetContainerElement from "./widgets/WidgetContainerElement/WidgetContainerElement";
+import WidgetCallout from "./widgets/WidgetCallout/WidgetCallout";
 
 export class Model {
 
@@ -53,7 +53,7 @@ export class Model {
     }
 
     appendObject(modelObject: ModelElement, inPositionElementId: string, parentContainerId: string, parentContainerIndex: number) {
-        const parent : ModelElement = this.findObject(parentContainerId);
+        const parent: ModelElement = this.findObject(parentContainerId);
         const container = parent instanceof WidgetColumnsLayout ? parent.data[parentContainerIndex] : parent.data;
         if (!inPositionElementId) {
             container.push(modelObject);
@@ -139,6 +139,18 @@ export class Model {
             });
         }
 
+        // No callout elements are allowed directly or indirectly inside a callout
+        const calloutElements = Utils.findElementsOfType(this, WidgetCallout);
+        if (calloutElements.length > 0) {
+            calloutElements.forEach(callout => {
+                const calloutChildren = Utils.findElementsOfType(callout, WidgetCallout);
+                if (calloutChildren.length > 0) {
+                    const error = errors.find(error => error.element == callout.id);
+                    if (error) error.keys.push('Callout.calloutInsideCallout');
+                    else errors.push({ element: callout.id, keys: ['Callout.calloutInsideCallout'] });
+                }
+            });
+        }
         // Save the errors  
         this.currentErrors = errors;
         return errors;
@@ -160,9 +172,8 @@ export class Model {
             validationErrors.push("common.name.notUniqueName");
 
         validationErrors = validationErrors.concat(element.validateModel());
-        if (validationErrors.length > 0){
+        if (validationErrors.length > 0) {
             errors.push({ element: element.id, keys: validationErrors });
-            console.log(element.id, validationErrors);
         }
         if ((<typeof ModelElement>element.constructor).hasChildren()) {
             element.data.flat().forEach((elem: WidgetElement) => this.validateElement(elem, errors));

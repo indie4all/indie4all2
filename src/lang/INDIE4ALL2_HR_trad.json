@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Ugniježđena isticanja nisu dopuštena.",
       "data": {
         "empty": "Istaknuti prozor je prazan. Morate dodati barem jedan jednostavan element."
       },

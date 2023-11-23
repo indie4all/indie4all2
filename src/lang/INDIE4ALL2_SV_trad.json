@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Kapslade markeringar är inte tillåtna.",
       "data": {
         "empty": "Det markerade fönstret är tomt. Du måste lägga till minst ett enkelt element."
       },

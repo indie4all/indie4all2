@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Ez da elementu nabarmenik onartzen.",
       "data": {
         "empty": "Nabarmendutako lehioa hutsik dago. Elementu sinple bat gutxienez erantsi behar duzu."
       },

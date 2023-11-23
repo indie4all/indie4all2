@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Vnorené zvýraznenia nie sú povolené.",
       "data": {
         "empty": "Zvýraznené okno je prázdne. Musíte pridať aspoň jeden jednoduchý prvok."
       },

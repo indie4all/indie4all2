@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Ligzdoti izceļojumi nav atļauti.",
       "data": {
         "empty": "Iezīmētais logs ir tukšs. Jums jāpievieno vismaz viens vienkāršs elements."
       },

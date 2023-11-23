@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Nestede uthevinger er ikke tillatt.",
       "data": {
         "empty": "Det uthevede vinduet er tomt. Du må legge til minst ett enkelt element."
       },

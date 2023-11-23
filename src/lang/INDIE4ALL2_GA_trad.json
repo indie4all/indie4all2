@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Ní cheadaítear buaicphointí neadaithe.",
       "data": {
         "empty": "Tá an fhuinneog aibhsithe folamh. Ní mór duit gné shimplí amháin ar a laghad a chur leis."
       },

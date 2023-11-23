@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Geneste markeringen zijn niet toegestaan.",
       "data": {
         "empty": "Het gemarkeerde venster is leeg. U moet ten minste één eenvoudig element toevoegen."
       },

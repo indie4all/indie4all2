@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Evidențierile imbricate nu sunt permise.",
       "data": {
         "empty": "Fereastra evidențiată este goală. Trebuie să adăugați cel puțin un element simplu."
       },

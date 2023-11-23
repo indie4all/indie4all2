@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Le evidenziazioni nidificate non sono consentite.",
       "data": {
         "empty": "La finestra evidenziata è vuota. È necessario aggiungere almeno un elemento semplice."
       },

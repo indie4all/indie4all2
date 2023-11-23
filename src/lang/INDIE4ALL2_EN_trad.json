@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Nested highlights are not allowed.",
       "data": {
         "empty": "The highlighted window is empty. You must add at least one simple element."
       },

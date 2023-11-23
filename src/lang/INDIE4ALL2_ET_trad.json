@@ -218,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Pesastatud esiletõstmine pole lubatud.",
       "data": {
         "empty": "Esiletõstetud aken on tühi. Peate lisama vähemalt ühe lihtsa elemendi."
       },

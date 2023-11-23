@@ -300,6 +300,7 @@
             }
         },
         "Callout": {
+            "calloutInsideCallout": "No se permiten elementos destacados anidados.",
             "data": {
                 "empty": "La ventana destacada está vacía. Debe agregar al menos un elemento simple."
             },

@@ -29,6 +29,13 @@
       "negative": "Negative tilbakemeldinger...",
       "positive": "Positive tilbakemeldinger..."
     },
+    "file-picker": {
+      "button": "Velg Fil",
+      "no-files": "Fant ingen filer",
+      "no-folders": "Ingen kataloger funnet",
+      "title": "Velg en fil fra depotet",
+      "unauthorized": "Du er ikke autorisert til å få tilgang til fillageret"
+    },
     "generate": {
       "description": "Genererer, vennligst vent",
       "title": "Generere"
@@ -211,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Nestede uthevinger er ikke tillatt.",
       "data": {
         "empty": "Det uthevede vinduet er tomt. Du må legge til minst ett enkelt element."
       },

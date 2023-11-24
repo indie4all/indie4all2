@@ -3,8 +3,9 @@ import Utils from "../../../Utils";
 import "./styles.scss";
 import { FormEditData, InputWidgetCorrectWordItemData } from "../../../types";
 import WidgetCorrectWordItem from "./WidgetCorrectWordItem";
+import HasFilePickerElement from "../mixings/HasFilePickerElement";
 
-export default class WidgetRemoteCorrectWordItem extends WidgetCorrectWordItem {
+export default class WidgetRemoteCorrectWordItem extends HasFilePickerElement(WidgetCorrectWordItem) {
 
     static async create(values?: InputWidgetCorrectWordItemData): Promise<WidgetRemoteCorrectWordItem> {
         if (values?.data?.blob && !values?.data?.image) {
@@ -56,6 +57,7 @@ export default class WidgetRemoteCorrectWordItem extends WidgetCorrectWordItem {
                 $sectionPreview.toggleClass('d-none', false);
             }
         });
+        this.initFilePicker($iImg);
     }
 
     updateModelFromForm(form: any): void {

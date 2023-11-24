@@ -29,6 +29,13 @@
       "negative": "Negatiivne tagasiside...",
       "positive": "Positiivne tagasiside..."
     },
+    "file-picker": {
+      "button": "Valige Fail",
+      "no-files": "Faile ei leitud",
+      "no-folders": "Katalooge ei leitud",
+      "title": "Valige hoidlast fail",
+      "unauthorized": "Teil pole failihoidlale juurdepääsu õigust"
+    },
     "generate": {
       "description": "Genereerimine, palun oodake",
       "title": "Teeniva"
@@ -211,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Pesastatud esiletõstmine pole lubatud.",
       "data": {
         "empty": "Esiletõstetud aken on tühi. Peate lisama vähemalt ühe lihtsa elemendi."
       },

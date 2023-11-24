@@ -12,6 +12,7 @@ import previewGeneratedTemplate from "./views/preview-generated.hbs"
 import netlifyUrlTemplate from "./views/netlify-url.hbs";
 import ModelManager from "./model/ModelManager";
 import "./styles/question-bank-modal.scss";
+import FilePicker from "./file-picker/FilePicker";
 
 export default class GUI {
 
@@ -45,6 +46,7 @@ export default class GUI {
         this.container = container;
         this.palette = palette;
         this.i18n = I18n.getInstance();
+        FilePicker.container = container; // Set the file-picker's container to append the modal
         this.dragDropHandler = new DragDropHandler(palette, container, author.getModel());
         $(this.palette).append(categories.map(cat => cat.render()).join(''));
         // Initialize the widgets palette

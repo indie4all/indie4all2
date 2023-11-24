@@ -29,6 +29,13 @@
       "negative": "Negativne povratne informacije...",
       "positive": "Pozitivne povratne informacije..."
     },
+    "file-picker": {
+      "button": "Odabir datoteke",
+      "no-files": "Nisu pronađene datoteke",
+      "no-folders": "Nisu pronađeni direktoriji",
+      "title": "Odaberite datoteku iz spremišta",
+      "unauthorized": "Niste ovlašteni pristupiti spremištu datoteka"
+    },
     "generate": {
       "description": "Generiranje, pričekajte",
       "title": "Generiranje"
@@ -211,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Ugniježđena isticanja nisu dopuštena.",
       "data": {
         "empty": "Istaknuti prozor je prazan. Morate dodati barem jedan jednostavan element."
       },

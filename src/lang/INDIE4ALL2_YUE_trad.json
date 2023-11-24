@@ -29,6 +29,13 @@
       "negative": "負面反饋...",
       "positive": "正面反饋..."
     },
+    "file-picker": {
+      "button": "選擇文件",
+      "no-files": "未搵到文件",
+      "no-folders": "未搵到目錄",
+      "title": "從存儲庫中選擇一個文件",
+      "unauthorized": "你無權訪問文件存儲庫"
+    },
     "generate": {
       "description": "正在生成，請稍候",
       "title": "生成"
@@ -211,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "唔允許嵌套突出顯示。",
       "data": {
         "empty": "突出顯示嘅窗口為空。 必須至少添加一個簡單元素。"
       },

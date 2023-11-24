@@ -29,6 +29,13 @@
       "negative": "Negatívna spätná väzba...",
       "positive": "Pozitívna spätná väzba..."
     },
+    "file-picker": {
+      "button": "Vyberte položku Súbor",
+      "no-files": "Nenašli sa žiadne súbory",
+      "no-folders": "Nenašli sa žiadne adresáre",
+      "title": "Vyberte súbor z odkladacieho priestoru",
+      "unauthorized": "Nemáte oprávnenie na prístup k úložisku súborov"
+    },
     "generate": {
       "description": "Generovanie, počkajte, prosím",
       "title": "Generovanie"
@@ -211,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Vnorené zvýraznenia nie sú povolené.",
       "data": {
         "empty": "Zvýraznené okno je prázdne. Musíte pridať aspoň jeden jednoduchý prvok."
       },

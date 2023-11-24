@@ -29,6 +29,13 @@
       "negative": "Feedback negatiboa...",
       "positive": "Feedback positiboa..."
     },
+    "file-picker": {
+      "button": "Artxiboa aukeratu",
+      "no-files": "Ez zen artxiborik aurkitu",
+      "no-folders": "Ez zen direktoriorik aurkitu",
+      "title": "Aukeratu gordailuko artxibo bat",
+      "unauthorized": "Ez duzu baimenik artxiboen gordailura sartzeko"
+    },
     "generate": {
       "description": "Sortzen, mesedez, itxaron",
       "title": "Sortzen"
@@ -211,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Ez da elementu nabarmenik onartzen.",
       "data": {
         "empty": "Nabarmendutako lehioa hutsik dago. Elementu sinple bat gutxienez erantsi behar duzu."
       },

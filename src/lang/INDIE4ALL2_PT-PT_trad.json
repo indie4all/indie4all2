@@ -29,6 +29,13 @@
       "negative": "Feedback negativo...",
       "positive": "Feedback positivo..."
     },
+    "file-picker": {
+      "button": "Escolher arquivo",
+      "no-files": "Nenhum arquivo encontrado",
+      "no-folders": "Nenhum diretório encontrado",
+      "title": "Escolha um arquivo do repositório",
+      "unauthorized": "Você não está autorizado a acessar o repositório de arquivos"
+    },
     "generate": {
       "description": "Gerando, por favor aguarde",
       "title": "Geração"
@@ -211,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Destaques aninhados não são permitidos.",
       "data": {
         "empty": "A janela realçada está vazia. Você deve adicionar pelo menos um elemento simples."
       },

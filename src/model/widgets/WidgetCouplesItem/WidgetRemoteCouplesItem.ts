@@ -3,8 +3,9 @@ import Utils from "../../../Utils";
 import "./styles.scss";
 import { FormEditData, InputWidgetCouplesItemData } from "../../../types";
 import WidgetCouplesItem from "./WidgetCouplesItem";
+import HasFilePickerElement from "../mixings/HasFilePickerElement";
 
-export default class WidgetRemoteCouplesItem extends WidgetCouplesItem {
+export default class WidgetRemoteCouplesItem extends HasFilePickerElement(WidgetCouplesItem) {
 
     static async create(values?: InputWidgetCouplesItemData): Promise<WidgetRemoteCouplesItem> {
         for (let idx in [0, 1]) {
@@ -54,11 +55,14 @@ export default class WidgetRemoteCouplesItem extends WidgetCouplesItem {
         let self = this;
         let $form = $('#f-' + this.id);
         let $editors = $form.find('.texteditor');
+        let $imgs = $form.find('.img-input');
 
         $('.img-preview').each(function (idx) {
             const $sectionPreview = $(this).closest('.form-group');
             $sectionPreview.toggleClass('d-none', !self.data.couples[idx].image);
         });
+
+        $imgs.each(function () { self.initFilePicker($(this)); });
 
         $editors.each(function (idx) {
             self.initTextEditor(self.data.couples[idx].text, `#f-${self.id} #text-${idx}-${self.id}`);

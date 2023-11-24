@@ -43,6 +43,13 @@
             "title": "Descargando",
             "description": "Descargando unidad, por favor espere"
         },
+        "file-picker": {
+            "title": "Escoge un archivo del repositorio",
+            "button": "Escoger archivo",
+            "no-files": "No se encontraron archivos",
+            "no-folders": "No se encontraron directorios",
+            "unauthorized": "No estás autorizado para acceder al repositorio de archivos"
+        },
         "generate": {
             "title": "Generando",
             "description": "Generando, por favor espere"
@@ -293,6 +300,7 @@
             }
         },
         "Callout": {
+            "calloutInsideCallout": "No se permiten elementos destacados anidados.",
             "data": {
                 "empty": "La ventana destacada está vacía. Debe agregar al menos un elemento simple."
             },

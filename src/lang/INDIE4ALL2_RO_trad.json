@@ -29,6 +29,13 @@
       "negative": "Feedback negativ...",
       "positive": "Feedback pozitiv..."
     },
+    "file-picker": {
+      "button": "Alegeți fișierul",
+      "no-files": "Nu s-au găsit fișiere",
+      "no-folders": "Nu s-au găsit directoare",
+      "title": "Alegeți un fișier din depozit",
+      "unauthorized": "Nu sunteți autorizat să accesați depozitul de fișiere"
+    },
     "generate": {
       "description": "Generarea, vă rugăm să așteptați",
       "title": "Generatoare"
@@ -211,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Evidențierile imbricate nu sunt permise.",
       "data": {
         "empty": "Fereastra evidențiată este goală. Trebuie să adăugați cel puțin un element simplu."
       },

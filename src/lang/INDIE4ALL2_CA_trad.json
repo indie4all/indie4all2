@@ -29,6 +29,13 @@
       "negative": "Retroacció negativa...",
       "positive": "Retroacció positiva..."
     },
+    "file-picker": {
+      "button": "Escollir arxiu",
+      "no-files": "No es van trobar arxius",
+      "no-folders": "No es van trobar directoris",
+      "title": "Escull un arxiu del repositori",
+      "unauthorized": "No estàs autoritzat per accedir al repositori d'arxius"
+    },
     "generate": {
       "description": "Es genera. Espera",
       "title": "S'està generant"
@@ -211,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "No es permeten elements destacats.",
       "data": {
         "empty": "La finestra destacada està buida. Hi has d'incloure almenys un element simple"
       },

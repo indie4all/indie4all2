@@ -1,9 +1,10 @@
 import './styles.scss';
 import { FormEditData, InputWidgetPiecesElementData } from '../../../types';
-import WidgetAnimationDelegate from './WidgetAnimation';
+import WidgetAnimation from './WidgetAnimation';
 import Utils from '../../../Utils';
+import HasFilePickerElement from '../mixings/HasFilePickerElement';
 
-export default class WidgetRemoteAnimation extends WidgetAnimationDelegate {
+export default class WidgetRemoteAnimation extends HasFilePickerElement(WidgetAnimation) {
 
     static async create(values?: InputWidgetPiecesElementData): Promise<WidgetRemoteAnimation> {
         // TODO Local to remote resources
@@ -53,6 +54,7 @@ export default class WidgetRemoteAnimation extends WidgetAnimationDelegate {
                 self.loadImage(e.target.value);
         });
         this.data.image && self.loadImage(this.data.image);
+        this.initFilePicker($form.find('input[name="image"]'));
     }
 
     settingsClosed() {

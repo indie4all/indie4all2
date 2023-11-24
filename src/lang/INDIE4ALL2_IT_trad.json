@@ -29,6 +29,13 @@
       "negative": "Feedback negativo...",
       "positive": "Feedback positivi..."
     },
+    "file-picker": {
+      "button": "Scegli File",
+      "no-files": "Nessun file trovato",
+      "no-folders": "Nessuna directory trovata",
+      "title": "Scegliere un file dal repository",
+      "unauthorized": "Non sei autorizzato ad accedere al repository di file"
+    },
     "generate": {
       "description": "Generare, attendere",
       "title": "Generazione"
@@ -211,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Le evidenziazioni nidificate non sono consentite.",
       "data": {
         "empty": "La finestra evidenziata è vuota. È necessario aggiungere almeno un elemento semplice."
       },

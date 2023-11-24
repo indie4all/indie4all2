@@ -29,6 +29,13 @@
       "negative": "Negativ feedback...",
       "positive": "Positiv feedback..."
     },
+    "file-picker": {
+      "button": "Välj fil",
+      "no-files": "Inga filer hittades",
+      "no-folders": "Inga kataloger hittades",
+      "title": "Välj en fil från databasen",
+      "unauthorized": "Du har inte behörighet att komma åt fillagringsplatsen"
+    },
     "generate": {
       "description": "Generera, vänta",
       "title": "Generera"
@@ -211,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Kapslade markeringar är inte tillåtna.",
       "data": {
         "empty": "Det markerade fönstret är tomt. Du måste lägga till minst ett enkelt element."
       },

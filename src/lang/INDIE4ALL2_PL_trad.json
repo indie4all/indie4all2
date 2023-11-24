@@ -29,6 +29,13 @@
       "negative": "Negatywne opinie...",
       "positive": "Pozytywne opinie..."
     },
+    "file-picker": {
+      "button": "Wybierz Plik",
+      "no-files": "Nie znaleziono plików",
+      "no-folders": "Nie znaleziono katalogów",
+      "title": "Wybierz plik z repozytorium",
+      "unauthorized": "Nie masz uprawnień dostępu do repozytorium plików"
+    },
     "generate": {
       "description": "Generowanie, proszę czekać",
       "title": "Generowania"
@@ -211,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Zagnieżdżone wyróżnienia są niedozwolone.",
       "data": {
         "empty": "Podświetlone okno jest puste. Musisz dodać co najmniej jeden prosty element."
       },

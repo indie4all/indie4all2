@@ -29,6 +29,13 @@
       "negative": "Negatīva atgriezeniskā saite...",
       "positive": "Pozitīvas atsauksmes..."
     },
+    "file-picker": {
+      "button": "Izvēlieties Fails",
+      "no-files": "Nav atrasts neviens fails",
+      "no-folders": "Nav atrasts neviens katalogs",
+      "title": "Izvēlieties failu no repozitorija",
+      "unauthorized": "Jūs neesat pilnvarots piekļūt failu krātuvei"
+    },
     "generate": {
       "description": "Ģenerējot, lūdzu, pagaidiet",
       "title": "Radot"
@@ -211,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Ligzdoti izceļojumi nav atļauti.",
       "data": {
         "empty": "Iezīmētais logs ir tukšs. Jums jāpievieno vismaz viens vienkāršs elements."
       },

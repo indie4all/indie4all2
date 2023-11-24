@@ -3,8 +3,9 @@ import Utils from "../../../Utils";
 import "./styles.scss";
 import { FormEditData, InputWidgetSchemaItemData } from "../../../types";
 import WidgetSchemaItem from "./WidgetSchemaItem";
+import HasFilePickerElement from "../mixings/HasFilePickerElement";
 
-export default class WidgetRemoteSchemaItem extends WidgetSchemaItem {
+export default class WidgetRemoteSchemaItem extends HasFilePickerElement(WidgetSchemaItem) {
 
     static async create(values?: InputWidgetSchemaItemData): Promise<WidgetRemoteSchemaItem> {
         // TODO Local to remote resources
@@ -56,6 +57,7 @@ export default class WidgetRemoteSchemaItem extends WidgetSchemaItem {
                 $sectionPreview.toggleClass('d-none', false);
             }
         });
+        this.initFilePicker($iImg);
     }
 
     updateModelFromForm(form: any): void {

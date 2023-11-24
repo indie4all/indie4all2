@@ -1,10 +1,11 @@
 /* global $ */
 import Utils from "../../../Utils";
 import "./styles.scss";
-import { FormEditData, InputWidgetChooseOptionData, WidgetChooseOptionParams, WidgetChooseOptionData } from "../../../types";
+import { FormEditData, InputWidgetChooseOptionData } from "../../../types";
 import WidgetChooseOption from "./WidgetChooseOption";
+import HasFilePickerElement from "../mixings/HasFilePickerElement";
 
-export default class WidgetRemoteChooseOption extends WidgetChooseOption {
+export default class WidgetRemoteChooseOption extends HasFilePickerElement(WidgetChooseOption) {
 
     static async create(values?: InputWidgetChooseOptionData): Promise<WidgetRemoteChooseOption> {
         if (values?.data?.blob && !values?.data?.image) {
@@ -69,6 +70,7 @@ export default class WidgetRemoteChooseOption extends WidgetChooseOption {
                 $sectionPreview.toggleClass('d-none', false);
             }
         });
+        this.initFilePicker($iImg);
     }
 
     updateModelFromForm(form: any): void {

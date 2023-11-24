@@ -29,6 +29,13 @@
       "negative": "Negatiivinen palaute...",
       "positive": "Positiivinen palaute..."
     },
+    "file-picker": {
+      "button": "Valitse Tiedosto",
+      "no-files": "Tiedostoja ei löytynyt",
+      "no-folders": "Hakemistoja ei löytynyt",
+      "title": "Valitse tiedosto arkistosta",
+      "unauthorized": "Sinulla ei ole oikeutta käyttää tiedostovarastoa"
+    },
     "generate": {
       "description": "Luodaan, odota",
       "title": "Tuottaa"
@@ -211,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Sisäkkäiset korostukset eivät ole sallittuja.",
       "data": {
         "empty": "Korostettu ikkuna on tyhjä. Sinun on lisättävä vähintään yksi yksinkertainen elementti."
       },

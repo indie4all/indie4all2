@@ -1,0 +1,5 @@
+{{#each steps}}
+<li data-folder-id="{{this.id}}" class="file-picker-breadcrumb pr-4 {{#ifeq (inc @index) ../steps.length }} active {{/ifeq}}">
+    <a href="#">{{{this.name}}}</a>
+</li>
+{{/each}}

@@ -29,6 +29,13 @@
       "negative": "Negatieve feedback...",
       "positive": "Positieve feedback..."
     },
+    "file-picker": {
+      "button": "Kies Bestand",
+      "no-files": "Geen bestanden gevonden",
+      "no-folders": "Geen directory's gevonden",
+      "title": "Kies een bestand uit de opslagplaats",
+      "unauthorized": "U bent niet geautoriseerd om toegang te krijgen tot de bestandsopslagplaats"
+    },
     "generate": {
       "description": "Genereren, even geduld aub",
       "title": "Genereren"
@@ -211,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Geneste markeringen zijn niet toegestaan.",
       "data": {
         "empty": "Het gemarkeerde venster is leeg. U moet ten minste één eenvoudig element toevoegen."
       },

@@ -13495,6 +13495,10 @@ a.list-group-item:hover{
     right: 30px;
 }
 
+.tab-content, .shared-texts {
+	position: relative;
+}
+
 .tabtop {
 	position: absolute;
 	right: 20px;

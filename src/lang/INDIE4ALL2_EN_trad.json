@@ -29,6 +29,13 @@
       "negative": "Negative feedback...",
       "positive": "Positive feedback..."
     },
+    "file-picker": {
+      "button": "Choose File",
+      "no-files": "No files found",
+      "no-folders": "No directories found",
+      "title": "Choose a file from the repository",
+      "unauthorized": "You're not authorized to access the file repository"
+    },
     "generate": {
       "description": "Generating, please wait",
       "title": "Generating"
@@ -211,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Nested highlights are not allowed.",
       "data": {
         "empty": "The highlighted window is empty. You must add at least one simple element."
       },

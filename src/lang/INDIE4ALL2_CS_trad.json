@@ -29,6 +29,13 @@
       "negative": "Negativní zpětná vazba...",
       "positive": "Pozitivní zpětná vazba..."
     },
+    "file-picker": {
+      "button": "Vybrat soubor",
+      "no-files": "Nebyly nalezeny žádné soubory",
+      "no-folders": "Nebyly nalezeny žádné adresáře",
+      "title": "Vyberte soubor z úložiště",
+      "unauthorized": "Nemáte oprávnění k přístupu k úložišti souborů."
+    },
     "generate": {
       "description": "Generuji, čekejte prosím",
       "title": "Generující"
@@ -211,6 +218,7 @@
       }
     },
     "Callout": {
+      "calloutInsideCallout": "Vnořená zvýraznění nejsou povolena.",
       "data": {
         "empty": "Zvýrazněné okno je prázdné. Musíte přidat alespoň jeden jednoduchý prvek."
       },

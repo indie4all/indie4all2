@@ -40,12 +40,15 @@ export default class FilePicker {
 
         const html = (await Promise.all(files.map(async (entry) => {
             const { default: file } = await import('./views/file.hbs');
-            const url = this.repoURL + `/content/${entry.mediaFileId}`;
+            let url = this.repoURL + `/content/${entry.mediaFileId}`;
             let thumbnail: string = "";
             if (entry.fileType === "IMAGE")
                 thumbnail = this.repoURL + `/thumbnail/${entry.mediaFileId}`;
-            else if (entry.fileType === "VIDEO")
+            else if (entry.fileType === "VIDEO") {
                 thumbnail = entry.thumbnail;
+                // endpointTranscoded contains the Vimeo identifier
+                url = this.repoURL + `/content/${entry.endpointTranscoded}`;
+            }
             return file({
                 name: entry.title, id: entry.mediaFileId,
                 thumbnail,

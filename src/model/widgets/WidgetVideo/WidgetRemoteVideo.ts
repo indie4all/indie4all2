@@ -8,13 +8,13 @@ import HasFilePickerElement from "../mixings/HasFilePickerElement";
 export default class WidgetRemoteVideo extends HasFilePickerElement(WidgetVideo) {
 
     private toggleCaptionAndDescriptions(videourl: string) {
-        const valid = Utils.isValidResource(videourl);
+        const valid = !Utils.isRelativeURL(videourl) && Utils.isValidResource(videourl);
         $('#f-' + this.id + ' input[name="captions"]').closest('.form-group').toggleClass('d-none', !valid);
         $('#f-' + this.id + ' input[name="descriptions"]').closest('.form-group').toggleClass('d-none', !valid);
     }
 
     private putOrDeleteCaptionAndDescriptions() {
-        if (!Utils.isValidResource(this.data.videourl)) {
+        if (Utils.isRelativeURL(this.data.videourl) || !Utils.isValidResource(this.data.videourl)) {
             this.data.captions = "";
             this.data.descriptions = "";
         }

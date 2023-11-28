@@ -140,7 +140,7 @@ export default class Utils {
     static isValidVideoResource(url: string): boolean {
         const additionalRules = Config.getAdditionalVideoResourceRules();
         // The url belongs to an allowed origin and all the additional rules are fulfilled
-        return this.isUrlWithinDomains(url, Config.getAllowedResourceOrigins()) && additionalRules.every(rule => rule(url));
+        return this.isRelativeURL(url) || (this.isUrlWithinDomains(url, Config.getAllowedResourceOrigins()) && additionalRules.every(rule => rule(url)));
     }
 
     static isValidBase64DataUrl(data: any): boolean {

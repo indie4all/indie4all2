@@ -4300,22 +4300,23 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
 					playsinline: true, 
 					muted: false, 
 					speed: true, 
-					width: '100%', 
+					width: '100%',
 				};
 				player.player = new Vimeo.Player('player-' + id, options);
 				player.player.stop = () => {
 					player.player.pause();
 					player.player.setCurrentTime(0);
 				}
+				// Captions should be disabled by default
+				player.player.disableTextTrack();
 				if (defaultCaptions) {
+					// The creator explicitly wants captions to be enabled by default
 					player.player.getTextTracks().then(function(tracks) {
 						if (!tracks.length) return;
 						// Find a track in the language of the unit
-						let track = tracks.find(track => track.language === $('html').attr('lang'));
-						// If not found, get the first track
-						if (!track) track = tracks[0];
-						// Enable that track
-						player.player.enableTextTrack(track.language, 'captions');
+						let track = tracks.find(track => track.language.startsWith($('html').attr('lang')));
+						if (track) player.player.enableTextTrack(track.language, 'captions');
+						else console.error("Text track not found: " + $('html').attr('lang'));							
 					});
 				}
 				$('#speech-to-action-' + id).on('speech-to-action', onSpeechToAction.bind(this, player.player));

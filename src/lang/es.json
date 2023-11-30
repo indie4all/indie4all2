@@ -26,7 +26,7 @@
         "feedback": {
             "positive": "Feedback positivo...",
             "negative": "Feedback negativo...",
-            "help": "Intdouce el feedback que recibirá el alumno tanto si responde correcta o incorrectamente",
+            "help": "Introduce el feedback que recibirá el alumno tanto si responde correcta o incorrectamente",
             "label": "Feedback"
         },
         "captions": {
@@ -1445,7 +1445,7 @@
                     "label": "Posibles respuestas"
                 },
                 "questionText": {
-                    "help": "Este es el texto de la pregunta se mostrará en la unidad de contenido.",
+                    "help": "Este es el texto de la pregunta que se mostrará en la unidad de contenido.",
                     "label": "Texto de la pregunta",
                     "placeholder": "Texto de la pregunta simple..."
                 }

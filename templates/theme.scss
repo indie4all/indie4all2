@@ -11913,6 +11913,11 @@ body {
 	&:focus {
 		outline: 5px solid black;
 		outline-offset: 5px;
+
+		&:not(:focus-visible) {
+			outline: 5px solid black;
+			outline-offset: 5px;
+		}
 	}
 
 	code[class*=language-] {
@@ -12988,116 +12993,34 @@ div[class*="row"]:not(.row) > div[class*="col"] > button, .couple > button, .cou
 	padding: 20% 10px;
 }
 /* FIN DIFUMINADO FONDO BLANCO */
-.verdetest {
-    background-color: rgba(75,187,139,0.5);
-}
-
-.rojotest {
-    background-color: rgba(252,60,60,0.5);
-}
-
-.padtf {
-    padding-bottom: 5px;
-    padding-top: 5px;
-}
-
-.resultado_v1 h4 {
-    color: #1e3756;
-    font-weight: 600;
-}
-
-.marzero {
-	margin-bottom:0px
-}
-
-.boton_test {
-    color: #1e3756;
-    background-color: #fff!important;
-    border: 2px solid #1e3756!important;
-}
-  
-.boton_test:hover {
-    color: #fff;
-    background-color: #1e3756!important;
-    border-color: #1e3756!important;
-}
-
 .container-test {
-	.option {
-		&:focus-within {
-			outline: 3px solid black;
-			outline-offset: 3px;
-		}
-	}
 
-    &.gamification {
-
-        .iconresult {
-            min-width: 4.375rem;
-            &:empty {
-                display: none;
-            }
+    &.finished {
+        .container-test-btn {
+            filter: saturate(0);
         }
+    }
 
-        .question {
-
-            display: none;
-            &.gamification-current-step {
-                display: grid;
-            }
-
-            .question-instructions {
-                font-size: 1.5rem;
-                font-weight: bold;
-            }
+    .container-test-btn {
+        &:focus {
+            outline: 3px solid #000;
         }
+    }
+    .container-test-btn-img {
+        width: 300px;
+    }
 
-        .btn-check {
-            &:checked {
-                &+.btn {
-                    filter: saturate(100%);
-                    font-weight: bold;       
-                }
-            }
+    .container-test-question {
+        display: none;
+        &.show {
+            display: block;
         }
-        
-        .labeltest {
-            filter: saturate(50%);
-            transition: all 0.3s ease-in-out;
-            flex-grow: 1;
-        }
+    }
 
-        .option {
-            display: flex;
-            align-items: center;
-            &:nth-of-type(4n+1) {
-                .labeltest {
-                    background-color: #ff7300;
-                    color: black;
-                }
-            }
-
-            &:nth-of-type(4n+2) {
-                .labeltest {
-                    background-color: #ffae00;
-                    color: black;
-                }
-            }
-
-            &:nth-of-type(4n+3) {
-                .labeltest {
-                    background-color: #00ffdf;
-                    color: black;
-                }
-            }
-
-            &:nth-of-type(4n) {
-                .labeltest {
-                    background-color: #00caff;
-                    color: black;
-                }
-            }
-        }
+    .container-test-result {
+        color: #963e17;
+        font-weight: 600;
+        font-size: 1.125rem;
     }
 }
 /* Contenedores */
@@ -13379,6 +13302,10 @@ div[class*="resultado_truefalse"] h4 {
 	.btn
 	{
 		height: 100%;
+        &:focus {
+            outline: 4px solid black;
+            outline-offset: 6px;
+        }
 	}
 }
 
@@ -14626,10 +14553,131 @@ toggle {  0% {
     font-size: 1.5rem;
 }
 
+.roulette-question {
+    display: none;
+    &.show {
+        display: block;
+    }
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   // Disable the animation for users that prefer reduced motion
   .roulette-circle {
     animation-duration: 0s !important;
   }
+}
+
+.verdetest {
+    background-color: rgba(75,187,139,0.5);
+}
+
+.rojotest {
+    background-color: rgba(252,60,60,0.5);
+}
+
+.padtf {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.resultado_v1 h4 {
+    color: #1e3756;
+    font-weight: 600;
+}
+
+.marzero {
+	margin-bottom:0px
+}
+
+.boton_test {
+    color: #1e3756;
+    background-color: #fff!important;
+    border: 2px solid #1e3756!important;
+}
+  
+.boton_test:hover {
+    color: #fff;
+    background-color: #1e3756!important;
+    border-color: #1e3756!important;
+}
+
+.test-question {
+
+	.option {
+		&:focus-within {
+			outline: 3px solid black;
+			outline-offset: 3px;
+		}
+	}
+
+    .iconresult {
+        min-width: 4.375rem;
+        &:empty {
+            display: none;
+        }
+    }
+
+    .question {
+        .question-instructions {
+            font-size: 1.125rem;
+            font-weight: bold;
+            padding-left: 10px;
+        }
+    }
+
+    .btn-check {
+        &:checked {
+            &+.btn {
+                filter: saturate(100%);
+                font-weight: bold;       
+            }
+        }
+    }
+    
+    .labeltest {
+        filter: saturate(50%);
+        transition: all 0.3s ease-in-out;
+        flex-grow: 1;
+    }
+
+    .option {
+        display: flex;
+        align-items: center;
+        &:nth-of-type(4n+1) {
+            .labeltest {
+                background-color: #ff7300;
+                color: black;
+            }
+        }
+
+        &:nth-of-type(4n+2) {
+            .labeltest {
+                background-color: #ffae00;
+                color: black;
+            }
+        }
+
+        &:nth-of-type(4n+3) {
+            .labeltest {
+                background-color: #00ffdf;
+                color: black;
+            }
+        }
+
+        &:nth-of-type(4n) {
+            .labeltest {
+                background-color: #00caff;
+                color: black;
+            }
+        }
+    }
+
+    &.gamification {
+        .question {
+            .question-instructions {
+                font-size: 1.5rem;
+            }
+        }
+    }
 }

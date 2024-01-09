@@ -1,12 +1,13 @@
 /* global $ */
 import "./styles.scss";
-import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
+import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 import icon from "./icon.png";
 import { FormEditData, InputWidgetGapQuestionData, WidgetGapQuestionData } from "../../../types";
 
-export default class WidgetGapQuestion extends WidgetSpecificItemElement {
+export default class WidgetGapQuestion extends WidgetItemElement {
 
     static widget = "GapQuestion";
+    static category = "exerciseElement";
     static icon = icon;
 
     static MAX_ANSWERS = 4;

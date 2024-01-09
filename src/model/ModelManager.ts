@@ -98,7 +98,7 @@ export default class ModelManager {
         // Section element
         [Section.widget]: Section,
         //Bank of Widgets
-       [WidgetBank.widget]: WidgetBank,
+        [WidgetBank.widget]: WidgetBank,
         // Elements
         [WidgetTextBlock.widget]: WidgetTextBlock,
         [WidgetBlockquote.widget]: WidgetBlockquote,
@@ -209,8 +209,19 @@ export default class ModelManager {
         [WidgetTermClassifcation.widget]: { "allows": [WidgetTermClassificationItem] },
         [WidgetRelatedUnitsContainer.widget]: { "allows": [WidgetRelatedUnitsItem, WidgetRelatedUnitsAssociation] },
         [WidgetRelatedUnitsAssociation.widget]: { "allows": [WidgetRelatedUnitsItem] },
-        [WidgetTestContainer.widget]: { "allows": [WidgetGapQuestion, WidgetSimpleQuestion, WidgetMultipleQuestion, WidgetTrueFalseQuestion] },
-        [WidgetRouletteItem.widget] : {  "allows": [WidgetGapQuestion, WidgetSimpleQuestion, WidgetMultipleQuestion, WidgetTrueFalseQuestion] },
+        [WidgetTestContainer.widget]: {
+            "allows": [WidgetGapQuestion, WidgetSimpleQuestion, WidgetMultipleQuestion, WidgetTrueFalseQuestion,
+                WidgetChooseOption, WidgetDragdropContainer, WidgetTrueFalseContainer, WidgetCouplesContainer,
+                WidgetPuzzle, WidgetCorrectWordContainer, WidgetMissingwordsContainer, WidgetSentenceorderContainer,
+                WidgetTermClassifcation]
+        },
+        [WidgetRouletteItem.widget]: {
+            "allows":
+                [WidgetGapQuestion, WidgetSimpleQuestion, WidgetMultipleQuestion, WidgetTrueFalseQuestion,
+                    WidgetChooseOption, WidgetDragdropContainer, WidgetTrueFalseContainer, WidgetCouplesContainer,
+                    WidgetPuzzle, WidgetCorrectWordContainer, WidgetMissingwordsContainer, WidgetSentenceorderContainer,
+                    WidgetTermClassifcation]
+        },
         [WidgetRoulette.widget]: { "allows": [WidgetRouletteItem] },
     }
 

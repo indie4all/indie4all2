@@ -1,13 +1,14 @@
 /* global $ */
 import Utils from "../../../Utils";
 import "./styles.scss";
-import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
+import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 import icon from "./icon.png";
 import { FormEditData, InputWidgetTrueFalseQuestionData, WidgetTrueFalseQuestionData } from "../../../types";
 
-export default class WidgetTrueFalseQuestion extends WidgetSpecificItemElement {
+export default class WidgetTrueFalseQuestion extends WidgetItemElement {
 
     static widget = "TrueFalseQuestion";
+    static category = "exerciseElement";
     static icon = icon;
 
     data: WidgetTrueFalseQuestionData;

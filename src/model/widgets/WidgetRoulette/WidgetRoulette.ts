@@ -1,11 +1,9 @@
 import Utils from "../../../Utils";
 import "./styles.scss";
 import ModelManager from "../../ModelManager";
-import template from "./template.hbs";
 import icon from "./icon.png";
 import { FormEditData, InputWidgetRouletteData } from "../../../types";
 import WidgetSpecificContainerElement from "../WidgetSpecificContainerElement/WidgetSpecificContainerElement";
-import WidgetElement from "../WidgetElement/WidgetElement";
 
 export default class WidgetRoulette extends WidgetSpecificContainerElement {
 
@@ -73,8 +71,8 @@ export default class WidgetRoulette extends WidgetSpecificContainerElement {
     validateModel(): string[] {
         var keys: string[] = [];
         if (this.data.length == 0) keys.push("Test.data.empty")
-        else if(this.data.length > WidgetRoulette.MAX_CONTAINED_ITEMS_ALLOWED) keys.push("Roulette.limitExcedeed")
-        if(Utils.checkIfDuplicateValueInObject(this.data, "params", "nameCategory")) keys.push("Roulette.categoryRepeated");
+        else if (this.data.length > WidgetRoulette.MAX_CONTAINED_ITEMS_ALLOWED) keys.push("Roulette.limitExcedeed")
+        if (Utils.checkIfDuplicateValueInObject(this.data, "params", "nameCategory")) keys.push("Roulette.categoryRepeated");
         return keys;
     }
 

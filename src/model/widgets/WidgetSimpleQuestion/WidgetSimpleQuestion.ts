@@ -1,11 +1,12 @@
 import "./styles.scss";
-import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
+import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 import icon from "./icon.png";
 import { Feedback, FormEditData, InputWidgetSimpleQuestionData, WidgetSimpleQuestionData } from "../../../types";
 
-export default class WidgetSimpleQuestion extends WidgetSpecificItemElement {
+export default class WidgetSimpleQuestion extends WidgetItemElement {
 
     static widget = "SimpleQuestion";
+    static category = "exerciseElement";
     static icon = icon;
 
     private static MAX_ANSWERS = 4;

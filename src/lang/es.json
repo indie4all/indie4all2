@@ -1137,7 +1137,7 @@
         "LatexFormula": {
             "form": {
                 "caption": {
-                    "help": "Esta leyenda aparecerá bajo la fórmula y como bloque de texto",
+                    "help": "Esta leyenda aparecerá sobre la fórmula y como bloque de texto",
                     "label": "Leyenda de la fórmula",
                     "placeholder": "Ejemplo: Fórmula cuadrática"
                 },

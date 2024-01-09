@@ -53,7 +53,7 @@ export default class WidgetLatexFormula extends WidgetItemElement {
         };
         return {
             inputs: form(data),
-            title: this.translate("widgets.LatexFormula.form.formula.label") 
+            title: this.translate("widgets.LatexFormula.form.formula.label")
         };
     }
 
@@ -62,7 +62,7 @@ export default class WidgetLatexFormula extends WidgetItemElement {
     }
 
     preview(): string {
-        return this.data?.caption && this.data?.formula ? preview(this.data) : this.translate("widgets.LatexFormula.prev");
+        return this.data?.formula ? preview(this.data) : this.translate("widgets.LatexFormula.prev");
     }
 
     settingsOpened(): void {
@@ -100,14 +100,12 @@ export default class WidgetLatexFormula extends WidgetItemElement {
     validateModel(): string[] {
         var errors: string[] = [];
         if (this.data.formula.length == 0) errors.push("LatexFormula.formula.invalid");
-        if (this.data.caption.length == 0) errors.push("LatexFormula.caption.invalid");
         return errors;
     }
 
     validateForm(form: any): string[] {
         var errors: string[] = [];
         if (form.formula.length == 0) errors.push("LatexFormula.formula.invalid");
-        if (form.caption.length == 0) errors.push("LatexFormula.caption.invalid");
         return errors;
     }
 

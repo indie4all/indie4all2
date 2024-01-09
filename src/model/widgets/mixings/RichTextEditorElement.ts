@@ -33,6 +33,8 @@ export default function RichTextEditorMixin<TBase extends abstract new (...args:
                 .then(async ({ default: tinymce }) => {
                     tinymce.init({
                         selector,
+                        browser_spellcheck: true,
+                        contextmenu: false,
                         language: this.getTinyMCELang(i18n.getLang()),
                         toolbar_mode: 'sliding',
                         promotion: false,

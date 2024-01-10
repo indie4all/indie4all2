@@ -31,6 +31,10 @@ export default function RichTextEditorMixin<TBase extends abstract new (...args:
             const i18n = I18n.getInstance();
             import("tinymce/tinymce")
                 .then(async ({ default: tinymce }) => {
+                    if (!tinymce.PluginManager.get('equation')) {
+                        const { default: plugin } = await import("../../../vendor/tinymce-equation/plugin");
+                        tinymce.PluginManager.add('equation', plugin);
+                    }
                     tinymce.init({
                         selector,
                         browser_spellcheck: true,
@@ -39,9 +43,9 @@ export default function RichTextEditorMixin<TBase extends abstract new (...args:
                         toolbar_mode: 'sliding',
                         promotion: false,
                         base_url: '/vendor/tinymce',
-                        plugins: "link, lists, help",
+                        plugins: "link, lists, help, equation",
                         invalid_elements: "script,link,style,img,applet,embed,noframes,iframe,noscript",
-                        toolbar: "undo redo | bold italic | link | alignleft aligncenter alignright | outdent indent | bullist numlist | customAddWhitespace customAddTemplate",
+                        toolbar: "undo redo | bold italic | link | alignleft aligncenter alignright | outdent indent | bullist numlist | customAddWhitespace customAddTemplate equation",
                         setup: function (editor) {
                             editors[selector] = editor;
                             editor.on('init', function () {

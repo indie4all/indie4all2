@@ -1604,6 +1604,11 @@
                 "text": "Plantillas"
             },
             "whitespace": "Insertar espacio en blanco"
+        },
+        "tinymce-equation": {
+            "title": "Editor de ecuaciones",
+            "label": "Edita la ecuación utilizando TeX",
+            "help": "Usa el área de texto para escribir la fórmula. Debajo de este área aparecerá un previo de la fórmula en caso de que sea correcta o el texto en rojo si la fórmula no es correcta"
         }
     }
 }

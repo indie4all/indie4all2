@@ -690,6 +690,11 @@
     "simpleElements": "Elementos"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "Use a área de texto para digitar a fórmula. Abaixo desta área aparecerá uma pré-visualização da fórmula se estiver correta ou o texto a vermelho se a fórmula não estiver correta",
+      "label": "Editar a equação usando TeX",
+      "title": "Editor de equações"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Bloco de código",

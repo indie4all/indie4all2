@@ -690,6 +690,11 @@
     "simpleElements": "Elemente"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "Verwenden Sie den Textbereich, um die Formel einzugeben. Unterhalb dieses Bereichs erscheint eine Vorschau der Formel, wenn sie korrekt ist, oder der Text in Rot, wenn die Formel nicht korrekt ist",
+      "label": "Bearbeiten Sie die Gleichung mit TeX",
+      "title": "Formel-Editor"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Code-Block",

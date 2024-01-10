@@ -690,6 +690,11 @@
     "simpleElements": "Elemenata"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "Za upisivanje formule koristite područje teksta. Ispod ovog područja pojavit će se pretpregled formule ako je ispravna ili tekst crvenom bojom ako formula nije ispravna",
+      "label": "Uređivanje jednadžbe pomoću programa TeX",
+      "title": "Uređivač jednadžbi"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Blok koda",

@@ -690,6 +690,11 @@
     "simpleElements": "Elemek"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "A képlet beírásához használja a szövegterületet. Ez alatt a terület alatt megjelenik a képlet előnézete, ha helyes, vagy a piros szöveg, ha a képlet nem helyes",
+      "label": "Szerkessze az egyenletet a TeX használatával",
+      "title": "Egyenletszerkesztő"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Kódblokk",

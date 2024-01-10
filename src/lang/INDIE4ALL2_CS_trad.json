@@ -690,6 +690,11 @@
     "simpleElements": "Elementy"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "K zadání vzorce použijte textovou oblast. Pod touto oblastí se zobrazí náhled vzorce, pokud je správný, nebo červený text, pokud vzorec není správný",
+      "label": "Upravte rovnici pomocí TeXu",
+      "title": "Editor rovnic"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Blok kódu",

@@ -690,6 +690,11 @@
     "simpleElements": "Eilimintí"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "Bain úsáid as an limistéar téacs chun an fhoirmle a chlóscríobh. Faoi bhun an réimse seo beidh réamhamharc ar an bhfoirmle le feiceáil má tá sé ceart nó an téacs i ndath dearg mura bhfuil an fhoirmle ceart",
+      "label": "Cuir an chothromóid in eagar le TeX",
+      "title": "Eagarthóir Cothromóide"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Bloc cóid",

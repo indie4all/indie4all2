@@ -690,6 +690,11 @@
     "simpleElements": "Elementer"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "Bruk tekstområdet til å skrive inn formelen. Under dette området vises en forhåndsvisning av formelen hvis den er riktig, eller teksten i rødt hvis formelen ikke er riktig",
+      "label": "Rediger ligningen ved hjelp av TeX",
+      "title": "Formelredigering"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Kodeblokk",

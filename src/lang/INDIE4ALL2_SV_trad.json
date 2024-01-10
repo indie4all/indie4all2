@@ -690,6 +690,11 @@
     "simpleElements": "Element"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "Använd textområdet för att skriva formeln. Under det här området visas en förhandsgranskning av formeln om den är korrekt eller texten i rött om formeln inte är korrekt",
+      "label": "Redigera ekvationen med TeX",
+      "title": "Ekvationsredigerare"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Blockera kod",

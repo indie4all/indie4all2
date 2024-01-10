@@ -690,6 +690,11 @@
     "simpleElements": "Elementai"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "Norėdami įvesti formulę, naudokite teksto sritį. Po šia sritimi bus rodoma formulės peržiūra, jei ji teisinga, arba tekstas raudonas, jei formulė neteisinga",
+      "label": "Lygties redagavimas naudojant TeX",
+      "title": "Lygčių rengyklė"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Kodų blokas",

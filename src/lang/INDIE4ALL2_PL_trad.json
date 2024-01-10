@@ -690,6 +690,11 @@
     "simpleElements": "Pierwiastki"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "Użyj obszaru tekstowego, aby wpisać formułę. Poniżej tego obszaru pojawi się podgląd formuły, jeśli jest poprawna, lub tekst w kolorze czerwonym, jeśli formuła nie jest poprawna",
+      "label": "Edycja równania za pomocą TeX-a",
+      "title": "Edytor równań"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Blok kodu",

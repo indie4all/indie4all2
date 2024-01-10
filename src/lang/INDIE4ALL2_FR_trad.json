@@ -690,6 +690,11 @@
     "simpleElements": "Éléments"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "Utilisez la zone de texte pour taper la formule. En dessous de cette zone, un aperçu de la formule s’il est correct ou le texte en rouge si la formule n’est pas correcte apparaîtra",
+      "label": "Editer l’équation à l’aide de TeX",
+      "title": "Editeur d’équations"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Bloc de code",

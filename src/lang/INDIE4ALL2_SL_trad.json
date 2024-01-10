@@ -690,6 +690,11 @@
     "simpleElements": "Elementov"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "Uporabite območje besedila za vnos formule. Pod tem območjem se prikaže predogled formule, če je pravilna, ali besedilo v rdeči barvi, če formula ni pravilna",
+      "label": "Urejanje enačbe s programom TeX",
+      "title": "Urejevalnik enačb"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Kodni blok",

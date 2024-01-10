@@ -1,0 +1,17 @@
+#equation-editor-preview {
+    font-size: 1.5rem;
+}
+
+// Fix to display equations correctly
+.tox.tox-tinymce-aux :not(svg):not(rect) {
+    vertical-align: initial;
+}
+
+#equation-editor-preview {
+    .katex {
+        .vlist, .vlist-s {
+            vertical-align: bottom !important;
+        }
+    }
+}
+// End of fix

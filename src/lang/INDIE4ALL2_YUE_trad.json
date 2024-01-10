@@ -690,6 +690,11 @@
     "simpleElements": "元素"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "使用文本區域鍵入公式。 如果公式正確，則在此區域下方將出現公式預覽，如果公式不正確，則會出現紅色文本",
+      "label": "使用TeX編輯公式",
+      "title": "公式編輯器"
+    },
     "trumbowyg": {
       "templates": {
         "code": "代碼塊",

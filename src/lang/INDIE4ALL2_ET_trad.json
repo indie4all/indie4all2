@@ -690,6 +690,11 @@
     "simpleElements": "Elemente"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "Kasutage valemi tippimiseks tekstiala. Selle ala all kuvatakse valemi eelvaade, kui see on õige, või punane tekst, kui valem pole õige",
+      "label": "Võrrandi redigeerimine TeX-i abil",
+      "title": "Võrrandiredaktor"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Koodi plokk",

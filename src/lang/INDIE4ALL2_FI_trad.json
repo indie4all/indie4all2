@@ -690,6 +690,11 @@
     "simpleElements": "Luonnonvoimat"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "Kirjoita kaava tekstialueen avulla. Tämän alueen alapuolella näkyy kaavan esikatselu, jos se on oikein, tai punainen teksti, jos kaava ei ole oikea",
+      "label": "Muokkaa yhtälöä TeXin avulla",
+      "title": "Kaavaeditori"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Koodi-lohko",

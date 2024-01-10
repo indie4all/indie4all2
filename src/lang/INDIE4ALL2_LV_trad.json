@@ -690,6 +690,11 @@
     "simpleElements": "Elementi"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "Izmantojiet teksta apgabalu, lai ierakstītu formulu. Zem šī apgabala tiks parādīts formulas priekšskatījums, ja tā ir pareiza, vai teksts sarkanā krāsā, ja formula nav pareiza",
+      "label": "Vienādojuma rediģēšana, izmantojot TeX",
+      "title": "Vienādojumu redaktors"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Kodu bloks",

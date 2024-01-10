@@ -13010,6 +13010,19 @@ div[class*="row"]:not(.row) > div[class*="col"] > button, .couple > button, .cou
         width: 300px;
     }
 
+    .container-test-current-question {
+        display: none;
+        font-size: 1.5rem;
+        text-align: center;
+        font-weight: bold;
+        border-bottom: 3px solid $base-color;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        &.show {
+            display: block;
+        }
+    }
+
     .container-test-question {
         display: none;
         &.show {
@@ -14627,10 +14640,16 @@ toggle {  0% {
     }
 
     .btn-check {
+        &+.btn {
+            border-width: 3px;
+            border-color: transparent;
+        }
+        
         &:checked {
             &+.btn {
                 filter: saturate(100%);
-                font-weight: bold;       
+                font-weight: bold;
+                border-color: black;
             }
         }
     }

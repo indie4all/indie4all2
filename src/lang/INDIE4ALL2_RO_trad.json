@@ -690,6 +690,11 @@
     "simpleElements": "Elemente"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "Utilizați zona de text pentru a tasta formula. Sub această zonă va apărea o previzualizare a formulei dacă este corectă sau textul în roșu dacă formula nu este corectă",
+      "label": "Editați ecuația utilizând TeX",
+      "title": "Editor de ecuații"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Bloc de cod",

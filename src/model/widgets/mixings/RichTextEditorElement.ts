@@ -32,7 +32,7 @@ export default function RichTextEditorMixin<TBase extends abstract new (...args:
             import("tinymce/tinymce")
                 .then(async ({ default: tinymce }) => {
                     if (!tinymce.PluginManager.get('equation')) {
-                        const { default: plugin } = await import("../../../vendor/tinymce-equation/plugin");
+                        const { default: plugin } = await import("./tinymce-equation-plugin");
                         tinymce.PluginManager.add('equation', plugin);
                     }
                     tinymce.init({

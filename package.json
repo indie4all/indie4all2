@@ -43,7 +43,7 @@
     "@types/jquery": "^3.5.16",
     "@types/node-cron": "^3.0.7",
     "@types/node-sass": "^4.11.3",
-    "@types/tinymce": "^4.6.8",
+    "@types/tinymce": "^4.6.9",
     "@types/toastr": "^2.1.40",
     "bootprompt": "^6.0.2",
     "bootstrap": "^4.6.0",

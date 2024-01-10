@@ -690,6 +690,11 @@
     "simpleElements": "Elementi"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "Uża ż-żona tat-test biex tittajpja l-formula. Taħt din iż-żona tidher previżjoni tal-formula jekk tkun korretta jew it-test bl-aħmar jekk il-formula ma tkunx korretta",
+      "label": "Editja l-ekwazzjoni billi tuża TeX",
+      "title": "Editur tal-Ekwazzjoni"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Blokka tal-kodiċi",

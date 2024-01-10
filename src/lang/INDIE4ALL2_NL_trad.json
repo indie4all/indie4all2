@@ -690,6 +690,11 @@
     "simpleElements": "Elementen"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "Gebruik het tekstgebied om de formule te typen. Onder dit gebied verschijnt een voorbeeld van de formule als deze correct is of de tekst in het rood als de formule niet correct is",
+      "label": "Bewerk de vergelijking met TeX",
+      "title": "Vergelijkings-editor"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Codeblok",

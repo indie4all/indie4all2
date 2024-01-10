@@ -690,6 +690,11 @@
     "simpleElements": "Elementuak"
   },
   "plugins": {
+    "tinymce-equation": {
+      "help": "Testu-arloa erabiltzen du formula idazteko. Eremu horren azpian, formularen aldez aurreko bat agertuko da, zuzena bada edo testu gorria, formula zuzena ez bada.",
+      "label": "Ekuazioa argitaratzen duzu TeX erabiliz",
+      "title": "Ekuazioen editorea"
+    },
     "trumbowyg": {
       "templates": {
         "code": "Kode-blokea",

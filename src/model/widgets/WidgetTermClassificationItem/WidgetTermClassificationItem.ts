@@ -32,7 +32,7 @@ export default class WidgetTermClassificationItem extends WidgetSpecificItemElem
     }
 
     private static matchTerms(terms: string) {
-        const regex = /^[\p{L}\d\s]+(;[\p{L}\d\s]*)*$/u;
+        const regex = /^[^;]+(?:;[^;]*)*$/u;
         if (Utils.isStringEmptyOrWhitespace(terms)) return false;
         return regex.test(terms);
     }

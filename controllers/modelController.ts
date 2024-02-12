@@ -26,7 +26,7 @@ const copyAssets = async function (folder: string, color: string, cover: string,
     const data = `$base-color: ${realColor}; $base-url: "${realCover}"; @import '${themeTemplate}';`
     const result = sass.renderSync({ data, includePaths: [themeTemplate], outputStyle: 'compressed' });
     const css = result.css.toString();
-    await fs.writeFile(folder + '/generator/content/v5-2-2/css/stylesCustom.min.css', css);
+    await fs.writeFile(folder + '/generator/content/v5-2-3/css/stylesCustom.min.css', css);
     // Remove scorm libraries if the unit is not of SCORM type
     if (mode !== "SCORM") {
         logger.info("Removing scorm-related assets");

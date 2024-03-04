@@ -1,4 +1,5 @@
 import I18n from "../../I18n";
+import './styles.scss';
 import ModelElement from "../ModelElement";
 import ModelManager from "../ModelManager";
 import prevTemplate from "./prev.hbs";
@@ -66,6 +67,7 @@ export default class Section extends ModelElement {
             id: this.id,
             icon: Section.icon,
             children: this.data ? this.data.map(child => child.createElement()).join('') : "",
+            hidden: this.hidden,
             preview
         };
 
@@ -87,6 +89,8 @@ export default class Section extends ModelElement {
         this.name = form.name;
         this.bookmark = form.bookmark;
         this.hidden = form.hidden;
+        // Add a section-hidden class to the section element if hidden
+        $("#sec-" + this.id).toggleClass('section-hidden', this.hidden);
     }
 
     updateTexts(texts: any): void {

@@ -637,6 +637,7 @@
     "errorMessage": "Chyba",
     "exportedElement": "Položka byla úspěšně exportována",
     "exportedSection": "Sekce úspěšně exportována",
+    "hiddenContent": "Musí tam být alespoň jeden viditelný úsek",
     "importedElement": "Položka byla úspěšně importována",
     "importedSection": "Sekce byla úspěšně importována",
     "loadError": "Jednotku nelze načíst",
@@ -716,6 +717,10 @@
         "label": "Záložka oddílu",
         "placeholder": "Napište záložku..."
       },
+      "hidden": {
+        "help": "Pokud je tato možnost vybrána, tato sekce se na vygenerované jednotce nezobrazí",
+        "label": "Skrýt sekci"
+      },
       "image": {
         "help": "",
         "label": "Adresa URL obrázku na pozadí",
@@ -734,6 +739,7 @@
         "label": "Typ pozadí"
       }
     },
+    "hidden": "Schovaný",
     "import": "Importovat položku",
     "label": "Oddíl",
     "moveDown": "Posunout oddíl dolů",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "Orientace bloku obrázku a textu určuje, kde se každý z prvků v bloku zobrazí.",
           "label": "Orientace",
-          "values": {
-            "0": "Text vpravo, obrázek vlevo",
-            "1": "Text vlevo, obrázek vpravo"
-          }
+          "values": [
+            "Text vpravo, obrázek vlevo",
+            "Text vlevo, obrázek vpravo"
+          ]
         },
         "preview": "Náhled obrázku",
         "text": {

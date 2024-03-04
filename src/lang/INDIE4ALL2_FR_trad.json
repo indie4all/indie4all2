@@ -637,6 +637,7 @@
     "errorMessage": "Erreur",
     "exportedElement": "Objet exporté avec succès",
     "exportedSection": "Section exportée avec succès",
+    "hiddenContent": "Il doit y avoir au moins une section visible",
     "importedElement": "Élément importé avec succès",
     "importedSection": "Section importée avec succès",
     "loadError": "L’unité n’a pas pu être chargée",
@@ -716,6 +717,10 @@
         "label": "Signet de section",
         "placeholder": "Écrivez un signet..."
       },
+      "hidden": {
+        "help": "Si cette option est sélectionnée, cette section ne s’affichera pas sur l’unité générée",
+        "label": "Masquer la section"
+      },
       "image": {
         "help": "",
         "label": "URL de l’image d’arrière-plan",
@@ -734,6 +739,7 @@
         "label": "Type d’arrière-plan"
       }
     },
+    "hidden": "Caché",
     "import": "Importer un élément",
     "label": "Section",
     "moveDown": "Faire défiler la section vers le bas",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "L’orientation d’un bloc d’image et de texte détermine où chacun des éléments du bloc apparaît.",
           "label": "Orientation",
-          "values": {
-            "0": "Texte à droite, image à gauche",
-            "1": "Texte à gauche, image à droite"
-          }
+          "values": [
+            "Texte à droite, image à gauche",
+            "Texte à gauche, image à droite"
+          ]
         },
         "preview": "Aperçu de l’image",
         "text": {

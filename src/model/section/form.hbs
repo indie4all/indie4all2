@@ -11,4 +11,9 @@
             placeholder="{{translate "sections.form.bookmark.placeholder"}}" maxLength="40" autocomplete="off" required /> 
         <small class="form-text text-muted">{{translate "sections.form.bookmark.help"}}</small>
     </div>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="current-section-hidden" name="hidden" {{#if hidden}} checked {{/if}}>
+        <label class="form-check-label" for="current-section-hidden">{{translate "sections.form.hidden.label"}}</label>
+        <small class="form-text text-muted">{{translate "sections.form.hidden.help"}}</small>
+    </div>
 </form>

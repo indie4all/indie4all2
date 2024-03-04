@@ -637,6 +637,7 @@
     "errorMessage": "Error",
     "exportedElement": "Item exported successfully",
     "exportedSection": "Section exported successfully",
+    "hiddenContent": "There must be at least one visible section",
     "importedElement": "Element imported successfully",
     "importedSection": "Section imported successfully",
     "loadError": "The unit could not be loaded",
@@ -716,6 +717,10 @@
         "label": "Section bookmark",
         "placeholder": "Write a bookmark..."
       },
+      "hidden": {
+        "help": "If selected, this section will not be displayed on the generated unit",
+        "label": "Hide section"
+      },
       "image": {
         "help": "",
         "label": "Background image URL",
@@ -734,6 +739,7 @@
         "label": "Type of background"
       }
     },
+    "hidden": "Hidden",
     "import": "Import item",
     "label": "Section",
     "moveDown": "Scroll section down",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "The orientation of an image and text block establishes where each of the elements in the block appears.",
           "label": "Orientation",
-          "values": {
-            "0": "Text on the right, image on the left",
-            "1": "Text on the left, image on the right"
-          }
+          "values": [
+            "Text on the right, image on the left",
+            "Text on the left, image on the right"
+          ]
         },
         "preview": "Image preview",
         "text": {

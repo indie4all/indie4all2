@@ -637,6 +637,7 @@
     "errorMessage": "Errore",
     "exportedElement": "Elemento esportato con successo",
     "exportedSection": "Sezione esportata con successo",
+    "hiddenContent": "Deve essere presente almeno una sezione visibile",
     "importedElement": "Elemento importato correttamente",
     "importedSection": "Sezione importata correttamente",
     "loadError": "Impossibile caricare l'unità",
@@ -716,6 +717,10 @@
         "label": "Segnalibro di sezione",
         "placeholder": "Scrivi un segnalibro..."
       },
+      "hidden": {
+        "help": "Se selezionata, questa sezione non verrà visualizzata sull'unità generata",
+        "label": "Nascondi sezione"
+      },
       "image": {
         "help": "",
         "label": "URL immagine di sfondo",
@@ -734,6 +739,7 @@
         "label": "Tipo di sfondo"
       }
     },
+    "hidden": "Nascosto",
     "import": "Importa elemento",
     "label": "Sezione",
     "moveDown": "Scorri la sezione verso il basso",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "L'orientamento di un'immagine e di un blocco di testo stabilisce dove appare ciascuno degli elementi del blocco.",
           "label": "Orientamento",
-          "values": {
-            "0": "Testo a destra, immagine a sinistra",
-            "1": "Testo a sinistra, immagine a destra"
-          }
+          "values": [
+            "Testo a destra, immagine a sinistra",
+            "Testo a sinistra, immagine a destra"
+          ]
         },
         "preview": "Anteprima immagine",
         "text": {

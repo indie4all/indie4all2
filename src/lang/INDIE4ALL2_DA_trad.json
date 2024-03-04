@@ -637,6 +637,7 @@
     "errorMessage": "Fejl",
     "exportedElement": "Varen er eksporteret korrekt",
     "exportedSection": "Sektion eksporteret med succes",
+    "hiddenContent": "Der skal være mindst én synlig sektion",
     "importedElement": "Varen er importeret korrekt",
     "importedSection": "Sektion importeret med succes",
     "loadError": "Enheden kunne ikke indlæses",
@@ -716,6 +717,10 @@
         "label": "Afsnit bogmærke",
         "placeholder": "Skriv et bogmærke..."
       },
+      "hidden": {
+        "help": "Hvis denne indstilling er valgt, vises dette afsnit ikke på den genererede enhed",
+        "label": "Skjul sektion"
+      },
       "image": {
         "help": "",
         "label": "URL-adresse til baggrundsbillede",
@@ -734,6 +739,7 @@
         "label": "Type baggrund"
       }
     },
+    "hidden": "Skjult",
     "import": "Importer vare",
     "label": "Afsnit",
     "moveDown": "Rul sektionen ned",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "Retningen af et billede og en tekstblok bestemmer, hvor hvert af elementerne i blokken vises.",
           "label": "Orientering",
-          "values": {
-            "0": "Tekst til højre, billede til venstre",
-            "1": "Tekst til venstre, billede til højre"
-          }
+          "values": [
+            "Tekst til højre, billede til venstre",
+            "Tekst til venstre, billede til højre"
+          ]
         },
         "preview": "Eksempel på billede",
         "text": {

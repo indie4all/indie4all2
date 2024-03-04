@@ -637,6 +637,7 @@
     "errorMessage": "Kļūda",
     "exportedElement": "Vienums veiksmīgi eksportēts",
     "exportedSection": "Veiksmīgi eksportētā sadaļa",
+    "hiddenContent": "Jābūt vismaz vienai redzamai sadaļai",
     "importedElement": "Vienums ir veiksmīgi importēts",
     "importedSection": "Sadaļa veiksmīgi importēta",
     "loadError": "Ierīci nevarēja ielādēt",
@@ -716,6 +717,10 @@
         "label": "Sadaļas grāmatzīme",
         "placeholder": "Uzrakstiet grāmatzīmi..."
       },
+      "hidden": {
+        "help": "Ja šī sadaļa ir atlasīta, ģenerētajā vienībā šī sadaļa netiks rādīta",
+        "label": "Paslēpt sadaļu"
+      },
       "image": {
         "help": "",
         "label": "Fona attēla URL",
@@ -734,6 +739,7 @@
         "label": "Fona veids"
       }
     },
+    "hidden": "Slēpts",
     "import": "Importēt vienumu",
     "label": "Sadaļā",
     "moveDown": "Ritināt sadaļu uz leju",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "Attēla un teksta bloka orientācija nosaka, kur parādās katrs no bloka elementiem.",
           "label": "Orientācija",
-          "values": {
-            "0": "Teksts labajā pusē, attēls kreisajā pusē",
-            "1": "Teksts kreisajā pusē, attēls labajā pusē"
-          }
+          "values": [
+            "Teksts labajā pusē, attēls kreisajā pusē",
+            "Teksts kreisajā pusē, attēls labajā pusē"
+          ]
         },
         "preview": "Attēla priekšskatījums",
         "text": {

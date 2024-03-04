@@ -637,6 +637,7 @@
     "errorMessage": "Error",
     "exportedElement": "L'element s'ha exportat amb èxit",
     "exportedSection": "La secció s'ha exportat amb èxit",
+    "hiddenContent": "Hi ha d' haver almenys una secció visible",
     "importedElement": "L'element s'ha importat amb èxit",
     "importedSection": "La secció s'ha importat amb èxit",
     "loadError": "La unitat no s'ha pogut carregar ",
@@ -716,6 +717,10 @@
         "label": "Marcador de la secció",
         "placeholder": "Escriu un marcador"
       },
+      "hidden": {
+        "help": "Si està seleccionat, aquesta secció no es mostrarà en la unitat generada",
+        "label": "Ocultar secció"
+      },
       "image": {
         "help": "",
         "label": "URL de la imatge de fons",
@@ -734,6 +739,7 @@
         "label": "Tipus de fons"
       }
     },
+    "hidden": "Oculta",
     "import": "Importa l'element",
     "label": "Secció",
     "moveDown": "Desplaça la secció cap avall",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "L'orientació d'un bloc d'imatge i text estableix on apareix cadascun dels elements en el bloc",
           "label": "Orientació",
-          "values": {
-            "0": "Text a la dreta, imatge a l'esquerra",
-            "1": "Text a l'esquerra, imatge a la dreta"
-          }
+          "values": [
+            "Text a la dreta, imatge a l'esquerra",
+            "Text a l'esquerra, imatge a la dreta"
+          ]
         },
         "preview": "Vista prèvia de la imatge",
         "text": {

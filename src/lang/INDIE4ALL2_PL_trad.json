@@ -637,6 +637,7 @@
     "errorMessage": "Błąd",
     "exportedElement": "Przedmiot został pomyślnie wyeksportowany",
     "exportedSection": "Sekcja wyeksportowana pomyślnie",
+    "hiddenContent": "Musi być co najmniej jedna widoczna sekcja",
     "importedElement": "Element zaimportowany pomyślnie",
     "importedSection": "Sekcja zaimportowana pomyślnie",
     "loadError": "Nie można załadować urządzenia",
@@ -716,6 +717,10 @@
         "label": "Zakładka sekcji",
         "placeholder": "Napisz zakładkę..."
       },
+      "hidden": {
+        "help": "Jeśli ta opcja zostanie wybrana, ta sekcja nie będzie wyświetlana na wygenerowanej jednostce",
+        "label": "Ukryj sekcję"
+      },
       "image": {
         "help": "",
         "label": "Adres URL obrazu tła",
@@ -734,6 +739,7 @@
         "label": "Rodzaj tła"
       }
     },
+    "hidden": "Ukryty",
     "import": "Importuj element",
     "label": "Sekcja",
     "moveDown": "Przewiń sekcję w dół",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "Orientacja bloku obrazu i tekstu określa, gdzie pojawia się każdy z elementów bloku.",
           "label": "Orientacja",
-          "values": {
-            "0": "Tekst po prawej, obraz po lewej",
-            "1": "Tekst po lewej, obraz po prawej"
-          }
+          "values": [
+            "Tekst po prawej, obraz po lewej",
+            "Tekst po lewej, obraz po prawej"
+          ]
         },
         "preview": "Podgląd obrazu",
         "text": {

@@ -96,7 +96,8 @@ export interface InputSectionData extends InputModelElementData {
     bookmark?: string,
     data?: InputWidgetData[],
     index?: number,
-    name?: string
+    name?: string,
+    hidden?: boolean
 }
 
 export interface TextBlockData {

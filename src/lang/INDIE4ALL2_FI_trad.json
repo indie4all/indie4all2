@@ -637,6 +637,7 @@
     "errorMessage": "Virhe",
     "exportedElement": "Kohteen vienti onnistui",
     "exportedSection": "Osan vienti onnistui",
+    "hiddenContent": "Vähintään yhden näkyvän osan on oltava",
     "importedElement": "Kohteen tuonti onnistui",
     "importedSection": "Osan tuonti onnistui",
     "loadError": "Laitetta ei voitu ladata",
@@ -716,6 +717,10 @@
         "label": "Osion kirjanmerkki",
         "placeholder": "Kirjoita kirjanmerkki..."
       },
+      "hidden": {
+        "help": "Jos tämä asetus on valittuna, tätä osaa ei näytetä luodussa yksikössä",
+        "label": "Piilota osio"
+      },
       "image": {
         "help": "",
         "label": "Taustakuvan URL-osoite",
@@ -734,6 +739,7 @@
         "label": "Taustan tyyppi"
       }
     },
+    "hidden": "Piilevä",
     "import": "Tuo kohde",
     "label": "Osa",
     "moveDown": "Vieritä osaa alaspäin",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "Kuva- ja tekstilohkon suunta määrittää, missä kukin lohkon elementti näkyy.",
           "label": "Suunnistus",
-          "values": {
-            "0": "Teksti oikealla, kuva vasemmalla",
-            "1": "Teksti vasemmalla, kuva oikealla"
-          }
+          "values": [
+            "Teksti oikealla, kuva vasemmalla",
+            "Teksti vasemmalla, kuva oikealla"
+          ]
         },
         "preview": "Kuvan esikatselu",
         "text": {

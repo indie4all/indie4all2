@@ -2,7 +2,7 @@ import I18n from "../../I18n";
 import ModelElement from "../ModelElement";
 import ModelManager from "../ModelManager";
 import prevTemplate from "./prev.hbs";
-import sectionTemplateEditor  from "./templateWidgetEditor.hbs";
+import sectionTemplateEditor from "./templateWidgetEditor.hbs";
 import sectionTemplate from "./template.hbs";
 import icon from "./icon.png";
 import WidgetElement from "../widgets/WidgetElement/WidgetElement";
@@ -16,6 +16,7 @@ export default class Section extends ModelElement {
 
     name: string;
     bookmark: string;
+    hidden: boolean;
     data: WidgetElement[]
 
     static async create(values?: InputSectionData): Promise<Section> {
@@ -28,12 +29,14 @@ export default class Section extends ModelElement {
         super(values);
         this.name = values?.name ?? (I18n.getInstance().translate("sections.label") + " " + (values?.index ?? 0));
         this.bookmark = values?.bookmark ?? "";
+        this.hidden = values?.hidden ?? false;
     }
 
     clone(): Section {
         const section = new Section();
         section.name = this.name;
         section.bookmark = this.bookmark;
+        section.hidden = this.hidden;
         section.data = this.data.map(elem => elem.clone());
         return section;
     }
@@ -45,7 +48,8 @@ export default class Section extends ModelElement {
             inputs: form({
                 id: this.id,
                 name: this.name,
-                bookmark: this.bookmark
+                bookmark: this.bookmark,
+                hidden: this.hidden
             })
         };
     }
@@ -57,14 +61,15 @@ export default class Section extends ModelElement {
     }
 
     createElement(): string {
+        const preview = this.preview();
         const data = {
             id: this.id,
-            name: this.name,
             icon: Section.icon,
-            children: this.data ? this.data.map(child => child.createElement()).join('') : ""
+            children: this.data ? this.data.map(child => child.createElement()).join('') : "",
+            preview
         };
 
-        if(Config.isWidgetEditorEnabled())
+        if (Config.isWidgetEditorEnabled())
             return sectionTemplateEditor(data);
         else
             return sectionTemplate(data);
@@ -81,6 +86,7 @@ export default class Section extends ModelElement {
     updateModelFromForm(form: any): void {
         this.name = form.name;
         this.bookmark = form.bookmark;
+        this.hidden = form.hidden;
     }
 
     updateTexts(texts: any): void {
@@ -110,6 +116,6 @@ export default class Section extends ModelElement {
 
     toJSON() {
         const result = super.toJSON();
-        return { ...result, name: this.name, bookmark: this.bookmark, data: this.data.map(elem => elem.toJSON()) }
+        return { ...result, name: this.name, bookmark: this.bookmark, hidden: this.hidden, data: this.data.map(elem => elem.toJSON()) }
     }
 }

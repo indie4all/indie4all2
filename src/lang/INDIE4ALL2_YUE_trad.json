@@ -637,6 +637,7 @@
     "errorMessage": "錯誤",
     "exportedElement": "已成功導出項目",
     "exportedSection": "已成功導出部分",
+    "hiddenContent": "必須至少有一個可見部分",
     "importedElement": "已成功導入項目",
     "importedSection": "已成功導入部分",
     "loadError": "無法加載設備",
@@ -716,6 +717,10 @@
         "label": "節書簽",
         "placeholder": "寫一個書籤..."
       },
+      "hidden": {
+        "help": "如果選擇此選項，則此部分將唔會顯示喺生成嘅設備上",
+        "label": "隱藏部分"
+      },
       "image": {
         "help": "",
         "label": "背景圖片網址",
@@ -734,6 +739,7 @@
         "label": "背景類型"
       }
     },
+    "hidden": "屈",
     "import": "導入項目",
     "label": "部分",
     "moveDown": "向下轆部分",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "圖像同文本塊嘅方向肯定塊中每個元素嘅顯示位置。",
           "label": "取向",
-          "values": {
-            "0": "右側為文本，左側為圖像",
-            "1": "左側為文本，右側為圖像"
-          }
+          "values": [
+            "右側為文本，左側為圖像",
+            "左側為文本，右側為圖像"
+          ]
         },
         "preview": "圖像預覽",
         "text": {

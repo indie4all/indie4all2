@@ -41,10 +41,19 @@ export default abstract class Author implements IApi {
         this.GUI.showErrors(currentErrors, newErrors);
 
         // Paint errors in the view
+
+        // No sections
         if (this.model.sections.length == 0) {
             if (print) this.GUI.showGeneralError("messages.emptyContent");
             return false;
         }
+
+        // Only hidden sections
+        if (this.model.sections.filter(section => !section.hidden).length == 0) {
+            if (print) this.GUI.showGeneralError("messages.hiddenContent");
+            return false;
+        }
+
         if (newErrors.length > 0) {
             if (print) this.GUI.showGeneralError("messages.contentErrors");
             return false;

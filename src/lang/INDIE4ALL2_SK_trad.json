@@ -637,6 +637,7 @@
     "errorMessage": "Chyba",
     "exportedElement": "Úspešne exportovaná položka",
     "exportedSection": "Úspešne exportovaná sekcia",
+    "hiddenContent": "Musí tam byť aspoň jedna viditeľná časť",
     "importedElement": "Úspešne importovaná položka",
     "importedSection": "Úspešne importovaná sekcia",
     "loadError": "Jednotku nebolo možné naložiť",
@@ -716,6 +717,10 @@
         "label": "Záložka sekcie",
         "placeholder": "Napíšte záložku..."
       },
+      "hidden": {
+        "help": "Ak je táto voľba vybratá, táto časť sa na vygenerovanej jednotke nezobrazí",
+        "label": "Skryť sekciu"
+      },
       "image": {
         "help": "",
         "label": "URL adresa obrázka na pozadí",
@@ -734,6 +739,7 @@
         "label": "Typ pozadia"
       }
     },
+    "hidden": "Skrytý",
     "import": "Importovať položku",
     "label": "Sekcia",
     "moveDown": "Posunúť sekciu nadol",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "Orientácia obrazového a textového bloku určuje, kde sa objaví každý z prvkov v bloku.",
           "label": "Orientácia",
-          "values": {
-            "0": "Text vpravo, obrázok vľavo",
-            "1": "Text vľavo, obrázok vpravo"
-          }
+          "values": [
+            "Text vpravo, obrázok vľavo",
+            "Text vľavo, obrázok vpravo"
+          ]
         },
         "preview": "Ukážka obrázka",
         "text": {

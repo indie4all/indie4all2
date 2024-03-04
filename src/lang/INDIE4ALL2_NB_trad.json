@@ -637,6 +637,7 @@
     "errorMessage": "Feil",
     "exportedElement": "Varen ble eksportert",
     "exportedSection": "Inndelingen ble eksportert",
+    "hiddenContent": "Det må være minst én synlig inndeling",
     "importedElement": "Elementet ble importert vellykket",
     "importedSection": "Inndelingen ble importert uten hell",
     "loadError": "Enheten kunne ikke lastes",
@@ -716,6 +717,10 @@
         "label": "Inndeling bokmerke",
         "placeholder": "Skriv et bokmerke ..."
       },
+      "hidden": {
+        "help": "Hvis valgt, vises ikke denne delen på den genererte enheten",
+        "label": "Skjul inndeling"
+      },
       "image": {
         "help": "",
         "label": "URL-adresse til bakgrunnsbilde",
@@ -734,6 +739,7 @@
         "label": "Type bakgrunn"
       }
     },
+    "hidden": "Skjult",
     "import": "Importere element",
     "label": "Seksjon",
     "moveDown": "Rulle delen ned",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "Retningen til en bilde- og tekstblokk fastslår hvor hvert av elementene i blokken vises.",
           "label": "Orientering",
-          "values": {
-            "0": "Tekst til høyre, bilde til venstre",
-            "1": "Tekst til venstre, bilde til høyre"
-          }
+          "values": [
+            "Tekst til høyre, bilde til venstre",
+            "Tekst til venstre, bilde til høyre"
+          ]
         },
         "preview": "Forhåndsvisning av bilde",
         "text": {

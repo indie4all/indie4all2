@@ -637,6 +637,7 @@
     "errorMessage": "Earráid",
     "exportedElement": "D' éirigh le heaspórtáil na míre",
     "exportedSection": "D' éirigh le heaspórtáil na rannóige",
+    "hiddenContent": "Ní mór roinn infheicthe amháin ar a laghad a bheith ann",
     "importedElement": "D' éirigh le hiompórtáil na míre",
     "importedSection": "D' éirigh leis an rannóg iompórtáilte",
     "loadError": "Níorbh fhéidir an t-aonad a luchtú",
@@ -716,6 +717,10 @@
         "label": "Leabharmharc rannáin",
         "placeholder": "Scríobh leabharmharc..."
       },
+      "hidden": {
+        "help": "Má roghnaítear é, ní thaispeánfar an rannán seo ar an aonad ginte",
+        "label": "Folaigh alt"
+      },
       "image": {
         "help": "",
         "label": "URL na híomhá cúlra",
@@ -734,6 +739,7 @@
         "label": "Cineál cúlra"
       }
     },
+    "hidden": "Folaithe",
     "import": "Iompórtáil mír",
     "label": "Rannóg",
     "moveDown": "Scrollaigh an chuid síos",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "Bunaítear le treoshuíomh íomhá agus bloc téacs an áit a bhfuil gach ceann de na heilimintí sa bhloc le feiceáil.",
           "label": "Treoshuíomh",
-          "values": {
-            "0": "Téacs ar dheis, íomhá ar chlé",
-            "1": "Téacs ar chlé, íomhá ar dheis"
-          }
+          "values": [
+            "Téacs ar dheis, íomhá ar chlé",
+            "Téacs ar chlé, íomhá ar dheis"
+          ]
         },
         "preview": "Réamhamharc íomhá",
         "text": {

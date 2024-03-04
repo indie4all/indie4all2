@@ -637,6 +637,7 @@
     "errorMessage": "Napaka",
     "exportedElement": "Element, ki se je uspešno izvozil",
     "exportedSection": "Odsek uspešno izvožen",
+    "hiddenContent": "Viden mora biti vsaj en vidni del",
     "importedElement": "Element, ki je bil uspešno uvožen",
     "importedSection": "Odsek uspešno uvožen",
     "loadError": "Enote ni bilo mogoče naložiti",
@@ -716,6 +717,10 @@
         "label": "Zaznamek odseka",
         "placeholder": "Napišite zaznamek ..."
       },
+      "hidden": {
+        "help": "Če je ta možnost izbrana, ta razdelek ne bo prikazan na ustvarjeni enoti",
+        "label": "Skrij razdelek"
+      },
       "image": {
         "help": "",
         "label": "URL slike ozadja",
@@ -734,6 +739,7 @@
         "label": "Vrsta ozadja"
       }
     },
+    "hidden": "Skriven",
     "import": "Uvoz elementa",
     "label": "Oddelek",
     "moveDown": "Pomikanje odsek navzdol",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "Usmerjenost slike in besedilnega bloka določa, kje se pojavi vsak element v bloku.",
           "label": "Usmerjenost",
-          "values": {
-            "0": "Besedilo na desni, slika na levi",
-            "1": "Besedilo na levi, slika na desni"
-          }
+          "values": [
+            "Besedilo na desni, slika na levi",
+            "Besedilo na levi, slika na desni"
+          ]
         },
         "preview": "Predogled slik",
         "text": {

@@ -637,6 +637,7 @@
     "errorMessage": "Hiba",
     "exportedElement": "Sikeresen exportált elem",
     "exportedSection": "A szakasz sikeres exportálása",
+    "hiddenContent": "Legalább egy látható szakasznak kell lennie",
     "importedElement": "Elem sikeres importálása",
     "importedSection": "Szakasz sikeres importálása",
     "loadError": "Az egységet nem lehetett betölteni",
@@ -716,6 +717,10 @@
         "label": "Szakasz könyvjelzője",
         "placeholder": "Könyvjelző írása..."
       },
+      "hidden": {
+        "help": "Ha be van jelölve, ez a szakasz nem jelenik meg a generált egységen",
+        "label": "Szakasz elrejtése"
+      },
       "image": {
         "help": "",
         "label": "Háttérkép URL-címe",
@@ -734,6 +739,7 @@
         "label": "A háttér típusa"
       }
     },
+    "hidden": "Rejtett",
     "import": "Elem importálása",
     "label": "Szakasz",
     "moveDown": "Görgessen lefelé a szakaszon",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "A kép- és szövegblokk tájolása határozza meg, hogy a blokk egyes elemei hol jelennek meg.",
           "label": "Tájékozódás",
-          "values": {
-            "0": "Szöveg a jobb oldalon, kép a bal oldalon",
-            "1": "Szöveg a bal oldalon, kép a jobb oldalon"
-          }
+          "values": [
+            "Szöveg a jobb oldalon, kép a bal oldalon",
+            "Szöveg a bal oldalon, kép a jobb oldalon"
+          ]
         },
         "preview": "Kép előnézete",
         "text": {

@@ -637,6 +637,7 @@
     "errorMessage": "Erro",
     "exportedElement": "Item exportado com êxito",
     "exportedSection": "Seção exportada com êxito",
+    "hiddenContent": "Deve haver pelo menos uma secção visível",
     "importedElement": "Item importado com êxito",
     "importedSection": "Seção importada com êxito",
     "loadError": "A unidade não pôde ser carregada",
@@ -716,6 +717,10 @@
         "label": "Marcador da secção",
         "placeholder": "Escreva um marcador..."
       },
+      "hidden": {
+        "help": "Se selecionada, esta seção não será exibida na unidade gerada",
+        "label": "Ocultar secção"
+      },
       "image": {
         "help": "",
         "label": "URL da imagem de fundo",
@@ -734,6 +739,7 @@
         "label": "Tipo de antecedentes"
       }
     },
+    "hidden": "Escondido",
     "import": "Importar item",
     "label": "Secção",
     "moveDown": "Deslocar a secção para baixo",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "A orientação de um bloco de imagem e texto estabelece onde cada um dos elementos no bloco aparece.",
           "label": "Orientação",
-          "values": {
-            "0": "Texto à direita, imagem à esquerda",
-            "1": "Texto à esquerda, imagem à direita"
-          }
+          "values": [
+            "Texto à direita, imagem à esquerda",
+            "Texto à esquerda, imagem à direita"
+          ]
         },
         "preview": "Pré-visualização da imagem",
         "text": {

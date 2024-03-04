@@ -637,6 +637,7 @@
     "errorMessage": "Viga",
     "exportedElement": "Üksus eksporditi edukalt",
     "exportedSection": "Jaotis eksporditi edukalt",
+    "hiddenContent": "Peab olema vähemalt üks nähtav osa",
     "importedElement": "Toode on edukalt imporditud",
     "importedSection": "Jaotis on edukalt imporditud",
     "loadError": "Seadet ei saanud laadida",
@@ -716,6 +717,10 @@
         "label": "Jaotise järjehoidja",
         "placeholder": "Kirjutage järjehoidja..."
       },
+      "hidden": {
+        "help": "Kui see on valitud, ei kuvata seda jaotist loodud üksuses",
+        "label": "Peida jaotis"
+      },
       "image": {
         "help": "",
         "label": "Taustpildi URL",
@@ -734,6 +739,7 @@
         "label": "Tausta tüüp"
       }
     },
+    "hidden": "Peidetud",
     "import": "Üksuse importimine",
     "label": "Jagu",
     "moveDown": "Jaotise kerimine alla",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "Pildi ja tekstiploki suund määrab, kus kuvatakse kõik ploki elemendid.",
           "label": "Orientatsioon",
-          "values": {
-            "0": "Tekst paremal, pilt vasakul",
-            "1": "Tekst vasakul, pilt paremal"
-          }
+          "values": [
+            "Tekst paremal, pilt vasakul",
+            "Tekst vasakul, pilt paremal"
+          ]
         },
         "preview": "Pildi eelvaade",
         "text": {

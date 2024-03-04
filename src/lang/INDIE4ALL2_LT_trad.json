@@ -637,6 +637,7 @@
     "errorMessage": "Klaida",
     "exportedElement": "Prekė sėkmingai eksportuota",
     "exportedSection": "Skyrius sėkmingai eksportuotas",
+    "hiddenContent": "Turi būti bent viena matoma sekcija",
     "importedElement": "Prekė sėkmingai importuota",
     "importedSection": "Sekcija sėkmingai importuota",
     "loadError": "Įrenginio nepavyko pakrauti",
@@ -716,6 +717,10 @@
         "label": "Sekcijos žymelė",
         "placeholder": "Parašykite žymę..."
       },
+      "hidden": {
+        "help": "Jei pasirinkta, šis skyrius nebus rodomas sugeneruotame vienete",
+        "label": "Slėpti skyrių"
+      },
       "image": {
         "help": "",
         "label": "Fono paveikslėlio URL",
@@ -734,6 +739,7 @@
         "label": "Fono tipas"
       }
     },
+    "hidden": "Pasislėpti",
     "import": "Importuoti prekę",
     "label": "Sekcija",
     "moveDown": "Slinkti sekcija žemyn",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "Vaizdo ir teksto bloko orientacija nustato, kur rodomas kiekvienas bloko elementas.",
           "label": "Orientacijos",
-          "values": {
-            "0": "Tekstas dešinėje, vaizdas kairėje",
-            "1": "Tekstas kairėje, vaizdas dešinėje"
-          }
+          "values": [
+            "Tekstas dešinėje, vaizdas kairėje",
+            "Tekstas kairėje, vaizdas dešinėje"
+          ]
         },
         "preview": "Vaizdo peržiūra",
         "text": {

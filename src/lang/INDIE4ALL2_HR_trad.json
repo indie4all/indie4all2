@@ -637,6 +637,7 @@
     "errorMessage": "Greška",
     "exportedElement": "Stavka je uspješno izvezena",
     "exportedSection": "Sekcija je uspješno izvezena",
+    "hiddenContent": "Mora postojati barem jedan vidljivi odjeljak",
     "importedElement": "Stavka je uspješno uvezena",
     "importedSection": "Sekcija je uspješno uvezena",
     "loadError": "Jedinicu nije moguće učitati",
@@ -716,6 +717,10 @@
         "label": "Knjižna oznaka sekcije",
         "placeholder": "Napišite knjižnu oznaku..."
       },
+      "hidden": {
+        "help": "Ako je odabrano, ova sekcija neće biti prikazana na generiranoj jedinici",
+        "label": "Sakrij sekciju"
+      },
       "image": {
         "help": "",
         "label": "URL pozadinske slike",
@@ -734,6 +739,7 @@
         "label": "Vrsta pozadine"
       }
     },
+    "hidden": "Skriven",
     "import": "Uvoz stavke",
     "label": "Sekcija",
     "moveDown": "Pomicanje sekcije prema dolje",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "Orijentacija slikovnog i tekstualnog bloka određuje gdje se pojavljuje svaki od elemenata u bloku.",
           "label": "Orijentacija",
-          "values": {
-            "0": "Tekst s desne strane, slika s lijeve strane",
-            "1": "Tekst s lijeve strane, slika s desne strane"
-          }
+          "values": [
+            "Tekst s desne strane, slika s lijeve strane",
+            "Tekst s lijeve strane, slika s desne strane"
+          ]
         },
         "preview": "Pretpregled slike",
         "text": {

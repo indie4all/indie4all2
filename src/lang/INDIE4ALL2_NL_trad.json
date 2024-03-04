@@ -637,6 +637,7 @@
     "errorMessage": "Fout",
     "exportedElement": "Object geëxporteerd",
     "exportedSection": "Sectie geëxporteerd",
+    "hiddenContent": "Er moet ten minste één zichtbaar gedeelte zijn",
     "importedElement": "Object geïmporteerd",
     "importedSection": "Sectie geïmporteerd",
     "loadError": "Het apparaat kan niet worden geladen",
@@ -716,6 +717,10 @@
         "label": "Sectie bladwijzer",
         "placeholder": "Schrijf een bladwijzer..."
       },
+      "hidden": {
+        "help": "Indien geselecteerd, wordt dit gedeelte niet weergegeven op de gegenereerde eenheid",
+        "label": "Sectie verbergen"
+      },
       "image": {
         "help": "",
         "label": "URL van achtergrondafbeelding",
@@ -734,6 +739,7 @@
         "label": "Type achtergrond"
       }
     },
+    "hidden": "Verborgen",
     "import": "Artikel importeren",
     "label": "Afdeling",
     "moveDown": "Scroll sectie naar beneden",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "De richting van een afbeeldings- en tekstblok bepaalt waar elk van de elementen in het blok wordt weergegeven.",
           "label": "Oriëntatie",
-          "values": {
-            "0": "Tekst rechts, afbeelding links",
-            "1": "Tekst links, afbeelding rechts"
-          }
+          "values": [
+            "Tekst rechts, afbeelding links",
+            "Tekst links, afbeelding rechts"
+          ]
         },
         "preview": "Voorbeeld van afbeelding",
         "text": {

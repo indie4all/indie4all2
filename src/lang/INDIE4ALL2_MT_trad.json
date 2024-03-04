@@ -637,6 +637,7 @@
     "errorMessage": "Żball",
     "exportedElement": "Oġġett esportat b'suċċess",
     "exportedSection": "Taqsima esportata b'suċċess",
+    "hiddenContent": "Għandu jkun hemm mill-inqas sezzjoni waħda viżibbli",
     "importedElement": "Item importat b'suċċess",
     "importedSection": "Taqsima importata b'suċċess",
     "loadError": "L-unità ma setgħetx titgħabba",
@@ -716,6 +717,10 @@
         "label": "Marka tal-ktieb tas-sezzjoni",
         "placeholder": "Ikteb bookmark..."
       },
+      "hidden": {
+        "help": "Jekk tintgħażel, din it-taqsima ma tintwerax fuq l-unità ġġenerata",
+        "label": "Aħbi s-sezzjoni"
+      },
       "image": {
         "help": "",
         "label": "URL tal-immaġni tal-isfond",
@@ -734,6 +739,7 @@
         "label": "Tip ta' sfond"
       }
     },
+    "hidden": "Moħbija",
     "import": "Oġġett ta' importazzjoni",
     "label": "Sezzjoni",
     "moveDown": "Skrollja s-sezzjoni 'l isfel",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "L-orjentazzjoni ta' immaġni u blokka tat-test tistabbilixxi fejn jidher kull wieħed mill-elementi fil-blokka.",
           "label": "Orjentazzjoni",
-          "values": {
-            "0": "Test fuq il-lemin, immaġni fuq ix-xellug",
-            "1": "Test fuq ix-xellug, immaġni fuq il-lemin"
-          }
+          "values": [
+            "Test fuq il-lemin, immaġni fuq ix-xellug",
+            "Test fuq ix-xellug, immaġni fuq il-lemin"
+          ]
         },
         "preview": "Previżjoni tal-immaġni",
         "text": {

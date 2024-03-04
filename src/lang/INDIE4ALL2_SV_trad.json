@@ -637,6 +637,7 @@
     "errorMessage": "Fel",
     "exportedElement": "Objektet har exporterats",
     "exportedSection": "Avsnittet har exporterats",
+    "hiddenContent": "Det måste finnas minst ett synligt avsnitt",
     "importedElement": "Objektet har importerats",
     "importedSection": "Avsnittet har importerats",
     "loadError": "Enheten kunde inte laddas",
@@ -716,6 +717,10 @@
         "label": "Avsnitt bokmärke",
         "placeholder": "Skriv ett bokmärke..."
       },
+      "hidden": {
+        "help": "Om du väljer det här avsnittet kommer det inte att visas på den genererade enheten",
+        "label": "Dölj avsnitt"
+      },
       "image": {
         "help": "",
         "label": "URL för bakgrundsbild",
@@ -734,6 +739,7 @@
         "label": "Typ av bakgrund"
       }
     },
+    "hidden": "Dold",
     "import": "Importera objekt",
     "label": "Sektion",
     "moveDown": "Bläddra nedåt",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "Orienteringen för en bild och ett textblock fastställer var och en av elementen i blocket visas.",
           "label": "Orientering",
-          "values": {
-            "0": "Text till höger, bild till vänster",
-            "1": "Text till vänster, bild till höger"
-          }
+          "values": [
+            "Text till höger, bild till vänster",
+            "Text till vänster, bild till höger"
+          ]
         },
         "preview": "Förhandsgranskning av bild",
         "text": {

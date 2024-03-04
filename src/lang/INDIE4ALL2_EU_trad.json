@@ -637,6 +637,7 @@
     "errorMessage": "Errorea",
     "exportedElement": "Elementua ondo esportatu da",
     "exportedSection": "Atala ondo esportatu da.",
+    "hiddenContent": "Gutxienez atal ikusgarri bat egon behar da",
     "importedElement": "Elementua ondo inportatu da.",
     "importedSection": "Atala ondo inportatu da.",
     "loadError": "Ezin izan da unitatea kargatu",
@@ -716,6 +717,10 @@
         "label": "Atalaren markagailua",
         "placeholder": "Idatzi markagailu bat ..."
       },
+      "hidden": {
+        "help": "Aukeratuta badago, atal hau ez da sortutako unitatean erakutsiko",
+        "label": "Ezkutatzea atala"
+      },
       "image": {
         "help": "",
         "label": "Atzeko irudiaren URLa",
@@ -734,6 +739,7 @@
         "label": "Atzeko mota"
       }
     },
+    "hidden": "Ezkutatuta",
     "import": "Inportatu elementua",
     "label": "Atala",
     "moveDown": "Mugitu atala beherantz",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "Irudi- eta testu-bloke baten orientazioak elementu bakoitza non agertzen den ezartzen du.",
           "label": "Orientazioa",
-          "values": {
-            "0": "Testua eskuinean, irudia ezkerrean",
-            "1": "Testua ezkerrean, irudia eskuinean"
-          }
+          "values": [
+            "Testua eskuinean, irudia ezkerrean",
+            "Testua ezkerrean, irudia eskuinean"
+          ]
         },
         "preview": "Irudiaren aurrebista",
         "text": {

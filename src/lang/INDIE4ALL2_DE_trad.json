@@ -637,6 +637,7 @@
     "errorMessage": "Fehler",
     "exportedElement": "Artikel erfolgreich exportiert",
     "exportedSection": "Abschnitt erfolgreich exportiert",
+    "hiddenContent": "Es muss mindestens ein sichtbarer Abschnitt vorhanden sein",
     "importedElement": "Artikel erfolgreich importiert",
     "importedSection": "Abschnitt erfolgreich importiert",
     "loadError": "Das Gerät konnte nicht geladen werden",
@@ -716,6 +717,10 @@
         "label": "Lesezeichen für den Abschnitt",
         "placeholder": "Schreiben Sie ein Lesezeichen..."
       },
+      "hidden": {
+        "help": "Wenn diese Option ausgewählt ist, wird dieser Abschnitt auf der generierten Einheit nicht angezeigt",
+        "label": "Abschnitt ausblenden"
+      },
       "image": {
         "help": "",
         "label": "URL des Hintergrundbildes",
@@ -734,6 +739,7 @@
         "label": "Art des Hintergrunds"
       }
     },
+    "hidden": "Versteckt",
     "import": "Artikel importieren",
     "label": "Abschnitt",
     "moveDown": "Abschnitt nach unten scrollen",
@@ -1218,10 +1224,10 @@
         "layout": {
           "help": "Die Ausrichtung eines Bild- und Textblocks legt fest, wo die einzelnen Elemente im Block angezeigt werden.",
           "label": "Orientierung",
-          "values": {
-            "0": "Text rechts, Bild links",
-            "1": "Text links, Bild rechts"
-          }
+          "values": [
+            "Text rechts, Bild links",
+            "Text links, Bild rechts"
+          ]
         },
         "preview": "Bildvorschau",
         "text": {

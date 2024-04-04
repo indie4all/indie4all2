@@ -30,49 +30,34 @@ export default class FilePicker {
         $('#modal-file-picker').find('.file-picker-breadcrumbs').html(content({ steps: this.path }));
     }
 
-    async renderFiles(files: FilePickerFile[]) {
-        const $content = $('#modal-file-picker').find('.file-picker-files');
-        if (!files.length) {
+    async renderElements(elements: FilePickerElement[]) {
+        const $content = $('#modal-file-picker').find('.file-picker-entries');
+        if (!elements.length) {
             const text = I18n.getInstance().value("common.file-picker.no-files");
-            $content.html(`<li class="no-entries">${text}</div>`);
+            $content.html(`<li class="no-entries mt-4" tabindex="-1">${text}</div>`);
             return;
         }
 
-        const html = (await Promise.all(files.map(async (entry) => {
-            const { default: file } = await import('./views/file.hbs');
-            let url = this.repoURL + `/content/${entry.mediaFileId}`;
+        const { default: file } = await import('./views/file.hbs');
+        const html = (await Promise.all(elements.map(async (entry) => {
+            let name = entry.name;
+            let id = entry.elementId;
+            let type = entry.elementType.toLowerCase();
+            let url = this.repoURL + `/content/${entry.elementId}`;
             let thumbnail: string = "";
-            if (entry.fileType === "IMAGE")
-                thumbnail = this.repoURL + `/thumbnail/${entry.mediaFileId}`;
-            else if (entry.fileType === "VIDEO") {
-                thumbnail = entry.thumbnail;
-                // endpointTranscoded contains the Vimeo identifier
-                url = this.repoURL + `/content/${entry.endpointTranscoded}`;
+            switch (type) {
+                case "image":
+                    thumbnail = this.repoURL + `/thumbnail/${entry.elementId}`;
+                    break;
+                case "video":
+                    const video = entry as FilePickerFile;
+                    thumbnail = video.thumbnail;
+                    // endpointTranscoded contains the Vimeo identifier
+                    url = this.repoURL + `/content/${video.endpointTranscoded}`;
+
             }
-            return file({
-                name: entry.title, id: entry.mediaFileId,
-                thumbnail,
-                type: entry.fileType.toString().toLowerCase(),
-                url
-            });
+            return file({ name, id, thumbnail, type, url });
         }))).join("");
-        $content.html(html);
-    }
-
-    async renderFolders(folders: FilePickerDirectory[]) {
-        const $content = $('#modal-file-picker').find('.file-picker-folders');
-        if (!folders.length) {
-            const text = I18n.getInstance().value("common.file-picker.no-folders");
-            $content.html(`<li class="no-entries">${text}</div>`);
-            return;
-        }
-
-        const html = (await Promise.all(folders.map(async (entry) => {
-            const { default: directory } = await import('./views/folder.hbs');
-            return directory({ name: entry.name, id: entry.id });
-        }))).join("");
-
-
         $content.html(html);
     }
 
@@ -82,7 +67,8 @@ export default class FilePicker {
         $pagination.html(pagination({ currentPage, pages: [...Array(totalPages).keys()].map(e => e + 1) }));
     }
 
-    async draw(page: number = 0, options: FilePickerDrawOptions = { files: true, folders: true, pages: true, breadcrumbs: true }) {
+    async draw(page: number = 0, options: FilePickerDrawOptions = { files: true, pages: true, breadcrumbs: true }) {
+        $('#modal-file-picker').addClass('loading');
         const folderId = this.path[this.path.length - 1].id;
         const headers = new Headers();
         headers.append("Accept", "application/json");
@@ -94,11 +80,11 @@ export default class FilePicker {
             return;
         }
         const content = await response.json() as FilePickerResponse;
-        options?.breadcrumbs && this.renderBreadcrumbs();
-        options?.files && this.renderFiles(content.mediaFiles.data);
-        options?.folders && this.renderFolders(content.folders.data);
-        options?.pages && this.renderFilePagination(content.mediaFiles.currentPage, content.mediaFiles.totalPages);
+        options?.breadcrumbs && await this.renderBreadcrumbs();
+        options?.pages && await this.renderFilePagination(content.elements.currentPage, content.elements.totalPages);
+        options?.files && await this.renderElements(content.elements.data);
         $('#modal-file-picker').find('.btn-submit').prop('disabled', true);
+        $('#modal-file-picker').removeClass('loading');
     }
 
     async show() {
@@ -118,13 +104,17 @@ export default class FilePicker {
                 // Redraw only the files panel
                 self.draw(self.currentPage, { files: true });
             })
+            // Not triggered on a <li> item
+            .on('keydown', '.file-picker-entry', function (e) {
+                if (e.key === "Enter" || e.key === " ") $(this).trigger('click');
+            })
             .on('click', '.file-picker-folder', function (e) {
                 self.currentPage = 0;
                 self.path.push({ name: this.dataset.name, id: this.dataset.id });
-                self.draw();
+                self.draw().then(() => $('#modal-file-picker').find('.file-picker-entries').trigger('focus'));
             })
-            .on('click', '.file-picker-file', function (e) {
-                $('.file-picker-file').removeClass('active');
+            .on('click', '.file-picker-file, .file-picker-audio, .file-picker-image, .file-picker-video', function (e) {
+                $('.file-picker-entry').removeClass('active');
                 $(this).addClass('active');
                 $('#modal-file-picker').find('.btn-submit').prop('disabled', false);
             })
@@ -133,11 +123,16 @@ export default class FilePicker {
                 const index = $list.children().index(this);
                 self.currentPage = 0;
                 self.path = self.path.slice(0, index + 1);
-                self.draw();
+                self.draw().then(() => {
+                    const current = self.path[self.path.length - 1];
+                    if (current.id) $list.find('.file-picker-breadcrumb[data-folder-id="' + current.id + '"] a').trigger('focus');
+                    else $list.find('.file-picker-breadcrumb:first a').trigger('focus');
+                });
+
             })
             .on('click', '.btn-submit', function (e) {
                 const $modal = $('#modal-file-picker');
-                const url = $modal.find('.file-picker-file.active').first().get(0).dataset.url;
+                const url = $modal.find('.file-picker-entry.active').first().get(0).dataset.url;
                 $modal.modal('hide');
                 self?.onSubmit(url);
             })

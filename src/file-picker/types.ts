@@ -1,41 +1,39 @@
 //enum FileType { IMAGE = "IMAGE", VIDEO = "VIDEO", AUDIO = "AUDIO", FILE = "FILE" }
 
 interface FilePickerResponse {
-    "folders": {
-        "data": FilePickerDirectory[];
+    "authorName": string,
+    "authorizedScreens": string[],
+    "elements": {
+        "currentPage": number,
+        "data": FilePickerElement[];
         "totalElements": number,
         "totalPages": number,
-        "currentPage": number,
         "pageSize": number
     },
-    "mediaFiles": {
-        "data": FilePickerFile[];
-        "totalElements": number,
-        "totalPages": number,
-        "currentPage": number,
-        "pageSize": number
-
-    }
+    "eventCode": number,
+    "notifications": boolean,
+    "quota": number,
+    "storageUsed": number
 }
 
-interface FilePickerDirectory {
-    name: string;
-    id: string;
-    folderType: string;
-    authorizedUsers: string[]; // TODO: ask about this
-    eventCode: number;
-    createdAt: string;
+interface FilePickerElement {
+    "createdAt": string,
+    "elementId": string,
+    "elementType": string,
+    "name": string,
 }
 
-interface FilePickerFile {
-    title: string;
-    fileType: string;
-    rawTags: string;
-    mediaFileId: string;
-    thumbnail: string;
-    license: string;
-    createdAt: string;
-    endpointTranscoded: string;
+interface FilePickerDirectory extends FilePickerElement {
+    "subFolders": string
+}
+
+interface FilePickerFile extends FilePickerElement {
+    "endpointTranscoded": string,
+    "extension": string,
+    "license": string,
+    "rawTags": string,
+    "status": string,
+    "thumbnail": string
 }
 
 interface FilePickerBreadcrumb {

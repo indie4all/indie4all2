@@ -1,22 +1,23 @@
-<li>
-    <a href="#" class="file-picker-entry file-picker-file file-picker-{{type}} pt-4" data-id="{{{id}}}" data-url="{{{url}}}">
-        {{#ifeq type "image" }}
-        <span class="thumbnail-wrapper">
-          <img class="file-picker-thumbnail" src="{{{thumbnail}}}" alt="" />
-        </span>
-        {{/ifeq}}
-        {{#ifeq type "video" }}
-        <span class="thumbnail-wrapper">
-          <img class="file-picker-thumbnail" src="{{{thumbnail}}}" alt="" />
-          <i class="fa fa-4x fa-circle-play"></i>
-        </span>
-        {{/ifeq}}
-        {{#ifeq type "file" }}
-          <i class="fa fa-file"></i>
-        {{/ifeq}}
-        {{#ifeq type "audio" }}
-          <i class="fa fa-file-audio"></i>
-        {{/ifeq}}
-        <span class="name">{{{name}}}</span>
-    </a>
+<li id="elem-{{{id}}}" class="file-picker-entry file-picker-{{type}} pt-4" data-id="{{{id}}}" data-url="{{{url}}}" data-name="{{{name}}}" tabindex="0">
+  {{#ifeq type "image" }}
+  <span class="thumbnail-wrapper">
+    <img class="file-picker-thumbnail" src="{{{thumbnail}}}" alt="" />
+  </span>
+  {{/ifeq}}
+  {{#ifeq type "video" }}
+  <span class="thumbnail-wrapper">
+    <img class="file-picker-thumbnail" src="{{{thumbnail}}}" alt="" />
+    <i class="fa fa-4x fa-circle-play"></i>
+  </span>
+  {{/ifeq}}
+  {{#ifeq type "file" }}
+    <i class="fa fa-file"></i>
+  {{/ifeq}}
+  {{#ifeq type "audio" }}
+    <i class="fa fa-file-audio"></i>
+  {{/ifeq}}
+  {{#ifeq type "folder" }}
+  <i class="fa fa-folder pt-2"></i>
+  {{/ifeq}}
+  <span class="name">{{{name}}}</span>
 </li>

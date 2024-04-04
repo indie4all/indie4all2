@@ -10,7 +10,7 @@ const getFilesAndFolders = async (token: string, folderId: string, pageSize: num
     const config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: `https://scgatewaydev-fwe6gvg6gzbndycj.z01.azurefd.net/api/media/author/${folderId}?fl_page=0&fl_size=10000&fl_sort=createdAt,desc&mf_page=${currentPage}&mf_size=${pageSize}&mf_sort=createdAt,desc`,
+        url: `https://scgatewaydev-fwe6gvg6gzbndycj.z01.azurefd.net/api/media/author/${folderId}?fl_page=${currentPage}&fl_size=${pageSize}`,
         headers: {
             'X-Azure-FDID': '00028f9e-042f-4dda-a5d1-739b39c453e3',
             'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const handleConnectionError = function (res: Response, error: Error) {
 
 export default {
     get: async (req: Request, res: Response) => {
-        const PAGE_SIZE = 12;
+        const PAGE_SIZE = 18;
 
         const currentPage = parseInt(req.query.page as string ?? "0");
         let folderId = req.params.folderId ?? "";

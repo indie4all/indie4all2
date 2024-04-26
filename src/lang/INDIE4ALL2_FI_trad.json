@@ -1141,9 +1141,9 @@
           "placeholder": "Kysymysteksti, jossa on tyhjä ___-paikka."
         },
         "questionText": {
-          "help": "Kirjoita kysymysteksti haluamallasi tyhjällä tilalla ja erityinen avainsana [tyhjä].",
+          "help": "Kirjoita kysymysteksti haluamallasi tyhjällä tilalla ja erityinen avainsana [blank].",
           "label": "Kysymyksen teksti",
-          "placeholder": "Kysymysteksti, jossa on tyhjä elementti"
+          "placeholder": "Kysymysteksti, jossa [blank] elementti on tyhjä"
         }
       },
       "label": "Täytä aukkokysymys",
@@ -1277,9 +1277,9 @@
           "text": "Vastata"
         },
         "sentence": {
-          "help": "Sinun on kirjoitettava lauseen teksti, aukko mukaan lukien, käyttämällä erityistä merkkiä [tyhjä].",
+          "help": "Sinun on kirjoitettava lauseen teksti, aukko mukaan lukien, käyttämällä erityistä merkkiä [blank].",
           "label": "Lauseen teksti",
-          "placeholder": "Lauseen teksti merkinnällä [tyhjä]"
+          "placeholder": "Lauseen teksti merkinnällä [blank]"
         },
         "sentencePreview": {
           "help": "Näin tarkastelisit lausetta sisältöyksikössä.",

@@ -1143,7 +1143,7 @@
         "questionText": {
           "help": "質問文は、必要な空白スペースに特殊キーワード[blank]を付けて入力する必要があります。",
           "label": "質問文",
-          "placeholder": "空白要素を含む質問テキスト"
+          "placeholder": "[blank]要素が空白の質問文"
         }
       },
       "label": "ギャップを埋める質問",
@@ -1279,7 +1279,7 @@
         "sentence": {
           "help": "隙間も含めた文章の文章は、特殊マーカー[blank]を使って書く必要があります。",
           "label": "文テキスト",
-          "placeholder": "マーカー付きの文テキスト [空白]"
+          "placeholder": "マーカー付きの文テキスト [blank]"
         },
         "sentencePreview": {
           "help": "これは、コンテンツユニットのフレーズを見る方法です。",

@@ -1141,9 +1141,9 @@
           "placeholder": "Tekst pitanja s praznim ___ utorom."
         },
         "questionText": {
-          "help": "Morate upisati tekst pitanja s praznim prostorom koji želite s posebnom ključnom riječi [prazno].",
+          "help": "Morate upisati tekst pitanja s praznim prostorom koji želite s posebnom ključnom riječi [blank].",
           "label": "Tekst pitanja",
-          "placeholder": "Tekst pitanja s praznim elementom"
+          "placeholder": "Tekst pitanja s praznim elementom [blank]"
         }
       },
       "label": "Ispunite pitanje o praznini",
@@ -1277,9 +1277,9 @@
           "text": "Odgovor"
         },
         "sentence": {
-          "help": "Morate napisati tekst rečenice, uključujući prazninu, pomoću posebne oznake [prazno].",
+          "help": "Morate napisati tekst rečenice, uključujući prazninu, pomoću posebne oznake [blank].",
           "label": "Tekst rečenice",
-          "placeholder": "Tekst rečenice s oznakom [prazno]"
+          "placeholder": "Tekst rečenice s oznakom [blank]"
         },
         "sentencePreview": {
           "help": "Ovako biste gledali na frazu u jedinici sadržaja.",

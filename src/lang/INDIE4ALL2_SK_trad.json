@@ -1141,9 +1141,9 @@
           "placeholder": "Text otázky s prázdnym slotom ___."
         },
         "questionText": {
-          "help": "Musíte zadať text otázky s prázdnym miestom, ktoré chcete, so špeciálnym kľúčovým slovom [prázdne].",
+          "help": "Musíte zadať text otázky s prázdnym miestom, ktoré chcete, so špeciálnym kľúčovým slovom [blank].",
           "label": "Text otázky",
-          "placeholder": "Text otázky s prázdnym prvkom"
+          "placeholder": "Text otázky s prázdnym prvkom [blank]"
         }
       },
       "label": "Vyplňte otázku medzery",
@@ -1277,7 +1277,7 @@
           "text": "Odpoveď"
         },
         "sentence": {
-          "help": "Musíte napísať text vety vrátane medzery pomocou špeciálnej značky [blanker].",
+          "help": "Musíte napísať text vety vrátane medzery pomocou špeciálnej značky [blank].",
           "label": "Text vety",
           "placeholder": "Text vety so značkou [blank]"
         },

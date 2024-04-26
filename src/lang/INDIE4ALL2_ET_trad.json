@@ -1143,7 +1143,7 @@
         "questionText": {
           "help": "Peate tippima küsimuse teksti soovitud tühja ruumiga spetsiaalse märksõnaga [blank].",
           "label": "Küsimuse tekst",
-          "placeholder": "Küsimuse tekst tühja elemendiga"
+          "placeholder": "Küsimuse tekst, mille element on tühi [blank]"
         }
       },
       "label": "Täitke lünk",
@@ -1277,9 +1277,9 @@
           "text": "Vastus"
         },
         "sentence": {
-          "help": "Peate kirjutama lause teksti koos tühikuga, kasutades spetsiaalset markerit [tühi].",
+          "help": "Peate kirjutama lause teksti koos tühikuga, kasutades spetsiaalset markerit [blank].",
           "label": "Lause tekst",
-          "placeholder": "Lause tekst markeriga [tühi]"
+          "placeholder": "Lause tekst markeriga [blank]"
         },
         "sentencePreview": {
           "help": "Nii vaataksite sisuüksuse fraasi.",

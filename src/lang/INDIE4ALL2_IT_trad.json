@@ -1143,7 +1143,7 @@
         "questionText": {
           "help": "È necessario digitare il testo della domanda con lo spazio vuoto desiderato con la parola chiave speciale [blank].",
           "label": "Testo della domanda",
-          "placeholder": "Testo della domanda con elemento vuoto"
+          "placeholder": "Testo della domanda con elemento [blank] vuoto"
         }
       },
       "label": "Riempi la domanda sul vuoto",
@@ -1277,9 +1277,9 @@
           "text": "Risposta"
         },
         "sentence": {
-          "help": "È necessario scrivere il testo della frase incluso lo spazio utilizzando il marcatore speciale [vuoto].",
+          "help": "È necessario scrivere il testo della frase incluso lo spazio utilizzando il marcatore speciale [blank].",
           "label": "Testo della frase",
-          "placeholder": "Testo della frase con marcatore [vuoto]"
+          "placeholder": "Testo della frase con marcatore [blank]"
         },
         "sentencePreview": {
           "help": "Questo è il modo in cui guarderesti la frase nell'unità di contenuto.",

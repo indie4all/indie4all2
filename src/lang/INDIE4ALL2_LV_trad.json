@@ -1143,7 +1143,7 @@
         "questionText": {
           "help": "Jautājuma teksts ir jāieraksta ar vajadzīgo tukšo vietu ar īpašo atslēgvārdu [blank].",
           "label": "Jautājuma teksts",
-          "placeholder": "Jautājuma teksts ar tukšu elementu"
+          "placeholder": "Jautājuma teksts ar tukšu elementu [blank]"
         }
       },
       "label": "Aizpildiet plaisas jautājumu",
@@ -1277,9 +1277,9 @@
           "text": "Atbildēt"
         },
         "sentence": {
-          "help": "Jums jāraksta teikuma teksts, ieskaitot atstarpi, izmantojot speciālo marķieri [tukšs].",
+          "help": "Jums jāraksta teikuma teksts, ieskaitot atstarpi, izmantojot speciālo marķieri [blank].",
           "label": "Teikuma teksts",
-          "placeholder": "Teikuma teksts ar marķieri [tukšs]"
+          "placeholder": "Teikuma teksts ar marķieri [blank]"
         },
         "sentencePreview": {
           "help": "Tādā veidā jūs skatītos uz frāzi satura vienībā.",

@@ -1141,9 +1141,9 @@
           "placeholder": "Vraagtekst met lege ___ sleuf."
         },
         "questionText": {
-          "help": "U moet de vraagtekst typen met de gewenste spatie met het speciale trefwoord [leeg].",
+          "help": "U moet de vraagtekst typen met de gewenste spatie met het speciale trefwoord [blank].",
           "label": "Tekst van de vraag",
-          "placeholder": "Vraagtekst met leeg element"
+          "placeholder": "Vraagtekst met het element [blank] leeg"
         }
       },
       "label": "Vul de leemte vraag",
@@ -1277,9 +1277,9 @@
           "text": "Antwoorden"
         },
         "sentence": {
-          "help": "U moet de tekst van de zin inclusief de opening schrijven met behulp van de speciale markering [leeg].",
+          "help": "U moet de tekst van de zin inclusief de opening schrijven met behulp van de speciale markering [blank].",
           "label": "Tekst van de zin",
-          "placeholder": "Zinstekst met markering [leeg]"
+          "placeholder": "Zinstekst met markering [blank]"
         },
         "sentencePreview": {
           "help": "Dit is hoe je naar de zin in de inhoudseenheid zou kijken.",

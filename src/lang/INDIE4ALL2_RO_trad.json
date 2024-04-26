@@ -1141,9 +1141,9 @@
           "placeholder": "Textul întrebării cu slotul ___ gol."
         },
         "questionText": {
-          "help": "Trebuie să tastați textul întrebării cu spațiul gol dorit cu cuvântul cheie special [necompletat].",
+          "help": "Trebuie să tastați textul întrebării cu spațiul gol dorit cu cuvântul cheie special [blank].",
           "label": "Textul întrebării",
-          "placeholder": "Text întrebare cu element gol"
+          "placeholder": "Text întrebare cu elementul [blank] necompletat"
         }
       },
       "label": "Completați întrebarea goală",
@@ -1277,9 +1277,9 @@
           "text": "Răspunde"
         },
         "sentence": {
-          "help": "Trebuie să scrieți textul propoziției, inclusiv decalajul, folosind markerul special [gol].",
+          "help": "Trebuie să scrieți textul propoziției, inclusiv decalajul, folosind markerul special [blank].",
           "label": "Textul propoziției",
-          "placeholder": "Text propoziție cu marcator [necompletat]"
+          "placeholder": "Text propoziție cu marcator [blank]"
         },
         "sentencePreview": {
           "help": "Acesta este modul în care ați privi fraza din unitatea de conținut.",

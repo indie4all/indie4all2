@@ -1141,9 +1141,9 @@
           "placeholder": "Ceist téacs le bán ___ sliotán."
         },
         "questionText": {
-          "help": "Ní mór duit téacs na ceiste a chlóscríobh leis an spás bán is mian leat leis an eochairfhocal speisialta [bán].",
+          "help": "Ní mór duit téacs na ceiste a chlóscríobh leis an spás bán is mian leat leis an eochairfhocal speisialta [blank].",
           "label": "Téacs na gceisteanna",
-          "placeholder": "Téacs na gceisteanna le heilimint bhán"
+          "placeholder": "Téacs na gceisteanna le eilimint [blank] bán"
         }
       },
       "label": "Líon ceist na bearna",
@@ -1277,9 +1277,9 @@
           "text": "Freagra"
         },
         "sentence": {
-          "help": "Ní mór duit téacs na habairte a scríobh lena n-áirítear an bhearna tríd an marcóir speisialta [bán] a úsáid.",
+          "help": "Ní mór duit téacs na habairte a scríobh lena n-áirítear an bhearna tríd an marcóir speisialta [blank] a úsáid.",
           "label": "Téacs abairte",
-          "placeholder": "Téacs abairte le marcóir [bán]"
+          "placeholder": "Téacs abairte le marcóir [blank]"
         },
         "sentencePreview": {
           "help": "Seo mar a bhreathnódh tú ar an bhfrása san aonad ábhair.",

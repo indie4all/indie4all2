@@ -1143,7 +1143,7 @@
         "questionText": {
           "help": "Você deve digitar o texto da pergunta com o espaço em branco desejado com a palavra-chave especial [blank].",
           "label": "Texto da pergunta",
-          "placeholder": "Texto da pergunta com elemento em branco"
+          "placeholder": "Texto da pergunta com o elemento [blank] em branco"
         }
       },
       "label": "Preencha a pergunta da lacuna",
@@ -1277,9 +1277,9 @@
           "text": "Resposta"
         },
         "sentence": {
-          "help": "Você precisa escrever o texto da frase, incluindo a lacuna, usando o marcador especial [em branco].",
+          "help": "Você precisa escrever o texto da frase, incluindo a lacuna, usando o marcador especial [blank].",
           "label": "Texto da frase",
-          "placeholder": "Texto da frase com marcador [em branco]"
+          "placeholder": "Texto da frase com marcador [blank]"
         },
         "sentencePreview": {
           "help": "É assim que você veria a frase na unidade de conteúdo.",

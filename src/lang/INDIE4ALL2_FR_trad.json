@@ -1143,7 +1143,7 @@
         "questionText": {
           "help": "Vous devez taper le texte de la question avec l’espace vide souhaité avec le mot-clé spécial [blank].",
           "label": "Texte de la question",
-          "placeholder": "Texte de la question avec élément vide"
+          "placeholder": "Texte de la question avec l’élément [blank] vide"
         }
       },
       "label": "Combler la question de l’écart",
@@ -1277,9 +1277,9 @@
           "text": "Répondre"
         },
         "sentence": {
-          "help": "Vous devez écrire le texte de la phrase, y compris l’espace, en utilisant le marqueur spécial [vide].",
+          "help": "Vous devez écrire le texte de la phrase, y compris l’espace, en utilisant le marqueur spécial [blank].",
           "label": "Texte de la phrase",
-          "placeholder": "Texte de phrase avec marqueur [vide]"
+          "placeholder": "Texte de phrase avec marqueur [blank]"
         },
         "sentencePreview": {
           "help": "C’est ainsi que vous considéreriez la phrase dans l’unité de contenu.",

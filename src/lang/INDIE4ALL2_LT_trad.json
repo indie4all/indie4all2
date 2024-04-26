@@ -1141,9 +1141,9 @@
           "placeholder": "Klausimo tekstas su tuščia ___ anga."
         },
         "questionText": {
-          "help": "Turite įvesti klausimo tekstą su tuščia norima vieta naudodami specialų raktinį žodį [tuščias].",
+          "help": "Turite įvesti klausimo tekstą su tuščia norima vieta naudodami specialų raktinį žodį [blank].",
           "label": "Klausimo tekstas",
-          "placeholder": "Klausimo tekstas su tuščiu elementu"
+          "placeholder": "Klausimo tekstas, kai [blank] elementas tuščias"
         }
       },
       "label": "Užpildykite spragos klausimą",
@@ -1279,7 +1279,7 @@
         "sentence": {
           "help": "Turite parašyti sakinio tekstą, įskaitant tarpą, naudodami specialų žymeklį [blank].",
           "label": "Sakinio tekstas",
-          "placeholder": "Sakinio tekstas su žymekliu [tuščias]"
+          "placeholder": "Sakinio tekstas su žymekliu [blank]"
         },
         "sentencePreview": {
           "help": "Taip žiūrėtumėte į frazę turinio vienete.",

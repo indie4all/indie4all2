@@ -1141,9 +1141,9 @@
           "placeholder": "Texto da pregunta co foco ___ en branco."
         },
         "questionText": {
-          "help": "Debe escribir o texto da pregunta co espazo en branco que desexa coa palabra clave especial [brank].",
+          "help": "Debe escribir o texto da pregunta co espazo en branco que desexa coa palabra clave especial [blank].",
           "label": "Texto da pregunta",
-          "placeholder": "Texto da pregunta co elemento [brank] en branco"
+          "placeholder": "Texto da pregunta co elemento [blank] en branco"
         }
       },
       "label": "Pregunta de encher o oco",
@@ -1277,9 +1277,9 @@
           "text": "Resposta"
         },
         "sentence": {
-          "help": "Necesitas escribir o texto da frase incluíndo o oco mediante o uso do marcador especial [brank].",
+          "help": "Necesitas escribir o texto da frase incluíndo o oco mediante o uso do marcador especial [blank].",
           "label": "Texto da frase",
-          "placeholder": "Texto da frase co marcador [brank]"
+          "placeholder": "Texto da frase co marcador [blank]"
         },
         "sentencePreview": {
           "help": "Así é como verías a frase na unidade de contido.",

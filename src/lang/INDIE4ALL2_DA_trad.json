@@ -1141,9 +1141,9 @@
           "placeholder": "Spørgsmålstekst med tom ___ plads."
         },
         "questionText": {
-          "help": "Du skal skrive spørgsmålsteksten med det tomme mellemrum, du ønsker, med det specielle nøgleord [tom].",
+          "help": "Du skal skrive spørgsmålsteksten med det tomme mellemrum, du ønsker, med det specielle nøgleord [blank].",
           "label": "Spørgsmål tekst",
-          "placeholder": "Spørgsmålstekst med tomt element"
+          "placeholder": "Spørgsmålstekst med [blank] element tomt"
         }
       },
       "label": "Udfyld hulspørgsmålet",
@@ -1279,7 +1279,7 @@
         "sentence": {
           "help": "Du skal skrive teksten i sætningen inklusive hullet ved hjælp af den specielle markør [blank].",
           "label": "Sætningstekst",
-          "placeholder": "Sætningstekst med markør [tom]"
+          "placeholder": "Sætningstekst med markør [blank]"
         },
         "sentencePreview": {
           "help": "Sådan ser du på sætningen i indholdsenheden.",

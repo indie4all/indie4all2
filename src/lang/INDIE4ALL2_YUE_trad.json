@@ -1143,7 +1143,7 @@
         "questionText": {
           "help": "你必須使用特殊關鍵字[blank]鍵入帶有所需空格的問題文本。",
           "label": "問題文本",
-          "placeholder": "帶有空白元素嘅問題文本"
+          "placeholder": "[blank]元素為空的問題文本"
         }
       },
       "label": "填補空白問題",
@@ -1277,9 +1277,9 @@
           "text": "答"
         },
         "sentence": {
-          "help": "你需要使用特殊標記[空白]編寫句子嘅文本，包括間隙。",
+          "help": "你需要使用特殊標記[blank]編寫句子嘅文本，包括間隙。",
           "label": "句子文本",
-          "placeholder": "帶標記嘅句子文本[空白]"
+          "placeholder": "帶標記嘅句子文本[blank]"
         },
         "sentencePreview": {
           "help": "就係你喺內容單位中查看短語嘅方式。",

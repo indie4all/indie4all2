@@ -31,8 +31,8 @@
     },
     "file-picker": {
       "button": "Escollir arxiu",
-      "no-files": "No es van trobar arxius",
-      "no-folders": "No es van trobar directoris",
+      "no-files": "No s'han trobat arxius",
+      "no-folders": "No s'han trobat directoris",
       "title": "Escull un arxiu del repositori",
       "unauthorized": "No estàs autoritzat per accedir al repositori d'arxius"
     },
@@ -63,7 +63,7 @@
       "GA": "Irlandès",
       "GL": "Gallec",
       "HR": "Croat",
-      "HU": "Hongaresa",
+      "HU": "Hongarès",
       "IT": "Italià",
       "JA": "Japonès",
       "LT": "Lituà",
@@ -102,15 +102,15 @@
     },
     "publish": {
       "description": "Es genera la unitat perquè la puguis descarregar. Espera",
-      "title": "S'està publicant la unitat"
+      "title": "La unitat s'està publicant "
     },
     "publishToNetlify": {
       "description": "Es puja la unitat a Netlify. Espera",
-      "title": "S'està publicant la unitat a Netlify"
+      "title": "La unitat s'està publicant a Netlify"
     },
     "save": {
       "description": "Es desa. Espera",
-      "title": "S'està desant"
+      "title": "Es desa..."
     },
     "scorm": {
       "description": "Es genera el paquet SCORM. Espera",
@@ -254,13 +254,13 @@
         "invalid": "El contingut del fitxer d'àudio no és correcte. Has de seleccionar un arxiu vàlid"
       },
       "captions": {
-        "invalid": "L'URL establert per als subtítols no és vàlid. Assegura't de proporcionar un URL d'INDIeMedia vàlid"
+        "invalid": "L'URL establert per als subtítols no és vàlid. Assegura't que proporciones un URL d'INDIeMedia vàlid"
       },
       "captionsblob": {
         "invalid": "El contingut del fitxer de subtítols no és correcte. Has de seleccionar un arxiu vàlid"
       },
       "descriptions": {
-        "invalid": "L'URL establert per a la descripció no és vàlid. Assegura't de proporcionar un URL d'INDIeMedia vàlid "
+        "invalid": "L'URL establert per a la descripció no és vàlid. Assegura't que proporciones un URL d'INDIeMedia vàlid "
       },
       "imageblob": {
         "invalid": "El contingut de la imatge no és correcte. Has de seleccionar una imatge vàlida"
@@ -309,10 +309,10 @@
     },
     "DragpdropItem": {
       "definition": {
-        "invalid": "El camp de definició és buit. Has d'escriure una definició."
+        "invalid": "El camp de definició és buit. Has d'escriure una definició"
       },
       "term": {
-        "invalid": "El camp de terme és buit. Has d'escriure un terme."
+        "invalid": "El camp de terme és buit. Has d'escriure un terme"
       }
     },
     "GapQuestion": {
@@ -470,7 +470,7 @@
         "invalid": "L'alçada de l'animació ha de ser superior a 0"
       },
       "image": {
-        "invalid": "L'URL establert per a la imatge completa no és vàlid. Assegurat de proporcionar un URL d'INDIeMedia vàlid"
+        "invalid": "L'URL establert per a la imatge completa no és vàlid. Assegura't que proporciones un URL d'INDIeMedia vàlid"
       },
       "width": {
         "invalid": "L'amplada de l'animació ha de ser superior a 0"
@@ -541,7 +541,7 @@
     "TermClassification": {
       "data": {
         "duplicatedColumn": "Hi ha columnes duplicades. Revisa els ítems",
-        "duplicatedTerms": "Hi ha termes duplicats a les columnes. Revisa-les"
+        "duplicatedTerms": "Hi ha termes duplicats a les columnes. Revisa'ls"
       }
     },
     "TermClassificationItem": {
@@ -580,8 +580,8 @@
     },
     "Video": {
       "videourl": {
-        "invalid": "L'URL establert per al vídeo no és vàlid. Has d'assegurar-te de proporcionar un URL vàlid d'IndieMedia o YouTube.",
-        "localInvalid": "L'URL establert per al vídeo no és vàlid. Assegurat de proporcionar un URL de YouTube vàlid "
+        "invalid": "L'URL establert per al vídeo no és vàlid. Has d'assegurar-te que proporciones un URL vàlid d'IndieMedia o YouTube",
+        "localInvalid": "L'URL establert per al vídeo no és vàlid. Assegurat que proporciones un URL de YouTube vàlid "
       }
     }
   },
@@ -629,7 +629,7 @@
     "confirmClearContent": "Eliminaràs el contingut per complet. Assegura't que realment ho vols fer",
     "confirmLoadModel": "S'ha trobat una unitat prèvia. Tria si vols carregar-la o descartar-la",
     "contentCleared": "El contingut s'ha eliminat correctament",
-    "contentErrors": "Ui! Hi ha errades en el contingut. Revisa els missatges d'error i segueix-ne les indicacions per tal de resoldre'ls",
+    "contentErrors": "Ui! Hi ha errades en el contingut. Revisa els missatges d'error i segueix-ne les indicacions per resoldre'ls",
     "couldNotExportElement": "L'element no s'ha pogut exportar",
     "couldNotExportSection": "La secció no s'ha pogut exportar",
     "deletedSection": "La secció s'ha eliminat correctament",
@@ -637,7 +637,7 @@
     "errorMessage": "Error",
     "exportedElement": "L'element s'ha exportat amb èxit",
     "exportedSection": "La secció s'ha exportat amb èxit",
-    "hiddenContent": "Hi ha d' haver almenys una secció visible",
+    "hiddenContent": "Hi ha d'haver almenys una secció visible",
     "importedElement": "L'element s'ha importat amb èxit",
     "importedSection": "La secció s'ha importat amb èxit",
     "loadError": "La unitat no s'ha pogut carregar ",
@@ -692,9 +692,9 @@
   },
   "plugins": {
     "tinymce-equation": {
-      "help": "Usa l' àrea de text per escriure la fórmula. A sota d' aquesta àrea apareixerà un previ de la fórmula en cas que sigui correcta o el text en vermell si la fórmula no és correcta",
+      "help": "Fes servir l'àrea de text per escriure la fórmula. Davall aquesta àrea, apareixerà un previ de la fórmula en cas que sigui correcta o el text en vermell si la fórmula no és correcta",
       "label": "Edita l'equació utilitzant TeX",
-      "title": "Editor d' equacions"
+      "title": "Editor d'equacions"
     },
     "trumbowyg": {
       "templates": {
@@ -831,7 +831,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Estableix el títol del grup de contingut. Apareixerà en el títol del menú desplegable",
+          "help": "Estableix el títol del grup de contingut. Apareixerà al títol del menú desplegable",
           "label": "Títol del contingut",
           "placeholder": "Exemple: habilitats professionals"
         }
@@ -841,7 +841,7 @@
     "Animation": {
       "form": {
         "image": {
-          "help": "Aquesta serà la imatge de fons de l'animació. Pots triar una de les teves imatges pujades",
+          "help": "Aquesta serà la imatge de fons de l'animació. Pots triar una de les imatges que hagis pujat",
           "label": "URL de la imatge",
           "placeholder": "Insereix l'URL de la imatge aquí",
           "preview": "Vista prèvia de l'animació"
@@ -868,7 +868,7 @@
           "placeholder": "Exemple: 200"
         },
         "image": {
-          "help": "Aquesta imatge apareixerà a l'element. Pots triar una de les teves imatges pujades o bé pujar-ne una de nova.",
+          "help": "Aquesta imatge apareixerà a l'element. Pots triar una de les imatges que hagis pujat o bé pujar-ne una altra",
           "label": "URL de la imatge",
           "placeholder": "Fes clic aquí per seleccionar la imatge"
         },
@@ -962,7 +962,7 @@
         "quote": {
           "help": "Aquest text és la citació textual",
           "label": "Text de la citació",
-          "placeholder": "Exemple: L'absència d'evidència no és una evidència de l'absència"
+          "placeholder": "Exemple: \"L'absència d'evidència no és una evidència de l'absència\""
         },
         "source": {
           "help": "Font original de la citació (any, llibre, revista, etc.)",
@@ -979,7 +979,7 @@
     "ButtonTextItem": {
       "form": {
         "image": {
-          "help": "Aquesta és la imatge que apareixerà al botó. Pots triar una de les imatges pujades o bé pujar-ne una de nova",
+          "help": "Aquesta és la imatge que apareixerà al botó. Pots triar una de les imatges que hagis pujat o bé pujar-ne una altra",
           "label": "URL de la imatge del botó",
           "placeholder": "Insereix l'URL aquí"
         },
@@ -1115,7 +1115,7 @@
         "definition": {
           "help": "La definició apareix a la dreta de l'element interactiu i l'alumne haurà d'arrossegar el terme a la definició",
           "label": "Definició",
-          "placeholder": "Exemple: Tots els éssers humans tenen dret d'expressar-se sense ser fustigats a causa del que opinen"
+          "placeholder": "Exemple: \"Tots els éssers humans tenen dret a expressar-se sense ser fustigats a causa del que opinen\""
         },
         "term": {
           "help": "El terme apareix a l'esquerra de l'element interactiu i l'alumne l'haurà d'arrossegar i deixar anar a la definició ",
@@ -1307,7 +1307,7 @@
           "label": "Respostes possibles"
         },
         "questionText": {
-          "help": "Aquest és el text de la pregunta que es mostrarà en la unitat de contingut",
+          "help": "Aquest és el text de la pregunta que es mostrarà a la unitat de contingut",
           "label": "Text de la pregunta",
           "placeholder": "Text de la pregunta múltiple"
         }
@@ -1318,7 +1318,7 @@
     "Puzzle": {
       "form": {
         "image": {
-          "help": "Aquesta serà la imatge de fons del trencaclosques. Pots triar una de les teves imatges pujades",
+          "help": "Aquesta serà la imatge de fons del trencaclosques. Pots triar una de les imatges que hagis pujat",
           "label": "URL de la imatge",
           "placeholder": "Insereix l'URL de la imatge aquí",
           "preview": "Vista prèvia del trencaclosques"
@@ -1526,7 +1526,7 @@
         "deleteRow": "Esborra la fila"
       },
       "help": {
-        "edit": "Selecciona una cel·la per editar-la. Per afegir noves línies mentre edites, pitja la tecla de majúscules i, a la vegada, la tecla d'introducció"
+        "edit": "Selecciona una cel·la per editar-la. Per afegir línies mentre edites, pitja la tecla de majúscules i, simultàniament, la tecla d'introducció"
       },
       "label": "Taula",
       "prev": "La taula encara no s'ha establert"
@@ -1609,7 +1609,7 @@
           "true": "Veritable"
         },
         "questionText": {
-          "help": "Aquest text de la pregunta es mostrarà en la unitat de contingut",
+          "help": "Aquest text de la pregunta es mostrarà a la unitat de contingut",
           "label": "Text de la pregunta",
           "placeholder": "Text de la pregunta"
         }

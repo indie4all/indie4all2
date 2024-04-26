@@ -1141,9 +1141,9 @@
           "placeholder": "Fragetext mit leerem ___ Feld."
         },
         "questionText": {
-          "help": "Sie müssen den Fragetext mit dem gewünschten Leerzeichen mit dem speziellen Schlüsselwort [leer] eingeben.",
+          "help": "Sie müssen den Fragetext mit dem gewünschten Leerzeichen mit dem speziellen Schlüsselwort [blank] eingeben.",
           "label": "Fragetext",
-          "placeholder": "Fragetext mit leerem Element"
+          "placeholder": "Fragetext mit leerem Element [blank]"
         }
       },
       "label": "Frage zum Füllen der Lücke",
@@ -1277,9 +1277,9 @@
           "text": "Antwort"
         },
         "sentence": {
-          "help": "Sie müssen den Text des Satzes einschließlich der Lücke mit der Sondermarkierung [leer] schreiben.",
+          "help": "Sie müssen den Text des Satzes einschließlich der Lücke mit der Sondermarkierung [blank] schreiben.",
           "label": "Satztext",
-          "placeholder": "Satztext mit Markierung [leer]"
+          "placeholder": "Satztext mit Markierung [blank]"
         },
         "sentencePreview": {
           "help": "So würden Sie die Phrase in der Inhaltseinheit betrachten.",

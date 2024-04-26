@@ -1141,9 +1141,9 @@
           "placeholder": "Test tal-mistoqsija bi slot vojt ___ ."
         },
         "questionText": {
-          "help": "Għandek tittajpja t-test tal-mistoqsija bl-ispazju vojt li trid bil-kelma prinċipali speċjali [vojt].",
+          "help": "Għandek tittajpja t-test tal-mistoqsija bl-ispazju vojt li trid bil-kelma prinċipali speċjali [blank].",
           "label": "Test tal-mistoqsija",
-          "placeholder": "Test tal-mistoqsija b'element vojt"
+          "placeholder": "Test tal-mistoqsija b'element [blank] vojt"
         }
       },
       "label": "Imla l-mistoqsija tal-vojt",
@@ -1277,9 +1277,9 @@
           "text": "Tweġiba"
         },
         "sentence": {
-          "help": "Trid tikteb it-test tas-sentenza inkluż il-vojt billi tuża l-markatur speċjali [vojt].",
+          "help": "Trid tikteb it-test tas-sentenza inkluż il-vojt billi tuża l-markatur speċjali [blank].",
           "label": "Test tas-sentenza",
-          "placeholder": "Test tas-sentenza bil-markatur [vojt]"
+          "placeholder": "Test tas-sentenza bil-markatur [blank]"
         },
         "sentencePreview": {
           "help": "Dan huwa kif tħares lejn il-frażi fl-unità tal-kontenut.",

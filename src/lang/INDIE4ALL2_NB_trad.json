@@ -1143,7 +1143,7 @@
         "questionText": {
           "help": "Du må skrive inn spørsmålsteksten med det tomme området du vil ha med det spesielle nøkkelordet [blank].",
           "label": "Spørsmål tekst",
-          "placeholder": "Spørretekst med tomt element"
+          "placeholder": "Stille spørsmål til tekst med [blank] element tomt"
         }
       },
       "label": "Fyll gapspørsmålet",
@@ -1279,7 +1279,7 @@
         "sentence": {
           "help": "Du må skrive teksten til setningen, inkludert gapet, ved å bruke den spesielle markøren [blank].",
           "label": "Setningstekst",
-          "placeholder": "Setningstekst med markør [tom]"
+          "placeholder": "Setningstekst med markør [blank]"
         },
         "sentencePreview": {
           "help": "Slik ser du på uttrykket i innholdsenheten.",

@@ -1143,7 +1143,7 @@
         "questionText": {
           "help": "Du måste skriva frågetexten med det tomma utrymme du vill ha med specialnyckelordet [blank].",
           "label": "Frågetext",
-          "placeholder": "Frågetext med tomt element"
+          "placeholder": "Frågetext med elementet [blank] tomt"
         }
       },
       "label": "Fyll gapfrågan",

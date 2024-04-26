@@ -1141,9 +1141,9 @@
           "placeholder": "Vprašanje besedilo s prazno ___ režo."
         },
         "questionText": {
-          "help": "Besedilo vprašanja morate vneti s praznim presledkom, ki ga želite s posebno ključno besedo [prazno].",
+          "help": "Besedilo vprašanja morate vneti s praznim presledkom, ki ga želite s posebno ključno besedo [blank].",
           "label": "Besedilo vprašanja",
-          "placeholder": "Besedilo vprašanja s praznim elementom"
+          "placeholder": "Besedilo vprašanja s praznim [blank] elementom"
         }
       },
       "label": "Izpolnite vprašanje o vrzeli",
@@ -1277,9 +1277,9 @@
           "text": "Odgovoriti"
         },
         "sentence": {
-          "help": "Besedilo stavka, vključno z vrzeljo, morate napisati s posebnim označevalnikom [prazno].",
+          "help": "Besedilo stavka, vključno z vrzeljo, morate napisati s posebnim označevalnikom [blank].",
           "label": "Besedilo stavka",
-          "placeholder": "Besedilo stavka z označevalnikom [prazno]"
+          "placeholder": "Besedilo stavka z označevalnikom [blank]"
         },
         "sentencePreview": {
           "help": "Tako bi pogledali stavek v vsebinski enoti.",

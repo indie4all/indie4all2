@@ -1143,7 +1143,7 @@
         "questionText": {
           "help": "Text otázky musíte zadat s prázdným místem, které chcete použít pomocí speciálního klíčového slova [blank].",
           "label": "Text otázky",
-          "placeholder": "Text otázky s prázdným prvkem"
+          "placeholder": "Text otázky s prázdným prvkem [blank]"
         }
       },
       "label": "Vyplňte mezeru",
@@ -1279,7 +1279,7 @@
         "sentence": {
           "help": "Text věty včetně mezery musíte napsat pomocí speciální značky [blank].",
           "label": "Text věty",
-          "placeholder": "Text věty se značkou [prázdné]"
+          "placeholder": "Text věty se značkou [blank]"
         },
         "sentencePreview": {
           "help": "Takto byste se dívali na frázi v jednotce obsahu.",

@@ -1141,9 +1141,9 @@
           "placeholder": "Tekst pytania z pustym gniazdem ___."
         },
         "questionText": {
-          "help": "Musisz wpisać tekst pytania z pustym miejscem, które chcesz ze specjalnym słowem kluczowym [puste].",
+          "help": "Musisz wpisać tekst pytania z pustym miejscem, które chcesz ze specjalnym słowem kluczowym [blank].",
           "label": "Tekst pytania",
-          "placeholder": "Tekst pytania z pustym elementem"
+          "placeholder": "Tekst pytania z pustym elementem [blank]"
         }
       },
       "label": "Wypełnij lukę w pytaniu",
@@ -1277,9 +1277,9 @@
           "text": "Odpowiedź"
         },
         "sentence": {
-          "help": "Musisz napisać tekst zdania wraz z przerwą, używając specjalnego znacznika [puste].",
+          "help": "Musisz napisać tekst zdania wraz z przerwą, używając specjalnego znacznika [blank].",
           "label": "Tekst zdania",
-          "placeholder": "Tekst zdania ze znacznikiem [puste]"
+          "placeholder": "Tekst zdania ze znacznikiem [blank]"
         },
         "sentencePreview": {
           "help": "W ten sposób patrzysz na frazę w jednostce treści.",

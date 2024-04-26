@@ -1143,7 +1143,7 @@
         "questionText": {
           "help": "A kérdés szövegét a kívánt szóközzel kell beírnia a [blank] speciális kulcsszóval.",
           "label": "A kérdés szövege",
-          "placeholder": "Kérdés szövege üres elemmel"
+          "placeholder": "Kérdés szövege üres [blank] elemmel"
         }
       },
       "label": "Töltse ki a hiánypótló kérdést",
@@ -1277,9 +1277,9 @@
           "text": "Válasz"
         },
         "sentence": {
-          "help": "Meg kell írnia a mondat szövegét, beleértve a rést is, a speciális jelölő [üres] használatával.",
+          "help": "Meg kell írnia a mondat szövegét, beleértve a rést is, a speciális jelölő [blank] használatával.",
           "label": "Mondat szövege",
-          "placeholder": "Mondatszöveg jelölővel [üres]"
+          "placeholder": "Mondatszöveg jelölővel [blank]"
         },
         "sentencePreview": {
           "help": "Így nézné ki a kifejezést a tartalmi egységben.",

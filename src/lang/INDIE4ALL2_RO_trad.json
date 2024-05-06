@@ -625,6 +625,8 @@
     "export": "Export articol"
   },
   "messages": {
+    "bankOfQuestionsError": "Nu s-a putut conecta la banca de întrebări.",
+    "bankOfWidgetsError": "Nu s-a reușit conectarea la banca de widgeturi.",
     "changesSaved": "Modificările s-au salvat cu succes.",
     "confirmClearContent": "Veți șterge conținutul în întregime. Asigurați-vă că este ceea ce doriți cu adevărat să faceți.",
     "confirmLoadModel": "O unitate anterioară a fost găsită. Alegeți dacă doriți să o încărcați sau să o aruncați.",
@@ -652,6 +654,7 @@
     "saveError": "Unitatea nu a putut fi salvată",
     "successMessage": "Ok",
     "translateError": "Unitatea nu a putut fi tradusă",
+    "unauthorizedMessage": "Utilizator neautorizat",
     "warningMessage": "Atenție"
   },
   "netlify": {

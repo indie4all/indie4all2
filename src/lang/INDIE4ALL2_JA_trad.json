@@ -625,6 +625,8 @@
     "export": "アイテムのエクスポート"
   },
   "messages": {
+    "bankOfQuestionsError": "問題バンクに接続できませんでした。",
+    "bankOfWidgetsError": "ウィジェットバンクに接続できませんでした。",
     "changesSaved": "変更が正常に保存されました。",
     "confirmClearContent": "コンテンツを完全に削除します。それがあなたが本当にやりたいことであることを確認してください。",
     "confirmLoadModel": "前のユニットが見つかりました。ロードするか破棄するかを選択します。",
@@ -652,6 +654,7 @@
     "saveError": "ユニットを保存できませんでした",
     "successMessage": "わかりました",
     "translateError": "単位を翻訳できませんでした",
+    "unauthorizedMessage": "権限のないユーザー",
     "warningMessage": "気を付け"
   },
   "netlify": {

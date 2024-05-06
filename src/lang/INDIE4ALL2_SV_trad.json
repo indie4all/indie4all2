@@ -625,6 +625,8 @@
     "export": "Exportera objekt"
   },
   "messages": {
+    "bankOfQuestionsError": "Det gick inte att ansluta till frågebanken.",
+    "bankOfWidgetsError": "Det gick inte att ansluta till widgetbanken.",
     "changesSaved": "Ändringar har sparats.",
     "confirmClearContent": "Du kommer att ta bort innehållet helt. Se till att det är vad du verkligen vill göra.",
     "confirmLoadModel": "En tidigare enhet har hittats. Välj om du vill ladda den eller kassera den.",
@@ -652,6 +654,7 @@
     "saveError": "Enheten kunde inte sparas",
     "successMessage": "Okej",
     "translateError": "Enheten kunde inte översättas",
+    "unauthorizedMessage": "Obehörig användare",
     "warningMessage": "Uppmärksamhet"
   },
   "netlify": {

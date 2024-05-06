@@ -151,7 +151,18 @@ export default class GUI {
         const headers = new Headers();
         headers.append("Accept", "application/json");
         let data = await fetch(Config.getQuestionsBankURL(), { method: 'GET', headers, redirect: 'follow' })
-            .then(res => res.json());
+            .then(res => {
+                if (!res.ok) {
+                    if (res.status === 401 && Config.getUnauthorizedMessage())
+                        Utils.notifyUnauthorizedError(Config.getUnauthorizedMessage());
+                    else
+                        Utils.notifyError(this.i18n.value("messages.bankOfQuestionsError"));
+                    return null;
+                }
+                return res.json()
+            });
+        // If the response is not defined, the server returned an error and we cannot show the bank
+        if (!data) return;
 
         const mapeo = {
             "SingleAnswer": "SimpleQuestion",
@@ -624,7 +635,9 @@ export default class GUI {
                 // Wait until the modal is fully loaded (1 sec)
                 setTimeout(() => self.hideLoading(), 1000);
                 if (!response.ok) {
-                    Utils.notifyError(this.i18n.value("messages.saveError"));
+                    if (response.status === 401 && Config.getUnauthorizedMessage())
+                        Utils.notifyUnauthorizedError(Config.getUnauthorizedMessage())
+                    else Utils.notifyError(this.i18n.value("messages.saveError"));
                     return;
                 }
                 const json = await response.json();
@@ -715,7 +728,9 @@ export default class GUI {
         if (!response.ok) {
             // Wait until the modal is fully loaded (1 sec)
             setTimeout(() => self.hideLoading(), 1000);
-            Utils.notifyError(this.i18n.value("messages.publishError"));
+            if (response.status === 401 && Config.getUnauthorizedMessage())
+                Utils.notifyUnauthorizedError(Config.getUnauthorizedMessage())
+            else Utils.notifyError(this.i18n.value("messages.publishError"));
             return;
         }
 
@@ -773,7 +788,9 @@ export default class GUI {
         if (!response.ok) {
             // Wait until the modal is fully loaded (1 sec)
             setTimeout(() => self.hideLoading(), 1000);
-            Utils.notifyError(this.i18n.value("messages.publishError"));
+            if (response.status === 401 && Config.getUnauthorizedMessage())
+                Utils.notifyUnauthorizedError(Config.getUnauthorizedMessage())
+            else Utils.notifyError(this.i18n.value("messages.publishError"));
             return;
         }
 
@@ -799,7 +816,9 @@ export default class GUI {
                 // Wait until the modal is fully loaded (1 sec)
                 setTimeout(() => self.hideLoading(), 1000);
                 if (!response.ok) {
-                    Utils.notifyError(this.i18n.value("messages.previewError"));
+                    if (response.status === 401 && Config.getUnauthorizedMessage())
+                        Utils.notifyUnauthorizedError(Config.getUnauthorizedMessage())
+                    else Utils.notifyError(this.i18n.value("messages.previewError"));
                     return;
                 }
                 const json = await response.json();

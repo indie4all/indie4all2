@@ -625,6 +625,8 @@
     "export": "Esporta elemento"
   },
   "messages": {
+    "bankOfQuestionsError": "Impossibile connettersi alla banca delle domande.",
+    "bankOfWidgetsError": "Impossibile connettersi alla banca di widget.",
     "changesSaved": "Modifiche salvate correttamente.",
     "confirmClearContent": "Eliminerai completamente il contenuto. Assicurati che sia quello che vuoi veramente fare.",
     "confirmLoadModel": "È stata trovata un'unità precedente. Scegli se caricarlo o eliminarlo.",
@@ -652,6 +654,7 @@
     "saveError": "Impossibile salvare l'unità",
     "successMessage": "Ok",
     "translateError": "Impossibile tradurre l'unità",
+    "unauthorizedMessage": "Utente non autorizzato",
     "warningMessage": "Attenzione"
   },
   "netlify": {

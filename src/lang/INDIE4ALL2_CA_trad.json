@@ -625,6 +625,8 @@
     "export": "Exporta l'element"
   },
   "messages": {
+    "bankOfQuestionsError": "No es va poder connectar amb el banc de preguntes.",
+    "bankOfWidgetsError": "No es va poder connectar amb el banc de widgets.",
     "changesSaved": "Els canvis s'han desat correctament",
     "confirmClearContent": "Eliminaràs el contingut per complet. Assegura't que realment ho vols fer",
     "confirmLoadModel": "S'ha trobat una unitat prèvia. Tria si vols carregar-la o descartar-la",
@@ -652,6 +654,7 @@
     "saveError": "La unitat no s'ha pogut desar",
     "successMessage": "D'acord",
     "translateError": "La unitat no s'ha pogut traduir ",
+    "unauthorizedMessage": "Usuari no autoritzat",
     "warningMessage": "Atenció"
   },
   "netlify": {

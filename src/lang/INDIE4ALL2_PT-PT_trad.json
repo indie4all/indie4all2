@@ -625,6 +625,8 @@
     "export": "Exportar item"
   },
   "messages": {
+    "bankOfQuestionsError": "Não foi possível conectar-se ao banco de perguntas.",
+    "bankOfWidgetsError": "Falha ao se conectar ao banco de widgets.",
     "changesSaved": "Alterações guardadas com êxito.",
     "confirmClearContent": "Você vai excluir o conteúdo completamente. Certifique-se de que é o que você realmente quer fazer.",
     "confirmLoadModel": "Foi encontrada uma unidade anterior. Escolha se deseja carregá-lo ou descartá-lo.",
@@ -652,6 +654,7 @@
     "saveError": "Não foi possível guardar a unidade",
     "successMessage": "Ok",
     "translateError": "Não foi possível traduzir a unidade",
+    "unauthorizedMessage": "Usuário não autorizado",
     "warningMessage": "Atenção"
   },
   "netlify": {

@@ -625,6 +625,8 @@
     "export": "Export item"
   },
   "messages": {
+    "bankOfQuestionsError": "Couldn't connect to the question bank.",
+    "bankOfWidgetsError": "Failed to connect to the widget bank.",
     "changesSaved": "Changes saved successfully.",
     "confirmClearContent": "You're going to delete the content entirely. Make sure it's what you really want to do.",
     "confirmLoadModel": "A previous unit has been found. Choose whether you want to load it or discard it.",
@@ -652,6 +654,7 @@
     "saveError": "The unit could not be saved",
     "successMessage": "Ok",
     "translateError": "The unit could not be translated",
+    "unauthorizedMessage": "Unauthorized User",
     "warningMessage": "Attention"
   },
   "netlify": {

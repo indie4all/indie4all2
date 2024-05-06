@@ -625,6 +625,8 @@
     "export": "Eksporter element"
   },
   "messages": {
+    "bankOfQuestionsError": "Kan ikke koble til spørsmålsbanken.",
+    "bankOfWidgetsError": "Kunne ikke koble til widgetbanken.",
     "changesSaved": "Endringer lagret vellykket.",
     "confirmClearContent": "Du kommer til å slette innholdet helt. Pass på at det er det du virkelig vil gjøre.",
     "confirmLoadModel": "En tidligere enhet er funnet. Velg om du vil laste den inn eller forkaste den.",
@@ -652,6 +654,7 @@
     "saveError": "Enheten kunne ikke reddes",
     "successMessage": "Ok",
     "translateError": "Enheten kunne ikke oversettes",
+    "unauthorizedMessage": "Uautorisert bruker",
     "warningMessage": "Oppmerksomhet"
   },
   "netlify": {

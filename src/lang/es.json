@@ -625,6 +625,8 @@
     "export": "Exportar elemento"
   },
   "messages": {
+    "bankOfQuestionsError": "No se pudo conectar con el banco de preguntas.",
+    "bankOfWidgetsError": "No se pudo conectar con el banco de widgets.",
     "changesSaved": "Cambios guardados correctamente.",
     "confirmClearContent": "Vas a eliminar el contenido por completo. Asegúrate de que es lo que realmente deseas hacer.",
     "confirmLoadModel": "Una unidad previa ha sido encontrada. Escoge si deseas cargarla o descartarla.",
@@ -652,6 +654,7 @@
     "saveError": "No se pudo guardar la unidad",
     "successMessage": "Ok",
     "translateError": "No se ha podido traducir la unidad",
+    "unauthorizedMessage": "Usuario no autorizado",
     "warningMessage": "Atención"
   },
   "netlify": {

@@ -38,7 +38,8 @@ export interface ConfigOptions {
     additionalVideoResourceRules?: []
     //Enable mode of Widget Editor
     enableWidgetEditor: boolean;
-
+    // Action to perform if the user is unauthorized
+    unauthorizedMessage: string
 }
 
 /** Edit form data **/

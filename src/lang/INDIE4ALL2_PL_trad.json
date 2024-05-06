@@ -625,6 +625,8 @@
     "export": "Eksportuj element"
   },
   "messages": {
+    "bankOfQuestionsError": "Nie można połączyć się z bankiem pytań.",
+    "bankOfWidgetsError": "Nie udało się połączyć z bankiem widżetów.",
     "changesSaved": "Zmiany zostały zapisane pomyślnie.",
     "confirmClearContent": "Usuniesz zawartość całkowicie. Upewnij się, że to jest to, co naprawdę chcesz zrobić.",
     "confirmLoadModel": "Znaleziono poprzednią jednostkę. Wybierz, czy chcesz go załadować, czy wyrzucić.",
@@ -652,6 +654,7 @@
     "saveError": "Nie można zapisać urządzenia",
     "successMessage": "Ok",
     "translateError": "Nie można przetłumaczyć jednostki",
+    "unauthorizedMessage": "Nieautoryzowany użytkownik",
     "warningMessage": "Uwaga"
   },
   "netlify": {

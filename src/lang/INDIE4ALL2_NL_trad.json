@@ -625,6 +625,8 @@
     "export": "Item exporteren"
   },
   "messages": {
+    "bankOfQuestionsError": "Kan geen verbinding maken met de itembank.",
+    "bankOfWidgetsError": "Kan geen verbinding maken met de widgetbank.",
     "changesSaved": "Wijzigingen zijn opgeslagen.",
     "confirmClearContent": "U gaat de inhoud volledig verwijderen. Zorg ervoor dat het is wat je echt wilt doen.",
     "confirmLoadModel": "Er is een eerdere eenheid gevonden. Kies of u het wilt laden of weggooien.",
@@ -652,6 +654,7 @@
     "saveError": "Het apparaat kon niet worden opgeslagen",
     "successMessage": "OK",
     "translateError": "Het apparaat kan niet worden vertaald",
+    "unauthorizedMessage": "Onbevoegde gebruiker",
     "warningMessage": "Aandacht"
   },
   "netlify": {

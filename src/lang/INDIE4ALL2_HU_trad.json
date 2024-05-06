@@ -625,6 +625,8 @@
     "export": "Elem exportálása"
   },
   "messages": {
+    "bankOfQuestionsError": "Nem sikerült csatlakozni a kérdésbankhoz.",
+    "bankOfWidgetsError": "Nem sikerült csatlakozni a widgetbankhoz.",
     "changesSaved": "A módosítások mentése sikeres.",
     "confirmClearContent": "Teljesen törölni fogja a tartalmat. Győződjön meg róla, hogy valóban ezt akarja tenni.",
     "confirmLoadModel": "Egy korábbi egységet találtak. Válassza ki, hogy betölti vagy elveti.",
@@ -652,6 +654,7 @@
     "saveError": "Az egységet nem sikerült menteni",
     "successMessage": "Oké",
     "translateError": "Az egységet nem lehetett lefordítani",
+    "unauthorizedMessage": "Jogosulatlan felhasználó",
     "warningMessage": "Figyelem"
   },
   "netlify": {

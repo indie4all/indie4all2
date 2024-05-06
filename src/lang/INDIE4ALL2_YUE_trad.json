@@ -625,6 +625,8 @@
     "export": "導出項目"
   },
   "messages": {
+    "bankOfQuestionsError": "無法連接到題庫。",
+    "bankOfWidgetsError": "無法連接到小組件庫。",
     "changesSaved": "已成功保存更改。",
     "confirmClearContent": "你將完全刪除內容。 確保係你真正想做嘅。",
     "confirmLoadModel": "已搵到以前嘅單位。 選擇係要加载仲係丟棄它。",
@@ -652,6 +654,7 @@
     "saveError": "無法保存設備",
     "successMessage": "仲可以",
     "translateError": "該單位無法翻譯",
+    "unauthorizedMessage": "未經授權嘅用戶",
     "warningMessage": "注意力"
   },
   "netlify": {

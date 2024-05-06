@@ -625,6 +625,8 @@
     "export": "Vie kohde"
   },
   "messages": {
+    "bankOfQuestionsError": "Yhteyden muodostaminen kysymyspankkiin ei onnistunut.",
+    "bankOfWidgetsError": "Yhteyden muodostaminen widget-pankkiin epäonnistui.",
     "changesSaved": "Muutokset tallennettu onnistuneesti.",
     "confirmClearContent": "Aiot poistaa sisällön kokonaan. Varmista, että se on se, mitä todella haluat tehdä.",
     "confirmLoadModel": "Edellinen yksikkö on löydetty. Valitse, haluatko ladata sen vai hävittää sen.",
@@ -652,6 +654,7 @@
     "saveError": "Laitetta ei voitu tallentaa",
     "successMessage": "Okei",
     "translateError": "Yksikköä ei voitu kääntää",
+    "unauthorizedMessage": "Luvaton käyttäjä",
     "warningMessage": "Tarkkaavaisuus"
   },
   "netlify": {

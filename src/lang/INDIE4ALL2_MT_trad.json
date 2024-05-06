@@ -625,6 +625,8 @@
     "export": "Oġġett ta' esportazzjoni"
   },
   "messages": {
+    "bankOfQuestionsError": "Ma setax jikkonnettja mal-bank tal-mistoqsijiet.",
+    "bankOfWidgetsError": "Ma rnexxilux jikkonnettja mal-bank widget.",
     "changesSaved": "Bidliet issejvjati b'suċċess.",
     "confirmClearContent": "Int ser tħassar il-kontenut kompletament. Kun żgur li huwa dak li verament trid tagħmel.",
     "confirmLoadModel": "Instabet unità preċedenti. Agħżel jekk tixtieqx tgħabbiha jew tarmih.",
@@ -652,6 +654,7 @@
     "saveError": "L-unità ma setgħetx tiġi ssejvjata",
     "successMessage": "Kollox sew",
     "translateError": "L-unità ma setgħetx tiġi tradotta",
+    "unauthorizedMessage": "Utent Mhux Awtorizzat",
     "warningMessage": "Attenzjoni"
   },
   "netlify": {

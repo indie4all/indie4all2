@@ -625,6 +625,8 @@
     "export": "Easpórtáil mír"
   },
   "messages": {
+    "bankOfQuestionsError": "Níorbh fhéidir ceangal le banc na gceisteanna.",
+    "bankOfWidgetsError": "Theip ar cheangal le banc na ngiuirléidí.",
     "changesSaved": "D' éirigh le hathruithe a shábháil.",
     "confirmClearContent": "Tá tú chun an t-ábhar a scriosadh go hiomlán. Déan cinnte go bhfuil sé cad ba mhaith leat a dhéanamh i ndáiríre.",
     "confirmLoadModel": "Aimsíodh aonad roimhe seo. Roghnaigh cé acu is mian leat é a luchtú nó é a chaitheamh amach.",
@@ -652,6 +654,7 @@
     "saveError": "Níorbh fhéidir an t-aonad a shábháil",
     "successMessage": "Ceart go leor",
     "translateError": "Níorbh fhéidir an t-aonad a aistriú",
+    "unauthorizedMessage": "Úsáideoir Neamhúdaraithe",
     "warningMessage": "Aird"
   },
   "netlify": {

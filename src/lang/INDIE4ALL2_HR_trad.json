@@ -625,6 +625,8 @@
     "export": "Izvezi stavku"
   },
   "messages": {
+    "bankOfQuestionsError": "Povezivanje s bankom pitanja nije moguće.",
+    "bankOfWidgetsError": "Povezivanje s bankom widgeta nije uspjelo.",
     "changesSaved": "Promjene su uspješno spremljene.",
     "confirmClearContent": "Sadržaj ćete u potpunosti izbrisati. Pobrinite se da je to ono što stvarno želite učiniti.",
     "confirmLoadModel": "Pronađena je prethodna jedinica. Odaberite želite li ga učitati ili odbaciti.",
@@ -652,6 +654,7 @@
     "saveError": "Jedinicu nije moguće spremiti",
     "successMessage": "Ok",
     "translateError": "Jedinicu nije moguće prevesti",
+    "unauthorizedMessage": "Neovlašteni korisnik",
     "warningMessage": "Pažnja"
   },
   "netlify": {

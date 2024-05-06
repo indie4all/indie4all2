@@ -625,6 +625,8 @@
     "export": "Eksportér vare"
   },
   "messages": {
+    "bankOfQuestionsError": "Der kunne ikke oprettes forbindelse til spørgsmålsbanken.",
+    "bankOfWidgetsError": "Der kunne ikke oprettes forbindelse til widgetbanken.",
     "changesSaved": "Ændringer gemt med succes.",
     "confirmClearContent": "Du vil slette indholdet helt. Sørg for, at det er det, du virkelig vil gøre.",
     "confirmLoadModel": "En tidligere enhed er blevet fundet. Vælg, om du vil indlæse det eller kassere det.",
@@ -652,6 +654,7 @@
     "saveError": "Enheden kunne ikke gemmes",
     "successMessage": "Ok",
     "translateError": "Enheden kunne ikke oversættes",
+    "unauthorizedMessage": "Uautoriseret bruger",
     "warningMessage": "Opmærksomhed"
   },
   "netlify": {

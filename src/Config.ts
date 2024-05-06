@@ -39,6 +39,8 @@ export default class Config {
     private static additionalVideoResourceRules: ((url: string) => boolean)[] = [];
     //Enable mode of Widget Editor
     private static enableWidgetEditor: boolean = false;
+    // Action to perform is the user is unauthorized
+    private static unauthorizedMessage: string = null;
 
     public static setOptions(options: ConfigOptions) {
         if (typeof options.enablePWA === 'boolean')
@@ -77,6 +79,8 @@ export default class Config {
             this.setAnalyticsBasePath(options.analyticsBasePath)
         if (typeof options.mediaResourcesURL === 'string')
             this.setMediaResourcesURL(options.mediaResourcesURL)
+        if (typeof options.unauthorizedMessage === 'string')
+            this.setUnauthorizedMessage(options.unauthorizedMessage)
     }
 
     public static setAnalyticsBasePath(value: string) {
@@ -229,6 +233,14 @@ export default class Config {
 
     public static setMediaResourcesURL(value: string) {
         this.mediaResourcesURL = value;
+    }
+
+    public static setUnauthorizedMessage(value: string) {
+        this.unauthorizedMessage = value;
+    }
+
+    public static getUnauthorizedMessage(): string {
+        return this.unauthorizedMessage;
     }
 
 }

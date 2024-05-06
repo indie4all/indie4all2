@@ -625,6 +625,8 @@
     "export": "Exporter l’article"
   },
   "messages": {
+    "bankOfQuestionsError": "Impossible de se connecter à la banque de questions.",
+    "bankOfWidgetsError": "Impossible de se connecter à la banque de widgets.",
     "changesSaved": "Les modifications ont été enregistrées avec succès.",
     "confirmClearContent": "Vous allez supprimer entièrement le contenu. Assurez-vous que c’est ce que vous voulez vraiment faire.",
     "confirmLoadModel": "Une unité précédente a été trouvée. Choisissez si vous souhaitez le charger ou le supprimer.",
@@ -652,6 +654,7 @@
     "saveError": "L’unité n’a pas pu être sauvegardée",
     "successMessage": "D’accord",
     "translateError": "L’unité n’a pas pu être traduite",
+    "unauthorizedMessage": "Utilisateur non autorisé",
     "warningMessage": "Attention"
   },
   "netlify": {

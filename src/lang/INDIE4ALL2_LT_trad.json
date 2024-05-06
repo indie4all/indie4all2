@@ -625,6 +625,8 @@
     "export": "Eksportuoti prekę"
   },
   "messages": {
+    "bankOfQuestionsError": "Nepavyko prisijungti prie klausimų banko.",
+    "bankOfWidgetsError": "Nepavyko prisijungti prie valdiklių banko.",
     "changesSaved": "Pakeitimai išsaugoti sėkmingai.",
     "confirmClearContent": "Jūs ketinate visiškai ištrinti turinį. Įsitikinkite, kad tai yra tai, ką tikrai norite padaryti.",
     "confirmLoadModel": "Rastas ankstesnis vienetas. Pasirinkite, ar norite jį įkelti, ar atmesti.",
@@ -652,6 +654,7 @@
     "saveError": "Įrenginio nepavyko išsaugoti",
     "successMessage": "Gerai",
     "translateError": "Vienetas negalėjo būti išverstas",
+    "unauthorizedMessage": "Neįgaliotas vartotojas",
     "warningMessage": "Dėmesys"
   },
   "netlify": {

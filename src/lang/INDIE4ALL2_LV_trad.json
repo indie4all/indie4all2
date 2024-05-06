@@ -625,6 +625,8 @@
     "export": "Eksportēt vienumu"
   },
   "messages": {
+    "bankOfQuestionsError": "Nevarēja izveidot savienojumu ar jautājumu banku.",
+    "bankOfWidgetsError": "Neizdevās izveidot savienojumu ar logrīku banku.",
     "changesSaved": "Veiksmīgi saglabātas izmaiņas.",
     "confirmClearContent": "Jūs izdzēsīsit saturu pilnībā. Pārliecinieties, ka tas ir tas, ko jūs patiešām vēlaties darīt.",
     "confirmLoadModel": "Ir atrasta iepriekšējā vienība. Izvēlieties, vai vēlaties to ielādēt vai izmest.",
@@ -652,6 +654,7 @@
     "saveError": "Vienību neizdevās saglabāt",
     "successMessage": "Labi",
     "translateError": "Vienību nevarēja iztulkot",
+    "unauthorizedMessage": "Neautorizēts lietotājs",
     "warningMessage": "Uzmanība"
   },
   "netlify": {

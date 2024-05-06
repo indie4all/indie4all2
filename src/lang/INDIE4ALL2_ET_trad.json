@@ -625,6 +625,8 @@
     "export": "Ekspordi üksus"
   },
   "messages": {
+    "bankOfQuestionsError": "Ei saanud küsimuste pangaga ühendust.",
+    "bankOfWidgetsError": "Vidinapangaga ühenduse loomine ebaõnnestus.",
     "changesSaved": "Muudatused salvestati edukalt.",
     "confirmClearContent": "Kustutate sisu täielikult. Veenduge, et see on see, mida soovite tõesti teha.",
     "confirmLoadModel": "Eelmine üksus on leitud. Valige, kas soovite selle laadida või hüljata.",
@@ -652,6 +654,7 @@
     "saveError": "Seadet ei õnnestunud salvestada",
     "successMessage": "Ok",
     "translateError": "Ühikut ei olnud võimalik tõlkida",
+    "unauthorizedMessage": "Volitamata kasutaja",
     "warningMessage": "Tähelepanu"
   },
   "netlify": {

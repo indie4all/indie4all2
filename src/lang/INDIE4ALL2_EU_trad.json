@@ -625,6 +625,8 @@
     "export": "Esportatu elementua"
   },
   "messages": {
+    "bankOfQuestionsError": "Ezin izan zen galdera-bankuarekin konektatu.",
+    "bankOfWidgetsError": "Ezin izan zen widget bankuarekin konektatu.",
     "changesSaved": "Aldaketak ondo gorde dira",
     "confirmClearContent": "Edukia erabat ezabatuko duzu. Ziurttatu hori dela benetan egin nahi duzuna.",
     "confirmLoadModel": "Aurreko unitate bat aurkitu da. Aukeratu kargatu edo baztertu nahi duzun.",
@@ -652,6 +654,7 @@
     "saveError": "Ezin izan da unitatea gorde",
     "successMessage": "Ok",
     "translateError": "Ezin izan da unitatea itzuli",
+    "unauthorizedMessage": "Baimenik gabeko erabiltzailea",
     "warningMessage": "Kontuz"
   },
   "netlify": {

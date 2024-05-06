@@ -625,6 +625,8 @@
     "export": "Izvoz artikla"
   },
   "messages": {
+    "bankOfQuestionsError": "Ni se bilo mogoče povezati z banko vprašanj.",
+    "bankOfWidgetsError": "Povezave z banko pripomočkov ni bilo mogoče vzpostaviti.",
     "changesSaved": "Spremembe so bile uspešno shranjene.",
     "confirmClearContent": "Vsebino boš povsem izbrisal. Prepričaj se, da je to tisto, kar res želiš narediti.",
     "confirmLoadModel": "Prejšnja enota je bila najdena. Izberite, ali ga želite naložiti ali zavreči.",
@@ -652,6 +654,7 @@
     "saveError": "Enote ni bilo mogoče shraniti",
     "successMessage": "V redu",
     "translateError": "Enote ni bilo mogoče prevesti",
+    "unauthorizedMessage": "Nepooblaščeni uporabnik",
     "warningMessage": "Pozornost"
   },
   "netlify": {

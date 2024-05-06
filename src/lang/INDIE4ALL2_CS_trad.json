@@ -625,6 +625,8 @@
     "export": "Exportovat položku"
   },
   "messages": {
+    "bankOfQuestionsError": "Nelze se připojit k bance otázek.",
+    "bankOfWidgetsError": "Připojení k bance widgetů se nezdařilo.",
     "changesSaved": "Změny byly úspěšně uloženy.",
     "confirmClearContent": "Obsah zcela odstraníte. Ujistěte se, že je to to, co opravdu chcete dělat.",
     "confirmLoadModel": "Předchozí jednotka byla nalezena. Zvolte, zda jej chcete načíst nebo zahodit.",
@@ -652,6 +654,7 @@
     "saveError": "Jednotku nelze uložit",
     "successMessage": "Ok",
     "translateError": "Jednotku nelze přeložit",
+    "unauthorizedMessage": "Neoprávněný uživatel",
     "warningMessage": "Pozornost"
   },
   "netlify": {

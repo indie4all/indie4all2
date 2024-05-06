@@ -625,6 +625,8 @@
     "export": "تصدير البند"
   },
   "messages": {
+    "bankOfQuestionsError": "تعذر الاتصال ببنك الأسئلة.",
+    "bankOfWidgetsError": "فشل الاتصال ببنك القطعة.",
     "changesSaved": "تم حفظ التغييرات بنجاح.",
     "confirmClearContent": "ستقوم بحذف المحتوى بالكامل. تأكد من أن هذا ما تريد فعله حقا.",
     "confirmLoadModel": "تم العثور على وحدة سابقة. اختر ما إذا كنت تريد تحميله أو تجاهله.",
@@ -652,6 +654,7 @@
     "saveError": "تعذر حفظ الوحدة",
     "successMessage": "موافق",
     "translateError": "تعذر ترجمة الوحدة",
+    "unauthorizedMessage": "مستخدم غير مصرح به",
     "warningMessage": "اهتمام"
   },
   "netlify": {

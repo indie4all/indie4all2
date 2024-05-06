@@ -71,6 +71,11 @@ export default class Utils {
         this.notify(title, message, "success");
     }
 
+    static notifyUnauthorizedError(message: string) {
+        const title = I18n.getInstance().value("messages.unauthorizedMessage");
+        this.notify(title, message, "error");
+    }
+
     static notifyError(message: string) {
         const title = I18n.getInstance().value("messages.errorMessage");
         this.notify(title, message, "error");

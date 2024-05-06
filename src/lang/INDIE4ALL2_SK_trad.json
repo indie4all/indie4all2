@@ -625,6 +625,8 @@
     "export": "Exportovať položku"
   },
   "messages": {
+    "bankOfQuestionsError": "Nepodarilo sa pripojiť k banke otázok.",
+    "bankOfWidgetsError": "Nepodarilo sa pripojiť k banke miniaplikácií.",
     "changesSaved": "Zmeny sa úspešne uložili.",
     "confirmClearContent": "Obsah úplne odstránite. Uistite sa, že je to to, čo naozaj chcete robiť.",
     "confirmLoadModel": "Našla sa predchádzajúca jednotka. Vyberte, či ho chcete načítať alebo zahodiť.",
@@ -652,6 +654,7 @@
     "saveError": "Jednotku sa nepodarilo zachrániť",
     "successMessage": "Ok",
     "translateError": "Jednotku nebolo možné preložiť",
+    "unauthorizedMessage": "Neoprávnený používateľ",
     "warningMessage": "Pozornosť"
   },
   "netlify": {

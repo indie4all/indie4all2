@@ -186,6 +186,8 @@ export default class DragDropHandler {
         const { default: modalTemplate } = await import('./model/widgets/WidgetBank/modal.hbs');
         const { default: modalFilter } = await import('./model/widgets/WidgetBank/filter_modal.hbs');
         let data = await this.connectWithBank();
+        // The server returned an error or the user is not authorized
+        if (!data) return;
         data.map(elem => {
             elem["img"] = ModelManager.getWidgetElement(elem.type).icon
         });
@@ -205,30 +207,30 @@ export default class DragDropHandler {
 
         }
 
-        const deleteFilterHTML = function() {
+        const deleteFilterHTML = function () {
             $(this).parent().remove();
         }
 
-        const changeSearchType = function() {
-            const filter = $(this).val(); 
+        const changeSearchType = function () {
+            const filter = $(this).val();
             if (filter === "tipo") {
                 $(this).parent().find(".searchTerm").removeClass("d-block").addClass("d-none");
                 $(this).parent().find(".searchTermByType").removeClass("d-none").addClass("d-block");
             }
             else {
                 $(this).parent().find(".searchTermByType").removeClass("d-block").addClass("d-none");
-                const searchTerm = $(this).parent().find(".searchTerm"); 
+                const searchTerm = $(this).parent().find(".searchTerm");
                 searchTerm.removeClass("d-none").addClass("d-block");
-                if (filter === "tag") searchTerm.attr("placeholder",  I18n.getInstance().translate("widgets.Bank.modal.placeholderTag")[0]);
+                if (filter === "tag") searchTerm.attr("placeholder", I18n.getInstance().translate("widgets.Bank.modal.placeholderTag")[0]);
                 else searchTerm.attr("placeholder", I18n.getInstance().translate("widgets.Bank.modal.placeholderTitle")[0]);
             }
         }
 
         $(".searchType").on("change", changeSearchType);
 
-        const createFilterHTML = function() {
-            $("#search-filters").append(modalFilter({types: types}));
-            $(".delete-filter-button").last().on("click",deleteFilterHTML)
+        const createFilterHTML = function () {
+            $("#search-filters").append(modalFilter({ types: types }));
+            $(".delete-filter-button").last().on("click", deleteFilterHTML)
             $(".searchType").last().on("change", changeSearchType);
         }
 
@@ -290,14 +292,13 @@ export default class DragDropHandler {
 
             $('.widget-button').each(function () {
 
-                let result : boolean = true;
+                let result: boolean = true;
 
                 const title = $(this).find('h3').text().toLowerCase();
                 const type = $(this).find("input[name='type']").val() as string;
-                const tags = $(this).find('.badge').toArray().map( (elem: any) => $(elem).text())
+                const tags = $(this).find('.badge').toArray().map((elem: any) => $(elem).text())
 
-            
-                $(".search-condition").each( (i, elem) => {
+                $(".search-condition").each((i, elem) => {
 
                     let searchTerm = ($(elem).find('.searchTerm').val() as string).toLowerCase();
                     let searchType = ($(elem).find('.searchType').val() as string).toLowerCase().trim();
@@ -305,8 +306,8 @@ export default class DragDropHandler {
                     let searchTermByType = $(elem).find('.searchTermByType').val()
 
                     let resultFilter = true;
-                    if(searchType === "nombre") resultFilter = title.includes(searchTerm);
-                    if(searchType === "tag") resultFilter = tags.some(tag => tag.toLowerCase().includes(searchTerm));
+                    if (searchType === "nombre") resultFilter = title.includes(searchTerm);
+                    if (searchType === "tag") resultFilter = tags.some(tag => tag.toLowerCase().includes(searchTerm));
                     if (searchType === "tipo") resultFilter = (type === searchTermByType);
 
                     switch (searchBoolean) {
@@ -316,16 +317,16 @@ export default class DragDropHandler {
                         case '1':
                             result = result || resultFilter
                             break;
-                        case '2': 
+                        case '2':
                             result = result && !resultFilter
                             break;
                         default:
                             result = result && resultFilter
                     }
                 })
-        
 
-                if(result) $(this).removeClass("d-none").addClass("d-block");
+
+                if (result) $(this).removeClass("d-none").addClass("d-block");
                 else $(this).removeClass("d-block").addClass("d-none");
             })
         })
@@ -335,12 +336,17 @@ export default class DragDropHandler {
     async connectWithBank(): Promise<any> {
         const headers = new Headers();
         headers.append("Accept", "application/json");
-        const res = await fetch(Config.getBankOfWidgetsURL(), { method: 'GET', headers, redirect: 'follow' })
-            .then(res => res.json())
+        return await fetch(Config.getBankOfWidgetsURL(), { method: 'GET', headers, redirect: 'follow' })
             .then(res => {
-                return res;
+                if (!res.ok) {
+                    if (res.status === 401 && Config.getUnauthorizedMessage())
+                        Utils.notifyUnauthorizedError(Config.getUnauthorizedMessage());
+                    else
+                        Utils.notifyError(I18n.getInstance().value("messages.bankOfWidgetsError"));
+                    return null;
+                }
+                return res.json();
             });
-        return res;
     }
 
 }

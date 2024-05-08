@@ -1616,7 +1616,7 @@
         }
       },
       "label": "Pregunta de verdadero o falso",
-      "prev": "Pregunta de verdadero o falso nbo establecida todavía ..."
+      "prev": "Pregunta de verdadero o falso no establecida todavía ..."
     },
     "TwoColumnsLayout": {
       "label": "Dos columnas"

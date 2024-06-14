@@ -600,6 +600,11 @@
     "modelDetected": "Wilt u een vorige eenheid laden?",
     "true": "Waar"
   },
+  "Group": {
+    "data": {
+      "empty": "De groep is leeg. U moet ten minste één item toevoegen."
+    }
+  },
   "header": {
     "addSection": "Sectie toevoegen",
     "clear": "Inhoud wissen",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Widget"
     },
+    "Group": {
+      "label": "Groepering"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Waar of niet waar vraag",
-      "prev": "Vraag of het waar of niet waar is nbo al vastgesteld..."
+      "prev": "Waar of niet waar, vraag nog niet vastgesteld..."
     },
     "TwoColumnsLayout": {
       "label": "Twee kolommen"

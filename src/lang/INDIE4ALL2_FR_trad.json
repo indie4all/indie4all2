@@ -600,6 +600,11 @@
     "modelDetected": "Voulez-vous charger une unité précédente?",
     "true": "Vrai"
   },
+  "Group": {
+    "data": {
+      "empty": "Le groupe est vide. Vous devez ajouter au moins un élément."
+    }
+  },
   "header": {
     "addSection": "Ajouter une section",
     "clear": "Effacer le contenu",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Widget"
     },
+    "Group": {
+      "label": "Groupement"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Question vraie ou fausse",
-      "prev": "Question de vrai ou faux nbo encore établie..."
+      "prev": "Question vraie ou fausse pas encore établie..."
     },
     "TwoColumnsLayout": {
       "label": "Deux colonnes"

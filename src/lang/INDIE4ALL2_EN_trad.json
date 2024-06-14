@@ -600,6 +600,11 @@
     "modelDetected": "Do you want to load a previous unit?",
     "true": "True"
   },
+  "Group": {
+    "data": {
+      "empty": "The group is empty. You must add at least one item."
+    }
+  },
   "header": {
     "addSection": "Add section",
     "clear": "Clear content",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Widget"
     },
+    "Group": {
+      "label": "Grouping"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "True or false question",
-      "prev": "True or false question not established yet..."
+      "prev": "True or false question not yet established..."
     },
     "TwoColumnsLayout": {
       "label": "Two columns"

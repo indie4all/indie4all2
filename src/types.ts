@@ -32,6 +32,8 @@ export interface ConfigOptions {
     questionsBankURL?: string
     // Server URL to get the list of user media files
     mediaResourcesURL?: string
+    // Server URL to migrate media files to the new repository
+    mediaMigrationURL?: string
     // List of permitted origins for hosting resources
     allowedResourceOrigins?: []
     // Additional rules to validate video resources
@@ -258,6 +260,10 @@ export interface WidgetCalloutParams {
 export interface InputWidgetCalloutData extends InputWidgetElementData {
     data?: InputWidgetData[],
     params?: WidgetCalloutParams
+}
+
+export interface InputWidgetGroupData extends InputWidgetElementData {
+    data?: InputWidgetData[]
 }
 
 export interface WidgetImageAndTextParams {

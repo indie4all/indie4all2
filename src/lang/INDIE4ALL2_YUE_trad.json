@@ -600,6 +600,11 @@
     "modelDetected": "你想加載以前嘅設備啊？",
     "true": "真"
   },
+  "Group": {
+    "data": {
+      "empty": "該組為空。 你必須至少添加一個項目。"
+    }
+  },
   "header": {
     "addSection": "添加部分",
     "clear": "抹掉內容",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "控件"
     },
+    "Group": {
+      "label": "分組"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "對或錯問題",
-      "prev": "真假nbo嘅問題尚未確定..."
+      "prev": "對錯問題尚未確定..."
     },
     "TwoColumnsLayout": {
       "label": "兩列"

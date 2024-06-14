@@ -600,6 +600,11 @@
     "modelDetected": "Chcete načítať predchádzajúcu jednotku?",
     "true": "Pravdivý"
   },
+  "Group": {
+    "data": {
+      "empty": "Skupina je prázdna. Musíte pridať aspoň jednu položku."
+    }
+  },
   "header": {
     "addSection": "Pridať sekciu",
     "clear": "Vymazanie obsahu",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Miniaplikácia"
     },
+    "Group": {
+      "label": "Zoskupovanie"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Pravdivá alebo nepravdivá otázka",
-      "prev": "Otázka pravdivosti alebo nepravdy nbo je zatiaľ stanovená..."
+      "prev": "Pravdivá alebo nepravdivá otázka ešte nebola stanovená..."
     },
     "TwoColumnsLayout": {
       "label": "Dva stĺpce"

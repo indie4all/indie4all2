@@ -600,6 +600,11 @@
     "modelDetected": "Aurreko unitate bat kargatu nahi duzu?",
     "true": "Egiazkoa"
   },
+  "Group": {
+    "data": {
+      "empty": "Taldea hutsik. Gutxienez elementu bat erantsi behar du."
+    }
+  },
   "header": {
     "addSection": "Gehitu sekzioa",
     "clear": "Garbitu edukia",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Widgeta"
     },
+    "Group": {
+      "label": "Taldea"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Egia edo faltsua galdera",
-      "prev": "Oraindik ezarritako benetako nbo faltsuaren galdera..."
+      "prev": "Oraindik ezarri gabeko egiazko edo gezurreko galdera..."
     },
     "TwoColumnsLayout": {
       "label": "Bi zutabe"

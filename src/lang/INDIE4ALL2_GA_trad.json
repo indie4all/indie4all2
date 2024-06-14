@@ -600,6 +600,11 @@
     "modelDetected": "An bhfuil fonn ort aonad roimhe seo a luchtú?",
     "true": "Fíor"
   },
+  "Group": {
+    "data": {
+      "empty": "Tá an grúpa folamh. Ní mór duit mír amháin ar a laghad a chur leis."
+    }
+  },
   "header": {
     "addSection": "Cuir alt leis",
     "clear": "Léirscrios an t-ábhar",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Giuirléid"
     },
+    "Group": {
+      "label": "Grúpáil"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Ceist fhíor nó bhréagach",
-      "prev": "Ceist fíor nó bréagach bunaithe fós..."
+      "prev": "Ceist fhíor nó bhréagach nach bhfuil bunaithe fós..."
     },
     "TwoColumnsLayout": {
       "label": "Dhá cholún"

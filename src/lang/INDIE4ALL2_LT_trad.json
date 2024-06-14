@@ -600,6 +600,11 @@
     "modelDetected": "Ar norite įkelti ankstesnį įrenginį?",
     "true": "Tiesa"
   },
+  "Group": {
+    "data": {
+      "empty": "Grupė tuščia. Turite pridėti bent vieną elementą."
+    }
+  },
   "header": {
     "addSection": "Pridėti skyrių",
     "clear": "Ištrinti turinį",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Valdikliui"
     },
+    "Group": {
+      "label": "Grupavimo"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Teisingas ar klaidingas klausimas",
-      "prev": "Klausimas apie tikrą ar klaidingą nbo dar nustatytas..."
+      "prev": "Teisingas ar klaidingas klausimas dar nenustatytas..."
     },
     "TwoColumnsLayout": {
       "label": "Du stulpeliai"

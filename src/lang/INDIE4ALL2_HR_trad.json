@@ -600,6 +600,11 @@
     "modelDetected": "Želite li učitati prethodnu jedinicu?",
     "true": "Istinit"
   },
+  "Group": {
+    "data": {
+      "empty": "Grupa je prazna. Morate dodati barem jednu stavku."
+    }
+  },
   "header": {
     "addSection": "Dodaj sekciju",
     "clear": "Brisanje sadržaja",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Widget"
     },
+    "Group": {
+      "label": "Grupiranje"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Istinito ili lažno pitanje",
-      "prev": "Pitanje istinitog ili lažnog nbo uspostavljenog još..."
+      "prev": "Istinito ili lažno pitanje još nije utvrđeno ..."
     },
     "TwoColumnsLayout": {
       "label": "Dva stupca"

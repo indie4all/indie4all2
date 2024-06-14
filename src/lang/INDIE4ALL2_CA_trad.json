@@ -600,6 +600,11 @@
     "modelDetected": "Vols carregar una unitat anterior?",
     "true": "Veritable"
   },
+  "Group": {
+    "data": {
+      "empty": "L'agrupació està buida. Ha d' agregar almenys un element."
+    }
+  },
   "header": {
     "addSection": "Afegeix una secció",
     "clear": "Esborra el contingut",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Giny"
     },
+    "Group": {
+      "label": "Agrupació"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Pregunta de veritable o fals",
-      "prev": "La pregunta de veritable o fals encara no s'ha establert"
+      "prev": "Pregunta de veritable o fals no establerta encara ..."
     },
     "TwoColumnsLayout": {
       "label": "Dues columnes"

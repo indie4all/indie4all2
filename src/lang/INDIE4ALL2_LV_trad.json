@@ -600,6 +600,11 @@
     "modelDetected": "Vai vēlaties ielādēt iepriekšējo ierīci?",
     "true": "Patiess"
   },
+  "Group": {
+    "data": {
+      "empty": "Grupa ir tukša. Jums jāpievieno vismaz viens vienums."
+    }
+  },
   "header": {
     "addSection": "Pievienot sadaļu",
     "clear": "Satura dzēšana",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Widget"
     },
+    "Group": {
+      "label": "Grupēšanas"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Patiess vai nepatiess jautājums",
-      "prev": "Jautājums par patiesu vai nepatiesu nbo vēl noskaidrots..."
+      "prev": "Patiess vai nepatiess jautājums vēl nav noskaidrots..."
     },
     "TwoColumnsLayout": {
       "label": "Divas kolonnas"

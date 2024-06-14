@@ -600,6 +600,11 @@
     "modelDetected": "Doriți să încărcați o unitate anterioară?",
     "true": "Adevărat"
   },
+  "Group": {
+    "data": {
+      "empty": "Grupul este gol. Trebuie să adăugați cel puțin un element."
+    }
+  },
   "header": {
     "addSection": "Adaugă secțiune",
     "clear": "Ștergerea conținutului",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Widget"
     },
+    "Group": {
+      "label": "Gruparea"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Întrebare adevărată sau falsă",
-      "prev": "Problema nbo-ului adevărat sau fals stabilită încă..."
+      "prev": "Întrebare adevărată sau falsă care nu a fost încă stabilită..."
     },
     "TwoColumnsLayout": {
       "label": "Două coloane"

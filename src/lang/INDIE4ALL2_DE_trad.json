@@ -600,6 +600,11 @@
     "modelDetected": "Möchten Sie ein vorheriges Gerät laden?",
     "true": "STIMMT"
   },
+  "Group": {
+    "data": {
+      "empty": "Die Gruppe ist leer. Sie müssen mindestens ein Element hinzufügen."
+    }
+  },
   "header": {
     "addSection": "Abschnitt hinzufügen",
     "clear": "Inhalte löschen",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Widget"
     },
+    "Group": {
+      "label": "Gruppierung"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Richtig-oder-Falsch-Frage",
-      "prev": "Die Frage nach wahrem oder falschem NBO ist noch nicht geklärt ..."
+      "prev": "Richtige oder falsche Frage noch nicht geklärt..."
     },
     "TwoColumnsLayout": {
       "label": "Zwei Spalten"

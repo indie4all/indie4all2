@@ -600,6 +600,11 @@
     "modelDetected": "Chcete načíst předchozí jednotku?",
     "true": "Pravdivý"
   },
+  "Group": {
+    "data": {
+      "empty": "Skupina je prázdná. Musíte přidat alespoň jednu položku."
+    }
+  },
   "header": {
     "addSection": "Přidat oddíl",
     "clear": "Vymazání obsahu",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Věcička"
     },
+    "Group": {
+      "label": "Seskupení"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Pravdivá nebo nepravdivá otázka",
-      "prev": "Otázka pravdivého či nepravdivého nbo dosud stanovena..."
+      "prev": "Pravdivá nebo nepravdivá otázka ještě není stanovena..."
     },
     "TwoColumnsLayout": {
       "label": "Dva sloupce"

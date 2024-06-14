@@ -600,6 +600,11 @@
     "modelDetected": "Vil du laste inn en tidligere enhet?",
     "true": "Sann"
   },
+  "Group": {
+    "data": {
+      "empty": "Gruppen er tom. Du må legge til minst ett element."
+    }
+  },
   "header": {
     "addSection": "Legg til inndeling",
     "clear": "Slett innhold",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Widget"
     },
+    "Group": {
+      "label": "Gruppering"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Sant eller usant spørsmål",
-      "prev": "Spørsmålet om sant eller usant nbo etablert ennå ..."
+      "prev": "Sant eller usant spørsmål ennå ikke etablert ..."
     },
     "TwoColumnsLayout": {
       "label": "To kolonner"

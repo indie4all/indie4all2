@@ -600,6 +600,11 @@
     "modelDetected": "Vil du indlæse en tidligere enhed?",
     "true": "Sand"
   },
+  "Group": {
+    "data": {
+      "empty": "Gruppen er tom. Du skal tilføje mindst ét element."
+    }
+  },
   "header": {
     "addSection": "Tilføj sektion",
     "clear": "Slet indhold",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Widget"
     },
+    "Group": {
+      "label": "Gruppering"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Sandt eller falsk spørgsmål",
-      "prev": "Spørgsmål om sandt eller falsk nbo etableret endnu..."
+      "prev": "Sandt eller falsk spørgsmål endnu ikke etableret..."
     },
     "TwoColumnsLayout": {
       "label": "To kolonner"

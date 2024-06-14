@@ -600,6 +600,11 @@
     "modelDetected": "Haluatko ladata edellisen yksikön?",
     "true": "Tosi"
   },
+  "Group": {
+    "data": {
+      "empty": "Ryhmä on tyhjä. Sinun on lisättävä vähintään yksi kohde."
+    }
+  },
   "header": {
     "addSection": "Lisää osio",
     "clear": "Sisällön poistaminen",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Kapine"
     },
+    "Group": {
+      "label": "Ryhmittely"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Tosi vai epätosi kysymys",
-      "prev": "Kysymys todellisesta vai väärästä nbo: sta on vielä vahvistettu..."
+      "prev": "Totta vai tarua kysymystä ei ole vielä vahvistettu..."
     },
     "TwoColumnsLayout": {
       "label": "Kaksi saraketta"

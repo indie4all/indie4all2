@@ -600,6 +600,11 @@
     "modelDetected": "Tixtieq tgħabbi unità preċedenti?",
     "true": "Vera"
   },
+  "Group": {
+    "data": {
+      "empty": "Il-grupp huwa vojt. Għandek iżżid mill-inqas oġġett wieħed."
+    }
+  },
   "header": {
     "addSection": "Żid sezzjoni",
     "clear": "Ħassar il-kontenut",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Widget"
     },
+    "Group": {
+      "label": "Grupp"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Mistoqsija vera jew falza",
-      "prev": "Kwistjoni ta 'nbo veru jew falz stabbilit s'issa ..."
+      "prev": "Mistoqsija vera jew falza għadha mhix stabbilita..."
     },
     "TwoColumnsLayout": {
       "label": "Żewġ kolonni"

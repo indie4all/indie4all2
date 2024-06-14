@@ -600,6 +600,11 @@
     "modelDetected": "前のユニットをロードしますか?",
     "true": "真"
   },
+  "Group": {
+    "data": {
+      "empty": "グループは空です。少なくとも 1 つの項目を追加する必要があります。"
+    }
+  },
   "header": {
     "addSection": "セクションを追加",
     "clear": "コンテンツの消去",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "ウィジェット"
     },
+    "Group": {
+      "label": "グルーピング"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "正誤問題",
-      "prev": "真か偽かのnboの問題はまだ確立されていません..."
+      "prev": "真偽の問題はまだ確立されていません..."
     },
     "TwoColumnsLayout": {
       "label": "2 つの列"

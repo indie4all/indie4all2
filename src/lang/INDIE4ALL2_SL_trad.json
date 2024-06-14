@@ -600,6 +600,11 @@
     "modelDetected": "Ali želite naložiti prejšnjo enoto?",
     "true": "Res"
   },
+  "Group": {
+    "data": {
+      "empty": "Skupina je prazna. Dodati morate vsaj en element."
+    }
+  },
   "header": {
     "addSection": "Dodaj odsek",
     "clear": "Brisanje vsebine",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Widget"
     },
+    "Group": {
+      "label": "Združevanje"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Resnično ali napačno vprašanje",
-      "prev": "Vprašanje resničnega ali lažnega nbo vzpostavljeno še..."
+      "prev": "Resnično ali napačno vprašanje še ni bilo ugotovljeno ..."
     },
     "TwoColumnsLayout": {
       "label": "Dva stolpca"

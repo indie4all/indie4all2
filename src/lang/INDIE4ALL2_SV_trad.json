@@ -600,6 +600,11 @@
     "modelDetected": "Vill du ladda en tidigare enhet?",
     "true": "Sann"
   },
+  "Group": {
+    "data": {
+      "empty": "Gruppen är tom. Du måste lägga till minst ett objekt."
+    }
+  },
   "header": {
     "addSection": "Lägg till avsnitt",
     "clear": "Radera innehåll",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Manick"
     },
+    "Group": {
+      "label": "Gruppering"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Sann eller falsk fråga",
-      "prev": "Fråga om sant eller falskt nbo etablerat ännu ..."
+      "prev": "Sant eller falskt fråga ännu inte fastställd..."
     },
     "TwoColumnsLayout": {
       "label": "Två kolumner"

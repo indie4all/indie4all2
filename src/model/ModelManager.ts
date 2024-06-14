@@ -91,6 +91,7 @@ import WidgetBank from "./widgets/WidgetBank/WidgetBank";
 import WidgetSpecificContainerElement from "./widgets/WidgetSpecificContainerElement/WidgetSpecificContainerElement";
 import WidgetRoulette from "./widgets/WidgetRoulette/WidgetRoulette";
 import WidgetRouletteItem from "./widgets/WidgetRouletteItem/WidgetRouletteItem";
+import WidgetGroup from "./widgets/WidgetGroup/WidgetGroup";
 
 export default class ModelManager {
 
@@ -120,6 +121,7 @@ export default class ModelManager {
         [WidgetRelatedUnitsContainer.widget]: WidgetRelatedUnitsContainer,
         [WidgetRelatedUnitsItem.widget]: WidgetRelatedUnitsItem,
         [WidgetCallout.widget]: WidgetCallout,
+        [WidgetGroup.widget]: WidgetGroup,
         // Interactive elements
         [WidgetImageAndText.widget]: () => Config.isLocal() ? WidgetLocalImageAndText : WidgetRemoteImageAndText,
         [WidgetImage.widget]: () => Config.isLocal() ? WidgetLocalImage : WidgetRemoteImage,
@@ -193,6 +195,10 @@ export default class ModelManager {
         },
         [WidgetCallout.widget]: {
             "allows": [WidgetItemElement, WidgetColumnsLayout],
+            "refuses": [WidgetSpecificItemElement]
+        },
+        [WidgetGroup.widget]: {
+            "allows": [WidgetItemElement, WidgetColumnsLayout, WidgetContainerSpecificElement, WidgetCallout],
             "refuses": [WidgetSpecificItemElement]
         },
         [WidgetDragdropContainer.widget]: { "allows": [WidgetDragdropItem] },

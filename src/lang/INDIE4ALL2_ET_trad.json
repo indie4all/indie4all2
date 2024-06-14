@@ -600,6 +600,11 @@
     "modelDetected": "Kas soovite laadida eelmist seadet?",
     "true": "Tõsi"
   },
+  "Group": {
+    "data": {
+      "empty": "Rühm on tühi. Peate lisama vähemalt ühe üksuse."
+    }
+  },
   "header": {
     "addSection": "Jaotise lisamine",
     "clear": "Sisu kustutamine",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Vidina"
     },
+    "Group": {
+      "label": "Rühmitamine"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Õige või vale küsimus",
-      "prev": "Küsimus õigest või valest nbo-st, mis on veel kindlaks tehtud..."
+      "prev": "Tõene või vale küsimus, mida pole veel kindlaks tehtud..."
     },
     "TwoColumnsLayout": {
       "label": "Kaks veergu"

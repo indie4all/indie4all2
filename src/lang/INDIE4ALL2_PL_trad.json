@@ -600,6 +600,11 @@
     "modelDetected": "Czy chcesz załadować poprzednią jednostkę?",
     "true": "Prawdziwy"
   },
+  "Group": {
+    "data": {
+      "empty": "Grupa jest pusta. Musisz dodać co najmniej jeden element."
+    }
+  },
   "header": {
     "addSection": "Dodaj sekcję",
     "clear": "Wymazywanie zawartości",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Widżet"
     },
+    "Group": {
+      "label": "Grupowanie"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Pytanie prawda czy fałsz",
-      "prev": "Pytanie o prawdziwe czy fałszywe nbo ustalone jeszcze..."
+      "prev": "Prawda czy fałsz pytanie nie zostało jeszcze ustalone..."
     },
     "TwoColumnsLayout": {
       "label": "Dwie kolumny"

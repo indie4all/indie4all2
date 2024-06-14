@@ -600,6 +600,11 @@
     "modelDetected": "Szeretne betölteni egy korábbi egységet?",
     "true": "Igaz"
   },
+  "Group": {
+    "data": {
+      "empty": "A csoport üres. Legalább egy elemet hozzá kell adnia."
+    }
+  },
   "header": {
     "addSection": "Szakasz hozzáadása",
     "clear": "Tartalom törlése",
@@ -1155,6 +1160,9 @@
     "GenericWidget": {
       "label": "Widget"
     },
+    "Group": {
+      "label": "Csoportosítás"
+    },
     "GuessWord": {
       "form": {
         "answer": {
@@ -1618,7 +1626,7 @@
         }
       },
       "label": "Igaz vagy hamis kérdés",
-      "prev": "Igaz vagy hamis NBO kérdése..."
+      "prev": "Igaz vagy hamis kérdés még nem állapítható meg..."
     },
     "TwoColumnsLayout": {
       "label": "Két oszlop"

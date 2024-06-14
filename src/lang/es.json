@@ -600,6 +600,11 @@
     "modelDetected": "Quieres cargar una unidad previa?",
     "true": "Verdadero"
   },
+  "Group": {
+    "data": {
+      "empty": "La agrupación está vacía. Debe agregar al menos un elemento."
+    }
+  },
   "header": {
     "addSection": "Añadir sección",
     "clear": "Limpiar contenido",
@@ -1152,6 +1157,9 @@
     },
     "GenericWidget": {
       "label": "Widget"
+    },
+    "Group": {
+      "label": "Agrupación"
     },
     "GuessWord": {
       "form": {

@@ -169,37 +169,37 @@ export default class ModelManager {
         [Section.widget]: { "allows": [WidgetElement], "refuses": [WidgetSpecificItemElement, WidgetAcordionContent, WidgetTabContent] },
         [WidgetTwoColumnsLayout.widget]: {
             "allows": [WidgetItemElement, WidgetContainerSpecificElement, WidgetCallout],
-            "refuses": [WidgetSpecificItemElement]
+            "refuses": [WidgetSpecificItemElement, WidgetRelatedUnitsContainer]
         },
         [WidgetThreeColumnsLayout.widget]: {
             "allows": [WidgetItemElement, WidgetContainerSpecificElement, WidgetCallout],
-            "refuses": [WidgetSpecificItemElement]
+            "refuses": [WidgetSpecificItemElement, WidgetRelatedUnitsContainer]
         },
         [WidgetFourColumnsLayout.widget]: {
             "allows": [WidgetItemElement, WidgetContainerSpecificElement, WidgetCallout],
-            "refuses": [WidgetSpecificItemElement]
+            "refuses": [WidgetSpecificItemElement, WidgetRelatedUnitsContainer]
         },
         [WidgetTabsContainer.widget]: { "allows": [WidgetTabContent] },
         [WidgetTabContent.widget]: {
             "allows": [WidgetItemElement, WidgetColumnsLayout, WidgetContainerSpecificElement],
-            "refuses": [WidgetSpecificItemElement]
+            "refuses": [WidgetSpecificItemElement, WidgetRelatedUnitsContainer]
         },
         [WidgetAcordionContainer.widget]: { "allows": [WidgetAcordionContent] },
         [WidgetAcordionContent.widget]: {
             "allows": [WidgetItemElement, WidgetColumnsLayout, WidgetContainerSpecificElement],
-            "refuses": [WidgetSpecificItemElement]
+            "refuses": [WidgetSpecificItemElement, WidgetRelatedUnitsContainer]
         },
         [WidgetModal.widget]: {
             "allows": [WidgetItemElement],
-            "refuses": [WidgetSpecificItemElement]
+            "refuses": [WidgetSpecificItemElement, WidgetRelatedUnitsContainer]
         },
         [WidgetCallout.widget]: {
             "allows": [WidgetItemElement, WidgetColumnsLayout],
-            "refuses": [WidgetSpecificItemElement]
+            "refuses": [WidgetSpecificItemElement, WidgetRelatedUnitsContainer]
         },
         [WidgetGroup.widget]: {
             "allows": [WidgetItemElement, WidgetColumnsLayout, WidgetContainerSpecificElement, WidgetCallout],
-            "refuses": [WidgetSpecificItemElement]
+            "refuses": [WidgetSpecificItemElement, WidgetRelatedUnitsContainer]
         },
         [WidgetDragdropContainer.widget]: { "allows": [WidgetDragdropItem] },
         [WidgetTrueFalseContainer.widget]: { "allows": [WidgetTrueFalseItem] },

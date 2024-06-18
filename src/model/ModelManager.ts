@@ -271,14 +271,14 @@ export default class ModelManager {
             .map(elem => ModelElement.isPrototypeOf(elem) ? elem : (elem as Function)())
             .filter(elem => WidgetElement.isPrototypeOf(elem))
             .filter(elem =>
-                !this.refused(widget) || !this.refused(widget).some(className => className.isPrototypeOf(elem)))
+                !this.refused(widget) || !this.refused(widget).some(className => className.isPrototypeOf(elem) || className === elem))
             .filter(elem => {
                 // Accordion and Tabs allows any widget allowed in their children
                 const isSpecificContainer = WidgetSpecificContainerElement.isPrototypeOf(this.get(widget));
                 let allowed = this.allowed(widget);
                 if (isSpecificContainer && allowed)
                     allowed = allowed.concat(allowed.flatMap(child => this.allowed(child.widget)));
-                return allowed && allowed.some(className => className.isPrototypeOf(elem))
+                return allowed && allowed.some(className => className.isPrototypeOf(elem) || className === elem)
             })
     }
 

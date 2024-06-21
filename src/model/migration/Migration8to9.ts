@@ -2,7 +2,7 @@ import Utils from "../../Utils";
 
 export default class Migration8to9 {
 
-    static run(model: any) {
+    static async run(model: any) {
 
         const couples = Utils.findObjectsOfType(model, "CouplesItem");
         couples.forEach(couple => {

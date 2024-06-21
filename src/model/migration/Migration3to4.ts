@@ -2,7 +2,7 @@ import Utils from "../../Utils";
 
 export default class Migration3to4 {
 
-    static run(model: any) {
+    static async run(model: any) {
         const types = ['AcordionContainer', 'AnimationContainer',
             'AudioTermContainer', 'ChooseOption', 'CouplesContainer',
             'DragdropContainer', 'Image', 'ImageAndSoundContainer',

@@ -3,7 +3,7 @@ import { WidgetCalloutParams } from "../../types";
 
 export default class Migration12to13 {
 
-    static run(model: any) {
+    static async run(model: any) {
         const texts = Utils.findObjectsOfType(model, "TextBlock");
         texts.filter(text => text.data?.style && text.data?.style != "default").forEach(text => {
 

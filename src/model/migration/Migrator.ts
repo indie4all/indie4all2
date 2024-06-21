@@ -1,6 +1,7 @@
 import Migration10to11 from "./Migration10to11";
 import Migration11to12 from "./Migration11to12";
 import Migration12to13 from "./Migration12to13";
+import Migration13to14 from "./Migration13to14";
 import Migration1to2 from "./Migration1to2";
 import Migration2to3 from "./Migration2to3";
 import Migration3to4 from "./Migration3to4";
@@ -27,13 +28,14 @@ export default class Migrator {
         10: Migration9to10,
         11: Migration10to11,
         12: Migration11to12,
-        13: Migration12to13
+        13: Migration12to13,
+        14: Migration13to14
     };
 
     // Get the latest version
     static CURRENT_MODEL_VERSION = Math.max(...Object.keys(this.VERSION_MIGRATIONS).map(v => parseInt(v)));
-    
-    static migrate(model: any) {
+
+    static async migrate(model: any) {
 
         // Transform evaluation units into content units
         if (model.evaluation) {
@@ -55,13 +57,14 @@ export default class Migrator {
         if (version > Migrator.CURRENT_MODEL_VERSION)
             throw new Error("The current version of the model is not compatible with this tool.");
         if (version < Migrator.CURRENT_MODEL_VERSION) {
-            Object.keys(Migrator.VERSION_MIGRATIONS)
+            const versions = Object.keys(Migrator.VERSION_MIGRATIONS)
                 .map(v => parseInt(v))
                 .filter(v => v >= version)
-                .sort((v1, v2) => v1 - v2).forEach(v => {
-                    Migrator.VERSION_MIGRATIONS[v].run(model);
-                    model.version = v;
-                });
+                .sort((v1, v2) => v1 - v2);
+            for (let v of versions) {
+                await Migrator.VERSION_MIGRATIONS[v].run(model);
+                model.version = v;
+            }
         }
     }
 }

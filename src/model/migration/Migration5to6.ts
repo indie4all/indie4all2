@@ -3,7 +3,7 @@ import I18n from "../../I18n";
 
 export default class Migration5to6 {
 
-    static run(model: any) {
+    static async run(model: any) {
         const types = ['ChooseOption', 'CouplesItem', 'Image', 'ChooseOption',
             'ImageAndSoundItem', 'ImageAndText', 'SchemaItem', 'SimpleImage']
 

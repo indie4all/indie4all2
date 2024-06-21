@@ -29,7 +29,7 @@ export class Model {
     currentErrors: { element: string, keys: string[] }[];
 
     static async create(model: any): Promise<Model> {
-        Migrator.migrate(model);
+        await Migrator.migrate(model);
         const result = new Model(model);
         result.sections = model.sections ? await Promise.all(model.sections.map((sectionData: any) => Section.create(sectionData))) : [];
         return result;

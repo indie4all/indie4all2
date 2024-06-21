@@ -2,7 +2,7 @@ import Utils from "../../Utils";
 
 export default class Migration7to8 {
 
-    static run(model: any) {
+    static async run(model: any) {
         const types = ['Video', 'ImageAndSoundItem', 'AudioTermItem'];
         const widgetAudioCaptions = Utils.findObjectsOfType(model, types);
         widgetAudioCaptions.forEach(instance => {

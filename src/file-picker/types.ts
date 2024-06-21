@@ -21,6 +21,7 @@ interface FilePickerElement {
     "elementId": string,
     "elementType": string,
     "name": string,
+    "extension"?: string
 }
 
 interface FilePickerDirectory extends FilePickerElement {

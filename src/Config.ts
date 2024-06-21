@@ -33,6 +33,8 @@ export default class Config {
     private static questionsBankURL: string = null;
     // Server URL to get the list of user media files
     private static mediaResourcesURL: string = null;
+    // Server URL to migrate media files to the new file system
+    private static mediaMigrationURL: string = null;
     // List of allowed origins for media data
     private static allowedResourceOrigins: string[] = ["http://localhost:8000", "https://indiemedia.upct.es", "http://indieopen.upct.es", "https://multimediarepository.blob.core.windows.net"];
     // Additional rules to check if a video URL is allowed
@@ -81,6 +83,8 @@ export default class Config {
             this.setMediaResourcesURL(options.mediaResourcesURL)
         if (typeof options.unauthorizedMessage === 'string')
             this.setUnauthorizedMessage(options.unauthorizedMessage)
+        if (typeof options.mediaMigrationURL === 'string')
+            this.setMediaMigrationURL(options.mediaMigrationURL)
     }
 
     public static setAnalyticsBasePath(value: string) {
@@ -113,6 +117,10 @@ export default class Config {
 
     public static getEncryptionKey(): Function | string | null {
         return this.encryptionKey;
+    }
+
+    public static getLocal() {
+        return this.local;
     }
 
     public static setLocal(value: boolean) {
@@ -233,6 +241,14 @@ export default class Config {
 
     public static setMediaResourcesURL(value: string) {
         this.mediaResourcesURL = value;
+    }
+
+    public static getMediaMigrationURL(): string {
+        return this.mediaMigrationURL;
+    }
+
+    public static setMediaMigrationURL(value: string) {
+        this.mediaMigrationURL = value;
     }
 
     public static setUnauthorizedMessage(value: string) {

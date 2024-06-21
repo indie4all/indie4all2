@@ -40,10 +40,11 @@ export default class FilePicker {
 
         const { default: file } = await import('./views/file.hbs');
         const html = (await Promise.all(elements.map(async (entry) => {
+            const extension = entry.extension || "";
             let name = entry.name;
             let id = entry.elementId;
             let type = entry.elementType.toLowerCase();
-            let url = this.repoURL + `/content/${entry.elementId}`;
+            let url = this.repoURL + `/content/${entry.elementId}${extension}`;
             let thumbnail: string = "";
             switch (type) {
                 case "image":

@@ -2,7 +2,7 @@ import Utils from "../../Utils";
 
 export default class Migration2to3 {
 
-    static run(model: any) {
+    static async run(model: any) {
         const images = Utils.findObjectsOfType(model, "SimpleImage");
         images
             .filter(image => !image.params.aspect)

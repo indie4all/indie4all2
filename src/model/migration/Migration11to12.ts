@@ -2,7 +2,7 @@ import Utils from "../../Utils";
 
 export default class Migration11to12 {
 
-    static run(model: any) {
+    static async run(model: any) {
         const texts = Utils.findObjectsOfType(model, "TextBlock");
         texts.filter(text => !text.data?.style).forEach(text => text.data.style = 'default');
         const columns = Utils.findObjectsOfType(model, "ColumnLayout");

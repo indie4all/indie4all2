@@ -20,8 +20,7 @@
     "jet-logger": "^1.2.6",
     "node-cron": "^3.0.2",
     "node-fetch": "^2.6.11",
-    "pm2": "^5.2.2",
-    "sass": "^1.63.4"
+    "pm2": "^5.2.2"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
@@ -71,6 +70,7 @@
     "npm-run-all": "^4.1.5",
     "popper.js": "^1.16.1",
     "rimraf": "^3.0.2",
+    "sass": "^1.77.6",
     "sass-loader": "^13.2.0",
     "stickybits": "^3.7.11",
     "tinymce": "^6.7.2",

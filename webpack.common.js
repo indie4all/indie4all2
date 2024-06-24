@@ -31,7 +31,7 @@ const config = {
           type: 'asset/inline'
         },
         {
-        test: /\.(png|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg|gif|avif)$/i,
           type: 'asset/resource',
         }
     ]

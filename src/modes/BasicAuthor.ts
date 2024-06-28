@@ -271,6 +271,7 @@ export class BasicAuthor extends Author {
     }
 
     async load(model: object, onLoaded?: Function, onError?: Function) {
+        this.GUI.showLoading();
         await this.loadModelIntoPlugin(model);
         this.GUI.load(onLoaded, onError);
     }

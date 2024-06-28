@@ -604,7 +604,6 @@ export default class GUI {
      */
     load(onLoaded?: Function, onError?: Function) {
         const self = this;
-        this.showLoading();
         $(self.container).hide(1000, async function () {
             try {
                 $(self.container).empty();

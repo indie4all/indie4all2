@@ -214,6 +214,7 @@ export class WidgetEditorAuthor extends Author {
     }
 
     async load(dataObject: any, onLoaded?: Function, onError?: Function) {
+        this.GUI.showLoading();
         const section = await ModelManager.create("Section", { data: [dataObject] }) as Section;
         section.bookmark = "WidgetEditorSection";
         ModelManager.get(dataObject.widget).setDeletable(false);
@@ -225,7 +226,6 @@ export class WidgetEditorAuthor extends Author {
             widgetsAvailable).map(
                 ([name, widgets]) => new Category(name, widgets));
         ModelManager.addRule("Section", { refuses: ModelManager.getAllWidgetsAllowedIn(dataObject.widget) })
-
         this.GUI.renderCategories(categories);
         this.sectionParentId = section.id;
         this.model = model;

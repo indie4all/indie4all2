@@ -4163,7 +4163,7 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
 			if (objPlayer.range.length != 0) {
 				// Only defined in Interoperability units
 				if (typeof setObjetivoInteraccion === "function")
-					setObjetivoInteraccion(objPlayer.objetivo, objPlayer.titulo, "{ 'video' : [ { 'Type' : 'Range', 'Ranges' : " + JSON.stringify(objPlayer.range).replace(/"/g, "'") + ", 'Duration' : '" + objPlayer.player.duration() + "' }]}");
+					setObjetivoInteraccion(objPlayer.objetivo, objPlayer.titulo, "{ 'video' : [ { 'Type' : 'Range', 'Ranges' : " + JSON.stringify(objPlayer.range).replace(/"/g, "'") + ", 'Duration' : '" + await objPlayer.player.getDuration() + "' }]}");
 				objPlayer.range = [];
 				objPlayer.interval = 0;
 				objPlayer.element = 0;
@@ -4171,11 +4171,11 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
 		}
 	};
 
-	let sendInteractionINDIeMedia = function (objPlayer) {
+	const sendInteraction = function(objPlayer, duration) {
 		if (objPlayer.range.length != 0) {
 			// Only defined in Interoperability units
 			if (typeof setObjetivoInteraccion === "function")
-				setObjetivoInteraccion(objPlayer.objetivo, objPlayer.titulo, "{ 'video' : [ { 'Type' : 'Range', 'Ranges' : " + JSON.stringify(objPlayer.range).replace(/"/g, "'") + ", 'Duration' : '" + objPlayer.player.duration() + "' }]}");
+				setObjetivoInteraccion(objPlayer.objetivo, objPlayer.titulo, "{ 'video' : [ { 'Type' : 'Range', 'Ranges' : " + JSON.stringify(objPlayer.range).replace(/"/g, "'") + ", 'Duration' : '" + duration + "' }]}");
 			objPlayer.range = [];
 			objPlayer.interval = 0;
 			objPlayer.element = 0;
@@ -4183,7 +4183,13 @@ jQuery(function($){ $.localScroll({filter:'.smoothScroll'}); });
 		setObjetivoCompleto(objPlayer.objetivo, objPlayer.titulo, objPlayer.description);
 	}
 
-	let sendInteractionVimeo = sendInteractionINDIeMedia;
+	let sendInteractionINDIeMedia = function (objPlayer) {
+		sendInteraction(objPlayer, objPlayer.player.duration());
+	}
+
+	let sendInteractionVimeo = async function (objPlayer) {
+		sendInteraction(objPlayer, await objPlayer.player.getDuration());
+	}
 
 	let onYouTubePlayerStateChange = function (player, event) {
 		let id = $(this).attr('id');
@@ -9497,6 +9503,112 @@ var DragDropTouch;
                 $question.find('.iconresult').removeAttr('aria-label').empty();
                 $question.find('.positiveFeedback').addClass('hidden');
                 $question.find('.negativeFeedback').addClass('hidden');
+            });
+        });
+    }
+
+    let scriptPath = document.currentScript.src
+    scriptPath = scriptPath.substr(0, scriptPath.lastIndexOf('/'));
+    $(document).ready(function () {
+        let currLang = $('html').attr('lang');
+        fetch(`${scriptPath}/../languages/${currLang}.json`)
+            .then(response => response.json())
+            .then(data => i18next.createInstance({ 'lng': currLang, 'resources': { [currLang]: { 'translation': data } } }, onLanguageLoaded))
+    });
+})();
+/* global $ */
+/* global setObjetivoCompleto */
+/* global i18next */
+(function () {
+
+    const b64DecodeUnicode = function (str) {
+        // Going backwards: from bytestream, to percent-encoding, to original string.
+        return decodeURIComponent(atob(str).split('').map(function (c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+    }
+
+    const onLanguageLoaded = function (err, i18n) {
+        $('.widget-animationinout').each(async function () {
+            const widget = this;
+            const id = widget.id;
+            const widgetName = widget.dataset.desc;
+            const widgetType = widget.dataset.type;
+            console.log(widgetName, widgetType);
+            const canvas = widget.querySelector('canvas');
+            // Set the max width of the canvas to the actual width to avoid losing quality
+            canvas.style.maxWidth = canvas.width + 'px';
+            const ctx = canvas.getContext('2d');
+            const images = JSON.parse(b64DecodeUnicode(widget.dataset.content));
+            // Load all images
+            const imgs = await Promise.all(images.map((imgUrl) => {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.src = imgUrl;
+                    img.onload = () => resolve(img);
+                });
+            }));
+
+            const background = imgs.shift();
+            const sourceImages = imgs.slice(0, imgs.length / 2);
+            const clickedSourceImages = Array(sourceImages.length).fill(false);
+            const targetImages = imgs.slice(imgs.length / 2);
+            const redraw = function() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                // Draw the background
+                ctx.drawImage(background, 0, 0);
+                // Draw each of the source images
+                sourceImages.forEach((img, i) => ctx.drawImage(img, 0, 0));
+            }
+            redraw();            
+            // Create a canvas for each source image (to detect when the user clicks on them)
+            const imgDatas = sourceImages.map((img) => {
+                const imgCanvas = document.createElement('canvas');
+                imgCanvas.width = canvas.width;
+                imgCanvas.height = canvas.height;
+                const imgCtx = imgCanvas.getContext('2d', {willReadFrequently: true });
+                imgCtx.drawImage(img, 0, 0);
+                return imgCtx.getImageData(0, 0, imgCanvas.width, imgCanvas.height);
+            });
+
+            const findImage = (x, y) => {
+                const rect = canvas.getBoundingClientRect();
+                const ratio = rect.width / canvas.width;
+                const row = Math.floor(y / ratio);
+                const col = Math.floor(x / ratio);
+                // Find the image that was clicked (top-down search)
+                for (let i = imgDatas.length - 1; i >= 0; i--) {
+                    const imgData = imgDatas[i];
+                    if (row < imgData.height && col < imgData.width) {
+                        const alpha = imgData.data[(row*imgData.width + col)*4 + 3];
+                        if (alpha !== 0) return i;
+                    }
+                }
+                return -1;
+            };
+
+            canvas.addEventListener('mousemove', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const imgPosition = findImage(x, y);
+                canvas.style.cursor = imgPosition !== -1 ? 'pointer' : 'default';
+            });
+
+            // Find out which image was clicked
+            canvas.addEventListener('click', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const imgPosition = findImage(x, y);
+                if (imgPosition !== -1){
+                    //redraw();
+                    canvas.getContext('2d').drawImage(targetImages[imgPosition], 0, 0);
+                    clickedSourceImages[imgPosition] = true;
+                    if (clickedSourceImages.every((clicked) => clicked)) {
+                        setObjetivoCompleto(`objetivo${id}`, widgetName, widgetType);
+                    }
+                }
             });
         });
     }

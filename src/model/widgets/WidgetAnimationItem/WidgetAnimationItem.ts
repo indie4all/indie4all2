@@ -4,8 +4,9 @@ import './styles.scss';
 import icon from "./icon.png";
 import { FormEditData, InputWidgetAnimationItemData, WidgetAnimationItemData } from "../../../types";
 import WidgetSpecificItemElement from "../WidgetSpecificItemElement/WidgetSpecificItemElement";
+import HasFilePickerElement from "../mixings/HasFilePickerElement";
 
-export default class WidgetAnimationItem extends WidgetSpecificItemElement {
+export default class WidgetAnimationItem extends HasFilePickerElement(WidgetSpecificItemElement) {
 
     static widget = "AnimationItem";
     static icon = icon;
@@ -44,6 +45,11 @@ export default class WidgetAnimationItem extends WidgetSpecificItemElement {
 
     preview(): string {
         return this.data?.image ? prev(this.data) : this.translate("widgets.AnimationItem.prev");
+    }
+
+    settingsOpened() {
+        const $form = $('#f-' + this.id);
+        this.initFilePicker($form.find('input[name="image"]'));
     }
 
     updateModelFromForm(form: any): void {

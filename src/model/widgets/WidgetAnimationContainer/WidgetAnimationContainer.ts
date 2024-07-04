@@ -4,8 +4,9 @@ import icon from "./icon.png";
 import WidgetAnimationItem from "../WidgetAnimationItem/WidgetAnimationItem";
 import { FormEditData, InputWidgetAnimationContainerData, WidgetAnimationContainerParams } from "../../../types";
 import WidgetContainerSpecificElement from "../WidgetContainerSpecificElement/WidgetContainerSpecificElement";
+import HasFilePickerElement from "../mixings/HasFilePickerElement";
 
-export default class WidgetAnimationContainer extends WidgetContainerSpecificElement {
+export default class WidgetAnimationContainer extends HasFilePickerElement(WidgetContainerSpecificElement) {
 
     static widget = "AnimationContainer";
     static icon = icon;
@@ -61,6 +62,11 @@ export default class WidgetAnimationContainer extends WidgetContainerSpecificEle
         if (this.params) result["params"] = structuredClone(this.params);
         if (this.data) result["data"] = this.data.map(elem => elem.toJSON());
         return result;
+    }
+
+    settingsOpened() {
+        const $form = $('#f-' + this.id);
+        this.initFilePicker($form.find('input[name="image"]'));
     }
 
     updateModelFromForm(form: any): void {

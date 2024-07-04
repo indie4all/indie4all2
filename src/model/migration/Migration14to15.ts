@@ -15,6 +15,8 @@ export default class Migration14to15 {
         if (!Config.getMediaMigrationURL()) return;
         const animationElements = Utils.findObjectsOfType(model, "AnimationContainer");
         for (let obj of animationElements) {
+            if (obj?.params?.image && obj.params.image.startsWith('http'))
+                obj.params.image = await Migration14to15.getNewUrl(obj.params.image);
             if (Array.isArray(obj?.data) && obj.data.length > 0) {
                 for (let item of obj.data) {
                     if (item?.data?.image && item?.data?.image.startsWith('http'))

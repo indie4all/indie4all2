@@ -1,11 +1,14 @@
 /* global $ */
+import Config from "../../../Config";
 import I18n from "../../../I18n";
+import HasFilePickerElement from "./HasFilePickerElement";
+import "./rich-text-editor-styles.scss";
 
 export default function RichTextEditorMixin<TBase extends abstract new (...args: any[]) => any>(Base: TBase) {
 
     const editors = {};
 
-    abstract class RichTextEditor extends Base {
+    abstract class RichTextEditor extends HasFilePickerElement(Base) {
 
         // Translate navigator language into TinyMCE language file, otherwise it will be displayed in English
         getTinyMCELang(lang: string): string {
@@ -38,6 +41,7 @@ export default function RichTextEditorMixin<TBase extends abstract new (...args:
                     tinymce.init({
                         selector,
                         browser_spellcheck: true,
+                        convert_urls: false,
                         contextmenu: false,
                         language: this.getTinyMCELang(i18n.getLang()),
                         toolbar_mode: 'sliding',
@@ -46,11 +50,24 @@ export default function RichTextEditorMixin<TBase extends abstract new (...args:
                         plugins: "link, lists, help, equation",
                         invalid_elements: "script,link,style,img,applet,embed,noframes,iframe,noscript",
                         toolbar: "undo redo | bold italic | link | alignleft aligncenter alignright | outdent indent | bullist numlist | customAddWhitespace customAddTemplate equation",
-                        setup: function (editor) {
+                        setup: (editor) => {
                             editors[selector] = editor;
-                            editor.on('init', function () {
+                            editor.on('init', () => {
                                 editor.setContent(content);
                             });
+                            if (Config.getMediaResourcesURL()) {
+                                editor.on('ExecCommand', (e) => {
+                                    if (e.command === 'mceLink') {
+                                        setTimeout(() => {
+                                            const inputURL = document.querySelector('.tox-tinymce-aux .tox-control-wrap .tox-textfield') as HTMLInputElement;
+                                            inputURL.closest('.tox-control-wrap').classList.add('file-picker');
+                                            this.initFilePicker($(inputURL), false);
+                                            inputURL.classList.remove('tox-textfield');
+                                            inputURL.classList.add('form-control');
+                                        }, 1);
+                                    }
+                                });
+                            }
                             editor.ui.registry.addButton('customAddWhitespace', {
                                 icon: 'non-breaking',
                                 tooltip: i18n.value("plugins.trumbowyg.whitespace"),

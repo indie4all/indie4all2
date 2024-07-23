@@ -10,6 +10,14 @@ export default class WidgetLocalVideo extends WidgetVideo {
         return new WidgetLocalVideo(values);
     }
 
+    clone(): WidgetLocalVideo {
+        const widget = new WidgetLocalVideo();
+        widget.params = structuredClone(this.params);
+        widget.params.name = WidgetLocalVideo.widget + "-" + widget.id;
+        widget.data = structuredClone(this.data);
+        return widget;
+    }
+
     validateModel(): string[] {
         const errors = super.validateModel();
         if (!Utils.isYoutubeVideoURL(this.data.videourl))

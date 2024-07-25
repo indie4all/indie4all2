@@ -5,15 +5,13 @@ import WidgetItemElement from "../WidgetItemElement/WidgetItemElement";
 import icon from "./icon.png";
 import { FormEditData, InputWidgetVideoData, WidgetVideoData, WidgetVideoParams } from "../../../types";
 
-export default class WidgetVideo extends WidgetItemElement {
+export default abstract class WidgetVideo extends WidgetItemElement {
 
     static widget = "Video";
     static category = "simpleElements";
     static icon = icon;
 
-    static async create(values?: InputWidgetVideoData): Promise<WidgetVideo> {
-        return new WidgetVideo(values);
-    }
+    static async create(values?: InputWidgetVideoData): Promise<WidgetVideo> { return null; }
 
     params: WidgetVideoParams;
     data: WidgetVideoData;
@@ -25,14 +23,6 @@ export default class WidgetVideo extends WidgetItemElement {
         };
 
         this.data = values?.data ? structuredClone(values.data) : { videourl: "", captions: "", descriptions: "", defaultCaptions: "0" };
-    }
-
-    clone(): WidgetVideo {
-        const widget = new WidgetVideo();
-        widget.params = structuredClone(this.params);
-        widget.params.name = WidgetVideo.widget + "-" + widget.id;
-        widget.data = structuredClone(this.data);
-        return widget;
     }
 
     async getInputs(): Promise<FormEditData> {

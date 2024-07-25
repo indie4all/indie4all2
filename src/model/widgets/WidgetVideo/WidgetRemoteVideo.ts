@@ -24,6 +24,14 @@ export default class WidgetRemoteVideo extends HasFilePickerElement(WidgetVideo)
         return new WidgetRemoteVideo(values);
     }
 
+    clone(): WidgetRemoteVideo {
+        const widget = new WidgetRemoteVideo();
+        widget.params = structuredClone(this.params);
+        widget.params.name = WidgetRemoteVideo.widget + "-" + widget.id;
+        widget.data = structuredClone(this.data);
+        return widget;
+    }
+
     settingsClosed(): void {
         $(`#f-${this.id} input[name="videourl"]`).off('change');
     }

@@ -1,0 +1,20 @@
+@import "../../../styles/variables";
+
+.tox {
+    .tox-control-wrap {
+        &.file-picker {
+            button {
+                color: white;
+                padding: 12px;
+                background: $mainColor;
+                height: 38px;
+                line-height: 12px;
+            }
+
+            input {
+                height: 38px;
+                border: 1px solid #eee;
+            }
+        }
+    }
+}

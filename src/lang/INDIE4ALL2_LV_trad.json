@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Iestata satura grupas nosaukumu. Tas parādīsies nolaižamās izvēlnes nosaukumā.",
+          "help": "Iestatiet satura grupas nosaukumu. Tas parādīsies nolaižamās izvēlnes nosaukumā.",
           "label": "Satura virsraksts",
           "placeholder": "Piemērs: profesionālās prasmes"
         }

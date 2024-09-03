@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Določa naslov skupine vsebine. Prikaže se v naslovu spustnega menija.",
+          "help": "Nastavite naslov skupine vsebine. Prikaže se v naslovu spustnega menija.",
           "label": "Naslov vsebine",
           "placeholder": "Primer: Poklicne spretnosti"
         }

@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Ustawia tytuł grupy treści. Pojawi się w tytule menu rozwijanego.",
+          "help": "Ustaw tytuł grupy treści. Pojawi się w tytule menu rozwijanego.",
           "label": "Tytuł treści",
           "placeholder": "Przykład: Umiejętności zawodowe"
         }

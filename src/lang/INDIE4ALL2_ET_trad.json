@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "– saate seada sisurühma pealkirja. See ilmub rippmenüü pealkirjas.",
+          "help": "Määrake sisurühma pealkiri. See ilmub rippmenüü pealkirjas.",
           "label": "Sisu pealkiri",
           "placeholder": "Näide: professionaalsed oskused"
         }

@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Nastaví název skupiny obsahu. Zobrazí se v názvu rozbalovací nabídky.",
+          "help": "Nastavte název skupiny obsahu. Zobrazí se v názvu rozbalovací nabídky.",
           "label": "Název obsahu",
           "placeholder": "Příklad: Profesní dovednosti"
         }

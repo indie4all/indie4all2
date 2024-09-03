@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Angir tittelen for innholdsgruppen. Det vises i tittelen på rullegardinmenyen.",
+          "help": "Angi tittelen på innholdsgruppen. Det vises i tittelen på rullegardinmenyen.",
           "label": "Tittel på innhold",
           "placeholder": "Eksempel: Profesjonelle ferdigheter"
         }

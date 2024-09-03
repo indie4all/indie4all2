@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Définit le titre du groupe de contenu. Il apparaîtra dans le titre du menu déroulant.",
+          "help": "Définissez le titre du groupe de contenus. Il apparaîtra dans le titre du menu déroulant.",
           "label": "Titre du contenu",
           "placeholder": "Exemple : Compétences professionnelles"
         }

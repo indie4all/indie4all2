@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Nustato turinio grupės pavadinimą. Jis bus rodomas išskleidžiamojo meniu pavadinime.",
+          "help": "Nustatykite turinio grupės pavadinimą. Jis bus rodomas išskleidžiamojo meniu pavadinime.",
           "label": "Turinio pavadinimas",
           "placeholder": "Pavyzdys: profesiniai įgūdžiai"
         }

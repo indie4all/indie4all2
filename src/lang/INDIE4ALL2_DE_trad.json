@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Legt den Titel der Inhaltsgruppe fest. Es wird im Titel des Dropdown-Menüs angezeigt.",
+          "help": "Legen Sie den Titel der Content-Gruppe fest. Es wird im Titel des Dropdown-Menüs angezeigt.",
           "label": "Titel des Inhalts",
           "placeholder": "Beispiel: Berufliche Kompetenzen"
         }

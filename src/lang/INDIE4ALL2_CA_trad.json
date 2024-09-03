@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Estableix el títol del grup de contingut. Apareixerà al títol del menú desplegable",
+          "help": "Estableix el títol del grup de contingut. Apareixerà en el títol del menú desplegable.",
           "label": "Títol del contingut",
           "placeholder": "Exemple: habilitats professionals"
         }

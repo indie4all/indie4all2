@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Beállítja a tartalmi csoport címét. Ez megjelenik a legördülő menü címében.",
+          "help": "Állítsa be a tartalmi csoport címét. Ez megjelenik a legördülő menü címében.",
           "label": "Tartalom címe",
           "placeholder": "Példa: Szakmai készségek"
         }

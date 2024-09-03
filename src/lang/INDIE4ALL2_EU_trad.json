@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Eduki-taldearen titulua ezartzen du. Goitibeherako menuaren izenburuan agertuko da.\n",
+          "help": "Eduki-taldearen titulua ezartzen du. Menu zabalgarriaren tituluan agertuko da.",
           "label": "Edukiaren izenburua",
           "placeholder": "Adibidea: Trebetasun profesionalak"
         }

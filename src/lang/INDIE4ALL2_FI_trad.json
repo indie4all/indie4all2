@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Määrittää sisältöryhmän otsikon. Se näkyy avattavan valikon otsikossa.",
+          "help": "Määritä sisältöryhmän otsikko. Se näkyy avattavan valikon otsikossa.",
           "label": "Sisällön otsikko",
           "placeholder": "Esimerkki: Ammattitaito"
         }

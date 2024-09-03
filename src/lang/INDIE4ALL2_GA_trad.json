@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Socraigh teideal an ghrúpa ábhair. Beidh sé le feiceáil i dteideal an roghchlár anuas.",
+          "help": "Socraigh teideal an ghrúpa inneachair. Beidh sé le feiceáil i dteideal an roghchlár anuas.",
           "label": "Teideal an ábhair",
           "placeholder": "Sampla: Scileanna gairmiúla"
         }

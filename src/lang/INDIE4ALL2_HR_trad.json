@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Postavlja naslov grupe sadržaja. Pojavit će se u naslovu padajućeg izbornika.",
+          "help": "Postavite naslov grupe sadržaja. Pojavit će se u naslovu padajućeg izbornika.",
           "label": "Naslov sadržaja",
           "placeholder": "Primjer: profesionalne vještine"
         }

@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Define o título do grupo de conteúdo. Ele aparecerá no título do menu suspenso.",
+          "help": "Defina o título do grupo de conteúdo. Ele aparecerá no título do menu suspenso.",
           "label": "Título do conteúdo",
           "placeholder": "Exemplo: Competências profissionais"
         }

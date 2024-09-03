@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Hiermee stelt u de titel van de inhoudsgroep in. Het verschijnt in de titel van het vervolgkeuzemenu.",
+          "help": "Stel de titel van de inhoudsgroep in. Het verschijnt in de titel van het vervolgkeuzemenu.",
           "label": "Titel van de inhoud",
           "placeholder": "Voorbeeld: Professionele vaardigheden"
         }

@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Jissettja t-titlu tal-grupp tal-kontenut. Se jidher fit-titlu tal-menu drop-down.",
+          "help": "Issettja t-titlu tal-grupp tal-kontenut. Se jidher fit-titlu tal-menu drop-down.",
           "label": "Titolu tal-kontenut",
           "placeholder": "Eżempju: Ħiliet professjonali"
         }

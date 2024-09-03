@@ -839,7 +839,7 @@
     "AcordionContent": {
       "form": {
         "title": {
-          "help": "Setează titlul grupului de conținut. Acesta va apărea în titlul meniului derulant.",
+          "help": "Setați titlul grupului de conținut. Acesta va apărea în titlul meniului derulant.",
           "label": "Titlul conținutului",
           "placeholder": "Exemplu: Competențe profesionale"
         }

@@ -41,23 +41,32 @@ export default class FilePicker {
         const { default: file } = await import('./views/file.hbs');
         const html = (await Promise.all(elements.map(async (entry) => {
             const extension = entry.extension || "";
-            let name = entry.name;
-            let id = entry.elementId;
-            let type = entry.elementType.toLowerCase();
+            const name = entry.name;
+            const id = entry.elementId;
+            const type = entry.elementType.toLowerCase();
             let url = this.repoURL + `/content/${entry.elementId}${extension}`;
             let thumbnail: string = "";
+            // Directories are ready by default
+            let status: string = "PROCESSED";
             switch (type) {
+                case "file":
+                    const file = entry as FilePickerFile;
+                    status = file.status;
+                    break;
                 case "image":
-                    thumbnail = this.repoURL + `/thumbnail/${entry.elementId}`;
+                    const img = entry as FilePickerFile;
+                    thumbnail = this.repoURL + `/thumbnail/${img.elementId}`;
+                    status = img.status;
                     break;
                 case "video":
                     const video = entry as FilePickerFile;
                     thumbnail = video.thumbnail;
                     // endpointTranscoded contains the Vimeo identifier
                     url = this.repoURL + `/content/${video.endpointTranscoded}`;
+                    status = video.status;
 
             }
-            return file({ name, id, thumbnail, type, url });
+            return file({ name, id, thumbnail, type, url, status });
         }))).join("");
         $content.html(html);
     }
@@ -117,7 +126,8 @@ export default class FilePicker {
             .on('click', '.file-picker-file, .file-picker-audio, .file-picker-image, .file-picker-video', function (e) {
                 $('.file-picker-entry').removeClass('active');
                 $(this).addClass('active');
-                $('#modal-file-picker').find('.btn-submit').prop('disabled', false);
+                const valid = $(this).data('status') === "PROCESSED";
+                $('#modal-file-picker').find('.btn-submit').prop('disabled', !valid);
             })
             .on('click', '.file-picker-breadcrumb', function (e) {
                 const $list = $(this).parent();

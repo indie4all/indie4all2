@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 //import Api from "./Api"
 import { dom, library } from '@fortawesome/fontawesome-svg-core'
 import {
-    faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle,
+    faArrowUp, faArrowDown, faBan, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle,
     faCloudDownloadAlt, faCloudUploadAlt, faCopy, faDownload, faEdit, faEye, faFile, faFileAudio, faFolder, faGlobe, faFileExport,
     faFileImport, faLanguage, faCirclePlay, faPlusCircle, faTimes, faTimesCircle, faRedo, faSave, faSpinner, faN, faTag, faTrashAlt, faUndo
 } from '@fortawesome/free-solid-svg-icons'
@@ -27,7 +27,7 @@ const start = async (options?: ConfigOptions) => {
         });
     }
     // Enable FontAwesome icons
-    library.add(faArrowUp, faArrowDown, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle,
+    library.add(faArrowUp, faArrowDown, faBan, faBoxOpen, faCaretDown, faCaretUp, faCheck, faCheckCircle,
         faCloudDownloadAlt, faCloudUploadAlt, faCopy, faDownload, faEdit, faEye, faFile, faFileAudio, faFolder, faGlobe, faFileExport,
         faFileImport, faLanguage, faCirclePlay, faPlusCircle, faTimes, faTimesCircle, faRedo, faSave, faSpinner, faN, faTag, faTrashAlt, faUndo);
     // Watch for changes to replace icons
@@ -39,8 +39,6 @@ const start = async (options?: ConfigOptions) => {
     const domPalette = document.getElementById('palette');
     const domContainer = document.getElementById('main-container');
     // Initialize the IndieAuthor api
-    //const api = await Api.create(domPalette, domContainer);
-    //const api : Author = new BasicAuthor(domPalette,domContainer);
     const api: IApi = Config.isWidgetEditorEnabled() ? await WidgetEditorAuthor.create(domPalette, domContainer) : await BasicAuthor.create(domPalette, domContainer);
     init_events(api);
     return api;

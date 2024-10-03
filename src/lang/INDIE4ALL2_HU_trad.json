@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Meg kell adnia egy nevet ennek a példánynak.",
         "notUniqueName": "A példány nevének egyedinek kell lennie az összes tartalomban."
-      }
+      },
+      "preview": "A kép előnézete nem tekinthető meg. Ha INDIeMedia erőforrásról van szó, előfordulhat, hogy törölték. Ebben az esetben a kép továbbra is használható a közzétett egységeken, de nem jelenik meg az előnézetben."
     },
     "CorrectWordContainer": {
       "data": {

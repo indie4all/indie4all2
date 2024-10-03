@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Għandek tipprovdi isem għal dan il-każ.",
         "notUniqueName": "L-isem tal-istanza għandu jkun uniku fil-kontenut kollu."
-      }
+      },
+      "preview": "L-immaġni ma setgħetx tiġi previżjonita. Jekk hija riżorsa INDIeMedia, setgħet tħassret. F'dan il-każ, l-immaġni xorta tista' tintuża fuq unitajiet ippubblikati, iżda ma tintwerax fil-previżjoni."
     },
     "CorrectWordContainer": {
       "data": {

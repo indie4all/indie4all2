@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Vous devez fournir un nom pour cette instance.",
         "notUniqueName": "Le nom de l’instance doit être unique dans tout le contenu."
-      }
+      },
+      "preview": "L’image n’a pas pu être prévisualisée. S’il s’agit d’une ressource INDIeMedia, il se peut qu’elle ait été supprimée. Dans ce cas, l’image peut toujours être utilisée sur les unités publiées, mais elle ne sera pas affichée dans l’aperçu."
     },
     "CorrectWordContainer": {
       "data": {

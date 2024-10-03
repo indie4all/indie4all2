@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Du må oppgi et navn for denne forekomsten.",
         "notUniqueName": "Forekomstnavnet må være unikt på tvers av alt innhold."
-      }
+      },
+      "preview": "Bildet kunne ikke forhåndsvises. Hvis det er en INDIeMedia-ressurs, kan den ha blitt slettet. I dette tilfellet kan bildet fortsatt brukes på publiserte enheter, men det vil ikke vises i forhåndsvisningen."
     },
     "CorrectWordContainer": {
       "data": {

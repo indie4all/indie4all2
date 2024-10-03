@@ -20,7 +20,7 @@
     </div>
     <div class="form-group">
         <label for="image">{{translate (concat "widgets." widget ".form.image.label") }}</label>
-        <input type="url" class="form-control" name="image" required autocomplete="off" 
+        <input type="text" class="form-control" name="image" required autocomplete="off" 
             placeholder="{{translate (concat "widgets." widget ".form.image.placeholder") }}" value="{{image}}" />
         <small class="form-text text-muted">{{translate (concat "widgets." widget ".form.image.help")}}</small>
     </div>
@@ -41,5 +41,8 @@
             </button>
         </div>
         <div class="pieces"></div>
+    </div>
+    <div class="preview-error alert alert-warning d-none">
+        {{translate "errors.common.preview"}}
     </div>
 </form>

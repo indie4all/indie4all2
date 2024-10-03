@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Musíte uviesť názov tejto inštancie.",
         "notUniqueName": "Názov inštancie musí byť jedinečný pre celý obsah."
-      }
+      },
+      "preview": "Ukážku obrázka sa nepodarilo zobraziť. Ak ide o zdroj INDIeMedia, mohol byť odstránený. V takom prípade je možné obrázok stále použiť na publikovaných jednotkách, ale v náhľade sa nezobrazí."
     },
     "CorrectWordContainer": {
       "data": {

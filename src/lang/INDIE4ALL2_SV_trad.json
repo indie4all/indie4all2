@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Du måste ange ett namn för den här instansen.",
         "notUniqueName": "Instansnamnet måste vara unikt för allt innehåll."
-      }
+      },
+      "preview": "Det gick inte att förhandsgranska bilden. Om det är en INDIeMedia-resurs kan den ha tagits bort. I det här fallet kan bilden fortfarande användas på publicerade enheter, men den kommer inte att visas i förhandsgranskningen."
     },
     "CorrectWordContainer": {
       "data": {

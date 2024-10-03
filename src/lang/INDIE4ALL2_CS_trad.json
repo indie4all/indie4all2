@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Pro tuto instanci musíte zadat název.",
         "notUniqueName": "Název instance musí být jedinečný v rámci veškerého obsahu."
-      }
+      },
+      "preview": "Náhled obrázku nelze zobrazit. Pokud se jedná o zdroj INDIeMedia, mohl být smazán. V takovém případě lze obrázek stále použít na publikovaných jednotkách, ale nezobrazí se v náhledu."
     },
     "CorrectWordContainer": {
       "data": {

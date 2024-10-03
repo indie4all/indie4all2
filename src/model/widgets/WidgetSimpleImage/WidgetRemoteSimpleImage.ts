@@ -102,7 +102,13 @@ export default class WidgetRemoteSimpleImage extends HasFilePickerElement(Widget
         });
         // Show image preview when loaded and set its size
         $preview.hide();
+        $img.on('error', function () {
+            const emptySrc = this.src === window.location.origin + '/';
+            $form.find('.preview-error').toggleClass('d-none', emptySrc);
+        });
+
         $img.on('load', function () {
+            $form.find('.preview-error').addClass('d-none');
             $preview.show();
             ratio = this.naturalWidth / this.naturalHeight;
             // Set width and height only when the user changes the image

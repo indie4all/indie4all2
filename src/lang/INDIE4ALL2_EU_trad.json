@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Izen bat eman behar diozu instantzia honi.",
         "notUniqueName": "Instantziaren izenak bakarra izan behar du eduki osoan."
-      }
+      },
+      "preview": "Ezin izan zen irudia aurreikusi. INDIeMediaren helegitea bada, baliteke kanporatua izatea. Kasu honetan, irudia argitaratutako unitateetan erabiltzen jarraitu ahal izango da, baina ez da aurrebisualizazioan erakutsiko."
     },
     "CorrectWordContainer": {
       "data": {

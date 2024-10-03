@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Ní mór duit ainm a chur ar fáil don chás seo.",
         "notUniqueName": "Caithfidh an t-ainm ásc a bheith uathúil ar fud an ábhair go léir."
-      }
+      },
+      "preview": "Níorbh fhéidir réamhamharc a dhéanamh ar an íomhá. Más acmhainn INDIeMedia é, b'fhéidir gur scriosadh é. Sa chás seo, is féidir an íomhá a úsáid fós ar aonaid fhoilsithe, ach ní thaispeánfar í sa réamhamharc."
     },
     "CorrectWordContainer": {
       "data": {

@@ -268,7 +268,8 @@
       "name": {
         "invalid": "You must provide a name for this instance.",
         "notUniqueName": "The instance name must be unique across all content."
-      }
+      },
+      "preview": "The image could not be previewed. If it is an INDIeMedia resource, it may have been deleted. In this case, the image can still be used on published units, but it will not be displayed in the preview."
     },
     "CorrectWordContainer": {
       "data": {

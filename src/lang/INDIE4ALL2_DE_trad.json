@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Sie müssen einen Namen für diese Instanz angeben.",
         "notUniqueName": "Der Instanzname muss für den gesamten Inhalt eindeutig sein."
-      }
+      },
+      "preview": "Das Bild konnte nicht in der Vorschau angezeigt werden. Wenn es sich um eine INDIeMedia-Ressource handelt, wurde sie möglicherweise gelöscht. In diesem Fall kann das Bild weiterhin für veröffentlichte Einheiten verwendet werden, aber es wird nicht in der Vorschau angezeigt."
     },
     "CorrectWordContainer": {
       "data": {

@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Jums ir jānorāda šīs instances nosaukums.",
         "notUniqueName": "Instances nosaukumam ir jābūt unikālam visā saturā."
-      }
+      },
+      "preview": "Attēlu nevarēja priekšskatīt. Ja tas ir INDIeMedia resurss, iespējams, tas ir izdzēsts. Šajā gadījumā attēlu joprojām var izmantot publicētajās vienībās, bet tas netiks parādīts priekšskatījumā."
     },
     "CorrectWordContainer": {
       "data": {

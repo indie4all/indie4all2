@@ -268,7 +268,8 @@
       "name": {
         "invalid": "È necessario specificare un nome per questa istanza.",
         "notUniqueName": "Il nome dell'istanza deve essere univoco in tutto il contenuto."
-      }
+      },
+      "preview": "Non è stato possibile visualizzare l'anteprima dell'immagine. Se si tratta di una risorsa INDIeMedia, potrebbe essere stata eliminata. In questo caso, l'immagine può ancora essere utilizzata sulle unità pubblicate, ma non verrà visualizzata nell'anteprima."
     },
     "CorrectWordContainer": {
       "data": {

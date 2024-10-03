@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Has de posar un nom a aquesta instància",
         "notUniqueName": "El nom de la instància ha de ser únic en tot el contingut"
-      }
+      },
+      "preview": "No es va poder previsualitzar la imatge. Si es tracta d'un recurs d'INDIeMedia, és possible que hagi estat eliminat. En aquest cas, la imatge podrà continuar sent utilitzada en les unitats publicades, però no es mostrarà en la previsualització."
     },
     "CorrectWordContainer": {
       "data": {

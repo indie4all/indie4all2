@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Debes proporcionar un nombre para esta instancia.",
         "notUniqueName": "El nombre de la instancia debe ser único en todo el contenido."
-      }
+      },
+      "preview": "No se pudo previsualizar la imagen. Si se trata de un recurso de INDIeMedia, es posible que haya sido eliminado. En este caso, la imagen podrá seguir siendo utilizada en las unidades publicadas, pero no se mostrará en la previsualización."
     },
     "CorrectWordContainer": {
       "data": {

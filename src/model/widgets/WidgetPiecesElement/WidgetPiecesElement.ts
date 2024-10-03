@@ -66,8 +66,19 @@ export default abstract class WidgetPiecesElement extends WidgetItemElement {
 
     protected loadImage(url: string) {
         let tmpImage = new Image;
+
+        tmpImage.onerror = () => {
+            const $form = $('#f-' + this.id);
+            const $error = $form.find('.preview-error')
+            const emptySrc = tmpImage.src === window.location.origin + '/';
+            $form.find('.pieces-wrapper').addClass('d-none');
+            $error.toggleClass('d-none', emptySrc);
+        }
+
         tmpImage.onload = () => {
-            $('#f-' + this.id).find('.pieces-wrapper').removeClass('d-none');
+            const $form = $('#f-' + this.id);
+            $form.find('.preview-error').addClass('d-none');
+            $form.find('.pieces-wrapper').removeClass('d-none');
             setTimeout(() => {
                 this.canvasHandler.load(tmpImage);
                 this.canvasHandler.setRects(this.pieces);

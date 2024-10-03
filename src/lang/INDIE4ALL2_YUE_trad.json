@@ -268,7 +268,8 @@
       "name": {
         "invalid": "必須為此實例提供一個名稱。",
         "notUniqueName": "實例名稱喺所有內容中必須係唯一嘅。"
-      }
+      },
+      "preview": "無法預覽圖像。 如果佢係INDIeMedia資源，則它可能已被刪除。 喺呢種情況下，該圖像仍可用于已發佈嘅單位，但唔會顯示喺預覽中。"
     },
     "CorrectWordContainer": {
       "data": {

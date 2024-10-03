@@ -57,6 +57,7 @@ export default class WidgetRemoteImage extends HasFilePickerElement(WidgetImage)
         $sectionPreview.toggleClass('d-none', !this.data.image);
         this.initTextEditor(this.data.text, '#f-' + this.id + ' .texteditor');
         $iImg.on('change', function (e) {
+            $form.find('.preview-error').toggleClass('d-none', true);
             $preview.attr('src', '');
             $sectionPreview.toggleClass('d-none', true);
             const value = (e.target as HTMLInputElement).value;
@@ -64,6 +65,11 @@ export default class WidgetRemoteImage extends HasFilePickerElement(WidgetImage)
                 $preview.attr('src', value);
                 $sectionPreview.toggleClass('d-none', false);
             }
+        });
+        $preview.on('error', function () {
+            const emptySrc = (this as HTMLImageElement).src === window.location.origin + '/';
+            $form.find('.preview-error').toggleClass('d-none', emptySrc);
+            $sectionPreview.toggleClass('d-none', true);
         });
         this.initFilePicker($iImg);
     }

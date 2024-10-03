@@ -41,7 +41,7 @@
         <div class="image {{#ifneq type "image"}} d-none {{/ifneq}}">
             <div class="form-group">
                 <label for="image">{{translate "widgets.CouplesItem.form.image.label"}}</label>
-                <input type="url" class="form-control img-input" name="couple[{{@index}}][image]" 
+                <input type="text" class="form-control img-input" name="couple[{{@index}}][image]" 
                     {{#ifeq type "image" }} required {{/ifeq}} placeholder="{{translate "widgets.CouplesItem.form.image.placeholder"}}" 
                     value="{{image}}" autocomplete="off" />
                 <small class="form-text text-muted">{{translate "widgets.CouplesItem.form.image.help"}}</small>
@@ -56,6 +56,9 @@
             <div class="form-group d-none">
                 <p>{{translate "widgets.CouplesItem.form.preview"}}</p>
                 <img class="img-fluid img-preview" src="{{image}}" />
+            </div>
+            <div class="preview-error alert alert-warning d-none">
+                {{translate "errors.common.preview"}}
             </div>
         </div>
     </fieldset>

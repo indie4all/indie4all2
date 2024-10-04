@@ -103,7 +103,7 @@ export default class WidgetRemoteSimpleImage extends HasFilePickerElement(Widget
         // Show image preview when loaded and set its size
         $preview.hide();
         $img.on('error', function () {
-            const emptySrc = this.src === window.location.origin + '/';
+            const emptySrc = (this as HTMLImageElement).src === window.location.href;
             $form.find('.preview-error').toggleClass('d-none', emptySrc);
         });
 

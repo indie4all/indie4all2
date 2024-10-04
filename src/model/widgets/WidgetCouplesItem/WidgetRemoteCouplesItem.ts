@@ -61,7 +61,7 @@ export default class WidgetRemoteCouplesItem extends HasFilePickerElement(Widget
             const $sectionPreview = $(this).closest('.form-group');
             $sectionPreview.toggleClass('d-none', !self.data.couples[idx].image);
             $(this).on('error', function () {
-                const emptySrc = (this as HTMLImageElement).src === window.location.origin + '/';
+                const emptySrc = (this as HTMLImageElement).src === window.location.href;
                 $form.find('.preview-error').toggleClass('d-none', emptySrc);
                 $sectionPreview.toggleClass('d-none', true);
             });

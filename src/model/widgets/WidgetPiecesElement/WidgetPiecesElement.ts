@@ -70,7 +70,7 @@ export default abstract class WidgetPiecesElement extends WidgetItemElement {
         tmpImage.onerror = () => {
             const $form = $('#f-' + this.id);
             const $error = $form.find('.preview-error')
-            const emptySrc = tmpImage.src === window.location.origin + '/';
+            const emptySrc = tmpImage.src === window.location.href;
             $form.find('.pieces-wrapper').addClass('d-none');
             $error.toggleClass('d-none', emptySrc);
         }

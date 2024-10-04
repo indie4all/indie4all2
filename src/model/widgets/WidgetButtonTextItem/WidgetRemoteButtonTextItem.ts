@@ -57,7 +57,7 @@ export default class WidgetRemoteButtonTextItem extends HasFilePickerElement(Wid
             }
         });
         $preview.on('error', function () {
-            const emptySrc = (this as HTMLImageElement).src === window.location.origin + '/';
+            const emptySrc = (this as HTMLImageElement).src === window.location.href;
             $form.find('.preview-error').toggleClass('d-none', emptySrc);
             $sectionPreview.toggleClass('d-none', true);
         });

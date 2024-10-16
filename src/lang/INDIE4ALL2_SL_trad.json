@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Za ta primerek morate navedite ime.",
         "notUniqueName": "Ime primerka mora biti enolično v vsej vsebini."
-      }
+      },
+      "preview": "Slike ni bilo mogoče predogledati. Če gre za vir INDIeMedia, je bil morda izbrisan. V tem primeru lahko sliko še vedno uporabljate na objavljenih enotah, vendar ne bo prikazana v predogledu."
     },
     "CorrectWordContainer": {
       "data": {

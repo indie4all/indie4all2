@@ -7,7 +7,7 @@
     </div>
     <div class="form-group">
         <label for="image">{{translate "widgets.SimpleImage.form.image.label"}}</label>
-        <input type="url" class="form-control" name="image" required
+        <input type="text" class="form-control" name="image" required
         placeholder="{{translate "widgets.SimpleImage.form.image.placeholder"}}" value="{{image}}" autocomplete="off" />
         <small class="form-text text-muted">{{translate "widgets.SimpleImage.form.image.help"}}</small>
     </div>
@@ -70,5 +70,8 @@
     <div class="form-group image-preview">
         <p>{{translate "widgets.SimpleImage.form.preview"}}</p>
         <img class="img-fluid" src="{{image}}" />
+    </div>
+    <div class="preview-error alert alert-warning d-none">
+        {{translate "errors.common.preview"}}
     </div>
 </form>

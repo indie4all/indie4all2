@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Trebuie să furnizați un nume pentru această instanță.",
         "notUniqueName": "Numele instanței trebuie să fie unic pentru tot conținutul."
-      }
+      },
+      "preview": "Imaginea nu a putut fi previzualizată. Dacă este o resursă INDIeMedia, este posibil să fi fost ștearsă. În acest caz, imaginea poate fi utilizată în continuare pe unitățile publicate, dar nu va fi afișată în previzualizare."
     },
     "CorrectWordContainer": {
       "data": {

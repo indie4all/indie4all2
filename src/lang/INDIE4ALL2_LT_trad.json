@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Turite nurodyti šio egzemplioriaus pavadinimą.",
         "notUniqueName": "Egzemplioriaus pavadinimas turi būti unikalus visame turinyje."
-      }
+      },
+      "preview": "Vaizdo peržiūrėti nepavyko. Jei tai yra INDIeMedia šaltinis, jis gali būti ištrintas. Tokiu atveju vaizdas vis tiek gali būti naudojamas paskelbtuose vienetuose, tačiau jis nebus rodomas peržiūroje."
     },
     "CorrectWordContainer": {
       "data": {

@@ -60,6 +60,11 @@ export default class WidgetRemoteCouplesItem extends HasFilePickerElement(Widget
         $('.img-preview').each(function (idx) {
             const $sectionPreview = $(this).closest('.form-group');
             $sectionPreview.toggleClass('d-none', !self.data.couples[idx].image);
+            $(this).on('error', function () {
+                const emptySrc = (this as HTMLImageElement).src === window.location.href;
+                $form.find('.preview-error').toggleClass('d-none', emptySrc);
+                $sectionPreview.toggleClass('d-none', true);
+            });
         });
 
         $imgs.each(function () { self.initFilePicker($(this)); });
@@ -80,6 +85,7 @@ export default class WidgetRemoteCouplesItem extends HasFilePickerElement(Widget
             const $ancestor = $(this).closest('.image');
             const $preview = $ancestor.find('.img-preview');
             const $sectionPreview = $preview.closest('.form-group');
+            $ancestor.find('.preview-error').toggleClass('d-none', true);
             $preview.attr('src', '');
             $sectionPreview.toggleClass('d-none', true);
             if (Utils.isValidResource(e.target.value)) {

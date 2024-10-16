@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Sinun on annettava tälle esiintymälle nimi.",
         "notUniqueName": "Esiintymän nimen on oltava yksilöllinen kaikessa sisällössä."
-      }
+      },
+      "preview": "Kuvaa ei voitu esikatsella. Jos se on INDIeMedia-resurssi, se on ehkä poistettu. Tässä tapauksessa kuvaa voidaan edelleen käyttää julkaistuissa yksiköissä, mutta sitä ei näytetä esikatselussa."
     },
     "CorrectWordContainer": {
       "data": {

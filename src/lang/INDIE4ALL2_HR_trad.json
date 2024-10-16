@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Morate navesti naziv za ovu instancu.",
         "notUniqueName": "Naziv instance mora biti jedinstven u cijelom sadržaju."
-      }
+      },
+      "preview": "Slika se nije mogla pregledati. Ako se radi o INDIeMedia resursu, možda je izbrisan. U tom slučaju, slika se i dalje može koristiti na objavljenim jedinicama, ali neće biti prikazana u pregledu."
     },
     "CorrectWordContainer": {
       "data": {

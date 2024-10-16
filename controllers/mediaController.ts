@@ -23,7 +23,9 @@ const getFilesAndFolders = async (token: string, folderId: string, pageSize: num
 }
 
 const getBytes = async (token: string, mediaFileId: string, thumbnail = false) => {
-    let url = `https://scgatewaydev-fwe6gvg6gzbndycj.z01.azurefd.net/api/media/authormedia/image/${mediaFileId}`;
+    const regex = /([a-f0-9]{32})(\.[a-f0-9]{1,5})?/;
+    const fileId = regex.test(mediaFileId) ? (mediaFileId.match(regex) as string[])[1] : mediaFileId;
+    let url = `https://scgatewaydev-fwe6gvg6gzbndycj.z01.azurefd.net/api/media/authormedia/image/${fileId}`;
     if (thumbnail) url += "/128";
     const config = {
         method: 'get',

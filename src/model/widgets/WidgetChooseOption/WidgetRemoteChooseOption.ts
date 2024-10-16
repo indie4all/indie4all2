@@ -63,12 +63,18 @@ export default class WidgetRemoteChooseOption extends HasFilePickerElement(Widge
         const $sectionPreview = $preview.closest('.form-group');
         $sectionPreview.toggleClass('d-none', !this.data.image);
         $iImg.on('change', function (e) {
+            $form.find('.preview-error').toggleClass('d-none', true);
             $sectionPreview.toggleClass('d-none', true);
             const value = (e.target as HTMLInputElement).value;
             if (Utils.isValidResource(value)) {
                 $preview.attr('src', value);
                 $sectionPreview.toggleClass('d-none', false);
             }
+        });
+        $preview.on('error', function () {
+            const emptySrc = (this as HTMLImageElement).src === window.location.href;
+            $form.find('.preview-error').toggleClass('d-none', emptySrc);
+            $sectionPreview.toggleClass('d-none', true);
         });
         this.initFilePicker($iImg);
     }

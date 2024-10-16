@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Peate esitama selle eksemplari nime.",
         "notUniqueName": "Eksemplari nimi peab olema kogu sisus kordumatu."
-      }
+      },
+      "preview": "Pilti ei saanud eelvaadata. Kui see on INDIeMedia ressurss, võib see olla kustutatud. Sellisel juhul saab pilti endiselt kasutada avaldatud üksustes, kuid seda ei kuvata eelvaates."
     },
     "CorrectWordContainer": {
       "data": {

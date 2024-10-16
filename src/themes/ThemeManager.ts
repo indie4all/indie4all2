@@ -1,3 +1,9 @@
+import CDigitalesTheme1 from "./CDigitalesTheme1.avif";
+import CDigitalesTheme2 from "./CDigitalesTheme2.avif";
+import CDigitalesTheme3 from "./CDigitalesTheme3.avif";
+import CDigitalesTheme4 from "./CDigitalesTheme4.avif";
+import CDigitalesTheme5 from "./CDigitalesTheme5.avif";
+import DigCompEduTheme from "./DigCompEduTheme.avif";
 import theme1 from "./GeneralTheme1.avif";
 import theme2 from "./GeneralTheme2.avif";
 import theme3 from "./GeneralTheme3.avif";
@@ -21,6 +27,12 @@ import Utils from "../Utils"
 export default class ThemeManager {
 
     private static config = {
+        "CDigitalesTheme1": { "color": "#9d6e04", "cover": CDigitalesTheme1 },
+        "CDigitalesTheme2": { "color": "#057eb6", "cover": CDigitalesTheme2 },
+        "CDigitalesTheme3": { "color": "#d04a0b", "cover": CDigitalesTheme3 },
+        "CDigitalesTheme4": { "color": "#33846e", "cover": CDigitalesTheme4 },
+        "CDigitalesTheme5": { "color": "#ea1340", "cover": CDigitalesTheme5 },
+        "DigCompEduTheme": { "color": "#31942e", "cover": DigCompEduTheme },
         "GeneralTheme1": { "color": "#963E17", "cover": theme1 },
         "GeneralTheme2": { "color": "#532e1c", "cover": theme2 },
         "GeneralTheme3": { "color": "#a9294f", "cover": theme3 },

@@ -268,7 +268,8 @@
       "name": {
         "invalid": "U moet een naam opgeven voor dit exemplaar.",
         "notUniqueName": "De instantienaam moet uniek zijn voor alle inhoud."
-      }
+      },
+      "preview": "Er kan geen voorbeeld van de afbeelding worden weergegeven. Als het een INDIeMedia-bron is, is deze mogelijk verwijderd. In dit geval kan de afbeelding nog steeds worden gebruikt op gepubliceerde eenheden, maar wordt deze niet weergegeven in het voorbeeld."
     },
     "CorrectWordContainer": {
       "data": {

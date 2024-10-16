@@ -268,7 +268,8 @@
       "name": {
         "invalid": "Należy podać nazwę dla tego wystąpienia.",
         "notUniqueName": "Nazwa instancji musi być unikatowa dla całej zawartości."
-      }
+      },
+      "preview": "Nie można wyświetlić podglądu obrazu. Jeśli jest to zasób INDIeMedia, mógł zostać usunięty. W takim przypadku obraz może być nadal używany w opublikowanych jednostkach, ale nie będzie wyświetlany w podglądzie."
     },
     "CorrectWordContainer": {
       "data": {

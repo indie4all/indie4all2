@@ -13,7 +13,7 @@
     </div>
     <div class="form-group">
         <label for="image">{{translate "widgets.CorrectWordItem.form.image.label"}}</label>
-        <input type="url" class="form-control" name="image" required autocomplete="off" 
+        <input type="text" class="form-control" name="image" required autocomplete="off" 
             placeholder="{{translate "widgets.CorrectWordItem.form.image.placeholder"}}" value="{{image}}" />
         <small class="form-text text-muted">{{translate "widgets.CorrectWordItem.form.image.help"}}</small>
     </div>
@@ -26,5 +26,8 @@
     <div class="form-group d-none">
         <p>{{translate "widgets.CorrectWordItem.form.preview"}}</p>
         <img class="img-fluid img-preview" src="{{image}}" />
+    </div>
+    <div class="preview-error alert alert-warning d-none">
+        {{translate "errors.common.preview"}}
     </div>
 </form>

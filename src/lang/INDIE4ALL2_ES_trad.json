@@ -199,6 +199,9 @@
         "invalid": "Debes proporcionar un término."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "El número de widgets aleatorios no puede ser superior al número de widgets seleccionado"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "No has escrito el contenido de la cita. Debes, al menos, escribir el contenido."
@@ -631,7 +634,6 @@
     "export": "Exportar elemento"
   },
   "messages": {
-    "bankOfQuestionsError": "No se pudo conectar con el banco de preguntas.",
     "bankOfWidgetsError": "No se pudo conectar con el banco de widgets.",
     "changesSaved": "Cambios guardados correctamente.",
     "confirmClearContent": "Vas a eliminar el contenido por completo. Asegúrate de que es lo que realmente deseas hacer.",
@@ -939,7 +941,6 @@
           "optionTag": "Etiqueta",
           "optionType": "Tipo"
         },
-        "maximumRandomWidgetsExceeded": "El número de widgets aleatorios no puede ser superior al número de widgets seleccionado",
         "modalTitle": "Banco de Widgets",
         "placeholderTag": "Buscar por nombre de etiqueta",
         "placeholderTitle": "Buscar por título de Widget",
@@ -1346,23 +1347,6 @@
       },
       "label": "Rompecabezas",
       "prev": "El rompecabezas no ha sido inicializado todavía..."
-    },
-    "QuestionsBank": {
-      "add": "Añadir",
-      "label": "Importar del Banco de Preguntas",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "El número de preguntas aleatorias no puede ser superior al número de preguntas seleccionadas",
-        "modalTitle": "Banco de Preguntas",
-        "placeholderGroup": "Grupo",
-        "placeholderTitle": "Buscar por título o etiqueta de pregunta",
-        "placeholderType": "Tipo",
-        "randomTextBefore": " preguntas aleatorias de las seleccionadas",
-        "randomTextPrev": "Introducir ",
-        "search": "Buscar",
-        "selectAllText": "Seleccionar todas"
-      },
-      "modalTitle": "Banco de Preguntas",
-      "search": "Buscar"
     },
     "RelatedUnitsAssociation": {
       "form": {

@@ -199,6 +199,9 @@
         "invalid": "Sinun on annettava termi."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Satunnaisten widgetien määrä ei voi ylittää valittujen widgetien määrää"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Et ole kirjoittanut lainauksen sisältöä. Sinun on ainakin kirjoitettava sisältö."
@@ -631,7 +634,6 @@
     "export": "Vie kohde"
   },
   "messages": {
-    "bankOfQuestionsError": "Yhteyden muodostaminen kysymyspankkiin ei onnistunut.",
     "bankOfWidgetsError": "Yhteyden muodostaminen widget-pankkiin epäonnistui.",
     "changesSaved": "Muutokset tallennettu onnistuneesti.",
     "confirmClearContent": "Aiot poistaa sisällön kokonaan. Varmista, että se on se, mitä todella haluat tehdä.",
@@ -939,7 +941,6 @@
           "optionTag": "Etiketti",
           "optionType": "Kundi"
         },
-        "maximumRandomWidgetsExceeded": "Satunnaisten widgetien määrä ei voi ylittää valittujen widgetien määrää",
         "modalTitle": "Widget-pankki",
         "placeholderGroup": "Ryhmä",
         "placeholderTag": "Etsi tunnisteen nimellä",
@@ -1348,23 +1349,6 @@
       },
       "label": "Pulma",
       "prev": "Palapeliä ei ole vielä alustettu..."
-    },
-    "QuestionsBank": {
-      "add": "Lisätä",
-      "label": "Tuonti kysymyspankista",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Satunnaisten kysymysten määrä ei voi ylittää valittujen kysymysten määrää",
-        "modalTitle": "Kysymyspankki",
-        "placeholderGroup": "Ryhmä",
-        "placeholderTitle": "Hae otsikon tai kysymystunnisteen perusteella",
-        "placeholderType": "Kundi",
-        "randomTextBefore": " Satunnaisia kysymyksiä valituilta",
-        "randomTextPrev": "Esitellä ",
-        "search": "Löytää",
-        "selectAllText": "Valitse kaikki"
-      },
-      "modalTitle": "Kysymyspankki",
-      "search": "Löytää"
     },
     "RelatedUnitsAssociation": {
       "form": {

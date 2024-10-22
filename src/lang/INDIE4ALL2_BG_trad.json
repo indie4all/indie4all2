@@ -199,6 +199,9 @@
         "invalid": "Трябва да предоставите термин."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Броят на случайните уиджети не може да надвишава броя на избраните уиджети"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Не сте написали съдържанието на цитата. Трябва поне да напишете съдържанието."
@@ -631,7 +634,6 @@
     "export": "Експортиране на елемент"
   },
   "messages": {
-    "bankOfQuestionsError": "Не можа да се свърже с банката с въпроси.",
     "bankOfWidgetsError": "Неуспешно свързване с банката за джаджи.",
     "changesSaved": "Промените са записани успешно.",
     "confirmClearContent": "Ще изтриете съдържанието изцяло. Уверете се, че това е, което наистина искате да направите.",
@@ -939,7 +941,6 @@
           "optionTag": "Етикет",
           "optionType": "Човек"
         },
-        "maximumRandomWidgetsExceeded": "Броят на случайните уиджети не може да надвишава броя на избраните уиджети",
         "modalTitle": "Уиджет Банк",
         "placeholderGroup": "Група",
         "placeholderTag": "Търсене по име на етикет",
@@ -1348,23 +1349,6 @@
       },
       "label": "Озадачавам",
       "prev": "Пъзелът още не е инициализиран..."
-    },
-    "QuestionsBank": {
-      "add": "Добавям",
-      "label": "Импортиране от банка за въпроси",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Броят на случайните въпроси не може да надвишава броя на избраните въпроси",
-        "modalTitle": "Въпрос банка",
-        "placeholderGroup": "Група",
-        "placeholderTitle": "Търсене по заглавие или етикет за въпрос",
-        "placeholderType": "Човек",
-        "randomTextBefore": " Случайни въпроси от избраните",
-        "randomTextPrev": "Представям ",
-        "search": "Да намериш",
-        "selectAllText": "Избери всички"
-      },
-      "modalTitle": "Въпрос банка",
-      "search": "Да намериш"
     },
     "RelatedUnitsAssociation": {
       "form": {

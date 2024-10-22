@@ -199,6 +199,9 @@
         "invalid": "Musíte zadat termín."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Počet náhodných widgetů nesmí překročit počet vybraných widgetů"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Nenapsal jste obsah citátu. Musíte alespoň napsat obsah."
@@ -631,7 +634,6 @@
     "export": "Exportovat položku"
   },
   "messages": {
-    "bankOfQuestionsError": "Nelze se připojit k bance otázek.",
     "bankOfWidgetsError": "Připojení k bance widgetů se nezdařilo.",
     "changesSaved": "Změny byly úspěšně uloženy.",
     "confirmClearContent": "Obsah zcela odstraníte. Ujistěte se, že je to to, co opravdu chcete dělat.",
@@ -939,7 +941,6 @@
           "optionTag": "Označit",
           "optionType": "Chlapík"
         },
-        "maximumRandomWidgetsExceeded": "Počet náhodných widgetů nesmí překročit počet vybraných widgetů",
         "modalTitle": "Widget Bank",
         "placeholderGroup": "Skupina",
         "placeholderTag": "Vyhledávání podle názvu značky",
@@ -1348,23 +1349,6 @@
       },
       "label": "Hádanka",
       "prev": "Hádanka ještě nebyla inicializována..."
-    },
-    "QuestionsBank": {
-      "add": "Přidat",
-      "label": "Import z banky otázek",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Počet náhodných otázek nesmí překročit počet vybraných otázek",
-        "modalTitle": "Banka otázek",
-        "placeholderGroup": "Skupina",
-        "placeholderTitle": "Vyhledávání podle názvu nebo značky otázky",
-        "placeholderType": "Chlapík",
-        "randomTextBefore": " Náhodné otázky od vybraných",
-        "randomTextPrev": "Představit ",
-        "search": "Zjistit",
-        "selectAllText": "Vybrat vše"
-      },
-      "modalTitle": "Banka otázek",
-      "search": "Zjistit"
     },
     "RelatedUnitsAssociation": {
       "form": {

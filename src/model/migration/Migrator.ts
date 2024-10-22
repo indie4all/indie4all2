@@ -1,3 +1,5 @@
+import ModelManager from "../ModelManager";
+import Section from "../section/Section";
 import Migration10to11 from "./Migration10to11";
 import Migration11to12 from "./Migration11to12";
 import Migration12to13 from "./Migration12to13";
@@ -69,4 +71,17 @@ export default class Migrator {
             }
         }
     }
+
+    /**
+     * Migrate a widget to the latest version
+     * @param widget object corresponding to the widget
+     * @returns the migrated widget
+     */
+    static async migrateWidget(widget: any) {
+        const section = await ModelManager.create("Section", { data: [widget] }) as Section;
+        const modelObj = { sections: [section.toJSON()] }
+        await this.migrate(modelObj);
+        return modelObj.sections[0].data[0];
+    }
+
 }

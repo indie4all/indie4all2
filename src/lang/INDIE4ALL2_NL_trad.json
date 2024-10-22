@@ -199,6 +199,9 @@
         "invalid": "U moet een termijn opgeven."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Het aantal willekeurige widgets mag niet groter zijn dan het aantal geselecteerde widgets"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "U hebt de inhoud van het citaat niet geschreven. Je moet op zijn minst de inhoud schrijven."
@@ -631,7 +634,6 @@
     "export": "Item exporteren"
   },
   "messages": {
-    "bankOfQuestionsError": "Kan geen verbinding maken met de itembank.",
     "bankOfWidgetsError": "Kan geen verbinding maken met de widgetbank.",
     "changesSaved": "Wijzigingen zijn opgeslagen.",
     "confirmClearContent": "U gaat de inhoud volledig verwijderen. Zorg ervoor dat het is wat je echt wilt doen.",
@@ -939,7 +941,6 @@
           "optionTag": "Etiket",
           "optionType": "Vent"
         },
-        "maximumRandomWidgetsExceeded": "Het aantal willekeurige widgets mag niet groter zijn dan het aantal geselecteerde widgets",
         "modalTitle": "Widgetbank",
         "placeholderGroup": "Groep",
         "placeholderTag": "Zoeken op tagnaam",
@@ -1348,23 +1349,6 @@
       },
       "label": "Puzzel",
       "prev": "De puzzel is nog niet geïnitialiseerd..."
-    },
-    "QuestionsBank": {
-      "add": "Toevoegen",
-      "label": "Importeren uit vragenbank",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Het aantal willekeurige vragen mag niet groter zijn dan het aantal geselecteerde vragen",
-        "modalTitle": "Vragenbank",
-        "placeholderGroup": "Groep",
-        "placeholderTitle": "Zoeken op titel of vraagtag",
-        "placeholderType": "Vent",
-        "randomTextBefore": " Willekeurige vragen van de geselecteerde",
-        "randomTextPrev": "Voorstellen ",
-        "search": "Zoeken naar",
-        "selectAllText": "Alles selecteren"
-      },
-      "modalTitle": "Vragenbank",
-      "search": "Zoeken naar"
     },
     "RelatedUnitsAssociation": {
       "form": {

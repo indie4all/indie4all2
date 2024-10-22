@@ -199,6 +199,9 @@
         "invalid": "Termino bat eman behar duzu."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Ausazko widget kopurua ezin da izan hautatutako widget kopurua baino handiagoa"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Ez duzu aipamenaren edukia idatzi. Edukia behintzat idatzi behar duzu."
@@ -631,7 +634,6 @@
     "export": "Esportatu elementua"
   },
   "messages": {
-    "bankOfQuestionsError": "Ezin izan zen galdera-bankuarekin konektatu.",
     "bankOfWidgetsError": "Ezin izan zen widget bankuarekin konektatu.",
     "changesSaved": "Aldaketak ondo gorde dira",
     "confirmClearContent": "Edukia erabat ezabatuko duzu. Ziurttatu hori dela benetan egin nahi duzuna.",
@@ -939,7 +941,6 @@
           "optionTag": "Etiketa",
           "optionType": "Mota"
         },
-        "maximumRandomWidgetsExceeded": "Ausazko widget kopurua ezin da izan hautatutako widget kopurua baino handiagoa",
         "modalTitle": "Widgetsen bankua",
         "placeholderGroup": "Taldea",
         "placeholderTag": "Etiketa izenaren arabera bilatu",
@@ -1348,23 +1349,6 @@
       },
       "label": "Buru-hausgarriak",
       "prev": "Buru-hausgarria ez da oraindik hasi..."
-    },
-    "QuestionsBank": {
-      "add": "Gehitu",
-      "label": "Galderen Bankutik inportatzea",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Ausazko galderen kopurua ezin da hautatutako galderen kopurua baino handiagoa izan",
-        "modalTitle": "Galderen Bankua",
-        "placeholderGroup": "Taldea",
-        "placeholderTitle": "Galdeketa-titulu edo-etiketaren arabera bilatu",
-        "placeholderType": "Mota",
-        "randomTextBefore": " hautatutakoen ausazko galderak",
-        "randomTextPrev": "Sartu ",
-        "search": "Bilatu",
-        "selectAllText": "Aukeratu guztiak"
-      },
-      "modalTitle": "Galderen Bankua",
-      "search": "Bilatu"
     },
     "RelatedUnitsAssociation": {
       "form": {

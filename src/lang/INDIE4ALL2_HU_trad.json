@@ -199,6 +199,9 @@
         "invalid": "Meg kell adnia egy kifejezést."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "A véletlenszerű widgetek száma nem haladhatja meg a kiválasztott widgetek számát"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Nem írta meg az idézet tartalmát. Legalább meg kell írnia a tartalmat."
@@ -631,7 +634,6 @@
     "export": "Elem exportálása"
   },
   "messages": {
-    "bankOfQuestionsError": "Nem sikerült csatlakozni a kérdésbankhoz.",
     "bankOfWidgetsError": "Nem sikerült csatlakozni a widgetbankhoz.",
     "changesSaved": "A módosítások mentése sikeres.",
     "confirmClearContent": "Teljesen törölni fogja a tartalmat. Győződjön meg róla, hogy valóban ezt akarja tenni.",
@@ -939,7 +941,6 @@
           "optionTag": "Címke",
           "optionType": "Fickó"
         },
-        "maximumRandomWidgetsExceeded": "A véletlenszerű widgetek száma nem haladhatja meg a kiválasztott widgetek számát",
         "modalTitle": "Widget Bank",
         "placeholderGroup": "Csoport",
         "placeholderTag": "Keresés címkenév alapján",
@@ -1348,23 +1349,6 @@
       },
       "label": "Rejtvény",
       "prev": "A rejtvény még nincs inicializálva..."
-    },
-    "QuestionsBank": {
-      "add": "Hozzáad",
-      "label": "Importálás a kérdésbankból",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "A véletlenszerű kérdések száma nem haladhatja meg a kiválasztott kérdések számát",
-        "modalTitle": "Kérdés bank",
-        "placeholderGroup": "Csoport",
-        "placeholderTitle": "Keresés cím vagy kérdéscímke alapján",
-        "placeholderType": "Fickó",
-        "randomTextBefore": " Véletlenszerű kérdések a kiválasztottaktól",
-        "randomTextPrev": "Bevezet ",
-        "search": "Találni",
-        "selectAllText": "Az összes kijelölése"
-      },
-      "modalTitle": "Kérdés bank",
-      "search": "Találni"
     },
     "RelatedUnitsAssociation": {
       "form": {

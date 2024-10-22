@@ -199,6 +199,9 @@
         "invalid": "Vous devez fournir un terme."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Le nombre de widgets aléatoires ne peut pas dépasser le nombre de widgets sélectionnés"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Vous n’avez pas écrit le contenu de la citation. Vous devez, au moins, écrire le contenu."
@@ -631,7 +634,6 @@
     "export": "Exporter l’article"
   },
   "messages": {
-    "bankOfQuestionsError": "Impossible de se connecter à la banque de questions.",
     "bankOfWidgetsError": "Impossible de se connecter à la banque de widgets.",
     "changesSaved": "Les modifications ont été enregistrées avec succès.",
     "confirmClearContent": "Vous allez supprimer entièrement le contenu. Assurez-vous que c’est ce que vous voulez vraiment faire.",
@@ -939,7 +941,6 @@
           "optionTag": "Étiquette",
           "optionType": "Mec"
         },
-        "maximumRandomWidgetsExceeded": "Le nombre de widgets aléatoires ne peut pas dépasser le nombre de widgets sélectionnés",
         "modalTitle": "Banque de widgets",
         "placeholderGroup": "Groupe",
         "placeholderTag": "Recherche par nom de balise",
@@ -1348,23 +1349,6 @@
       },
       "label": "Puzzle",
       "prev": "Le puzzle n’a pas encore été initialisé..."
-    },
-    "QuestionsBank": {
-      "add": "Ajouter",
-      "label": "Importer à partir de la banque de questions",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Le nombre de questions aléatoires ne peut pas dépasser le nombre de questions sélectionnées",
-        "modalTitle": "Banque de questions",
-        "placeholderGroup": "Groupe",
-        "placeholderTitle": "Recherche par titre ou balise de question",
-        "placeholderType": "Mec",
-        "randomTextBefore": " Questions aléatoires de ceux sélectionnés",
-        "randomTextPrev": "Introduire ",
-        "search": "Trouver",
-        "selectAllText": "Sélectionner tout"
-      },
-      "modalTitle": "Banque de questions",
-      "search": "Trouver"
     },
     "RelatedUnitsAssociation": {
       "form": {

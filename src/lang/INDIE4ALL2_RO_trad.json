@@ -199,6 +199,9 @@
         "invalid": "Trebuie să furnizați un termen."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Numărul de widget-uri aleatorii nu poate depăși numărul de widget-uri selectate"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Nu ați scris conținutul citatului. Trebuie, cel puțin, să scrieți conținutul."
@@ -631,7 +634,6 @@
     "export": "Export articol"
   },
   "messages": {
-    "bankOfQuestionsError": "Nu s-a putut conecta la banca de întrebări.",
     "bankOfWidgetsError": "Nu s-a reușit conectarea la banca de widgeturi.",
     "changesSaved": "Modificările s-au salvat cu succes.",
     "confirmClearContent": "Veți șterge conținutul în întregime. Asigurați-vă că este ceea ce doriți cu adevărat să faceți.",
@@ -939,7 +941,6 @@
           "optionTag": "Etichetă",
           "optionType": "Tip"
         },
-        "maximumRandomWidgetsExceeded": "Numărul de widget-uri aleatorii nu poate depăși numărul de widget-uri selectate",
         "modalTitle": "Banca widget",
         "placeholderGroup": "Grup",
         "placeholderTag": "Căutați după numele etichetei",
@@ -1348,23 +1349,6 @@
       },
       "label": "Puzzle",
       "prev": "Puzzle-ul nu a fost încă inițializat ..."
-    },
-    "QuestionsBank": {
-      "add": "Adăuga",
-      "label": "Import din banca de întrebări",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Numărul de întrebări aleatorii nu poate depăși numărul de întrebări selectate",
-        "modalTitle": "Banca de întrebări",
-        "placeholderGroup": "Grup",
-        "placeholderTitle": "Căutați după titlu sau etichetă de întrebare",
-        "placeholderType": "Tip",
-        "randomTextBefore": " Întrebări aleatorii de la cei selectați",
-        "randomTextPrev": "Prezenta ",
-        "search": "A găsi",
-        "selectAllText": "Selectați tot"
-      },
-      "modalTitle": "Banca de întrebări",
-      "search": "A găsi"
     },
     "RelatedUnitsAssociation": {
       "form": {

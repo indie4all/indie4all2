@@ -29,8 +29,6 @@ export default class Config {
     private static resourceBackendURL: string = '/resource';
     // Server URL to get the list of widgets available in the bank of widgets
     private static bankOfWidgetsURL: string = null;
-    // Server URL to get the list of questions available in the bank of questions
-    private static questionsBankURL: string = null;
     // Server URL to get the list of user media files
     private static mediaResourcesURL: string = null;
     // Server URL to migrate media files to the new file system
@@ -71,8 +69,6 @@ export default class Config {
             this.setAllowedResourceOrigins(options.allowedResourceOrigins);
         if (typeof options.bankOfWidgetsURL === 'string')
             this.setBankOfWidgetsURL(options.bankOfWidgetsURL);
-        if (typeof options.questionsBankURL === 'string')
-            this.setQuestionsBankURL(options.questionsBankURL);
         if (Array.isArray(options.additionalVideoResourceRules))
             this.setAdditionalVideoResourceRules(options.additionalVideoResourceRules);
         if (typeof options.enableWidgetEditor === 'boolean')
@@ -149,14 +145,6 @@ export default class Config {
 
     public static setBankOfWidgetsURL(value: string) {
         this.bankOfWidgetsURL = value;
-    }
-
-    public static getQuestionsBankURL(): string {
-        return this.questionsBankURL;
-    }
-
-    public static setQuestionsBankURL(value: string) {
-        this.questionsBankURL = value;
     }
 
     public static getPublishBackendURL(): string {

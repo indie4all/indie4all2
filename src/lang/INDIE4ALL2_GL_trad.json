@@ -199,6 +199,9 @@
         "invalid": "Debes proporcionar un termo."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "O número de widgets aleatorios non pode ser superior ao número de widgets seleccionado"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Non escribiches o contido da cita. Debes, polo menos, escribir o contido."
@@ -631,7 +634,6 @@
     "export": "Exportar elemento"
   },
   "messages": {
-    "bankOfQuestionsError": "Non se puido conectar co banco de preguntas.",
     "bankOfWidgetsError": "Non se puido conectar co banco de widgets.",
     "changesSaved": "Cambios gardados correctamente.",
     "confirmClearContent": "Vas eliminar o contido por completo. Asegúrate de que é o que realmente desexas facer.",
@@ -939,7 +941,6 @@
           "optionTag": "Etiqueta",
           "optionType": "Tipo"
         },
-        "maximumRandomWidgetsExceeded": "O número de widgets aleatorios non pode ser superior ao número de widgets seleccionado",
         "modalTitle": "Banco de Widgets",
         "placeholderGroup": "Grupo",
         "placeholderTag": "Buscar por nome de etiqueta",
@@ -1348,23 +1349,6 @@
       },
       "label": "Crebacabezas",
       "prev": "O crebacabezas non foi inicializado aínda..."
-    },
-    "QuestionsBank": {
-      "add": "Engadir",
-      "label": "Importar do Banco de Preguntas",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "O número de preguntas aleatorias non pode ser superior ó número de preguntas seleccionadas",
-        "modalTitle": "Banco de Preguntas",
-        "placeholderGroup": "Grupo",
-        "placeholderTitle": "Buscar por título ou etiqueta de pregunta",
-        "placeholderType": "Tipo",
-        "randomTextBefore": " preguntas aleatorias das seleccionadas",
-        "randomTextPrev": "Introducir ",
-        "search": "Procurar",
-        "selectAllText": "Seleccionar todas"
-      },
-      "modalTitle": "Banco de Preguntas",
-      "search": "Procurar"
     },
     "RelatedUnitsAssociation": {
       "form": {

@@ -199,6 +199,9 @@
         "invalid": "È necessario fornire un termine."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Il numero di widget casuali non può superare il numero di widget selezionati"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Non hai scritto il contenuto della citazione. Devi almeno scrivere il contenuto."
@@ -631,7 +634,6 @@
     "export": "Esporta elemento"
   },
   "messages": {
-    "bankOfQuestionsError": "Impossibile connettersi alla banca delle domande.",
     "bankOfWidgetsError": "Impossibile connettersi alla banca di widget.",
     "changesSaved": "Modifiche salvate correttamente.",
     "confirmClearContent": "Eliminerai completamente il contenuto. Assicurati che sia quello che vuoi veramente fare.",
@@ -939,7 +941,6 @@
           "optionTag": "Etichetta",
           "optionType": "Tizio"
         },
-        "maximumRandomWidgetsExceeded": "Il numero di widget casuali non può superare il numero di widget selezionati",
         "modalTitle": "Banca Widget",
         "placeholderGroup": "Gruppo",
         "placeholderTag": "Ricerca per nome del tag",
@@ -1348,23 +1349,6 @@
       },
       "label": "Rompicapo",
       "prev": "Il puzzle non è stato ancora inizializzato..."
-    },
-    "QuestionsBank": {
-      "add": "Aggiungere",
-      "label": "Importazione da Question Bank",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Il numero di domande casuali non può superare il numero di domande selezionate",
-        "modalTitle": "Banca delle domande",
-        "placeholderGroup": "Gruppo",
-        "placeholderTitle": "Ricerca per titolo o tag di domanda",
-        "placeholderType": "Tizio",
-        "randomTextBefore": " Domande casuali da parte degli intervistati",
-        "randomTextPrev": "Introdurre ",
-        "search": "Per trovare",
-        "selectAllText": "Seleziona tutto"
-      },
-      "modalTitle": "Banca delle domande",
-      "search": "Per trovare"
     },
     "RelatedUnitsAssociation": {
       "form": {

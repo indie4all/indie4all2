@@ -11,9 +11,9 @@ import WidgetColumnsLayout from './model/widgets/WidgetColumnsLayout/WidgetColum
 import WidgetContainerElement from './model/widgets/WidgetContainerElement/WidgetContainerElement';
 import Section from './model/section/Section';
 import ModelElement from './model/ModelElement';
-import Config from './Config';
+import WidgetBank from './model/widgets/WidgetBank/WidgetBank';
 import I18n from './I18n';
-import { filter } from 'compression';
+import Migrator from './model/migration/Migrator';
 
 export default class DragDropHandler {
     private palette: HTMLElement;
@@ -45,7 +45,6 @@ export default class DragDropHandler {
     allowGenerate(source: HTMLElement, target: HTMLElement) {
         const targetElement = ModelManager.get(target.dataset.widget);
         return source == this.palette && (targetElement instanceof Section || this.container.contains(target));
-        return (source == this.palette && (target.dataset.type == 'section-container' || Utils.contains(this.container, target)));
     }
 
     accept(element: HTMLElement, target: HTMLElement) {
@@ -72,7 +71,7 @@ export default class DragDropHandler {
     drop(el: HTMLElement, target: HTMLElement, source: HTMLElement, sibling: HTMLElement) {
         if (!target) return;
         if (this.allowGenerate(source, target)) {
-            if (el.dataset.widget === "Bank") this.openBankModal(el, target, sibling);
+            if (el.dataset.widget === "Bank") this.createWidgetsFromBank(el, target, sibling);
             // Add a new element to the container
             else this.onCreateElement(el, target, sibling);
         } else if (source != target) {
@@ -82,6 +81,52 @@ export default class DragDropHandler {
             // Move the element inside the same container
             this.onMoveElement(el, target);
         }
+    }
+
+    async createWidgetsFromBank(el: HTMLElement, target: HTMLElement, sibling: HTMLElement) {
+        $(el).hide();
+        const self = this;
+        const bank = await ModelManager.create(WidgetBank.widget) as WidgetBank;
+        $('#modal-settings-body').empty(); // clear the body
+        $("#modal-settings .btn-submit").off('click'); // Unbind button submit click event 
+        // 2 Populate the modal with the inputs of the widget
+        bank.getInputs().then(async modalContent => {
+            // 3 Open the modal with values put
+            $('#modal-settings-body').html(modalContent.inputs);
+            $('#modal-settings-tittle').html(modalContent.title);
+            $("#modal-settings").modal({ keyboard: false, backdrop: 'static' });
+            $("#modal-settings").one('hidden.bs.modal', () => $(el).remove());
+            const $form = $("#f-" + bank.id);
+            $form.append("<input type='submit' class='hide' />");
+            $form.off('submit').on('submit', async function (e) {
+                e.preventDefault();
+                const formData = Utils.toJSON(this);
+                const errors = bank.validateForm(formData);
+                if (errors.length > 0) {
+                    const { default: alertErrorTemplate } = await import("./views/alertError.hbs");
+                    $("#modal-settings").animate({ scrollTop: 0 }, "slow");
+                    const errorText = errors.map(error => I18n.getInstance().value("errors." + error)).join(". ")
+                    $("#modal-settings-body .errors").html(alertErrorTemplate({ errorText }));
+                    return;
+                }
+                let elems = formData.widget.filter(elem => elem.checked);
+                if (formData.random) elems = elems.sort(() => Math.random() - 0.5).slice(0, formData['random-number']);
+                await Promise.all(elems.map(async elem => {
+                    const updated = await Migrator.migrateWidget(JSON.parse(elem.content));
+                    const widget = (await ModelManager.create(elem.type, updated)).clone();
+                    const clonedElem = $(el).clone();
+                    $(clonedElem).insertBefore(el);
+                    self.onCreateElement(clonedElem.get(0), target, sibling, widget);
+                }));
+                bank.settingsClosed();
+                $("#modal-settings").modal('hide');
+            });
+
+            $("#modal-settings .btn-submit").on('click', function () {
+                $form.find('input[type="submit"]').trigger('click');
+            });
+            bank.settingsOpened();
+        });
     }
 
     setModel(model: Model) {
@@ -165,7 +210,6 @@ export default class DragDropHandler {
 
     async onCreateElement(el: HTMLElement, target: HTMLElement, sibling: HTMLElement, widget?: ModelElement) {
         if (!widget) widget = await ModelManager.create(el.dataset.widget);
-        //const widget = await ModelManager.create(el.dataset.widget); // Widget type (TextBlock, Image...etc)
         const parentContainerId = $(target).closest('[data-id]')[0].dataset.id;
         const inPositionElementId = sibling ? $(sibling).children('div').first().data('id') : null;
         let parentContainerIndex = -1; // Parent container index (only for layout)
@@ -180,173 +224,4 @@ export default class DragDropHandler {
             parentContainerIndex, parentContainerId, inPositionElementId
         }));
     }
-
-    async openBankModal(el: HTMLElement, target: HTMLElement, sibling: HTMLElement) {
-        $(el).hide();
-        const { default: modalTemplate } = await import('./model/widgets/WidgetBank/modal.hbs');
-        const { default: modalFilter } = await import('./model/widgets/WidgetBank/filter_modal.hbs');
-        let data = await this.connectWithBank();
-        // The server returned an error or the user is not authorized
-        if (!data) return;
-        data.map(elem => {
-            elem["img"] = ModelManager.getWidgetElement(elem.type).icon
-        });
-        const groups = [...new Set(data.map(objeto => objeto.group))].filter(elem => elem != null);
-        const types = [...new Set(data.map(objeto => objeto.type))];
-        $("#modal-bank-widgets").remove();
-        $(this.container).after(modalTemplate({ groups: groups, types: types, data: data }));
-        $("#modal-bank-widgets").modal({ keyboard: false, focus: true, backdrop: 'static' });
-
-        const aggregateWidget = async function (button: HTMLElement) {
-            const json = $(button).find("input[name=content]").val() as string;
-            const obj = JSON.parse(json);
-            let widget = (await ModelManager.create(obj.widget, obj)).clone();
-            const clonedElem = $(el).clone();
-            $(clonedElem).insertBefore(el);
-            this.onCreateElement(clonedElem.get(0), target, sibling, widget);
-
-        }
-
-        const deleteFilterHTML = function () {
-            $(this).parent().remove();
-        }
-
-        const changeSearchType = function () {
-            const filter = $(this).val();
-            if (filter === "tipo") {
-                $(this).parent().find(".searchTerm").removeClass("d-block").addClass("d-none");
-                $(this).parent().find(".searchTermByType").removeClass("d-none").addClass("d-block");
-            }
-            else {
-                $(this).parent().find(".searchTermByType").removeClass("d-block").addClass("d-none");
-                const searchTerm = $(this).parent().find(".searchTerm");
-                searchTerm.removeClass("d-none").addClass("d-block");
-                if (filter === "tag") searchTerm.attr("placeholder", I18n.getInstance().translate("widgets.Bank.modal.placeholderTag")[0]);
-                else searchTerm.attr("placeholder", I18n.getInstance().translate("widgets.Bank.modal.placeholderTitle")[0]);
-            }
-        }
-
-        $(".searchType").on("change", changeSearchType);
-
-        const createFilterHTML = function () {
-            $("#search-filters").append(modalFilter({ types: types }));
-            $(".delete-filter-button").last().on("click", deleteFilterHTML)
-            $(".searchType").last().on("change", changeSearchType);
-        }
-
-        const onClick = aggregateWidget.bind(this);
-
-        $("#button-add-filter-widget").on("click", createFilterHTML);
-
-        $("#check-select-all").on('change', function () {
-            $(".d-block .input-checkbox ").prop('checked', $("#check-select-all").prop('checked'));
-        });
-
-        $(".d-block .input-checkbox").on("click", function () {
-            $("#check-select-all").prop('checked', $(".d-block .input-checkbox:checked").length === $(".d-block .input-checkbox").length);
-            $(this).prop("checked", !$(this).prop("checked"));
-        });
-
-        $(".widget-button").on("click", function () {
-            const checkbox = $(this).find("input[type='checkbox']");
-            checkbox.prop("checked", !checkbox.prop("checked"));
-        });
-
-        $("#modal-bank-widgets .btn-submit").on("click", async function (e) {
-            if ($("#checkbox-random").prop("checked")) {
-                const num = $("#number-of-random-widgets").val() as number;
-                const total = $(".input-checkbox:checked").length;
-                if (num > total) {
-                    const { default: alertErrorTemplate } = await import("./views/alertError.hbs");
-                    $("#modal-bank-widgets .errors").html(alertErrorTemplate({
-                        errorText:
-                            I18n.getInstance().translate('widgets.Bank.modal.maximumRandomWidgetsExceeded')
-                    }));
-                    e.preventDefault();
-                    return;
-                }
-
-                const indexes = [];
-                while (indexes.length < num) {
-                    const indexAleatorio = Math.floor(Math.random() * total);
-                    if (!indexes.includes(indexAleatorio)) {
-                        indexes.push(indexAleatorio);
-                        await onClick($(".input-checkbox:checked")[indexAleatorio].parentElement);
-                    }
-                }
-            }
-            else {
-                $("#modal-bank-widgets .panel-bank-widgets input[type='checkbox']:checked").each((index, elem) => {
-                    onClick(elem.parentElement);
-                });
-            }
-            $("#modal-bank-widgets").modal('hide');
-        });
-
-        $('#modal-bank-widgets').on('hidden.bs.modal', function () {
-            // Código para manejar el evento "dismiss" del modal
-            $(target).find(el).remove();
-        });
-
-        $("#button-search-bank-widget").on('click', function () {
-
-            $('.widget-button').each(function () {
-
-                let result: boolean = true;
-
-                const title = $(this).find('h3').text().toLowerCase();
-                const type = $(this).find("input[name='type']").val() as string;
-                const tags = $(this).find('.badge').toArray().map((elem: any) => $(elem).text())
-
-                $(".search-condition").each((i, elem) => {
-
-                    let searchTerm = ($(elem).find('.searchTerm').val() as string).toLowerCase();
-                    let searchType = ($(elem).find('.searchType').val() as string).toLowerCase().trim();
-                    let searchBoolean = $(elem).find('.searchBoolean').val() as string;
-                    let searchTermByType = $(elem).find('.searchTermByType').val()
-
-                    let resultFilter = true;
-                    if (searchType === "nombre") resultFilter = title.includes(searchTerm);
-                    if (searchType === "tag") resultFilter = tags.some(tag => tag.toLowerCase().includes(searchTerm));
-                    if (searchType === "tipo") resultFilter = (type === searchTermByType);
-
-                    switch (searchBoolean) {
-                        case '0':
-                            result = result && resultFilter
-                            break;
-                        case '1':
-                            result = result || resultFilter
-                            break;
-                        case '2':
-                            result = result && !resultFilter
-                            break;
-                        default:
-                            result = result && resultFilter
-                    }
-                })
-
-
-                if (result) $(this).removeClass("d-none").addClass("d-block");
-                else $(this).removeClass("d-block").addClass("d-none");
-            })
-        })
-
-    }
-
-    async connectWithBank(): Promise<any> {
-        const headers = new Headers();
-        headers.append("Accept", "application/json");
-        return await fetch(Config.getBankOfWidgetsURL(), { method: 'GET', headers, redirect: 'follow' })
-            .then(res => {
-                if (!res.ok) {
-                    if (res.status === 401 && Config.getUnauthorizedMessage())
-                        Utils.notifyUnauthorizedError(Config.getUnauthorizedMessage());
-                    else
-                        Utils.notifyError(I18n.getInstance().value("messages.bankOfWidgetsError"));
-                    return null;
-                }
-                return res.json();
-            });
-    }
-
 }

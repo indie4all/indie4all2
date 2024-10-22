@@ -199,6 +199,9 @@
         "invalid": "Zagotoviti morate izraz."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Število naključnih pripomočkov ne sme presegati števila izbranih pripomočkov"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Vsebine ponudbe niste napisali. Vsaj vsebino moraš napisati."
@@ -631,7 +634,6 @@
     "export": "Izvoz artikla"
   },
   "messages": {
-    "bankOfQuestionsError": "Ni se bilo mogoče povezati z banko vprašanj.",
     "bankOfWidgetsError": "Povezave z banko pripomočkov ni bilo mogoče vzpostaviti.",
     "changesSaved": "Spremembe so bile uspešno shranjene.",
     "confirmClearContent": "Vsebino boš povsem izbrisal. Prepričaj se, da je to tisto, kar res želiš narediti.",
@@ -939,7 +941,6 @@
           "optionTag": "Oznaka",
           "optionType": "Fant"
         },
-        "maximumRandomWidgetsExceeded": "Število naključnih pripomočkov ne sme presegati števila izbranih pripomočkov",
         "modalTitle": "Banka pripomočkov",
         "placeholderGroup": "Skupina",
         "placeholderTag": "Iskanje po imenu oznake",
@@ -1348,23 +1349,6 @@
       },
       "label": "Uganka",
       "prev": "Uganka še ni bila inicializirana..."
-    },
-    "QuestionsBank": {
-      "add": "Dodati",
-      "label": "Uvoz iz banke vprašanj",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Število naključnih vprašanj ne sme presegati števila izbranih vprašanj",
-        "modalTitle": "Banka vprašanj",
-        "placeholderGroup": "Skupina",
-        "placeholderTitle": "Iskanje po naslovu ali vprašaju",
-        "placeholderType": "Fant",
-        "randomTextBefore": " Naključna vprašanja izbranih",
-        "randomTextPrev": "Uvesti ",
-        "search": "Najti",
-        "selectAllText": "Izberi vse"
-      },
-      "modalTitle": "Banka vprašanj",
-      "search": "Najti"
     },
     "RelatedUnitsAssociation": {
       "form": {

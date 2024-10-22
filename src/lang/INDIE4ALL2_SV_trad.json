@@ -199,6 +199,9 @@
         "invalid": "Du måste ange en term."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Antalet slumpmässiga widgets får inte överstiga antalet valda widgets"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Du har inte skrivit innehållet i citatet. Du måste åtminstone skriva innehållet."
@@ -631,7 +634,6 @@
     "export": "Exportera objekt"
   },
   "messages": {
-    "bankOfQuestionsError": "Det gick inte att ansluta till frågebanken.",
     "bankOfWidgetsError": "Det gick inte att ansluta till widgetbanken.",
     "changesSaved": "Ändringar har sparats.",
     "confirmClearContent": "Du kommer att ta bort innehållet helt. Se till att det är vad du verkligen vill göra.",
@@ -939,7 +941,6 @@
           "optionTag": "Etikett",
           "optionType": "Kille"
         },
-        "maximumRandomWidgetsExceeded": "Antalet slumpmässiga widgets får inte överstiga antalet valda widgets",
         "modalTitle": "Widget Bank",
         "placeholderGroup": "Grupp",
         "placeholderTag": "Sök efter taggnamn",
@@ -1348,23 +1349,6 @@
       },
       "label": "Pussel",
       "prev": "Pusslet har inte initierats ännu ..."
-    },
-    "QuestionsBank": {
-      "add": "Addera",
-      "label": "Importera från frågebanken",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Antalet slumpmässiga frågor får inte överstiga antalet valda frågor",
-        "modalTitle": "Frågebank",
-        "placeholderGroup": "Grupp",
-        "placeholderTitle": "Sök efter titel eller frågetagg",
-        "placeholderType": "Kille",
-        "randomTextBefore": " Slumpmässiga frågor från de valda",
-        "randomTextPrev": "Introducera ",
-        "search": "Att hitta",
-        "selectAllText": "Markera alla"
-      },
-      "modalTitle": "Frågebank",
-      "search": "Att hitta"
     },
     "RelatedUnitsAssociation": {
       "form": {

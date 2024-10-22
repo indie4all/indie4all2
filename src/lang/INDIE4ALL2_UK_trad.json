@@ -199,6 +199,9 @@
         "invalid": "Ви повинні надати термін."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Кількість випадкових віджетів не може перевищувати кількість вибраних віджетів"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Ви не написали зміст цитати. Ви повинні, принаймні, написати зміст."
@@ -631,7 +634,6 @@
     "export": "Експорт товару"
   },
   "messages": {
-    "bankOfQuestionsError": "Не вдалося підключитися до банку запитань.",
     "bankOfWidgetsError": "Не вдалося підключитися до банку віджетів.",
     "changesSaved": "Зміни успішно збережені.",
     "confirmClearContent": "Ви збираєтеся повністю видалити вміст. Переконайтеся, що це те, що ви дійсно хочете зробити.",
@@ -939,7 +941,6 @@
           "optionTag": "Мітка",
           "optionType": "Парубок"
         },
-        "maximumRandomWidgetsExceeded": "Кількість випадкових віджетів не може перевищувати кількість вибраних віджетів",
         "modalTitle": "Банк віджетів",
         "placeholderGroup": "Група",
         "placeholderTag": "Пошук за назвою тегу",
@@ -1348,23 +1349,6 @@
       },
       "label": "Пазл",
       "prev": "Головоломка ще не ініціалізована..."
-    },
-    "QuestionsBank": {
-      "add": "Додати",
-      "label": "Імпорт з банку питань",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Кількість випадкових питань не може перевищувати кількість вибраних питань",
-        "modalTitle": "Банк питань",
-        "placeholderGroup": "Група",
-        "placeholderTitle": "Пошук за назвою або тегом запитання",
-        "placeholderType": "Парубок",
-        "randomTextBefore": " Випадкові запитання від обраних",
-        "randomTextPrev": "Ввести ",
-        "search": "Знаходити",
-        "selectAllText": "Виділити все"
-      },
-      "modalTitle": "Банк питань",
-      "search": "Знаходити"
     },
     "RelatedUnitsAssociation": {
       "form": {

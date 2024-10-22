@@ -199,6 +199,9 @@
         "invalid": "Sie müssen einen Begriff angeben."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Die Anzahl der zufälligen Widgets darf die Anzahl der ausgewählten Widgets nicht überschreiten"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Sie haben den Inhalt des Zitats nicht geschrieben. Sie müssen zumindest den Inhalt schreiben."
@@ -631,7 +634,6 @@
     "export": "Artikel exportieren"
   },
   "messages": {
-    "bankOfQuestionsError": "Es konnte keine Verbindung mit der Fragendatenbank hergestellt werden.",
     "bankOfWidgetsError": "Es konnte keine Verbindung zur Widget-Bank hergestellt werden.",
     "changesSaved": "Änderungen wurden erfolgreich gespeichert.",
     "confirmClearContent": "Sie werden den Inhalt vollständig löschen. Stellen Sie sicher, dass es das ist, was Sie wirklich tun möchten.",
@@ -939,7 +941,6 @@
           "optionTag": "Etikett",
           "optionType": "Kerl"
         },
-        "maximumRandomWidgetsExceeded": "Die Anzahl der zufälligen Widgets darf die Anzahl der ausgewählten Widgets nicht überschreiten",
         "modalTitle": "Widget-Bank",
         "placeholderGroup": "Gruppe",
         "placeholderTag": "Suche nach Tag-Namen",
@@ -1348,23 +1349,6 @@
       },
       "label": "Rätsel",
       "prev": "Das Rätsel wurde noch nicht initialisiert..."
-    },
-    "QuestionsBank": {
-      "add": "Hinzufügen",
-      "label": "Aus der Fragendatenbank importieren",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Die Anzahl der zufälligen Fragen darf die Anzahl der ausgewählten Fragen nicht überschreiten",
-        "modalTitle": "Fragendatenbank",
-        "placeholderGroup": "Gruppe",
-        "placeholderTitle": "Suche nach Titel oder Frage-Tag",
-        "placeholderType": "Kerl",
-        "randomTextBefore": " Zufällige Fragen der Ausgewählten",
-        "randomTextPrev": "Einführen ",
-        "search": "Finden",
-        "selectAllText": "Alles auswählen"
-      },
-      "modalTitle": "Fragendatenbank",
-      "search": "Finden"
     },
     "RelatedUnitsAssociation": {
       "form": {

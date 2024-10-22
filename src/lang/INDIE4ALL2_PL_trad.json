@@ -199,6 +199,9 @@
         "invalid": "Musisz podać termin."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Liczba losowych widżetów nie może przekroczyć liczby wybranych widżetów"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Nie napisałeś treści cytatu. Musisz przynajmniej napisać treść."
@@ -631,7 +634,6 @@
     "export": "Eksportuj element"
   },
   "messages": {
-    "bankOfQuestionsError": "Nie można połączyć się z bankiem pytań.",
     "bankOfWidgetsError": "Nie udało się połączyć z bankiem widżetów.",
     "changesSaved": "Zmiany zostały zapisane pomyślnie.",
     "confirmClearContent": "Usuniesz zawartość całkowicie. Upewnij się, że to jest to, co naprawdę chcesz zrobić.",
@@ -939,7 +941,6 @@
           "optionTag": "Etykieta",
           "optionType": "Facet"
         },
-        "maximumRandomWidgetsExceeded": "Liczba losowych widżetów nie może przekroczyć liczby wybranych widżetów",
         "modalTitle": "Bank widżetów",
         "placeholderGroup": "Grupa",
         "placeholderTag": "Wyszukiwanie według nazwy tagu",
@@ -1348,23 +1349,6 @@
       },
       "label": "Łamigłówka",
       "prev": "Układanka nie została jeszcze zainicjowana..."
-    },
-    "QuestionsBank": {
-      "add": "Dodawać",
-      "label": "Import z Question Bank",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Liczba losowych pytań nie może przekroczyć liczby wybranych pytań",
-        "modalTitle": "Bank pytań",
-        "placeholderGroup": "Grupa",
-        "placeholderTitle": "Wyszukiwanie według tytułu lub tagu pytania",
-        "placeholderType": "Facet",
-        "randomTextBefore": " Losowe pytania od wybranych",
-        "randomTextPrev": "Przedstawić ",
-        "search": "Aby znaleźć",
-        "selectAllText": "Zaznacz wszystko"
-      },
-      "modalTitle": "Bank pytań",
-      "search": "Aby znaleźć"
     },
     "RelatedUnitsAssociation": {
       "form": {

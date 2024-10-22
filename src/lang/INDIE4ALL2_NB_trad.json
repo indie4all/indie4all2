@@ -199,6 +199,9 @@
         "invalid": "Du må oppgi et vilkår."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Antall tilfeldige widgets kan ikke overstige antall valgte widgets"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Du har ikke skrevet innholdet i sitatet. Du må i det minste skrive innholdet."
@@ -631,7 +634,6 @@
     "export": "Eksporter element"
   },
   "messages": {
-    "bankOfQuestionsError": "Kan ikke koble til spørsmålsbanken.",
     "bankOfWidgetsError": "Kunne ikke koble til widgetbanken.",
     "changesSaved": "Endringer lagret vellykket.",
     "confirmClearContent": "Du kommer til å slette innholdet helt. Pass på at det er det du virkelig vil gjøre.",
@@ -939,7 +941,6 @@
           "optionTag": "Etikett",
           "optionType": "Fyr"
         },
-        "maximumRandomWidgetsExceeded": "Antall tilfeldige widgets kan ikke overstige antall valgte widgets",
         "modalTitle": "Widget Bank",
         "placeholderGroup": "Gruppe",
         "placeholderTag": "Søk etter kodenavn",
@@ -1348,23 +1349,6 @@
       },
       "label": "Gåte",
       "prev": "Puslespillet har ikke blitt initialisert ennå ..."
-    },
-    "QuestionsBank": {
-      "add": "Tilføye",
-      "label": "Importere fra spørsmålsbanken",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Antall tilfeldige spørsmål kan ikke overstige antall valgte spørsmål",
-        "modalTitle": "Spørsmål Bank",
-        "placeholderGroup": "Gruppe",
-        "placeholderTitle": "Søk etter tittel eller spørsmålskode",
-        "placeholderType": "Fyr",
-        "randomTextBefore": " Tilfeldige spørsmål fra de utvalgte",
-        "randomTextPrev": "Innføre ",
-        "search": "Å finne",
-        "selectAllText": "Merk alt"
-      },
-      "modalTitle": "Spørsmål Bank",
-      "search": "Å finne"
     },
     "RelatedUnitsAssociation": {
       "form": {

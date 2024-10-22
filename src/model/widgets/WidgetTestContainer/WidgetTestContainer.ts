@@ -40,7 +40,7 @@ export default class WidgetTestContainer extends WidgetContainerSpecificElement 
             canEdit: constructor.editable,
             canDelete: constructor.deletable,
             canCopy: constructor.copyable,
-            canLoadFromBank: !!Config.getQuestionsBankURL(),
+            canLoadFromBank: !!Config.getBankOfWidgetsURL(),
             children,
             cssClass: Utils.toKebabCase(constructor.name)
         });

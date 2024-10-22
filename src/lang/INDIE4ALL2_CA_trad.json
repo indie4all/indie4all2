@@ -199,6 +199,9 @@
         "invalid": "Has de proporcionar un terme"
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "El nombre de ginys aleatoris no pot ser superior al nombre de ginys seleccionats"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "No has escrit el contingut de la cita. Com a mínim, n'has d'escriure el contingut"
@@ -631,7 +634,6 @@
     "export": "Exporta l'element"
   },
   "messages": {
-    "bankOfQuestionsError": "No es va poder connectar amb el banc de preguntes.",
     "bankOfWidgetsError": "No es va poder connectar amb el banc de widgets.",
     "changesSaved": "Els canvis s'han desat correctament",
     "confirmClearContent": "Eliminaràs el contingut per complet. Assegura't que realment ho vols fer",
@@ -939,7 +941,6 @@
           "optionTag": "Etiqueta",
           "optionType": "Format"
         },
-        "maximumRandomWidgetsExceeded": "El nombre de ginys aleatoris no pot ser superior al nombre de ginys seleccionats",
         "modalTitle": "Banc de ginys",
         "placeholderGroup": "Grup",
         "placeholderTag": "Cerca per nom d'etiqueta",
@@ -1348,23 +1349,6 @@
       },
       "label": "Trencaclosques",
       "prev": "El trencaclosques encara no s'ha inicialitzat"
-    },
-    "QuestionsBank": {
-      "add": "Afegeix-ho",
-      "label": "Importa-ho del banc de preguntes",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "El nombre de preguntes aleatòries no pot ser superior al nombre de preguntes seleccionades",
-        "modalTitle": "Banc de preguntes",
-        "placeholderGroup": "Grup",
-        "placeholderTitle": "Cercar per títol o etiqueta de pregunta",
-        "placeholderType": "Format",
-        "randomTextBefore": " Preguntes aleatòries de les que s'han seleccionat",
-        "randomTextPrev": "Introdueix-ho",
-        "search": "Cercar",
-        "selectAllText": "Selecciona-les totes"
-      },
-      "modalTitle": "Banc de preguntes",
-      "search": "Cerca-ho"
     },
     "RelatedUnitsAssociation": {
       "form": {

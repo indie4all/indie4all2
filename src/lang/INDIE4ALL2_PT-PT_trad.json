@@ -199,6 +199,9 @@
         "invalid": "Você deve fornecer um termo."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "O número de widgets aleatórios não pode exceder o número de widgets selecionados"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Não escreveu o conteúdo da citação. Você deve, pelo menos, escrever o conteúdo."
@@ -631,7 +634,6 @@
     "export": "Exportar item"
   },
   "messages": {
-    "bankOfQuestionsError": "Não foi possível conectar-se ao banco de perguntas.",
     "bankOfWidgetsError": "Falha ao se conectar ao banco de widgets.",
     "changesSaved": "Alterações guardadas com êxito.",
     "confirmClearContent": "Você vai excluir o conteúdo completamente. Certifique-se de que é o que você realmente quer fazer.",
@@ -939,7 +941,6 @@
           "optionTag": "Rótulo",
           "optionType": "Cara"
         },
-        "maximumRandomWidgetsExceeded": "O número de widgets aleatórios não pode exceder o número de widgets selecionados",
         "modalTitle": "Banco de widgets",
         "placeholderGroup": "Grupo",
         "placeholderTag": "Pesquisar por nome de tag",
@@ -1348,23 +1349,6 @@
       },
       "label": "Quebra-cabeça",
       "prev": "O quebra-cabeça ainda não foi inicializado..."
-    },
-    "QuestionsBank": {
-      "add": "Adicionar",
-      "label": "Importação do Banco de Perguntas",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "O número de perguntas aleatórias não pode exceder o número de perguntas selecionadas",
-        "modalTitle": "Banco de perguntas",
-        "placeholderGroup": "Grupo",
-        "placeholderTitle": "Pesquisar por título ou etiqueta de pergunta",
-        "placeholderType": "Cara",
-        "randomTextBefore": " Perguntas aleatórias dos selecionados",
-        "randomTextPrev": "Apresentar ",
-        "search": "Achar",
-        "selectAllText": "Selecionar tudo"
-      },
-      "modalTitle": "Banco de perguntas",
-      "search": "Achar"
     },
     "RelatedUnitsAssociation": {
       "form": {

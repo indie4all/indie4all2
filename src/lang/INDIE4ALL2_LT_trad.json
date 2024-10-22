@@ -199,6 +199,9 @@
         "invalid": "Turite nurodyti terminą."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Atsitiktinių valdiklių skaičius negali viršyti pasirinktų valdiklių skaičiaus"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Jūs neparašėte citatos turinio. Jūs turite bent jau parašyti turinį."
@@ -631,7 +634,6 @@
     "export": "Eksportuoti prekę"
   },
   "messages": {
-    "bankOfQuestionsError": "Nepavyko prisijungti prie klausimų banko.",
     "bankOfWidgetsError": "Nepavyko prisijungti prie valdiklių banko.",
     "changesSaved": "Pakeitimai išsaugoti sėkmingai.",
     "confirmClearContent": "Jūs ketinate visiškai ištrinti turinį. Įsitikinkite, kad tai yra tai, ką tikrai norite padaryti.",
@@ -939,7 +941,6 @@
           "optionTag": "Etiketė",
           "optionType": "Vaikinas"
         },
-        "maximumRandomWidgetsExceeded": "Atsitiktinių valdiklių skaičius negali viršyti pasirinktų valdiklių skaičiaus",
         "modalTitle": "Valdiklių bankas",
         "placeholderGroup": "Grupė",
         "placeholderTag": "Paieška pagal žymos pavadinimą",
@@ -1348,23 +1349,6 @@
       },
       "label": "Dėlionę",
       "prev": "Dėlionė dar nebuvo inicijuota..."
-    },
-    "QuestionsBank": {
-      "add": "Pridėti",
-      "label": "Importavimas iš klausimų banko",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Atsitiktinių klausimų skaičius negali viršyti pasirinktų klausimų skaičiaus",
-        "modalTitle": "Klausimų bankas",
-        "placeholderGroup": "Grupė",
-        "placeholderTitle": "Paieška pagal pavadinimą arba klausimo žymę",
-        "placeholderType": "Vaikinas",
-        "randomTextBefore": " Atsitiktiniai klausimai iš atrinktųjų",
-        "randomTextPrev": "Pristatyti ",
-        "search": "Rasti",
-        "selectAllText": "Pažymėti viską"
-      },
-      "modalTitle": "Klausimų bankas",
-      "search": "Rasti"
     },
     "RelatedUnitsAssociation": {
       "form": {

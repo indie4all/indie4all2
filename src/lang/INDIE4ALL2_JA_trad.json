@@ -199,6 +199,9 @@
         "invalid": "用語を指定する必要があります。"
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "ランダムなウィジェットの数は、選択したウィジェットの数を超えることはできません"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "あなたは見積もりの内容を書いていません。少なくとも、コンテンツを書く必要があります。"
@@ -631,7 +634,6 @@
     "export": "アイテムのエクスポート"
   },
   "messages": {
-    "bankOfQuestionsError": "問題バンクに接続できませんでした。",
     "bankOfWidgetsError": "ウィジェットバンクに接続できませんでした。",
     "changesSaved": "変更が正常に保存されました。",
     "confirmClearContent": "コンテンツを完全に削除します。それがあなたが本当にやりたいことであることを確認してください。",
@@ -939,7 +941,6 @@
           "optionTag": "ラベル",
           "optionType": "やつ"
         },
-        "maximumRandomWidgetsExceeded": "ランダムなウィジェットの数は、選択したウィジェットの数を超えることはできません",
         "modalTitle": "ウィジェットバンク",
         "placeholderGroup": "群",
         "placeholderTag": "タグ名で検索",
@@ -1348,23 +1349,6 @@
       },
       "label": "謎",
       "prev": "パズルはまだ初期化されていません..."
-    },
-    "QuestionsBank": {
-      "add": "足す",
-      "label": "質問バンクからのインポート",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "ランダムな質問の数は、選択した質問の数を超えることはできません",
-        "modalTitle": "質問バンク",
-        "placeholderGroup": "群",
-        "placeholderTitle": "タイトルまたは質問タグで検索",
-        "placeholderType": "やつ",
-        "randomTextBefore": " 選ばれた人からのランダムな質問",
-        "randomTextPrev": "紹介 ",
-        "search": "見つけます",
-        "selectAllText": "すべて選択"
-      },
-      "modalTitle": "質問バンク",
-      "search": "見つけます"
     },
     "RelatedUnitsAssociation": {
       "form": {

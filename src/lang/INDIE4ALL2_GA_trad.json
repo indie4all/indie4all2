@@ -199,6 +199,9 @@
         "invalid": "Ní mór duit téarma a chur ar fáil."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Ní féidir le líon na ngiuirléidí randamacha dul thar líon na ngiuirléidí a roghnaíodh"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Níor scríobh tú ábhar an athfhriotail. Ní mór duit, ar a laghad, an t-ábhar a scríobh."
@@ -631,7 +634,6 @@
     "export": "Easpórtáil mír"
   },
   "messages": {
-    "bankOfQuestionsError": "Níorbh fhéidir ceangal le banc na gceisteanna.",
     "bankOfWidgetsError": "Theip ar cheangal le banc na ngiuirléidí.",
     "changesSaved": "D' éirigh le hathruithe a shábháil.",
     "confirmClearContent": "Tá tú chun an t-ábhar a scriosadh go hiomlán. Déan cinnte go bhfuil sé cad ba mhaith leat a dhéanamh i ndáiríre.",
@@ -939,7 +941,6 @@
           "optionTag": "Lipéad",
           "optionType": "Fear"
         },
-        "maximumRandomWidgetsExceeded": "Ní féidir le líon na ngiuirléidí randamacha dul thar líon na ngiuirléidí a roghnaíodh",
         "modalTitle": "Banc Giuirléidí",
         "placeholderGroup": "Grúpa",
         "placeholderTag": "Cuardaigh de réir ainm na clibe",
@@ -1348,23 +1349,6 @@
       },
       "label": "Puzal",
       "prev": "Níor túsaíodh an puzal go fóill..."
-    },
-    "QuestionsBank": {
-      "add": "Cuir Leis",
-      "label": "Iompórtáil ó Bhanc na gCeisteanna",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Ní féidir le líon na gceisteanna randamacha dul thar líon na gceisteanna a roghnaíodh",
-        "modalTitle": "Banc na gCeisteanna",
-        "placeholderGroup": "Grúpa",
-        "placeholderTitle": "Cuardaigh de réir teidil nó clibe ceiste",
-        "placeholderType": "Fear",
-        "randomTextBefore": " Ceisteanna randamacha uathu siúd a roghnaíodh",
-        "randomTextPrev": "Tabhair isteach ",
-        "search": "Aimsigh",
-        "selectAllText": "Roghnaigh gach rud"
-      },
-      "modalTitle": "Banc na gCeisteanna",
-      "search": "Aimsigh"
     },
     "RelatedUnitsAssociation": {
       "form": {

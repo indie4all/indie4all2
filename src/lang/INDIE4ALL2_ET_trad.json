@@ -199,6 +199,9 @@
         "invalid": "Peate esitama tähtaja."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Juhuslike vidinate arv ei tohi ületada valitud vidinate arvu"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Te ei ole tsitaadi sisu kirjutanud. Peate vähemalt sisu kirjutama."
@@ -631,7 +634,6 @@
     "export": "Ekspordi üksus"
   },
   "messages": {
-    "bankOfQuestionsError": "Ei saanud küsimuste pangaga ühendust.",
     "bankOfWidgetsError": "Vidinapangaga ühenduse loomine ebaõnnestus.",
     "changesSaved": "Muudatused salvestati edukalt.",
     "confirmClearContent": "Kustutate sisu täielikult. Veenduge, et see on see, mida soovite tõesti teha.",
@@ -939,7 +941,6 @@
           "optionTag": "Etikett",
           "optionType": "Kutt"
         },
-        "maximumRandomWidgetsExceeded": "Juhuslike vidinate arv ei tohi ületada valitud vidinate arvu",
         "modalTitle": "Vidina pank",
         "placeholderGroup": "Rühm",
         "placeholderTag": "Otsige sildi nime järgi",
@@ -1348,23 +1349,6 @@
       },
       "label": "Puzzle",
       "prev": "Puslet pole veel initsialiseeritud..."
-    },
-    "QuestionsBank": {
-      "add": "Lisama",
-      "label": "Import küsimuste pangast",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Juhuslike küsimuste arv ei tohi ületada valitud küsimuste arvu",
-        "modalTitle": "Küsimuste pank",
-        "placeholderGroup": "Rühm",
-        "placeholderTitle": "Otsing pealkirja või küsimuse sildi järgi",
-        "placeholderType": "Kutt",
-        "randomTextBefore": " Juhuslikud küsimused valitutelt",
-        "randomTextPrev": "Tutvustada ",
-        "search": "Otsima",
-        "selectAllText": "Vali kõik"
-      },
-      "modalTitle": "Küsimuste pank",
-      "search": "Otsima"
     },
     "RelatedUnitsAssociation": {
       "form": {

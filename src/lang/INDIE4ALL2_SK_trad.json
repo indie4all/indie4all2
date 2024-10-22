@@ -199,6 +199,9 @@
         "invalid": "Musíte uviesť termín."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Počet náhodných widgetov nesmie prekročiť počet vybraných widgetov"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Nenapísali ste obsah citátu. Musíte aspoň napísať obsah."
@@ -631,7 +634,6 @@
     "export": "Exportovať položku"
   },
   "messages": {
-    "bankOfQuestionsError": "Nepodarilo sa pripojiť k banke otázok.",
     "bankOfWidgetsError": "Nepodarilo sa pripojiť k banke miniaplikácií.",
     "changesSaved": "Zmeny sa úspešne uložili.",
     "confirmClearContent": "Obsah úplne odstránite. Uistite sa, že je to to, čo naozaj chcete robiť.",
@@ -939,7 +941,6 @@
           "optionTag": "Štítok",
           "optionType": "Chlap"
         },
-        "maximumRandomWidgetsExceeded": "Počet náhodných widgetov nesmie prekročiť počet vybraných widgetov",
         "modalTitle": "Banka miniaplikácií",
         "placeholderGroup": "Skupina",
         "placeholderTag": "Vyhľadávanie podľa názvu značky",
@@ -1348,23 +1349,6 @@
       },
       "label": "Hádanka",
       "prev": "Puzzle ešte nebolo inicializované..."
-    },
-    "QuestionsBank": {
-      "add": "Sčítať",
-      "label": "Import z banky otázok",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Počet náhodných otázok nesmie prekročiť počet vybraných otázok",
-        "modalTitle": "Banka otázok",
-        "placeholderGroup": "Skupina",
-        "placeholderTitle": "Vyhľadávanie podľa názvu alebo značky otázky",
-        "placeholderType": "Chlap",
-        "randomTextBefore": " Náhodné otázky od vybraných",
-        "randomTextPrev": "Zavádzať ",
-        "search": "Nájsť",
-        "selectAllText": "Vybrať všetko"
-      },
-      "modalTitle": "Banka otázok",
-      "search": "Nájsť"
     },
     "RelatedUnitsAssociation": {
       "form": {

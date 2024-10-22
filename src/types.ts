@@ -28,8 +28,6 @@ export interface ConfigOptions {
     resourceBackendURL?: string
     // Server URL to get the list of widgets available in the bank of widgets
     bankOfWidgetsURL?: string
-    // Server URL to get the list of questions available in the bank of questions
-    questionsBankURL?: string
     // Server URL to get the list of user media files
     mediaResourcesURL?: string
     // Server URL to migrate media files to the new repository
@@ -725,4 +723,8 @@ export interface WidgetRelatedUnitsAssociationParams {
 export interface InputWidgetRelatedUnitsAssociationData extends InputWidgetElementData {
     data?: InputWidgetRelatedUnitsItemData[],
     params?: WidgetRelatedUnitsAssociationParams
+}
+
+export interface BankFilters {
+    types?: string[]
 }

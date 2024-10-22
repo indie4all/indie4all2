@@ -199,6 +199,9 @@
         "invalid": "Morate navesti termin."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Broj slučajnih widgeta ne može biti veći od odabranog broja widgeta"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Niste napisali sadržaj ponude. Morate barem napisati sadržaj."
@@ -631,7 +634,6 @@
     "export": "Izvezi stavku"
   },
   "messages": {
-    "bankOfQuestionsError": "Povezivanje s bankom pitanja nije moguće.",
     "bankOfWidgetsError": "Povezivanje s bankom widgeta nije uspjelo.",
     "changesSaved": "Promjene su uspješno spremljene.",
     "confirmClearContent": "Sadržaj ćete u potpunosti izbrisati. Pobrinite se da je to ono što stvarno želite učiniti.",
@@ -939,7 +941,6 @@
           "optionTag": "Etiketa",
           "optionType": "Momak"
         },
-        "maximumRandomWidgetsExceeded": "Broj slučajnih widgeta ne može biti veći od odabranog broja widgeta",
         "modalTitle": "Widget banka",
         "placeholderGroup": "Grupa",
         "placeholderTag": "Pretraži po nazivu oznake",
@@ -1348,23 +1349,6 @@
       },
       "label": "Zagonetka",
       "prev": "Zagonetka još nije inicijalizirana..."
-    },
-    "QuestionsBank": {
-      "add": "Dodati",
-      "label": "Uvoz iz banke pitanja",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Broj slučajnih pitanja ne može biti veći od broja odabranih pitanja",
-        "modalTitle": "Banka pitanja",
-        "placeholderGroup": "Grupa",
-        "placeholderTitle": "Pretraživanje prema naslovu ili oznaci pitanja",
-        "placeholderType": "Momak",
-        "randomTextBefore": " Nasumična pitanja odabranih",
-        "randomTextPrev": "Uvesti ",
-        "search": "Naći",
-        "selectAllText": "Odaberi sve"
-      },
-      "modalTitle": "Banka pitanja",
-      "search": "Naći"
     },
     "RelatedUnitsAssociation": {
       "form": {

@@ -199,6 +199,9 @@
         "invalid": "Jums ir jānorāda termiņš."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Nejaušo logrīku skaits nedrīkst pārsniegt atlasīto logrīku skaitu"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Jūs neesat uzrakstījis citāta saturu. Jums vismaz jāraksta saturs."
@@ -631,7 +634,6 @@
     "export": "Eksportēt vienumu"
   },
   "messages": {
-    "bankOfQuestionsError": "Nevarēja izveidot savienojumu ar jautājumu banku.",
     "bankOfWidgetsError": "Neizdevās izveidot savienojumu ar logrīku banku.",
     "changesSaved": "Veiksmīgi saglabātas izmaiņas.",
     "confirmClearContent": "Jūs izdzēsīsit saturu pilnībā. Pārliecinieties, ka tas ir tas, ko jūs patiešām vēlaties darīt.",
@@ -939,7 +941,6 @@
           "optionTag": "Etiķetes",
           "optionType": "Puisis"
         },
-        "maximumRandomWidgetsExceeded": "Nejaušo logrīku skaits nedrīkst pārsniegt atlasīto logrīku skaitu",
         "modalTitle": "Logrīku banka",
         "placeholderGroup": "Grupa",
         "placeholderTag": "Meklēšana pēc atzīmes nosaukuma",
@@ -1348,23 +1349,6 @@
       },
       "label": "Puzzle",
       "prev": "Mīkla vēl nav inicializēta..."
-    },
-    "QuestionsBank": {
-      "add": "Pievienot",
-      "label": "Importēt no jautājumu bankas",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Nejaušu jautājumu skaits nedrīkst pārsniegt atlasīto jautājumu skaitu",
-        "modalTitle": "Jautājumu banka",
-        "placeholderGroup": "Grupa",
-        "placeholderTitle": "Meklēšana pēc virsraksta vai jautājuma atzīmes",
-        "placeholderType": "Puisis",
-        "randomTextBefore": " Nejauši jautājumi no atlasītajiem",
-        "randomTextPrev": "Ieviest ",
-        "search": "Atrast",
-        "selectAllText": "Atlasīt visus"
-      },
-      "modalTitle": "Jautājumu banka",
-      "search": "Atrast"
     },
     "RelatedUnitsAssociation": {
       "form": {

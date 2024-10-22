@@ -199,6 +199,9 @@
         "invalid": "يجب عليك تقديم مصطلح."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "لا يمكن أن يتجاوز عدد الأدوات العشوائية عدد الأدوات المحددة"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "لم تكتب محتوى الاقتباس. يجب عليك ، على الأقل ، كتابة المحتوى."
@@ -631,7 +634,6 @@
     "export": "تصدير البند"
   },
   "messages": {
-    "bankOfQuestionsError": "تعذر الاتصال ببنك الأسئلة.",
     "bankOfWidgetsError": "فشل الاتصال ببنك القطعة.",
     "changesSaved": "تم حفظ التغييرات بنجاح.",
     "confirmClearContent": "ستقوم بحذف المحتوى بالكامل. تأكد من أن هذا ما تريد فعله حقا.",
@@ -939,7 +941,6 @@
           "optionTag": "تسميه",
           "optionType": "الرجل"
         },
-        "maximumRandomWidgetsExceeded": "لا يمكن أن يتجاوز عدد الأدوات العشوائية عدد الأدوات المحددة",
         "modalTitle": "بنك القطعة",
         "placeholderGroup": "مجموعة",
         "placeholderTag": "البحث عن طريق اسم العلامة",
@@ -1348,23 +1349,6 @@
       },
       "label": "لغز",
       "prev": "لم تتم تهيئة اللغز بعد ..."
-    },
-    "QuestionsBank": {
-      "add": "جمع",
-      "label": "الاستيراد من بنك الأسئلة",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "لا يمكن أن يتجاوز عدد الأسئلة العشوائية عدد الأسئلة المحددة",
-        "modalTitle": "بنك الأسئلة",
-        "placeholderGroup": "مجموعة",
-        "placeholderTitle": "البحث حسب العنوان أو علامة السؤال",
-        "placeholderType": "الرجل",
-        "randomTextBefore": " أسئلة عشوائية من أولئك الذين تم اختيارهم",
-        "randomTextPrev": "قدم ",
-        "search": "أبحث",
-        "selectAllText": "حدد الكل"
-      },
-      "modalTitle": "بنك الأسئلة",
-      "search": "أبحث"
     },
     "RelatedUnitsAssociation": {
       "form": {

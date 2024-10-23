@@ -155,7 +155,7 @@ export default class GUI {
         const parent = model.findObject(dataElementId);
         const constructor = <typeof WidgetElement>parent.constructor;
         // Get only the widgets that are allowed in the current context
-        bank.setFilters({ types: ModelManager.allowed(constructor.widget).map(ele => ele.widget) });
+        bank.filters = { types: ModelManager.allowed(constructor.widget).map(ele => ele.widget) };
         $('#modal-settings-body').empty(); // clear the body
         $("#modal-settings .btn-submit").off('click'); // Unbind button submit click event 
         // 2 Populate the modal with the inputs of the widget

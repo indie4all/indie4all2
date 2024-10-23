@@ -40,6 +40,10 @@ export interface ConfigOptions {
     enableWidgetEditor: boolean;
     // Action to perform if the user is unauthorized
     unauthorizedMessage: string
+    // List of widgets to allow in the editor -> if null all widgets are allowed
+    widgetsBlacklist: string[]
+    // List of widgets to block in the editor -> if null no widgets are blocked
+    widgetsWhitelist: string[]
 }
 
 /** Edit form data **/

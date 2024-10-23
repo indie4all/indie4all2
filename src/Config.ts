@@ -41,6 +41,10 @@ export default class Config {
     private static enableWidgetEditor: boolean = false;
     // Action to perform is the user is unauthorized
     private static unauthorizedMessage: string = null;
+    // List of widgets to allow in the editor -> if null all widgets are allowed
+    private static widgetsWhitelist: string[] = null;
+    // List of widgets to block in the editor -> if null no widgets are blocked
+    private static widgetsBlacklist: string[] = null;
 
     public static setOptions(options: ConfigOptions) {
         if (typeof options.enablePWA === 'boolean')
@@ -81,6 +85,10 @@ export default class Config {
             this.setUnauthorizedMessage(options.unauthorizedMessage)
         if (typeof options.mediaMigrationURL === 'string')
             this.setMediaMigrationURL(options.mediaMigrationURL)
+        if (Array.isArray(options.widgetsWhitelist))
+            this.setWidgetsWhitelist(options.widgetsWhitelist)
+        if (Array.isArray(options.widgetsBlacklist))
+            this.setWidgetsBlacklist(options.widgetsBlacklist)
     }
 
     public static setAnalyticsBasePath(value: string) {
@@ -245,6 +253,22 @@ export default class Config {
 
     public static getUnauthorizedMessage(): string {
         return this.unauthorizedMessage;
+    }
+
+    public static setWidgetsWhitelist(value: string[]) {
+        this.widgetsWhitelist = value;
+    }
+
+    public static getWidgetsWhitelist(): string[] {
+        return this.widgetsWhitelist;
+    }
+
+    public static setWidgetsBlacklist(value: string[]) {
+        this.widgetsBlacklist = value;
+    }
+
+    public static getWidgetsBlacklist(): string[] {
+        return this.widgetsBlacklist;
     }
 
 }

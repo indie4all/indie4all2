@@ -231,6 +231,14 @@ export default class ModelManager {
         [WidgetRoulette.widget]: { "allows": [WidgetRouletteItem] },
     }
 
+    private static filterWidget(widget: string) {
+        if (Array.isArray(Config.getWidgetsBlacklist()))
+            return !Config.getWidgetsBlacklist().includes(widget);
+        if (Array.isArray(Config.getWidgetsWhitelist()))
+            return Config.getWidgetsWhitelist().includes(widget);
+        return true;
+    }
+
     static canHave(parent: typeof ModelElement, child: typeof ModelElement) {
 
         const parentRules = this.rules[parent.widget];
@@ -256,7 +264,11 @@ export default class ModelManager {
 
     static getAllWidgets(): typeof WidgetElement[] {
         let widgets = Object
-            .values(this.elements)
+            // Filter widgets by type
+            .entries(this.elements)
+            .filter(entry => this.filterWidget(entry[0]))
+            // Get the associated element
+            .map(entry => entry[1])
             .map(elem => ModelElement.isPrototypeOf(elem) ? elem : (elem as Function)())
             .filter(elem => WidgetElement.isPrototypeOf(elem))
             .map(elem => elem as typeof WidgetElement);
@@ -267,7 +279,11 @@ export default class ModelManager {
 
     static getAllWidgetsAllowedIn(widget: string): typeof WidgetElement[] {
         return Object
-            .values(this.elements)
+            // Filter widgets by type
+            .entries(this.elements)
+            .filter(entry => this.filterWidget(entry[0]))
+            // Get the associated element
+            .map(entry => entry[1])
             .map(elem => ModelElement.isPrototypeOf(elem) ? elem : (elem as Function)())
             .filter(elem => WidgetElement.isPrototypeOf(elem))
             .filter(elem =>

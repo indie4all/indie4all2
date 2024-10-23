@@ -6,6 +6,7 @@ import WidgetElement from "../WidgetElement/WidgetElement";
 import Config from "../../../Config";
 import Utils from "../../../Utils";
 import I18n from "../../../I18n";
+import ModelManager from "../../ModelManager";
 
 export default class WidgetBank extends WidgetElement {
 
@@ -13,7 +14,7 @@ export default class WidgetBank extends WidgetElement {
     static category = "bankWidgets";
     static icon = icon;
 
-    private filters: BankFilters;
+    private _filters: BankFilters;
 
     static async create(): Promise<WidgetElement> {
         return new WidgetBank();
@@ -30,8 +31,7 @@ export default class WidgetBank extends WidgetElement {
         const url = /^https?:\/\//i.test(Config.getBankOfWidgetsURL()) ?
             new URL(Config.getBankOfWidgetsURL()) :
             new URL(Config.getBankOfWidgetsURL(), window.location.origin);
-        //const url = new URL(Config.getBankOfWidgetsURL());
-        if (this.filters) url.search = new URLSearchParams(Object.entries(this.filters)).toString();
+        url.search = new URLSearchParams(Object.entries(this.filters)).toString();
         return await fetch(url, { method: 'GET', headers, redirect: 'follow' })
             .then(res => {
                 if (!res.ok) {
@@ -163,11 +163,14 @@ export default class WidgetBank extends WidgetElement {
         return widget;
     }
 
-    getFilters(): BankFilters {
-        return this.filters;
+    public get filters(): BankFilters {
+        if (!this._filters) this._filters = { types: ModelManager.getAllWidgets().map(ele => ele.widget) };
+        return this._filters;
     }
 
-    setFilters(filters: BankFilters) {
-        this.filters = filters;
+    public set filters(filters: BankFilters) {
+        // Set the intersection between ALL the widgets allowed and the widgets specified
+        this._filters = { types: ModelManager.getAllWidgets().map(ele => ele.widget) };
+        this._filters.types = this._filters.types.filter(ele => filters.types && filters.types.includes(ele));
     }
 }

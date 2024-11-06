@@ -200,7 +200,7 @@
       }
     },
     "Bank": {
-      "maximumRandomWidgetsExceeded": "Broj slučajnih widgeta ne može biti veći od odabranog broja widgeta"
+      "maximumRandomWidgetsExceeded": "Broj nasumičnih widgeta ne smije premašiti broj odabranih widgeta."
     },
     "Blockquote": {
       "quote": {
@@ -373,11 +373,6 @@
       },
       "text": {
         "invalid": "Tekst je prazan. Morate napisati ili kopirati tekst."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "URL konfiguriran za videozapis nije valjan. Trebali biste ga pružiti iz indieopen interaktivnih videozapisa."
       }
     },
     "LatexFormula": {
@@ -1251,17 +1246,6 @@
       },
       "label": "Slika i tekst",
       "prev": "Slika i tekst još nisu uspostavljeni..."
-    },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Pomoću unosa teksta unesite URL interaktivnog videozapisa stvorenog pomoću interaktivnog alata za videozapise.",
-          "label": "URL videozapisa",
-          "placeholder": "Primjer: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktivni videozapis",
-      "prev": "Interaktivni videozapis još nije uspostavljen"
     },
     "LatexFormula": {
       "form": {

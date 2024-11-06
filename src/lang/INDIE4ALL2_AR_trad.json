@@ -200,7 +200,7 @@
       }
     },
     "Bank": {
-      "maximumRandomWidgetsExceeded": "لا يمكن أن يتجاوز عدد الأدوات العشوائية عدد الأدوات المحددة"
+      "maximumRandomWidgetsExceeded": "لا يمكن أن يتجاوز عدد الأدوات العشوائية عدد الأدوات المحددة."
     },
     "Blockquote": {
       "quote": {
@@ -373,11 +373,6 @@
       },
       "text": {
         "invalid": "النص فارغ. يجب عليك كتابة أو نسخ نص."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "عنوان URL الذي تم تكوينه للفيديو غير صالح. يجب عليك التأكد من توفير واحد من مقاطع الفيديو التفاعلية indieopen."
       }
     },
     "LatexFormula": {
@@ -1251,17 +1246,6 @@
       },
       "label": "الصورة والنص",
       "prev": "لم يتم إنشاء الصورة والنص بعد ..."
-    },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "استخدم إدخال النص لإدخال عنوان URL للفيديو التفاعلي الذي تم إنشاؤه باستخدام أداة الفيديو التفاعلي.",
-          "label": "عنوان URL للفيديو",
-          "placeholder": "مثال: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "فيديو تفاعلي",
-      "prev": "فيديو تفاعلي لم يتم إنشاؤه بعد"
     },
     "LatexFormula": {
       "form": {

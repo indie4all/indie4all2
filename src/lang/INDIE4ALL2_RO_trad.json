@@ -200,7 +200,7 @@
       }
     },
     "Bank": {
-      "maximumRandomWidgetsExceeded": "Numărul de widget-uri aleatorii nu poate depăși numărul de widget-uri selectate"
+      "maximumRandomWidgetsExceeded": "Numărul de widget-uri aleatorii nu poate depăși numărul de widget-uri selectate."
     },
     "Blockquote": {
       "quote": {
@@ -373,11 +373,6 @@
       },
       "text": {
         "invalid": "Textul este gol. Trebuie să scrieți sau să copiați un text."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Adresa URL configurată pentru videoclip nu este validă. Ar trebui să vă asigurați că furnizați unul din videoclipurile interactive indieopen."
       }
     },
     "LatexFormula": {
@@ -1251,17 +1246,6 @@
       },
       "label": "Imagine și text",
       "prev": "Imaginea și textul nu au fost încă stabilite..."
-    },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Utilizați introducerea textului pentru a introduce adresa URL a videoclipului interactiv creat cu instrumentul video interactiv.",
-          "label": "Adresa URL a videoclipului",
-          "placeholder": "Exemplu: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Video interactiv",
-      "prev": "Video interactiv nu a fost încă stabilit"
     },
     "LatexFormula": {
       "form": {

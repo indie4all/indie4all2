@@ -200,7 +200,7 @@
       }
     },
     "Bank": {
-      "maximumRandomWidgetsExceeded": "Ní féidir le líon na ngiuirléidí randamacha dul thar líon na ngiuirléidí a roghnaíodh"
+      "maximumRandomWidgetsExceeded": "Ní féidir le líon na ngiuirléidí randamacha dul thar líon na ngiuirléidí a roghnaíodh."
     },
     "Blockquote": {
       "quote": {
@@ -373,11 +373,6 @@
       },
       "text": {
         "invalid": "Tá an téacs folamh. Ní mór duit téacs a scríobh nó a chóipeáil."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Tá an URL atá cumraithe don fhíseán neamhbhailí. Ba chóir duit a chinntiú ceann a chur ar fáil ó fhíseáin idirghníomhacha indieopen."
       }
     },
     "LatexFormula": {
@@ -1251,17 +1246,6 @@
       },
       "label": "Íomhá agus téacs",
       "prev": "Íomhá agus téacs nach bhfuil bunaithe go fóill..."
-    },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Bain úsáid as ionchur téacs chun URL an fhíseáin idirghníomhach a cruthaíodh leis an uirlis físe idirghníomhach a iontráil.",
-          "label": "URL an fhíseáin",
-          "placeholder": "Sampla: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Físeán idirghníomhach",
-      "prev": "Físeán idirghníomhach nach bhfuil bunaithe go fóill"
     },
     "LatexFormula": {
       "form": {

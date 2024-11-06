@@ -458,19 +458,6 @@ export interface InputWidgetSchemaContainerData extends InputWidgetElementData {
     params: WidgetSchemaContainerParams
 }
 
-export interface WidgetInteractiveVideoParams {
-    name?: string
-}
-
-export interface WidgetInteractiveVideoData {
-    videourl?: string
-}
-
-export interface InputWidgetInteractiveVideoData extends InputWidgetElementData {
-    data?: WidgetInteractiveVideoData,
-    params?: WidgetInteractiveVideoParams
-}
-
 export interface WidgetPiecesElementParams {
     help?: string,
     name?: string
@@ -485,7 +472,7 @@ export interface WidgetPiecesElementData {
 
 export interface InputWidgetPiecesElementData extends InputWidgetElementData {
     data?: WidgetPiecesElementData,
-    params?: WidgetInteractiveVideoParams
+    params?: WidgetPiecesElementParams
 }
 
 export interface WidgetCorrectWordItemData {

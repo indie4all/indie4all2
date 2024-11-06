@@ -200,7 +200,7 @@
       }
     },
     "Bank": {
-      "maximumRandomWidgetsExceeded": "Het aantal willekeurige widgets mag niet groter zijn dan het aantal geselecteerde widgets"
+      "maximumRandomWidgetsExceeded": "Het aantal willekeurige widgets kan niet groter zijn dan het aantal geselecteerde widgets."
     },
     "Blockquote": {
       "quote": {
@@ -373,11 +373,6 @@
       },
       "text": {
         "invalid": "De tekst is leeg. U moet een tekst schrijven of kopiëren."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "De URL die voor de video is geconfigureerd, is ongeldig. Je moet ervoor zorgen dat je er een van indieopen interactieve video's aanbiedt."
       }
     },
     "LatexFormula": {
@@ -1251,17 +1246,6 @@
       },
       "label": "Afbeelding en tekst",
       "prev": "Beeld en tekst nog niet vastgesteld..."
-    },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Gebruik tekstinvoer om de URL in te voeren van de interactieve video die is gemaakt met de interactieve videotool.",
-          "label": "Video-URL",
-          "placeholder": "Voorbeeld: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interactieve video",
-      "prev": "Interactieve video nog niet vastgesteld"
     },
     "LatexFormula": {
       "form": {

@@ -157,10 +157,6 @@ export default class Utils {
         return (widgetInstance.params && (widgetInstance.params.name && (widgetInstance.params.name.length > 0)));
     }
 
-    static isInteractiveVideo(url: string): boolean {
-        return this.isUrlWithinDomains(url, ["https://indieopen.upct.es", "https://backendcpcd-servicio-gateway.azuremicroservices.io", "https://scgateway-cpcd-upct-gufcfdgzgee5fydr.z01.azurefd.net"]);
-    }
-
     static encodeBlobAsBase64DataURL(blob: Blob): Promise<string | ArrayBuffer | null> {
         return new Promise((resolve, reject) => {
             const reader = new FileReader();

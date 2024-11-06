@@ -200,7 +200,7 @@
       }
     },
     "Bank": {
-      "maximumRandomWidgetsExceeded": "In-numru ta 'widgets każwali ma jistax jaqbeż in-numru ta' widgets magħżula"
+      "maximumRandomWidgetsExceeded": "In-numru ta 'widgets każwali ma jistax jaqbeż in-numru ta' widgets magħżula."
     },
     "Blockquote": {
       "quote": {
@@ -373,11 +373,6 @@
       },
       "text": {
         "invalid": "It-test vojt. Jeħtieġ tikteb jew tikkopja test."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Il-URL ikkonfigurat għall-vidjo huwa invalidu. Għandek tiżgura li tipprovdi wieħed minn vidjows interattivi indieopen."
       }
     },
     "LatexFormula": {
@@ -1251,17 +1246,6 @@
       },
       "label": "Immaġni u test",
       "prev": "L-immaġni u t-test għadhom mhux stabbiliti..."
-    },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Uża l-input tat-test biex iddaħħal il-URL tal-vidjo interattiv maħluq bl-għodda interattiva tal-vidjo.",
-          "label": "URL tal-vidjo",
-          "placeholder": "Eżempju: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Vidjo interattiv",
-      "prev": "Vidjo interattiv għadu mhux stabbilit"
     },
     "LatexFormula": {
       "form": {

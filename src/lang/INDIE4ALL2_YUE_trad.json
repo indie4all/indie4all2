@@ -200,7 +200,7 @@
       }
     },
     "Bank": {
-      "maximumRandomWidgetsExceeded": "隨機小部件嘅數量不能超過所選小部件嘅數量"
+      "maximumRandomWidgetsExceeded": "隨機Widget嘅數量不能超過所選嘅Widget數量。"
     },
     "Blockquote": {
       "quote": {
@@ -373,11 +373,6 @@
       },
       "text": {
         "invalid": "文本為吉。 你必須編寫或複製文本。"
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "為視頻配置嘅網址無效。 你應該確保由獨立開放互動視頻中提供一個。"
       }
     },
     "LatexFormula": {
@@ -1251,17 +1246,6 @@
       },
       "label": "圖像同文本",
       "prev": "圖像和文本尚未建立..."
-    },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "使用文本輸入輸入使用交互式視頻工具創建嘅交互式視頻嘅URL。",
-          "label": "視頻網址",
-          "placeholder": "示例：https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "互動視頻",
-      "prev": "交互式視頻尚未建立"
     },
     "LatexFormula": {
       "form": {

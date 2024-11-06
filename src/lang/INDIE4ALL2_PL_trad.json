@@ -200,7 +200,7 @@
       }
     },
     "Bank": {
-      "maximumRandomWidgetsExceeded": "Liczba losowych widżetów nie może przekroczyć liczby wybranych widżetów"
+      "maximumRandomWidgetsExceeded": "Liczba losowych widżetów nie może przekraczać liczby wybranych widżetów."
     },
     "Blockquote": {
       "quote": {
@@ -373,11 +373,6 @@
       },
       "text": {
         "invalid": "Tekst jest pusty. Musisz napisać lub skopiować tekst."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Adres URL skonfigurowany dla filmu jest nieprawidłowy. Powinieneś upewnić się, że dostarczyłeś jeden z interaktywnych filmów indieopen."
       }
     },
     "LatexFormula": {
@@ -1251,17 +1246,6 @@
       },
       "label": "Obraz i tekst",
       "prev": "Obraz i tekst nie zostały jeszcze ustalone..."
-    },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Użyj tekstu wprowadzanego tekstu, aby wprowadzić adres URL interaktywnego wideo utworzonego za pomocą interaktywnego narzędzia wideo.",
-          "label": "Adres URL filmu",
-          "placeholder": "Przykład: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktywne wideo",
-      "prev": "Interaktywne wideo nie zostało jeszcze ustalone"
     },
     "LatexFormula": {
       "form": {

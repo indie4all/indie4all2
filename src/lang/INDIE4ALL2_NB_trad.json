@@ -200,7 +200,7 @@
       }
     },
     "Bank": {
-      "maximumRandomWidgetsExceeded": "Antall tilfeldige widgets kan ikke overstige antall valgte widgets"
+      "maximumRandomWidgetsExceeded": "Antallet tilfeldige kontrollprogrammer kan ikke overskride antallet valgte kontrollprogrammer."
     },
     "Blockquote": {
       "quote": {
@@ -373,11 +373,6 @@
       },
       "text": {
         "invalid": "Teksten er tom. Du må skrive eller kopiere en tekst."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "URL-adressen som er konfigurert for videoen, er ugyldig. Du bør sørge for å gi en fra indieopen interaktive videoer."
       }
     },
     "LatexFormula": {
@@ -1251,17 +1246,6 @@
       },
       "label": "Bilde og tekst",
       "prev": "Bilde og tekst ennå ikke etablert..."
-    },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Bruk tekstinndata til å skrive inn URL-adressen til den interaktive videoen som ble opprettet med det interaktive videoverktøyet.",
-          "label": "URL-adresse for video",
-          "placeholder": "Eksempel: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktiv video",
-      "prev": "Interaktiv video ennå ikke etablert"
     },
     "LatexFormula": {
       "form": {

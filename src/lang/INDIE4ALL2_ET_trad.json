@@ -200,7 +200,7 @@
       }
     },
     "Bank": {
-      "maximumRandomWidgetsExceeded": "Juhuslike vidinate arv ei tohi ületada valitud vidinate arvu"
+      "maximumRandomWidgetsExceeded": "Juhuslike vidinate arv ei tohi ületada valitud vidinate arvu."
     },
     "Blockquote": {
       "quote": {
@@ -373,11 +373,6 @@
       },
       "text": {
         "invalid": "Tekst on tühi. Peate teksti kirjutama või kopeerima."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Video jaoks konfigureeritud URL on sobimatu. Peaksite kindlasti pakkuma seda indieopeni interaktiivsetest videotest."
       }
     },
     "LatexFormula": {
@@ -1251,17 +1246,6 @@
       },
       "label": "Pilt ja tekst",
       "prev": "Pilt ja tekst pole veel loodud ..."
-    },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Kasutage interaktiivse videotööriistaga loodud interaktiivse video URL-i sisestamiseks tekstisisestust.",
-          "label": "Video URL",
-          "placeholder": "Näide: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktiivne video",
-      "prev": "Interaktiivne video pole veel loodud"
     },
     "LatexFormula": {
       "form": {

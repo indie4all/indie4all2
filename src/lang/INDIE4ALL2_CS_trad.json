@@ -200,7 +200,7 @@
       }
     },
     "Bank": {
-      "maximumRandomWidgetsExceeded": "Počet náhodných widgetů nesmí překročit počet vybraných widgetů"
+      "maximumRandomWidgetsExceeded": "Počet náhodných widgetů nesmí překročit počet vybraných widgetů."
     },
     "Blockquote": {
       "quote": {
@@ -373,11 +373,6 @@
       },
       "text": {
         "invalid": "Text je prázdný. Musíte napsat nebo zkopírovat text."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Adresa URL nakonfigurovaná pro video je neplatná. Měli byste se ujistit, že poskytnete jeden z interaktivních videí indieopen."
       }
     },
     "LatexFormula": {
@@ -1251,17 +1246,6 @@
       },
       "label": "Obrázek a text",
       "prev": "Obrázek a text dosud nestanoveny..."
-    },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Pomocí textového vstupu zadejte adresu URL interaktivního videa vytvořeného pomocí nástroje pro interaktivní video.",
-          "label": "Adresa URL videa",
-          "placeholder": "Příklad: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktivní video",
-      "prev": "Interaktivní video dosud nebylo vytvořeno"
     },
     "LatexFormula": {
       "form": {

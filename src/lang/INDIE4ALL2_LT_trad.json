@@ -200,7 +200,7 @@
       }
     },
     "Bank": {
-      "maximumRandomWidgetsExceeded": "Atsitiktinių valdiklių skaičius negali viršyti pasirinktų valdiklių skaičiaus"
+      "maximumRandomWidgetsExceeded": "Atsitiktinių valdiklių skaičius negali viršyti pasirinktų valdiklių skaičiaus."
     },
     "Blockquote": {
       "quote": {
@@ -373,11 +373,6 @@
       },
       "text": {
         "invalid": "Tekstas tuščias. Turite parašyti arba nukopijuoti tekstą."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Vaizdo įrašui sukonfigūruotas URL yra neteisingas. Turėtumėte būtinai pateikti vieną iš indieopen interaktyvių vaizdo įrašų."
       }
     },
     "LatexFormula": {
@@ -1251,17 +1246,6 @@
       },
       "label": "Vaizdas ir tekstas",
       "prev": "Vaizdas ir tekstas dar nenustatyti..."
-    },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Naudokite teksto įvestį, kad įvestumėte interaktyvaus vaizdo įrašo, sukurto naudojant interaktyvaus vaizdo įrankį, URL.",
-          "label": "Vaizdo įrašo URL",
-          "placeholder": "Pavyzdys: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktyvus vaizdo įrašas",
-      "prev": "Interaktyvus vaizdo įrašas dar nenustatytas"
     },
     "LatexFormula": {
       "form": {

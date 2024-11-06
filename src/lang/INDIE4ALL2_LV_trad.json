@@ -200,7 +200,7 @@
       }
     },
     "Bank": {
-      "maximumRandomWidgetsExceeded": "Nejaušo logrīku skaits nedrīkst pārsniegt atlasīto logrīku skaitu"
+      "maximumRandomWidgetsExceeded": "Nejaušo logrīku skaits nedrīkst pārsniegt atlasīto logrīku skaitu."
     },
     "Blockquote": {
       "quote": {
@@ -373,11 +373,6 @@
       },
       "text": {
         "invalid": "Teksts ir tukšs. Jums ir jāraksta vai jākopē teksts."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Videoklipam konfigurētais vietrādis URL nav derīgs. Jums vajadzētu pārliecināties, ka esat nodrošinājis vienu no indieopen interaktīvajiem videoklipiem."
       }
     },
     "LatexFormula": {
@@ -1251,17 +1246,6 @@
       },
       "label": "Attēls un teksts",
       "prev": "Attēls un teksts vēl nav izveidots..."
-    },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Izmantojiet teksta ievadi, lai ievadītu tā interaktīvā videoklipa vietrādi URL, kas izveidots, izmantojot interaktīvo video rīku.",
-          "label": "Videoklipa URL",
-          "placeholder": "Piemērs: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktīvs video",
-      "prev": "Interaktīvs video vēl nav izveidots"
     },
     "LatexFormula": {
       "form": {

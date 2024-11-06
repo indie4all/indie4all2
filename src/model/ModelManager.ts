@@ -25,7 +25,6 @@ import WidgetImage from "./widgets/WidgetImage/WidgetImage";
 import WidgetImageAndSoundContainer from "./widgets/WidgetImageAndSoundContainer/WidgetImageAndSoundContainer";
 import WidgetImageAndSoundItem from "./widgets/WidgetImageAndSoundItem/WidgetImageAndSoundItem";
 import WidgetImageAndText from "./widgets/WidgetImageAndText/WidgetImageAndText";
-import WidgetInteractiveVideo from "./widgets/WidgetInteractiveVideo/WidgetInteractiveVideo";
 import WidgetLatexFormula from "./widgets/WidgetLatexFormula/WidgetLatexFormula";
 import WidgetMissingwordsContainer from "./widgets/WidgetMissingwordsContainer/WidgetMissingwordsContainer";
 import WidgetMissingwordsItem from "./widgets/WidgetMissingwordsItem/WidgetMissingwordsItem";
@@ -138,7 +137,6 @@ export default class ModelManager {
         [WidgetCouplesItem.widget]: () => Config.isLocal() ? WidgetLocalCouplesItem : WidgetRemoteCouplesItem,
         [WidgetSchemaContainer.widget]: WidgetSchemaContainer,
         [WidgetSchemaItem.widget]: () => Config.isLocal() ? WidgetLocalSchemaItem : WidgetRemoteSchemaItem,
-        [WidgetInteractiveVideo.widget]: WidgetInteractiveVideo,
         [WidgetPuzzle.widget]: () => Config.isLocal() ? WidgetLocalPuzzle : WidgetRemotePuzzle,
         [WidgetCorrectWordContainer.widget]: WidgetCorrectWordContainer,
         [WidgetCorrectWordItem.widget]: () => Config.isLocal() ? WidgetLocalCorrectWordItem : WidgetRemoteCorrectWordItem,

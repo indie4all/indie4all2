@@ -200,7 +200,7 @@
       }
     },
     "Bank": {
-      "maximumRandomWidgetsExceeded": "Ausazko widget kopurua ezin da izan hautatutako widget kopurua baino handiagoa"
+      "maximumRandomWidgetsExceeded": "Ausazko widget kopurua ezin da izan aukeratutako widget kopurua baino handiagoa."
     },
     "Blockquote": {
       "quote": {
@@ -373,11 +373,6 @@
       },
       "text": {
         "invalid": "Testua hutsik dago. Testu bat idatzi edo kopiatu behar duzu."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Bideorako konfiguratutako URLa ez da baliozkoa. Bat eman eman behar duzu, Indieopeneko bideo interaktibotik abiatuta."
       }
     },
     "LatexFormula": {
@@ -1251,17 +1246,6 @@
       },
       "label": "Irudia eta testua",
       "prev": "Irudia eta testua oraindik ezarri gabe ..."
-    },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Erabili testua sartzeko tresna bideo interaktiboko tresnarekin sortutako bideo interaktiboaren URLa sartzeko.",
-          "label": "Bideoaren URLa",
-          "placeholder": "Adibidea: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Bideo interaktiboa",
-      "prev": "Oraindik ezarri gabeko bideo interaktiboa"
     },
     "LatexFormula": {
       "form": {

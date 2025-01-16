@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "L'URL del video non è valido. Devi assicurarti di fornire un URL valido da IndieMedia o Youtube.",
-        "localInvalid": "L'URL del video non è valido. Devi assicurarti di fornire un URL YouTube valido."
+        "localInvalid": "L'URL del video non è valido. Devi assicurarti di fornire un URL YouTube valido.",
+        "public": {
+          "invalidId": "ID video non valido.",
+          "notConfigured": "Endpoint multimediale non configurato.",
+          "notFound": "Non è stato possibile recuperare le informazioni dal video."
+        }
       }
     }
   },

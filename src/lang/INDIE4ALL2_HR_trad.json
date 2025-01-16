@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "URL videozapisa nije valjan. Morate navesti valjani URL tvrtke IndieMedia ili Youtube.",
-        "localInvalid": "URL videozapisa nije valjan. Morate biti sigurni da ste naveli valjani URL YouTubea."
+        "localInvalid": "URL videozapisa nije valjan. Morate biti sigurni da ste naveli valjani URL YouTubea.",
+        "public": {
+          "invalidId": "Nevažeći ID videozapisa.",
+          "notConfigured": "Krajnja točka medija nije konfigurirana.",
+          "notFound": "Informacije iz videozapisa nisu se mogle dohvatiti."
+        }
       }
     }
   },

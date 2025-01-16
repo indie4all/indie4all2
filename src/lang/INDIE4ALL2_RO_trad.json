@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "Adresa URL a videoclipului nu este validă. Trebuie să vă asigurați că furnizați o adresă URL validă de la IndieMedia sau Youtube.",
-        "localInvalid": "Adresa URL a videoclipului nu este validă. Trebuie să te asiguri că introduci o adresă URL YouTube validă."
+        "localInvalid": "Adresa URL a videoclipului nu este validă. Trebuie să te asiguri că introduci o adresă URL YouTube validă.",
+        "public": {
+          "invalidId": "ID video nevalid.",
+          "notConfigured": "Punctul final media nu este configurat.",
+          "notFound": "Informațiile din videoclip nu au putut fi recuperate."
+        }
       }
     }
   },

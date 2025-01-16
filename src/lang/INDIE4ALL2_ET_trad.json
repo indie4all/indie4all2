@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "Video URL on sobimatu. Peate kindlasti esitama kehtiva URL-i IndieMediast või Youtube'ist.",
-        "localInvalid": "Video URL on sobimatu. Peate veenduma, et sisestate kehtiva YouTube'i URL-i."
+        "localInvalid": "Video URL on sobimatu. Peate veenduma, et sisestate kehtiva YouTube'i URL-i.",
+        "public": {
+          "invalidId": "Sobimatu video ID.",
+          "notConfigured": "Meediumi lõpp-punkt pole konfigureeritud.",
+          "notFound": "Videost saadud teavet ei õnnestunud kätte saada."
+        }
       }
     }
   },

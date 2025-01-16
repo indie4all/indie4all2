@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "Vaizdo įrašo URL neteisingas. Turite būtinai pateikti galiojantį URL iš \"IndieMedia\" arba \"Youtube\".",
-        "localInvalid": "Vaizdo įrašo URL neteisingas. Turite įsitikinti, kad pateikiate galiojantį \"YouTube\" URL."
+        "localInvalid": "Vaizdo įrašo URL neteisingas. Turite įsitikinti, kad pateikiate galiojantį \"YouTube\" URL.",
+        "public": {
+          "invalidId": "Neteisingas vaizdo įrašo ID.",
+          "notConfigured": "Medijos galinis punktas nesukonfigūruotas.",
+          "notFound": "Vaizdo įrašo informacijos gauti nepavyko."
+        }
       }
     }
   },

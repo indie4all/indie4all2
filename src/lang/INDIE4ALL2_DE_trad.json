@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "Die URL für das Video ist ungültig. Sie müssen sicherstellen, dass Sie eine gültige URL von IndieMedia oder Youtube angeben.",
-        "localInvalid": "Die URL für das Video ist ungültig. Sie müssen sicherstellen, dass Sie eine gültige YouTube-URL angeben."
+        "localInvalid": "Die URL für das Video ist ungültig. Sie müssen sicherstellen, dass Sie eine gültige YouTube-URL angeben.",
+        "public": {
+          "invalidId": "Ungültige Video-ID.",
+          "notConfigured": "Der Medienendpunkt ist nicht konfiguriert.",
+          "notFound": "Die Informationen aus dem Video konnten nicht abgerufen werden."
+        }
       }
     }
   },

@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "Bideorako ezarritako URL ez da baliozkoa. IndieMediako edo Youtubeko baliozko URL bat eman behar duzu.",
-        "localInvalid": "Bideorako ezarritako URL ez da baliozkoa. YouTubeko baliozko URL bat eman behar duzu."
+        "localInvalid": "Bideorako ezarritako URL ez da baliozkoa. YouTubeko baliozko URL bat eman behar duzu.",
+        "public": {
+          "invalidId": "Bideo baliogabeko IDa.",
+          "notConfigured": "Endpoint multimedia ez da konfiguratua.",
+          "notFound": "Ezin izan zen bideoaren informazioa berreskuratu."
+        }
       }
     }
   },

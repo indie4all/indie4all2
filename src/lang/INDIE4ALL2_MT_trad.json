@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "Il-URL għall-vidjo huwa invalidu. Għandek tiżgura li tipprovdi URL validu minn IndieMedia jew Youtube.",
-        "localInvalid": "Il-URL għall-vidjo huwa invalidu. Trid tiżgura li tipprovdi URL validu fuq YouTube."
+        "localInvalid": "Il-URL għall-vidjo huwa invalidu. Trid tiżgura li tipprovdi URL validu fuq YouTube.",
+        "public": {
+          "invalidId": "ID tal-vidjo invalida.",
+          "notConfigured": "Il-punt tat-tmiem tal-midja mhux ikkonfigurat.",
+          "notFound": "L-informazzjoni mill-vidjo ma setgħetx tinġabar."
+        }
       }
     }
   },

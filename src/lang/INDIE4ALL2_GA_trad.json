@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "Tá URL an fhíseáin neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL bailí ó IndieMedia nó Youtube.",
-        "localInvalid": "Tá URL an fhíseáin neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL YouTube bailí."
+        "localInvalid": "Tá URL an fhíseáin neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL YouTube bailí.",
+        "public": {
+          "invalidId": "Aitheantas neamhbhailí físe.",
+          "notConfigured": "Níl críochphointe na meán cumraithe.",
+          "notFound": "Níorbh fhéidir an t-eolas ón bhfíseán a aisghabháil."
+        }
       }
     }
   },

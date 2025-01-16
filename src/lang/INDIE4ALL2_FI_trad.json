@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "Videon URL-osoite on virheellinen. Sinun on varmistettava, että annat kelvollisen URL-osoitteen IndieMediasta tai Youtubesta.",
-        "localInvalid": "Videon URL-osoite on virheellinen. Varmista, että annat kelvollisen YouTube-URL-osoitteen."
+        "localInvalid": "Videon URL-osoite on virheellinen. Varmista, että annat kelvollisen YouTube-URL-osoitteen.",
+        "public": {
+          "invalidId": "Virheellinen videotunnus.",
+          "notConfigured": "Median päätepistettä ei ole määritetty.",
+          "notFound": "Videon tietoja ei voitu hakea."
+        }
       }
     }
   },

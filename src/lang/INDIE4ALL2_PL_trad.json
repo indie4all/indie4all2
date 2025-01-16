@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "Adres URL filmu jest nieprawidłowy. Musisz podać prawidłowy adres URL z IndieMedia lub Youtube.",
-        "localInvalid": "Adres URL filmu jest nieprawidłowy. Upewnij się, że podajesz prawidłowy adres URL YouTube."
+        "localInvalid": "Adres URL filmu jest nieprawidłowy. Upewnij się, że podajesz prawidłowy adres URL YouTube.",
+        "public": {
+          "invalidId": "Nieprawidłowy identyfikator filmu.",
+          "notConfigured": "Punkt końcowy nośnika nie jest skonfigurowany.",
+          "notFound": "Nie udało się odzyskać informacji z filmu."
+        }
       }
     }
   },

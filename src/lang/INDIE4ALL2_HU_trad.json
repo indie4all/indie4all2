@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "A videó URL-je érvénytelen. Ügyelned kell arra, hogy érvényes URL-t adj meg az IndieMedia vagy a Youtube szolgáltatásból.",
-        "localInvalid": "A videó URL-je érvénytelen. Meg kell győződnöd arról, hogy érvényes YouTube-URL-t adtál meg."
+        "localInvalid": "A videó URL-je érvénytelen. Meg kell győződnöd arról, hogy érvényes YouTube-URL-t adtál meg.",
+        "public": {
+          "invalidId": "Érvénytelen videóazonosító.",
+          "notConfigured": "A médiavégpont nincs konfigurálva.",
+          "notFound": "A videóból származó információkat nem sikerült lekérni."
+        }
       }
     }
   },

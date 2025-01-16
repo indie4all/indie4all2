@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "A URL establecida para o vídeo non é válida. Debes asegurarte de proporcionar unha URL válida de IndieMedia ou Youtube.",
-        "localInvalid": "A URL establecida para o vídeo non é válida. Debes asegurarte de proporcionar unha URL válida de YouTube."
+        "localInvalid": "A URL establecida para o vídeo non é válida. Debes asegurarte de proporcionar unha URL válida de YouTube.",
+        "public": {
+          "invalidId": "ID de vídeo inválido.",
+          "notConfigured": "Endpoint multimedia no configurado.",
+          "notFound": "Non se puido recuperar a información do vídeo."
+        }
       }
     }
   },

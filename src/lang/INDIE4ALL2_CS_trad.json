@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "Adresa URL videa je neplatná. Musíte zadat platnou adresu URL z IndieMedia nebo Youtube.",
-        "localInvalid": "Adresa URL videa je neplatná. Musíte se ujistit, že jste uvedli platnou adresu URL YouTube."
+        "localInvalid": "Adresa URL videa je neplatná. Musíte se ujistit, že jste uvedli platnou adresu URL YouTube.",
+        "public": {
+          "invalidId": "Neplatné ID videa.",
+          "notConfigured": "Koncový bod média není nakonfigurován.",
+          "notFound": "Informace z videa nebylo možné získat."
+        }
       }
     }
   },

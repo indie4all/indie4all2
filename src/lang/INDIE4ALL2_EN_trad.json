@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "The URL for the video is invalid. You must make sure to provide a valid URL from IndieMedia or Youtube.",
-        "localInvalid": "The URL for the video is invalid. You need to make sure that you provide a valid YouTube URL."
+        "localInvalid": "The URL for the video is invalid. You need to make sure that you provide a valid YouTube URL.",
+        "public": {
+          "invalidId": "Invalid video ID.",
+          "notConfigured": "Media endpoint not configured.",
+          "notFound": "The information from the video could not be retrieved."
+        }
       }
     }
   },

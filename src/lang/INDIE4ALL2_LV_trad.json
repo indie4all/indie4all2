@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "Videoklipa vietrādis URL nav derīgs. Jums ir jānorāda derīgs URL no IndieMedia vai Youtube.",
-        "localInvalid": "Videoklipa vietrādis URL nav derīgs. Jums ir jāpārliecinās, vai esat norādījis derīgu YouTube vietrādi URL."
+        "localInvalid": "Videoklipa vietrādis URL nav derīgs. Jums ir jāpārliecinās, vai esat norādījis derīgu YouTube vietrādi URL.",
+        "public": {
+          "invalidId": "Nederīgs videoklipa ID.",
+          "notConfigured": "Multivides galapunkts nav konfigurēts.",
+          "notFound": "Informāciju no video neizdevās izgūt."
+        }
       }
     }
   },

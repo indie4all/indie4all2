@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "De URL voor de video is ongeldig. U moet ervoor zorgen dat u een geldige URL van IndieMedia of Youtube opgeeft.",
-        "localInvalid": "De URL voor de video is ongeldig. Je moet ervoor zorgen dat je een geldige YouTube-URL opgeeft."
+        "localInvalid": "De URL voor de video is ongeldig. Je moet ervoor zorgen dat je een geldige YouTube-URL opgeeft.",
+        "public": {
+          "invalidId": "Ongeldige video-ID.",
+          "notConfigured": "Media-eindpunt niet geconfigureerd.",
+          "notFound": "De informatie uit de video kon niet worden opgehaald."
+        }
       }
     }
   },

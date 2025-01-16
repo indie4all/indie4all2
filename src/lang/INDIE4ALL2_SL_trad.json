@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "URL za videoposnetek ni veljaven. Zagotoviti morate veljaven URL iz indieMedia ali Youtube.",
-        "localInvalid": "URL za videoposnetek ni veljaven. Prepričati se morate, da ste zagotovili veljaven URL youTuba."
+        "localInvalid": "URL za videoposnetek ni veljaven. Prepričati se morate, da ste zagotovili veljaven URL youTuba.",
+        "public": {
+          "invalidId": "Neveljaven ID videoposnetka.",
+          "notConfigured": "Končna točka predstavnosti ni konfigurirana.",
+          "notFound": "Informacij iz videoposnetka ni bilo mogoče pridobiti."
+        }
       }
     }
   },

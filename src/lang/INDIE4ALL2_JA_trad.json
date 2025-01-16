@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "動画の URL が無効です。インディーズメディアまたは Youtube から有効な URL を提供する必要があります。",
-        "localInvalid": "動画の URL が無効です。有効な YouTube URL を指定していることを確認する必要があります。"
+        "localInvalid": "動画の URL が無効です。有効な YouTube URL を指定していることを確認する必要があります。",
+        "public": {
+          "invalidId": "動画 ID が無効です。",
+          "notConfigured": "メディア エンドポイントが設定されていません。",
+          "notFound": "ビデオから情報を取得できませんでした。"
+        }
       }
     }
   },

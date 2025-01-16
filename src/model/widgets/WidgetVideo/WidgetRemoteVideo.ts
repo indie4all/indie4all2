@@ -4,6 +4,8 @@ import "./styles.scss";
 import { InputWidgetVideoData } from "../../../types";
 import WidgetVideo from "./WidgetVideo";
 import HasFilePickerElement from "../mixings/HasFilePickerElement";
+import Config from "../../../Config";
+import I18n from "../../../I18n";
 
 export default class WidgetRemoteVideo extends HasFilePickerElement(WidgetVideo) {
 
@@ -39,10 +41,45 @@ export default class WidgetRemoteVideo extends HasFilePickerElement(WidgetVideo)
     settingsOpened(): void {
         const model = this;
         model.toggleCaptionAndDescriptions(this.data.videourl);
-        $('#f-' + model.id + ' input[name="videourl"]').on('change', function (e) {
-            const videourl = (<HTMLInputElement>e.target).value;
-            model.toggleCaptionAndDescriptions(videourl);
+        $('#f-' + model.id + ' input[name="videourl"]').on('change', async function (e) {
             $("#modal-settings-body .errors").html('');
+            let videourl = (<HTMLInputElement>e.target).value;
+            if (!Utils.isPublicMediaVideoURL(videourl)) {
+                // Legacy videos can use captions and descriptions
+                model.toggleCaptionAndDescriptions(videourl);
+                return;
+            }
+            const { default: alertErrorTemplate } = await import("../../../views/alertError.hbs");
+            const i18n = I18n.getInstance();
+            const mediaResourcesURL = Config.getMediaResourcesURL();
+            const id = Utils.getPublicMediaVideoId(videourl);
+            // Media endpoint not configured
+            if (!mediaResourcesURL) {
+                $("#modal-settings-body .errors").html(alertErrorTemplate({
+                    errorText: i18n.value("errors.Video.videourl.public.notConfigured")
+                }));
+                $(this).val('');
+                return;
+            }
+            if (!id) {
+                $("#modal-settings-body .errors").html(alertErrorTemplate({ errorText: i18n.value("errors.Video.videourl.public.invalidId") }));
+                $(this).val('');
+                return;
+            }
+            // Get video info
+            const headers = new Headers();
+            headers.append("Accept", "application/json");
+            const response = await fetch(`${mediaResourcesURL}/content/public/video/info/${id}`, { headers });
+            // Cannot retrieve video info or it is not a public video
+            if (response.status !== 200) {
+                $("#modal-settings-body .errors").html(alertErrorTemplate({ errorText: i18n.value("errors.Video.videourl.public.notFound") }));
+                $(this).val('');
+                return;
+            }
+            // Get the real video url using the endpointTranscoded value
+            const info = await response.json();
+            videourl = `${mediaResourcesURL}/content/${info.endpointTranscoded}`;
+            $(this).val(videourl);
         });
         this.initFilePicker($('#f-' + model.id + ' input[name="videourl"]'), false);
         this.initFilePicker($('#f-' + model.id + ' input[name="captions"]'));

@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "L’URL de la vidéo n’est pas valide. Vous devez vous assurer de fournir une URL valide provenant d’IndieMedia ou de Youtube.",
-        "localInvalid": "L’URL de la vidéo n’est pas valide. Vous devez vous assurer que vous fournissez une URL YouTube valide."
+        "localInvalid": "L’URL de la vidéo n’est pas valide. Vous devez vous assurer que vous fournissez une URL YouTube valide.",
+        "public": {
+          "invalidId": "ID vidéo non valide.",
+          "notConfigured": "Le point de terminaison multimédia n’est pas configuré.",
+          "notFound": "Les informations de la vidéo n’ont pas pu être récupérées."
+        }
       }
     }
   },

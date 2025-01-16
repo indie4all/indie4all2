@@ -128,6 +128,17 @@ export default class Utils {
         return !!url.match(p);
     }
 
+    static isPublicMediaVideoURL(url: string): boolean {
+        const pattern = /^https:\/\/indiemedia.upct.es\/videoCC\/[0-9a-zA-Z]{1,64}\/VIDEO/
+        return !!url.match(pattern);
+    }
+
+    static getPublicMediaVideoId(url: string): string {
+        const pattern = /^https:\/\/indiemedia.upct.es\/videoCC\/([0-9a-f]{32})\/VIDEO/
+        const match = url.match(pattern);
+        return match ? match[1] : null;
+    }
+
     static isRelativeURL(url: string): boolean {
         return url.startsWith("/");
     }

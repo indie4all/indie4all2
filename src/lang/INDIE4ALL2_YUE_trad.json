@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "視頻嘅網址無效。 您必須確保提供來自IndieMedia或Youtube的有效URL。",
-        "localInvalid": "視頻嘅網址無效。 你需要確保提供有效的YouTube網址。"
+        "localInvalid": "視頻嘅網址無效。 你需要確保提供有效的YouTube網址。",
+        "public": {
+          "invalidId": "視頻ID無效。",
+          "notConfigured": "未配置媒體終端節點。",
+          "notFound": "無法檢索視頻中嘅信息。"
+        }
       }
     }
   },

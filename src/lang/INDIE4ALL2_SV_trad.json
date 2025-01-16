@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "Webbadressen till videon är ogiltig. Du måste se till att ange en giltig webbadress från IndieMedia eller Youtube.",
-        "localInvalid": "Webbadressen till videon är ogiltig. Du måste se till att du anger en giltig YouTube-webbadress."
+        "localInvalid": "Webbadressen till videon är ogiltig. Du måste se till att du anger en giltig YouTube-webbadress.",
+        "public": {
+          "invalidId": "Ogiltigt video-id.",
+          "notConfigured": "Medieslutpunkten har inte konfigurerats.",
+          "notFound": "Informationen från videon kunde inte hämtas."
+        }
       }
     }
   },

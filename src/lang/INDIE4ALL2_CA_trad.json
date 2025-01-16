@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "L'URL establert per al vídeo no és vàlid. Has d'assegurar-te que proporciones un URL vàlid d'IndieMedia o YouTube",
-        "localInvalid": "L'URL establert per al vídeo no és vàlid. Assegurat que proporciones un URL de YouTube vàlid "
+        "localInvalid": "L'URL establert per al vídeo no és vàlid. Assegurat que proporciones un URL de YouTube vàlid ",
+        "public": {
+          "invalidId": "ID de vídeo invàlid.",
+          "notConfigured": "Endpoint multimèdia no configurat.",
+          "notFound": "No es va poder recuperar la informació del vídeo."
+        }
       }
     }
   },

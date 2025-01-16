@@ -580,7 +580,12 @@
     "Video": {
       "videourl": {
         "invalid": "Nettadressen til videoen er ugyldig. Du må sørge for å oppgi en gyldig URL fra IndieMedia eller Youtube.",
-        "localInvalid": "Nettadressen til videoen er ugyldig. Du må sørge for at du oppgir en gyldig YouTube-nettadresse."
+        "localInvalid": "Nettadressen til videoen er ugyldig. Du må sørge for at du oppgir en gyldig YouTube-nettadresse.",
+        "public": {
+          "invalidId": "Ugyldig video-ID.",
+          "notConfigured": "Medieendepunktet er ikke konfigurert.",
+          "notFound": "Informasjonen fra videoen kunne ikke hentes."
+        }
       }
     }
   },

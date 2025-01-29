@@ -1613,7 +1613,7 @@
           "yes": "Igen"
         },
         "url": {
-          "help": "Szövegbevitellel adja meg a videó URL-jét (youtube, vimeo...)",
+          "help": "Szövegbevitel használata a videó URL-jének megadásához, ha az a YouTube-ról származik",
           "label": "Videó URL-címe",
           "placeholder": "Példa: https://example.com/video.mp4"
         }

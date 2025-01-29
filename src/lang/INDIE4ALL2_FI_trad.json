@@ -1613,7 +1613,7 @@
           "yes": "Kyllä"
         },
         "url": {
-          "help": "Kirjoita videosi URL-osoite tekstinsyötöllä (youtube, vimeo...)",
+          "help": "Kirjoita videon URL-osoite tekstisyötteellä, jos se on YouTubesta",
           "label": "Videon URL-osoite",
           "placeholder": "Esimerkki: https://example.com/video.mp4"
         }

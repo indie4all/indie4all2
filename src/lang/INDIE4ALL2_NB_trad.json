@@ -1613,7 +1613,7 @@
           "yes": "Ja"
         },
         "url": {
-          "help": "Bruk tekstinngang for å skrive inn nettadressen til videoen din (youtube, vimeo ...)",
+          "help": "Bruk tekstinndata til å skrive inn nettadressen til videoen din hvis den er fra YouTube",
           "label": "URL-adresse for video",
           "placeholder": "Eksempel: https://example.com/video.mp4"
         }

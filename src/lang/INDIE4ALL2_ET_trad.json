@@ -1613,7 +1613,7 @@
           "yes": "Jah"
         },
         "url": {
-          "help": "Kasutage oma video URL-i sisestamiseks tekstisisestust (youtube, vimeo ...)",
+          "help": "Video URL-i sisestamine tekstisisestuse abil (kui see pärineb YouTube'ist)",
           "label": "Video URL",
           "placeholder": "Näide: https://example.com/video.mp4"
         }

@@ -1613,7 +1613,7 @@
           "yes": "Da"
         },
         "url": {
-          "help": "Utilizați introducerea textului pentru a introduce adresa URL a videoclipului (youtube, vimeo ...)",
+          "help": "Folosește introducerea textului pentru a introduce adresa URL a videoclipului dacă este de pe YouTube",
           "label": "Adresa URL a videoclipului",
           "placeholder": "Exemplu: https://example.com/video.mp4"
         }

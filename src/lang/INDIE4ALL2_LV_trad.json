@@ -1613,7 +1613,7 @@
           "yes": "Jā"
         },
         "url": {
-          "help": "Izmantojiet teksta ievadi, lai ievadītu sava videoklipa URL (youtube, vimeo...)",
+          "help": "Izmantojiet teksta ievadi, lai ievadītu videoklipa URL, ja tas ir no YouTube",
           "label": "Videoklipa URL",
           "placeholder": "Piemērs: https://example.com/video.mp4"
         }

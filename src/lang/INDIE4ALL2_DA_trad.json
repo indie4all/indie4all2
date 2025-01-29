@@ -1613,7 +1613,7 @@
           "yes": "Ja"
         },
         "url": {
-          "help": "Brug tekstinput til at indtaste webadressen til din video (youtube, vimeo ...)",
+          "help": "Brug tekstinput til at indtaste din videos webadresse, hvis den er fra YouTube",
           "label": "URL-adresse til video",
           "placeholder": "Eksempel: https://example.com/video.mp4"
         }

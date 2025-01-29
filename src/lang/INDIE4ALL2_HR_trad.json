@@ -1613,7 +1613,7 @@
           "yes": "Da"
         },
         "url": {
-          "help": "Pomoću unosa teksta unesite URL videozapisa (youtube, vimeo...)",
+          "help": "Unos teksta za unos URL-a videozapisa ako je s YouTubea",
           "label": "URL videozapisa",
           "placeholder": "Primjer: https://example.com/video.mp4"
         }

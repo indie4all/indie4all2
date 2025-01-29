@@ -1613,7 +1613,7 @@
           "yes": "Ja"
         },
         "url": {
-          "help": "Gebruik tekstinvoer om de URL van je video in te voeren (youtube, vimeo...)",
+          "help": "Gebruik tekstinvoer om de URL van je video in te voeren als deze afkomstig is van YouTube",
           "label": "Video-URL",
           "placeholder": "Voorbeeld: https://example.com/video.mp4"
         }

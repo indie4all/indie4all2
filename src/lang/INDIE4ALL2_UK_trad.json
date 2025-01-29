@@ -1613,7 +1613,7 @@
           "yes": "Так"
         },
         "url": {
-          "help": "Введіть текст, щоб ввести URL-адресу свого відео (youtube, vimeo...)",
+          "help": "Як ввести URL-адресу відео за допомогою тексту, якщо воно з YouTube",
           "label": "URL-адреса відео",
           "placeholder": "Приклад: https://example.com/video.mp4"
         }

@@ -1613,7 +1613,7 @@
           "yes": "Si"
         },
         "url": {
-          "help": "Usa a entrada de texto para introducir a URL do teu vídeo (Youtube, Vimeo...)",
+          "help": "Usa a entrada de texto para introducir a URL de tu vídeo se é de YouTube",
           "label": "URL do vídeo",
           "placeholder": "Exemplo: https://example.com/video.mp4"
         }

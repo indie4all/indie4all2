@@ -1613,7 +1613,7 @@
           "yes": "Áno"
         },
         "url": {
-          "help": "Pomocou textového vstupu zadajte adresu URL svojho videa (youtube, vimeo...)",
+          "help": "Pomocou textového vstupu zadajte webovú adresu videa, ak pochádza zo služby YouTube",
           "label": "Webová adresa videa",
           "placeholder": "Príklad: https://example.com/video.mp4"
         }

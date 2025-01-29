@@ -1613,7 +1613,7 @@
           "yes": "Tak"
         },
         "url": {
-          "help": "Użyj tekstu wejściowego, aby wprowadzić adres URL swojego filmu (youtube, vimeo...)",
+          "help": "Użyj wprowadzania tekstu, aby wpisać adres URL filmu, jeśli pochodzi on z YouTube",
           "label": "Adres URL filmu",
           "placeholder": "Przykład: https://example.com/video.mp4"
         }

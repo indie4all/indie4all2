@@ -1613,7 +1613,7 @@
           "yes": "Taip"
         },
         "url": {
-          "help": "Norėdami įvesti vaizdo įrašo URL, naudokite teksto įvestį (youtube, vimeo...)",
+          "help": "Teksto įvesties naudojimas norint įvesti vaizdo įrašo URL, jei jis yra iš \"YouTube\"",
           "label": "Vaizdo įrašo URL",
           "placeholder": "Pavyzdys: https://example.com/video.mp4"
         }

@@ -1613,7 +1613,7 @@
           "yes": "Iva"
         },
         "url": {
-          "help": "Uża l-input tat-test biex iddaħħal il-URL tal-vidjo tiegħek (youtube, vimeo...)",
+          "help": "Uża l-input tat-test biex iddaħħal il-URL tal-vidjo tiegħek jekk huwa minn YouTube",
           "label": "URL tal-vidjo",
           "placeholder": "Eżempju: https://example.com/video.mp4"
         }

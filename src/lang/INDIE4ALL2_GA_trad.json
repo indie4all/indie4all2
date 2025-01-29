@@ -1613,7 +1613,7 @@
           "yes": "Tá"
         },
         "url": {
-          "help": "Bain úsáid as ionchur téacs chun URL d'fhíseáin a iontráil (youtube, vimeo...)",
+          "help": "Bain úsáid as ionchur téacs chun URL d'fhíseáin a iontráil má tá sé ó YouTube",
           "label": "URL an fhíseáin",
           "placeholder": "Sampla: https://example.com/video.mp4"
         }

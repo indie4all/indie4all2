@@ -1613,7 +1613,7 @@
           "yes": "係"
         },
         "url": {
-          "help": "使用文本輸入輸入視頻的URL（youtube，vimeo...）",
+          "help": "使用文本輸入輸入視頻嘅URL （如果視頻來自YouTube ）",
           "label": "視頻網址",
           "placeholder": "示例：https://example.com/video.mp4"
         }

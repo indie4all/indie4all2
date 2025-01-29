@@ -1613,7 +1613,7 @@
           "yes": "Ja"
         },
         "url": {
-          "help": "Använd textinmatning för att ange webbadressen till din video (youtube, vimeo ...)",
+          "help": "Använd textinmatning för att ange videons webbadress om den kommer från YouTube",
           "label": "Webbadress till video",
           "placeholder": "Exempel: https://example.com/video.mp4"
         }

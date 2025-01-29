@@ -1613,7 +1613,7 @@
           "yes": "Bai"
         },
         "url": {
-          "help": "Erabili testu-sarrera zure bideoaren URLa sartzeko (youtube, vimeo...)",
+          "help": "Erabili testu-sarrera zure bideoaren URL-a Sartzeko, YouTubekoa bada",
           "label": "Bideoaren URLa",
           "placeholder": "Adibidea: https://example.com/video.mp4"
         }

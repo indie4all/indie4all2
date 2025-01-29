@@ -1613,7 +1613,7 @@
           "yes": "Da"
         },
         "url": {
-          "help": "Uporabite vnos besedila za vnos URL vašega videoposnetka (youtube, vimeo...)",
+          "help": "Uporaba besedilnega vnosa za vnos URL-ja videoposnetka, če je iz YouTuba.",
           "label": "URL videa",
           "placeholder": "Primer: https://example.com/video.mp4"
         }

@@ -48,6 +48,8 @@ export interface ConfigOptions {
     widgetsBlacklist: string[]
     // List of widgets to block in the editor -> if null no widgets are blocked
     widgetsWhitelist: string[]
+    // INDIeMedia URL
+    indieMediaURL?: string
 }
 
 /** Edit form data **/

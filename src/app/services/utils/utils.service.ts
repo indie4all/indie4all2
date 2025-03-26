@@ -156,12 +156,14 @@ export default class UtilsService {
     }
 
     isPublicMediaVideoURL(url: string): boolean {
-        const pattern = /^https:\/\/indiemedia.upct.es\/videoCC\/[0-9a-zA-Z]{1,64}\/VIDEO/
-        return !!url.match(pattern);
+        const indieMediaURL = Config.getIndieMediaURL();
+        if (!indieMediaURL) return false;
+        const pattern = /\/videoCC\/[0-9a-zA-Z]{1,64}\/VIDEO/
+        return url.startsWith(indieMediaURL) && !!url.match(pattern);
     }
 
     getPublicMediaVideoId(url: string): string {
-        const pattern = /^https:\/\/indiemedia.upct.es\/videoCC\/([0-9a-f]{32})\/VIDEO/
+        const pattern = /\/videoCC\/([0-9a-f]{32})\/VIDEO/
         const match = url.match(pattern);
         return match ? match[1] : null;
     }

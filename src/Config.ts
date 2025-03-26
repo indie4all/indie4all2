@@ -47,6 +47,8 @@ export default class Config {
     private static widgetsBlacklist: string[] = null;
     // Server URL to use Artificial Intelligence for creating/updating content
     private static aiURL: string = null;
+    // INDIeMedia URL
+    private static indieMediaURL: string = null;
 
     public static setOptions(options: ConfigOptions) {
         if (typeof options.enablePWA === 'boolean')
@@ -95,6 +97,8 @@ export default class Config {
             this.setWidgetsBlacklist(options.widgetsBlacklist)
         if (typeof options.aiURL === 'string')
             this.setAIURL(options.aiURL)
+        if (typeof options.indieMediaURL === 'string')
+            this.setIndieMediaURL(options.indieMediaURL)
     }
 
     public static setAIURL(value: string) {
@@ -283,6 +287,14 @@ export default class Config {
 
     public static getWidgetsBlacklist(): string[] {
         return this.widgetsBlacklist;
+    }
+
+    public static getIndieMediaURL(): string {
+        return this.indieMediaURL;
+    }
+
+    public static setIndieMediaURL(value: string) {
+        this.indieMediaURL = value;
     }
 
 }

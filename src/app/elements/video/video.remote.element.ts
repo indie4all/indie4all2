@@ -28,6 +28,7 @@ export default class VideoRemoteElement extends HasFilePickerElement(VideoElemen
         const model = this;
         model.toggleCaptionAndDescriptions(this.data.videourl);
         $('#f-' + model.id + ' input[name="videourl"]').on('change', async (e) => {
+            const input = e.target as HTMLInputElement;
             $(".widget-editor-body .errors").html('');
             let videourl = (<HTMLInputElement>e.target).value;
             if (!this.utils.isPublicMediaVideoURL(videourl)) {
@@ -41,13 +42,13 @@ export default class VideoRemoteElement extends HasFilePickerElement(VideoElemen
             if (!mediaResourcesURL) {
                 const errorsPlaceholder = document.querySelector('.widget-editor-body .errors') as HTMLElement;
                 this.alert.danger(errorsPlaceholder, this.i18n.value("errors.Video.videourl.public.notConfigured"));
-                $(this).val('');
+                input.value = '';
                 return;
             }
             if (!id) {
                 const errorsPlaceholder = document.querySelector('.widget-editor-body .errors') as HTMLElement;
                 this.alert.danger(errorsPlaceholder, this.i18n.value("errors.Video.videourl.public.invalidId"));
-                $(this).val('');
+                input.value = '';
                 return;
             }
             // Get video info
@@ -58,13 +59,13 @@ export default class VideoRemoteElement extends HasFilePickerElement(VideoElemen
             if (response.status !== 200) {
                 const errorsPlaceholder = document.querySelector('.widget-editor-body .errors') as HTMLElement;
                 this.alert.danger(errorsPlaceholder, this.i18n.value("errors.Video.videourl.public.notFound"));
-                $(this).val('');
+                input.value = '';
                 return;
             }
             // Get the real video url using the endpointTranscoded value
             const info = await response.json();
             videourl = `${mediaResourcesURL}/content/${info.endpointTranscoded}`;
-            $(this).val(videourl);
+            input.value = videourl;
         });
         this.initFilePicker($('#f-' + model.id + ' input[name="videourl"]'), false);
         this.initFilePicker($('#f-' + model.id + ' input[name="captions"]'));

@@ -4,6 +4,23 @@
     "viewImage": "Žiūrėti paveikslėlį"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Sukurkite modelį naudodami AI"
+        },
+        "query": "Užklausos tekstas:",
+        "query-placeholder": "Parašykite savo užklausą čia",
+        "section": {
+          "create": "Sukurkite skyrių naudodami AI"
+        },
+        "submit": "Siųsti",
+        "widget": {
+          "create": "Sukurkite valdiklį naudodami AI",
+          "update": "Atnaujinkite valdiklį naudodami AI"
+        }
+      }
+    },
     "alt": {
       "help": "Tai yra alternatyvus vaizdo aprašymo tekstas prieinamumo požiūriu",
       "label": "Alternatyvusis vaizdo tekstas",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Konteinerio pavadinimas neteisingas. Jūs turite jį sukurti."
       }
+    },
+    "AI": {
+      "AI-0000": "Nežinoma klaida",
+      "AI-1000": "Šaltinis nerastas",
+      "AI-1001": "\"Azure OpenAI\" spartos riba buvo viršyta. Bandykite dar kartą vėliau.",
+      "AI-1002": "Schema pavadinta \"{{name}}\" nerasta",
+      "AI-1003": "Valdiklis su ID '{{id}}' nerastas",
+      "AI-1004": "Skiltis su ID '{{id}}' nerasta",
+      "AI-1005": "Modelio schema nerasta",
+      "AI-1006": "Schema su aprašymu \"{{description}}\" nerasta",
+      "AI-1007": "Netinkamas JSON turinys: '{{json}}'",
+      "AI-1008": "Nepavyko patvirtinti pateiktų duomenų",
+      "sorry": "Atsiprašome, negalėjau apdoroti jūsų atsakymo"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Pridėti skyrių",
+    "addSectionAI": "Pridėti skyrių su AI",
+    "ai": "Sukurkite modelį naudodami AI",
     "clear": "Ištrinti turinį",
     "download": "Atsisiųsti įrenginį",
     "importSection": "Importavimo skyrius",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Turinio įtraukimas",
+    "ai-edit-widget": "Redaguokite valdiklį naudodami AI",
     "delete": "Naikinti elementą",
     "duplicate": "Besidubliuojantis elementas",
     "edit": "Turinio redagavimas",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Pridėkite valdiklį naudodami AI",
     "deleteSection": "Naikinti skyrių",
     "duplicate": "Pasikartojantis skyrius",
     "edit": "Informacijos redagavimas",
@@ -942,6 +976,7 @@
           "optionType": "Vaikinas"
         },
         "modalTitle": "Valdiklių bankas",
+        "notFound": "Nerasta valdiklių",
         "placeholderGroup": "Grupė",
         "placeholderTag": "Paieška pagal žymos pavadinimą",
         "placeholderTitle": "Paieška pagal valdiklio pavadinimą",
@@ -1541,7 +1576,7 @@
       "prev": "Daiktas dar nenustatytas..."
     },
     "Test": {
-      "label": "Bandymo tipas",
+      "label": "Klausimų konteineris",
       "questionSelect": "Pasirinkite klausimo tipą, kurį norite įtraukti į apklausą"
     },
     "TextBlock": {

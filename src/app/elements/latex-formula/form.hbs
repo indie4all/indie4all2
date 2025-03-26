@@ -1,0 +1,19 @@
+<form id="f-{{instanceId}}">
+    <div class="mb-3">
+        <label for="formula">{{translate "widgets.LatexFormula.form.caption.label"}}</label>
+        <input type="text" class="form-control" name="caption" 
+            placeholder="{{translate "widgets.LatexFormula.form.caption.placeholder"}}" value="{{caption}}" 
+            autocomplete="off"></input>
+        <small class="form-text text-muted">
+            {{translate "widgets.LatexFormula.form.caption.help"}}
+        </small>
+    </div>
+    <div class="mb-3">
+        <label for="formula">{{translate "widgets.LatexFormula.form.formula.label"}}</label>
+        <textarea cols="3" data-content="formula" class="form-control formula" name="formula" 
+            placeholder="{{translate "widgets.LatexFormula.form.formula.placeholder"}}" 
+            required>{{formula}}</textarea>
+        <small class="form-text text-muted">{{translate "widgets.LatexFormula.form.formula.help"}}</small>
+        <div class="formula-preview" data-content="formula-preview"></div>
+    </div>
+</form>

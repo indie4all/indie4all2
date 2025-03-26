@@ -1,1 +1,0 @@
-(self.webpackChunkCDN=self.webpackChunkCDN||[]).push([[9788],{79788:()=>{Prism.languages.hsts={directive:{pattern:/\b(?:includeSubDomains|max-age|preload)(?=[\s;=]|$)/i,alias:"property"},operator:/=/,punctuation:/;/}}}]);

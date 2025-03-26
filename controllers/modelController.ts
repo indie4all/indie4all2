@@ -43,7 +43,7 @@ const copyAssets = async function (folder: string, color: string, cover: string,
     // Remove scorm libraries if the unit is not of SCORM type
     if (mode !== "SCORM") {
         logger.info("Removing scorm-related assets");
-        await fs.rm(folder + '/scorm/', { recursive: true, force: true });
+        await fs.rm(folder + '/scorm/', { recursive: true, force: true, maxRetries: 3, retryDelay: 1000 });
     }
 }
 
@@ -100,7 +100,7 @@ const packModel = async function (folder: string, model: any) {
     await copyAssets(`${folder}/${config.get("folder.assets")}`, model.color, model.cover, model.mode);
     logger.info("Zipping the generated unit folder");
     const binary = generateZip(folder);
-    fs.rm(folder, { recursive: true, force: true });
+    await fs.rm(folder, { recursive: true, force: true, maxRetries: 3, retryDelay: 1000 });
     return binary;
 }
 

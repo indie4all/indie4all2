@@ -4,6 +4,23 @@
     "viewImage": "Zobacz zdjęcie"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Tworzenie modelu za pomocą sztucznej inteligencji"
+        },
+        "query": "Tekst zapytania:",
+        "query-placeholder": "Napisz swoje zapytanie tutaj",
+        "section": {
+          "create": "Utwórz sekcję za pomocą sztucznej inteligencji"
+        },
+        "submit": "Wyślij",
+        "widget": {
+          "create": "Utwórz widżet za pomocą sztucznej inteligencji",
+          "update": "Aktualizuj widżet za pomocą sztucznej inteligencji"
+        }
+      }
+    },
     "alt": {
       "help": "Jest to alternatywny tekst opisu obrazu pod względem dostępności",
       "label": "Tekst alternatywny dla obrazu",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Tytuł kontenera jest nieprawidłowy. Musisz go ustanowić."
       }
+    },
+    "AI": {
+      "AI-0000": "Nieznany błąd",
+      "AI-1000": "Nie znaleziono zasobu",
+      "AI-1001": "Przekroczono limit szybkości usługi Azure OpenAI. Spróbuj ponownie później.",
+      "AI-1002": "Nie znaleziono schematu o nazwie \"{{name}}\"",
+      "AI-1003": "Nie znaleziono widżetu o identyfikatorze '{{id}}'",
+      "AI-1004": "Nie znaleziono sekcji o identyfikatorze '{{id}}'",
+      "AI-1005": "Nie znaleziono schematu dla modelu",
+      "AI-1006": "Nie znaleziono schematu z opisem '{{description}}'",
+      "AI-1007": "Nieprawidłowa zawartość JSON: '{{json}}'",
+      "AI-1008": "Nieudana walidacja podanych danych",
+      "sorry": "Przepraszamy, nie mogę przetworzyć Twojej odpowiedzi"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Dodaj sekcję",
+    "addSectionAI": "Dodaj sekcję za pomocą sztucznej inteligencji",
+    "ai": "Tworzenie modelu za pomocą sztucznej inteligencji",
     "clear": "Wymazywanie zawartości",
     "download": "Jednostka pobierania",
     "importSection": "Sekcja importu",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Dodawanie treści",
+    "ai-edit-widget": "Edytuj widżet za pomocą sztucznej inteligencji",
     "delete": "Usuń element",
     "duplicate": "Zduplikowany element",
     "edit": "Edytowanie zawartości",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Dodaj widżet ze sztuczną inteligencją",
     "deleteSection": "Usuń sekcję",
     "duplicate": "Zduplikowana sekcja",
     "edit": "Edytowanie informacji",
@@ -942,6 +976,7 @@
           "optionType": "Facet"
         },
         "modalTitle": "Bank widżetów",
+        "notFound": "Nie znaleziono widżetów",
         "placeholderGroup": "Grupa",
         "placeholderTag": "Wyszukiwanie według nazwy tagu",
         "placeholderTitle": "Szukaj według tytułu widżetu",
@@ -1541,7 +1576,7 @@
       "prev": "Przedmiot nie został jeszcze ustalony..."
     },
     "Test": {
-      "label": "Typ badania",
+      "label": "Kontener pytań",
       "questionSelect": "Wybierz typ pytania, które chcesz dodać do quizu"
     },
     "TextBlock": {

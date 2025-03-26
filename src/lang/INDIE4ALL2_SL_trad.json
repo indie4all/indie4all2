@@ -4,6 +4,23 @@
     "viewImage": "Oglejte si sliko"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Ustvarjanje modela z umetno inteligenco"
+        },
+        "query": "Besedilo poizvedbe:",
+        "query-placeholder": "Tukaj napišite povpraševanje",
+        "section": {
+          "create": "Ustvarite razdelek z umetno inteligenco"
+        },
+        "submit": "Poslati",
+        "widget": {
+          "create": "Ustvarite pripomoček z umetno inteligenco",
+          "update": "Posodabljanje pripomočka z umetno inteligenco"
+        }
+      }
+    },
     "alt": {
       "help": "To je alternativno opisno besedilo za sliko v smislu dostopnosti",
       "label": "Nadomestno besedilo za sliko",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Naslov posode ni veljaven. Moraš vzpostaviti enega."
       }
+    },
+    "AI": {
+      "AI-0000": "Neznana napaka",
+      "AI-1000": "Vira ni mogoče najti",
+      "AI-1001": "Omejitev hitrosti Azure OpenAI je bila presežena. Poskusite znova pozneje.",
+      "AI-1002": "Shema z imenom \"{{name}}\" ni bila najdena",
+      "AI-1003": "Pripomoček z id '{{id}}' ni mogoče najti",
+      "AI-1004": "Odsek z id '{{id}}' ni najden",
+      "AI-1005": "Shema za model ni mogoče najti",
+      "AI-1006": "Shematski prikaz z opisom \"{{description}}\" ni mogoče najti",
+      "AI-1007": "Neveljavna vsebina JSON: '{{json}}'",
+      "AI-1008": "Neuspešno preverjanje veljavnosti predloženih podatkov",
+      "sorry": "Žal nisem mogel obdelati vašega odgovora"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Dodaj odsek",
+    "addSectionAI": "Dodajanje razdelka z umetno inteligenco",
+    "ai": "Ustvarjanje modela z umetno inteligenco",
     "clear": "Brisanje vsebine",
     "download": "Prenesi enoto",
     "importSection": "Razdelek uvoza",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Dodajanje vsebine",
+    "ai-edit-widget": "Urejanje pripomočka z umetno inteligenco",
     "delete": "Brisanje elementa",
     "duplicate": "Podvoji element",
     "edit": "Urejanje vsebine",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Dodajanje pripomočka z umetno inteligenco",
     "deleteSection": "Izbriši odsek",
     "duplicate": "Podvojeni odsek",
     "edit": "Urejanje informacij",
@@ -942,6 +976,7 @@
           "optionType": "Fant"
         },
         "modalTitle": "Banka pripomočkov",
+        "notFound": "Pripomočkov ni mogoče najti",
         "placeholderGroup": "Skupina",
         "placeholderTag": "Iskanje po imenu oznake",
         "placeholderTitle": "Iskanje po naslovu pripomočka",
@@ -1541,7 +1576,7 @@
       "prev": "Element še ni določen..."
     },
     "Test": {
-      "label": "Vrsta preskusa",
+      "label": "Vsebnik vprašanj",
       "questionSelect": "Izberite vrsto vprašanja, ki jo želite dodati kvizu"
     },
     "TextBlock": {

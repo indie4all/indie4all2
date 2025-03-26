@@ -4,6 +4,23 @@
     "viewImage": "Se billede"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Opret model med AI"
+        },
+        "query": "Forespørgselstekst:",
+        "query-placeholder": "Skriv din forespørgsel her",
+        "section": {
+          "create": "Opret sektion med AI"
+        },
+        "submit": "Sende",
+        "widget": {
+          "create": "Opret widget med AI",
+          "update": "Opdater widget med AI"
+        }
+      }
+    },
     "alt": {
       "help": "Dette er den alternative beskrivelsestekst til billedet med hensyn til tilgængelighed",
       "label": "Alternativ tekst til billedet",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Containertitlen er ugyldig. Du skal oprette en."
       }
+    },
+    "AI": {
+      "AI-0000": "Ukendt fejl",
+      "AI-1000": "Ressourcen blev ikke fundet",
+      "AI-1001": "Hastighedsgrænsen for Azure OpenAI er overskredet. Prøv igen senere.",
+      "AI-1002": "Skemaet med navnet '{{name}}' blev ikke fundet",
+      "AI-1003": "Widget med id '{{id}}' ikke fundet",
+      "AI-1004": "Afsnit med id '{{id}}' ikke fundet",
+      "AI-1005": "Skema for model blev ikke fundet",
+      "AI-1006": "Skematisk med beskrivelsen '{{description}}' ikke fundet",
+      "AI-1007": "Ugyldigt JSON-indhold: '{{json}}'",
+      "AI-1008": "Mislykket validering af leverede data",
+      "sorry": "Beklager, jeg kunne ikke behandle dit svar"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Tilføj sektion",
+    "addSectionAI": "Tilføj sektion med AI",
+    "ai": "Opret model med AI",
     "clear": "Slet indhold",
     "download": "Download enhed",
     "importSection": "Afsnittet Import",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Tilføj indhold",
+    "ai-edit-widget": "Rediger widget med AI",
     "delete": "Slet element",
     "duplicate": "Duplikeret element",
     "edit": "Rediger indhold",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Tilføj widget med AI",
     "deleteSection": "Afsnittet Slet",
     "duplicate": "Dupliker sektion",
     "edit": "Rediger oplysninger",
@@ -942,6 +976,7 @@
           "optionType": "Fyr"
         },
         "modalTitle": "Widget Bank",
+        "notFound": "Ingen widgets fundet",
         "placeholderGroup": "Gruppe",
         "placeholderTag": "Søg efter tagnavn",
         "placeholderTitle": "Søg efter widgettitel",
@@ -1541,7 +1576,7 @@
       "prev": "Varen er ikke etableret endnu..."
     },
     "Test": {
-      "label": "Testtype",
+      "label": "Spørgsmålsbeholder",
       "questionSelect": "Vælg en spørgsmålstype, du vil føje til quizzen"
     },
     "TextBlock": {

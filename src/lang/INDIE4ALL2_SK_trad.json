@@ -4,6 +4,23 @@
     "viewImage": "Pozri obrázok"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Vytvorenie modelu pomocou AI"
+        },
+        "query": "Text dotazu:",
+        "query-placeholder": "Tu napíšte svoj dopyt",
+        "section": {
+          "create": "Vytvorte sekciu pomocou AI"
+        },
+        "submit": "Poslať",
+        "widget": {
+          "create": "Vytvorte miniaplikáciu pomocou AI",
+          "update": "Aktualizácia miniaplikácie pomocou AI"
+        }
+      }
+    },
     "alt": {
       "help": "Toto je alternatívny popisný text obrázka z hľadiska prístupnosti",
       "label": "Alternatívny text obrázka",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Názov kontajnera je neplatný. Musíte si ho zriadiť."
       }
+    },
+    "AI": {
+      "AI-0000": "Neznáma chyba",
+      "AI-1000": "Zdroj sa nenašiel",
+      "AI-1001": "Limit rýchlosti Azure OpenAI bol prekročený. Skúste to znova neskôr.",
+      "AI-1002": "Schéma s názvom \"{{name}}\" sa nenašla",
+      "AI-1003": "Miniaplikácia s id '{{id}}' nenájdená",
+      "AI-1004": "Sekcia s id '{{id}}' nenájdená",
+      "AI-1005": "Schéma pre model sa nenašiel",
+      "AI-1006": "Schéma s popisom \"{{description}}\" nenájdená",
+      "AI-1007": "Neplatný obsah JSON: '{{json}}'",
+      "AI-1008": "Neúspešné overenie poskytnutých údajov",
+      "sorry": "Prepáčte, nepodarilo sa mi spracovať vašu odpoveď"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Pridať sekciu",
+    "addSectionAI": "Pridajte sekciu pomocou AI",
+    "ai": "Vytvorenie modelu pomocou AI",
     "clear": "Vymazanie obsahu",
     "download": "Stiahnuť jednotku",
     "importSection": "Sekcia Import",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Pridanie obsahu",
+    "ai-edit-widget": "Upravte miniaplikáciu pomocou AI",
     "delete": "Odstránenie položky",
     "duplicate": "Duplicitná položka",
     "edit": "Úprava obsahu",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Pridanie miniaplikácie pomocou AI",
     "deleteSection": "Odstrániť sekciu",
     "duplicate": "Duplicitná sekcia",
     "edit": "Úprava informácií",
@@ -942,6 +976,7 @@
           "optionType": "Chlap"
         },
         "modalTitle": "Banka miniaplikácií",
+        "notFound": "Nenašli sa žiadne widgety",
         "placeholderGroup": "Skupina",
         "placeholderTag": "Vyhľadávanie podľa názvu značky",
         "placeholderTitle": "Vyhľadávanie podľa názvu miniaplikácie",
@@ -1541,7 +1576,7 @@
       "prev": "Položka ešte nie je stanovená..."
     },
     "Test": {
-      "label": "Typ skúšky",
+      "label": "Kontajner otázok",
       "questionSelect": "Vyberte typ otázky, ktorú chcete pridať do kvízu"
     },
     "TextBlock": {

@@ -1,0 +1,24 @@
+<div id="ai-prompt-offcanvas" class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-header pb-0">
+        <h5 class="offcanvas-title" id="ai-prompt-offcanvas-title"></h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="{{translate 'common.close'}}"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+        <div class="ai-info">
+            <div id="ai-prompt-widget-type" class="d-none border bg-light h5 p-2 text-center mb-3"></div>
+            <div class="ai-conversation row">
+                <div id="ai-prompt-query" class="ai-prompt-text col-10 offset-2 p-4 my-1 bg-dark text-white"></div>
+                <div id="ai-prompt-response" class="ai-prompt-text col-10 p-4 my-2 my-1 bg-light text-dark"></div>
+            </div>
+        </div>
+        <form id="ai-prompt-form">
+            <div class="mb-3">
+                <label for="ai-prompt">{{translate 'common.ai.prompt.query'}}</label>
+                <textarea id="ai-prompt" class="form-control" rows="3" placeholder="{{translate 'common.ai.prompt.query-placeholder'}}" required></textarea>
+            </div>
+            <div class="d-grid mt-3">
+                <input class="btn btn-indie" type="submit" value="{{translate 'common.ai.prompt.submit'}}" />
+            </div>
+        </form>
+    </div>
+</div>

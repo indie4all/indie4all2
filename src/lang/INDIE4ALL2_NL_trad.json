@@ -4,6 +4,23 @@
     "viewImage": "Zie afbeelding"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Model maken met AI"
+        },
+        "query": "Tekst van de query:",
+        "query-placeholder": "Schrijf hier uw aanvraag",
+        "section": {
+          "create": "Sectie maken met AI"
+        },
+        "submit": "Verzenden",
+        "widget": {
+          "create": "Widget maken met AI",
+          "update": "Widget bijwerken met AI"
+        }
+      }
+    },
     "alt": {
       "help": "Dit is de alternatieve beschrijvingstekst voor de afbeelding in termen van toegankelijkheid",
       "label": "Alt-tekst voor de afbeelding",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "De containertitel is ongeldig. Je moet er een oprichten."
       }
+    },
+    "AI": {
+      "AI-0000": "Onbekende fout",
+      "AI-1000": "Resource niet gevonden",
+      "AI-1001": "De Azure OpenAI-snelheidslimiet is overschreden. Probeer het later opnieuw.",
+      "AI-1002": "Schema met de naam '{{name}}' niet gevonden",
+      "AI-1003": "Widget met id '{{id}}' niet gevonden",
+      "AI-1004": "Sectie met id '{{id}}' niet gevonden",
+      "AI-1005": "Schema voor model niet gevonden",
+      "AI-1006": "Schema met beschrijving '{{description}}' niet gevonden",
+      "AI-1007": "Ongeldige JSON-inhoud: '{{json}}'",
+      "AI-1008": "Mislukte validatie van verstrekte gegevens",
+      "sorry": "Sorry, ik kon je antwoord niet verwerken"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Sectie toevoegen",
+    "addSectionAI": "Sectie toevoegen met AI",
+    "ai": "Model maken met AI",
     "clear": "Inhoud wissen",
     "download": "Download unit",
     "importSection": "Sectie Importeren",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Inhoud toevoegen",
+    "ai-edit-widget": "Widget bewerken met AI",
     "delete": "Item verwijderen",
     "duplicate": "Object dupliceren",
     "edit": "Inhoud bewerken",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Widget toevoegen met AI",
     "deleteSection": "Sectie verwijderen",
     "duplicate": "Sectie dupliceren",
     "edit": "Informatie bewerken",
@@ -942,6 +976,7 @@
           "optionType": "Vent"
         },
         "modalTitle": "Widgetbank",
+        "notFound": "Geen widgets gevonden",
         "placeholderGroup": "Groep",
         "placeholderTag": "Zoeken op tagnaam",
         "placeholderTitle": "Zoeken op widgettitel",
@@ -1541,7 +1576,7 @@
       "prev": "Object nog niet vastgesteld..."
     },
     "Test": {
-      "label": "Test Type",
+      "label": "Container met vragen",
       "questionSelect": "Selecteer een vraagtype dat u aan de quiz wilt toevoegen"
     },
     "TextBlock": {

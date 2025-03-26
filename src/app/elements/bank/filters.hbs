@@ -1,0 +1,31 @@
+<div class="search-condition col-12">
+    <div class="row g-0">
+        <div class="col-2 search-operation">
+            <select class="form-select">
+                <option value="and"> {{ translate "widgets.Bank.modal.filter.optionAND"}} </option>
+                <option value="or"> {{ translate "widgets.Bank.modal.filter.optionOR"}} </option>
+                <option value="andnot"> {{ translate "widgets.Bank.modal.filter.optionANDNOT"}} </option>
+            </select>
+        </div>
+        <div class="col-2">
+            <select class="form-select search-field">
+                <option value="nombre">{{ translate "widgets.Bank.modal.filter.optionName"}}</option>
+                <option value="tag">{{ translate "widgets.Bank.modal.filter.optionTag"}}</option>
+                <option value="tipo">{{ translate "widgets.Bank.modal.filter.optionType"}}</option>
+            </select>
+        </div>
+        <div class="col-7">
+            <input type="search" class="form-control ds-input search-term" placeholder="{{ translate "widgets.Bank.modal.placeholderTitle"}}"> 
+        </div>
+        <div class="col-7 d-none">
+            <select class="form-control ds-input search-type">
+            {{#each types}}
+                <option value="{{this}}"> {{ translate (concat 'widgets.'this '.label') }} </option>
+            {{/each}}
+            </select>
+        </div>
+        <div class="col-1">
+            <button class="btn btn-delete-filter"> <i class="fas fa-trash-alt"></i></button>
+        </div>
+    </div>
+</div>

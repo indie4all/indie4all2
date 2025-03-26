@@ -4,6 +4,23 @@
     "viewImage": "Ara l-immaġni"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Oħloq mudell bl-AI"
+        },
+        "query": "Test tal-mistoqsija:",
+        "query-placeholder": "Ikteb l-inkjesta tiegħek hawn",
+        "section": {
+          "create": "Oħloq taqsima bl-IA"
+        },
+        "submit": "Tibgħat",
+        "widget": {
+          "create": "Oħloq Widget bl-AI",
+          "update": "Aġġorna widget bl-AI"
+        }
+      }
+    },
     "alt": {
       "help": "Dan huwa t-test ta' deskrizzjoni alternattiva għall-immaġni f'termini ta' aċċessibbiltà",
       "label": "Test Alt għall-immaġni",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "It-titlu tal-kontenitur huwa invalidu. Trid tistabbilixxi waħda."
       }
+    },
+    "AI": {
+      "AI-0000": "Żball mhux magħruf",
+      "AI-1000": "Ir-riżorsa ma nstabitx",
+      "AI-1001": "Il-limitu tar-rata Azure OpenAI inqabeż. Erġa' pprova aktar tard.",
+      "AI-1002": "Schema bl-isem '{{name}}' ma nstabx",
+      "AI-1003": "Widget bl-id '{{id}}' ma nstabx",
+      "AI-1004": "Sezzjoni b' id '{{id}}' ma nstabitx",
+      "AI-1005": "Schema għall-Mudell Ma Nstabx",
+      "AI-1006": "Skematika bid-deskrizzjoni '{{description}}' ma nstabitx",
+      "AI-1007": "Kontenut JSON invalidu: '{{json}}'",
+      "AI-1008": "Validazzjoni falluta tad-dejta pprovduta",
+      "sorry": "Jiddispjaċini, ma stajtx nipproċessa t-tweġiba tiegħek"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Żid sezzjoni",
+    "addSectionAI": "Żid taqsima bl-AI",
+    "ai": "Oħloq mudell bl-AI",
     "clear": "Ħassar il-kontenut",
     "download": "Niżżel l-unità",
     "importSection": "Taqsima tal-importazzjoni",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Żid il-kontenut",
+    "ai-edit-widget": "Editja widget bl-AI",
     "delete": "Ħassar l-item",
     "duplicate": "Oġġett duplikat",
     "edit": "Editja l-kontenut",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Żid widget bl-AI",
     "deleteSection": "Ħassar is-sezzjoni",
     "duplicate": "Sezzjoni duplikata",
     "edit": "Editja l-informazzjoni",
@@ -942,6 +976,7 @@
           "optionType": "Guy"
         },
         "modalTitle": "Widget Bank",
+        "notFound": "Ma nstab l-ebda widgets",
         "placeholderGroup": "Grupp",
         "placeholderTag": "Fittex bl-isem tat-tikketta",
         "placeholderTitle": "Fittex bit-titlu Widget",
@@ -1541,7 +1576,7 @@
       "prev": "Item għadu mhux stabbilit..."
     },
     "Test": {
-      "label": "Tip ta' Test",
+      "label": "Kontenitur tal-mistoqsijiet",
       "questionSelect": "Agħżel tip ta' mistoqsija li tixtieq iżżid mal-kwizz"
     },
     "TextBlock": {

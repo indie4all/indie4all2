@@ -1,0 +1,21 @@
+<form id="f-{{instanceId}}">
+    <div class="mb-3">
+        <label for="image">{{translate "widgets.SchemaItem.form.image.label"}}</label>
+        <input type="text" class="form-control" name="image" required 
+            placeholder="{{translate "widgets.SchemaItem.form.image.placeholder"}}" value="{{image}}" autocomplete="off" />
+        <small class="form-text text-muted">{{translate "widgets.SchemaItem.form.image.help"}}</small>
+    </div>
+    <div class="mb-3">
+        <label for="alt">{{translate "common.alt.label"}}</label>
+        <input type="text" class="form-control" name="alt" required autocomplete="off" 
+            placeholder="{{translate "common.alt.placeholder"}}" value="{{alt}}" />
+        <small class="form-text text-muted">{{translate "common.alt.help"}}</small>
+    </div>
+    <div class="preview-error alert alert-warning d-none">
+        {{translate "errors.common.preview"}}
+    </div>
+    <div class="mb-3 img-preview-wrapper d-none">
+        <p>{{translate "widgets.SchemaItem.form.prev"}}</p>
+        <img class="img-fluid img-preview" src="{{image}}" />
+    </div>
+</form>

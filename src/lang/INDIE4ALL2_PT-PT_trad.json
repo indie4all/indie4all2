@@ -4,6 +4,23 @@
     "viewImage": "Ver imagem"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Crie modelos com IA"
+        },
+        "query": "Texto da consulta:",
+        "query-placeholder": "Escreva sua pergunta aqui",
+        "section": {
+          "create": "Criar seção com IA"
+        },
+        "submit": "Enviar",
+        "widget": {
+          "create": "Criar widget com IA",
+          "update": "Widget de atualização com IA"
+        }
+      }
+    },
     "alt": {
       "help": "Este é o texto de descrição alternativo para a imagem em termos de acessibilidade",
       "label": "Texto alternativo para a imagem",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "O título do contêiner é inválido. Você deve estabelecer um."
       }
+    },
+    "AI": {
+      "AI-0000": "Erro desconhecido",
+      "AI-1000": "Recurso não encontrado",
+      "AI-1001": "O limite de taxa do Azure OpenAI foi excedido. Tente novamente mais tarde.",
+      "AI-1002": "Esquema denominado '{{name}}' não encontrado",
+      "AI-1003": "Widget com id '{{id}}' não encontrado",
+      "AI-1004": "Seção com id '{{id}}' não encontrada",
+      "AI-1005": "Esquema para modelo não encontrado",
+      "AI-1006": "Esquema com descrição '{{description}}' não encontrado",
+      "AI-1007": "Conteúdo JSON inválido: '{{json}}'",
+      "AI-1008": "Falha na validação dos dados fornecidos",
+      "sorry": "Desculpe, não consegui processar sua resposta"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Adicionar secção",
+    "addSectionAI": "Adicionar seção com IA",
+    "ai": "Crie modelos com IA",
     "clear": "Apagar conteúdo",
     "download": "Unidade de download",
     "importSection": "Secção Importar",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Adicionar conteúdo",
+    "ai-edit-widget": "Editar widget com IA",
     "delete": "Excluir item",
     "duplicate": "Item duplicado",
     "edit": "Editar conteúdo",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Adicionar widget com IA",
     "deleteSection": "Eliminar secção",
     "duplicate": "Secção duplicada",
     "edit": "Editar informações",
@@ -942,6 +976,7 @@
           "optionType": "Cara"
         },
         "modalTitle": "Banco de widgets",
+        "notFound": "Nenhum widget encontrado",
         "placeholderGroup": "Grupo",
         "placeholderTag": "Pesquisar por nome de tag",
         "placeholderTitle": "Pesquisar por título do widget",
@@ -1541,7 +1576,7 @@
       "prev": "Item ainda não estabelecido..."
     },
     "Test": {
-      "label": "Tipo de Ensaio",
+      "label": "Contentor de perguntas",
       "questionSelect": "Selecione um tipo de pergunta que deseja adicionar ao questionário"
     },
     "TextBlock": {

@@ -4,6 +4,23 @@
     "viewImage": "Vezi imaginea"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Creați un model cu AI"
+        },
+        "query": "Textul interogării:",
+        "query-placeholder": "Scrie-ți întrebarea aici",
+        "section": {
+          "create": "Creați o secțiune cu AI"
+        },
+        "submit": "Expedia",
+        "widget": {
+          "create": "Creați widget cu AI",
+          "update": "Actualizați widgetul cu AI"
+        }
+      }
+    },
     "alt": {
       "help": "Acesta este textul alternativ de descriere a imaginii în ceea ce privește accesibilitatea",
       "label": "Text alternativ pentru imagine",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Titlul containerului nu este valid. Trebuie să înființezi unul."
       }
+    },
+    "AI": {
+      "AI-0000": "Eroare necunoscută",
+      "AI-1000": "Resursa nu a fost găsită",
+      "AI-1001": "Limita de rată Azure OpenAI a fost depășită. Vă rugăm să încercați din nou mai târziu.",
+      "AI-1002": "Schema numită '{{name}}' nu a fost găsită",
+      "AI-1003": "Widget cu id '{{id}}' nu a fost găsit",
+      "AI-1004": "Secțiunea cu id '{{id}}' nu a fost găsită",
+      "AI-1005": "Schema pentru model nu a fost găsită",
+      "AI-1006": "Schema cu descrierea '{{description}}' nu a fost găsită",
+      "AI-1007": "Conținut JSON nevalid: '{{json}}'",
+      "AI-1008": "Validarea eșuată a datelor furnizate",
+      "sorry": "Îmi pare rău, nu am putut procesa răspunsul tău"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Adaugă secțiune",
+    "addSectionAI": "Adăugați o secțiune cu AI",
+    "ai": "Creați un model cu AI",
     "clear": "Ștergerea conținutului",
     "download": "Unitate de descărcare",
     "importSection": "Secțiunea Import",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Adăugați conținut",
+    "ai-edit-widget": "Editați widgetul cu AI",
     "delete": "Ștergere element",
     "duplicate": "Element duplicat",
     "edit": "Editarea conținutului",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Adăugați widget cu AI",
     "deleteSection": "Ștergeți secțiunea",
     "duplicate": "Secțiune duplicat",
     "edit": "Editați informațiile",
@@ -942,6 +976,7 @@
           "optionType": "Tip"
         },
         "modalTitle": "Banca widget",
+        "notFound": "Nu au fost găsite widget-uri",
         "placeholderGroup": "Grup",
         "placeholderTag": "Căutați după numele etichetei",
         "placeholderTitle": "Căutare după titlul widgetului",
@@ -1541,7 +1576,7 @@
       "prev": "Articol nestabilit încă..."
     },
     "Test": {
-      "label": "Tipul testului",
+      "label": "Container de întrebări",
       "questionSelect": "Selectați un tip de întrebare pe care doriți să îl adăugați la test"
     },
     "TextBlock": {

@@ -4,6 +4,23 @@
     "viewImage": "Pogledajte sliku"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Stvaranje modela pomoću umjetne inteligencije"
+        },
+        "query": "Tekst upita:",
+        "query-placeholder": "Ovdje napišite upit",
+        "section": {
+          "create": "Napravite odjeljak pomoću umjetne inteligencije"
+        },
+        "submit": "Slati",
+        "widget": {
+          "create": "Napravite widget pomoću umjetne inteligencije",
+          "update": "Ažurirajte widget pomoću umjetne inteligencije"
+        }
+      }
+    },
     "alt": {
       "help": "Ovo je alternativni tekst opisa slike u smislu pristupačnosti",
       "label": "Zamjenski tekst za sliku",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Naslov spremnika nije valjan. Morate ga uspostaviti."
       }
+    },
+    "AI": {
+      "AI-0000": "Nepoznata pogreška",
+      "AI-1000": "Resurs nije pronađen",
+      "AI-1001": "Prekoračeno je ograničenje brzine Azure OpenAI. Pokušajte ponovno kasnije.",
+      "AI-1002": "Shema pod nazivom '{{name}}' nije pronađena",
+      "AI-1003": "Widget s id-om '{{id}}' nije pronađen",
+      "AI-1004": "Odjeljak s id '{{id}}' nije pronađen",
+      "AI-1005": "Shema za model nije pronađen",
+      "AI-1006": "Shematski prikaz s opisom '{{description}}' nije pronađen",
+      "AI-1007": "Nevažeći JSON sadržaj: '{{json}}'",
+      "AI-1008": "Neuspješna provjera valjanosti dostavljenih podataka",
+      "sorry": "Žao mi je, nisam mogao obraditi vaš odgovor"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Dodaj sekciju",
+    "addSectionAI": "Dodajte odjeljak pomoću umjetne inteligencije",
+    "ai": "Stvaranje modela pomoću umjetne inteligencije",
     "clear": "Brisanje sadržaja",
     "download": "Jedinica za preuzimanje",
     "importSection": "Sekcija Uvoz",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Dodavanje sadržaja",
+    "ai-edit-widget": "Uredite widget pomoću umjetne inteligencije",
     "delete": "Izbriši stavku",
     "duplicate": "Dupliciraj stavku",
     "edit": "Uređivanje sadržaja",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Dodajte widget pomoću umjetne inteligencije",
     "deleteSection": "Brisanje sekcije",
     "duplicate": "Dupliciraj sekciju",
     "edit": "Uređivanje informacija",
@@ -942,6 +976,7 @@
           "optionType": "Momak"
         },
         "modalTitle": "Widget banka",
+        "notFound": "Nisu pronađeni widgeti",
         "placeholderGroup": "Grupa",
         "placeholderTag": "Pretraži po nazivu oznake",
         "placeholderTitle": "Pretraži po naslovu widgeta",
@@ -1541,7 +1576,7 @@
       "prev": "Stavka još nije uspostavljena..."
     },
     "Test": {
-      "label": "Vrsta testiranja",
+      "label": "Spremnik pitanja",
       "questionSelect": "Odaberite vrstu pitanja koju želite dodati u kviz"
     },
     "TextBlock": {

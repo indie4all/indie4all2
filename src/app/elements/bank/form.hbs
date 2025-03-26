@@ -1,0 +1,79 @@
+<form id="f-{{instanceId}}" class="modal-bank">
+    <div class="errors"></div>
+    <div class="row mb-3" id="search-filters">
+        <div class="search-condition col-12">
+            <div class="row g-0">
+                <div class="col-3 p-0">
+                    <select class="form-select col-3 search-field">
+                        <option value="nombre">{{ translate "widgets.Bank.modal.filter.optionName"}}</option>
+                        <option value="tag">{{ translate "widgets.Bank.modal.filter.optionTag"}}</option>
+                        <option value="tipo">{{ translate "widgets.Bank.modal.filter.optionType"}}</option>
+                    </select>
+                </div>
+                <div class="col-9 p-0">
+                    <input id="search-bank-widget" type="search" class="form-control ds-input search-term"
+                        placeholder="{{ translate "widgets.Bank.modal.placeholderTitle"}}">
+                </div>
+                <div class="col-9 p-0 d-none">
+                    <select class="form-select ds-input search-type">
+                        {{#each types}}
+                        <option value="{{this}}"> {{ translate (concat 'widgets.'this '.label') }}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 col-md-6 d-grid">
+            <button class="btn btn-secondary btn-add-filter" type="button">{{ translate
+                "widgets.Bank.modal.addFilter"}}</button>
+        </div>
+        <div class="col-12 col-md-6 d-grid">
+            <button class="btn btn-indie btn-search" type="button">{{translate "widgets.Bank.search"}}</button>
+        </div>
+    </div>
+    <div class="row options-bank-widgets mb-2">
+        <div class="col-12 col-lg-8">
+            <label class="col-form-label random-label">
+                <input name="random" class="me-1 mt-2 form-check-input" type="checkbox">
+                {{ translate "widgets.Bank.modal.randomTextPrev"}}
+                <input name="random-number" class="form-control w-25 d-inline" type="number" min="1">
+                {{ translate "widgets.Bank.modal.randomTextBefore"}}
+            </label>
+        </div>
+        <div class="col-12 col-lg-4">
+            <label class="col-form-label select-all-label">{{ translate "widgets.Bank.modal.selectAllText"}}
+                <input class="select-all-input form-check-input" type="checkbox">
+            </label>
+        </div>
+    </div>
+    <div class="panel-bank-widgets">
+        {{#each data}}
+            <button class="col-md-12 mb-3 align-items-center p-3 border border-secondary widget-button d-md-flex d-block" >
+                <div class="col-sm-12 col-md-1">
+                    <img src="{{{ img }}}">
+                </div>
+                <div class="col-sn-12 col-md-11 pl-4">
+                    <h3  class="h5"> {{ name }} </h3>
+                    <p class="mb-0"> {{ description }} </p>
+                    {{#if tags}}
+                        <ul class="list-tags justify-content-center justify-content-sm-start">
+                        {{#each tags}}
+                            <li><span class="badge bg-primary"><i class="fa-solid fa-tag"></i>{{this}}</span></li>
+                        {{/each}}
+                        </ul>
+                    {{/if}}
+                </div>
+                <input type="checkbox" name="widget[{{@index}}][checked]" class="input-checkbox">
+                <input type="hidden" name="widget[{{@index}}][type]" class="input-type" value="{{ type }}">
+                <input type="hidden" name="widget[{{@index}}][group]" class="input-group" value="{{ group }}">
+                <input type="hidden" name="widget[{{@index}}][content]" class="input-content" value="{{ content }}">
+            </button>
+        {{else}}
+            <div class="alert-no-widgets">
+                <span> {{ translate "widgets.Bank.modal.notFound"}} </span>
+            </div>
+        {{/each}}
+    </div>
+</form>

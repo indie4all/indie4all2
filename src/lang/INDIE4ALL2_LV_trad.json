@@ -4,6 +4,23 @@
     "viewImage": "Skatīt attēlu"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Modeļa izveide ar AI"
+        },
+        "query": "Vaicājuma teksts:",
+        "query-placeholder": "Uzrakstiet savu pieprasījumu šeit",
+        "section": {
+          "create": "Izveidojiet sadaļu ar AI"
+        },
+        "submit": "Sūtīt",
+        "widget": {
+          "create": "Izveidojiet logrīku, izmantojot AI",
+          "update": "Atjauniniet logrīku ar AI"
+        }
+      }
+    },
     "alt": {
       "help": "Šis ir attēla alternatīvais apraksta teksts pieejamības ziņā",
       "label": "Attēla alternatīvais teksts",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Konteinera nosaukums nav derīgs. Jums tas ir jāizveido."
       }
+    },
+    "AI": {
+      "AI-0000": "Nezināma kļūda",
+      "AI-1000": "Resurss nav atrasts",
+      "AI-1001": "Ir pārsniegts Azure OpenAI likmes ierobežojums. Lūdzu, vēlāk mēģiniet vēlreiz.",
+      "AI-1002": "Shēma ar nosaukumu \"{{name}}\" nav atrasta",
+      "AI-1003": "Logrīks ar id '{{id}}' nav atrasts",
+      "AI-1004": "Sadaļa ar id '{{id}}' nav atrasta",
+      "AI-1005": "shēma modelim nav atrasta",
+      "AI-1006": "Shematisks ar aprakstu \"{{description}}\" nav atrasts",
+      "AI-1007": "Nederīgs JSON saturs: '{{json}}'",
+      "AI-1008": "Neveiksmīga sniegto datu validācija",
+      "sorry": "Atvainojiet, es nevarēju apstrādāt jūsu atbildi"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Pievienot sadaļu",
+    "addSectionAI": "Sadaļas pievienošana ar AI",
+    "ai": "Modeļa izveide ar AI",
     "clear": "Satura dzēšana",
     "download": "Lejupielādes ierīce",
     "importSection": "Importēšanas sadaļa",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Satura pievienošana",
+    "ai-edit-widget": "Logrīka rediģēšana, izmantojot AI",
     "delete": "Dzēst vienumu",
     "duplicate": "Dublēt vienumu",
     "edit": "Satura rediģēšana",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Logrīka pievienošana, izmantojot AI",
     "deleteSection": "Dzēst sadaļu",
     "duplicate": "Dublēt sadaļu",
     "edit": "Informācijas rediģēšana",
@@ -942,6 +976,7 @@
           "optionType": "Puisis"
         },
         "modalTitle": "Logrīku banka",
+        "notFound": "Logrīki nav atrasti",
         "placeholderGroup": "Grupa",
         "placeholderTag": "Meklēšana pēc atzīmes nosaukuma",
         "placeholderTitle": "Meklēt pēc logrīka nosaukuma",
@@ -1541,7 +1576,7 @@
       "prev": "Postenis vēl nav izveidots..."
     },
     "Test": {
-      "label": "Testa veids",
+      "label": "Jautājumu konteiners",
       "questionSelect": "Izvēlieties jautājuma veidu, kuru vēlaties pievienot viktorīnai"
     },
     "TextBlock": {

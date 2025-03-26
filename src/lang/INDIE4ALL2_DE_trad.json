@@ -4,6 +4,23 @@
     "viewImage": "Siehe Bild"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Erstellen eines Modells mit KI"
+        },
+        "query": "Text der Abfrage:",
+        "query-placeholder": "Schreiben Sie hier Ihre Anfrage",
+        "section": {
+          "create": "Abschnitt mit KI erstellen"
+        },
+        "submit": "Senden",
+        "widget": {
+          "create": "Widget mit KI erstellen",
+          "update": "Widget mit KI aktualisieren"
+        }
+      }
+    },
     "alt": {
       "help": "Dies ist der alternative Beschreibungstext für das Bild in Bezug auf die Barrierefreiheit",
       "label": "Alt-Text für das Bild",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Der Containertitel ist ungültig. Sie müssen eine einrichten."
       }
+    },
+    "AI": {
+      "AI-0000": "Unbekannter Fehler",
+      "AI-1000": "Ressource nicht gefunden",
+      "AI-1001": "Der Grenzwert für die Ratenbegrenzung von Azure OpenAI wurde überschritten. Bitte versuchen Sie es später erneut.",
+      "AI-1002": "Schema mit dem Namen '{{name}}' nicht gefunden",
+      "AI-1003": "Widget mit der ID '{{id}}' nicht gefunden",
+      "AI-1004": "Abschnitt mit der ID '{{id}}' nicht gefunden",
+      "AI-1005": "Schema für Modell nicht gefunden",
+      "AI-1006": "Schaltplan mit Beschreibung '{{description}}' nicht gefunden",
+      "AI-1007": "Ungültiger JSON-Inhalt: '{{json}}'",
+      "AI-1008": "Fehlgeschlagene Validierung der bereitgestellten Daten",
+      "sorry": "Entschuldigung, ich konnte Ihre Antwort nicht verarbeiten"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Abschnitt hinzufügen",
+    "addSectionAI": "Abschnitt mit KI hinzufügen",
+    "ai": "Erstellen eines Modells mit KI",
     "clear": "Inhalte löschen",
     "download": "Gerät herunterladen",
     "importSection": "Abschnitt \"Importieren\"",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Inhalt hinzufügen",
+    "ai-edit-widget": "Widget mit KI bearbeiten",
     "delete": "Element löschen",
     "duplicate": "Artikel duplizieren",
     "edit": "Inhalt bearbeiten",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Widget mit KI hinzufügen",
     "deleteSection": "Abschnitt löschen",
     "duplicate": "Abschnitt duplizieren",
     "edit": "Informationen bearbeiten",
@@ -942,6 +976,7 @@
           "optionType": "Kerl"
         },
         "modalTitle": "Widget-Bank",
+        "notFound": "Keine Widgets gefunden",
         "placeholderGroup": "Gruppe",
         "placeholderTag": "Suche nach Tag-Namen",
         "placeholderTitle": "Suche nach Widget-Titel",
@@ -1541,7 +1576,7 @@
       "prev": "Artikel noch nicht festgelegt..."
     },
     "Test": {
-      "label": "Testtyp",
+      "label": "Fragen-Container",
       "questionSelect": "Wählen Sie einen Fragetyp aus, den Sie dem Quiz hinzufügen möchten"
     },
     "TextBlock": {

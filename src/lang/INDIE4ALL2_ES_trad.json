@@ -4,6 +4,23 @@
     "viewImage": "Ver imagen"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Crear modelo con IA"
+        },
+        "query": "Texto de la consulta:",
+        "query-placeholder": "Escribe tu consulta aquí",
+        "section": {
+          "create": "Crear sección con IA"
+        },
+        "submit": "Enviar",
+        "widget": {
+          "create": "Crear widget con IA",
+          "update": "Actualizar widget con IA"
+        }
+      }
+    },
     "alt": {
       "help": "Este es el texto alternativo de descripción para la imagen en materia de accesibilidad",
       "label": "Texto alternativo para la imagen",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "El título del contenedor no es válido. Debes establecer uno."
       }
+    },
+    "AI": {
+      "AI-0000": "Error desconocido",
+      "AI-1000": "No se ha encontrado el recurso",
+      "AI-1001": "Se ha superado el límite de velocidad de Azure OpenAI. Vuelva a intentarlo más tarde.",
+      "AI-1002": "Esquema con nombre '{{name}}' no encontrado",
+      "AI-1003": "Widget con id '{{id}}' no encontrado",
+      "AI-1004": "Sección con id '{{id}}' no encontrada",
+      "AI-1005": "Esquema para modelo no encontrado",
+      "AI-1006": "Esquema con descripción '{{description}}' no encontrado",
+      "AI-1007": "Contenido JSON inválido: '{{json}}'",
+      "AI-1008": "Validación fallida de datos proporcionados",
+      "sorry": "Lo siento, no he podido procesar tu respuesta"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Añadir sección",
+    "addSectionAI": "Añadir sección con IA",
+    "ai": "Crear modelo con IA",
     "clear": "Limpiar contenido",
     "download": "Descargar unidad",
     "importSection": "Importar sección",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Añadir contenido",
+    "ai-edit-widget": "Editar widget con IA",
     "delete": "Eliminar elemento",
     "duplicate": "Duplicar elemento",
     "edit": "Editar contenido",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Añadir widget con IA",
     "deleteSection": "Eliminar sección",
     "duplicate": "Duplicar sección",
     "edit": "Editar información",
@@ -942,6 +976,7 @@
           "optionType": "Tipo"
         },
         "modalTitle": "Banco de Widgets",
+        "notFound": "No se han encontrado widgets",
         "placeholderTag": "Buscar por nombre de etiqueta",
         "placeholderTitle": "Buscar por título de Widget",
         "randomTextBefore": " widgets aleatorios de los seleccionados",
@@ -1539,7 +1574,7 @@
       "prev": "Item no establecido todavía ..."
     },
     "Test": {
-      "label": "Tipo Test",
+      "label": "Contenedor de preguntas",
       "questionSelect": "Selecciona un tipo de pregunta que quieras añadir al test"
     },
     "TextBlock": {

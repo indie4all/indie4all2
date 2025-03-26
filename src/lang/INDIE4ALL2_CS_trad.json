@@ -4,6 +4,23 @@
     "viewImage": "Viz obrázek"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Vytváření modelů pomocí umělé inteligence"
+        },
+        "query": "Text dotazu:",
+        "query-placeholder": "Zde napište svůj dotaz",
+        "section": {
+          "create": "Vytvoření sekce pomocí AI"
+        },
+        "submit": "Poslat",
+        "widget": {
+          "create": "Vytvoření widgetu pomocí AI",
+          "update": "Aktualizujte widget pomocí AI"
+        }
+      }
+    },
     "alt": {
       "help": "Toto je alternativní text popisu obrázku z hlediska přístupnosti",
       "label": "Alternativní text obrázku",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Název kontejneru je neplatný. Musíte si ho vytvořit."
       }
+    },
+    "AI": {
+      "AI-0000": "Neznámá chyba",
+      "AI-1000": "Zdroj nebyl nalezen",
+      "AI-1001": "Byl překročen limit rychlosti Azure OpenAI. Zkuste to prosím znovu později.",
+      "AI-1002": "Schéma s názvem '{{name}}' nebylo nalezeno",
+      "AI-1003": "Widget s id '{{id}}' nebyl nalezen",
+      "AI-1004": "Sekce s id '{{id}}' nenalezena",
+      "AI-1005": "Schéma pro model nebylo nalezeno",
+      "AI-1006": "Schéma zapojení s popisem '{{description}}' nenalezeno",
+      "AI-1007": "Neplatný obsah JSON: '{{json}}'",
+      "AI-1008": "Neúspěšná validace poskytnutých dat",
+      "sorry": "Omlouvám se, ale nemohl jsem zpracovat vaši odpověď"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Přidat oddíl",
+    "addSectionAI": "Přidat sekci s AI",
+    "ai": "Vytváření modelů pomocí umělé inteligence",
     "clear": "Vymazání obsahu",
     "download": "Jednotka pro stahování",
     "importSection": "Sekce Import",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Přidat obsah",
+    "ai-edit-widget": "Úprava widgetu pomocí AI",
     "delete": "Odstranit položku",
     "duplicate": "Duplicitní položka",
     "edit": "Úprava obsahu",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Přidejte widget s umělou inteligencí",
     "deleteSection": "Odstranit oddíl",
     "duplicate": "Duplicitní oddíl",
     "edit": "Upravit informace",
@@ -942,6 +976,7 @@
           "optionType": "Chlapík"
         },
         "modalTitle": "Widget Bank",
+        "notFound": "Nebyly nalezeny žádné widgety",
         "placeholderGroup": "Skupina",
         "placeholderTag": "Vyhledávání podle názvu značky",
         "placeholderTitle": "Hledat podle názvu widgetu",
@@ -1541,7 +1576,7 @@
       "prev": "Položka ještě nebyla stanovena..."
     },
     "Test": {
-      "label": "Typ testu",
+      "label": "Kontejner otázek",
       "questionSelect": "Vyberte typ otázky, který chcete přidat do kvízu"
     },
     "TextBlock": {

@@ -2,31 +2,31 @@ import { ConfigOptions } from "./types";
 
 export default class Config {
     // Base path for analytics queries
-    private static analyticsBasePath: string = '';
+    private static analyticsBasePath: string = null;
     // Enable service worker for Progressive Web Applications
-    private static enablePWA: boolean = true;
+    private static enablePWA: boolean = false;
     // Key to encrypt sensitive data. If null, no encryption is done.
     private static encryptionKey: Function | string | null = null;
     // Work with local or remote resources
-    private static local: boolean = true;
-    // Server URL to preview the current unit. Default value: '/model/preview'.
-    private static previewBackendURL: string = '/model/preview';
-    // Server URL to publish the current unit. Default value: '/model/publish'.
-    private static publishBackendURL: string = '/model/publish';
-    // Server URL to publish the current unit in Netlify. Default value: '/model/publishToNetlify'.
-    private static publishToNetlifyBackendURL: string = '/model/publishToNetlify';
-    // Sets if the API should show a modal asking for additional information when publishing a unit. Default value: true.
-    private static requestAdditionalDataOnPopulate: boolean = true;
-    // Server URL to store the contents of the unit. Default value: '/model/save'.
-    private static saveBackendURL: string = '/model/save';
+    private static local: boolean = false;
+    // Server URL to preview the current unit.
+    private static previewBackendURL: string = null;
+    // Server URL to publish the current unit.
+    private static publishBackendURL: string = null;
+    // Server URL to publish the current unit in Netlify.
+    private static publishToNetlifyBackendURL: string = null;
+    // Sets if the API should show a modal asking for additional information when publishing a unit.
+    private static requestAdditionalDataOnPopulate: boolean = false;
+    // Server URL to store the contents of the unit.
+    private static saveBackendURL: string = null;
     // Server URL to generate a scorm package with the contents of the unit. Default value: '/model/scorm'.
-    private static scormBackendURL: string = '/model/scorm';
+    private static scormBackendURL: string = null;
     // Server URL to translate models
-    private static translationBackendURL: string = '/translation'
+    private static translationBackendURL: string = null;
     // Server URL to retrieve a remote resource
-    private static resourceProxyBackendURL: string = '/resource';
+    private static resourceProxyBackendURL: string = null;
     // Server URL to create a remote resource and get its URL
-    private static resourceBackendURL: string = '/resource';
+    private static resourceBackendURL: string = null;
     // Server URL to get the list of widgets available in the bank of widgets
     private static bankOfWidgetsURL: string = null;
     // Server URL to get the list of user media files
@@ -34,7 +34,7 @@ export default class Config {
     // Server URL to migrate media files to the new file system
     private static mediaMigrationURL: string = null;
     // List of allowed origins for media data
-    private static allowedResourceOrigins: string[] = ["http://localhost:8000", "https://indiemedia.upct.es", "http://indieopen.upct.es", "https://multimediarepository.blob.core.windows.net"];
+    private static allowedResourceOrigins: string[] = [];
     // Additional rules to check if a video URL is allowed
     private static additionalVideoResourceRules: ((url: string) => boolean)[] = [];
     //Enable mode of Widget Editor
@@ -45,6 +45,8 @@ export default class Config {
     private static widgetsWhitelist: string[] = null;
     // List of widgets to block in the editor -> if null no widgets are blocked
     private static widgetsBlacklist: string[] = null;
+    // Server URL to use Artificial Intelligence for creating/updating content
+    private static aiURL: string = null;
 
     public static setOptions(options: ConfigOptions) {
         if (typeof options.enablePWA === 'boolean')
@@ -57,6 +59,8 @@ export default class Config {
             this.setPreviewBackendURL(options.previewBackendURL);
         if (typeof options.publishBackendURL === 'string')
             this.setPublishBackendURL(options.publishBackendURL);
+        if (typeof options.publishToNetlifyBackendURL === 'string')
+            this.setPublishToNetlifyBackendURL(options.publishToNetlifyBackendURL);
         if (typeof options.requestAdditionalDataOnPopulate === 'boolean')
             this.setRequestAdditionalDataOnPopulate(options.requestAdditionalDataOnPopulate);
         if (typeof options.saveBackendURL === 'string')
@@ -89,6 +93,16 @@ export default class Config {
             this.setWidgetsWhitelist(options.widgetsWhitelist)
         if (Array.isArray(options.widgetsBlacklist))
             this.setWidgetsBlacklist(options.widgetsBlacklist)
+        if (typeof options.aiURL === 'string')
+            this.setAIURL(options.aiURL)
+    }
+
+    public static setAIURL(value: string) {
+        this.aiURL = value;
+    }
+
+    public static getAIURL(): string {
+        return this.aiURL;
     }
 
     public static setAnalyticsBasePath(value: string) {

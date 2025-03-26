@@ -4,6 +4,23 @@
     "viewImage": "Ikusi irudia"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "IArekin eredua sortzea"
+        },
+        "query": "Kontsultaren testua:",
+        "query-placeholder": "Idatzi zure kontsulta hemen",
+        "section": {
+          "create": "IArekin atala sortu"
+        },
+        "submit": "Bidali",
+        "widget": {
+          "create": "IArekin widget sortu",
+          "update": "IArekin widget-a eguneratu"
+        }
+      }
+    },
     "alt": {
       "help": "Hau da irisgarritasunaren arloko irudia deskribatzeko testu alternatiboa.",
       "label": "Irudirako testu alternatiboa",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Edukiontziaren izenburua ez da egokia. Bat ezarri behar duzu."
       }
+    },
+    "AI": {
+      "AI-0000": "Akats ezezaguna",
+      "AI-1000": "Ez da helegiterik aurkitu",
+      "AI-1001": "Azure OpenAIren abiadura muga gainditu da. Saiatu geroago.",
+      "AI-1002": "Aurkitu gabeko'{{name}}' izena duen eskema",
+      "AI-1003": "Widget con id '{{id}}'",
+      "AI-1004": "Atala id'{{id}}' rekin",
+      "AI-1005": "Aurkitu gabeko eredurako eskema",
+      "AI-1006": "Aurkitu gabeko'{{description}}' deskribapena duen eskema",
+      "AI-1007": "Eduki JSON elbarria: '{{json}}'",
+      "AI-1008": "Emandako datuak balioztatzea",
+      "sorry": "Sentitzen dut, ezin izan dut zure erantzuna prozesatu"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Gehitu sekzioa",
+    "addSectionAI": "Gehitu IArekin sekzioa",
+    "ai": "IArekin eredua sortzea",
     "clear": "Garbitu edukia",
     "download": "Deskargatu unitatea",
     "importSection": "Inportatu atala",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Gehitu edukia",
+    "ai-edit-widget": "Ia-rekin widget-a editatu",
     "delete": "Ezabatu elementua",
     "duplicate": "Bizkoiztu elementua",
     "edit": "Editatu edukia",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Gaineratu widget-a IArekin",
     "deleteSection": "Ezabatu atala",
     "duplicate": "Bizkoiztu atala",
     "edit": "Editatu informazioa ",
@@ -942,6 +976,7 @@
           "optionType": "Mota"
         },
         "modalTitle": "Widgetsen bankua",
+        "notFound": "Ez da widget-ik aurkitu",
         "placeholderGroup": "Taldea",
         "placeholderTag": "Etiketa izenaren arabera bilatu",
         "placeholderTitle": "Bilatu widget tituluaren arabera",
@@ -1541,7 +1576,7 @@
       "prev": "Item oraindik ezarri gabe..."
     },
     "Test": {
-      "label": "Test Mota",
+      "label": "Galderen edukiontzia",
       "questionSelect": "Aukeratu testari erantsi nahi diozun galdera mota bat"
     },
     "TextBlock": {

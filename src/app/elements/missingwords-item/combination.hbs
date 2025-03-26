@@ -1,0 +1,12 @@
+<div class="row combination">
+    <div class="mb-3 col-9 col-md-10">
+        <label for="combination[{{pos}}]">{{translate "widgets.MissingWordsItem.form.combinations.text"}}</label>
+        <input type="text" class="form-control" id="combination[{{pos}}]" name="combination[{{pos}}]"
+            value="{{combination}}" required />
+    </div>
+    <div class="d-grid mb-3 col-3 col-md-auto">
+        <label for="delete-combination-{{pos}}">{{translate "widgets.MissingWordsItem.form.combinations.delete"}} &nbsp;</label>
+        <button type="button" class="btn btn-danger btn-delete" id="delete-combination-{{pos}}">
+            <i class="fa fa-times"></i></button>
+    </div>
+</div>

@@ -2,6 +2,8 @@
 
 /** API configuration options. **/
 export interface ConfigOptions {
+    // Server URL to use Artificial Intelligence for creating/updating content
+    aiURL?: string,
     // Base path for analytics
     analyticsBasePath?: string,
     // Enable service worker for Progressive Web Applications
@@ -10,17 +12,19 @@ export interface ConfigOptions {
     encryptionKey?: Function | string | null,
     // Work with local or remote resources
     local?: boolean,
-    // Server URL to preview the current unit. Default value: '/model/preview'.
+    // Server URL to preview the current unit.
     previewBackendURL?: string,
-    // Server URL to publish the current unit. Default value: '/model/publish'.
+    // Server URL to publish the current unit.
     publishBackendURL?: string,
-    // Sets if the API should show a modal asking for additional information when publishing a unit. Default value: true.
+    // Server URL to publish the current unit to Netlify.
+    publishToNetlifyBackendURL?: string,
+    // Sets if the API should show a modal asking for additional information when publishing a unit.
     requestAdditionalDataOnPopulate?: boolean,
-    // Server URL to store the contents of the unit. Default value: '/model/save'.
+    // Server URL to store the contents of the unit.
     saveBackendURL?: string,
     // Server URL used for translating models into languages on demand
     translationBackendURL?: string,
-    // Server URL to generate a scorm package with the contents of the unit. Default value: '/model/scorm'.
+    // Server URL to generate a scorm package with the contents of the unit.
     scormBackendURL?: string,
     // Server URL to retrieve a remote resource
     resourceProxyBackendURL?: string
@@ -718,4 +722,8 @@ export interface InputWidgetRelatedUnitsAssociationData extends InputWidgetEleme
 
 export interface BankFilters {
     types?: string[]
+}
+
+export interface WidgetInitOptions {
+    regenerateId?: boolean
 }

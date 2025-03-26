@@ -4,6 +4,23 @@
     "viewImage": "Féach an íomhá"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Cruthaigh samhail le AI"
+        },
+        "query": "Téacs an iarratais:",
+        "query-placeholder": "Scríobh d'fhiosrúchán anseo",
+        "section": {
+          "create": "Cruthaigh rannán le IS"
+        },
+        "submit": "Seol",
+        "widget": {
+          "create": "Cruthaigh Giuirléid le AI",
+          "update": "Nuashonraigh giuirléid le AI"
+        }
+      }
+    },
     "alt": {
       "help": "Is é seo an téacs malartach cur síos don íomhá i dtéarmaí inrochtaineachta",
       "label": "Alt téacs don íomhá",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Tá teideal an choimeádáin neamhbhailí. Ní mór duit ceann a bhunú."
       }
+    },
+    "AI": {
+      "AI-0000": "Earráid anaithnid",
+      "AI-1000": "Acmhainn gan aimsiú",
+      "AI-1001": "Sáraíodh teorainn ráta Azure OpenAI. Bain triail eile as níos déanaí.",
+      "AI-1002": "Scéimre darb ainm '{{name}}' gan aimsiú",
+      "AI-1003": "Giuirléid le id '{{id}}' gan aimsiú",
+      "AI-1004": "Roinn le id '{{id}}' gan aimsiú",
+      "AI-1005": "Scéimre don tSamhail Gan Aimsiú",
+      "AI-1006": "Scéimreach le cur síos '{{description}}' gan aimsiú",
+      "AI-1007": "Ábhar neamhbhailí JSON: '{{json}}'",
+      "AI-1008": "Bailíochtú teipthe ar na sonraí a soláthraíodh",
+      "sorry": "Tá brón orm, ní raibh mé in ann do fhreagra a phróiseáil"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Cuir alt leis",
+    "addSectionAI": "Cuir rannán le IS",
+    "ai": "Cruthaigh samhail le AI",
     "clear": "Léirscrios an t-ábhar",
     "download": "Aonad íoslódála",
     "importSection": "Iompórtáil alt",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Cuir inneachar leis",
+    "ai-edit-widget": "Cuir giuirléid in eagar le AI",
     "delete": "Scrios mír",
     "duplicate": "Mír dhúblach",
     "edit": "Cuir ábhar in eagar",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Cuir giuirléid le AI",
     "deleteSection": "Scrios alt",
     "duplicate": "Alt dúblach",
     "edit": "Cuir eolas in eagar",
@@ -942,6 +976,7 @@
           "optionType": "Fear"
         },
         "modalTitle": "Banc Giuirléidí",
+        "notFound": "Níor aimsíodh giuirléidí ar bith",
         "placeholderGroup": "Grúpa",
         "placeholderTag": "Cuardaigh de réir ainm na clibe",
         "placeholderTitle": "Cuardaigh de réir teideal Giuirléidí",
@@ -1541,7 +1576,7 @@
       "prev": "Mír nach bhfuil bunaithe fós..."
     },
     "Test": {
-      "label": "Cineál Tástála",
+      "label": "Coimeádán ceiste",
       "questionSelect": "Roghnaigh cineál ceiste is mian leat a chur leis an tráth na gceist"
     },
     "TextBlock": {

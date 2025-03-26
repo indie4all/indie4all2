@@ -4,6 +4,23 @@
     "viewImage": "Se bilde"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Opprett modell med kunstig intelligens"
+        },
+        "query": "Spørring tekst:",
+        "query-placeholder": "Skriv din forespørsel her",
+        "section": {
+          "create": "Opprett seksjon med AI"
+        },
+        "submit": "Sende",
+        "widget": {
+          "create": "Lag widget med AI",
+          "update": "Oppdater widget med AI"
+        }
+      }
+    },
     "alt": {
       "help": "Dette er den alternative beskrivelsesteksten for bildet når det gjelder tilgjengelighet",
       "label": "Alternativ tekst for bildet",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Beholdertittelen er ugyldig. Du må etablere en."
       }
+    },
+    "AI": {
+      "AI-0000": "Ukjent feil",
+      "AI-1000": "Finner ikke ressursen",
+      "AI-1001": "Hastighetsgrensen for Azure OpenAI er overskredet. Prøv igjen senere.",
+      "AI-1002": "Skjema kalt '{{name}}' ikke funnet",
+      "AI-1003": "Widget med id '{{id}}' ikke funnet",
+      "AI-1004": "Seksjon med id '{{id}}' ikke funnet",
+      "AI-1005": "Finner ikke skjema for modell",
+      "AI-1006": "Skjematisk med beskrivelsen '{{description}}' not found",
+      "AI-1007": "Ugyldig JSON-innhold: '{{json}}'",
+      "AI-1008": "Mislykket validering av oppgitte data",
+      "sorry": "Beklager, jeg klarte ikke å behandle svaret ditt"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Legg til inndeling",
+    "addSectionAI": "Legg til seksjon med AI",
+    "ai": "Opprett modell med kunstig intelligens",
     "clear": "Slett innhold",
     "download": "Last ned enhet",
     "importSection": "Importer-delen",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Legg til innhold",
+    "ai-edit-widget": "Rediger widget med AI",
     "delete": "Slett element",
     "duplicate": "Dupliser element",
     "edit": "Redigere innhold",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Legg til widget med AI",
     "deleteSection": "Slett inndeling",
     "duplicate": "Dupliser inndeling",
     "edit": "Redigere informasjon",
@@ -942,6 +976,7 @@
           "optionType": "Fyr"
         },
         "modalTitle": "Widget Bank",
+        "notFound": "Ingen widgets funnet",
         "placeholderGroup": "Gruppe",
         "placeholderTag": "Søk etter kodenavn",
         "placeholderTitle": "Søk etter widgettittel",
@@ -1541,7 +1576,7 @@
       "prev": "Element ikke etablert ennå ..."
     },
     "Test": {
-      "label": "Test Type",
+      "label": "Beholder for spørsmål",
       "questionSelect": "Velg en spørsmålstype du vil legge til i testen"
     },
     "TextBlock": {

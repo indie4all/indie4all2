@@ -4,6 +4,23 @@
     "viewImage": "Vedi immagine"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Crea un modello con l'intelligenza artificiale"
+        },
+        "query": "Testo della query:",
+        "query-placeholder": "Scrivi qui la tua richiesta",
+        "section": {
+          "create": "Crea sezioni con l'intelligenza artificiale"
+        },
+        "submit": "Invia",
+        "widget": {
+          "create": "Crea widget con l'intelligenza artificiale",
+          "update": "Aggiorna il widget con l'intelligenza artificiale"
+        }
+      }
+    },
     "alt": {
       "help": "Questo è il testo di descrizione alternativo per l'immagine in termini di accessibilità",
       "label": "Testo alternativo per l'immagine",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Il titolo del contenitore non è valido. Devi stabilirne uno."
       }
+    },
+    "AI": {
+      "AI-0000": "Errore sconosciuto",
+      "AI-1000": "Risorsa non trovata",
+      "AI-1001": "Il limite di frequenza di Azure OpenAI è stato superato. Riprova più tardi.",
+      "AI-1002": "Schema denominato '{{name}}' non trovato",
+      "AI-1003": "Widget con id '{{id}}' non trovato",
+      "AI-1004": "Sezione con id '{{id}}' non trovato",
+      "AI-1005": "Schema per il modello non trovato",
+      "AI-1006": "Schema con descrizione '{{description}}' non trovato",
+      "AI-1007": "Contenuto JSON non valido: '{{json}}'",
+      "AI-1008": "Convalida non riuscita dei dati forniti",
+      "sorry": "Spiacenti, non sono riuscito a elaborare la tua risposta"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Aggiungi sezione",
+    "addSectionAI": "Aggiungi sezione con l'intelligenza artificiale",
+    "ai": "Crea un modello con l'intelligenza artificiale",
     "clear": "Cancellare il contenuto",
     "download": "Unità di download",
     "importSection": "Sezione Importa",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Aggiungi contenuto",
+    "ai-edit-widget": "Modifica widget con l'intelligenza artificiale",
     "delete": "Elimina elemento",
     "duplicate": "Elemento duplicato",
     "edit": "Modificare il contenuto",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Aggiungi widget con l'intelligenza artificiale",
     "deleteSection": "Elimina sezione",
     "duplicate": "Sezione duplicata",
     "edit": "Modificare le informazioni",
@@ -942,6 +976,7 @@
           "optionType": "Tizio"
         },
         "modalTitle": "Banca Widget",
+        "notFound": "Nessun widget trovato",
         "placeholderGroup": "Gruppo",
         "placeholderTag": "Ricerca per nome del tag",
         "placeholderTitle": "Ricerca per titolo del widget",
@@ -1541,7 +1576,7 @@
       "prev": "Articolo non ancora stabilito..."
     },
     "Test": {
-      "label": "Tipo di test",
+      "label": "Contenitore di domande",
       "questionSelect": "Seleziona un tipo di domanda che desideri aggiungere al quiz"
     },
     "TextBlock": {

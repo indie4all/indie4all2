@@ -4,6 +4,23 @@
     "viewImage": "Lásd a képet"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Modell létrehozása mesterséges intelligenciával"
+        },
+        "query": "Lekérdezés szövege:",
+        "query-placeholder": "Írja meg érdeklődését itt",
+        "section": {
+          "create": "Szakasz létrehozása mesterséges intelligenciával"
+        },
+        "submit": "Küld",
+        "widget": {
+          "create": "Widget létrehozása mesterséges intelligenciával",
+          "update": "Widget frissítése AI-val"
+        }
+      }
+    },
     "alt": {
       "help": "Ez a kép alternatív leíró szövege a hozzáférhetőség szempontjából",
       "label": "A kép helyettesítő szövege",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "A tároló címe érvénytelen. Létre kell hoznia egyet."
       }
+    },
+    "AI": {
+      "AI-0000": "Ismeretlen hiba",
+      "AI-1000": "Az erőforrás nem található",
+      "AI-1001": "Túllépte az Azure OpenAI sebességkorlátját. Kérjük, próbálja újra később.",
+      "AI-1002": "A '{{name}}' nevű séma nem található",
+      "AI-1003": "A \"{{id}}\" azonosítójú widget nem található",
+      "AI-1004": "A \"{{id}}\" azonosítójú szakasz nem található",
+      "AI-1005": "A modell sémája nem található",
+      "AI-1006": "Vázlat leírással '{{description}}' nem található",
+      "AI-1007": "Érvénytelen JSON-tartalom: '{{json}}'",
+      "AI-1008": "A megadott adatok sikertelen érvényesítése",
+      "sorry": "Sajnálom, nem tudtam feldolgozni a válaszodat"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Szakasz hozzáadása",
+    "addSectionAI": "Szakasz hozzáadása AI-val",
+    "ai": "Modell létrehozása mesterséges intelligenciával",
     "clear": "Tartalom törlése",
     "download": "Letöltési egység",
     "importSection": "Importálás szakasz",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Tartalom hozzáadása",
+    "ai-edit-widget": "Widget szerkesztése mesterséges intelligenciával",
     "delete": "Elem törlése",
     "duplicate": "Elem megkettőzése",
     "edit": "Tartalom szerkesztése",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Widget hozzáadása AI-val",
     "deleteSection": "Szakasz törlése",
     "duplicate": "Duplikált szakasz",
     "edit": "Adatok szerkesztése",
@@ -942,6 +976,7 @@
           "optionType": "Fickó"
         },
         "modalTitle": "Widget Bank",
+        "notFound": "Nem található widget",
         "placeholderGroup": "Csoport",
         "placeholderTag": "Keresés címkenév alapján",
         "placeholderTitle": "Keresés a widget címe alapján",
@@ -1541,7 +1576,7 @@
       "prev": "A tétel még nincs meghatározva..."
     },
     "Test": {
-      "label": "Teszt típusa",
+      "label": "Kérdés konténer",
       "questionSelect": "Válassza ki a kvízhez hozzáadni kívánt kérdéstípust"
     },
     "TextBlock": {

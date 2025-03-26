@@ -1,0 +1,35 @@
+<form id="f-{{instanceId}}">
+    <div class="mb-3"> 
+        <label>{{translate "widgets.TrueFalseItem.form.questionText.label"}}</label>
+        <textarea class="form-control" name="question" 
+            placeholder="{{translate "widgets.TrueFalseItem.form.questionText.placeholder"}}" 
+            required>{{question}}</textarea>
+        <small class="form-text text-muted">{{translate "widgets.TrueFalseItem.form.questionText.help"}}</small>
+    </div>
+    <div class="mb-3">
+        <label>{{translate "widgets.TrueFalseItem.form.answer.label"}}</label>
+        <select name="correctAnswer" class="form-control" required>
+            <option value="true">{{translate "widgets.TrueFalseItem.form.answer.true"}}</option>
+            <option value="false">{{translate "widgets.TrueFalseItem.form.answer.false"}}</option>
+        </select> 
+        <small class="form-text text-muted">{{translate "widgets.TrueFalseItem.form.answer.help"}}</small>
+    </div>
+    <div class="mb-3">
+        <label>{{translate "common.feedback.label"}}</label> 
+        <small class="form-text text-muted mb-1">{{translate "common.feedback.help"}}</small>
+        <div class="input-group mb-1">
+            <div class="input-group-text text-success">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <input type="text" class="form-control" name="feedbackPositive" 
+                placeholder="{{translate "common.feedback.positive"}}" value="{{feedback.positive}}" />
+        </div>
+        <div class="input-group mb-1">
+            <div class="input-group-text text-danger">
+                <i class="fas fa-times-circle"></i>
+            </div>
+            <input name="feedbackNegative" type="text" class="form-control" 
+                placeholder="{{translate "common.feedback.negative"}}" value="{{feedback.negative}}" />
+        </div>
+    </div>
+</form>

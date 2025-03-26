@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <title>INDIeAuthor | Prototype</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#FF055F">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+</head>
+<body>
+    <!-- NAVBAR-->
+    <nav class="navbar navbar-expand-md navbar-dark flex-row bd-navbar fixed-top p-0">
+        <a class="navbar-brand ms-2" href="#">INDIeAuthor</a>
+        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarOptions"
+            data-bs-toggle="tooltip" data-title=""
+            aria-controls="navbarOptions" aria-expanded="false" aria-label="">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse px-2 py-1" id="navbarOptions">
+            <ul class="navbar-nav ms-auto"></ul>
+        </div>
+    </nav>
+    <!-- PAGE CONTENT -->
+    <div class="container-fluid content">
+        <div class="row">
+            <div class="col-3 col-lg-2 bd-sidebar">
+                <nav class="palette-nav">
+                    <div id="palette" data-type="palette" class="dragula-container row g-0">
+                        <!-- ITEMS WILL BE PLACED HERE -->
+                    </div>
+                </nav>
+            </div>
+            <main role="main" class="col-9 col-lg-10 offset-3 offset-lg-2 bd-content no-padding">
+                <div class="editor-container">
+                    <div id="main-container" data-type="main-container" data-content>
+
+                    </div>
+                </div>
+                <div id="editor-footer" class="editor-footer">
+                    <div class="alert alert-light" role="alert">
+                        <ul class="footer-buttons"></ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+        const options = {
+                enablePWA: true,
+                local: true,
+                previewBackendURL: '/model/preview',
+                publishBackendURL: '/model/publish',
+                publishToNetlifyBackendURL: '/model/publishToNetlify',
+                requestAdditionalDataOnPopulate: true,
+                saveBackendURL: '/model/save',
+                scormBackendURL: '/model/scorm',
+                translationBackendURL: '/translation',
+                resourceProxyBackendURL: '/resource',
+                resourceBackendURL: '/resource',
+                bankOfWidgetsURL: '/widgets',
+                mediaResourcesURL: '/media',
+                mediaMigrationURL: '/media/migrate',
+                allowedResourceOrigins: ["http://localhost:8000", "https://indiemedia.upct.es", "http://indieopen.upct.es", "https://multimediarepository.blob.core.windows.net"],
+                aiURL: '/ai',
+                encryptionKey: function () {
+                    const userCookie = document.cookie && document.cookie.split('; ').find(cookie => cookie.startsWith('INDIE_USER='));
+                    return userCookie.split('=')[1];
+                }
+        };
+        IndieAuthor.start(options);
+    </script>
+</body>
+</html>

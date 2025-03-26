@@ -4,6 +4,23 @@
     "viewImage": "Voir l’image"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Créer un modèle avec l’IA"
+        },
+        "query": "Texte de la requête :",
+        "query-placeholder": "Écrivez votre demande ici",
+        "section": {
+          "create": "Créer une section avec l’IA"
+        },
+        "submit": "Envoyer",
+        "widget": {
+          "create": "Créer un widget avec l’IA",
+          "update": "Mettre à jour le widget avec l’IA"
+        }
+      }
+    },
     "alt": {
       "help": "Il s’agit du texte de description alternatif de l’image en termes d’accessibilité",
       "label": "Texte alternatif de l’image",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Le titre du conteneur n’est pas valide. Vous devez en établir un."
       }
+    },
+    "AI": {
+      "AI-0000": "Erreur inconnue",
+      "AI-1000": "Ressource introuvable",
+      "AI-1001": "La limite de débit Azure OpenAI a été dépassée. Veuillez réessayer plus tard.",
+      "AI-1002": "Schéma nommé '{{name}}' introuvable",
+      "AI-1003": "Widget avec l’identifiant '{{id}}' introuvable",
+      "AI-1004": "Section avec l’identifiant '{{id}}' non trouvée",
+      "AI-1005": "Schéma du modèle introuvable",
+      "AI-1006": "Schéma avec description '{{description}}' non trouvé",
+      "AI-1007": "Contenu JSON non valide : '{{json}}'",
+      "AI-1008": "Échec de la validation des données fournies",
+      "sorry": "Désolé, je n’ai pas pu traiter votre réponse"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Ajouter une section",
+    "addSectionAI": "Ajouter une section avec l’IA",
+    "ai": "Créer un modèle avec l’IA",
     "clear": "Effacer le contenu",
     "download": "Télécharger l’unité",
     "importSection": "Section d’importation",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Ajouter du contenu",
+    "ai-edit-widget": "Modifier le widget avec l’IA",
     "delete": "Supprimer l’élément",
     "duplicate": "Elément en double",
     "edit": "Modifier le contenu",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Ajouter un widget avec l’IA",
     "deleteSection": "Supprimer la section",
     "duplicate": "Section en double",
     "edit": "Modifier les informations",
@@ -942,6 +976,7 @@
           "optionType": "Mec"
         },
         "modalTitle": "Banque de widgets",
+        "notFound": "Aucun widget trouvé",
         "placeholderGroup": "Groupe",
         "placeholderTag": "Recherche par nom de balise",
         "placeholderTitle": "Recherche par titre de widget",
@@ -1541,7 +1576,7 @@
       "prev": "Point non encore établi..."
     },
     "Test": {
-      "label": "Type d’essai",
+      "label": "Conteneur de questions",
       "questionSelect": "Sélectionnez un type de question que vous souhaitez ajouter au quiz"
     },
     "TextBlock": {

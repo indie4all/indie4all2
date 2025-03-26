@@ -4,6 +4,23 @@
     "viewImage": "Se bild"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Skapa modell med AI"
+        },
+        "query": "Text för fråga:",
+        "query-placeholder": "Skriv din förfrågan här",
+        "section": {
+          "create": "Skapa avsnitt med AI"
+        },
+        "submit": "Sända",
+        "widget": {
+          "create": "Skapa widget med AI",
+          "update": "Uppdatera widget med AI"
+        }
+      }
+    },
     "alt": {
       "help": "Detta är den alternativa beskrivningstexten för bilden när det gäller tillgänglighet",
       "label": "Alt-text för bilden",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Behållarens titel är ogiltig. Du måste upprätta en."
       }
+    },
+    "AI": {
+      "AI-0000": "Okänt fel",
+      "AI-1000": "Det gick inte att hitta resursen",
+      "AI-1001": "Azure OpenAI-hastighetsgränsen har överskridits. Försök igen senare.",
+      "AI-1002": "Schemat med namnet '{{name}}' hittades inte",
+      "AI-1003": "Widget med id '{{id}}' hittades inte",
+      "AI-1004": "Avsnitt med id '{{id}}' hittades inte",
+      "AI-1005": "Schema för modellen hittades inte",
+      "AI-1006": "Schematisk med beskrivningen '{{description}}' hittades inte",
+      "AI-1007": "Ogiltigt JSON-innehåll: '{{json}}'",
+      "AI-1008": "Misslyckad validering av tillhandahållna data",
+      "sorry": "Tyvärr, jag kunde inte bearbeta ditt svar"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Lägg till avsnitt",
+    "addSectionAI": "Lägg till avsnitt med AI",
+    "ai": "Skapa modell med AI",
     "clear": "Radera innehåll",
     "download": "Ladda ner enhet",
     "importSection": "Avsnittet Importera",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Lägg till innehåll",
+    "ai-edit-widget": "Redigera widget med AI",
     "delete": "Ta bort objekt",
     "duplicate": "Duplicera objekt",
     "edit": "Redigera innehåll",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Lägg till widget med AI",
     "deleteSection": "Ta bort avsnitt",
     "duplicate": "Duplicera avsnitt",
     "edit": "Redigera information",
@@ -942,6 +976,7 @@
           "optionType": "Kille"
         },
         "modalTitle": "Widget Bank",
+        "notFound": "Inga widgetar hittades",
         "placeholderGroup": "Grupp",
         "placeholderTag": "Sök efter taggnamn",
         "placeholderTitle": "Sök efter widgettitel",
@@ -1541,7 +1576,7 @@
       "prev": "Objektet är inte fastställt ännu..."
     },
     "Test": {
-      "label": "Typ av test",
+      "label": "Behållare för fråga",
       "questionSelect": "Välj en frågetyp som du vill lägga till i testet"
     },
     "TextBlock": {

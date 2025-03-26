@@ -4,6 +4,23 @@
     "viewImage": "Vaata pilti"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Looge mudel tehisintellektiga"
+        },
+        "query": "Päringu tekst:",
+        "query-placeholder": "Kirjutage oma päring siia",
+        "section": {
+          "create": "Looge jaotis AI-ga"
+        },
+        "submit": "Saatma",
+        "widget": {
+          "create": "Looge vidin AI-ga",
+          "update": "Uuendage vidinat AI-ga"
+        }
+      }
+    },
     "alt": {
       "help": "See on pildi alternatiivne kirjeldav tekst juurdepääsetavuse osas",
       "label": "Pildi asetekst",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Konteineri pealkiri on kehtetu. Peate selle looma."
       }
+    },
+    "AI": {
+      "AI-0000": "Tundmatu viga",
+      "AI-1000": "Ressurssi ei leitud",
+      "AI-1001": "Azure OpenAI kiiruse piirang on ületatud. Proovige hiljem uuesti.",
+      "AI-1002": "Skeemi nimega '{{name}}' ei leitud",
+      "AI-1003": "Vidinat id-ga{{id}}ei leitud",
+      "AI-1004": "Jaotist ID-ga{{id}}ei leitud",
+      "AI-1005": "Mudeli skeemi ei leitud",
+      "AI-1006": "Skemaatiline kirjeldusega \"{{description}}\" ei leitud",
+      "AI-1007": "Kehtetu JSON-sisu: '{{json}}'",
+      "AI-1008": "Esitatud andmete valideerimine ebaõnnestus",
+      "sorry": "Vabandust, ma ei suutnud teie vastust töödelda"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Jaotise lisamine",
+    "addSectionAI": "Lisage jaotis AI-ga",
+    "ai": "Looge mudel tehisintellektiga",
     "clear": "Sisu kustutamine",
     "download": "Laadige seade alla",
     "importSection": "Importimise jaotis",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Sisu lisamine",
+    "ai-edit-widget": "Redigeerige vidinat tehisintellektiga",
     "delete": "Üksuse kustutamine",
     "duplicate": "Üksuse dubleerimine",
     "edit": "Sisu redigeerimine",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Lisage vidin AI-ga",
     "deleteSection": "Kustuta jaotis",
     "duplicate": "Duplikaatjaotis",
     "edit": "Teabe redigeerimine",
@@ -942,6 +976,7 @@
           "optionType": "Kutt"
         },
         "modalTitle": "Vidina pank",
+        "notFound": "Vidinaid ei leitud",
         "placeholderGroup": "Rühm",
         "placeholderTag": "Otsige sildi nime järgi",
         "placeholderTitle": "Otsi vidina pealkirja järgi",
@@ -1541,7 +1576,7 @@
       "prev": "Punkt pole veel loodud ..."
     },
     "Test": {
-      "label": "Katse tüüp",
+      "label": "Küsimuste konteiner",
       "questionSelect": "Valige küsimuse tüüp, mille soovite õppetestile lisada"
     },
     "TextBlock": {

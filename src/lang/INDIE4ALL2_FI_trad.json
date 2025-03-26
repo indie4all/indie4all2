@@ -4,6 +4,23 @@
     "viewImage": "Katso kuva"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Luo malli tekoälyn avulla"
+        },
+        "query": "Kyselyn teksti:",
+        "query-placeholder": "Kirjoita kyselysi tähän",
+        "section": {
+          "create": "Luo osio tekoälyllä"
+        },
+        "submit": "Lähettää",
+        "widget": {
+          "create": "Luo widget tekoälyllä",
+          "update": "Päivitä widget tekoälyllä"
+        }
+      }
+    },
     "alt": {
       "help": "Tämä on kuvan vaihtoehtoinen kuvausteksti saavutettavuuden kannalta",
       "label": "Kuvan vaihtoehtoinen teksti",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "Säilön otsikko on virheellinen. Sinun on perustettava sellainen."
       }
+    },
+    "AI": {
+      "AI-0000": "Tuntematon virhe",
+      "AI-1000": "Resurssia ei löydy",
+      "AI-1001": "Azure OpenAI -nopeusraja on ylitetty. Yritä myöhemmin uudelleen.",
+      "AI-1002": "Skeemaa nimeltä '{{name}}' ei löydy",
+      "AI-1003": "Widgetiä, jonka tunnus on '{{id}}' ei löydy",
+      "AI-1004": "Osiota, jonka tunnus on \"{{id}}\" ei löydy",
+      "AI-1005": "Mallin rakennetta ei löydy",
+      "AI-1006": "Kaavio ja kuvaus \"{{description}}\" ei löydy",
+      "AI-1007": "Virheellinen JSON-sisältö: '{{json}}'",
+      "AI-1008": "Toimitettujen tietojen validointi epäonnistui",
+      "sorry": "Anteeksi, en pystynyt käsittelemään vastaustasi"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Lisää osio",
+    "addSectionAI": "Lisää osio tekoälyllä",
+    "ai": "Luo malli tekoälyn avulla",
     "clear": "Sisällön poistaminen",
     "download": "Lataa yksikkö",
     "importSection": "Tuo-osio",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Lisää sisältöä",
+    "ai-edit-widget": "Muokkaa widgetiä tekoälyllä",
     "delete": "Poista kohde",
     "duplicate": "Kohteen kaksoiskappale",
     "edit": "Muokkaa sisältöä",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Lisää widget tekoälyllä",
     "deleteSection": "Poista osio",
     "duplicate": "Osan monistaminen",
     "edit": "Muokkaa tietoja",
@@ -942,6 +976,7 @@
           "optionType": "Kundi"
         },
         "modalTitle": "Widget-pankki",
+        "notFound": "Widgetejä ei löytynyt",
         "placeholderGroup": "Ryhmä",
         "placeholderTag": "Etsi tunnisteen nimellä",
         "placeholderTitle": "Etsi widgetin otsikon perusteella",
@@ -1541,7 +1576,7 @@
       "prev": "Kohdetta ei ole vielä vahvistettu..."
     },
     "Test": {
-      "label": "Testin tyyppi",
+      "label": "Kysymysten säilö",
       "questionSelect": "Valitse kysymystyyppi, jonka haluat lisätä kokeeseen"
     },
     "TextBlock": {

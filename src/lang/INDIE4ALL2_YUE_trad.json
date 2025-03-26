@@ -4,6 +4,23 @@
     "viewImage": "見圖片"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "使用AI創建模型"
+        },
+        "query": "查詢文本：",
+        "query-placeholder": "喺呢度寫下您的詢問",
+        "section": {
+          "create": "使用AI創建部分"
+        },
+        "submit": "發送",
+        "widget": {
+          "create": "使用AI創建Widget",
+          "update": "使用AI更新小組件"
+        }
+      }
+    },
     "alt": {
       "help": "係圖像喺輔助功能方面嘅替代描述文本",
       "label": "圖像嘅可選文字",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "容器標題無效。 你必須建立一個。"
       }
+    },
+    "AI": {
+      "AI-0000": "未知錯誤",
+      "AI-1000": "搵唔到資源",
+      "AI-1001": "已超出Azure OpenAI速率限制。 請稍後重試。",
+      "AI-1002": "找不到名為“{{name}}”嘅架構",
+      "AI-1003": "搵唔到ID為“{{id}}”嘅小組件",
+      "AI-1004": "搵唔到ID為≤{{id}}≤嘅節",
+      "AI-1005": "搵唔到模型嘅架構",
+      "AI-1006": "未搵到描述為徜徉{{description}}徜徉的示意圖",
+      "AI-1007": "無效嘅JSON內容：徜徉{{json}}",
+      "AI-1008": "提供嘅數據驗證失敗",
+      "sorry": "抱歉，我無法處理您的回答"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "添加部分",
+    "addSectionAI": "使用AI添加部分",
+    "ai": "使用AI創建模型",
     "clear": "抹掉內容",
     "download": "下載單位",
     "importSection": "導入部分",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "添加內容",
+    "ai-edit-widget": "使用AI編輯細部件",
     "delete": "刪除項目",
     "duplicate": "重複項",
     "edit": "編輯內容",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "使用AI添加細部件",
     "deleteSection": "刪除部分",
     "duplicate": "重複部分",
     "edit": "編輯信息",
@@ -942,6 +976,7 @@
           "optionType": "傢伙"
         },
         "modalTitle": "細部件庫",
+        "notFound": "未搵到小組件",
         "placeholderGroup": "群",
         "placeholderTag": "按標籤名稱搜索",
         "placeholderTitle": "按小部件標題搜索",
@@ -1541,7 +1576,7 @@
       "prev": "項目尚未建立..."
     },
     "Test": {
-      "label": "測試類型",
+      "label": "問題容器",
       "questionSelect": "選擇要添加到測驗的問題類型"
     },
     "TextBlock": {

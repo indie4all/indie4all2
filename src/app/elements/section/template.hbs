@@ -1,0 +1,65 @@
+<div class="section-container">
+    <div id="sec-{{id}}" class="section-element {{#if hidden}}section-hidden{{/if}}" data-id="{{id}}" type="container">
+        <div class="section-header row g-0">
+            <div class="b1 col-auto d-none d-lg-inline-block">
+                <img loading="lazy" src="{{{icon}}}" class="section-icon" alt="" />
+            </div>
+            <div class="b2 col-12 col-md-auto" data-prev>{{{preview}}}</div>
+            <div class="b3 col-12 col-md-auto" data-toolbar>
+                {{#if canGenerate}}
+                <button class="btn-toolbar-action btn-ai-add-widget btn btn-sm btn-info" type="button"
+                    data-bs-toggle="tooltip" title="{{translate "sections.ai-add-widget"}}">
+                    <i class="fa fa-brain"></i>
+                </button>
+                {{/if}}
+                {{#if canCopy}}
+                <button class="btn-toolbar-action btn-export-section btn btn-sm btn-info" type="button"
+                    data-bs-toggle="tooltip" title="{{translate "sections.export"}}">
+                    <i class="fa fa-file-export"></i>
+                </button>
+                <button class="btn-toolbar-action btn-import-element btn btn-sm btn-info" type="button"
+                    data-bs-toggle="tooltip" title="{{translate "sections.import"}}">
+                    <i class="fa fa-file-import"></i>
+                </button>
+                {{/if}}
+                <button class="btn-toolbar-action btn-toggle-collapse btn btn-sm btn-info" type="button" data-tooltip="true" data-bs-toggle="collapse"
+                    data-bs-target="#section-elements-{{id}}" title="{{translate "sections.expandContract"}}"
+                    aria-expanded="true" aria-controls="section-elements-{{id}}">
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                {{#if canCopy}}
+                <button class="btn-toolbar-action btn-copy-section btn btn-sm btn-info" type="button"
+                    data-bs-toggle="tooltip" title="{{translate "sections.duplicate"}}">
+                    <i class="fa fa-copy"></i>
+                </button>
+                {{/if}}
+                {{#if canMove}}
+                <button class="btn-toolbar-action btn-swap-up btn btn-sm btn-info" type="button"
+                    data-bs-toggle="tooltip" title="{{translate "sections.moveUp"}}">
+                    <i class="fa fa-arrow-up"></i>
+                </button>
+                <button class="btn-toolbar-action btn-swap-down btn btn-sm btn-info" type="button"
+                    data-bs-toggle="tooltip" title="{{translate "sections.moveDown"}}">
+                    <i class="fa fa-arrow-down"></i>
+                </button>
+                {{/if}}
+                {{#if canEdit}}
+                <button class="btn-toolbar-action btn-edit-element btn btn-sm btn-success" type="button"
+                    data-bs-toggle="tooltip" title="{{translate "sections.edit"}}">
+                    <i class="fa fa-edit"></i>
+                </button>
+                {{/if}}
+                {{#if canDelete}}
+                <button class="btn-toolbar-action btn-remove-section btn btn-sm btn-danger" type="button"
+                    data-bs-toggle="tooltip" title="{{translate "sections.deleteSection"}}">
+                    <i class="fa fa-times"></i>
+                </button>
+                {{/if}}
+            </div>
+        </div>
+        <div id="section-elements-{{id}}" 
+            class="section-elements dragula-container collapse show" data-content>
+            {{{children}}}
+        </div>
+    </div>
+</div>

@@ -4,6 +4,23 @@
     "viewImage": "See image"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Create model with AI"
+        },
+        "query": "Query text:",
+        "query-placeholder": "Write your inquiry here",
+        "section": {
+          "create": "Create section with AI"
+        },
+        "submit": "Send",
+        "widget": {
+          "create": "Create Widget with AI",
+          "update": "Update widget with AI"
+        }
+      }
+    },
     "alt": {
       "help": "This is the alternative description text for the image to make it accessible",
       "label": "Alt text for the image",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "The container title is invalid. You must establish one."
       }
+    },
+    "AI": {
+      "AI-0000": "Unknown error",
+      "AI-1000": "Resource not found",
+      "AI-1001": "The Azure OpenAI rate limit has been exceeded. Please try again later.",
+      "AI-1002": "Schema named '{{name}}' not found",
+      "AI-1003": "Widget with id '{{id}}' not found",
+      "AI-1004": "Section with id '{{id}}' not found",
+      "AI-1005": "Schema for Model Not Found",
+      "AI-1006": "Schematic with description '{{description}}' not found",
+      "AI-1007": "Invalid JSON content: '{{json}}'",
+      "AI-1008": "Failed validation of data provided",
+      "sorry": "Sorry, I couldn't process your answer"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Add section",
+    "addSectionAI": "Add section with AI",
+    "ai": "Create model with AI",
     "clear": "Clear content",
     "download": "Download unit",
     "importSection": "Import section",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Add content",
+    "ai-edit-widget": "Edit widget with AI",
     "delete": "Delete item",
     "duplicate": "Duplicate item",
     "edit": "Edit content",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Add widget with AI",
     "deleteSection": "Delete section",
     "duplicate": "Duplicate section",
     "edit": "Edit information",
@@ -942,6 +976,7 @@
           "optionType": "Guy"
         },
         "modalTitle": "Widget Bank",
+        "notFound": "No widgets found",
         "placeholderGroup": "Group",
         "placeholderTag": "Search by tag name",
         "placeholderTitle": "Search by Widget title",
@@ -1541,7 +1576,7 @@
       "prev": "Item not established yet..."
     },
     "Test": {
-      "label": "Multiple choice",
+      "label": "Question container",
       "questionSelect": "Select the type of question you want to add to the test"
     },
     "TextBlock": {

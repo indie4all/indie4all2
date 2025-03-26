@@ -4,6 +4,23 @@
     "viewImage": "Veu la imatge"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "model": {
+          "create": "Crear model amb IA"
+        },
+        "query": "Text de la consulta:",
+        "query-placeholder": "Escriu la teva consulta aquí",
+        "section": {
+          "create": "Crear secció amb IA"
+        },
+        "submit": "Enviar",
+        "widget": {
+          "create": "Crear widget amb IA",
+          "update": "Actualitzar widget amb IA"
+        }
+      }
+    },
     "alt": {
       "help": "Aquest és el text alternatiu de la descripció per a la imatge en matèria d'accessibilitat",
       "label": "Text alternatiu per a la imatge",
@@ -137,6 +154,19 @@
       "title": {
         "invalid": "El títol del contenidor no és vàlid. N'has de fixar un"
       }
+    },
+    "AI": {
+      "AI-0000": "Error desconegut",
+      "AI-1000": "No s'ha trobat el recurs",
+      "AI-1001": "S'ha superat el límit de velocitat d'Azure OpenAI. Torna a intentar-ho més tard.",
+      "AI-1002": "Esquema amb nom '{{name}}' no trobat",
+      "AI-1003": "Widget amb id '{{id}}' no trobat",
+      "AI-1004": "Secció amb id '{{id}}' no trobada",
+      "AI-1005": "Esquema per a model no trobat",
+      "AI-1006": "Esquema amb descripció '{{description}}' no trobat",
+      "AI-1007": "Contingut JSON invàlid: '{{json}}'",
+      "AI-1008": "Validació fallida de dades proporcionades",
+      "sorry": "Ho sento, no he pogut processar la teva resposta"
     },
     "Animation": {
       "image": {
@@ -611,6 +641,8 @@
   },
   "header": {
     "addSection": "Afegeix una secció",
+    "addSectionAI": "Afegir secció amb IA",
+    "ai": "Crear model amb IA",
     "clear": "Esborra el contingut",
     "download": "Descarrega la unitat",
     "importSection": "Importa la secció",
@@ -628,6 +660,7 @@
   },
   "items": {
     "add": "Afegeix el contingut",
+    "ai-edit-widget": "Editar widget amb IA",
     "delete": "Elimina l'element",
     "duplicate": "Duplica l'element",
     "edit": "Edita el contingut",
@@ -717,6 +750,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Afegir widget amb IA",
     "deleteSection": "Elimina aquesta secció",
     "duplicate": "Duplica la secció",
     "edit": "Edita la informació",
@@ -942,6 +976,7 @@
           "optionType": "Format"
         },
         "modalTitle": "Banc de ginys",
+        "notFound": "No s'han trobat widgets",
         "placeholderGroup": "Grup",
         "placeholderTag": "Cerca per nom d'etiqueta",
         "placeholderTitle": "Cerca per títol de giny",
@@ -1541,7 +1576,7 @@
       "prev": "L'element encara no s'ha establert "
     },
     "Test": {
-      "label": "Tipus test",
+      "label": "Contenidor de preguntes",
       "questionSelect": "Selecciona un format de pregunta que vulguis afegir al test"
     },
     "TextBlock": {

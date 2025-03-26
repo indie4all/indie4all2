@@ -173,11 +173,13 @@ export default abstract class Editor {
             else if (btn.classList.contains('btn-ai-edit-widget')) this.editWidgetWithAI(containerId, container.dataset.widget);
         });
 
-        // ANALYTICS: send start and stop events
-        navigator.sendBeacon(Config.getAnalyticsBasePath() + "/entrance")
-        document.addEventListener('visibilitychange', function (event) {
-            navigator.sendBeacon(Config.getAnalyticsBasePath() + (document.visibilityState === "hidden" ? "/exit" : "/entrance"))
-        });
+        if (Config.getAnalyticsBasePath()) {
+            // ANALYTICS: send start and stop events
+            navigator.sendBeacon(Config.getAnalyticsBasePath() + "/entrance")
+            document.addEventListener('visibilitychange', function (event) {
+                navigator.sendBeacon(Config.getAnalyticsBasePath() + (document.visibilityState === "hidden" ? "/exit" : "/entrance"))
+            });
+        }
 
         // [Fix] TinyMCE in bootstrap modals
         document.addEventListener('focusin', (e) => {

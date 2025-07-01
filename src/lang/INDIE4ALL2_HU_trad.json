@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "Legalább egy helyeset ki kell választania",
-        "notEnougOptions": "4 opciót kell megadnia"
+        "notEnougOptions": "Legalább 2 lehetőséget kell megadnia"
       },
       "text": {
         "invalid": "A szöveg üres. Be kell írnia egy szöveget."
@@ -1073,7 +1073,7 @@
           "placeholder": "Adja meg a kép URL-címét..."
         },
         "options": {
-          "help": "Ez a 4 lehetőség a kép alatt jelenik meg. Csak az egyik lehet helyes.",
+          "help": "Ezek a lehetőségek a kép alatt jelennek meg. Csak egy lehet helyes.",
           "label": "Beállítások",
           "placeholder": "Adjon meg egy lehetőséget"
         },

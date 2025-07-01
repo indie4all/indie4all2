@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "Musisz wybrać co najmniej jeden poprawny",
-        "notEnougOptions": "Musisz wprowadzić 4 opcje"
+        "notEnougOptions": "Musisz wprowadzić co najmniej 2 opcje"
       },
       "text": {
         "invalid": "Tekst jest pusty. Musisz wprowadzić tekst."
@@ -1073,7 +1073,7 @@
           "placeholder": "Wpisz adres URL obrazu..."
         },
         "options": {
-          "help": "Te 4 opcje pojawią się pod obrazem. Tylko jeden może być poprawny.",
+          "help": "Te opcje pojawią się pod obrazem. Tylko jeden z nich może być poprawny.",
           "label": "Opcje",
           "placeholder": "Wprowadź opcję"
         },

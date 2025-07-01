@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "Turite pasirinkti bent vieną teisingą",
-        "notEnougOptions": "Turite įvesti 4 parinktis"
+        "notEnougOptions": "Turite įvesti bent 2 parinktis"
       },
       "text": {
         "invalid": "Tekstas tuščias. Turite įvesti tekstą."
@@ -1073,7 +1073,7 @@
           "placeholder": "Įveskite vaizdo URL..."
         },
         "options": {
-          "help": "Šios 4 parinktys bus rodomos po paveikslėliu. Tik vienas gali būti teisingas.",
+          "help": "Šios parinktys bus rodomos po vaizdu. Tik vienas gali būti teisingas.",
           "label": "Parinktys",
           "placeholder": "Įveskite parinktį"
         },

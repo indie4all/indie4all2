@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "Zuzena den bat aukeratu behar duzu gutxienez",
-        "notEnougOptions": "4 aukera sartu behar dituzu"
+        "notEnougOptions": "Gutxienez 2 aukera sartu behar dituzu"
       },
       "text": {
         "invalid": "Testua hutsik dago. Testu bat sartu behar duzu."
@@ -1073,7 +1073,7 @@
           "placeholder": "Sartu irudiaren URLa ..."
         },
         "options": {
-          "help": "4 aukera hauek irudiaren azpian agertuko dira. Bat bakarrik izan daiteke zuzena.",
+          "help": "Aukera horiek irudiaren azpian agertuko dira. Bat bakarrik izan daiteke zuzena.",
           "label": "Aukerak",
           "placeholder": "Idatzi aukera bat"
         },

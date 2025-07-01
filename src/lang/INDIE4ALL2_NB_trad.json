@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "Du må velge minst én riktig",
-        "notEnougOptions": "Du må angi 4 alternativer"
+        "notEnougOptions": "Du må angi minst 2 alternativer"
       },
       "text": {
         "invalid": "Teksten er tom. Du må skrive inn en tekst."
@@ -1073,7 +1073,7 @@
           "placeholder": "Skriv inn nettadressen til bildet..."
         },
         "options": {
-          "help": "Disse 4 alternativene vises under bildet. Bare én kan være riktig.",
+          "help": "Disse alternativene vises under bildet. Bare én kan ha rett.",
           "label": "Alternativer",
           "placeholder": "Angi et alternativ"
         },

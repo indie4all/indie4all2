@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "N'has de seleccionar almenys una de correcta",
-        "notEnougOptions": "Has d'introduir 4 opcions"
+        "notEnougOptions": "Has d'introduir almenys 2 opcions"
       },
       "text": {
         "invalid": "El camp del text és buit i n'hi has d'introduir un"
@@ -1073,7 +1073,7 @@
           "placeholder": "Introdueix l'URL de la imatge"
         },
         "options": {
-          "help": "Aquestes quatre opcions apareixeran sota la imatge. Només una pot ser correcta",
+          "help": "Aquestes opcions apareixeran sota la imatge. Només una pot ser correcta.",
           "label": "Opcions",
           "placeholder": "Escriu una opció"
         },

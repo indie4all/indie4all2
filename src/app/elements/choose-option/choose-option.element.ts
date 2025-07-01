@@ -10,14 +10,9 @@ export default abstract class ChooseOptionElement extends ItemElement {
     static category = "interactiveElements";
     static icon = icon;
 
-    protected static optionsNumber: number = 4;
-    protected static optionsWithoutCorrect(options) {
-        for (var i = 0; i < options.length; i++) {
-            var option = options[i];
-            if (option.correct)
-                return false;
-        }
-        return true;
+    protected static optionsNumber: number = 8;
+    protected static optionsWithoutCorrect(options: WidgetChooseOptionItem[]): boolean {
+        return options.every(opt => opt.correct === false);
     }
 
     params: WidgetChooseOptionParams;
@@ -46,10 +41,10 @@ export default abstract class ChooseOptionElement extends ItemElement {
     }
 
     updateModelFromForm(form: any): void {
-        var options: WidgetChooseOptionItem[] = [];
+        const options: WidgetChooseOptionItem[] = [];
         for (var i = 0; i < ChooseOptionElement.optionsNumber; i++) {
             var option = form["option" + i];
-            if (option && (option.length > 0)) {
+            if (!this.utils.isStringEmptyOrWhitespace(option)) {
                 options.push({ text: option, correct: parseInt(form.correct) == i })
             }
         }
@@ -74,7 +69,7 @@ export default abstract class ChooseOptionElement extends ItemElement {
         if (this.data.text.length == 0) errors.push("ChooseOption.text.invalid");
         if (ChooseOptionElement.optionsWithoutCorrect(this.data.options))
             errors.push("ChooseOption.options.noCorrect");
-        if (this.data.options.length != ChooseOptionElement.optionsNumber)
+        if (this.data.options.length < 2)
             errors.push("ChooseOption.options.notEnougOptions");
         if (!this.utils.hasNameInParams(this))
             errors.push("common.name.invalid");
@@ -97,7 +92,7 @@ export default abstract class ChooseOptionElement extends ItemElement {
         if (form.text.length == 0) errors.push("ChooseOption.text.invalid");
         if (ChooseOptionElement.optionsWithoutCorrect(options))
             errors.push("ChooseOption.options.noCorrect");
-        if (options.length != ChooseOptionElement.optionsNumber)
+        if (options.length < 2)
             errors.push("ChooseOption.options.notEnougOptions");
         if (form.instanceName.length == 0) errors.push("common.name.invalid");
         if (this.utils.isStringEmptyOrWhitespace(form.alt)) errors.push("common.alt.invalid")

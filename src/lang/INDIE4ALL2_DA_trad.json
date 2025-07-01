@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "Du skal vælge mindst én korrekt",
-        "notEnougOptions": "Du skal indtaste 4 muligheder"
+        "notEnougOptions": "Du skal indtaste mindst 2 muligheder"
       },
       "text": {
         "invalid": "Teksten er tom. Du skal indtaste en tekst."
@@ -1073,7 +1073,7 @@
           "placeholder": "Indtast billedets URL..."
         },
         "options": {
-          "help": "Disse 4 muligheder vises under billedet. Kun én kan være korrekt.",
+          "help": "Disse muligheder vises under billedet. Kun én kan være korrekt.",
           "label": "Indstillinger",
           "placeholder": "Indtast en indstilling"
         },

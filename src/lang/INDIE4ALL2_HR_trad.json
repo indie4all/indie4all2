@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "Morate odabrati barem jednu ispravnu",
-        "notEnougOptions": "Morate unijeti 4 mogućnosti"
+        "notEnougOptions": "Morate unijeti najmanje 2 opcije"
       },
       "text": {
         "invalid": "Tekst je prazan. Morate unijeti tekst."
@@ -1073,7 +1073,7 @@
           "placeholder": "Unesite URL slike..."
         },
         "options": {
-          "help": "Ove 4 opcije pojavit će se ispod slike. Samo jedan može biti točan.",
+          "help": "Ove opcije će se pojaviti ispod slike. Samo jedan može biti točan.",
           "label": "Mogućnosti",
           "placeholder": "Unesite mogućnost"
         },

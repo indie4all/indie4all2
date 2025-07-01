@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "Trebuie să selectați cel puțin o corecție",
-        "notEnougOptions": "Trebuie să introduceți 4 opțiuni"
+        "notEnougOptions": "Trebuie să introduceți cel puțin 2 opțiuni"
       },
       "text": {
         "invalid": "Textul este gol. Trebuie să introduceți un text."
@@ -1073,7 +1073,7 @@
           "placeholder": "Introduceți adresa URL a imaginii..."
         },
         "options": {
-          "help": "Aceste 4 opțiuni vor apărea sub imagine. Numai unul poate fi corect.",
+          "help": "Aceste opțiuni vor apărea sub imagine. Doar unul poate fi corect.",
           "label": "Opțiuni",
           "placeholder": "Introduceți o opțiune"
         },

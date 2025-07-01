@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "Jums jāizvēlas vismaz viens pareizs",
-        "notEnougOptions": "Jums jāievada 4 opcijas"
+        "notEnougOptions": "Jums jāievada vismaz 2 opcijas"
       },
       "text": {
         "invalid": "Teksts ir tukšs. Jums ir jāievada teksts."
@@ -1073,7 +1073,7 @@
           "placeholder": "Ievadiet attēla URL..."
         },
         "options": {
-          "help": "Šīs 4 opcijas parādīsies zem attēla. Tikai viens var būt pareizs.",
+          "help": "Šīs opcijas parādīsies zem attēla. Tikai viens var būt pareizs.",
           "label": "Opcijas",
           "placeholder": "Opcijas ievadīšana"
         },

@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "You must select at least one correct option",
-        "notEnougOptions": "You must enter 4 options"
+        "notEnougOptions": "You must enter at least 2 options"
       },
       "text": {
         "invalid": "The text is empty. You must enter a text."
@@ -1073,7 +1073,7 @@
           "placeholder": "Enter the image URL..."
         },
         "options": {
-          "help": "These 4 options will appear below the image. Only one can be correct.",
+          "help": "These options will appear below the image. Only one can be correct.",
           "label": "Options",
           "placeholder": "Enter an option"
         },

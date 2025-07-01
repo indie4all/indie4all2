@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "Ní mór duit ceann ceart amháin ar a laghad a roghnú",
-        "notEnougOptions": "Ní mór duit 4 rogha a chur isteach"
+        "notEnougOptions": "Ní mór duit 2 rogha ar a laghad a iontráil"
       },
       "text": {
         "invalid": "Tá an téacs folamh. Ní mór duit téacs a iontráil."
@@ -1073,7 +1073,7 @@
           "placeholder": "Iontráil URL na híomhá..."
         },
         "options": {
-          "help": "Beidh na 4 rogha seo le feiceáil faoi bhun na híomhá. Ní féidir ach ceann amháin a bheith ceart.",
+          "help": "Beidh na roghanna seo le feiceáil faoi bhun na híomhá. Ní féidir ach ceann amháin a bheith ceart.",
           "label": "Roghanna",
           "placeholder": "Iontráil rogha"
         },

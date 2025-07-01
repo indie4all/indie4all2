@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "Peate valima vähemalt ühe õige",
-        "notEnougOptions": "Peate sisestama 4 võimalust"
+        "notEnougOptions": "Peate sisestama vähemalt 2 valikut"
       },
       "text": {
         "invalid": "Tekst on tühi. Peate sisestama teksti."
@@ -1073,7 +1073,7 @@
           "placeholder": "Sisestage pildi URL..."
         },
         "options": {
-          "help": "Need 4 valikut kuvatakse pildi all. Ainult üks saab olla õige.",
+          "help": "Need valikud kuvatakse pildi all. Ainult üks saab olla õige.",
           "label": "Valikud",
           "placeholder": "Sisestage valik"
         },

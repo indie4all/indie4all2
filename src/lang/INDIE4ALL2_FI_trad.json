@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "Sinun on valittava vähintään yksi oikea",
-        "notEnougOptions": "Sinun on annettava 4 vaihtoehtoa"
+        "notEnougOptions": "Sinun on annettava vähintään 2 vaihtoehtoa"
       },
       "text": {
         "invalid": "Teksti on tyhjä. Sinun on kirjoitettava teksti."
@@ -1073,7 +1073,7 @@
           "placeholder": "Kirjoita kuvan URL-osoite..."
         },
         "options": {
-          "help": "Nämä 4 vaihtoehtoa näkyvät kuvan alla. Vain yksi voi olla oikeassa.",
+          "help": "Nämä vaihtoehdot näkyvät kuvan alla. Vain yksi voi olla oikea.",
           "label": "Asetukset",
           "placeholder": "Vaihtoehdon syöttäminen"
         },

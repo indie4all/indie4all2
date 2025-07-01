@@ -30,12 +30,18 @@ export default class ChooseOptionRemoteElement extends HasFilePickerElement(Choo
     }
 
     get form() {
+        // Create an array of size 8 initialized with the current options or empty strings
+        const options = Array.from({ length: ChooseOptionElement.optionsNumber }, (_, i) => {
+            return {
+                text: this.data.options[i] ? this.data.options[i].text : "",
+                correct: this.data.options[i] ? this.data.options[i].correct : false,
+        }});
         return import('./form-remote.hbs')
             .then((module) => module.default({
                 instanceId: this.id,
                 text: this.data.text,
                 image: this.data.image,
-                options: this.data.options,
+                options: options,
                 instanceName: this.params.name,
                 help: this.params.help,
                 alt: this.data.alt

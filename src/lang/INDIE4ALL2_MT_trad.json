@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "Agħżel mill-inqas korrett wieħed",
-        "notEnougOptions": "Jeħtieġ iddaħħal 4 għażliet"
+        "notEnougOptions": "Trid iddaħħal mill-inqas 2 għażliet"
       },
       "text": {
         "invalid": "It-test vojt. Għandek iddaħħal test."
@@ -1073,7 +1073,7 @@
           "placeholder": "Daħħal il-URL tal-immaġni..."
         },
         "options": {
-          "help": "Dawn l-4 għażliet se jidhru taħt l-immaġni. Wieħed biss jista' jkun korrett.",
+          "help": "Dawn l-għażliet se jidhru taħt l-immaġni. Wieħed biss jista 'jkun korrett.",
           "label": "Għażliet",
           "placeholder": "Daħħal għażla"
         },

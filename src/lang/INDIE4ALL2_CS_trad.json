@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "Musíte vybrat alespoň jednu správnou",
-        "notEnougOptions": "Musíte zadat 4 možnosti"
+        "notEnougOptions": "Musíte zadat alespoň 2 možnosti"
       },
       "text": {
         "invalid": "Text je prázdný. Musíte zadat text."
@@ -1073,7 +1073,7 @@
           "placeholder": "Zadejte adresu URL obrázku..."
         },
         "options": {
-          "help": "Tyto 4 možnosti se zobrazí pod obrázkem. Jen jeden může být správný.",
+          "help": "Tyto možnosti se zobrazí pod obrázkem. Pouze jedna může být správná.",
           "label": "Volby",
           "placeholder": "Zadejte možnost"
         },

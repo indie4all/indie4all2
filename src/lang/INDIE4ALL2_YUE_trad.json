@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "你必須至少選擇一個正確嘅",
-        "notEnougOptions": "你必須輸入4個選項"
+        "notEnougOptions": "你必須至少輸入2個選項"
       },
       "text": {
         "invalid": "文本為吉。 你必須輸入文本。"
@@ -1073,7 +1073,7 @@
           "placeholder": "輸入圖像嘅網址..."
         },
         "options": {
-          "help": "4個選項將顯示喺圖像下方。 只有一個係正確嘅。",
+          "help": "呢啲選項將顯示喺圖像下方。 只有一個可能係正確嘅。",
           "label": "選項",
           "placeholder": "輸入一個選項"
         },

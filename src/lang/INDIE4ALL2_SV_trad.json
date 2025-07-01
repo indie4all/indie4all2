@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "Du måste välja minst en korrekt",
-        "notEnougOptions": "Du måste ange 4 alternativ"
+        "notEnougOptions": "Du måste ange minst 2 alternativ"
       },
       "text": {
         "invalid": "Texten är tom. Du måste ange en text."
@@ -1073,7 +1073,7 @@
           "placeholder": "Ange webbadressen till bilden..."
         },
         "options": {
-          "help": "Dessa 4 alternativ visas under bilden. Endast en kan vara korrekt.",
+          "help": "Dessa alternativ kommer att visas under bilden. Bara en kan vara korrekt.",
           "label": "Alternativ",
           "placeholder": "Ange ett alternativ"
         },

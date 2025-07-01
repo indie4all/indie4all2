@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "Izbrati morate vsaj eno pravilno",
-        "notEnougOptions": "Vnesti morate 4 možnosti"
+        "notEnougOptions": "Vnesti morate vsaj 2 možnosti"
       },
       "text": {
         "invalid": "Besedilo je prazno. Vnesti morate besedilo."
@@ -1073,7 +1073,7 @@
           "placeholder": "Vnesite URL slike ..."
         },
         "options": {
-          "help": "Te 4 možnosti bodo prikazane pod sliko. Samo eden je lahko pravilen.",
+          "help": "Te možnosti se prikažejo pod sliko. Samo ena je lahko pravilna.",
           "label": "Možnosti",
           "placeholder": "Vnesite možnost"
         },

@@ -265,7 +265,7 @@
       },
       "options": {
         "noCorrect": "U moet ten minste één juiste selectie selecteren",
-        "notEnougOptions": "U moet 4 opties invoeren"
+        "notEnougOptions": "U moet minimaal 2 opties invoeren"
       },
       "text": {
         "invalid": "De tekst is leeg. U moet een tekst invoeren."
@@ -1073,7 +1073,7 @@
           "placeholder": "Voer de URL van de afbeelding in..."
         },
         "options": {
-          "help": "Deze 4 opties verschijnen onder de afbeelding. Er kan er maar één correct zijn.",
+          "help": "Deze opties verschijnen onder de afbeelding. Er kan er maar één gelijk hebben.",
           "label": "Opties",
           "placeholder": "Voer een optie in"
         },

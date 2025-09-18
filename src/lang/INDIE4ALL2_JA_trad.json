@@ -4,6 +4,29 @@
     "viewImage": "画像を見る"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "使用するチャットボット:",
+        "model": {
+          "create": "AIでモデルを作成",
+          "update": "AIでモデルを更新"
+        },
+        "query": "クエリ テキスト:",
+        "query-placeholder": "ここにお問い合わせをお書きください",
+        "reasoning-effort": "推論の時間:",
+        "reasoning-effort-help": "チャットボットが応答を生成するために使用する推論時間を選択します。時間が長いほど、より詳細で正確な回答が得られますが、生成に時間がかかる場合もあります。",
+        "reasoning-effort-low": "アドバンスド",
+        "reasoning-effort-minimal": "標準",
+        "section": {
+          "create": "AIでセクションを作成"
+        },
+        "submit": "送信",
+        "widget": {
+          "create": "AIでウィジェットを作成",
+          "update": "AIでウィジェットを更新"
+        }
+      }
+    },
     "alt": {
       "help": "これは、アクセシビリティの観点から画像の代替説明テキストです。",
       "label": "画像の代替テキスト",
@@ -138,6 +161,19 @@
         "invalid": "コンテナーのタイトルが無効です。確立する必要があります。"
       }
     },
+    "AI": {
+      "AI-0000": "不明なエラー",
+      "AI-1000": "リソースが見つかりません",
+      "AI-1001": "Azure OpenAI のレート制限を超えました。しばらくしてからもう一度お試しください。",
+      "AI-1002": "'{{name}}' という名前のスキーマが見つかりません",
+      "AI-1003": "ID が '{{id}}' のウィジェットが見つかりません",
+      "AI-1004": "ID '{{id}}' のセクションが見つかりません",
+      "AI-1005": "モデルのスキーマが見つかりません",
+      "AI-1006": "説明「{{description}}」が見つからない回路図",
+      "AI-1007": "無効なJSONコンテンツ:'{{json}}'",
+      "AI-1008": "提供されたデータの検証に失敗しました",
+      "sorry": "申し訳ありませんが、私はあなたの答えを処理できませんでした"
+    },
     "Animation": {
       "image": {
         "invalid": "背景画像に設定されている URL が正しくありません。有効なインディオーサー URL を指定する必要があります。"
@@ -199,6 +235,9 @@
         "invalid": "用語を指定する必要があります。"
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "ランダムウィジェットの数は、選択したウィジェットの数を超えることはできません。"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "あなたは見積もりの内容を書いていません。少なくとも、コンテンツを書く必要があります。"
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "少なくとも 1 つの正しいものを選択する必要があります",
-        "notEnougOptions": "4つのオプションを入力する必要があります"
+        "notEnougOptions": "少なくとも 2 つのオプションを入力する必要があります"
       },
       "text": {
         "invalid": "テキストが空です。テキストを入力する必要があります。"
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "テキストが空です。テキストを書くかコピーする必要があります。"
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "ビデオに設定されている URL が無効です。indieopenインタラクティブビデオから必ず提供する必要があります。"
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "動画の URL が無効です。インディーズメディアまたは Youtube から有効な URL を提供する必要があります。",
-        "localInvalid": "動画の URL が無効です。有効な YouTube URL を指定していることを確認する必要があります。"
+        "localInvalid": "動画の URL が無効です。有効な YouTube URL を指定していることを確認する必要があります。",
+        "public": {
+          "invalidId": "動画 ID が無効です。",
+          "notConfigured": "メディア エンドポイントが設定されていません。",
+          "notFound": "ビデオから情報を取得できませんでした。"
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "セクションを追加",
+    "addSectionAI": "AIでセクションを追加",
+    "ai": "AIでモデルを作成",
+    "ai-update": "AIでモデルを更新",
     "clear": "コンテンツの消去",
     "download": "ダウンロードユニット",
     "importSection": "インポートセクション",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "コンテンツの追加",
+    "ai-edit-widget": "AIによるウィジェットの編集",
     "delete": "アイテムの削除",
     "duplicate": "アイテムの複製",
     "edit": "コンテンツの編集",
     "export": "アイテムのエクスポート"
   },
   "messages": {
-    "bankOfQuestionsError": "問題バンクに接続できませんでした。",
     "bankOfWidgetsError": "ウィジェットバンクに接続できませんでした。",
     "changesSaved": "変更が正常に保存されました。",
     "confirmClearContent": "コンテンツを完全に削除します。それがあなたが本当にやりたいことであることを確認してください。",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "AIでウィジェットを追加",
     "deleteSection": "セクションの削除",
     "duplicate": "セクションの複製",
     "edit": "情報の編集",
@@ -939,8 +982,8 @@
           "optionTag": "ラベル",
           "optionType": "やつ"
         },
-        "maximumRandomWidgetsExceeded": "ランダムなウィジェットの数は、選択したウィジェットの数を超えることはできません",
         "modalTitle": "ウィジェットバンク",
+        "notFound": "ウィジェットが見つかりません",
         "placeholderGroup": "群",
         "placeholderTag": "タグ名で検索",
         "placeholderTitle": "ウィジェットのタイトルで検索",
@@ -1037,7 +1080,7 @@
           "placeholder": "画像のURLを入力してください..."
         },
         "options": {
-          "help": "これらの4つのオプションが画像の下に表示されます。正しいのは1つだけです。",
+          "help": "これらのオプションは、画像の下に表示されます。正しいのは1つだけです。",
           "label": "オプション",
           "placeholder": "オプションを入力"
         },
@@ -1251,17 +1294,6 @@
       "label": "画像とテキスト",
       "prev": "画像とテキストはまだ確立されていません..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "テキスト入力を使用して、インタラクティブビデオツールで作成されたインタラクティブビデオのURLを入力します。",
-          "label": "動画の URL",
-          "placeholder": "例: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "インタラクティブビデオ",
-      "prev": "インタラクティブビデオはまだ確立されていません"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "謎",
       "prev": "パズルはまだ初期化されていません..."
-    },
-    "QuestionsBank": {
-      "add": "足す",
-      "label": "質問バンクからのインポート",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "ランダムな質問の数は、選択した質問の数を超えることはできません",
-        "modalTitle": "質問バンク",
-        "placeholderGroup": "群",
-        "placeholderTitle": "タイトルまたは質問タグで検索",
-        "placeholderType": "やつ",
-        "randomTextBefore": " 選ばれた人からのランダムな質問",
-        "randomTextPrev": "紹介 ",
-        "search": "見つけます",
-        "selectAllText": "すべて選択"
-      },
-      "modalTitle": "質問バンク",
-      "search": "見つけます"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "アイテムはまだ確立されていません..."
     },
     "Test": {
-      "label": "テストの種類",
+      "label": "質問コンテナ",
       "questionSelect": "クイズに追加する質問タイプを選択します"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "はい"
         },
         "url": {
-          "help": "テキスト入力を使用して動画のURLを入力します(ユーチューブ、vimeoなど)",
+          "help": "動画の URL が YouTube からのものである場合は、テキスト入力を使用して動画の URL を入力します",
           "label": "動画の URL",
           "placeholder": "例: https://example.com/video.mp4"
         }

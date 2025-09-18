@@ -5,6 +5,7 @@ import helmet from 'helmet';
 const cookieParser = require('cookie-parser');
 const session = require('express-session')
 import config from "config";
+import aiRouter from "./routes/ai";
 import modelRouter from "./routes/model";
 import resourceRouter from "./routes/resource";
 import translationRouter from "./routes/translation";
@@ -64,6 +65,7 @@ app.post('/exit', (req, res) => {
     res.status(200).send();
 });
 
+app.use("/ai", aiRouter);
 app.use("/model", modelRouter);
 app.use("/resource", resourceRouter);
 app.use("/translation", translationRouter);

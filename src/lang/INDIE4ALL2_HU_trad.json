@@ -4,6 +4,29 @@
     "viewImage": "Lásd a képet"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Használható chatbotok:",
+        "model": {
+          "create": "Modell létrehozása mesterséges intelligenciával",
+          "update": "Modell frissítése AI-val"
+        },
+        "query": "Lekérdezés szövege:",
+        "query-placeholder": "Írja meg érdeklődését itt",
+        "reasoning-effort": "Az érvelés ideje:",
+        "reasoning-effort-help": "Válassza ki azt az érvelési időt, amelyet a chatbot használni szeretne a válasz létrehozásához. A hosszabb idő részletesebb és pontosabb válaszokat eredményezhet, de a generálás is hosszabb időt vehet igénybe.",
+        "reasoning-effort-low": "Haladó",
+        "reasoning-effort-minimal": "Szabvány",
+        "section": {
+          "create": "Szakasz létrehozása mesterséges intelligenciával"
+        },
+        "submit": "Küld",
+        "widget": {
+          "create": "Widget létrehozása mesterséges intelligenciával",
+          "update": "Widget frissítése AI-val"
+        }
+      }
+    },
     "alt": {
       "help": "Ez a kép alternatív leíró szövege a hozzáférhetőség szempontjából",
       "label": "A kép helyettesítő szövege",
@@ -138,6 +161,19 @@
         "invalid": "A tároló címe érvénytelen. Létre kell hoznia egyet."
       }
     },
+    "AI": {
+      "AI-0000": "Ismeretlen hiba",
+      "AI-1000": "Az erőforrás nem található",
+      "AI-1001": "Túllépte az Azure OpenAI sebességkorlátját. Kérjük, próbálja újra később.",
+      "AI-1002": "A '{{name}}' nevű séma nem található",
+      "AI-1003": "A \"{{id}}\" azonosítójú widget nem található",
+      "AI-1004": "A \"{{id}}\" azonosítójú szakasz nem található",
+      "AI-1005": "A modell sémája nem található",
+      "AI-1006": "Vázlat leírással '{{description}}' nem található",
+      "AI-1007": "Érvénytelen JSON-tartalom: '{{json}}'",
+      "AI-1008": "A megadott adatok sikertelen érvényesítése",
+      "sorry": "Sajnálom, nem tudtam feldolgozni a válaszodat"
+    },
     "Animation": {
       "image": {
         "invalid": "A háttérképhez beállított URL-cím helytelen. Meg kell adnia egy érvényes független szerző URL-címét."
@@ -199,6 +235,9 @@
         "invalid": "Meg kell adnia egy kifejezést."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "A véletlenszerű widgetek száma nem haladhatja meg a kiválasztott widgetek számát."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Nem írta meg az idézet tartalmát. Legalább meg kell írnia a tartalmat."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "Legalább egy helyeset ki kell választania",
-        "notEnougOptions": "4 opciót kell megadnia"
+        "notEnougOptions": "Legalább 2 lehetőséget kell megadnia"
       },
       "text": {
         "invalid": "A szöveg üres. Be kell írnia egy szöveget."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "A szöveg üres. Szöveget kell írnia vagy másolnia."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "A videóhoz konfigurált URL érvénytelen. Győződjön meg róla, hogy indieopen interaktív videókból ad meg egyet."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "A videó URL-je érvénytelen. Ügyelned kell arra, hogy érvényes URL-t adj meg az IndieMedia vagy a Youtube szolgáltatásból.",
-        "localInvalid": "A videó URL-je érvénytelen. Meg kell győződnöd arról, hogy érvényes YouTube-URL-t adtál meg."
+        "localInvalid": "A videó URL-je érvénytelen. Meg kell győződnöd arról, hogy érvényes YouTube-URL-t adtál meg.",
+        "public": {
+          "invalidId": "Érvénytelen videóazonosító.",
+          "notConfigured": "A médiavégpont nincs konfigurálva.",
+          "notFound": "A videóból származó információkat nem sikerült lekérni."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Szakasz hozzáadása",
+    "addSectionAI": "Szakasz hozzáadása AI-val",
+    "ai": "Modell létrehozása mesterséges intelligenciával",
+    "ai-update": "Modell frissítése AI-val",
     "clear": "Tartalom törlése",
     "download": "Letöltési egység",
     "importSection": "Importálás szakasz",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Tartalom hozzáadása",
+    "ai-edit-widget": "Widget szerkesztése mesterséges intelligenciával",
     "delete": "Elem törlése",
     "duplicate": "Elem megkettőzése",
     "edit": "Tartalom szerkesztése",
     "export": "Elem exportálása"
   },
   "messages": {
-    "bankOfQuestionsError": "Nem sikerült csatlakozni a kérdésbankhoz.",
     "bankOfWidgetsError": "Nem sikerült csatlakozni a widgetbankhoz.",
     "changesSaved": "A módosítások mentése sikeres.",
     "confirmClearContent": "Teljesen törölni fogja a tartalmat. Győződjön meg róla, hogy valóban ezt akarja tenni.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Widget hozzáadása AI-val",
     "deleteSection": "Szakasz törlése",
     "duplicate": "Duplikált szakasz",
     "edit": "Adatok szerkesztése",
@@ -939,8 +982,8 @@
           "optionTag": "Címke",
           "optionType": "Fickó"
         },
-        "maximumRandomWidgetsExceeded": "A véletlenszerű widgetek száma nem haladhatja meg a kiválasztott widgetek számát",
         "modalTitle": "Widget Bank",
+        "notFound": "Nem található widget",
         "placeholderGroup": "Csoport",
         "placeholderTag": "Keresés címkenév alapján",
         "placeholderTitle": "Keresés a widget címe alapján",
@@ -1037,7 +1080,7 @@
           "placeholder": "Adja meg a kép URL-címét..."
         },
         "options": {
-          "help": "Ez a 4 lehetőség a kép alatt jelenik meg. Csak az egyik lehet helyes.",
+          "help": "Ezek a lehetőségek a kép alatt jelennek meg. Csak egy lehet helyes.",
           "label": "Beállítások",
           "placeholder": "Adjon meg egy lehetőséget"
         },
@@ -1251,17 +1294,6 @@
       "label": "Kép és szöveg",
       "prev": "A kép és a szöveg még nincs megállapítva..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Szövegbevitel használatával adja meg az interaktív videó eszközzel létrehozott interaktív videó URL-címét.",
-          "label": "Videó URL-címe",
-          "placeholder": "Példa: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktív videó",
-      "prev": "Az interaktív videó még nincs létrehozva"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Rejtvény",
       "prev": "A rejtvény még nincs inicializálva..."
-    },
-    "QuestionsBank": {
-      "add": "Hozzáad",
-      "label": "Importálás a kérdésbankból",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "A véletlenszerű kérdések száma nem haladhatja meg a kiválasztott kérdések számát",
-        "modalTitle": "Kérdés bank",
-        "placeholderGroup": "Csoport",
-        "placeholderTitle": "Keresés cím vagy kérdéscímke alapján",
-        "placeholderType": "Fickó",
-        "randomTextBefore": " Véletlenszerű kérdések a kiválasztottaktól",
-        "randomTextPrev": "Bevezet ",
-        "search": "Találni",
-        "selectAllText": "Az összes kijelölése"
-      },
-      "modalTitle": "Kérdés bank",
-      "search": "Találni"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "A tétel még nincs meghatározva..."
     },
     "Test": {
-      "label": "Teszt típusa",
+      "label": "Kérdés konténer",
       "questionSelect": "Válassza ki a kvízhez hozzáadni kívánt kérdéstípust"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Igen"
         },
         "url": {
-          "help": "Szövegbevitellel adja meg a videó URL-jét (youtube, vimeo...)",
+          "help": "Szövegbevitel használata a videó URL-jének megadásához, ha az a YouTube-ról származik",
           "label": "Videó URL-címe",
           "placeholder": "Példa: https://example.com/video.mp4"
         }

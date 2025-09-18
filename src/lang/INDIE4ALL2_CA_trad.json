@@ -4,6 +4,29 @@
     "viewImage": "Veu la imatge"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Chatbots a utilitzar:",
+        "model": {
+          "create": "Crear model amb IA",
+          "update": "Actualitzar model amb IA"
+        },
+        "query": "Text de la consulta:",
+        "query-placeholder": "Escriu la teva consulta aquí",
+        "reasoning-effort": "Temps de raonament:",
+        "reasoning-effort-help": "Selecciona el temps de raonament que desitges que el chatbot utilitzi per generar la resposta. Un temps més llarg pot produir respostes més detallades i precises, però també pot trigar més a generar-se.",
+        "reasoning-effort-low": "Avançat",
+        "reasoning-effort-minimal": "Estàndard",
+        "section": {
+          "create": "Crear secció amb IA"
+        },
+        "submit": "Enviar",
+        "widget": {
+          "create": "Crear widget amb IA",
+          "update": "Actualitzar widget amb IA"
+        }
+      }
+    },
     "alt": {
       "help": "Aquest és el text alternatiu de la descripció per a la imatge en matèria d'accessibilitat",
       "label": "Text alternatiu per a la imatge",
@@ -138,6 +161,19 @@
         "invalid": "El títol del contenidor no és vàlid. N'has de fixar un"
       }
     },
+    "AI": {
+      "AI-0000": "Error desconegut",
+      "AI-1000": "No s'ha trobat el recurs",
+      "AI-1001": "S'ha superat el límit de velocitat d'Azure OpenAI. Torna a intentar-ho més tard.",
+      "AI-1002": "Esquema amb nom '{{name}}' no trobat",
+      "AI-1003": "Widget amb id '{{id}}' no trobat",
+      "AI-1004": "Secció amb id '{{id}}' no trobada",
+      "AI-1005": "Esquema per a model no trobat",
+      "AI-1006": "Esquema amb descripció '{{description}}' no trobat",
+      "AI-1007": "Contingut JSON invàlid: '{{json}}'",
+      "AI-1008": "Validació fallida de dades proporcionades",
+      "sorry": "Ho sento, no he pogut processar la teva resposta"
+    },
     "Animation": {
       "image": {
         "invalid": "L'URL establert per a la imatge de fons no és correcte. Has de proporcionar un URL d'INDIeAuthor vàlid"
@@ -199,6 +235,9 @@
         "invalid": "Has de proporcionar un terme"
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "El nombre de widgets aleatoris no pot ser superior al nombre de widgets seleccionat."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "No has escrit el contingut de la cita. Com a mínim, n'has d'escriure el contingut"
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "N'has de seleccionar almenys una de correcta",
-        "notEnougOptions": "Has d'introduir 4 opcions"
+        "notEnougOptions": "Has d'introduir almenys 2 opcions"
       },
       "text": {
         "invalid": "El camp del text és buit i n'hi has d'introduir un"
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "No hi ha text. N'has de redactar o copiar-ne un "
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "L'URL configurat per al vídeo no és vàlid. Assegura't de proporcionar-ne un a partir del vídeo interactiu d'INDIeOpen"
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "L'URL establert per al vídeo no és vàlid. Has d'assegurar-te que proporciones un URL vàlid d'IndieMedia o YouTube",
-        "localInvalid": "L'URL establert per al vídeo no és vàlid. Assegurat que proporciones un URL de YouTube vàlid "
+        "localInvalid": "L'URL establert per al vídeo no és vàlid. Assegurat que proporciones un URL de YouTube vàlid ",
+        "public": {
+          "invalidId": "ID de vídeo invàlid.",
+          "notConfigured": "Endpoint multimèdia no configurat.",
+          "notFound": "No es va poder recuperar la informació del vídeo."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Afegeix una secció",
+    "addSectionAI": "Afegir secció amb IA",
+    "ai": "Crear model amb IA",
+    "ai-update": "Actualitzar model amb IA",
     "clear": "Esborra el contingut",
     "download": "Descarrega la unitat",
     "importSection": "Importa la secció",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Afegeix el contingut",
+    "ai-edit-widget": "Editar widget amb IA",
     "delete": "Elimina l'element",
     "duplicate": "Duplica l'element",
     "edit": "Edita el contingut",
     "export": "Exporta l'element"
   },
   "messages": {
-    "bankOfQuestionsError": "No es va poder connectar amb el banc de preguntes.",
     "bankOfWidgetsError": "No es va poder connectar amb el banc de widgets.",
     "changesSaved": "Els canvis s'han desat correctament",
     "confirmClearContent": "Eliminaràs el contingut per complet. Assegura't que realment ho vols fer",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Afegir widget amb IA",
     "deleteSection": "Elimina aquesta secció",
     "duplicate": "Duplica la secció",
     "edit": "Edita la informació",
@@ -939,8 +982,8 @@
           "optionTag": "Etiqueta",
           "optionType": "Format"
         },
-        "maximumRandomWidgetsExceeded": "El nombre de ginys aleatoris no pot ser superior al nombre de ginys seleccionats",
         "modalTitle": "Banc de ginys",
+        "notFound": "No s'han trobat widgets",
         "placeholderGroup": "Grup",
         "placeholderTag": "Cerca per nom d'etiqueta",
         "placeholderTitle": "Cerca per títol de giny",
@@ -1037,7 +1080,7 @@
           "placeholder": "Introdueix l'URL de la imatge"
         },
         "options": {
-          "help": "Aquestes quatre opcions apareixeran sota la imatge. Només una pot ser correcta",
+          "help": "Aquestes opcions apareixeran sota la imatge. Només una pot ser correcta.",
           "label": "Opcions",
           "placeholder": "Escriu una opció"
         },
@@ -1251,17 +1294,6 @@
       "label": "Imatge i text",
       "prev": "La imatge i el text encara no s'han establert"
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Utilitza la introducció de text per incloure l'URL del vídeo interactiu creat amb l'eina de vídeo interactiu",
-          "label": "URL del vídeo",
-          "placeholder": "Exemple: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Vídeo interactiu",
-      "prev": "El vídeo interactiu encara no s'ha establert"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Trencaclosques",
       "prev": "El trencaclosques encara no s'ha inicialitzat"
-    },
-    "QuestionsBank": {
-      "add": "Afegeix-ho",
-      "label": "Importa-ho del banc de preguntes",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "El nombre de preguntes aleatòries no pot ser superior al nombre de preguntes seleccionades",
-        "modalTitle": "Banc de preguntes",
-        "placeholderGroup": "Grup",
-        "placeholderTitle": "Cercar per títol o etiqueta de pregunta",
-        "placeholderType": "Format",
-        "randomTextBefore": " Preguntes aleatòries de les que s'han seleccionat",
-        "randomTextPrev": "Introdueix-ho",
-        "search": "Cercar",
-        "selectAllText": "Selecciona-les totes"
-      },
-      "modalTitle": "Banc de preguntes",
-      "search": "Cerca-ho"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "L'element encara no s'ha establert "
     },
     "Test": {
-      "label": "Tipus test",
+      "label": "Contenidor de preguntes",
       "questionSelect": "Selecciona un format de pregunta que vulguis afegir al test"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Sí"
         },
         "url": {
-          "help": "Usa l'entrada de text per introduir l'URL del vídeo (YouTube, Vimeo...)",
+          "help": "Fa servir l'entrada de text per introduir la URL del teu vídeo si és de YouTube",
           "label": "URL del vídeo",
           "placeholder": "Exemple: https://example.com/video.mp4"
         }

@@ -4,6 +4,29 @@
     "viewImage": "Zobacz zdjęcie"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Chatboty do wykorzystania:",
+        "model": {
+          "create": "Tworzenie modelu za pomocą sztucznej inteligencji",
+          "update": "Aktualizowanie modelu za pomocą sztucznej inteligencji"
+        },
+        "query": "Tekst zapytania:",
+        "query-placeholder": "Napisz swoje zapytanie tutaj",
+        "reasoning-effort": "Czas na rozmyślania:",
+        "reasoning-effort-help": "Wybierz czas rozumowania, który ma być używany przez chatbota do generowania odpowiedzi. Dłuższy czas może dać bardziej szczegółowe i dokładne odpowiedzi, ale może też zająć więcej czasu.",
+        "reasoning-effort-low": "Zaawansowany",
+        "reasoning-effort-minimal": "Norma",
+        "section": {
+          "create": "Utwórz sekcję za pomocą sztucznej inteligencji"
+        },
+        "submit": "Wyślij",
+        "widget": {
+          "create": "Utwórz widżet za pomocą sztucznej inteligencji",
+          "update": "Aktualizuj widżet za pomocą sztucznej inteligencji"
+        }
+      }
+    },
     "alt": {
       "help": "Jest to alternatywny tekst opisu obrazu pod względem dostępności",
       "label": "Tekst alternatywny dla obrazu",
@@ -138,6 +161,19 @@
         "invalid": "Tytuł kontenera jest nieprawidłowy. Musisz go ustanowić."
       }
     },
+    "AI": {
+      "AI-0000": "Nieznany błąd",
+      "AI-1000": "Nie znaleziono zasobu",
+      "AI-1001": "Przekroczono limit szybkości usługi Azure OpenAI. Spróbuj ponownie później.",
+      "AI-1002": "Nie znaleziono schematu o nazwie \"{{name}}\"",
+      "AI-1003": "Nie znaleziono widżetu o identyfikatorze '{{id}}'",
+      "AI-1004": "Nie znaleziono sekcji o identyfikatorze '{{id}}'",
+      "AI-1005": "Nie znaleziono schematu dla modelu",
+      "AI-1006": "Nie znaleziono schematu z opisem '{{description}}'",
+      "AI-1007": "Nieprawidłowa zawartość JSON: '{{json}}'",
+      "AI-1008": "Nieudana walidacja podanych danych",
+      "sorry": "Przepraszamy, nie mogę przetworzyć Twojej odpowiedzi"
+    },
     "Animation": {
       "image": {
         "invalid": "Adres URL ustawiony dla obrazu tła jest niepoprawny. Musisz podać prawidłowy adres URL indieauthor."
@@ -199,6 +235,9 @@
         "invalid": "Musisz podać termin."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Liczba losowych widżetów nie może przekraczać liczby wybranych widżetów."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Nie napisałeś treści cytatu. Musisz przynajmniej napisać treść."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "Musisz wybrać co najmniej jeden poprawny",
-        "notEnougOptions": "Musisz wprowadzić 4 opcje"
+        "notEnougOptions": "Musisz wprowadzić co najmniej 2 opcje"
       },
       "text": {
         "invalid": "Tekst jest pusty. Musisz wprowadzić tekst."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "Tekst jest pusty. Musisz napisać lub skopiować tekst."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Adres URL skonfigurowany dla filmu jest nieprawidłowy. Powinieneś upewnić się, że dostarczyłeś jeden z interaktywnych filmów indieopen."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "Adres URL filmu jest nieprawidłowy. Musisz podać prawidłowy adres URL z IndieMedia lub Youtube.",
-        "localInvalid": "Adres URL filmu jest nieprawidłowy. Upewnij się, że podajesz prawidłowy adres URL YouTube."
+        "localInvalid": "Adres URL filmu jest nieprawidłowy. Upewnij się, że podajesz prawidłowy adres URL YouTube.",
+        "public": {
+          "invalidId": "Nieprawidłowy identyfikator filmu.",
+          "notConfigured": "Punkt końcowy nośnika nie jest skonfigurowany.",
+          "notFound": "Nie udało się odzyskać informacji z filmu."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Dodaj sekcję",
+    "addSectionAI": "Dodaj sekcję za pomocą sztucznej inteligencji",
+    "ai": "Tworzenie modelu za pomocą sztucznej inteligencji",
+    "ai-update": "Aktualizowanie modelu za pomocą sztucznej inteligencji",
     "clear": "Wymazywanie zawartości",
     "download": "Jednostka pobierania",
     "importSection": "Sekcja importu",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Dodawanie treści",
+    "ai-edit-widget": "Edytuj widżet za pomocą sztucznej inteligencji",
     "delete": "Usuń element",
     "duplicate": "Zduplikowany element",
     "edit": "Edytowanie zawartości",
     "export": "Eksportuj element"
   },
   "messages": {
-    "bankOfQuestionsError": "Nie można połączyć się z bankiem pytań.",
     "bankOfWidgetsError": "Nie udało się połączyć z bankiem widżetów.",
     "changesSaved": "Zmiany zostały zapisane pomyślnie.",
     "confirmClearContent": "Usuniesz zawartość całkowicie. Upewnij się, że to jest to, co naprawdę chcesz zrobić.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Dodaj widżet ze sztuczną inteligencją",
     "deleteSection": "Usuń sekcję",
     "duplicate": "Zduplikowana sekcja",
     "edit": "Edytowanie informacji",
@@ -939,8 +982,8 @@
           "optionTag": "Etykieta",
           "optionType": "Facet"
         },
-        "maximumRandomWidgetsExceeded": "Liczba losowych widżetów nie może przekroczyć liczby wybranych widżetów",
         "modalTitle": "Bank widżetów",
+        "notFound": "Nie znaleziono widżetów",
         "placeholderGroup": "Grupa",
         "placeholderTag": "Wyszukiwanie według nazwy tagu",
         "placeholderTitle": "Szukaj według tytułu widżetu",
@@ -1037,7 +1080,7 @@
           "placeholder": "Wpisz adres URL obrazu..."
         },
         "options": {
-          "help": "Te 4 opcje pojawią się pod obrazem. Tylko jeden może być poprawny.",
+          "help": "Te opcje pojawią się pod obrazem. Tylko jeden z nich może być poprawny.",
           "label": "Opcje",
           "placeholder": "Wprowadź opcję"
         },
@@ -1251,17 +1294,6 @@
       "label": "Obraz i tekst",
       "prev": "Obraz i tekst nie zostały jeszcze ustalone..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Użyj tekstu wprowadzanego tekstu, aby wprowadzić adres URL interaktywnego wideo utworzonego za pomocą interaktywnego narzędzia wideo.",
-          "label": "Adres URL filmu",
-          "placeholder": "Przykład: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktywne wideo",
-      "prev": "Interaktywne wideo nie zostało jeszcze ustalone"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Łamigłówka",
       "prev": "Układanka nie została jeszcze zainicjowana..."
-    },
-    "QuestionsBank": {
-      "add": "Dodawać",
-      "label": "Import z Question Bank",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Liczba losowych pytań nie może przekroczyć liczby wybranych pytań",
-        "modalTitle": "Bank pytań",
-        "placeholderGroup": "Grupa",
-        "placeholderTitle": "Wyszukiwanie według tytułu lub tagu pytania",
-        "placeholderType": "Facet",
-        "randomTextBefore": " Losowe pytania od wybranych",
-        "randomTextPrev": "Przedstawić ",
-        "search": "Aby znaleźć",
-        "selectAllText": "Zaznacz wszystko"
-      },
-      "modalTitle": "Bank pytań",
-      "search": "Aby znaleźć"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Przedmiot nie został jeszcze ustalony..."
     },
     "Test": {
-      "label": "Typ badania",
+      "label": "Kontener pytań",
       "questionSelect": "Wybierz typ pytania, które chcesz dodać do quizu"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Tak"
         },
         "url": {
-          "help": "Użyj tekstu wejściowego, aby wprowadzić adres URL swojego filmu (youtube, vimeo...)",
+          "help": "Użyj wprowadzania tekstu, aby wpisać adres URL filmu, jeśli pochodzi on z YouTube",
           "label": "Adres URL filmu",
           "placeholder": "Przykład: https://example.com/video.mp4"
         }

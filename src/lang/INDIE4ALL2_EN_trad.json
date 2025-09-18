@@ -4,6 +4,29 @@
     "viewImage": "See image"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Chatbots to use:",
+        "model": {
+          "create": "Create model with AI",
+          "update": "Update model with AI"
+        },
+        "query": "Query text:",
+        "query-placeholder": "Write your inquiry here",
+        "reasoning-effort": "Time for reasoning:",
+        "reasoning-effort-help": "Select the reasoning time you want the chatbot to use to generate the response. A longer time can produce more detailed and accurate answers, but it can also take longer to generate.",
+        "reasoning-effort-low": "Advanced",
+        "reasoning-effort-minimal": "Standard",
+        "section": {
+          "create": "Create section with AI"
+        },
+        "submit": "Send",
+        "widget": {
+          "create": "Create Widget with AI",
+          "update": "Update widget with AI"
+        }
+      }
+    },
     "alt": {
       "help": "This is the alternative description text for the image to make it accessible",
       "label": "Alt text for the image",
@@ -138,6 +161,19 @@
         "invalid": "The container title is invalid. You must establish one."
       }
     },
+    "AI": {
+      "AI-0000": "Unknown error",
+      "AI-1000": "Resource not found",
+      "AI-1001": "The Azure OpenAI rate limit has been exceeded. Please try again later.",
+      "AI-1002": "Schema named '{{name}}' not found",
+      "AI-1003": "Widget with id '{{id}}' not found",
+      "AI-1004": "Section with id '{{id}}' not found",
+      "AI-1005": "Schema for Model Not Found",
+      "AI-1006": "Schematic with description '{{description}}' not found",
+      "AI-1007": "Invalid JSON content: '{{json}}'",
+      "AI-1008": "Failed validation of data provided",
+      "sorry": "Sorry, I couldn't process your answer"
+    },
     "Animation": {
       "image": {
         "invalid": "The URL set for the background image is incorrect. You must provide a valid indieauthor URL."
@@ -199,6 +235,9 @@
         "invalid": "You must provide a term."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "The number of random widgets cannot exceed the number of widgets selected."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "You have not written the content of the quote. You must, at least, write the content."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "You must select at least one correct option",
-        "notEnougOptions": "You must enter 4 options"
+        "notEnougOptions": "You must enter at least 2 options"
       },
       "text": {
         "invalid": "The text is empty. You must enter a text."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "The text is empty. You must write or copy a text."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "The URL configured for the video is invalid. You should make sure to provide one from indieopen interactive videos."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "The URL for the video is invalid. You must make sure to provide a valid URL from IndieMedia or Youtube.",
-        "localInvalid": "The URL for the video is invalid. You need to make sure that you provide a valid YouTube URL."
+        "localInvalid": "The URL for the video is invalid. You need to make sure that you provide a valid YouTube URL.",
+        "public": {
+          "invalidId": "Invalid video ID.",
+          "notConfigured": "Media endpoint not configured.",
+          "notFound": "The information from the video could not be retrieved."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Add section",
+    "addSectionAI": "Add section with AI",
+    "ai": "Create model with AI",
+    "ai-update": "Update model with AI",
     "clear": "Clear content",
     "download": "Download unit",
     "importSection": "Import section",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Add content",
+    "ai-edit-widget": "Edit widget with AI",
     "delete": "Delete item",
     "duplicate": "Duplicate item",
     "edit": "Edit content",
     "export": "Export item"
   },
   "messages": {
-    "bankOfQuestionsError": "Couldn't connect to the question bank.",
     "bankOfWidgetsError": "Failed to connect to the widget bank.",
     "changesSaved": "Changes saved successfully.",
     "confirmClearContent": "You're going to delete the content entirely. Make sure it's what you really want to do.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Add widget with AI",
     "deleteSection": "Delete section",
     "duplicate": "Duplicate section",
     "edit": "Edit information",
@@ -939,8 +982,8 @@
           "optionTag": "Label",
           "optionType": "Guy"
         },
-        "maximumRandomWidgetsExceeded": "The number of random widgets cannot exceed the number of widgets selected",
         "modalTitle": "Widget Bank",
+        "notFound": "No widgets found",
         "placeholderGroup": "Group",
         "placeholderTag": "Search by tag name",
         "placeholderTitle": "Search by Widget title",
@@ -1037,7 +1080,7 @@
           "placeholder": "Enter the image URL..."
         },
         "options": {
-          "help": "These 4 options will appear below the image. Only one can be correct.",
+          "help": "These options will appear below the image. Only one can be correct.",
           "label": "Options",
           "placeholder": "Enter an option"
         },
@@ -1251,17 +1294,6 @@
       "label": "Image and text",
       "prev": "Image and text not yet established..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Use the text input to enter the URL of the interactive video created with the interactive video tool.",
-          "label": "Video URL",
-          "placeholder": "Example: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interactive video",
-      "prev": "Interactive video not yet established"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Puzzle",
       "prev": "The puzzle hasn't been initialized yet..."
-    },
-    "QuestionsBank": {
-      "add": "Add",
-      "label": "Import from Question Bank",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "The number of random questions cannot exceed the number of questions selected",
-        "modalTitle": "Question Bank",
-        "placeholderGroup": "Group",
-        "placeholderTitle": "Search by title or question tag",
-        "placeholderType": "Guy",
-        "randomTextBefore": " Random questions from those selected",
-        "randomTextPrev": "Introduce ",
-        "search": "To find",
-        "selectAllText": "Select all"
-      },
-      "modalTitle": "Question Bank",
-      "search": "To find"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Item not established yet..."
     },
     "Test": {
-      "label": "Multiple choice",
+      "label": "Question container",
       "questionSelect": "Select the type of question you want to add to the test"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Yes"
         },
         "url": {
-          "help": "Use text input to enter the URL of your video (youtube, vimeo...)",
+          "help": "Use text input to enter your video's URL if it's from YouTube",
           "label": "Video URL",
           "placeholder": "Example: https://example.com/video.mp4"
         }

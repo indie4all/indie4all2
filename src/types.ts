@@ -2,6 +2,8 @@
 
 /** API configuration options. **/
 export interface ConfigOptions {
+    // Server URL to use Artificial Intelligence for creating/updating content
+    aiURL?: string,
     // Base path for analytics
     analyticsBasePath?: string,
     // Enable service worker for Progressive Web Applications
@@ -10,17 +12,19 @@ export interface ConfigOptions {
     encryptionKey?: Function | string | null,
     // Work with local or remote resources
     local?: boolean,
-    // Server URL to preview the current unit. Default value: '/model/preview'.
+    // Server URL to preview the current unit.
     previewBackendURL?: string,
-    // Server URL to publish the current unit. Default value: '/model/publish'.
+    // Server URL to publish the current unit.
     publishBackendURL?: string,
-    // Sets if the API should show a modal asking for additional information when publishing a unit. Default value: true.
+    // Server URL to publish the current unit to Netlify.
+    publishToNetlifyBackendURL?: string,
+    // Sets if the API should show a modal asking for additional information when publishing a unit.
     requestAdditionalDataOnPopulate?: boolean,
-    // Server URL to store the contents of the unit. Default value: '/model/save'.
+    // Server URL to store the contents of the unit.
     saveBackendURL?: string,
     // Server URL used for translating models into languages on demand
     translationBackendURL?: string,
-    // Server URL to generate a scorm package with the contents of the unit. Default value: '/model/scorm'.
+    // Server URL to generate a scorm package with the contents of the unit.
     scormBackendURL?: string,
     // Server URL to retrieve a remote resource
     resourceProxyBackendURL?: string
@@ -28,8 +32,6 @@ export interface ConfigOptions {
     resourceBackendURL?: string
     // Server URL to get the list of widgets available in the bank of widgets
     bankOfWidgetsURL?: string
-    // Server URL to get the list of questions available in the bank of questions
-    questionsBankURL?: string
     // Server URL to get the list of user media files
     mediaResourcesURL?: string
     // Server URL to migrate media files to the new repository
@@ -42,6 +44,12 @@ export interface ConfigOptions {
     enableWidgetEditor: boolean;
     // Action to perform if the user is unauthorized
     unauthorizedMessage: string
+    // List of widgets to allow in the editor -> if null all widgets are allowed
+    widgetsBlacklist: string[]
+    // List of widgets to block in the editor -> if null no widgets are blocked
+    widgetsWhitelist: string[]
+    // INDIeMedia URL
+    indieMediaURL?: string
 }
 
 /** Edit form data **/
@@ -456,19 +464,6 @@ export interface InputWidgetSchemaContainerData extends InputWidgetElementData {
     params: WidgetSchemaContainerParams
 }
 
-export interface WidgetInteractiveVideoParams {
-    name?: string
-}
-
-export interface WidgetInteractiveVideoData {
-    videourl?: string
-}
-
-export interface InputWidgetInteractiveVideoData extends InputWidgetElementData {
-    data?: WidgetInteractiveVideoData,
-    params?: WidgetInteractiveVideoParams
-}
-
 export interface WidgetPiecesElementParams {
     help?: string,
     name?: string
@@ -483,7 +478,7 @@ export interface WidgetPiecesElementData {
 
 export interface InputWidgetPiecesElementData extends InputWidgetElementData {
     data?: WidgetPiecesElementData,
-    params?: WidgetInteractiveVideoParams
+    params?: WidgetPiecesElementParams
 }
 
 export interface WidgetCorrectWordItemData {
@@ -725,4 +720,12 @@ export interface WidgetRelatedUnitsAssociationParams {
 export interface InputWidgetRelatedUnitsAssociationData extends InputWidgetElementData {
     data?: InputWidgetRelatedUnitsItemData[],
     params?: WidgetRelatedUnitsAssociationParams
+}
+
+export interface BankFilters {
+    types?: string[]
+}
+
+export interface WidgetInitOptions {
+    regenerateId?: boolean
 }

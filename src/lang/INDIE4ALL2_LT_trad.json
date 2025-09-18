@@ -4,6 +4,29 @@
     "viewImage": "Žiūrėti paveikslėlį"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Pokalbių robotai, kuriuos reikia naudoti:",
+        "model": {
+          "create": "Sukurkite modelį naudodami AI",
+          "update": "Atnaujinkite modelį naudodami AI"
+        },
+        "query": "Užklausos tekstas:",
+        "query-placeholder": "Parašykite savo užklausą čia",
+        "reasoning-effort": "Laikas samprotavimams:",
+        "reasoning-effort-help": "Pasirinkite samprotavimo laiką, kurį pokalbių robotas naudos atsakymui generuoti. Ilgesnis laikas gali duoti išsamesnius ir tikslesnius atsakymus, tačiau generavimas taip pat gali užtrukti ilgiau.",
+        "reasoning-effort-low": "Išplėstinė",
+        "reasoning-effort-minimal": "Standartas",
+        "section": {
+          "create": "Sukurkite skyrių naudodami AI"
+        },
+        "submit": "Siųsti",
+        "widget": {
+          "create": "Sukurkite valdiklį naudodami AI",
+          "update": "Atnaujinkite valdiklį naudodami AI"
+        }
+      }
+    },
     "alt": {
       "help": "Tai yra alternatyvus vaizdo aprašymo tekstas prieinamumo požiūriu",
       "label": "Alternatyvusis vaizdo tekstas",
@@ -138,6 +161,19 @@
         "invalid": "Konteinerio pavadinimas neteisingas. Jūs turite jį sukurti."
       }
     },
+    "AI": {
+      "AI-0000": "Nežinoma klaida",
+      "AI-1000": "Šaltinis nerastas",
+      "AI-1001": "\"Azure OpenAI\" spartos riba buvo viršyta. Bandykite dar kartą vėliau.",
+      "AI-1002": "Schema pavadinta \"{{name}}\" nerasta",
+      "AI-1003": "Valdiklis su ID '{{id}}' nerastas",
+      "AI-1004": "Skiltis su ID '{{id}}' nerasta",
+      "AI-1005": "Modelio schema nerasta",
+      "AI-1006": "Schema su aprašymu \"{{description}}\" nerasta",
+      "AI-1007": "Netinkamas JSON turinys: '{{json}}'",
+      "AI-1008": "Nepavyko patvirtinti pateiktų duomenų",
+      "sorry": "Atsiprašome, negalėjau apdoroti jūsų atsakymo"
+    },
     "Animation": {
       "image": {
         "invalid": "Nustatytas fono paveikslėlio URL yra neteisingas. Turite pateikti galiojantį indieauthor URL."
@@ -199,6 +235,9 @@
         "invalid": "Turite nurodyti terminą."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Atsitiktinių valdiklių skaičius negali viršyti pasirinktų valdiklių skaičiaus."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Jūs neparašėte citatos turinio. Jūs turite bent jau parašyti turinį."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "Turite pasirinkti bent vieną teisingą",
-        "notEnougOptions": "Turite įvesti 4 parinktis"
+        "notEnougOptions": "Turite įvesti bent 2 parinktis"
       },
       "text": {
         "invalid": "Tekstas tuščias. Turite įvesti tekstą."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "Tekstas tuščias. Turite parašyti arba nukopijuoti tekstą."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Vaizdo įrašui sukonfigūruotas URL yra neteisingas. Turėtumėte būtinai pateikti vieną iš indieopen interaktyvių vaizdo įrašų."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "Vaizdo įrašo URL neteisingas. Turite būtinai pateikti galiojantį URL iš \"IndieMedia\" arba \"Youtube\".",
-        "localInvalid": "Vaizdo įrašo URL neteisingas. Turite įsitikinti, kad pateikiate galiojantį \"YouTube\" URL."
+        "localInvalid": "Vaizdo įrašo URL neteisingas. Turite įsitikinti, kad pateikiate galiojantį \"YouTube\" URL.",
+        "public": {
+          "invalidId": "Neteisingas vaizdo įrašo ID.",
+          "notConfigured": "Medijos galinis punktas nesukonfigūruotas.",
+          "notFound": "Vaizdo įrašo informacijos gauti nepavyko."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Pridėti skyrių",
+    "addSectionAI": "Pridėti skyrių su AI",
+    "ai": "Sukurkite modelį naudodami AI",
+    "ai-update": "Atnaujinkite modelį naudodami AI",
     "clear": "Ištrinti turinį",
     "download": "Atsisiųsti įrenginį",
     "importSection": "Importavimo skyrius",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Turinio įtraukimas",
+    "ai-edit-widget": "Redaguokite valdiklį naudodami AI",
     "delete": "Naikinti elementą",
     "duplicate": "Besidubliuojantis elementas",
     "edit": "Turinio redagavimas",
     "export": "Eksportuoti prekę"
   },
   "messages": {
-    "bankOfQuestionsError": "Nepavyko prisijungti prie klausimų banko.",
     "bankOfWidgetsError": "Nepavyko prisijungti prie valdiklių banko.",
     "changesSaved": "Pakeitimai išsaugoti sėkmingai.",
     "confirmClearContent": "Jūs ketinate visiškai ištrinti turinį. Įsitikinkite, kad tai yra tai, ką tikrai norite padaryti.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Pridėkite valdiklį naudodami AI",
     "deleteSection": "Naikinti skyrių",
     "duplicate": "Pasikartojantis skyrius",
     "edit": "Informacijos redagavimas",
@@ -939,8 +982,8 @@
           "optionTag": "Etiketė",
           "optionType": "Vaikinas"
         },
-        "maximumRandomWidgetsExceeded": "Atsitiktinių valdiklių skaičius negali viršyti pasirinktų valdiklių skaičiaus",
         "modalTitle": "Valdiklių bankas",
+        "notFound": "Nerasta valdiklių",
         "placeholderGroup": "Grupė",
         "placeholderTag": "Paieška pagal žymos pavadinimą",
         "placeholderTitle": "Paieška pagal valdiklio pavadinimą",
@@ -1037,7 +1080,7 @@
           "placeholder": "Įveskite vaizdo URL..."
         },
         "options": {
-          "help": "Šios 4 parinktys bus rodomos po paveikslėliu. Tik vienas gali būti teisingas.",
+          "help": "Šios parinktys bus rodomos po vaizdu. Tik vienas gali būti teisingas.",
           "label": "Parinktys",
           "placeholder": "Įveskite parinktį"
         },
@@ -1251,17 +1294,6 @@
       "label": "Vaizdas ir tekstas",
       "prev": "Vaizdas ir tekstas dar nenustatyti..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Naudokite teksto įvestį, kad įvestumėte interaktyvaus vaizdo įrašo, sukurto naudojant interaktyvaus vaizdo įrankį, URL.",
-          "label": "Vaizdo įrašo URL",
-          "placeholder": "Pavyzdys: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktyvus vaizdo įrašas",
-      "prev": "Interaktyvus vaizdo įrašas dar nenustatytas"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Dėlionę",
       "prev": "Dėlionė dar nebuvo inicijuota..."
-    },
-    "QuestionsBank": {
-      "add": "Pridėti",
-      "label": "Importavimas iš klausimų banko",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Atsitiktinių klausimų skaičius negali viršyti pasirinktų klausimų skaičiaus",
-        "modalTitle": "Klausimų bankas",
-        "placeholderGroup": "Grupė",
-        "placeholderTitle": "Paieška pagal pavadinimą arba klausimo žymę",
-        "placeholderType": "Vaikinas",
-        "randomTextBefore": " Atsitiktiniai klausimai iš atrinktųjų",
-        "randomTextPrev": "Pristatyti ",
-        "search": "Rasti",
-        "selectAllText": "Pažymėti viską"
-      },
-      "modalTitle": "Klausimų bankas",
-      "search": "Rasti"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Daiktas dar nenustatytas..."
     },
     "Test": {
-      "label": "Bandymo tipas",
+      "label": "Klausimų konteineris",
       "questionSelect": "Pasirinkite klausimo tipą, kurį norite įtraukti į apklausą"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Taip"
         },
         "url": {
-          "help": "Norėdami įvesti vaizdo įrašo URL, naudokite teksto įvestį (youtube, vimeo...)",
+          "help": "Teksto įvesties naudojimas norint įvesti vaizdo įrašo URL, jei jis yra iš \"YouTube\"",
           "label": "Vaizdo įrašo URL",
           "placeholder": "Pavyzdys: https://example.com/video.mp4"
         }

@@ -4,6 +4,29 @@
     "viewImage": "Ara l-immaġni"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Chatbots biex tuża:",
+        "model": {
+          "create": "Oħloq mudell bl-AI",
+          "update": "Aġġorna l-mudell bl-AI"
+        },
+        "query": "Test tal-mistoqsija:",
+        "query-placeholder": "Ikteb l-inkjesta tiegħek hawn",
+        "reasoning-effort": "Ħin għar-raġunament:",
+        "reasoning-effort-help": "Agħżel il-ħin ta 'raġunament li tixtieq li ċ-chatbot juża biex jiġġenera t-tweġiba. Żmien itwal jista 'jipproduċi tweġibiet aktar dettaljati u preċiżi, iżda jista' wkoll jieħu aktar żmien biex jiġġenera.",
+        "reasoning-effort-low": "Avvanzat",
+        "reasoning-effort-minimal": "Standard",
+        "section": {
+          "create": "Oħloq taqsima bl-IA"
+        },
+        "submit": "Tibgħat",
+        "widget": {
+          "create": "Oħloq Widget bl-AI",
+          "update": "Aġġorna widget bl-AI"
+        }
+      }
+    },
     "alt": {
       "help": "Dan huwa t-test ta' deskrizzjoni alternattiva għall-immaġni f'termini ta' aċċessibbiltà",
       "label": "Test Alt għall-immaġni",
@@ -138,6 +161,19 @@
         "invalid": "It-titlu tal-kontenitur huwa invalidu. Trid tistabbilixxi waħda."
       }
     },
+    "AI": {
+      "AI-0000": "Żball mhux magħruf",
+      "AI-1000": "Ir-riżorsa ma nstabitx",
+      "AI-1001": "Il-limitu tar-rata Azure OpenAI inqabeż. Erġa' pprova aktar tard.",
+      "AI-1002": "Schema bl-isem '{{name}}' ma nstabx",
+      "AI-1003": "Widget bl-id '{{id}}' ma nstabx",
+      "AI-1004": "Sezzjoni b' id '{{id}}' ma nstabitx",
+      "AI-1005": "Schema għall-Mudell Ma Nstabx",
+      "AI-1006": "Skematika bid-deskrizzjoni '{{description}}' ma nstabitx",
+      "AI-1007": "Kontenut JSON invalidu: '{{json}}'",
+      "AI-1008": "Validazzjoni falluta tad-dejta pprovduta",
+      "sorry": "Jiddispjaċini, ma stajtx nipproċessa t-tweġiba tiegħek"
+    },
     "Animation": {
       "image": {
         "invalid": "Il-URL issettjat għall-immaġni ta' l-isfond mhux korrett. Għandek tipprovdi URL indieauthor validu."
@@ -199,6 +235,9 @@
         "invalid": "Għandek tipprovdi terminu."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "In-numru ta 'widgets każwali ma jistax jaqbeż in-numru ta' widgets magħżula."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Ma ktibtx il-kontenut tal-kwotazzjoni. Għall-inqas, għandek tikteb il-kontenut."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "Agħżel mill-inqas korrett wieħed",
-        "notEnougOptions": "Jeħtieġ iddaħħal 4 għażliet"
+        "notEnougOptions": "Trid iddaħħal mill-inqas 2 għażliet"
       },
       "text": {
         "invalid": "It-test vojt. Għandek iddaħħal test."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "It-test vojt. Jeħtieġ tikteb jew tikkopja test."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Il-URL ikkonfigurat għall-vidjo huwa invalidu. Għandek tiżgura li tipprovdi wieħed minn vidjows interattivi indieopen."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "Il-URL għall-vidjo huwa invalidu. Għandek tiżgura li tipprovdi URL validu minn IndieMedia jew Youtube.",
-        "localInvalid": "Il-URL għall-vidjo huwa invalidu. Trid tiżgura li tipprovdi URL validu fuq YouTube."
+        "localInvalid": "Il-URL għall-vidjo huwa invalidu. Trid tiżgura li tipprovdi URL validu fuq YouTube.",
+        "public": {
+          "invalidId": "ID tal-vidjo invalida.",
+          "notConfigured": "Il-punt tat-tmiem tal-midja mhux ikkonfigurat.",
+          "notFound": "L-informazzjoni mill-vidjo ma setgħetx tinġabar."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Żid sezzjoni",
+    "addSectionAI": "Żid taqsima bl-AI",
+    "ai": "Oħloq mudell bl-AI",
+    "ai-update": "Aġġorna l-mudell bl-AI",
     "clear": "Ħassar il-kontenut",
     "download": "Niżżel l-unità",
     "importSection": "Taqsima tal-importazzjoni",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Żid il-kontenut",
+    "ai-edit-widget": "Editja widget bl-AI",
     "delete": "Ħassar l-item",
     "duplicate": "Oġġett duplikat",
     "edit": "Editja l-kontenut",
     "export": "Oġġett ta' esportazzjoni"
   },
   "messages": {
-    "bankOfQuestionsError": "Ma setax jikkonnettja mal-bank tal-mistoqsijiet.",
     "bankOfWidgetsError": "Ma rnexxilux jikkonnettja mal-bank widget.",
     "changesSaved": "Bidliet issejvjati b'suċċess.",
     "confirmClearContent": "Int ser tħassar il-kontenut kompletament. Kun żgur li huwa dak li verament trid tagħmel.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Żid widget bl-AI",
     "deleteSection": "Ħassar is-sezzjoni",
     "duplicate": "Sezzjoni duplikata",
     "edit": "Editja l-informazzjoni",
@@ -939,8 +982,8 @@
           "optionTag": "Tikketta",
           "optionType": "Guy"
         },
-        "maximumRandomWidgetsExceeded": "In-numru ta 'widgets każwali ma jistax jaqbeż in-numru ta' widgets magħżula",
         "modalTitle": "Widget Bank",
+        "notFound": "Ma nstab l-ebda widgets",
         "placeholderGroup": "Grupp",
         "placeholderTag": "Fittex bl-isem tat-tikketta",
         "placeholderTitle": "Fittex bit-titlu Widget",
@@ -1037,7 +1080,7 @@
           "placeholder": "Daħħal il-URL tal-immaġni..."
         },
         "options": {
-          "help": "Dawn l-4 għażliet se jidhru taħt l-immaġni. Wieħed biss jista' jkun korrett.",
+          "help": "Dawn l-għażliet se jidhru taħt l-immaġni. Wieħed biss jista 'jkun korrett.",
           "label": "Għażliet",
           "placeholder": "Daħħal għażla"
         },
@@ -1251,17 +1294,6 @@
       "label": "Immaġni u test",
       "prev": "L-immaġni u t-test għadhom mhux stabbiliti..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Uża l-input tat-test biex iddaħħal il-URL tal-vidjo interattiv maħluq bl-għodda interattiva tal-vidjo.",
-          "label": "URL tal-vidjo",
-          "placeholder": "Eżempju: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Vidjo interattiv",
-      "prev": "Vidjo interattiv għadu mhux stabbilit"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Puzzle",
       "prev": "Il-puzzle għadu ma ġiex inizjalizzat ..."
-    },
-    "QuestionsBank": {
-      "add": "Żid",
-      "label": "Importazzjoni minn Question Bank",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "In-numru ta' mistoqsijiet aleatorji ma jistax jaqbeż in-numru ta' mistoqsijiet magħżula",
-        "modalTitle": "Bank tal-Mistoqsijiet",
-        "placeholderGroup": "Grupp",
-        "placeholderTitle": "Fittex skont it-titlu jew it-tikketta tal-mistoqsija",
-        "placeholderType": "Guy",
-        "randomTextBefore": " Mistoqsijiet każwali minn dawk magħżula",
-        "randomTextPrev": "Jintroduċu ",
-        "search": "Biex issib",
-        "selectAllText": "Agħżel kollox"
-      },
-      "modalTitle": "Bank tal-Mistoqsijiet",
-      "search": "Biex issib"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Item għadu mhux stabbilit..."
     },
     "Test": {
-      "label": "Tip ta' Test",
+      "label": "Kontenitur tal-mistoqsijiet",
       "questionSelect": "Agħżel tip ta' mistoqsija li tixtieq iżżid mal-kwizz"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Iva"
         },
         "url": {
-          "help": "Uża l-input tat-test biex iddaħħal il-URL tal-vidjo tiegħek (youtube, vimeo...)",
+          "help": "Uża l-input tat-test biex iddaħħal il-URL tal-vidjo tiegħek jekk huwa minn YouTube",
           "label": "URL tal-vidjo",
           "placeholder": "Eżempju: https://example.com/video.mp4"
         }

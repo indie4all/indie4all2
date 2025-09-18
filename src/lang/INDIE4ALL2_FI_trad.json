@@ -4,6 +4,29 @@
     "viewImage": "Katso kuva"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Käytettävät chatbotit:",
+        "model": {
+          "create": "Luo malli tekoälyn avulla",
+          "update": "Päivitä malli tekoälyllä"
+        },
+        "query": "Kyselyn teksti:",
+        "query-placeholder": "Kirjoita kyselysi tähän",
+        "reasoning-effort": "Perustelujen aika:",
+        "reasoning-effort-help": "Valitse perusteluaika, jota haluat chatbotin käyttävän vastauksen luomiseen. Pidempi aika voi tuottaa yksityiskohtaisempia ja tarkempia vastauksia, mutta sen luominen voi myös kestää kauemmin.",
+        "reasoning-effort-low": "Edistynyt",
+        "reasoning-effort-minimal": "Standardi",
+        "section": {
+          "create": "Luo osio tekoälyllä"
+        },
+        "submit": "Lähettää",
+        "widget": {
+          "create": "Luo widget tekoälyllä",
+          "update": "Päivitä widget tekoälyllä"
+        }
+      }
+    },
     "alt": {
       "help": "Tämä on kuvan vaihtoehtoinen kuvausteksti saavutettavuuden kannalta",
       "label": "Kuvan vaihtoehtoinen teksti",
@@ -138,6 +161,19 @@
         "invalid": "Säilön otsikko on virheellinen. Sinun on perustettava sellainen."
       }
     },
+    "AI": {
+      "AI-0000": "Tuntematon virhe",
+      "AI-1000": "Resurssia ei löydy",
+      "AI-1001": "Azure OpenAI -nopeusraja on ylitetty. Yritä myöhemmin uudelleen.",
+      "AI-1002": "Skeemaa nimeltä '{{name}}' ei löydy",
+      "AI-1003": "Widgetiä, jonka tunnus on '{{id}}' ei löydy",
+      "AI-1004": "Osiota, jonka tunnus on \"{{id}}\" ei löydy",
+      "AI-1005": "Mallin rakennetta ei löydy",
+      "AI-1006": "Kaavio ja kuvaus \"{{description}}\" ei löydy",
+      "AI-1007": "Virheellinen JSON-sisältö: '{{json}}'",
+      "AI-1008": "Toimitettujen tietojen validointi epäonnistui",
+      "sorry": "Anteeksi, en pystynyt käsittelemään vastaustasi"
+    },
     "Animation": {
       "image": {
         "invalid": "Taustakuvalle määritetty URL-osoite on virheellinen. Sinun on annettava kelvollinen indieauthor-URL-osoite."
@@ -199,6 +235,9 @@
         "invalid": "Sinun on annettava termi."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Satunnaisten widgetien määrä ei voi ylittää valittujen widgetien määrää."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Et ole kirjoittanut lainauksen sisältöä. Sinun on ainakin kirjoitettava sisältö."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "Sinun on valittava vähintään yksi oikea",
-        "notEnougOptions": "Sinun on annettava 4 vaihtoehtoa"
+        "notEnougOptions": "Sinun on annettava vähintään 2 vaihtoehtoa"
       },
       "text": {
         "invalid": "Teksti on tyhjä. Sinun on kirjoitettava teksti."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "Teksti on tyhjä. Sinun on kirjoitettava tai kopioitava teksti."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Videolle määritetty URL-osoite on virheellinen. Varmista, että tarjoat sellaisen indieopen-interaktiivisista videoista."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "Videon URL-osoite on virheellinen. Sinun on varmistettava, että annat kelvollisen URL-osoitteen IndieMediasta tai Youtubesta.",
-        "localInvalid": "Videon URL-osoite on virheellinen. Varmista, että annat kelvollisen YouTube-URL-osoitteen."
+        "localInvalid": "Videon URL-osoite on virheellinen. Varmista, että annat kelvollisen YouTube-URL-osoitteen.",
+        "public": {
+          "invalidId": "Virheellinen videotunnus.",
+          "notConfigured": "Median päätepistettä ei ole määritetty.",
+          "notFound": "Videon tietoja ei voitu hakea."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Lisää osio",
+    "addSectionAI": "Lisää osio tekoälyllä",
+    "ai": "Luo malli tekoälyn avulla",
+    "ai-update": "Päivitä malli tekoälyllä",
     "clear": "Sisällön poistaminen",
     "download": "Lataa yksikkö",
     "importSection": "Tuo-osio",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Lisää sisältöä",
+    "ai-edit-widget": "Muokkaa widgetiä tekoälyllä",
     "delete": "Poista kohde",
     "duplicate": "Kohteen kaksoiskappale",
     "edit": "Muokkaa sisältöä",
     "export": "Vie kohde"
   },
   "messages": {
-    "bankOfQuestionsError": "Yhteyden muodostaminen kysymyspankkiin ei onnistunut.",
     "bankOfWidgetsError": "Yhteyden muodostaminen widget-pankkiin epäonnistui.",
     "changesSaved": "Muutokset tallennettu onnistuneesti.",
     "confirmClearContent": "Aiot poistaa sisällön kokonaan. Varmista, että se on se, mitä todella haluat tehdä.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Lisää widget tekoälyllä",
     "deleteSection": "Poista osio",
     "duplicate": "Osan monistaminen",
     "edit": "Muokkaa tietoja",
@@ -939,8 +982,8 @@
           "optionTag": "Etiketti",
           "optionType": "Kundi"
         },
-        "maximumRandomWidgetsExceeded": "Satunnaisten widgetien määrä ei voi ylittää valittujen widgetien määrää",
         "modalTitle": "Widget-pankki",
+        "notFound": "Widgetejä ei löytynyt",
         "placeholderGroup": "Ryhmä",
         "placeholderTag": "Etsi tunnisteen nimellä",
         "placeholderTitle": "Etsi widgetin otsikon perusteella",
@@ -1037,7 +1080,7 @@
           "placeholder": "Kirjoita kuvan URL-osoite..."
         },
         "options": {
-          "help": "Nämä 4 vaihtoehtoa näkyvät kuvan alla. Vain yksi voi olla oikeassa.",
+          "help": "Nämä vaihtoehdot näkyvät kuvan alla. Vain yksi voi olla oikea.",
           "label": "Asetukset",
           "placeholder": "Vaihtoehdon syöttäminen"
         },
@@ -1251,17 +1294,6 @@
       "label": "Kuva ja teksti",
       "prev": "Kuva ja teksti eivät ole vielä vakiintuneet..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Käytä tekstinsyöttöä interaktiivisella videotyökalulla luodun interaktiivisen videon URL-osoitteen syöttämiseen.",
-          "label": "Videon URL-osoite",
-          "placeholder": "Esimerkki: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktiivinen video",
-      "prev": "Interaktiivinen video ei ole vielä vakiintunut"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Pulma",
       "prev": "Palapeliä ei ole vielä alustettu..."
-    },
-    "QuestionsBank": {
-      "add": "Lisätä",
-      "label": "Tuonti kysymyspankista",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Satunnaisten kysymysten määrä ei voi ylittää valittujen kysymysten määrää",
-        "modalTitle": "Kysymyspankki",
-        "placeholderGroup": "Ryhmä",
-        "placeholderTitle": "Hae otsikon tai kysymystunnisteen perusteella",
-        "placeholderType": "Kundi",
-        "randomTextBefore": " Satunnaisia kysymyksiä valituilta",
-        "randomTextPrev": "Esitellä ",
-        "search": "Löytää",
-        "selectAllText": "Valitse kaikki"
-      },
-      "modalTitle": "Kysymyspankki",
-      "search": "Löytää"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Kohdetta ei ole vielä vahvistettu..."
     },
     "Test": {
-      "label": "Testin tyyppi",
+      "label": "Kysymysten säilö",
       "questionSelect": "Valitse kysymystyyppi, jonka haluat lisätä kokeeseen"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Kyllä"
         },
         "url": {
-          "help": "Kirjoita videosi URL-osoite tekstinsyötöllä (youtube, vimeo...)",
+          "help": "Kirjoita videon URL-osoite tekstisyötteellä, jos se on YouTubesta",
           "label": "Videon URL-osoite",
           "placeholder": "Esimerkki: https://example.com/video.mp4"
         }

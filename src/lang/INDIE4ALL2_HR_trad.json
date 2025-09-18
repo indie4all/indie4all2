@@ -4,6 +4,29 @@
     "viewImage": "Pogledajte sliku"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Chatbotovi za korištenje:",
+        "model": {
+          "create": "Stvaranje modela pomoću umjetne inteligencije",
+          "update": "Ažuriranje modela pomoću umjetne inteligencije"
+        },
+        "query": "Tekst upita:",
+        "query-placeholder": "Ovdje napišite upit",
+        "reasoning-effort": "Vrijeme za rasuđivanje:",
+        "reasoning-effort-help": "Odaberite vrijeme obrazloženja koje želite da chatbot koristi za generiranje odgovora. Dulje vrijeme može proizvesti detaljnije i točnije odgovore, ali može potrajati i dulje za generiranje.",
+        "reasoning-effort-low": "Napredan",
+        "reasoning-effort-minimal": "Standard",
+        "section": {
+          "create": "Napravite odjeljak pomoću umjetne inteligencije"
+        },
+        "submit": "Slati",
+        "widget": {
+          "create": "Napravite widget pomoću umjetne inteligencije",
+          "update": "Ažurirajte widget pomoću umjetne inteligencije"
+        }
+      }
+    },
     "alt": {
       "help": "Ovo je alternativni tekst opisa slike u smislu pristupačnosti",
       "label": "Zamjenski tekst za sliku",
@@ -138,6 +161,19 @@
         "invalid": "Naslov spremnika nije valjan. Morate ga uspostaviti."
       }
     },
+    "AI": {
+      "AI-0000": "Nepoznata pogreška",
+      "AI-1000": "Resurs nije pronađen",
+      "AI-1001": "Prekoračeno je ograničenje brzine Azure OpenAI. Pokušajte ponovno kasnije.",
+      "AI-1002": "Shema pod nazivom '{{name}}' nije pronađena",
+      "AI-1003": "Widget s id-om '{{id}}' nije pronađen",
+      "AI-1004": "Odjeljak s id '{{id}}' nije pronađen",
+      "AI-1005": "Shema za model nije pronađen",
+      "AI-1006": "Shematski prikaz s opisom '{{description}}' nije pronađen",
+      "AI-1007": "Nevažeći JSON sadržaj: '{{json}}'",
+      "AI-1008": "Neuspješna provjera valjanosti dostavljenih podataka",
+      "sorry": "Žao mi je, nisam mogao obraditi vaš odgovor"
+    },
     "Animation": {
       "image": {
         "invalid": "Skup URL-ova za pozadinsku sliku nije točan. Morate navesti valjani URL indieautora."
@@ -199,6 +235,9 @@
         "invalid": "Morate navesti termin."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Broj nasumičnih widgeta ne smije premašiti broj odabranih widgeta."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Niste napisali sadržaj ponude. Morate barem napisati sadržaj."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "Morate odabrati barem jednu ispravnu",
-        "notEnougOptions": "Morate unijeti 4 mogućnosti"
+        "notEnougOptions": "Morate unijeti najmanje 2 opcije"
       },
       "text": {
         "invalid": "Tekst je prazan. Morate unijeti tekst."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "Tekst je prazan. Morate napisati ili kopirati tekst."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "URL konfiguriran za videozapis nije valjan. Trebali biste ga pružiti iz indieopen interaktivnih videozapisa."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "URL videozapisa nije valjan. Morate navesti valjani URL tvrtke IndieMedia ili Youtube.",
-        "localInvalid": "URL videozapisa nije valjan. Morate biti sigurni da ste naveli valjani URL YouTubea."
+        "localInvalid": "URL videozapisa nije valjan. Morate biti sigurni da ste naveli valjani URL YouTubea.",
+        "public": {
+          "invalidId": "Nevažeći ID videozapisa.",
+          "notConfigured": "Krajnja točka medija nije konfigurirana.",
+          "notFound": "Informacije iz videozapisa nisu se mogle dohvatiti."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Dodaj sekciju",
+    "addSectionAI": "Dodajte odjeljak pomoću umjetne inteligencije",
+    "ai": "Stvaranje modela pomoću umjetne inteligencije",
+    "ai-update": "Ažuriranje modela pomoću umjetne inteligencije",
     "clear": "Brisanje sadržaja",
     "download": "Jedinica za preuzimanje",
     "importSection": "Sekcija Uvoz",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Dodavanje sadržaja",
+    "ai-edit-widget": "Uredite widget pomoću umjetne inteligencije",
     "delete": "Izbriši stavku",
     "duplicate": "Dupliciraj stavku",
     "edit": "Uređivanje sadržaja",
     "export": "Izvezi stavku"
   },
   "messages": {
-    "bankOfQuestionsError": "Povezivanje s bankom pitanja nije moguće.",
     "bankOfWidgetsError": "Povezivanje s bankom widgeta nije uspjelo.",
     "changesSaved": "Promjene su uspješno spremljene.",
     "confirmClearContent": "Sadržaj ćete u potpunosti izbrisati. Pobrinite se da je to ono što stvarno želite učiniti.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Dodajte widget pomoću umjetne inteligencije",
     "deleteSection": "Brisanje sekcije",
     "duplicate": "Dupliciraj sekciju",
     "edit": "Uređivanje informacija",
@@ -939,8 +982,8 @@
           "optionTag": "Etiketa",
           "optionType": "Momak"
         },
-        "maximumRandomWidgetsExceeded": "Broj slučajnih widgeta ne može biti veći od odabranog broja widgeta",
         "modalTitle": "Widget banka",
+        "notFound": "Nisu pronađeni widgeti",
         "placeholderGroup": "Grupa",
         "placeholderTag": "Pretraži po nazivu oznake",
         "placeholderTitle": "Pretraži po naslovu widgeta",
@@ -1037,7 +1080,7 @@
           "placeholder": "Unesite URL slike..."
         },
         "options": {
-          "help": "Ove 4 opcije pojavit će se ispod slike. Samo jedan može biti točan.",
+          "help": "Ove opcije će se pojaviti ispod slike. Samo jedan može biti točan.",
           "label": "Mogućnosti",
           "placeholder": "Unesite mogućnost"
         },
@@ -1251,17 +1294,6 @@
       "label": "Slika i tekst",
       "prev": "Slika i tekst još nisu uspostavljeni..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Pomoću unosa teksta unesite URL interaktivnog videozapisa stvorenog pomoću interaktivnog alata za videozapise.",
-          "label": "URL videozapisa",
-          "placeholder": "Primjer: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktivni videozapis",
-      "prev": "Interaktivni videozapis još nije uspostavljen"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Zagonetka",
       "prev": "Zagonetka još nije inicijalizirana..."
-    },
-    "QuestionsBank": {
-      "add": "Dodati",
-      "label": "Uvoz iz banke pitanja",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Broj slučajnih pitanja ne može biti veći od broja odabranih pitanja",
-        "modalTitle": "Banka pitanja",
-        "placeholderGroup": "Grupa",
-        "placeholderTitle": "Pretraživanje prema naslovu ili oznaci pitanja",
-        "placeholderType": "Momak",
-        "randomTextBefore": " Nasumična pitanja odabranih",
-        "randomTextPrev": "Uvesti ",
-        "search": "Naći",
-        "selectAllText": "Odaberi sve"
-      },
-      "modalTitle": "Banka pitanja",
-      "search": "Naći"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Stavka još nije uspostavljena..."
     },
     "Test": {
-      "label": "Vrsta testiranja",
+      "label": "Spremnik pitanja",
       "questionSelect": "Odaberite vrstu pitanja koju želite dodati u kviz"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Da"
         },
         "url": {
-          "help": "Pomoću unosa teksta unesite URL videozapisa (youtube, vimeo...)",
+          "help": "Unos teksta za unos URL-a videozapisa ako je s YouTubea",
           "label": "URL videozapisa",
           "placeholder": "Primjer: https://example.com/video.mp4"
         }

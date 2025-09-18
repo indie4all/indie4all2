@@ -44,6 +44,23 @@ const getBytes = async (token: string, mediaFileId: string, thumbnail = false) =
     return response;
 }
 
+const getPublicVideoInfo = async (fileId: string) => {
+
+    const config = {
+        method: 'get',
+        maxBodyLength: Infinity,
+        url: `https://scgatewaydev-fwe6gvg6gzbndycj.z01.azurefd.net/api/media/publicmedia/creativecommons/${fileId}`,
+        headers: {
+            'X-Azure-FDID': '00028f9e-042f-4dda-a5d1-739b39c453e3',
+            'Content-Type': 'application/json'
+        },
+        data: {}
+    };
+    // @ts-ignore
+    const response = await axios.request(config);
+    return response;
+}
+
 /**
  * Handle connection errors
  * @param res ExpressJS response object 
@@ -103,5 +120,19 @@ export default {
         } catch (error) {
             handleConnectionError(res, error);
         }
+    },
+    videoInfo: async (req: Request, res: Response) => {
+        let fileId = req.params.fileId;
+        if (!/[a-f0-9]{32}/.test(fileId)) {
+            res.status(StatusCodes.BAD_REQUEST).json({ error: "Invalid file id" });
+            return;
+        }
+        try {
+            const response = await getPublicVideoInfo(fileId)
+            res.json(response.data);
+        } catch (error) {
+            handleConnectionError(res, error);
+        }
     }
+
 }

@@ -4,6 +4,29 @@
     "viewImage": "Zie afbeelding"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Chatbots om te gebruiken:",
+        "model": {
+          "create": "Model maken met AI",
+          "update": "Model bijwerken met AI"
+        },
+        "query": "Tekst van de query:",
+        "query-placeholder": "Schrijf hier uw aanvraag",
+        "reasoning-effort": "Tijd voor redenering:",
+        "reasoning-effort-help": "Selecteer de redeneertijd die u wilt dat de chatbot gebruikt om de reactie te genereren. Een langere tijd kan gedetailleerdere en nauwkeurigere antwoorden opleveren, maar het kan ook langer duren om te genereren.",
+        "reasoning-effort-low": "Geavanceerd",
+        "reasoning-effort-minimal": "Standaard",
+        "section": {
+          "create": "Sectie maken met AI"
+        },
+        "submit": "Verzenden",
+        "widget": {
+          "create": "Widget maken met AI",
+          "update": "Widget bijwerken met AI"
+        }
+      }
+    },
     "alt": {
       "help": "Dit is de alternatieve beschrijvingstekst voor de afbeelding in termen van toegankelijkheid",
       "label": "Alt-tekst voor de afbeelding",
@@ -138,6 +161,19 @@
         "invalid": "De containertitel is ongeldig. Je moet er een oprichten."
       }
     },
+    "AI": {
+      "AI-0000": "Onbekende fout",
+      "AI-1000": "Resource niet gevonden",
+      "AI-1001": "De Azure OpenAI-snelheidslimiet is overschreden. Probeer het later opnieuw.",
+      "AI-1002": "Schema met de naam '{{name}}' niet gevonden",
+      "AI-1003": "Widget met id '{{id}}' niet gevonden",
+      "AI-1004": "Sectie met id '{{id}}' niet gevonden",
+      "AI-1005": "Schema voor model niet gevonden",
+      "AI-1006": "Schema met beschrijving '{{description}}' niet gevonden",
+      "AI-1007": "Ongeldige JSON-inhoud: '{{json}}'",
+      "AI-1008": "Mislukte validatie van verstrekte gegevens",
+      "sorry": "Sorry, ik kon je antwoord niet verwerken"
+    },
     "Animation": {
       "image": {
         "invalid": "De URL die is ingesteld voor de achtergrondafbeelding is onjuist. U moet een geldige indieauthor-URL opgeven."
@@ -199,6 +235,9 @@
         "invalid": "U moet een termijn opgeven."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Het aantal willekeurige widgets kan niet groter zijn dan het aantal geselecteerde widgets."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "U hebt de inhoud van het citaat niet geschreven. Je moet op zijn minst de inhoud schrijven."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "U moet ten minste één juiste selectie selecteren",
-        "notEnougOptions": "U moet 4 opties invoeren"
+        "notEnougOptions": "U moet minimaal 2 opties invoeren"
       },
       "text": {
         "invalid": "De tekst is leeg. U moet een tekst invoeren."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "De tekst is leeg. U moet een tekst schrijven of kopiëren."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "De URL die voor de video is geconfigureerd, is ongeldig. Je moet ervoor zorgen dat je er een van indieopen interactieve video's aanbiedt."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "De URL voor de video is ongeldig. U moet ervoor zorgen dat u een geldige URL van IndieMedia of Youtube opgeeft.",
-        "localInvalid": "De URL voor de video is ongeldig. Je moet ervoor zorgen dat je een geldige YouTube-URL opgeeft."
+        "localInvalid": "De URL voor de video is ongeldig. Je moet ervoor zorgen dat je een geldige YouTube-URL opgeeft.",
+        "public": {
+          "invalidId": "Ongeldige video-ID.",
+          "notConfigured": "Media-eindpunt niet geconfigureerd.",
+          "notFound": "De informatie uit de video kon niet worden opgehaald."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Sectie toevoegen",
+    "addSectionAI": "Sectie toevoegen met AI",
+    "ai": "Model maken met AI",
+    "ai-update": "Model bijwerken met AI",
     "clear": "Inhoud wissen",
     "download": "Download unit",
     "importSection": "Sectie Importeren",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Inhoud toevoegen",
+    "ai-edit-widget": "Widget bewerken met AI",
     "delete": "Item verwijderen",
     "duplicate": "Object dupliceren",
     "edit": "Inhoud bewerken",
     "export": "Item exporteren"
   },
   "messages": {
-    "bankOfQuestionsError": "Kan geen verbinding maken met de itembank.",
     "bankOfWidgetsError": "Kan geen verbinding maken met de widgetbank.",
     "changesSaved": "Wijzigingen zijn opgeslagen.",
     "confirmClearContent": "U gaat de inhoud volledig verwijderen. Zorg ervoor dat het is wat je echt wilt doen.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Widget toevoegen met AI",
     "deleteSection": "Sectie verwijderen",
     "duplicate": "Sectie dupliceren",
     "edit": "Informatie bewerken",
@@ -939,8 +982,8 @@
           "optionTag": "Etiket",
           "optionType": "Vent"
         },
-        "maximumRandomWidgetsExceeded": "Het aantal willekeurige widgets mag niet groter zijn dan het aantal geselecteerde widgets",
         "modalTitle": "Widgetbank",
+        "notFound": "Geen widgets gevonden",
         "placeholderGroup": "Groep",
         "placeholderTag": "Zoeken op tagnaam",
         "placeholderTitle": "Zoeken op widgettitel",
@@ -1037,7 +1080,7 @@
           "placeholder": "Voer de URL van de afbeelding in..."
         },
         "options": {
-          "help": "Deze 4 opties verschijnen onder de afbeelding. Er kan er maar één correct zijn.",
+          "help": "Deze opties verschijnen onder de afbeelding. Er kan er maar één gelijk hebben.",
           "label": "Opties",
           "placeholder": "Voer een optie in"
         },
@@ -1251,17 +1294,6 @@
       "label": "Afbeelding en tekst",
       "prev": "Beeld en tekst nog niet vastgesteld..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Gebruik tekstinvoer om de URL in te voeren van de interactieve video die is gemaakt met de interactieve videotool.",
-          "label": "Video-URL",
-          "placeholder": "Voorbeeld: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interactieve video",
-      "prev": "Interactieve video nog niet vastgesteld"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Puzzel",
       "prev": "De puzzel is nog niet geïnitialiseerd..."
-    },
-    "QuestionsBank": {
-      "add": "Toevoegen",
-      "label": "Importeren uit vragenbank",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Het aantal willekeurige vragen mag niet groter zijn dan het aantal geselecteerde vragen",
-        "modalTitle": "Vragenbank",
-        "placeholderGroup": "Groep",
-        "placeholderTitle": "Zoeken op titel of vraagtag",
-        "placeholderType": "Vent",
-        "randomTextBefore": " Willekeurige vragen van de geselecteerde",
-        "randomTextPrev": "Voorstellen ",
-        "search": "Zoeken naar",
-        "selectAllText": "Alles selecteren"
-      },
-      "modalTitle": "Vragenbank",
-      "search": "Zoeken naar"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Object nog niet vastgesteld..."
     },
     "Test": {
-      "label": "Test Type",
+      "label": "Container met vragen",
       "questionSelect": "Selecteer een vraagtype dat u aan de quiz wilt toevoegen"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Ja"
         },
         "url": {
-          "help": "Gebruik tekstinvoer om de URL van je video in te voeren (youtube, vimeo...)",
+          "help": "Gebruik tekstinvoer om de URL van je video in te voeren als deze afkomstig is van YouTube",
           "label": "Video-URL",
           "placeholder": "Voorbeeld: https://example.com/video.mp4"
         }

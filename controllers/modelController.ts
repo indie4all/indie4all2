@@ -7,30 +7,43 @@ import fetch from "node-fetch";
 import { LoggerModes, JetLogger } from 'jet-logger';
 const logger = JetLogger(LoggerModes.Console);
 import config from 'config';
-import sass from 'sass';
 import { Request, Response } from 'express';
 import { AnalyticsService } from '../services/analytics/AnalyticsService';
 
 const VALID_COVER_PATTERN = /^data:([-\w.]+\/[-\w.+]+)?;base64,[A-Za-z0-9+/]*={0,2}$/;
 const VALID_COLOR_PATTERN = /^#[0-9a-fA-F]{6}$/;
 
+// Cast hex color to RGB #000000 -> { r: 0, g: 0, b: 0 }
+const hexToRGB = function (hex: string) {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
+
 const copyAssets = async function (folder: string, color: string, cover: string, mode: string) {
 
     logger.info("Copying unit assets into the destination directory");
     await fs.copy(config.get("folder.assets"), folder, { overwrite: true })
     logger.info("Generating custom theme");
-    // Generate the css of the current theme
-    const themeTemplate = './templates/theme.scss';
     const realColor = VALID_COLOR_PATTERN.test(color) ? color : '#000000';
     const realCover = VALID_COVER_PATTERN.test(cover) ? cover : 'data:null';
-    const data = `$base-color: ${realColor}; $base-url: "${realCover}"; @import '${themeTemplate}';`
-    const result = sass.renderSync({ data, includePaths: [themeTemplate], outputStyle: 'compressed' });
-    const css = result.css.toString();
-    await fs.writeFile(folder + '/generator/content/v5-3-0/css/stylesCustom.min.css', css);
+    const rgbRealColor = hexToRGB(realColor);
+    let css = await fs.readFile(folder + '/generator/content/v6-0-0/main.css', 'utf8');
+    // Write CSS rules for the custom theme
+    css += `
+    body.Custom {
+        --base-color-hex: ${realColor};
+        --base-color-rgb: ${rgbRealColor?.r},${rgbRealColor?.g},${rgbRealColor?.b};
+        --base-url: url(${realCover});
+    }`;
+    await fs.writeFile(folder + '/generator/content/v6-0-0/main.css', css);
     // Remove scorm libraries if the unit is not of SCORM type
     if (mode !== "SCORM") {
         logger.info("Removing scorm-related assets");
-        await fs.rm(folder + '/scorm/', { recursive: true, force: true });
+        await fs.rm(folder + '/scorm/', { recursive: true, force: true, maxRetries: 3, retryDelay: 1000 });
     }
 }
 
@@ -87,7 +100,7 @@ const packModel = async function (folder: string, model: any) {
     await copyAssets(`${folder}/${config.get("folder.assets")}`, model.color, model.cover, model.mode);
     logger.info("Zipping the generated unit folder");
     const binary = generateZip(folder);
-    fs.rm(folder, { recursive: true, force: true });
+    await fs.rm(folder, { recursive: true, force: true, maxRetries: 3, retryDelay: 1000 });
     return binary;
 }
 

@@ -1,4 +1,5 @@
-import I18n from "../I18n"
-export default function(query) {
-    return I18n.getInstance().translate(query);
+import I18nService from "../app/services/i18n/i18n.service";
+import ContainerManager from "../container.manager";
+export default function (query) {
+    return ContainerManager.instance.get(I18nService).value(query);
 }

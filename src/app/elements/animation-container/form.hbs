@@ -1,0 +1,43 @@
+<form id="f-{{id}}">
+    <div class="mb-3"> 
+        <label for="instanceName">{{translate "common.name.label"}}</label> 
+        <input type="text" name="instanceName" class="form-control" value="{{instanceName}}" 
+        placeholder="{{translate "common.name.placeholder"}}" autocomplete="off" required /> 
+        <small class="form-text text-muted">{{translate "common.name.help"}}</small>
+    </div>
+    <div class="mb-3"> 
+        <label for="help">{{translate "common.help.label"}}</label>
+        <div class="input-group mb-3"> <input name="help" type="text" class="form-control" 
+            placeholder="{{translate "common.help.placeholder"}}" value="{{help}}">
+            <div class="input-group-append"> 
+                <button class="btn btn-indie js-set-default-text" type="button">
+                    {{translate "common.help.button"}}
+                </button>
+            </div>
+        </div>
+        <small class="form-text text-muted">{{{translate "common.help.help"}}}</small>
+    </div>
+    <div class="mb-3">
+        <label for="width">{{translate "widgets.AnimationContainer.form.width.label"}}</label>
+        <input type="number" name="width" class="form-control" value="{{width}}" 
+            placeholder="{{translate "widgets.AnimationContainer.form.width.placeholder"}}" required></input>
+        <small class="form-text text-muted">{{translate "widgets.AnimationContainer.form.width.help"}}.</small>
+    </div>
+    <div class="mb-3">
+        <label for="height">{{translate "widgets.AnimationContainer.form.height.label"}}</label>
+        <input type="number" name="height" class="form-control" value="{{height}}" 
+            placeholder="{{translate "widgets.AnimationContainer.form.height.placeholder"}}" required></input>
+        <small class="form-text text-muted">{{translate "widgets.AnimationContainer.form.height.help"}}.</small>
+    </div>
+    <div class="mb-3">
+        <label for="image">{{translate "widgets.AnimationContainer.form.image.label"}}</label>
+        <input type="text" class="form-control" name="image" required 
+            placeholder="{{translate "widgets.AnimationContainer.form.image.placeholder"}}" value="{{image}}" autocomplete="off" />
+        <small class="form-text text-muted">{{translate "widgets.AnimationContainer.form.image.help"}}</small>
+    </div>
+    {{#if image}}
+    <div class="mb-3">
+        <p>{{translate "widgets.AnimationContainer.form.prev"}}</p><img class="img-fluid" src="{{image}}" />
+    </div>
+    {{/if}}
+</form>

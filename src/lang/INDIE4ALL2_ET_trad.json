@@ -4,6 +4,29 @@
     "viewImage": "Vaata pilti"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Kasutatavad vestlusrobotid:",
+        "model": {
+          "create": "Looge mudel tehisintellektiga",
+          "update": "Mudeli värskendamine tehisintellektiga"
+        },
+        "query": "Päringu tekst:",
+        "query-placeholder": "Kirjutage oma päring siia",
+        "reasoning-effort": "Arutluskäigu aeg:",
+        "reasoning-effort-help": "Valige arutlusaeg, mida soovite vestlusrobotil vastuse genereerimiseks kasutada. Pikem aeg võib anda üksikasjalikumaid ja täpsemaid vastuseid, kuid selle genereerimine võib võtta ka kauem aega.",
+        "reasoning-effort-low": "Täpsem",
+        "reasoning-effort-minimal": "Standard",
+        "section": {
+          "create": "Looge jaotis AI-ga"
+        },
+        "submit": "Saatma",
+        "widget": {
+          "create": "Looge vidin AI-ga",
+          "update": "Uuendage vidinat AI-ga"
+        }
+      }
+    },
     "alt": {
       "help": "See on pildi alternatiivne kirjeldav tekst juurdepääsetavuse osas",
       "label": "Pildi asetekst",
@@ -138,6 +161,19 @@
         "invalid": "Konteineri pealkiri on kehtetu. Peate selle looma."
       }
     },
+    "AI": {
+      "AI-0000": "Tundmatu viga",
+      "AI-1000": "Ressurssi ei leitud",
+      "AI-1001": "Azure OpenAI kiiruse piirang on ületatud. Proovige hiljem uuesti.",
+      "AI-1002": "Skeemi nimega '{{name}}' ei leitud",
+      "AI-1003": "Vidinat id-ga{{id}}ei leitud",
+      "AI-1004": "Jaotist ID-ga{{id}}ei leitud",
+      "AI-1005": "Mudeli skeemi ei leitud",
+      "AI-1006": "Skemaatiline kirjeldusega \"{{description}}\" ei leitud",
+      "AI-1007": "Kehtetu JSON-sisu: '{{json}}'",
+      "AI-1008": "Esitatud andmete valideerimine ebaõnnestus",
+      "sorry": "Vabandust, ma ei suutnud teie vastust töödelda"
+    },
     "Animation": {
       "image": {
         "invalid": "Taustpildile määratud URL on vale. Peate esitama kehtiva indieauthori URL-i."
@@ -199,6 +235,9 @@
         "invalid": "Peate esitama tähtaja."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Juhuslike vidinate arv ei tohi ületada valitud vidinate arvu."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Te ei ole tsitaadi sisu kirjutanud. Peate vähemalt sisu kirjutama."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "Peate valima vähemalt ühe õige",
-        "notEnougOptions": "Peate sisestama 4 võimalust"
+        "notEnougOptions": "Peate sisestama vähemalt 2 valikut"
       },
       "text": {
         "invalid": "Tekst on tühi. Peate sisestama teksti."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "Tekst on tühi. Peate teksti kirjutama või kopeerima."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Video jaoks konfigureeritud URL on sobimatu. Peaksite kindlasti pakkuma seda indieopeni interaktiivsetest videotest."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "Video URL on sobimatu. Peate kindlasti esitama kehtiva URL-i IndieMediast või Youtube'ist.",
-        "localInvalid": "Video URL on sobimatu. Peate veenduma, et sisestate kehtiva YouTube'i URL-i."
+        "localInvalid": "Video URL on sobimatu. Peate veenduma, et sisestate kehtiva YouTube'i URL-i.",
+        "public": {
+          "invalidId": "Sobimatu video ID.",
+          "notConfigured": "Meediumi lõpp-punkt pole konfigureeritud.",
+          "notFound": "Videost saadud teavet ei õnnestunud kätte saada."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Jaotise lisamine",
+    "addSectionAI": "Lisage jaotis AI-ga",
+    "ai": "Looge mudel tehisintellektiga",
+    "ai-update": "Mudeli värskendamine tehisintellektiga",
     "clear": "Sisu kustutamine",
     "download": "Laadige seade alla",
     "importSection": "Importimise jaotis",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Sisu lisamine",
+    "ai-edit-widget": "Redigeerige vidinat tehisintellektiga",
     "delete": "Üksuse kustutamine",
     "duplicate": "Üksuse dubleerimine",
     "edit": "Sisu redigeerimine",
     "export": "Ekspordi üksus"
   },
   "messages": {
-    "bankOfQuestionsError": "Ei saanud küsimuste pangaga ühendust.",
     "bankOfWidgetsError": "Vidinapangaga ühenduse loomine ebaõnnestus.",
     "changesSaved": "Muudatused salvestati edukalt.",
     "confirmClearContent": "Kustutate sisu täielikult. Veenduge, et see on see, mida soovite tõesti teha.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Lisage vidin AI-ga",
     "deleteSection": "Kustuta jaotis",
     "duplicate": "Duplikaatjaotis",
     "edit": "Teabe redigeerimine",
@@ -939,8 +982,8 @@
           "optionTag": "Etikett",
           "optionType": "Kutt"
         },
-        "maximumRandomWidgetsExceeded": "Juhuslike vidinate arv ei tohi ületada valitud vidinate arvu",
         "modalTitle": "Vidina pank",
+        "notFound": "Vidinaid ei leitud",
         "placeholderGroup": "Rühm",
         "placeholderTag": "Otsige sildi nime järgi",
         "placeholderTitle": "Otsi vidina pealkirja järgi",
@@ -1037,7 +1080,7 @@
           "placeholder": "Sisestage pildi URL..."
         },
         "options": {
-          "help": "Need 4 valikut kuvatakse pildi all. Ainult üks saab olla õige.",
+          "help": "Need valikud kuvatakse pildi all. Ainult üks saab olla õige.",
           "label": "Valikud",
           "placeholder": "Sisestage valik"
         },
@@ -1251,17 +1294,6 @@
       "label": "Pilt ja tekst",
       "prev": "Pilt ja tekst pole veel loodud ..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Kasutage interaktiivse videotööriistaga loodud interaktiivse video URL-i sisestamiseks tekstisisestust.",
-          "label": "Video URL",
-          "placeholder": "Näide: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktiivne video",
-      "prev": "Interaktiivne video pole veel loodud"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Puzzle",
       "prev": "Puslet pole veel initsialiseeritud..."
-    },
-    "QuestionsBank": {
-      "add": "Lisama",
-      "label": "Import küsimuste pangast",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Juhuslike küsimuste arv ei tohi ületada valitud küsimuste arvu",
-        "modalTitle": "Küsimuste pank",
-        "placeholderGroup": "Rühm",
-        "placeholderTitle": "Otsing pealkirja või küsimuse sildi järgi",
-        "placeholderType": "Kutt",
-        "randomTextBefore": " Juhuslikud küsimused valitutelt",
-        "randomTextPrev": "Tutvustada ",
-        "search": "Otsima",
-        "selectAllText": "Vali kõik"
-      },
-      "modalTitle": "Küsimuste pank",
-      "search": "Otsima"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Punkt pole veel loodud ..."
     },
     "Test": {
-      "label": "Katse tüüp",
+      "label": "Küsimuste konteiner",
       "questionSelect": "Valige küsimuse tüüp, mille soovite õppetestile lisada"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Jah"
         },
         "url": {
-          "help": "Kasutage oma video URL-i sisestamiseks tekstisisestust (youtube, vimeo ...)",
+          "help": "Video URL-i sisestamine tekstisisestuse abil (kui see pärineb YouTube'ist)",
           "label": "Video URL",
           "placeholder": "Näide: https://example.com/video.mp4"
         }

@@ -4,6 +4,29 @@
     "viewImage": "Ver imagem"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Chatbots para usar:",
+        "model": {
+          "create": "Crie modelos com IA",
+          "update": "Atualizar modelo com IA"
+        },
+        "query": "Texto da consulta:",
+        "query-placeholder": "Escreva sua pergunta aqui",
+        "reasoning-effort": "Tempo para fundamentar:",
+        "reasoning-effort-help": "Selecione o tempo de raciocínio que você deseja que o chatbot use para gerar a resposta. Um tempo maior pode produzir respostas mais detalhadas e precisas, mas também pode levar mais tempo para gerar.",
+        "reasoning-effort-low": "Avançado",
+        "reasoning-effort-minimal": "Padrão",
+        "section": {
+          "create": "Criar seção com IA"
+        },
+        "submit": "Enviar",
+        "widget": {
+          "create": "Criar widget com IA",
+          "update": "Widget de atualização com IA"
+        }
+      }
+    },
     "alt": {
       "help": "Este é o texto de descrição alternativo para a imagem em termos de acessibilidade",
       "label": "Texto alternativo para a imagem",
@@ -138,6 +161,19 @@
         "invalid": "O título do contêiner é inválido. Você deve estabelecer um."
       }
     },
+    "AI": {
+      "AI-0000": "Erro desconhecido",
+      "AI-1000": "Recurso não encontrado",
+      "AI-1001": "O limite de taxa do Azure OpenAI foi excedido. Tente novamente mais tarde.",
+      "AI-1002": "Esquema denominado '{{name}}' não encontrado",
+      "AI-1003": "Widget com id '{{id}}' não encontrado",
+      "AI-1004": "Seção com id '{{id}}' não encontrada",
+      "AI-1005": "Esquema para modelo não encontrado",
+      "AI-1006": "Esquema com descrição '{{description}}' não encontrado",
+      "AI-1007": "Conteúdo JSON inválido: '{{json}}'",
+      "AI-1008": "Falha na validação dos dados fornecidos",
+      "sorry": "Desculpe, não consegui processar sua resposta"
+    },
     "Animation": {
       "image": {
         "invalid": "O URL definido para a imagem de fundo está incorreto. Você deve fornecer um URL de autor independente válido."
@@ -199,6 +235,9 @@
         "invalid": "Você deve fornecer um termo."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "O número de widgets aleatórios não pode exceder o número de widgets selecionados."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Não escreveu o conteúdo da citação. Você deve, pelo menos, escrever o conteúdo."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "Você deve selecionar pelo menos um correto",
-        "notEnougOptions": "Você deve inserir 4 opções"
+        "notEnougOptions": "Você deve inserir pelo menos 2 opções"
       },
       "text": {
         "invalid": "O texto está vazio. Tem de introduzir um texto."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "O texto está vazio. Você deve escrever ou copiar um texto."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "O URL configurado para o vídeo é inválido. Você deve se certificar de fornecer um de vídeos interativos indieopen."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "O URL do vídeo é inválido. Você deve se certificar de fornecer um URL válido do IndieMedia ou do Youtube.",
-        "localInvalid": "O URL do vídeo é inválido. Tem de se certificar de que fornece um URL válido do YouTube."
+        "localInvalid": "O URL do vídeo é inválido. Tem de se certificar de que fornece um URL válido do YouTube.",
+        "public": {
+          "invalidId": "ID de vídeo inválida.",
+          "notConfigured": "Ponto de extremidade de mídia não configurado.",
+          "notFound": "As informações do vídeo não puderam ser recuperadas."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Adicionar secção",
+    "addSectionAI": "Adicionar seção com IA",
+    "ai": "Crie modelos com IA",
+    "ai-update": "Atualizar modelo com IA",
     "clear": "Apagar conteúdo",
     "download": "Unidade de download",
     "importSection": "Secção Importar",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Adicionar conteúdo",
+    "ai-edit-widget": "Editar widget com IA",
     "delete": "Excluir item",
     "duplicate": "Item duplicado",
     "edit": "Editar conteúdo",
     "export": "Exportar item"
   },
   "messages": {
-    "bankOfQuestionsError": "Não foi possível conectar-se ao banco de perguntas.",
     "bankOfWidgetsError": "Falha ao se conectar ao banco de widgets.",
     "changesSaved": "Alterações guardadas com êxito.",
     "confirmClearContent": "Você vai excluir o conteúdo completamente. Certifique-se de que é o que você realmente quer fazer.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Adicionar widget com IA",
     "deleteSection": "Eliminar secção",
     "duplicate": "Secção duplicada",
     "edit": "Editar informações",
@@ -939,8 +982,8 @@
           "optionTag": "Rótulo",
           "optionType": "Cara"
         },
-        "maximumRandomWidgetsExceeded": "O número de widgets aleatórios não pode exceder o número de widgets selecionados",
         "modalTitle": "Banco de widgets",
+        "notFound": "Nenhum widget encontrado",
         "placeholderGroup": "Grupo",
         "placeholderTag": "Pesquisar por nome de tag",
         "placeholderTitle": "Pesquisar por título do widget",
@@ -1037,7 +1080,7 @@
           "placeholder": "Insira o URL da imagem..."
         },
         "options": {
-          "help": "Estas 4 opções aparecerão abaixo da imagem. Apenas uma pode estar correta.",
+          "help": "Essas opções aparecerão abaixo da imagem. Apenas uma pode estar correta.",
           "label": "Opções",
           "placeholder": "Insira uma opção"
         },
@@ -1251,17 +1294,6 @@
       "label": "Imagem e texto",
       "prev": "Imagem e texto ainda não estabelecidos..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Use a entrada de texto para inserir o URL do vídeo interativo criado com a ferramenta de vídeo interativo.",
-          "label": "URL do vídeo",
-          "placeholder": "Exemplo: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Vídeo interativo",
-      "prev": "Vídeo interativo ainda não estabelecido"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Quebra-cabeça",
       "prev": "O quebra-cabeça ainda não foi inicializado..."
-    },
-    "QuestionsBank": {
-      "add": "Adicionar",
-      "label": "Importação do Banco de Perguntas",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "O número de perguntas aleatórias não pode exceder o número de perguntas selecionadas",
-        "modalTitle": "Banco de perguntas",
-        "placeholderGroup": "Grupo",
-        "placeholderTitle": "Pesquisar por título ou etiqueta de pergunta",
-        "placeholderType": "Cara",
-        "randomTextBefore": " Perguntas aleatórias dos selecionados",
-        "randomTextPrev": "Apresentar ",
-        "search": "Achar",
-        "selectAllText": "Selecionar tudo"
-      },
-      "modalTitle": "Banco de perguntas",
-      "search": "Achar"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Item ainda não estabelecido..."
     },
     "Test": {
-      "label": "Tipo de Ensaio",
+      "label": "Contentor de perguntas",
       "questionSelect": "Selecione um tipo de pergunta que deseja adicionar ao questionário"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Sim"
         },
         "url": {
-          "help": "Use a entrada de texto para inserir o URL do seu vídeo (youtube, vimeo...)",
+          "help": "Use a entrada de texto para inserir o URL do seu vídeo, se ele for do YouTube",
           "label": "URL do vídeo",
           "placeholder": "Exemplo: https://example.com/video.mp4"
         }

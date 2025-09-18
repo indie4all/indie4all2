@@ -4,6 +4,29 @@
     "viewImage": "Se billede"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Chatbots til brug:",
+        "model": {
+          "create": "Opret model med AI",
+          "update": "Opdater model med AI"
+        },
+        "query": "Forespørgselstekst:",
+        "query-placeholder": "Skriv din forespørgsel her",
+        "reasoning-effort": "Tid til ræsonnement:",
+        "reasoning-effort-help": "Vælg det ræsonnementstidspunkt, du ønsker, at chatbotten skal bruge til at generere svaret. Længere tid kan give mere detaljerede og præcise svar, men det kan også tage længere tid at generere.",
+        "reasoning-effort-low": "Avanceret",
+        "reasoning-effort-minimal": "Norm",
+        "section": {
+          "create": "Opret sektion med AI"
+        },
+        "submit": "Sende",
+        "widget": {
+          "create": "Opret widget med AI",
+          "update": "Opdater widget med AI"
+        }
+      }
+    },
     "alt": {
       "help": "Dette er den alternative beskrivelsestekst til billedet med hensyn til tilgængelighed",
       "label": "Alternativ tekst til billedet",
@@ -138,6 +161,19 @@
         "invalid": "Containertitlen er ugyldig. Du skal oprette en."
       }
     },
+    "AI": {
+      "AI-0000": "Ukendt fejl",
+      "AI-1000": "Ressourcen blev ikke fundet",
+      "AI-1001": "Hastighedsgrænsen for Azure OpenAI er overskredet. Prøv igen senere.",
+      "AI-1002": "Skemaet med navnet '{{name}}' blev ikke fundet",
+      "AI-1003": "Widget med id '{{id}}' ikke fundet",
+      "AI-1004": "Afsnit med id '{{id}}' ikke fundet",
+      "AI-1005": "Skema for model blev ikke fundet",
+      "AI-1006": "Skematisk med beskrivelsen '{{description}}' ikke fundet",
+      "AI-1007": "Ugyldigt JSON-indhold: '{{json}}'",
+      "AI-1008": "Mislykket validering af leverede data",
+      "sorry": "Beklager, jeg kunne ikke behandle dit svar"
+    },
     "Animation": {
       "image": {
         "invalid": "Den URL-adresse, der er angivet for baggrundsbilledet, er forkert. Du skal angive en gyldig indieauthor-URL."
@@ -199,6 +235,9 @@
         "invalid": "Du skal angive et udtryk."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Antallet af tilfældige widgets må ikke overstige antallet af valgte widgets."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Du har ikke skrevet indholdet af citatet. Du skal i det mindste skrive indholdet."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "Du skal vælge mindst én korrekt",
-        "notEnougOptions": "Du skal indtaste 4 muligheder"
+        "notEnougOptions": "Du skal indtaste mindst 2 muligheder"
       },
       "text": {
         "invalid": "Teksten er tom. Du skal indtaste en tekst."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "Teksten er tom. Du skal skrive eller kopiere en tekst."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Den webadresse, der er konfigureret til videoen, er ugyldig. Du skal sørge for at give en fra indieopen interaktive videoer."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "Webadressen til videoen er ugyldig. Du skal sørge for at angive en gyldig URL fra IndieMedia eller Youtube.",
-        "localInvalid": "Webadressen til videoen er ugyldig. Du skal sørge for, at du angiver en gyldig YouTube-webadresse."
+        "localInvalid": "Webadressen til videoen er ugyldig. Du skal sørge for, at du angiver en gyldig YouTube-webadresse.",
+        "public": {
+          "invalidId": "Ugyldigt video-id.",
+          "notConfigured": "Medieslutpunkt er ikke konfigureret.",
+          "notFound": "Oplysningerne fra videoen kunne ikke hentes."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Tilføj sektion",
+    "addSectionAI": "Tilføj sektion med AI",
+    "ai": "Opret model med AI",
+    "ai-update": "Opdater model med AI",
     "clear": "Slet indhold",
     "download": "Download enhed",
     "importSection": "Afsnittet Import",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Tilføj indhold",
+    "ai-edit-widget": "Rediger widget med AI",
     "delete": "Slet element",
     "duplicate": "Duplikeret element",
     "edit": "Rediger indhold",
     "export": "Eksportér vare"
   },
   "messages": {
-    "bankOfQuestionsError": "Der kunne ikke oprettes forbindelse til spørgsmålsbanken.",
     "bankOfWidgetsError": "Der kunne ikke oprettes forbindelse til widgetbanken.",
     "changesSaved": "Ændringer gemt med succes.",
     "confirmClearContent": "Du vil slette indholdet helt. Sørg for, at det er det, du virkelig vil gøre.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Tilføj widget med AI",
     "deleteSection": "Afsnittet Slet",
     "duplicate": "Dupliker sektion",
     "edit": "Rediger oplysninger",
@@ -939,8 +982,8 @@
           "optionTag": "Etiket",
           "optionType": "Fyr"
         },
-        "maximumRandomWidgetsExceeded": "Antallet af tilfældige widgets må ikke overstige antallet af valgte widgets",
         "modalTitle": "Widget Bank",
+        "notFound": "Ingen widgets fundet",
         "placeholderGroup": "Gruppe",
         "placeholderTag": "Søg efter tagnavn",
         "placeholderTitle": "Søg efter widgettitel",
@@ -1037,7 +1080,7 @@
           "placeholder": "Indtast billedets URL..."
         },
         "options": {
-          "help": "Disse 4 muligheder vises under billedet. Kun én kan være korrekt.",
+          "help": "Disse muligheder vises under billedet. Kun én kan være korrekt.",
           "label": "Indstillinger",
           "placeholder": "Indtast en indstilling"
         },
@@ -1251,17 +1294,6 @@
       "label": "Billede og tekst",
       "prev": "Billede og tekst endnu ikke etableret..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Brug tekstinput til at angive URL-adressen på den interaktive video, der er oprettet med det interaktive videoværktøj.",
-          "label": "URL-adresse til video",
-          "placeholder": "Eksempel: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktiv video",
-      "prev": "Interaktiv video endnu ikke etableret"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Forvirre",
       "prev": "Puslespillet er ikke blevet initialiseret endnu ..."
-    },
-    "QuestionsBank": {
-      "add": "Tilføje",
-      "label": "Import fra spørgsmålsbanken",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Antallet af tilfældige spørgsmål må ikke overstige antallet af valgte spørgsmål",
-        "modalTitle": "Spørgsmålsbank",
-        "placeholderGroup": "Gruppe",
-        "placeholderTitle": "Søg efter titel eller spørgsmålsmærke",
-        "placeholderType": "Fyr",
-        "randomTextBefore": " Tilfældige spørgsmål fra de valgte",
-        "randomTextPrev": "Introducere ",
-        "search": "At finde",
-        "selectAllText": "Vælg alle"
-      },
-      "modalTitle": "Spørgsmålsbank",
-      "search": "At finde"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Varen er ikke etableret endnu..."
     },
     "Test": {
-      "label": "Testtype",
+      "label": "Spørgsmålsbeholder",
       "questionSelect": "Vælg en spørgsmålstype, du vil føje til quizzen"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Ja"
         },
         "url": {
-          "help": "Brug tekstinput til at indtaste webadressen til din video (youtube, vimeo ...)",
+          "help": "Brug tekstinput til at indtaste din videos webadresse, hvis den er fra YouTube",
           "label": "URL-adresse til video",
           "placeholder": "Eksempel: https://example.com/video.mp4"
         }

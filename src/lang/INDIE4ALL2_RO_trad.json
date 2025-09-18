@@ -4,6 +4,29 @@
     "viewImage": "Vezi imaginea"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Chatbot-uri de utilizat:",
+        "model": {
+          "create": "Creați un model cu AI",
+          "update": "Actualizați modelul cu AI"
+        },
+        "query": "Textul interogării:",
+        "query-placeholder": "Scrie-ți întrebarea aici",
+        "reasoning-effort": "Timp pentru raționament:",
+        "reasoning-effort-help": "Selectați timpul de raționament pe care doriți să îl folosească chatbot-ul pentru a genera răspunsul. Un timp mai lung poate produce răspunsuri mai detaliate și mai precise, dar poate dura și mai mult pentru a genera.",
+        "reasoning-effort-low": "Avansat",
+        "reasoning-effort-minimal": "Standard",
+        "section": {
+          "create": "Creați o secțiune cu AI"
+        },
+        "submit": "Expedia",
+        "widget": {
+          "create": "Creați widget cu AI",
+          "update": "Actualizați widgetul cu AI"
+        }
+      }
+    },
     "alt": {
       "help": "Acesta este textul alternativ de descriere a imaginii în ceea ce privește accesibilitatea",
       "label": "Text alternativ pentru imagine",
@@ -138,6 +161,19 @@
         "invalid": "Titlul containerului nu este valid. Trebuie să înființezi unul."
       }
     },
+    "AI": {
+      "AI-0000": "Eroare necunoscută",
+      "AI-1000": "Resursa nu a fost găsită",
+      "AI-1001": "Limita de rată Azure OpenAI a fost depășită. Vă rugăm să încercați din nou mai târziu.",
+      "AI-1002": "Schema numită '{{name}}' nu a fost găsită",
+      "AI-1003": "Widget cu id '{{id}}' nu a fost găsit",
+      "AI-1004": "Secțiunea cu id '{{id}}' nu a fost găsită",
+      "AI-1005": "Schema pentru model nu a fost găsită",
+      "AI-1006": "Schema cu descrierea '{{description}}' nu a fost găsită",
+      "AI-1007": "Conținut JSON nevalid: '{{json}}'",
+      "AI-1008": "Validarea eșuată a datelor furnizate",
+      "sorry": "Îmi pare rău, nu am putut procesa răspunsul tău"
+    },
     "Animation": {
       "image": {
         "invalid": "URL-ul setat pentru imaginea de fundal este incorect. Trebuie să furnizați o adresă URL indieauthor validă."
@@ -199,6 +235,9 @@
         "invalid": "Trebuie să furnizați un termen."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Numărul de widget-uri aleatorii nu poate depăși numărul de widget-uri selectate."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Nu ați scris conținutul citatului. Trebuie, cel puțin, să scrieți conținutul."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "Trebuie să selectați cel puțin o corecție",
-        "notEnougOptions": "Trebuie să introduceți 4 opțiuni"
+        "notEnougOptions": "Trebuie să introduceți cel puțin 2 opțiuni"
       },
       "text": {
         "invalid": "Textul este gol. Trebuie să introduceți un text."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "Textul este gol. Trebuie să scrieți sau să copiați un text."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Adresa URL configurată pentru videoclip nu este validă. Ar trebui să vă asigurați că furnizați unul din videoclipurile interactive indieopen."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "Adresa URL a videoclipului nu este validă. Trebuie să vă asigurați că furnizați o adresă URL validă de la IndieMedia sau Youtube.",
-        "localInvalid": "Adresa URL a videoclipului nu este validă. Trebuie să te asiguri că introduci o adresă URL YouTube validă."
+        "localInvalid": "Adresa URL a videoclipului nu este validă. Trebuie să te asiguri că introduci o adresă URL YouTube validă.",
+        "public": {
+          "invalidId": "ID video nevalid.",
+          "notConfigured": "Punctul final media nu este configurat.",
+          "notFound": "Informațiile din videoclip nu au putut fi recuperate."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Adaugă secțiune",
+    "addSectionAI": "Adăugați o secțiune cu AI",
+    "ai": "Creați un model cu AI",
+    "ai-update": "Actualizați modelul cu AI",
     "clear": "Ștergerea conținutului",
     "download": "Unitate de descărcare",
     "importSection": "Secțiunea Import",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Adăugați conținut",
+    "ai-edit-widget": "Editați widgetul cu AI",
     "delete": "Ștergere element",
     "duplicate": "Element duplicat",
     "edit": "Editarea conținutului",
     "export": "Export articol"
   },
   "messages": {
-    "bankOfQuestionsError": "Nu s-a putut conecta la banca de întrebări.",
     "bankOfWidgetsError": "Nu s-a reușit conectarea la banca de widgeturi.",
     "changesSaved": "Modificările s-au salvat cu succes.",
     "confirmClearContent": "Veți șterge conținutul în întregime. Asigurați-vă că este ceea ce doriți cu adevărat să faceți.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Adăugați widget cu AI",
     "deleteSection": "Ștergeți secțiunea",
     "duplicate": "Secțiune duplicat",
     "edit": "Editați informațiile",
@@ -939,8 +982,8 @@
           "optionTag": "Etichetă",
           "optionType": "Tip"
         },
-        "maximumRandomWidgetsExceeded": "Numărul de widget-uri aleatorii nu poate depăși numărul de widget-uri selectate",
         "modalTitle": "Banca widget",
+        "notFound": "Nu au fost găsite widget-uri",
         "placeholderGroup": "Grup",
         "placeholderTag": "Căutați după numele etichetei",
         "placeholderTitle": "Căutare după titlul widgetului",
@@ -1037,7 +1080,7 @@
           "placeholder": "Introduceți adresa URL a imaginii..."
         },
         "options": {
-          "help": "Aceste 4 opțiuni vor apărea sub imagine. Numai unul poate fi corect.",
+          "help": "Aceste opțiuni vor apărea sub imagine. Doar unul poate fi corect.",
           "label": "Opțiuni",
           "placeholder": "Introduceți o opțiune"
         },
@@ -1251,17 +1294,6 @@
       "label": "Imagine și text",
       "prev": "Imaginea și textul nu au fost încă stabilite..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Utilizați introducerea textului pentru a introduce adresa URL a videoclipului interactiv creat cu instrumentul video interactiv.",
-          "label": "Adresa URL a videoclipului",
-          "placeholder": "Exemplu: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Video interactiv",
-      "prev": "Video interactiv nu a fost încă stabilit"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Puzzle",
       "prev": "Puzzle-ul nu a fost încă inițializat ..."
-    },
-    "QuestionsBank": {
-      "add": "Adăuga",
-      "label": "Import din banca de întrebări",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Numărul de întrebări aleatorii nu poate depăși numărul de întrebări selectate",
-        "modalTitle": "Banca de întrebări",
-        "placeholderGroup": "Grup",
-        "placeholderTitle": "Căutați după titlu sau etichetă de întrebare",
-        "placeholderType": "Tip",
-        "randomTextBefore": " Întrebări aleatorii de la cei selectați",
-        "randomTextPrev": "Prezenta ",
-        "search": "A găsi",
-        "selectAllText": "Selectați tot"
-      },
-      "modalTitle": "Banca de întrebări",
-      "search": "A găsi"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Articol nestabilit încă..."
     },
     "Test": {
-      "label": "Tipul testului",
+      "label": "Container de întrebări",
       "questionSelect": "Selectați un tip de întrebare pe care doriți să îl adăugați la test"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Da"
         },
         "url": {
-          "help": "Utilizați introducerea textului pentru a introduce adresa URL a videoclipului (youtube, vimeo ...)",
+          "help": "Folosește introducerea textului pentru a introduce adresa URL a videoclipului dacă este de pe YouTube",
           "label": "Adresa URL a videoclipului",
           "placeholder": "Exemplu: https://example.com/video.mp4"
         }

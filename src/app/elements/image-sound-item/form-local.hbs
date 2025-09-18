@@ -1,0 +1,37 @@
+<form id="f-{{instanceId}}">
+    <div class="mb-3">
+        <label>{{translate "widgets.ImageAndSoundItem.form.audio.label"}}</label>
+        <input type="file" class="form-control" name="audio"
+            accept="audio/3gpp, audio/3gpp2, audio/aac, audio/ogg, audio/opus, audio/mp4, audio/mpeg, audio/vnd.wav, audio/vorbis, audio/wave, audio/x-aiff" />
+        <small class="form-text text-muted">{{translate "widgets.ImageAndSoundItem.form.audio.help"}}</small>
+        <input type="hidden" name="audioblob" value="{{audioblob}}" />
+    </div>
+    <div class="mb-3">
+        <label>{{translate "widgets.ImageAndSoundItem.form.text.label"}}</label>
+        <textarea class="form-control" name="text" 
+            placeholder="{{translate "widgets.ImageAndSoundItem.form.text.placeholder"}}">{{text}}</textarea>
+        <small class="form-text text-muted">{{translate "widgets.ImageAndSoundItem.form.text.help"}}</small>
+    </div>
+    <div class="mb-3">
+        <label for="image">{{translate "widgets.ImageAndSoundItem.form.image.label"}}</label>
+        <input type="file" class="form-control" name="image" accept="image/png, image/jpeg" />
+        <small class="form-text text-muted">{{translate "widgets.ImageAndSoundItem.form.image.help"}}</small>
+        <input type="hidden" name="blob" value="{{blob}}" />
+    </div>
+    <div class="mb-3">
+        <label for="alt">{{translate "common.alt.label"}}</label>
+        <input type="text" class="form-control" name="alt" required autocomplete="off" 
+            placeholder="{{translate "common.alt.placeholder"}}" value="{{alt}}" />
+        <small class="form-text text-muted">{{translate "common.alt.help"}}</small>
+    </div>
+    <div class="mb-3 img-preview-wrapper d-none">
+        <p>{{translate "widgets.ImageAndSoundItem.form.preview"}}</p>
+        <img class="img-fluid img-preview" src="{{blob}}" />
+    </div>
+    <div class="mb-3">
+        <label for="text">{{translate "common.captions.label"}}</label>
+        <input type="file" class="form-control" name="captions" accept=".vtt" />
+        <small class="form-text text-muted">{{translate "common.captions.help"}}</small>
+        <input type="hidden" name="captionsblob" value="{{captionsblob}}" />
+    </div>
+</form>

@@ -4,6 +4,29 @@
     "viewImage": "Vedi immagine"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Chatbot da utilizzare:",
+        "model": {
+          "create": "Crea un modello con l'intelligenza artificiale",
+          "update": "Aggiorna il modello con l'intelligenza artificiale"
+        },
+        "query": "Testo della query:",
+        "query-placeholder": "Scrivi qui la tua richiesta",
+        "reasoning-effort": "Tempo per ragionare:",
+        "reasoning-effort-help": "Seleziona il tempo di ragionamento che desideri che il chatbot utilizzi per generare la risposta. Un tempo più lungo può produrre risposte più dettagliate e accurate, ma può anche richiedere più tempo per essere generato.",
+        "reasoning-effort-low": "Avanzato",
+        "reasoning-effort-minimal": "Standard",
+        "section": {
+          "create": "Crea sezioni con l'intelligenza artificiale"
+        },
+        "submit": "Invia",
+        "widget": {
+          "create": "Crea widget con l'intelligenza artificiale",
+          "update": "Aggiorna il widget con l'intelligenza artificiale"
+        }
+      }
+    },
     "alt": {
       "help": "Questo è il testo di descrizione alternativo per l'immagine in termini di accessibilità",
       "label": "Testo alternativo per l'immagine",
@@ -138,6 +161,19 @@
         "invalid": "Il titolo del contenitore non è valido. Devi stabilirne uno."
       }
     },
+    "AI": {
+      "AI-0000": "Errore sconosciuto",
+      "AI-1000": "Risorsa non trovata",
+      "AI-1001": "Il limite di frequenza di Azure OpenAI è stato superato. Riprova più tardi.",
+      "AI-1002": "Schema denominato '{{name}}' non trovato",
+      "AI-1003": "Widget con id '{{id}}' non trovato",
+      "AI-1004": "Sezione con id '{{id}}' non trovato",
+      "AI-1005": "Schema per il modello non trovato",
+      "AI-1006": "Schema con descrizione '{{description}}' non trovato",
+      "AI-1007": "Contenuto JSON non valido: '{{json}}'",
+      "AI-1008": "Convalida non riuscita dei dati forniti",
+      "sorry": "Spiacenti, non sono riuscito a elaborare la tua risposta"
+    },
     "Animation": {
       "image": {
         "invalid": "L'URL impostato per l'immagine di sfondo non è corretto. Devi fornire un URL indieauthor valido."
@@ -199,6 +235,9 @@
         "invalid": "È necessario fornire un termine."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Il numero di widget casuali non può superare il numero di widget selezionati."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Non hai scritto il contenuto della citazione. Devi almeno scrivere il contenuto."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "È necessario selezionare almeno uno corretto",
-        "notEnougOptions": "È necessario inserire 4 opzioni"
+        "notEnougOptions": "Devi inserire almeno 2 opzioni"
       },
       "text": {
         "invalid": "Il testo è vuoto. È necessario immettere un testo."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "Il testo è vuoto. Devi scrivere o copiare un testo."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "L'URL configurato per il video non è valido. Dovresti assicurarti di fornirne uno dai video interattivi indieopen."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "L'URL del video non è valido. Devi assicurarti di fornire un URL valido da IndieMedia o Youtube.",
-        "localInvalid": "L'URL del video non è valido. Devi assicurarti di fornire un URL YouTube valido."
+        "localInvalid": "L'URL del video non è valido. Devi assicurarti di fornire un URL YouTube valido.",
+        "public": {
+          "invalidId": "ID video non valido.",
+          "notConfigured": "Endpoint multimediale non configurato.",
+          "notFound": "Non è stato possibile recuperare le informazioni dal video."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Aggiungi sezione",
+    "addSectionAI": "Aggiungi sezione con l'intelligenza artificiale",
+    "ai": "Crea un modello con l'intelligenza artificiale",
+    "ai-update": "Aggiorna il modello con l'intelligenza artificiale",
     "clear": "Cancellare il contenuto",
     "download": "Unità di download",
     "importSection": "Sezione Importa",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Aggiungi contenuto",
+    "ai-edit-widget": "Modifica widget con l'intelligenza artificiale",
     "delete": "Elimina elemento",
     "duplicate": "Elemento duplicato",
     "edit": "Modificare il contenuto",
     "export": "Esporta elemento"
   },
   "messages": {
-    "bankOfQuestionsError": "Impossibile connettersi alla banca delle domande.",
     "bankOfWidgetsError": "Impossibile connettersi alla banca di widget.",
     "changesSaved": "Modifiche salvate correttamente.",
     "confirmClearContent": "Eliminerai completamente il contenuto. Assicurati che sia quello che vuoi veramente fare.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Aggiungi widget con l'intelligenza artificiale",
     "deleteSection": "Elimina sezione",
     "duplicate": "Sezione duplicata",
     "edit": "Modificare le informazioni",
@@ -939,8 +982,8 @@
           "optionTag": "Etichetta",
           "optionType": "Tizio"
         },
-        "maximumRandomWidgetsExceeded": "Il numero di widget casuali non può superare il numero di widget selezionati",
         "modalTitle": "Banca Widget",
+        "notFound": "Nessun widget trovato",
         "placeholderGroup": "Gruppo",
         "placeholderTag": "Ricerca per nome del tag",
         "placeholderTitle": "Ricerca per titolo del widget",
@@ -1037,7 +1080,7 @@
           "placeholder": "Inserisci l'URL dell'immagine..."
         },
         "options": {
-          "help": "Queste 4 opzioni appariranno sotto l'immagine. Solo uno può essere corretto.",
+          "help": "Queste opzioni appariranno sotto l'immagine. Solo uno può essere corretto.",
           "label": "Opzioni",
           "placeholder": "Inserisci un'opzione"
         },
@@ -1251,17 +1294,6 @@
       "label": "Immagine e testo",
       "prev": "Immagine e testo non ancora stabiliti..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Utilizzare l'input di testo per immettere l'URL del video interattivo creato con lo strumento video interattivo.",
-          "label": "Video URL",
-          "placeholder": "Esempio: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Video interattivo",
-      "prev": "Video interattivo non ancora stabilito"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Rompicapo",
       "prev": "Il puzzle non è stato ancora inizializzato..."
-    },
-    "QuestionsBank": {
-      "add": "Aggiungere",
-      "label": "Importazione da Question Bank",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Il numero di domande casuali non può superare il numero di domande selezionate",
-        "modalTitle": "Banca delle domande",
-        "placeholderGroup": "Gruppo",
-        "placeholderTitle": "Ricerca per titolo o tag di domanda",
-        "placeholderType": "Tizio",
-        "randomTextBefore": " Domande casuali da parte degli intervistati",
-        "randomTextPrev": "Introdurre ",
-        "search": "Per trovare",
-        "selectAllText": "Seleziona tutto"
-      },
-      "modalTitle": "Banca delle domande",
-      "search": "Per trovare"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Articolo non ancora stabilito..."
     },
     "Test": {
-      "label": "Tipo di test",
+      "label": "Contenitore di domande",
       "questionSelect": "Seleziona un tipo di domanda che desideri aggiungere al quiz"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Sì"
         },
         "url": {
-          "help": "Usa l'input di testo per inserire l'URL del tuo video (youtube, vimeo...)",
+          "help": "Utilizza l'input di testo per inserire l'URL del tuo video se proviene da YouTube",
           "label": "Video URL",
           "placeholder": "Esempio: https://example.com/video.mp4"
         }

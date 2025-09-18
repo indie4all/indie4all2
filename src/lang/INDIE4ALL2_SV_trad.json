@@ -4,6 +4,29 @@
     "viewImage": "Se bild"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Chatbots att använda:",
+        "model": {
+          "create": "Skapa modell med AI",
+          "update": "Uppdatera modellen med AI"
+        },
+        "query": "Text för fråga:",
+        "query-placeholder": "Skriv din förfrågan här",
+        "reasoning-effort": "Tid för resonemang:",
+        "reasoning-effort-help": "Välj den resonemangstid du vill att chattroboten ska använda för att generera svaret. En längre tid kan ge mer detaljerade och korrekta svar, men det kan också ta längre tid att generera.",
+        "reasoning-effort-low": "Avancerad",
+        "reasoning-effort-minimal": "Standard",
+        "section": {
+          "create": "Skapa avsnitt med AI"
+        },
+        "submit": "Sända",
+        "widget": {
+          "create": "Skapa widget med AI",
+          "update": "Uppdatera widget med AI"
+        }
+      }
+    },
     "alt": {
       "help": "Detta är den alternativa beskrivningstexten för bilden när det gäller tillgänglighet",
       "label": "Alt-text för bilden",
@@ -138,6 +161,19 @@
         "invalid": "Behållarens titel är ogiltig. Du måste upprätta en."
       }
     },
+    "AI": {
+      "AI-0000": "Okänt fel",
+      "AI-1000": "Det gick inte att hitta resursen",
+      "AI-1001": "Azure OpenAI-hastighetsgränsen har överskridits. Försök igen senare.",
+      "AI-1002": "Schemat med namnet '{{name}}' hittades inte",
+      "AI-1003": "Widget med id '{{id}}' hittades inte",
+      "AI-1004": "Avsnitt med id '{{id}}' hittades inte",
+      "AI-1005": "Schema för modellen hittades inte",
+      "AI-1006": "Schematisk med beskrivningen '{{description}}' hittades inte",
+      "AI-1007": "Ogiltigt JSON-innehåll: '{{json}}'",
+      "AI-1008": "Misslyckad validering av tillhandahållna data",
+      "sorry": "Tyvärr, jag kunde inte bearbeta ditt svar"
+    },
     "Animation": {
       "image": {
         "invalid": "URL:en som angetts för bakgrundsbilden är felaktig. Du måste ange en giltig indieauthor-URL."
@@ -199,6 +235,9 @@
         "invalid": "Du måste ange en term."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Antalet slumpmässiga widgets får inte överstiga antalet valda widgets."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Du har inte skrivit innehållet i citatet. Du måste åtminstone skriva innehållet."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "Du måste välja minst en korrekt",
-        "notEnougOptions": "Du måste ange 4 alternativ"
+        "notEnougOptions": "Du måste ange minst 2 alternativ"
       },
       "text": {
         "invalid": "Texten är tom. Du måste ange en text."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "Texten är tom. Du måste skriva eller kopiera en text."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "URL:en som konfigurerats för videon är ogiltig. Du bör se till att tillhandahålla en från indieopen interaktiva videor."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "Webbadressen till videon är ogiltig. Du måste se till att ange en giltig webbadress från IndieMedia eller Youtube.",
-        "localInvalid": "Webbadressen till videon är ogiltig. Du måste se till att du anger en giltig YouTube-webbadress."
+        "localInvalid": "Webbadressen till videon är ogiltig. Du måste se till att du anger en giltig YouTube-webbadress.",
+        "public": {
+          "invalidId": "Ogiltigt video-id.",
+          "notConfigured": "Medieslutpunkten har inte konfigurerats.",
+          "notFound": "Informationen från videon kunde inte hämtas."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Lägg till avsnitt",
+    "addSectionAI": "Lägg till avsnitt med AI",
+    "ai": "Skapa modell med AI",
+    "ai-update": "Uppdatera modellen med AI",
     "clear": "Radera innehåll",
     "download": "Ladda ner enhet",
     "importSection": "Avsnittet Importera",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Lägg till innehåll",
+    "ai-edit-widget": "Redigera widget med AI",
     "delete": "Ta bort objekt",
     "duplicate": "Duplicera objekt",
     "edit": "Redigera innehåll",
     "export": "Exportera objekt"
   },
   "messages": {
-    "bankOfQuestionsError": "Det gick inte att ansluta till frågebanken.",
     "bankOfWidgetsError": "Det gick inte att ansluta till widgetbanken.",
     "changesSaved": "Ändringar har sparats.",
     "confirmClearContent": "Du kommer att ta bort innehållet helt. Se till att det är vad du verkligen vill göra.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Lägg till widget med AI",
     "deleteSection": "Ta bort avsnitt",
     "duplicate": "Duplicera avsnitt",
     "edit": "Redigera information",
@@ -939,8 +982,8 @@
           "optionTag": "Etikett",
           "optionType": "Kille"
         },
-        "maximumRandomWidgetsExceeded": "Antalet slumpmässiga widgets får inte överstiga antalet valda widgets",
         "modalTitle": "Widget Bank",
+        "notFound": "Inga widgetar hittades",
         "placeholderGroup": "Grupp",
         "placeholderTag": "Sök efter taggnamn",
         "placeholderTitle": "Sök efter widgettitel",
@@ -1037,7 +1080,7 @@
           "placeholder": "Ange webbadressen till bilden..."
         },
         "options": {
-          "help": "Dessa 4 alternativ visas under bilden. Endast en kan vara korrekt.",
+          "help": "Dessa alternativ kommer att visas under bilden. Bara en kan vara korrekt.",
           "label": "Alternativ",
           "placeholder": "Ange ett alternativ"
         },
@@ -1251,17 +1294,6 @@
       "label": "Bild och text",
       "prev": "Bild och text ännu ej fastställda..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Använd textinmatning för att ange webbadressen till den interaktiva videon som skapats med det interaktiva videoverktyget.",
-          "label": "Webbadress till video",
-          "placeholder": "Exempel: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktiv video",
-      "prev": "Interaktiv video ännu inte etablerad"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Pussel",
       "prev": "Pusslet har inte initierats ännu ..."
-    },
-    "QuestionsBank": {
-      "add": "Addera",
-      "label": "Importera från frågebanken",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Antalet slumpmässiga frågor får inte överstiga antalet valda frågor",
-        "modalTitle": "Frågebank",
-        "placeholderGroup": "Grupp",
-        "placeholderTitle": "Sök efter titel eller frågetagg",
-        "placeholderType": "Kille",
-        "randomTextBefore": " Slumpmässiga frågor från de valda",
-        "randomTextPrev": "Introducera ",
-        "search": "Att hitta",
-        "selectAllText": "Markera alla"
-      },
-      "modalTitle": "Frågebank",
-      "search": "Att hitta"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Objektet är inte fastställt ännu..."
     },
     "Test": {
-      "label": "Typ av test",
+      "label": "Behållare för fråga",
       "questionSelect": "Välj en frågetyp som du vill lägga till i testet"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Ja"
         },
         "url": {
-          "help": "Använd textinmatning för att ange webbadressen till din video (youtube, vimeo ...)",
+          "help": "Använd textinmatning för att ange videons webbadress om den kommer från YouTube",
           "label": "Webbadress till video",
           "placeholder": "Exempel: https://example.com/video.mp4"
         }

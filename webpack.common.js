@@ -31,7 +31,7 @@ const config = {
           type: 'asset/inline'
         },
         {
-        test: /\.(png|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg|gif|avif)$/i,
           type: 'asset/resource',
         }
     ]
@@ -57,7 +57,7 @@ const config = {
 const webConfig = merge(config, {
   name: "web",
   plugins: [ 
-    new HtmlWebpackPlugin({ template: './src/views/index.hbs', inject: 'head', scriptLoading: 'blocking' }),
+    new HtmlWebpackPlugin({ template: './src/index.hbs', inject: 'head', scriptLoading: 'blocking' }),
     new CopyPlugin({patterns: [
       { from: "./node_modules/tinymce", to: "./vendor/tinymce"},
       { from: "./node_modules/tinymce-i18n/langs6", to: "./vendor/tinymce/langs"},

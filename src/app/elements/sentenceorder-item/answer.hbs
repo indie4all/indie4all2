@@ -1,0 +1,13 @@
+<div class="row answer">
+    <div class="mb-3 col-9 col-md-10">
+        <label for="answer[{{pos}}]">{{translate "widgets.SentenceOrderItem.form.answers.text"}}</label>
+        <input type="text" class="form-control" id="answer[{{pos}}]" name="answer[{{pos}}]" value="{{answer}}"
+            required />
+    </div>
+    <div class="d-grid mb-3 col-3 col-md-auto">
+        <label for="delete-answer-{{pos}}">{{translate "widgets.SentenceOrderItem.form.answers.delete"}}</label>
+        <button type="button" class="btn btn-danger btn-delete" id="delete-answer-{{pos}}">
+            <i class="fa fa-times"></i>
+        </button>
+    </div>
+</div>

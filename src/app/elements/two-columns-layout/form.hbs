@@ -1,0 +1,19 @@
+<form id="f-{{instanceId}}">
+    <div class="mb-3">
+        <label for="column-layout-width-1">{{translate "widgets.ColumnLayout.form.width.1"}}</label>
+        <select class="form-control" id="column-layout-width-1" name="width">
+            <option value="1" {{#ifeq width "1" }} selected {{/ifeq}}>8.33 %</option>
+            <option value="2" {{#ifeq width "2" }} selected {{/ifeq}}>16.67 %</option>
+            <option value="3" {{#ifeq width "3" }} selected {{/ifeq}}>25 %</option>
+            <option value="4" {{#ifeq width "4" }} selected {{/ifeq}}>33.33 %</option>
+            <option value="5" {{#ifeq width "5" }} selected {{/ifeq}}>41.67 %</option>
+            <option value="6" {{#ifeq width "6" }} selected {{/ifeq}}>50 %</option>
+            <option value="7" {{#ifeq width "7" }} selected {{/ifeq}}>58.33 %</option>
+            <option value="8" {{#ifeq width "8" }} selected {{/ifeq}}>66.67 %</option>
+            <option value="9" {{#ifeq width "9" }} selected {{/ifeq}}>75 %</option>
+            <option value="10" {{#ifeq width "10" }} selected {{/ifeq}}>83.33 %</option>
+            <option value="11" {{#ifeq width "11" }} selected {{/ifeq}}>91.67 %</option>
+        </select>
+        <small class="form-text text-muted">{{translate "widgets.ColumnLayout.form.width.help"}}</small>
+    </div>
+</form>

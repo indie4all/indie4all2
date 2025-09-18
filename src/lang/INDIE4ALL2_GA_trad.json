@@ -4,6 +4,29 @@
     "viewImage": "Féach an íomhá"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Chatbots le húsáid:",
+        "model": {
+          "create": "Cruthaigh samhail le AI",
+          "update": "Nuashonraigh an tsamhail le AI"
+        },
+        "query": "Téacs an iarratais:",
+        "query-placeholder": "Scríobh d'fhiosrúchán anseo",
+        "reasoning-effort": "Am réasúnaíochta:",
+        "reasoning-effort-help": "Roghnaigh an t-am réasúnaíochta a theastaíonn uait a úsáid chun an freagra a ghiniúint. Is féidir le tréimhse níos faide freagraí níos mionsonraithe agus níos cruinne a tháirgeadh, ach d'fhéadfadh sé níos faide a thógáil freisin a ghiniúint.",
+        "reasoning-effort-low": "Chun cinn",
+        "reasoning-effort-minimal": "Caighdeánach",
+        "section": {
+          "create": "Cruthaigh rannán le IS"
+        },
+        "submit": "Seol",
+        "widget": {
+          "create": "Cruthaigh Giuirléid le AI",
+          "update": "Nuashonraigh giuirléid le AI"
+        }
+      }
+    },
     "alt": {
       "help": "Is é seo an téacs malartach cur síos don íomhá i dtéarmaí inrochtaineachta",
       "label": "Alt téacs don íomhá",
@@ -138,6 +161,19 @@
         "invalid": "Tá teideal an choimeádáin neamhbhailí. Ní mór duit ceann a bhunú."
       }
     },
+    "AI": {
+      "AI-0000": "Earráid anaithnid",
+      "AI-1000": "Acmhainn gan aimsiú",
+      "AI-1001": "Sáraíodh teorainn ráta Azure OpenAI. Bain triail eile as níos déanaí.",
+      "AI-1002": "Scéimre darb ainm '{{name}}' gan aimsiú",
+      "AI-1003": "Giuirléid le id '{{id}}' gan aimsiú",
+      "AI-1004": "Roinn le id '{{id}}' gan aimsiú",
+      "AI-1005": "Scéimre don tSamhail Gan Aimsiú",
+      "AI-1006": "Scéimreach le cur síos '{{description}}' gan aimsiú",
+      "AI-1007": "Ábhar neamhbhailí JSON: '{{json}}'",
+      "AI-1008": "Bailíochtú teipthe ar na sonraí a soláthraíodh",
+      "sorry": "Tá brón orm, ní raibh mé in ann do fhreagra a phróiseáil"
+    },
     "Animation": {
       "image": {
         "invalid": "Tá an tacar URL don íomhá chúlra mícheart. Ní mór duit URL indieauthor bailí a chur ar fáil."
@@ -199,6 +235,9 @@
         "invalid": "Ní mór duit téarma a chur ar fáil."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Ní féidir le líon na ngiuirléidí randamacha dul thar líon na ngiuirléidí a roghnaíodh."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Níor scríobh tú ábhar an athfhriotail. Ní mór duit, ar a laghad, an t-ábhar a scríobh."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "Ní mór duit ceann ceart amháin ar a laghad a roghnú",
-        "notEnougOptions": "Ní mór duit 4 rogha a chur isteach"
+        "notEnougOptions": "Ní mór duit 2 rogha ar a laghad a iontráil"
       },
       "text": {
         "invalid": "Tá an téacs folamh. Ní mór duit téacs a iontráil."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "Tá an téacs folamh. Ní mór duit téacs a scríobh nó a chóipeáil."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Tá an URL atá cumraithe don fhíseán neamhbhailí. Ba chóir duit a chinntiú ceann a chur ar fáil ó fhíseáin idirghníomhacha indieopen."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "Tá URL an fhíseáin neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL bailí ó IndieMedia nó Youtube.",
-        "localInvalid": "Tá URL an fhíseáin neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL YouTube bailí."
+        "localInvalid": "Tá URL an fhíseáin neamhbhailí. Ní mór duit a chinntiú go soláthraíonn tú URL YouTube bailí.",
+        "public": {
+          "invalidId": "Aitheantas neamhbhailí físe.",
+          "notConfigured": "Níl críochphointe na meán cumraithe.",
+          "notFound": "Níorbh fhéidir an t-eolas ón bhfíseán a aisghabháil."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Cuir alt leis",
+    "addSectionAI": "Cuir rannán le IS",
+    "ai": "Cruthaigh samhail le AI",
+    "ai-update": "Nuashonraigh an tsamhail le AI",
     "clear": "Léirscrios an t-ábhar",
     "download": "Aonad íoslódála",
     "importSection": "Iompórtáil alt",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Cuir inneachar leis",
+    "ai-edit-widget": "Cuir giuirléid in eagar le AI",
     "delete": "Scrios mír",
     "duplicate": "Mír dhúblach",
     "edit": "Cuir ábhar in eagar",
     "export": "Easpórtáil mír"
   },
   "messages": {
-    "bankOfQuestionsError": "Níorbh fhéidir ceangal le banc na gceisteanna.",
     "bankOfWidgetsError": "Theip ar cheangal le banc na ngiuirléidí.",
     "changesSaved": "D' éirigh le hathruithe a shábháil.",
     "confirmClearContent": "Tá tú chun an t-ábhar a scriosadh go hiomlán. Déan cinnte go bhfuil sé cad ba mhaith leat a dhéanamh i ndáiríre.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Cuir giuirléid le AI",
     "deleteSection": "Scrios alt",
     "duplicate": "Alt dúblach",
     "edit": "Cuir eolas in eagar",
@@ -939,8 +982,8 @@
           "optionTag": "Lipéad",
           "optionType": "Fear"
         },
-        "maximumRandomWidgetsExceeded": "Ní féidir le líon na ngiuirléidí randamacha dul thar líon na ngiuirléidí a roghnaíodh",
         "modalTitle": "Banc Giuirléidí",
+        "notFound": "Níor aimsíodh giuirléidí ar bith",
         "placeholderGroup": "Grúpa",
         "placeholderTag": "Cuardaigh de réir ainm na clibe",
         "placeholderTitle": "Cuardaigh de réir teideal Giuirléidí",
@@ -1037,7 +1080,7 @@
           "placeholder": "Iontráil URL na híomhá..."
         },
         "options": {
-          "help": "Beidh na 4 rogha seo le feiceáil faoi bhun na híomhá. Ní féidir ach ceann amháin a bheith ceart.",
+          "help": "Beidh na roghanna seo le feiceáil faoi bhun na híomhá. Ní féidir ach ceann amháin a bheith ceart.",
           "label": "Roghanna",
           "placeholder": "Iontráil rogha"
         },
@@ -1251,17 +1294,6 @@
       "label": "Íomhá agus téacs",
       "prev": "Íomhá agus téacs nach bhfuil bunaithe go fóill..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Bain úsáid as ionchur téacs chun URL an fhíseáin idirghníomhach a cruthaíodh leis an uirlis físe idirghníomhach a iontráil.",
-          "label": "URL an fhíseáin",
-          "placeholder": "Sampla: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Físeán idirghníomhach",
-      "prev": "Físeán idirghníomhach nach bhfuil bunaithe go fóill"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Puzal",
       "prev": "Níor túsaíodh an puzal go fóill..."
-    },
-    "QuestionsBank": {
-      "add": "Cuir Leis",
-      "label": "Iompórtáil ó Bhanc na gCeisteanna",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Ní féidir le líon na gceisteanna randamacha dul thar líon na gceisteanna a roghnaíodh",
-        "modalTitle": "Banc na gCeisteanna",
-        "placeholderGroup": "Grúpa",
-        "placeholderTitle": "Cuardaigh de réir teidil nó clibe ceiste",
-        "placeholderType": "Fear",
-        "randomTextBefore": " Ceisteanna randamacha uathu siúd a roghnaíodh",
-        "randomTextPrev": "Tabhair isteach ",
-        "search": "Aimsigh",
-        "selectAllText": "Roghnaigh gach rud"
-      },
-      "modalTitle": "Banc na gCeisteanna",
-      "search": "Aimsigh"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Mír nach bhfuil bunaithe fós..."
     },
     "Test": {
-      "label": "Cineál Tástála",
+      "label": "Coimeádán ceiste",
       "questionSelect": "Roghnaigh cineál ceiste is mian leat a chur leis an tráth na gceist"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Tá"
         },
         "url": {
-          "help": "Bain úsáid as ionchur téacs chun URL d'fhíseáin a iontráil (youtube, vimeo...)",
+          "help": "Bain úsáid as ionchur téacs chun URL d'fhíseáin a iontráil má tá sé ó YouTube",
           "label": "URL an fhíseáin",
           "placeholder": "Sampla: https://example.com/video.mp4"
         }

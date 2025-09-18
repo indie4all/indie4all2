@@ -4,6 +4,29 @@
     "viewImage": "Ikusi irudia"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Erabili beharreko txatbotak:",
+        "model": {
+          "create": "IArekin eredua sortzea",
+          "update": "IArekin eredua eguneratu"
+        },
+        "query": "Kontsultaren testua:",
+        "query-placeholder": "Idatzi zure kontsulta hemen",
+        "reasoning-effort": "Arrazoiketa-denbora:",
+        "reasoning-effort-help": "Aukeratu chatbotak erantzuna sortzeko erabili nahi duzun arrazoiketa-denbora. Denbora luzeago batek erantzun zehatzagoak eta zehatzagoak eragin ditzake, baina denbora gehiago behar da sortzeko.",
+        "reasoning-effort-low": "Aurreratua",
+        "reasoning-effort-minimal": "Estandarra",
+        "section": {
+          "create": "IArekin atala sortu"
+        },
+        "submit": "Bidali",
+        "widget": {
+          "create": "IArekin widget sortu",
+          "update": "IArekin widget-a eguneratu"
+        }
+      }
+    },
     "alt": {
       "help": "Hau da irisgarritasunaren arloko irudia deskribatzeko testu alternatiboa.",
       "label": "Irudirako testu alternatiboa",
@@ -138,6 +161,19 @@
         "invalid": "Edukiontziaren izenburua ez da egokia. Bat ezarri behar duzu."
       }
     },
+    "AI": {
+      "AI-0000": "Akats ezezaguna",
+      "AI-1000": "Ez da helegiterik aurkitu",
+      "AI-1001": "Azure OpenAIren abiadura muga gainditu da. Saiatu geroago.",
+      "AI-1002": "Aurkitu gabeko'{{name}}' izena duen eskema",
+      "AI-1003": "Widget con id '{{id}}'",
+      "AI-1004": "Atala id'{{id}}' rekin",
+      "AI-1005": "Aurkitu gabeko eredurako eskema",
+      "AI-1006": "Aurkitu gabeko'{{description}}' deskribapena duen eskema",
+      "AI-1007": "Eduki JSON elbarria: '{{json}}'",
+      "AI-1008": "Emandako datuak balioztatzea",
+      "sorry": "Sentitzen dut, ezin izan dut zure erantzuna prozesatu"
+    },
     "Animation": {
       "image": {
         "invalid": "Atzeko irudirako ezarritako URLa ez da zuzena. indieauthor-en URL egoki bat eman behar duzu."
@@ -199,6 +235,9 @@
         "invalid": "Termino bat eman behar duzu."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Ausazko widget kopurua ezin da izan aukeratutako widget kopurua baino handiagoa."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Ez duzu aipamenaren edukia idatzi. Edukia behintzat idatzi behar duzu."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "Zuzena den bat aukeratu behar duzu gutxienez",
-        "notEnougOptions": "4 aukera sartu behar dituzu"
+        "notEnougOptions": "Gutxienez 2 aukera sartu behar dituzu"
       },
       "text": {
         "invalid": "Testua hutsik dago. Testu bat sartu behar duzu."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "Testua hutsik dago. Testu bat idatzi edo kopiatu behar duzu."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Bideorako konfiguratutako URLa ez da baliozkoa. Bat eman eman behar duzu, Indieopeneko bideo interaktibotik abiatuta."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "Bideorako ezarritako URL ez da baliozkoa. IndieMediako edo Youtubeko baliozko URL bat eman behar duzu.",
-        "localInvalid": "Bideorako ezarritako URL ez da baliozkoa. YouTubeko baliozko URL bat eman behar duzu."
+        "localInvalid": "Bideorako ezarritako URL ez da baliozkoa. YouTubeko baliozko URL bat eman behar duzu.",
+        "public": {
+          "invalidId": "Bideo baliogabeko IDa.",
+          "notConfigured": "Endpoint multimedia ez da konfiguratua.",
+          "notFound": "Ezin izan zen bideoaren informazioa berreskuratu."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Gehitu sekzioa",
+    "addSectionAI": "Gehitu IArekin sekzioa",
+    "ai": "IArekin eredua sortzea",
+    "ai-update": "IArekin eredua eguneratu",
     "clear": "Garbitu edukia",
     "download": "Deskargatu unitatea",
     "importSection": "Inportatu atala",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Gehitu edukia",
+    "ai-edit-widget": "Ia-rekin widget-a editatu",
     "delete": "Ezabatu elementua",
     "duplicate": "Bizkoiztu elementua",
     "edit": "Editatu edukia",
     "export": "Esportatu elementua"
   },
   "messages": {
-    "bankOfQuestionsError": "Ezin izan zen galdera-bankuarekin konektatu.",
     "bankOfWidgetsError": "Ezin izan zen widget bankuarekin konektatu.",
     "changesSaved": "Aldaketak ondo gorde dira",
     "confirmClearContent": "Edukia erabat ezabatuko duzu. Ziurttatu hori dela benetan egin nahi duzuna.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Gaineratu widget-a IArekin",
     "deleteSection": "Ezabatu atala",
     "duplicate": "Bizkoiztu atala",
     "edit": "Editatu informazioa ",
@@ -939,8 +982,8 @@
           "optionTag": "Etiketa",
           "optionType": "Mota"
         },
-        "maximumRandomWidgetsExceeded": "Ausazko widget kopurua ezin da izan hautatutako widget kopurua baino handiagoa",
         "modalTitle": "Widgetsen bankua",
+        "notFound": "Ez da widget-ik aurkitu",
         "placeholderGroup": "Taldea",
         "placeholderTag": "Etiketa izenaren arabera bilatu",
         "placeholderTitle": "Bilatu widget tituluaren arabera",
@@ -1037,7 +1080,7 @@
           "placeholder": "Sartu irudiaren URLa ..."
         },
         "options": {
-          "help": "4 aukera hauek irudiaren azpian agertuko dira. Bat bakarrik izan daiteke zuzena.",
+          "help": "Aukera horiek irudiaren azpian agertuko dira. Bat bakarrik izan daiteke zuzena.",
           "label": "Aukerak",
           "placeholder": "Idatzi aukera bat"
         },
@@ -1251,17 +1294,6 @@
       "label": "Irudia eta testua",
       "prev": "Irudia eta testua oraindik ezarri gabe ..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Erabili testua sartzeko tresna bideo interaktiboko tresnarekin sortutako bideo interaktiboaren URLa sartzeko.",
-          "label": "Bideoaren URLa",
-          "placeholder": "Adibidea: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Bideo interaktiboa",
-      "prev": "Oraindik ezarri gabeko bideo interaktiboa"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Buru-hausgarriak",
       "prev": "Buru-hausgarria ez da oraindik hasi..."
-    },
-    "QuestionsBank": {
-      "add": "Gehitu",
-      "label": "Galderen Bankutik inportatzea",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Ausazko galderen kopurua ezin da hautatutako galderen kopurua baino handiagoa izan",
-        "modalTitle": "Galderen Bankua",
-        "placeholderGroup": "Taldea",
-        "placeholderTitle": "Galdeketa-titulu edo-etiketaren arabera bilatu",
-        "placeholderType": "Mota",
-        "randomTextBefore": " hautatutakoen ausazko galderak",
-        "randomTextPrev": "Sartu ",
-        "search": "Bilatu",
-        "selectAllText": "Aukeratu guztiak"
-      },
-      "modalTitle": "Galderen Bankua",
-      "search": "Bilatu"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Item oraindik ezarri gabe..."
     },
     "Test": {
-      "label": "Test Mota",
+      "label": "Galderen edukiontzia",
       "questionSelect": "Aukeratu testari erantsi nahi diozun galdera mota bat"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Bai"
         },
         "url": {
-          "help": "Erabili testu-sarrera zure bideoaren URLa sartzeko (youtube, vimeo...)",
+          "help": "Erabili testu-sarrera zure bideoaren URL-a Sartzeko, YouTubekoa bada",
           "label": "Bideoaren URLa",
           "placeholder": "Adibidea: https://example.com/video.mp4"
         }

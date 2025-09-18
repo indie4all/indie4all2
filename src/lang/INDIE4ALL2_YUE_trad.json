@@ -4,6 +4,29 @@
     "viewImage": "見圖片"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "要使用嘅聊天機械人：",
+        "model": {
+          "create": "使用AI創建模型",
+          "update": "用人工智能更新模型"
+        },
+        "query": "查詢文本：",
+        "query-placeholder": "喺呢度寫下您的詢問",
+        "reasoning-effort": "講道理嘅時間：",
+        "reasoning-effort-help": "選擇你希望聊天機械人用嚟產生回應嘅推理時間。 時間越長，答案就越詳細，準確，但要花更長的時間。",
+        "reasoning-effort-low": "高級",
+        "reasoning-effort-minimal": "作準",
+        "section": {
+          "create": "使用AI創建部分"
+        },
+        "submit": "發送",
+        "widget": {
+          "create": "使用AI創建Widget",
+          "update": "使用AI更新小組件"
+        }
+      }
+    },
     "alt": {
       "help": "係圖像喺輔助功能方面嘅替代描述文本",
       "label": "圖像嘅可選文字",
@@ -138,6 +161,19 @@
         "invalid": "容器標題無效。 你必須建立一個。"
       }
     },
+    "AI": {
+      "AI-0000": "未知錯誤",
+      "AI-1000": "搵唔到資源",
+      "AI-1001": "已超出Azure OpenAI速率限制。 請稍後重試。",
+      "AI-1002": "找不到名為“{{name}}”嘅架構",
+      "AI-1003": "搵唔到ID為“{{id}}”嘅小組件",
+      "AI-1004": "搵唔到ID為≤{{id}}≤嘅節",
+      "AI-1005": "搵唔到模型嘅架構",
+      "AI-1006": "未搵到描述為徜徉{{description}}徜徉的示意圖",
+      "AI-1007": "無效嘅JSON內容：徜徉{{json}}",
+      "AI-1008": "提供嘅數據驗證失敗",
+      "sorry": "抱歉，我無法處理您的回答"
+    },
     "Animation": {
       "image": {
         "invalid": "為背景圖像設置嘅URL唔正確。 你必須提供有效的獨立作者URL。"
@@ -199,6 +235,9 @@
         "invalid": "你必須提供一個術語。"
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "隨機Widget嘅數量不能超過所選嘅Widget數量。"
+    },
     "Blockquote": {
       "quote": {
         "invalid": "你尚未編寫報價嘅内容。 你至少必須寫下內容。"
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "你必須至少選擇一個正確嘅",
-        "notEnougOptions": "你必須輸入4個選項"
+        "notEnougOptions": "你必須至少輸入2個選項"
       },
       "text": {
         "invalid": "文本為吉。 你必須輸入文本。"
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "文本為吉。 你必須編寫或複製文本。"
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "為視頻配置嘅網址無效。 你應該確保由獨立開放互動視頻中提供一個。"
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "視頻嘅網址無效。 您必須確保提供來自IndieMedia或Youtube的有效URL。",
-        "localInvalid": "視頻嘅網址無效。 你需要確保提供有效的YouTube網址。"
+        "localInvalid": "視頻嘅網址無效。 你需要確保提供有效的YouTube網址。",
+        "public": {
+          "invalidId": "視頻ID無效。",
+          "notConfigured": "未配置媒體終端節點。",
+          "notFound": "無法檢索視頻中嘅信息。"
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "添加部分",
+    "addSectionAI": "使用AI添加部分",
+    "ai": "使用AI創建模型",
+    "ai-update": "用人工智能更新模型",
     "clear": "抹掉內容",
     "download": "下載單位",
     "importSection": "導入部分",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "添加內容",
+    "ai-edit-widget": "使用AI編輯細部件",
     "delete": "刪除項目",
     "duplicate": "重複項",
     "edit": "編輯內容",
     "export": "導出項目"
   },
   "messages": {
-    "bankOfQuestionsError": "無法連接到題庫。",
     "bankOfWidgetsError": "無法連接到小組件庫。",
     "changesSaved": "已成功保存更改。",
     "confirmClearContent": "你將完全刪除內容。 確保係你真正想做嘅。",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "使用AI添加細部件",
     "deleteSection": "刪除部分",
     "duplicate": "重複部分",
     "edit": "編輯信息",
@@ -939,8 +982,8 @@
           "optionTag": "標籤",
           "optionType": "傢伙"
         },
-        "maximumRandomWidgetsExceeded": "隨機小部件嘅數量不能超過所選小部件嘅數量",
         "modalTitle": "細部件庫",
+        "notFound": "未搵到小組件",
         "placeholderGroup": "群",
         "placeholderTag": "按標籤名稱搜索",
         "placeholderTitle": "按小部件標題搜索",
@@ -1037,7 +1080,7 @@
           "placeholder": "輸入圖像嘅網址..."
         },
         "options": {
-          "help": "4個選項將顯示喺圖像下方。 只有一個係正確嘅。",
+          "help": "呢啲選項將顯示喺圖像下方。 只有一個可能係正確嘅。",
           "label": "選項",
           "placeholder": "輸入一個選項"
         },
@@ -1251,17 +1294,6 @@
       "label": "圖像同文本",
       "prev": "圖像和文本尚未建立..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "使用文本輸入輸入使用交互式視頻工具創建嘅交互式視頻嘅URL。",
-          "label": "視頻網址",
-          "placeholder": "示例：https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "互動視頻",
-      "prev": "交互式視頻尚未建立"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "難題",
       "prev": "謎題尚未初始化..."
-    },
-    "QuestionsBank": {
-      "add": "加",
-      "label": "從題庫導入",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "隨機問題嘅數量不能超過所選問題嘅數量",
-        "modalTitle": "題庫",
-        "placeholderGroup": "群",
-        "placeholderTitle": "按標題或問題標籤搜索",
-        "placeholderType": "傢伙",
-        "randomTextBefore": " 來自選定者嘅隨機問題",
-        "randomTextPrev": "介紹 ",
-        "search": "搵到",
-        "selectAllText": "全選"
-      },
-      "modalTitle": "題庫",
-      "search": "搵到"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "項目尚未建立..."
     },
     "Test": {
-      "label": "測試類型",
+      "label": "問題容器",
       "questionSelect": "選擇要添加到測驗的問題類型"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "係"
         },
         "url": {
-          "help": "使用文本輸入輸入視頻的URL（youtube，vimeo...）",
+          "help": "使用文本輸入輸入視頻嘅URL （如果視頻來自YouTube ）",
           "label": "視頻網址",
           "placeholder": "示例：https://example.com/video.mp4"
         }

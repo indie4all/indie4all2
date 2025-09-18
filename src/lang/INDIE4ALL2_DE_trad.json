@@ -4,6 +4,29 @@
     "viewImage": "Siehe Bild"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Zu verwendende Chatbots:",
+        "model": {
+          "create": "Erstellen eines Modells mit KI",
+          "update": "Aktualisieren des Modells mit KI"
+        },
+        "query": "Text der Abfrage:",
+        "query-placeholder": "Schreiben Sie hier Ihre Anfrage",
+        "reasoning-effort": "Zeit zum Nachdenken:",
+        "reasoning-effort-help": "Wählen Sie die Begründungszeit aus, die der Chatbot zur Generierung der Antwort verwenden soll. Eine längere Zeit kann zu detaillierteren und genaueren Antworten führen, aber es kann auch länger dauern, bis sie generiert werden.",
+        "reasoning-effort-low": "Fortgeschritten",
+        "reasoning-effort-minimal": "Norm",
+        "section": {
+          "create": "Abschnitt mit KI erstellen"
+        },
+        "submit": "Senden",
+        "widget": {
+          "create": "Widget mit KI erstellen",
+          "update": "Widget mit KI aktualisieren"
+        }
+      }
+    },
     "alt": {
       "help": "Dies ist der alternative Beschreibungstext für das Bild in Bezug auf die Barrierefreiheit",
       "label": "Alt-Text für das Bild",
@@ -138,6 +161,19 @@
         "invalid": "Der Containertitel ist ungültig. Sie müssen eine einrichten."
       }
     },
+    "AI": {
+      "AI-0000": "Unbekannter Fehler",
+      "AI-1000": "Ressource nicht gefunden",
+      "AI-1001": "Der Grenzwert für die Ratenbegrenzung von Azure OpenAI wurde überschritten. Bitte versuchen Sie es später erneut.",
+      "AI-1002": "Schema mit dem Namen '{{name}}' nicht gefunden",
+      "AI-1003": "Widget mit der ID '{{id}}' nicht gefunden",
+      "AI-1004": "Abschnitt mit der ID '{{id}}' nicht gefunden",
+      "AI-1005": "Schema für Modell nicht gefunden",
+      "AI-1006": "Schaltplan mit Beschreibung '{{description}}' nicht gefunden",
+      "AI-1007": "Ungültiger JSON-Inhalt: '{{json}}'",
+      "AI-1008": "Fehlgeschlagene Validierung der bereitgestellten Daten",
+      "sorry": "Entschuldigung, ich konnte Ihre Antwort nicht verarbeiten"
+    },
     "Animation": {
       "image": {
         "invalid": "Die für das Hintergrundbild festgelegte URL ist falsch. Sie müssen eine gültige Indieauthor-URL angeben."
@@ -199,6 +235,9 @@
         "invalid": "Sie müssen einen Begriff angeben."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Die Anzahl der zufälligen Widgets darf die Anzahl der ausgewählten Widgets nicht überschreiten."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Sie haben den Inhalt des Zitats nicht geschrieben. Sie müssen zumindest den Inhalt schreiben."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "Sie müssen mindestens eine richtige auswählen",
-        "notEnougOptions": "Sie müssen 4 Optionen eingeben"
+        "notEnougOptions": "Sie müssen mindestens 2 Optionen eingeben"
       },
       "text": {
         "invalid": "Der Text ist leer. Sie müssen einen Text eingeben."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "Der Text ist leer. Sie müssen einen Text schreiben oder kopieren."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Die für das Video konfigurierte URL ist ungültig. Sie sollten sicherstellen, dass Sie eines von indieopen interactive videos bereitstellen."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "Die URL für das Video ist ungültig. Sie müssen sicherstellen, dass Sie eine gültige URL von IndieMedia oder Youtube angeben.",
-        "localInvalid": "Die URL für das Video ist ungültig. Sie müssen sicherstellen, dass Sie eine gültige YouTube-URL angeben."
+        "localInvalid": "Die URL für das Video ist ungültig. Sie müssen sicherstellen, dass Sie eine gültige YouTube-URL angeben.",
+        "public": {
+          "invalidId": "Ungültige Video-ID.",
+          "notConfigured": "Der Medienendpunkt ist nicht konfiguriert.",
+          "notFound": "Die Informationen aus dem Video konnten nicht abgerufen werden."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Abschnitt hinzufügen",
+    "addSectionAI": "Abschnitt mit KI hinzufügen",
+    "ai": "Erstellen eines Modells mit KI",
+    "ai-update": "Aktualisieren des Modells mit KI",
     "clear": "Inhalte löschen",
     "download": "Gerät herunterladen",
     "importSection": "Abschnitt \"Importieren\"",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Inhalt hinzufügen",
+    "ai-edit-widget": "Widget mit KI bearbeiten",
     "delete": "Element löschen",
     "duplicate": "Artikel duplizieren",
     "edit": "Inhalt bearbeiten",
     "export": "Artikel exportieren"
   },
   "messages": {
-    "bankOfQuestionsError": "Es konnte keine Verbindung mit der Fragendatenbank hergestellt werden.",
     "bankOfWidgetsError": "Es konnte keine Verbindung zur Widget-Bank hergestellt werden.",
     "changesSaved": "Änderungen wurden erfolgreich gespeichert.",
     "confirmClearContent": "Sie werden den Inhalt vollständig löschen. Stellen Sie sicher, dass es das ist, was Sie wirklich tun möchten.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Widget mit KI hinzufügen",
     "deleteSection": "Abschnitt löschen",
     "duplicate": "Abschnitt duplizieren",
     "edit": "Informationen bearbeiten",
@@ -939,8 +982,8 @@
           "optionTag": "Etikett",
           "optionType": "Kerl"
         },
-        "maximumRandomWidgetsExceeded": "Die Anzahl der zufälligen Widgets darf die Anzahl der ausgewählten Widgets nicht überschreiten",
         "modalTitle": "Widget-Bank",
+        "notFound": "Keine Widgets gefunden",
         "placeholderGroup": "Gruppe",
         "placeholderTag": "Suche nach Tag-Namen",
         "placeholderTitle": "Suche nach Widget-Titel",
@@ -1037,7 +1080,7 @@
           "placeholder": "Geben Sie die URL des Bildes ein..."
         },
         "options": {
-          "help": "Diese 4 Optionen werden unter dem Bild angezeigt. Nur einer kann richtig sein.",
+          "help": "Diese Optionen werden unter dem Bild angezeigt. Nur einer kann richtig sein.",
           "label": "Optionen",
           "placeholder": "Geben Sie eine Option ein"
         },
@@ -1251,17 +1294,6 @@
       "label": "Bild und Text",
       "prev": "Bild und Text stehen noch nicht fest..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Verwenden Sie die Texteingabe, um die URL des interaktiven Videos einzugeben, das mit dem interaktiven Videotool erstellt wurde.",
-          "label": "Video-URL",
-          "placeholder": "Beispiel: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktives Video",
-      "prev": "Interaktives Video noch nicht etabliert"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Rätsel",
       "prev": "Das Rätsel wurde noch nicht initialisiert..."
-    },
-    "QuestionsBank": {
-      "add": "Hinzufügen",
-      "label": "Aus der Fragendatenbank importieren",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Die Anzahl der zufälligen Fragen darf die Anzahl der ausgewählten Fragen nicht überschreiten",
-        "modalTitle": "Fragendatenbank",
-        "placeholderGroup": "Gruppe",
-        "placeholderTitle": "Suche nach Titel oder Frage-Tag",
-        "placeholderType": "Kerl",
-        "randomTextBefore": " Zufällige Fragen der Ausgewählten",
-        "randomTextPrev": "Einführen ",
-        "search": "Finden",
-        "selectAllText": "Alles auswählen"
-      },
-      "modalTitle": "Fragendatenbank",
-      "search": "Finden"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Artikel noch nicht festgelegt..."
     },
     "Test": {
-      "label": "Testtyp",
+      "label": "Fragen-Container",
       "questionSelect": "Wählen Sie einen Fragetyp aus, den Sie dem Quiz hinzufügen möchten"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Ja"
         },
         "url": {
-          "help": "Verwenden Sie die Texteingabe, um die URL Ihres Videos einzugeben (youtube, vimeo...)",
+          "help": "Verwende die Texteingabe, um die URL deines Videos einzugeben, wenn es von YouTube stammt",
           "label": "Video-URL",
           "placeholder": "Beispiel: https://example.com/video.mp4"
         }

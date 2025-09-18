@@ -4,6 +4,29 @@
     "viewImage": "Viz obrázek"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Chatboti k použití:",
+        "model": {
+          "create": "Vytváření modelů pomocí umělé inteligence",
+          "update": "Aktualizace modelu pomocí AI"
+        },
+        "query": "Text dotazu:",
+        "query-placeholder": "Zde napište svůj dotaz",
+        "reasoning-effort": "Čas na rozmyšlenou:",
+        "reasoning-effort-help": "Vyberte dobu uvažování, kterou má chatbot použít k vygenerování odpovědi. Delší doba může přinést podrobnější a přesnější odpovědi, ale její generování může také trvat déle.",
+        "reasoning-effort-low": "Pokročilý",
+        "reasoning-effort-minimal": "Standard",
+        "section": {
+          "create": "Vytvoření sekce pomocí AI"
+        },
+        "submit": "Poslat",
+        "widget": {
+          "create": "Vytvoření widgetu pomocí AI",
+          "update": "Aktualizujte widget pomocí AI"
+        }
+      }
+    },
     "alt": {
       "help": "Toto je alternativní text popisu obrázku z hlediska přístupnosti",
       "label": "Alternativní text obrázku",
@@ -138,6 +161,19 @@
         "invalid": "Název kontejneru je neplatný. Musíte si ho vytvořit."
       }
     },
+    "AI": {
+      "AI-0000": "Neznámá chyba",
+      "AI-1000": "Zdroj nebyl nalezen",
+      "AI-1001": "Byl překročen limit rychlosti Azure OpenAI. Zkuste to prosím znovu později.",
+      "AI-1002": "Schéma s názvem '{{name}}' nebylo nalezeno",
+      "AI-1003": "Widget s id '{{id}}' nebyl nalezen",
+      "AI-1004": "Sekce s id '{{id}}' nenalezena",
+      "AI-1005": "Schéma pro model nebylo nalezeno",
+      "AI-1006": "Schéma zapojení s popisem '{{description}}' nenalezeno",
+      "AI-1007": "Neplatný obsah JSON: '{{json}}'",
+      "AI-1008": "Neúspěšná validace poskytnutých dat",
+      "sorry": "Omlouvám se, ale nemohl jsem zpracovat vaši odpověď"
+    },
     "Animation": {
       "image": {
         "invalid": "Adresa URL nastavená pro obrázek pozadí je nesprávná. Musíte zadat platnou adresu URL indieauthor."
@@ -199,6 +235,9 @@
         "invalid": "Musíte zadat termín."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Počet náhodných widgetů nesmí překročit počet vybraných widgetů."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Nenapsal jste obsah citátu. Musíte alespoň napsat obsah."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "Musíte vybrat alespoň jednu správnou",
-        "notEnougOptions": "Musíte zadat 4 možnosti"
+        "notEnougOptions": "Musíte zadat alespoň 2 možnosti"
       },
       "text": {
         "invalid": "Text je prázdný. Musíte zadat text."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "Text je prázdný. Musíte napsat nebo zkopírovat text."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Adresa URL nakonfigurovaná pro video je neplatná. Měli byste se ujistit, že poskytnete jeden z interaktivních videí indieopen."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "Adresa URL videa je neplatná. Musíte zadat platnou adresu URL z IndieMedia nebo Youtube.",
-        "localInvalid": "Adresa URL videa je neplatná. Musíte se ujistit, že jste uvedli platnou adresu URL YouTube."
+        "localInvalid": "Adresa URL videa je neplatná. Musíte se ujistit, že jste uvedli platnou adresu URL YouTube.",
+        "public": {
+          "invalidId": "Neplatné ID videa.",
+          "notConfigured": "Koncový bod média není nakonfigurován.",
+          "notFound": "Informace z videa nebylo možné získat."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Přidat oddíl",
+    "addSectionAI": "Přidat sekci s AI",
+    "ai": "Vytváření modelů pomocí umělé inteligence",
+    "ai-update": "Aktualizace modelu pomocí AI",
     "clear": "Vymazání obsahu",
     "download": "Jednotka pro stahování",
     "importSection": "Sekce Import",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Přidat obsah",
+    "ai-edit-widget": "Úprava widgetu pomocí AI",
     "delete": "Odstranit položku",
     "duplicate": "Duplicitní položka",
     "edit": "Úprava obsahu",
     "export": "Exportovat položku"
   },
   "messages": {
-    "bankOfQuestionsError": "Nelze se připojit k bance otázek.",
     "bankOfWidgetsError": "Připojení k bance widgetů se nezdařilo.",
     "changesSaved": "Změny byly úspěšně uloženy.",
     "confirmClearContent": "Obsah zcela odstraníte. Ujistěte se, že je to to, co opravdu chcete dělat.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Přidejte widget s umělou inteligencí",
     "deleteSection": "Odstranit oddíl",
     "duplicate": "Duplicitní oddíl",
     "edit": "Upravit informace",
@@ -939,8 +982,8 @@
           "optionTag": "Označit",
           "optionType": "Chlapík"
         },
-        "maximumRandomWidgetsExceeded": "Počet náhodných widgetů nesmí překročit počet vybraných widgetů",
         "modalTitle": "Widget Bank",
+        "notFound": "Nebyly nalezeny žádné widgety",
         "placeholderGroup": "Skupina",
         "placeholderTag": "Vyhledávání podle názvu značky",
         "placeholderTitle": "Hledat podle názvu widgetu",
@@ -1037,7 +1080,7 @@
           "placeholder": "Zadejte adresu URL obrázku..."
         },
         "options": {
-          "help": "Tyto 4 možnosti se zobrazí pod obrázkem. Jen jeden může být správný.",
+          "help": "Tyto možnosti se zobrazí pod obrázkem. Pouze jedna může být správná.",
           "label": "Volby",
           "placeholder": "Zadejte možnost"
         },
@@ -1251,17 +1294,6 @@
       "label": "Obrázek a text",
       "prev": "Obrázek a text dosud nestanoveny..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Pomocí textového vstupu zadejte adresu URL interaktivního videa vytvořeného pomocí nástroje pro interaktivní video.",
-          "label": "Adresa URL videa",
-          "placeholder": "Příklad: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktivní video",
-      "prev": "Interaktivní video dosud nebylo vytvořeno"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Hádanka",
       "prev": "Hádanka ještě nebyla inicializována..."
-    },
-    "QuestionsBank": {
-      "add": "Přidat",
-      "label": "Import z banky otázek",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Počet náhodných otázek nesmí překročit počet vybraných otázek",
-        "modalTitle": "Banka otázek",
-        "placeholderGroup": "Skupina",
-        "placeholderTitle": "Vyhledávání podle názvu nebo značky otázky",
-        "placeholderType": "Chlapík",
-        "randomTextBefore": " Náhodné otázky od vybraných",
-        "randomTextPrev": "Představit ",
-        "search": "Zjistit",
-        "selectAllText": "Vybrat vše"
-      },
-      "modalTitle": "Banka otázek",
-      "search": "Zjistit"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Položka ještě nebyla stanovena..."
     },
     "Test": {
-      "label": "Typ testu",
+      "label": "Kontejner otázek",
       "questionSelect": "Vyberte typ otázky, který chcete přidat do kvízu"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Ano"
         },
         "url": {
-          "help": "Pomocí textového zadání zadejte adresu URL videa (youtube, vimeo...)",
+          "help": "Pomocí textového vstupu zadejte adresu URL videa, pokud pochází z YouTube",
           "label": "Adresa URL videa",
           "placeholder": "Příklad: https://example.com/video.mp4"
         }

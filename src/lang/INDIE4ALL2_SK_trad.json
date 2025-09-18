@@ -4,6 +4,29 @@
     "viewImage": "Pozri obrázok"
   },
   "common": {
+    "ai": {
+      "prompt": {
+        "chatbots": "Chatboty na použitie:",
+        "model": {
+          "create": "Vytvorenie modelu pomocou AI",
+          "update": "Aktualizácia modelu pomocou AI"
+        },
+        "query": "Text dotazu:",
+        "query-placeholder": "Tu napíšte svoj dopyt",
+        "reasoning-effort": "Čas na uvažovanie:",
+        "reasoning-effort-help": "Vyberte čas zdôvodnenia, ktorý má chatbot použiť na vygenerovanie odpovede. Dlhší čas môže priniesť podrobnejšie a presnejšie odpovede, ale jeho generovanie môže trvať aj dlhšie.",
+        "reasoning-effort-low": "Pokročilý",
+        "reasoning-effort-minimal": "Štandard",
+        "section": {
+          "create": "Vytvorte sekciu pomocou AI"
+        },
+        "submit": "Poslať",
+        "widget": {
+          "create": "Vytvorte miniaplikáciu pomocou AI",
+          "update": "Aktualizácia miniaplikácie pomocou AI"
+        }
+      }
+    },
     "alt": {
       "help": "Toto je alternatívny popisný text obrázka z hľadiska prístupnosti",
       "label": "Alternatívny text obrázka",
@@ -138,6 +161,19 @@
         "invalid": "Názov kontajnera je neplatný. Musíte si ho zriadiť."
       }
     },
+    "AI": {
+      "AI-0000": "Neznáma chyba",
+      "AI-1000": "Zdroj sa nenašiel",
+      "AI-1001": "Limit rýchlosti Azure OpenAI bol prekročený. Skúste to znova neskôr.",
+      "AI-1002": "Schéma s názvom \"{{name}}\" sa nenašla",
+      "AI-1003": "Miniaplikácia s id '{{id}}' nenájdená",
+      "AI-1004": "Sekcia s id '{{id}}' nenájdená",
+      "AI-1005": "Schéma pre model sa nenašiel",
+      "AI-1006": "Schéma s popisom \"{{description}}\" nenájdená",
+      "AI-1007": "Neplatný obsah JSON: '{{json}}'",
+      "AI-1008": "Neúspešné overenie poskytnutých údajov",
+      "sorry": "Prepáčte, nepodarilo sa mi spracovať vašu odpoveď"
+    },
     "Animation": {
       "image": {
         "invalid": "Webová adresa nastavená pre obrázok na pozadí je nesprávna. Musíte zadať platnú adresu URL nezávislého autora."
@@ -199,6 +235,9 @@
         "invalid": "Musíte uviesť termín."
       }
     },
+    "Bank": {
+      "maximumRandomWidgetsExceeded": "Počet náhodných widgetov nesmie prekročiť počet vybraných widgetov."
+    },
     "Blockquote": {
       "quote": {
         "invalid": "Nenapísali ste obsah citátu. Musíte aspoň napísať obsah."
@@ -232,7 +271,7 @@
       },
       "options": {
         "noCorrect": "Musíte vybrať aspoň jednu správnu",
-        "notEnougOptions": "Musíte zadať 4 možnosti"
+        "notEnougOptions": "Musíte zadať aspoň 2 možnosti"
       },
       "text": {
         "invalid": "Text je prázdny. Musíte zadať text."
@@ -370,11 +409,6 @@
       },
       "text": {
         "invalid": "Text je prázdny. Musíte napísať alebo skopírovať text."
-      }
-    },
-    "InteractiveVideo": {
-      "videourl": {
-        "invalid": "Webová adresa nakonfigurovaná pre video je neplatná. Mali by ste sa uistiť, že ho poskytnete z indieopen interaktívnych videí."
       }
     },
     "LatexFormula": {
@@ -582,7 +616,12 @@
     "Video": {
       "videourl": {
         "invalid": "Webová adresa videa je neplatná. Musíte sa uistiť, že ste zadali platnú adresu URL z IndieMedia alebo Youtube.",
-        "localInvalid": "Webová adresa videa je neplatná. Musíte sa uistiť, že ste zadali platnú webovú adresu YouTube."
+        "localInvalid": "Webová adresa videa je neplatná. Musíte sa uistiť, že ste zadali platnú webovú adresu YouTube.",
+        "public": {
+          "invalidId": "Neplatné ID videa.",
+          "notConfigured": "Koncový bod média nie je nakonfigurovaný.",
+          "notFound": "Informácie z videa sa nepodarilo získať."
+        }
       }
     }
   },
@@ -608,6 +647,9 @@
   },
   "header": {
     "addSection": "Pridať sekciu",
+    "addSectionAI": "Pridajte sekciu pomocou AI",
+    "ai": "Vytvorenie modelu pomocou AI",
+    "ai-update": "Aktualizácia modelu pomocou AI",
     "clear": "Vymazanie obsahu",
     "download": "Stiahnuť jednotku",
     "importSection": "Sekcia Import",
@@ -625,13 +667,13 @@
   },
   "items": {
     "add": "Pridanie obsahu",
+    "ai-edit-widget": "Upravte miniaplikáciu pomocou AI",
     "delete": "Odstránenie položky",
     "duplicate": "Duplicitná položka",
     "edit": "Úprava obsahu",
     "export": "Exportovať položku"
   },
   "messages": {
-    "bankOfQuestionsError": "Nepodarilo sa pripojiť k banke otázok.",
     "bankOfWidgetsError": "Nepodarilo sa pripojiť k banke miniaplikácií.",
     "changesSaved": "Zmeny sa úspešne uložili.",
     "confirmClearContent": "Obsah úplne odstránite. Uistite sa, že je to to, čo naozaj chcete robiť.",
@@ -715,6 +757,7 @@
     }
   },
   "sections": {
+    "ai-add-widget": "Pridanie miniaplikácie pomocou AI",
     "deleteSection": "Odstrániť sekciu",
     "duplicate": "Duplicitná sekcia",
     "edit": "Úprava informácií",
@@ -939,8 +982,8 @@
           "optionTag": "Štítok",
           "optionType": "Chlap"
         },
-        "maximumRandomWidgetsExceeded": "Počet náhodných widgetov nesmie prekročiť počet vybraných widgetov",
         "modalTitle": "Banka miniaplikácií",
+        "notFound": "Nenašli sa žiadne widgety",
         "placeholderGroup": "Skupina",
         "placeholderTag": "Vyhľadávanie podľa názvu značky",
         "placeholderTitle": "Vyhľadávanie podľa názvu miniaplikácie",
@@ -1037,7 +1080,7 @@
           "placeholder": "Zadajte adresu URL obrázka..."
         },
         "options": {
-          "help": "Tieto 4 možnosti sa zobrazia pod obrázkom. Iba jeden môže byť správny.",
+          "help": "Tieto možnosti sa zobrazia pod obrázkom. Iba jeden môže byť správny.",
           "label": "Možnosti",
           "placeholder": "Zadajte možnosť"
         },
@@ -1251,17 +1294,6 @@
       "label": "Obrázok a text",
       "prev": "Obrázok a text ešte nie sú stanovené..."
     },
-    "InteractiveVideo": {
-      "form": {
-        "url": {
-          "help": "Pomocou textového vstupu zadajte adresu URL interaktívneho videa vytvoreného pomocou nástroja na interaktívne video.",
-          "label": "Webová adresa videa",
-          "placeholder": "Príklad: https://indieopen.upct.es/video/embed?v=b1a9820b0a0c4e8cba2c51d456c03074"
-        }
-      },
-      "label": "Interaktívne video",
-      "prev": "Interaktívne video ešte nebolo vytvorené"
-    },
     "LatexFormula": {
       "form": {
         "caption": {
@@ -1348,23 +1380,6 @@
       },
       "label": "Hádanka",
       "prev": "Puzzle ešte nebolo inicializované..."
-    },
-    "QuestionsBank": {
-      "add": "Sčítať",
-      "label": "Import z banky otázok",
-      "modal": {
-        "maximumRandomWidgetsExceeded": "Počet náhodných otázok nesmie prekročiť počet vybraných otázok",
-        "modalTitle": "Banka otázok",
-        "placeholderGroup": "Skupina",
-        "placeholderTitle": "Vyhľadávanie podľa názvu alebo značky otázky",
-        "placeholderType": "Chlap",
-        "randomTextBefore": " Náhodné otázky od vybraných",
-        "randomTextPrev": "Zavádzať ",
-        "search": "Nájsť",
-        "selectAllText": "Vybrať všetko"
-      },
-      "modalTitle": "Banka otázok",
-      "search": "Nájsť"
     },
     "RelatedUnitsAssociation": {
       "form": {
@@ -1568,7 +1583,7 @@
       "prev": "Položka ešte nie je stanovená..."
     },
     "Test": {
-      "label": "Typ skúšky",
+      "label": "Kontajner otázok",
       "questionSelect": "Vyberte typ otázky, ktorú chcete pridať do kvízu"
     },
     "TextBlock": {
@@ -1640,7 +1655,7 @@
           "yes": "Áno"
         },
         "url": {
-          "help": "Pomocou textového vstupu zadajte adresu URL svojho videa (youtube, vimeo...)",
+          "help": "Pomocou textového vstupu zadajte webovú adresu videa, ak pochádza zo služby YouTube",
           "label": "Webová adresa videa",
           "placeholder": "Príklad: https://example.com/video.mp4"
         }

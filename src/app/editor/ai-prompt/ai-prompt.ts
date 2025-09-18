@@ -2,6 +2,7 @@ import { inject, injectable } from "inversify";
 import BootstrapService from "../../services/bootstrap/bootstrap.service";
 import I18nService from "../../services/i18n/i18n.service";
 import { AIAction, AIElementInfo } from "./types";
+import { MultipleSelectInstance } from 'multiple-select-vanilla';
 import SectionElement from "../../elements/section/section.element";
 import "./styles.scss";
 
@@ -11,13 +12,15 @@ export default class AiPrompt {
     private _showCallback: () => void = () => { };
     private _hideCallback: () => void = () => { };
 
-    private _type: string = "model";
+    private _type: string = "Model";
     private _action: AIAction = AIAction.Create;
     private _elements: Set<string> = new Set();
     private _submitListener: (e: Event) => void = null;
 
     private _htmlElem: HTMLElement;
     private _formElem: HTMLFormElement;
+    private _select: MultipleSelectInstance;
+    private _effort: MultipleSelectInstance;
 
     constructor(
         @inject(BootstrapService) private bootstrap: BootstrapService,
@@ -36,6 +39,11 @@ export default class AiPrompt {
         input.addEventListener('keydown', (e: KeyboardEvent) => {
             if (e.key === 'Enter') this._formElem.dispatchEvent(new Event('submit'));
         });
+
+        const {multipleSelect} = await import("multiple-select-vanilla");
+        const selectElem = this._htmlElem.querySelector('#ai-prompt-chatbots-list');
+        this._select = multipleSelect(selectElem, { data: [] }) as MultipleSelectInstance;
+        this._effort = multipleSelect(this._htmlElem.querySelector('#ai-prompt-reasoning-effort')) as MultipleSelectInstance;
     }
 
     public async hide() {
@@ -51,7 +59,7 @@ export default class AiPrompt {
 
     public async show(action: AIAction,
         info: AIElementInfo,
-        callback: (action: AIAction, info: AIElementInfo, prompt: string) => void = () => { }) {
+        callback: (action: AIAction, info: AIElementInfo, prompt: string, chatbotIds: string[], effort: string) => void = () => { }) {
         if (this._submitListener) this._formElem.removeEventListener('submit', this._submitListener);
         const offcanvasModule = await this.bootstrap.loadOffCanvasModule();
         const bsOffcanvas = offcanvasModule.getOrCreateInstance(this._htmlElem, {
@@ -64,15 +72,24 @@ export default class AiPrompt {
         this.explanation = '';
         this.query = '';
         this.input = '';
+        this._select.refreshOptions({data: info.chatbots});
         this._submitListener = (e: Event) => {
             e.preventDefault();
             const prompt = this.input;
+            const chatbotIds = this._select.getSelects() as string[];
+            const effort = this._effort.getSelects()[0] as string;
             this.query = prompt;
             this.input = '';
-            callback(action, info, prompt)
+            callback(action, info, prompt, chatbotIds, effort)
         };
         this._formElem.addEventListener('submit', this._submitListener);
+        this.toggleSendButton(true);
         bsOffcanvas.show();
+    }
+
+    public toggleSendButton(enabled: boolean) {
+        const btn = this._htmlElem.querySelector('input[type=submit]') as HTMLInputElement;
+        btn.disabled = !enabled;
     }
 
     public get showCallback(): () => void { return this._showCallback ? this._showCallback : () => { }; }

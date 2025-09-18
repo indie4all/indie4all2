@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Chatboti k použití:",
         "model": {
-          "create": "Vytváření modelů pomocí umělé inteligence"
+          "create": "Vytváření modelů pomocí umělé inteligence",
+          "update": "Aktualizace modelu pomocí AI"
         },
         "query": "Text dotazu:",
         "query-placeholder": "Zde napište svůj dotaz",
+        "reasoning-effort": "Čas na rozmyšlenou:",
+        "reasoning-effort-help": "Vyberte dobu uvažování, kterou má chatbot použít k vygenerování odpovědi. Delší doba může přinést podrobnější a přesnější odpovědi, ale její generování může také trvat déle.",
+        "reasoning-effort-low": "Pokročilý",
+        "reasoning-effort-minimal": "Standard",
         "section": {
           "create": "Vytvoření sekce pomocí AI"
         },
@@ -643,6 +649,7 @@
     "addSection": "Přidat oddíl",
     "addSectionAI": "Přidat sekci s AI",
     "ai": "Vytváření modelů pomocí umělé inteligence",
+    "ai-update": "Aktualizace modelu pomocí AI",
     "clear": "Vymazání obsahu",
     "download": "Jednotka pro stahování",
     "importSection": "Sekce Import",

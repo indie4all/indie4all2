@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Chatbots att använda:",
         "model": {
-          "create": "Skapa modell med AI"
+          "create": "Skapa modell med AI",
+          "update": "Uppdatera modellen med AI"
         },
         "query": "Text för fråga:",
         "query-placeholder": "Skriv din förfrågan här",
+        "reasoning-effort": "Tid för resonemang:",
+        "reasoning-effort-help": "Välj den resonemangstid du vill att chattroboten ska använda för att generera svaret. En längre tid kan ge mer detaljerade och korrekta svar, men det kan också ta längre tid att generera.",
+        "reasoning-effort-low": "Avancerad",
+        "reasoning-effort-minimal": "Standard",
         "section": {
           "create": "Skapa avsnitt med AI"
         },
@@ -643,6 +649,7 @@
     "addSection": "Lägg till avsnitt",
     "addSectionAI": "Lägg till avsnitt med AI",
     "ai": "Skapa modell med AI",
+    "ai-update": "Uppdatera modellen med AI",
     "clear": "Radera innehåll",
     "download": "Ladda ner enhet",
     "importSection": "Avsnittet Importera",

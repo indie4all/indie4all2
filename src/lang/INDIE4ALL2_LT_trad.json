@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Pokalbių robotai, kuriuos reikia naudoti:",
         "model": {
-          "create": "Sukurkite modelį naudodami AI"
+          "create": "Sukurkite modelį naudodami AI",
+          "update": "Atnaujinkite modelį naudodami AI"
         },
         "query": "Užklausos tekstas:",
         "query-placeholder": "Parašykite savo užklausą čia",
+        "reasoning-effort": "Laikas samprotavimams:",
+        "reasoning-effort-help": "Pasirinkite samprotavimo laiką, kurį pokalbių robotas naudos atsakymui generuoti. Ilgesnis laikas gali duoti išsamesnius ir tikslesnius atsakymus, tačiau generavimas taip pat gali užtrukti ilgiau.",
+        "reasoning-effort-low": "Išplėstinė",
+        "reasoning-effort-minimal": "Standartas",
         "section": {
           "create": "Sukurkite skyrių naudodami AI"
         },
@@ -643,6 +649,7 @@
     "addSection": "Pridėti skyrių",
     "addSectionAI": "Pridėti skyrių su AI",
     "ai": "Sukurkite modelį naudodami AI",
+    "ai-update": "Atnaujinkite modelį naudodami AI",
     "clear": "Ištrinti turinį",
     "download": "Atsisiųsti įrenginį",
     "importSection": "Importavimo skyrius",

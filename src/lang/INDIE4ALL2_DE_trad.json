@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Zu verwendende Chatbots:",
         "model": {
-          "create": "Erstellen eines Modells mit KI"
+          "create": "Erstellen eines Modells mit KI",
+          "update": "Aktualisieren des Modells mit KI"
         },
         "query": "Text der Abfrage:",
         "query-placeholder": "Schreiben Sie hier Ihre Anfrage",
+        "reasoning-effort": "Zeit zum Nachdenken:",
+        "reasoning-effort-help": "Wählen Sie die Begründungszeit aus, die der Chatbot zur Generierung der Antwort verwenden soll. Eine längere Zeit kann zu detaillierteren und genaueren Antworten führen, aber es kann auch länger dauern, bis sie generiert werden.",
+        "reasoning-effort-low": "Fortgeschritten",
+        "reasoning-effort-minimal": "Norm",
         "section": {
           "create": "Abschnitt mit KI erstellen"
         },
@@ -643,6 +649,7 @@
     "addSection": "Abschnitt hinzufügen",
     "addSectionAI": "Abschnitt mit KI hinzufügen",
     "ai": "Erstellen eines Modells mit KI",
+    "ai-update": "Aktualisieren des Modells mit KI",
     "clear": "Inhalte löschen",
     "download": "Gerät herunterladen",
     "importSection": "Abschnitt \"Importieren\"",

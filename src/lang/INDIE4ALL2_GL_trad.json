@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Chatbots a utilizar:",
         "model": {
-          "create": "Crear modelo con IA"
+          "create": "Crear modelo con IA",
+          "update": "Actualizar modelo con IA"
         },
         "query": "Texto da consulta:",
         "query-placeholder": "Escribe tu consulta aquí",
+        "reasoning-effort": "Tempo de razoamento:",
+        "reasoning-effort-help": "Selecciona o tempo de razoamento que desexas que o chatbot utilice para xerar a resposta. Un tempo máis longo pode producir respostas máis detalladas e precisas, pero tamén pode tardar máis en xerarse.",
+        "reasoning-effort-low": "Avanzado",
+        "reasoning-effort-minimal": "Estándar",
         "section": {
           "create": "Crear sección con IA"
         },
@@ -643,6 +649,7 @@
     "addSection": "Engadir sección",
     "addSectionAI": "Engadir sección con IA",
     "ai": "Crear modelo con IA",
+    "ai-update": "Actualizar modelo con IA",
     "clear": "Limpar contido",
     "download": "Descargar unidade",
     "importSection": "Importar sección",

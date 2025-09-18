@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Chatbotovi za korištenje:",
         "model": {
-          "create": "Stvaranje modela pomoću umjetne inteligencije"
+          "create": "Stvaranje modela pomoću umjetne inteligencije",
+          "update": "Ažuriranje modela pomoću umjetne inteligencije"
         },
         "query": "Tekst upita:",
         "query-placeholder": "Ovdje napišite upit",
+        "reasoning-effort": "Vrijeme za rasuđivanje:",
+        "reasoning-effort-help": "Odaberite vrijeme obrazloženja koje želite da chatbot koristi za generiranje odgovora. Dulje vrijeme može proizvesti detaljnije i točnije odgovore, ali može potrajati i dulje za generiranje.",
+        "reasoning-effort-low": "Napredan",
+        "reasoning-effort-minimal": "Standard",
         "section": {
           "create": "Napravite odjeljak pomoću umjetne inteligencije"
         },
@@ -643,6 +649,7 @@
     "addSection": "Dodaj sekciju",
     "addSectionAI": "Dodajte odjeljak pomoću umjetne inteligencije",
     "ai": "Stvaranje modela pomoću umjetne inteligencije",
+    "ai-update": "Ažuriranje modela pomoću umjetne inteligencije",
     "clear": "Brisanje sadržaja",
     "download": "Jedinica za preuzimanje",
     "importSection": "Sekcija Uvoz",

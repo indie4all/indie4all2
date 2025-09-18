@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Tērzēšanas roboti, ko izmantot:",
         "model": {
-          "create": "Modeļa izveide ar AI"
+          "create": "Modeļa izveide ar AI",
+          "update": "Atjauniniet modeli ar AI"
         },
         "query": "Vaicājuma teksts:",
         "query-placeholder": "Uzrakstiet savu pieprasījumu šeit",
+        "reasoning-effort": "Laiks argumentācijai:",
+        "reasoning-effort-help": "Atlasiet argumentācijas laiku, kuru tērzēšanas robots izmanto, lai ģenerētu atbildi. Ilgāks laiks var radīt detalizētākas un precīzākas atbildes, bet tā ģenerēšana var aizņemt arī ilgāku laiku.",
+        "reasoning-effort-low": "Papildu",
+        "reasoning-effort-minimal": "Standarts",
         "section": {
           "create": "Izveidojiet sadaļu ar AI"
         },
@@ -643,6 +649,7 @@
     "addSection": "Pievienot sadaļu",
     "addSectionAI": "Sadaļas pievienošana ar AI",
     "ai": "Modeļa izveide ar AI",
+    "ai-update": "Atjauniniet modeli ar AI",
     "clear": "Satura dzēšana",
     "download": "Lejupielādes ierīce",
     "importSection": "Importēšanas sadaļa",

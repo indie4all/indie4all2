@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Használható chatbotok:",
         "model": {
-          "create": "Modell létrehozása mesterséges intelligenciával"
+          "create": "Modell létrehozása mesterséges intelligenciával",
+          "update": "Modell frissítése AI-val"
         },
         "query": "Lekérdezés szövege:",
         "query-placeholder": "Írja meg érdeklődését itt",
+        "reasoning-effort": "Az érvelés ideje:",
+        "reasoning-effort-help": "Válassza ki azt az érvelési időt, amelyet a chatbot használni szeretne a válasz létrehozásához. A hosszabb idő részletesebb és pontosabb válaszokat eredményezhet, de a generálás is hosszabb időt vehet igénybe.",
+        "reasoning-effort-low": "Haladó",
+        "reasoning-effort-minimal": "Szabvány",
         "section": {
           "create": "Szakasz létrehozása mesterséges intelligenciával"
         },
@@ -643,6 +649,7 @@
     "addSection": "Szakasz hozzáadása",
     "addSectionAI": "Szakasz hozzáadása AI-val",
     "ai": "Modell létrehozása mesterséges intelligenciával",
+    "ai-update": "Modell frissítése AI-val",
     "clear": "Tartalom törlése",
     "download": "Letöltési egység",
     "importSection": "Importálás szakasz",

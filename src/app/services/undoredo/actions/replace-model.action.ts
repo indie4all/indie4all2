@@ -25,7 +25,7 @@ export default class ReplaceModelAction extends Action {
         await this._model.init(data);
         this.container.innerHTML = '';
         this._dragDrop.model = this._model;
-        this._model.sections.forEach(section => this.container.insertAdjacentHTML('beforeend', section.createElement()));
+        this._model.sectionsHTML.forEach(html => this.container.insertAdjacentHTML('beforeend', html));
     }
 
     async do() { await this.load(this.dataNow); }

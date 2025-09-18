@@ -10,12 +10,12 @@ export default class AddSectionAction extends Action {
         const element: SectionElement = this._data.element;
         const view: string = element.createElement();
         const position: number = this._data.position;
-        if (position == this._model.sections.length) {
+        if (position == this._model.numberOfSections) {
             $(this._data.container).append(view);
-            this._model.sections.push(element);
+            this._model.addSection(element);
         } else {
             $(view).insertBefore(this._data.container.children[position]);
-            this._model.sections.splice(position, 0, element);
+            this._model.insertSection(element, position);
         }
     }
 

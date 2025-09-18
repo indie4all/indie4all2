@@ -6,6 +6,7 @@ import WidgetElement from "../widget/widget.element";
 
 export default class ModalElement extends ContainerElement {
 
+    protected static _generable: boolean = true;
     static widget = "Modal";
     static category = "containers";
     static icon = icon;

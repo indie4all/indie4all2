@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "要使用嘅聊天機械人：",
         "model": {
-          "create": "使用AI創建模型"
+          "create": "使用AI創建模型",
+          "update": "用人工智能更新模型"
         },
         "query": "查詢文本：",
         "query-placeholder": "喺呢度寫下您的詢問",
+        "reasoning-effort": "講道理嘅時間：",
+        "reasoning-effort-help": "選擇你希望聊天機械人用嚟產生回應嘅推理時間。 時間越長，答案就越詳細，準確，但要花更長的時間。",
+        "reasoning-effort-low": "高級",
+        "reasoning-effort-minimal": "作準",
         "section": {
           "create": "使用AI創建部分"
         },
@@ -643,6 +649,7 @@
     "addSection": "添加部分",
     "addSectionAI": "使用AI添加部分",
     "ai": "使用AI創建模型",
+    "ai-update": "用人工智能更新模型",
     "clear": "抹掉內容",
     "download": "下載單位",
     "importSection": "導入部分",

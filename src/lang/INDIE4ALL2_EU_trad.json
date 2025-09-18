@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Erabili beharreko txatbotak:",
         "model": {
-          "create": "IArekin eredua sortzea"
+          "create": "IArekin eredua sortzea",
+          "update": "IArekin eredua eguneratu"
         },
         "query": "Kontsultaren testua:",
         "query-placeholder": "Idatzi zure kontsulta hemen",
+        "reasoning-effort": "Arrazoiketa-denbora:",
+        "reasoning-effort-help": "Aukeratu chatbotak erantzuna sortzeko erabili nahi duzun arrazoiketa-denbora. Denbora luzeago batek erantzun zehatzagoak eta zehatzagoak eragin ditzake, baina denbora gehiago behar da sortzeko.",
+        "reasoning-effort-low": "Aurreratua",
+        "reasoning-effort-minimal": "Estandarra",
         "section": {
           "create": "IArekin atala sortu"
         },
@@ -643,6 +649,7 @@
     "addSection": "Gehitu sekzioa",
     "addSectionAI": "Gehitu IArekin sekzioa",
     "ai": "IArekin eredua sortzea",
+    "ai-update": "IArekin eredua eguneratu",
     "clear": "Garbitu edukia",
     "download": "Deskargatu unitatea",
     "importSection": "Inportatu atala",

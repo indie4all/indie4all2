@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Chatbot-uri de utilizat:",
         "model": {
-          "create": "Creați un model cu AI"
+          "create": "Creați un model cu AI",
+          "update": "Actualizați modelul cu AI"
         },
         "query": "Textul interogării:",
         "query-placeholder": "Scrie-ți întrebarea aici",
+        "reasoning-effort": "Timp pentru raționament:",
+        "reasoning-effort-help": "Selectați timpul de raționament pe care doriți să îl folosească chatbot-ul pentru a genera răspunsul. Un timp mai lung poate produce răspunsuri mai detaliate și mai precise, dar poate dura și mai mult pentru a genera.",
+        "reasoning-effort-low": "Avansat",
+        "reasoning-effort-minimal": "Standard",
         "section": {
           "create": "Creați o secțiune cu AI"
         },
@@ -643,6 +649,7 @@
     "addSection": "Adaugă secțiune",
     "addSectionAI": "Adăugați o secțiune cu AI",
     "ai": "Creați un model cu AI",
+    "ai-update": "Actualizați modelul cu AI",
     "clear": "Ștergerea conținutului",
     "download": "Unitate de descărcare",
     "importSection": "Secțiunea Import",

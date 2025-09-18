@@ -38,12 +38,13 @@ import Palette from "./palette/palette";
 import ModalUnitSettings from "./modal-unit-settings/unit-settings.service";
 import ModalTranslate from "./modal-translate/modal-translate";
 import ModalNetlify from "./modal-netlify/modal-netlify";
-import { AIAction, AIElementInfo, AIWidgetInfo } from "./ai-prompt/types";
-import { AIResponse, AIResponseOK, isAIResponseError } from "../services/ai/types";
+import { AIAction, AIElementInfo, AIWidgetInfo, MultipleSelectChoice } from "./ai-prompt/types";
+import { AIChanges, AIModel, AIResponse, AIResponseOK, AIResult, AISection, AIWidget, isAIResponseError } from "../services/ai/types";
 import EditElementAction from "../services/undoredo/actions/edit-element.action";
 import Action from "../services/undoredo/actions/action";
 import ReplaceModelAction from "../services/undoredo/actions/replace-model.action";
 import UpdateElementAction from "../services/undoredo/actions/update-element.action";
+import * as jsonpatch from 'fast-json-patch';
 
 @injectable()
 export default abstract class Editor {
@@ -80,6 +81,13 @@ export default abstract class Editor {
     @inject(MigratorService) protected _migrator: MigratorService;
     @inject(AddContentPromptService) protected _contentPrompt: AddContentPromptService;
     @inject('Factory<Action>') protected _actionFactory: <T extends Action>(typeAction: new () => T, model: Model, data: any) => T;
+
+    private async getChatbots(): Promise<MultipleSelectChoice[]> {
+        return (await this._ai.getChatbots()).map(chatbot => ({
+            text: chatbot.title,
+            value: chatbot.chatbotId
+        }));
+    }
 
     public async init(): Promise<void> {
         this._paletteElem = document.getElementById('palette');
@@ -129,6 +137,7 @@ export default abstract class Editor {
         // TOOLBAR
         await this._toolbar.init();
         if (this._toolbar.ai) this._toolbar.ai.callback = () => this.addModelWithAI();
+        if (this._toolbar.aiUpdate) this._toolbar.aiUpdate.callback = () => this.updateModelWithAI();
         if (this._toolbar.upload) this._toolbar.upload.callback = async (e: ProgressEvent<FileReader>) => {
             const model = JSON.parse(e.target.result as string);
             await this.load(model);
@@ -147,6 +156,18 @@ export default abstract class Editor {
         // DRAG AND DROP (FROM PALETTE TO CONTAINER)
         await this._dragDrop.init(this._paletteElem, this._containerElem, this._model);
 
+        // ACTIONS TO DO WHEN THE MODEL CHANGES
+        this._model.modelChanged.subscribe(() => {
+            // Do not allow the user to call create a model with AI when the content is not empty
+            this._toolbar.toggleAI(this._model.empty);
+            // Force the user to update the omdel with AI when the content is not empty
+            this._toolbar.toggleAIUpdate(!this._model.empty);
+            // Prevent the user from creating a model when the model is not empty
+            if (this._aiprompt.action === AIAction.Create && this._aiprompt.type === 'Model') 
+                this._aiprompt.toggleSendButton(this._model.empty)
+            // Prevent the user from editing content when the model is empty
+            else this._aiprompt.toggleSendButton(!this._model.empty)
+        });
 
         // BIND EVENTS FROM CHILDREN ELEMENTS IN CONTAINER
         this._containerElem.addEventListener('click', (e) => {
@@ -197,11 +218,8 @@ export default abstract class Editor {
     }
 
     editElement(id: string) {
-        const modelElem = this._model.findObject(id);
-        const dataBefore = modelElem.toJSON();
-        modelElem.edit(async (data) => {
-            const dataNow = modelElem.toJSON();
-            const action = this._actionFactory(EditElementAction, this._model, { before: dataBefore, now: dataNow, id });
+        this._model.edit(id, async (before, now) => {
+            const action = this._actionFactory(EditElementAction, this._model, { before, now, id });
             await this._undoredo.pushAndExecuteCommand(action);
         });
     }
@@ -247,11 +265,11 @@ export default abstract class Editor {
     }
 
     async addSection(modelSection?: SectionElement) {
-        const index = this._model.sections.length + 1;
+        const index = this._model.numberOfSections + 1;
         const section = modelSection ?? await this._factory(SectionElement.widget, { index });
         const action = this._actionFactory(AddSectionAction, this._model, {
             element: section,
-            position: this._model.sections.length,
+            position: this._model.numberOfSections,
             container: this._containerElem
         });
         await this._undoredo.pushAndExecuteCommand(action);
@@ -367,7 +385,7 @@ export default abstract class Editor {
     async removeSection(sectionId: string) {
         const action = this._actionFactory(RemoveSectionAction, this._model, {
             element: this._model.findObject(sectionId),
-            position: this._utils.findIndexObjectInArray(this._model.sections, "id", sectionId),
+            position: this._model.indexOfSection(sectionId),
             container: this._containerElem
         });
         await this._undoredo.pushAndExecuteCommand(action);
@@ -439,16 +457,16 @@ export default abstract class Editor {
                 }
             }));
 
-        // Paint errors in the view
+        // Print errors in the view
 
         // No sections
-        if (this._model.sections.length == 0) {
+        if (this._model.numberOfSections == 0) {
             if (print) this._utils.notifyError(this._i18n.value("messages.emptyContent"));
             return false;
         }
 
         // // Only hidden sections
-        if (this._model.sections.filter(section => !section.hidden).length == 0) {
+        if (this._model.numberOfVisibleSections == 0) {
             if (print) this._utils.notifyError(this._i18n.value("messages.hiddenContent"));
             return false;
         }
@@ -479,9 +497,10 @@ export default abstract class Editor {
     }
 
     async addModelWithAI(): Promise<void> {
-        this._aiprompt.show(AIAction.Create, { type: 'Model' }, async (aiAction, info, prompt) => {
+        const chatbots = await this.getChatbots();
+        this._aiprompt.show(AIAction.Create, { type: 'Model', chatbots }, async (aiAction, info, prompt, chatbotIds, effort) => {
             const before = this._model.toJSON();
-            const model = await this.onSubmitAIPrompt(aiAction, info, prompt);
+            const model = (await this.onSubmitAIPrompt(aiAction, info, prompt, chatbotIds, effort) as AIModel);
             const json = this._model.toJSON();
             json.sections = model.sections;
             const action = this._actionFactory(ReplaceModelAction, this._model, { before, now: json, container: this._containerElem });
@@ -489,15 +508,29 @@ export default abstract class Editor {
         });
     }
 
+    async updateModelWithAI(): Promise<void> {
+        const chatbots = await this.getChatbots();
+        this._aiprompt.show(AIAction.Update, { type: 'Model', chatbots }, async (aiAction, info, prompt, chatbotIds, effort) => {
+            const before = this._model.toJSON();
+            const changes = ((await this.onSubmitAIPrompt(aiAction, info, prompt, chatbotIds, effort)) as AIChanges).changes;
+            const json = this._model.toJSON();
+            const result = jsonpatch.applyPatch(json, changes, false, true);
+            const action = this._actionFactory(ReplaceModelAction, this._model, { before, now: json, container: this._containerElem });
+            this._undoredo.pushAndExecuteCommand(action);
+        });
+    }
+
     async addSectionWithAI(): Promise<void> {
-        this._aiprompt.show(AIAction.Create, { type: SectionElement.widget }, async (action, info, prompt) => {
-            const section = await this.onSubmitAIPrompt(action, info, prompt);
+        const chatbots = await this.getChatbots();
+        this._aiprompt.show(AIAction.Create, { type: SectionElement.widget, chatbots }, async (action, info, prompt, chatbotIds, effort) => {
+            const section = (await this.onSubmitAIPrompt(action, info, prompt, chatbotIds, effort)) as AISection;
             const sectionElement = await this._factory(SectionElement.widget, section) as SectionElement;
             this.addSection(sectionElement);
         });
     }
 
     async addWidgetWithAI(sectionId: string) {
+        const chatbots = await this.getChatbots();
         const allWidgetsAllowedInSection = this._injector.allWidgets.filter(widget =>
             this._injector.canHave(SectionElement, widget))
             // Only allow widgets that can use AI to generate content
@@ -510,17 +543,17 @@ export default abstract class Editor {
         // Sort options by text
         options.sort((a, b) => a.text.localeCompare(b.text));
         this._contentPrompt.prompt(this._i18n.value("common.selectType"), options,
-            (value) => this._aiprompt.show(AIAction.Create, { type: value }, async (action, info, prompt) => {
-                const elem = await this.onSubmitAIPrompt(action, info, prompt);
+            (value) => this._aiprompt.show(AIAction.Create, { type: value, chatbots }, async (action, info, prompt, chatbotIds, effort) => {
+                const elem = await this.onSubmitAIPrompt(action, info, prompt, chatbotIds, effort) as AIWidget;
                 const widgetElement = await this._factory(elem.widget, elem) as WidgetElement;
                 this.addModelElement(widgetElement, sectionId);
             }));
     }
 
     async editWidgetWithAI(widgetId: string, widgetType: string) {
-        const info: AIWidgetInfo = { type: widgetType, id: widgetId };
-        this._aiprompt.show(AIAction.Update, info, async (aiAction, info, prompt) => {
-            const widget = await this.onSubmitAIPrompt(aiAction, info, prompt);
+        const info: AIWidgetInfo = { type: widgetType, id: widgetId, chatbots: await this.getChatbots() };
+        this._aiprompt.show(AIAction.Update, info, async (aiAction, info, prompt, chatbotIds, effort) => {
+            const widget = await this.onSubmitAIPrompt(aiAction, info, prompt, chatbotIds, effort);
             const modelElem = this._model.findObject(widgetId);
             const before = modelElem.toJSON();
             const now = widget;
@@ -529,19 +562,19 @@ export default abstract class Editor {
         });
     }
 
-    async onSubmitAIPrompt(action: AIAction, info: AIElementInfo, prompt: string): Promise<any> {
+    async onSubmitAIPrompt(action: AIAction, info: AIElementInfo, prompt: string, chatbotIds: string[], effort: string): Promise<AIResult> {
         let response: AIResponse;
         await this._loading.show();
         if (action === AIAction.Create) {
-            if (info.type === 'Model') response = await this._ai.createModel(prompt);
-            else if (info.type === 'Section') response = await this._ai.createSection(prompt, this._model);
-            else response = await this._ai.createWidget(prompt, info.type, this._model);
+            if (info.type === 'Model') response = await this._ai.createModel(prompt, chatbotIds, effort);
+            else if (info.type === 'Section') response = await this._ai.createSection(prompt, chatbotIds, this._model, effort);
+            else response = await this._ai.createWidget(prompt, chatbotIds, info.type, this._model, effort);
         } else if (action === AIAction.Update) {
-            if (info.type === 'Model') throw new Error('Cannot update a model');
+            if (info.type === 'Model') response = await this._ai.updateModel(prompt, chatbotIds, this._model, effort);
             else if (info.type === 'Section') throw new Error('Cannot update a section');
             else {
                 const wInfo = info as AIWidgetInfo;
-                response = await this._ai.updateWidget(prompt, wInfo.id, this._model);
+                response = await this._ai.updateWidget(prompt, chatbotIds, wInfo.id, this._model, effort);
             }
         }
         await this._loading.hide();

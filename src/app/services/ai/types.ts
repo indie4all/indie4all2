@@ -1,10 +1,8 @@
-export interface AIResponse {
-
-}
+export interface AIResponse {}
 
 export interface AIResponseOK extends AIResponse {
     explanation: string;
-    model: AIModel;
+    model: AIResult;
 }
 
 export interface AIResponseError extends AIResponse {
@@ -24,15 +22,38 @@ export function isAIResponseOK(response: AIResponse): response is AIResponseOK {
     return (response as AIResponseOK).model !== undefined;
 }
 
-export interface AIModel {
+export interface AIResult {}
+
+interface AIChange {
+    op: "add" | "remove" | "replace" | "move" | "copy";
+    path: string;
+    value: any;
+    from: string | null;
+}
+
+export interface AIChanges extends AIResult {
+    changes: AIChange[];
+}
+
+export interface AIModel extends AIResult {
     sections: AISection[];
 }
 
-export interface AISection {
+export interface AISection extends AIResult {
     id: string;
     data: any[];
     name: string;
     hidden: boolean;
     widget: "Section";
     bookmark: string;
+}
+export interface AIWidget extends AIResult {
+    id: string;
+    widget: string;
+}
+
+export interface Chatbot {
+    chatbotId: string;
+    title: string;
+    description: string;
 }

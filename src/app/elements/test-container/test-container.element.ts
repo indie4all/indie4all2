@@ -7,7 +7,6 @@ import ContainerSpecificElement from "../container-specific/container-specific.e
 
 export default class TestContainerElement extends ContainerSpecificElement {
 
-    protected static _generable: boolean = false;
     static widget = "Test";
     static category = "exerciseElement";
     static icon = icon;

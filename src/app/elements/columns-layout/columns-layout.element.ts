@@ -4,6 +4,7 @@ import WidgetElement from "../widget/widget.element";
 
 export default abstract class ColumnsLayoutElement extends WidgetElement {
 
+    protected static _generable: boolean = true;
     protected static columns: number[];
 
     data: WidgetElement[][];

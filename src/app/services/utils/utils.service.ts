@@ -224,39 +224,6 @@ export default class UtilsService {
         return await fetch(resourceBackend, { method: 'POST', headers, body: blob, redirect: 'follow' }).then(response => response.text());
     }
 
-    // Check if the element is a model or a model element
-    private isModel(element: Model | Element): element is Model {
-        return (element as Model).sections !== undefined;
-    }
-
-    /**
-     * Get all the descendants of the model or a given model element
-     * @param element Model or model element to get the descendants from
-     * @returns list of ModelElement children
-     */
-    findAllElements(element: Model | Element): Element[] {
-        let result: Element[] = this.isModel(element) ? [...element.sections] : [];
-        let children: Element[] = this.isModel(element) ? [...element.sections] : [element];
-
-        do {
-            children = children
-                .filter(elem => (<typeof Element>elem.constructor).hasChildren())
-                .flatMap(elem => elem.data.flat());
-            result = result.concat(children);
-        } while (children.length);
-        return result;
-    }
-
-    /**
-     * Get all the descendants of the model or a given model element of a given type
-     * @param element Model or model element to get the descendants from
-     * @param typeT Type of the descendants to get
-     * @returns list of TypeT children
-     */
-    findElementsOfType<T extends Element>(element: Model | Element, typeT: new () => T): T[] {
-        return this.findAllElements(element).filter(elem => elem instanceof typeT).map(elem => elem as T);
-    }
-
     findAllObjects(model: any): any[] {
 
         const hasChildren = (obj: any): boolean => {

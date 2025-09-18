@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Chatbots biex tuża:",
         "model": {
-          "create": "Oħloq mudell bl-AI"
+          "create": "Oħloq mudell bl-AI",
+          "update": "Aġġorna l-mudell bl-AI"
         },
         "query": "Test tal-mistoqsija:",
         "query-placeholder": "Ikteb l-inkjesta tiegħek hawn",
+        "reasoning-effort": "Ħin għar-raġunament:",
+        "reasoning-effort-help": "Agħżel il-ħin ta 'raġunament li tixtieq li ċ-chatbot juża biex jiġġenera t-tweġiba. Żmien itwal jista 'jipproduċi tweġibiet aktar dettaljati u preċiżi, iżda jista' wkoll jieħu aktar żmien biex jiġġenera.",
+        "reasoning-effort-low": "Avvanzat",
+        "reasoning-effort-minimal": "Standard",
         "section": {
           "create": "Oħloq taqsima bl-IA"
         },
@@ -643,6 +649,7 @@
     "addSection": "Żid sezzjoni",
     "addSectionAI": "Żid taqsima bl-AI",
     "ai": "Oħloq mudell bl-AI",
+    "ai-update": "Aġġorna l-mudell bl-AI",
     "clear": "Ħassar il-kontenut",
     "download": "Niżżel l-unità",
     "importSection": "Taqsima tal-importazzjoni",

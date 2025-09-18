@@ -39,6 +39,10 @@ export default class Toolbar {
         await this.enable('ai', this.i18n.value('header.ai'), 'fa-brain');
     }
 
+    private async enableAIUpdate(): Promise<void> {
+        await this.enable('ai-update', this.i18n.value('header.ai-update'), 'fa-brain');
+    }
+
     private async enablePublish(): Promise<void> {
         await this.enable('publish', this.i18n.value('header.publish'), 'fa-globe');
     }
@@ -92,9 +96,77 @@ export default class Toolbar {
         });
     }
 
+    private async toggleDisabled(name: string, active: boolean): Promise<void> {
+        const action = this._actions[name];
+        if (action) {
+            const actionElem = document.getElementById(action.id) as HTMLButtonElement;
+            actionElem.disabled = !active;
+        }
+    }
+
+    public async toggleTranslation(active: boolean): Promise<void> {
+        await this.toggleDisabled('translate', active);
+    }
+
+    public async toggleUploadModel(active: boolean): Promise<void> {
+        await this.toggleDisabled('upload-model', active);
+    }
+
+    public async toggleAI(active: boolean): Promise<void> {
+        await this.toggleDisabled('ai', active);
+    }
+
+    public async toggleAIUpdate(active: boolean): Promise<void> {
+        await this.toggleDisabled('ai-update', active);
+    }
+
+    public async togglePublish(active: boolean): Promise<void> {
+        await this.toggleDisabled('publish', active);
+    }
+
+    public async toggleNetlify(active: boolean): Promise<void> {
+        await this.toggleDisabled('netlify', active);
+    }
+
+    public async toggleSCORM(active: boolean): Promise<void> {
+        await this.toggleDisabled('scorm', active);
+    }
+
+    public async togglePreview(active: boolean): Promise<void> {
+        await this.toggleDisabled('preview', active);
+    }
+
+    public async toggleValidate(active: boolean): Promise<void> {
+        await this.toggleDisabled('validate', active);
+    }
+
+    public async toggleSave(active: boolean): Promise<void> {
+        await this.toggleDisabled('save', active);
+    }
+
+    public async toggleDownload(active: boolean): Promise<void> {
+        await this.toggleDisabled('download', active);
+    }
+
+    public async toggleUndo(active: boolean): Promise<void> {
+        await this.toggleDisabled('undo', active);
+    }
+
+    public async toggleRedo(active: boolean): Promise<void> {
+        await this.toggleDisabled('redo', active);
+    }
+
+    public async toggleInstall(active: boolean): Promise<void> {
+        await this.toggleDisabled('install', active);
+    }
+
     public async init(): Promise<void> {
         this._container = document.querySelector('.navbar-nav') as HTMLElement;
         if (!Config.isWidgetEditorEnabled() && Config.getAIURL()) await this.enableAI();
+        if (!Config.isWidgetEditorEnabled() && Config.getAIURL()) {
+            await this.enableAIUpdate();
+            await this.toggleAIUpdate(false);
+        }
         if (await this.i18n.canTranslateUnits()) await this.enableTranslation();
         if (Config.isPWAEnabled()) await this.enableInstall();
         if (Config.getPublishBackendURL()) await this.enablePublish();
@@ -112,6 +184,7 @@ export default class Toolbar {
 
     private getAction(name: string): ButtonAction { return this._actions[name]; }
     public get ai(): ButtonAction { return this.getAction('ai'); }
+    public get aiUpdate(): ButtonAction { return this.getAction('ai-update'); }
     public get translate(): ButtonAction { return this.getAction('translate'); }
     public get publish(): ButtonAction { return this.getAction('publish'); }
     public get netlify(): ButtonAction { return this.getAction('netlify'); }

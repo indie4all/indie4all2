@@ -10,7 +10,7 @@ export default class CategoryItem {
     private _visible: boolean = true;
 
     private visibilitySubject = new Subject<boolean>();
-    public visibility$ = this.visibilitySubject.asObservable();
+    private visibility$ = this.visibilitySubject.asObservable();
 
     constructor(@inject(I18nService) private _i18n: I18nService) { }
 

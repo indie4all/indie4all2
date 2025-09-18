@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Chatbots om te gebruiken:",
         "model": {
-          "create": "Model maken met AI"
+          "create": "Model maken met AI",
+          "update": "Model bijwerken met AI"
         },
         "query": "Tekst van de query:",
         "query-placeholder": "Schrijf hier uw aanvraag",
+        "reasoning-effort": "Tijd voor redenering:",
+        "reasoning-effort-help": "Selecteer de redeneertijd die u wilt dat de chatbot gebruikt om de reactie te genereren. Een langere tijd kan gedetailleerdere en nauwkeurigere antwoorden opleveren, maar het kan ook langer duren om te genereren.",
+        "reasoning-effort-low": "Geavanceerd",
+        "reasoning-effort-minimal": "Standaard",
         "section": {
           "create": "Sectie maken met AI"
         },
@@ -643,6 +649,7 @@
     "addSection": "Sectie toevoegen",
     "addSectionAI": "Sectie toevoegen met AI",
     "ai": "Model maken met AI",
+    "ai-update": "Model bijwerken met AI",
     "clear": "Inhoud wissen",
     "download": "Download unit",
     "importSection": "Sectie Importeren",

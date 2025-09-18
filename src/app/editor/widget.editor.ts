@@ -35,7 +35,7 @@ export default class WidgetEditor extends Editor {
             }
             this._containerElem.innerHTML = '';
             this._dragDrop.model = this._model;
-            this._model.sections.forEach(section => this._containerElem.insertAdjacentHTML('beforeend', section.createElement()));
+            this._model.sectionsHTML.forEach(html => this._containerElem.insertAdjacentHTML('beforeend', html));
             onLoaded && onLoaded();
         } catch (err) {
             console.error(err);

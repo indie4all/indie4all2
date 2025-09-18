@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Chatbots le húsáid:",
         "model": {
-          "create": "Cruthaigh samhail le AI"
+          "create": "Cruthaigh samhail le AI",
+          "update": "Nuashonraigh an tsamhail le AI"
         },
         "query": "Téacs an iarratais:",
         "query-placeholder": "Scríobh d'fhiosrúchán anseo",
+        "reasoning-effort": "Am réasúnaíochta:",
+        "reasoning-effort-help": "Roghnaigh an t-am réasúnaíochta a theastaíonn uait a úsáid chun an freagra a ghiniúint. Is féidir le tréimhse níos faide freagraí níos mionsonraithe agus níos cruinne a tháirgeadh, ach d'fhéadfadh sé níos faide a thógáil freisin a ghiniúint.",
+        "reasoning-effort-low": "Chun cinn",
+        "reasoning-effort-minimal": "Caighdeánach",
         "section": {
           "create": "Cruthaigh rannán le IS"
         },
@@ -643,6 +649,7 @@
     "addSection": "Cuir alt leis",
     "addSectionAI": "Cuir rannán le IS",
     "ai": "Cruthaigh samhail le AI",
+    "ai-update": "Nuashonraigh an tsamhail le AI",
     "clear": "Léirscrios an t-ábhar",
     "download": "Aonad íoslódála",
     "importSection": "Iompórtáil alt",

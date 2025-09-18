@@ -7,7 +7,7 @@ import RelatedUnitsAssociationElement from "../related-units-association/related
 
 export default class RelatedUnitsContainerElement extends ContainerSpecificElement {
 
-    protected static _generable: boolean = false;
+    protected static _generable: boolean = true;
     static widget = "RelatedUnitsContainer";
     static category = "containers";
     static icon = icon;

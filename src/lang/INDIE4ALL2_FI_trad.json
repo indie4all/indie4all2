@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Käytettävät chatbotit:",
         "model": {
-          "create": "Luo malli tekoälyn avulla"
+          "create": "Luo malli tekoälyn avulla",
+          "update": "Päivitä malli tekoälyllä"
         },
         "query": "Kyselyn teksti:",
         "query-placeholder": "Kirjoita kyselysi tähän",
+        "reasoning-effort": "Perustelujen aika:",
+        "reasoning-effort-help": "Valitse perusteluaika, jota haluat chatbotin käyttävän vastauksen luomiseen. Pidempi aika voi tuottaa yksityiskohtaisempia ja tarkempia vastauksia, mutta sen luominen voi myös kestää kauemmin.",
+        "reasoning-effort-low": "Edistynyt",
+        "reasoning-effort-minimal": "Standardi",
         "section": {
           "create": "Luo osio tekoälyllä"
         },
@@ -643,6 +649,7 @@
     "addSection": "Lisää osio",
     "addSectionAI": "Lisää osio tekoälyllä",
     "ai": "Luo malli tekoälyn avulla",
+    "ai-update": "Päivitä malli tekoälyllä",
     "clear": "Sisällön poistaminen",
     "download": "Lataa yksikkö",
     "importSection": "Tuo-osio",

@@ -6,6 +6,7 @@ import TabContentElement from "../tab-content/tab-content.element";
 
 
 export default class TabsContainerElement extends SpecificContainerElement {
+    protected static _generable: boolean = true;
     static widget = "TabsContainer";
     static category = "containers";
     static icon = icon;

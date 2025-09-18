@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Kasutatavad vestlusrobotid:",
         "model": {
-          "create": "Looge mudel tehisintellektiga"
+          "create": "Looge mudel tehisintellektiga",
+          "update": "Mudeli värskendamine tehisintellektiga"
         },
         "query": "Päringu tekst:",
         "query-placeholder": "Kirjutage oma päring siia",
+        "reasoning-effort": "Arutluskäigu aeg:",
+        "reasoning-effort-help": "Valige arutlusaeg, mida soovite vestlusrobotil vastuse genereerimiseks kasutada. Pikem aeg võib anda üksikasjalikumaid ja täpsemaid vastuseid, kuid selle genereerimine võib võtta ka kauem aega.",
+        "reasoning-effort-low": "Täpsem",
+        "reasoning-effort-minimal": "Standard",
         "section": {
           "create": "Looge jaotis AI-ga"
         },
@@ -643,6 +649,7 @@
     "addSection": "Jaotise lisamine",
     "addSectionAI": "Lisage jaotis AI-ga",
     "ai": "Looge mudel tehisintellektiga",
+    "ai-update": "Mudeli värskendamine tehisintellektiga",
     "clear": "Sisu kustutamine",
     "download": "Laadige seade alla",
     "importSection": "Importimise jaotis",

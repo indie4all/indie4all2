@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Chatbots å bruke:",
         "model": {
-          "create": "Opprett modell med kunstig intelligens"
+          "create": "Opprett modell med kunstig intelligens",
+          "update": "Oppdater modell med kunstig intelligens"
         },
         "query": "Spørring tekst:",
         "query-placeholder": "Skriv din forespørsel her",
+        "reasoning-effort": "Tid for resonnement:",
+        "reasoning-effort-help": "Velg resonnementtidspunktet du vil at chatboten skal bruke til å generere svaret. Lengre tid kan gi mer detaljerte og nøyaktige svar, men det kan også ta lengre tid å generere.",
+        "reasoning-effort-low": "Avansert",
+        "reasoning-effort-minimal": "Standard",
         "section": {
           "create": "Opprett seksjon med AI"
         },
@@ -643,6 +649,7 @@
     "addSection": "Legg til inndeling",
     "addSectionAI": "Legg til seksjon med AI",
     "ai": "Opprett modell med kunstig intelligens",
+    "ai-update": "Oppdater modell med kunstig intelligens",
     "clear": "Slett innhold",
     "download": "Last ned enhet",
     "importSection": "Importer-delen",

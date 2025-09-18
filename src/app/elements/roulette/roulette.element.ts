@@ -5,6 +5,7 @@ import SpecificContainerElement from "../specific-container/specific-container.e
 
 export default class RouletteElement extends SpecificContainerElement {
 
+    protected static _generable: boolean = true;
     static widget = "Roulette";
     static category = "exerciseElement";
     static icon = icon;

@@ -6,6 +6,7 @@ import WidgetElement from "../widget/widget.element";
 
 export default class AccordionContainerElement extends SpecificContainerElement {
 
+    protected static _generable: boolean = true;
     static widget = "AcordionContainer";
     static category = "containers";
     static icon = icon;

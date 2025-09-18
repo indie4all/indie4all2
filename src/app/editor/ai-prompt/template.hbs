@@ -6,6 +6,18 @@
     <div class="offcanvas-body d-flex flex-column justify-content-between">
         <div class="ai-info">
             <div id="ai-prompt-widget-type" class="d-none border bg-light h5 p-2 text-center mb-3"></div>
+            <label for="ai-prompt-chatbots-list" class="form-label">{{translate 'common.ai.prompt.chatbots'}}</label>
+            <div>
+                <select id="ai-prompt-chatbots-list" class="multiple-select col-12 mb-3" multiple="multiple"></select>
+            </div>
+            <label for="ai-prompt-reasoning-effort" class="form-label">{{translate 'common.ai.prompt.reasoning-effort'}}</label>
+            <div class="mb-3">
+                <select id="ai-prompt-reasoning-effort" class="multiple-select col-12">
+                    <option value="minimal" selected>{{translate 'common.ai.prompt.reasoning-effort-minimal'}}</option>
+                    <option value="low">{{translate 'common.ai.prompt.reasoning-effort-low'}}</option>
+                </select>
+                <div class="form-text">{{translate 'common.ai.prompt.reasoning-effort-help'}}</div>
+            </div>
             <div class="ai-conversation row">
                 <div id="ai-prompt-query" class="ai-prompt-text col-10 offset-2 p-4 my-1 bg-dark text-white"></div>
                 <div id="ai-prompt-response" class="ai-prompt-text col-10 p-4 my-2 my-1 bg-light text-dark"></div>

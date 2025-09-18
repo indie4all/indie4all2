@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Chatbots til brug:",
         "model": {
-          "create": "Opret model med AI"
+          "create": "Opret model med AI",
+          "update": "Opdater model med AI"
         },
         "query": "Forespørgselstekst:",
         "query-placeholder": "Skriv din forespørgsel her",
+        "reasoning-effort": "Tid til ræsonnement:",
+        "reasoning-effort-help": "Vælg det ræsonnementstidspunkt, du ønsker, at chatbotten skal bruge til at generere svaret. Længere tid kan give mere detaljerede og præcise svar, men det kan også tage længere tid at generere.",
+        "reasoning-effort-low": "Avanceret",
+        "reasoning-effort-minimal": "Norm",
         "section": {
           "create": "Opret sektion med AI"
         },
@@ -643,6 +649,7 @@
     "addSection": "Tilføj sektion",
     "addSectionAI": "Tilføj sektion med AI",
     "ai": "Opret model med AI",
+    "ai-update": "Opdater model med AI",
     "clear": "Slet indhold",
     "download": "Download enhed",
     "importSection": "Afsnittet Import",

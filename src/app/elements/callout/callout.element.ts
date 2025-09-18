@@ -7,6 +7,7 @@ import WidgetElement from '../widget/widget.element';
 
 export default class CalloutElement extends ContainerElement {
 
+    protected static _generable: boolean = true;
     static widget = "Callout";
     static category = "containers";
     static icon = icon;

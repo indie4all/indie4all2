@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "使用するチャットボット:",
         "model": {
-          "create": "AIでモデルを作成"
+          "create": "AIでモデルを作成",
+          "update": "AIでモデルを更新"
         },
         "query": "クエリ テキスト:",
         "query-placeholder": "ここにお問い合わせをお書きください",
+        "reasoning-effort": "推論の時間:",
+        "reasoning-effort-help": "チャットボットが応答を生成するために使用する推論時間を選択します。時間が長いほど、より詳細で正確な回答が得られますが、生成に時間がかかる場合もあります。",
+        "reasoning-effort-low": "アドバンスド",
+        "reasoning-effort-minimal": "標準",
         "section": {
           "create": "AIでセクションを作成"
         },
@@ -643,6 +649,7 @@
     "addSection": "セクションを追加",
     "addSectionAI": "AIでセクションを追加",
     "ai": "AIでモデルを作成",
+    "ai-update": "AIでモデルを更新",
     "clear": "コンテンツの消去",
     "download": "ダウンロードユニット",
     "importSection": "インポートセクション",

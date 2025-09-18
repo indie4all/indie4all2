@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Chatbots to use:",
         "model": {
-          "create": "Create model with AI"
+          "create": "Create model with AI",
+          "update": "Update model with AI"
         },
         "query": "Query text:",
         "query-placeholder": "Write your inquiry here",
+        "reasoning-effort": "Time for reasoning:",
+        "reasoning-effort-help": "Select the reasoning time you want the chatbot to use to generate the response. A longer time can produce more detailed and accurate answers, but it can also take longer to generate.",
+        "reasoning-effort-low": "Advanced",
+        "reasoning-effort-minimal": "Standard",
         "section": {
           "create": "Create section with AI"
         },
@@ -643,6 +649,7 @@
     "addSection": "Add section",
     "addSectionAI": "Add section with AI",
     "ai": "Create model with AI",
+    "ai-update": "Update model with AI",
     "clear": "Clear content",
     "download": "Download unit",
     "importSection": "Import section",

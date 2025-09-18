@@ -6,11 +6,17 @@
   "common": {
     "ai": {
       "prompt": {
+        "chatbots": "Chatboty do wykorzystania:",
         "model": {
-          "create": "Tworzenie modelu za pomocą sztucznej inteligencji"
+          "create": "Tworzenie modelu za pomocą sztucznej inteligencji",
+          "update": "Aktualizowanie modelu za pomocą sztucznej inteligencji"
         },
         "query": "Tekst zapytania:",
         "query-placeholder": "Napisz swoje zapytanie tutaj",
+        "reasoning-effort": "Czas na rozmyślania:",
+        "reasoning-effort-help": "Wybierz czas rozumowania, który ma być używany przez chatbota do generowania odpowiedzi. Dłuższy czas może dać bardziej szczegółowe i dokładne odpowiedzi, ale może też zająć więcej czasu.",
+        "reasoning-effort-low": "Zaawansowany",
+        "reasoning-effort-minimal": "Norma",
         "section": {
           "create": "Utwórz sekcję za pomocą sztucznej inteligencji"
         },
@@ -643,6 +649,7 @@
     "addSection": "Dodaj sekcję",
     "addSectionAI": "Dodaj sekcję za pomocą sztucznej inteligencji",
     "ai": "Tworzenie modelu za pomocą sztucznej inteligencji",
+    "ai-update": "Aktualizowanie modelu za pomocą sztucznej inteligencji",
     "clear": "Wymazywanie zawartości",
     "download": "Jednostka pobierania",
     "importSection": "Sekcja importu",

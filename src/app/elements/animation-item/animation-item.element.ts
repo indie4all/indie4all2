@@ -4,6 +4,7 @@ import icon from "./icon.png";
 import { InputWidgetAnimationItemData, WidgetAnimationItemData, WidgetInitOptions } from "../../../types";
 import HasFilePickerElement from "../mixings/HasFilePickerElement";
 import SpecificItemElement from "../specific-item/specific-item.element";
+import { FilePickerType } from "../../services/file-picker/types";
 
 export default class AnimationItemElement extends HasFilePickerElement(SpecificItemElement) {
 
@@ -32,7 +33,7 @@ export default class AnimationItemElement extends HasFilePickerElement(SpecificI
 
     settingsOpened() {
         const $form = $('#f-' + this.id);
-        this.initFilePicker($form.find('input[name="image"]'));
+        this.initFilePicker($form.find('input[name="image"]'), FilePickerType.IMAGE);
     }
 
     updateModelFromForm(form: any): void {

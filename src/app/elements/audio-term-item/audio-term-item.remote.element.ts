@@ -3,6 +3,7 @@ import './styles.scss';
 import { InputWidgetAudioTermItemData } from "../../../types";
 import HasFilePickerElement from "../mixings/HasFilePickerElement";
 import AudioTermItemElement from "./audio-term-item.element";
+import { FilePickerType } from '../../services/file-picker/types';
 
 export default class AudioTermItemRemoteElement extends HasFilePickerElement(AudioTermItemElement) {
 
@@ -38,8 +39,8 @@ export default class AudioTermItemRemoteElement extends HasFilePickerElement(Aud
 
     settingsOpened(): void {
         const $form = $('#f-' + this.id);
-        this.initFilePicker($form.find('input[name="audio"]'));
-        this.initFilePicker($form.find('input[name="captions"]'));
+        this.initFilePicker($form.find('input[name="audio"]'), FilePickerType.AUDIO);
+        this.initFilePicker($form.find('input[name="captions"]'), FilePickerType.SUBTITLES);
     }
 
     updateModelFromForm(form: any): void {

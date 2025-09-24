@@ -2,13 +2,14 @@
 import Config from "../../../config";
 import ContainerManager from "../../../container.manager";
 import FilePickerService from "../../services/file-picker/file-picker.service";
+import { FilePickerType } from "../../services/file-picker/types";
 import I18nService from "../../services/i18n/i18n.service";
 
 export default function HasFilePickerElement<TBase extends abstract new (...args: any[]) => any>(Base: TBase) {
 
     abstract class HasFilePicker extends Base {
 
-        initFilePicker($input: JQuery, readonly = true) {
+        initFilePicker($input: JQuery, type: FilePickerType = FilePickerType.ALL, readonly: boolean = true) {
             if (Config.getMediaResourcesURL()) {
                 const $parent = $input.parent();
                 const $sibling = $input.prev();
@@ -25,7 +26,7 @@ export default function HasFilePickerElement<TBase extends abstract new (...args
                 readonly && $input.attr('readonly', 'readonly');
                 $wrapper.on('click', '.js-file-picker', function (e) {
                     const filePicker = ContainerManager.instance.get(FilePickerService);
-                    filePicker.init(Config.getMediaResourcesURL());
+                    filePicker.init(Config.getMediaResourcesURL(), type);
                     filePicker.setOnSubmit((url: string) => {
                         $input.val(url).trigger('change');
                     });

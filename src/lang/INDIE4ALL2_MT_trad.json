@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Agħżel il-Fajl",
+      "invalid-type": {
+        "audio": "Il-fajl magħżul mhuwiex awdjo validu. Jeħtieġlek tagħżel fajl awdjo.",
+        "image": "Il-fajl magħżul mhuwiex immaġni valida. Jeħtieġlek tagħżel immaġni.",
+        "subtitles": "Il-fajl magħżul mhuwiex fajl tas-sottotitoli validu. Trid tagħżel fajl tas-sottotitoli.",
+        "video": "Il-fajl magħżul mhuwiex vidjo validu. Jeħtieġlek tagħżel vidjow."
+      },
+      "no-file-selected": "L-ebda fajl ma ntgħażel",
       "no-files": "Ma nstabu l-ebda fajls",
       "no-folders": "Ma nstabu l-ebda direttorji",
       "title": "Agħżel fajl mir-repożitorju",

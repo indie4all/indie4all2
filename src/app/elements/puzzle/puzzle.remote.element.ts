@@ -2,6 +2,7 @@ import "./styles.scss";
 import { InputWidgetPiecesElementData, WidgetInitOptions } from "../../../types";
 import HasFilePickerElement from "../mixings/HasFilePickerElement";
 import PuzzleElement from "./puzzle.element";
+import { FilePickerType } from "../../services/file-picker/types";
 
 export default class PuzzleRemoteElement extends HasFilePickerElement(PuzzleElement) {
 
@@ -38,7 +39,7 @@ export default class PuzzleRemoteElement extends HasFilePickerElement(PuzzleElem
                 self.loadImage(e.target.value);
         });
         this.data.image && self.loadImage(this.data.image);
-        this.initFilePicker($form.find('input[name="image"]'));
+        this.initFilePicker($form.find('input[name="image"]'), FilePickerType.IMAGE);
     }
 
     settingsClosed() {

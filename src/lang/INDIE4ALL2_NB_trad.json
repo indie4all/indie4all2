@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Velg Fil",
+      "invalid-type": {
+        "audio": "Den valgte filen er ikke gyldig lyd. Du må velge en lydfil.",
+        "image": "Den valgte filen er ikke et gyldig bilde. Du må velge et bilde.",
+        "subtitles": "Den valgte filen er ikke en gyldig undertekstfil. Du må velge en undertekstfil.",
+        "video": "Den valgte filen er ikke en gyldig video. Du må velge en video."
+      },
+      "no-file-selected": "Ingen filer valgt",
       "no-files": "Fant ingen filer",
       "no-folders": "Ingen kataloger funnet",
       "title": "Velg en fil fra depotet",

@@ -4,6 +4,7 @@ import icon from "./icon.png";
 import { InputWidgetImageAndTextData, WidgetImageAndTextData, WidgetImageAndTextParams } from "../../../types";
 import HasFilePickerElement from "../mixings/HasFilePickerElement";
 import ImageTextElement from "./image-text.element";
+import { FilePickerType } from "../../services/file-picker/types";
 
 export default class ImageTextRemoteElement extends HasFilePickerElement(ImageTextElement) {
 
@@ -63,7 +64,7 @@ export default class ImageTextRemoteElement extends HasFilePickerElement(ImageTe
             $form.find('.preview-error').toggleClass('d-none', emptySrc);
             $sectionPreview.toggleClass('d-none', true);
         });
-        this.initFilePicker($iImg);
+        this.initFilePicker($iImg, FilePickerType.IMAGE);
     }
 
     updateModelFromForm(form: any): void {

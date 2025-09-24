@@ -3,6 +3,7 @@ import "./styles.scss";
 import { InputWidgetCorrectWordItemData } from "../../../types";
 import HasFilePickerElement from "../mixings/HasFilePickerElement";
 import CorrectWordItemElement from "./correct-word-item.element";
+import { FilePickerType } from "../../services/file-picker/types";
 
 export default class CorrectWordItemRemoteElement extends HasFilePickerElement(CorrectWordItemElement) {
 
@@ -50,7 +51,7 @@ export default class CorrectWordItemRemoteElement extends HasFilePickerElement(C
             $form.find('.preview-error').toggleClass('d-none', emptySrc);
             $sectionPreview.toggleClass('d-none', true);
         });
-        this.initFilePicker($iImg);
+        this.initFilePicker($iImg, FilePickerType.IMAGE);
     }
 
     updateModelFromForm(form: any): void {

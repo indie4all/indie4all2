@@ -3,6 +3,7 @@ import "./styles.scss";
 import HasFilePickerElement from "../mixings/HasFilePickerElement";
 import Config from "../../../config";
 import VideoElement from "./video.element";
+import { FilePickerType } from "../../services/file-picker/types";
 
 export default class VideoRemoteElement extends HasFilePickerElement(VideoElement) {
 
@@ -67,9 +68,9 @@ export default class VideoRemoteElement extends HasFilePickerElement(VideoElemen
             videourl = `${mediaResourcesURL}/content/${info.endpointTranscoded}`;
             input.value = videourl;
         });
-        this.initFilePicker($('#f-' + model.id + ' input[name="videourl"]'), false);
-        this.initFilePicker($('#f-' + model.id + ' input[name="captions"]'));
-        this.initFilePicker($('#f-' + model.id + ' input[name="descriptions"]'));
+        this.initFilePicker($('#f-' + model.id + ' input[name="videourl"]'), FilePickerType.VIDEO, false);
+        this.initFilePicker($('#f-' + model.id + ' input[name="captions"]'), FilePickerType.SUBTITLES);
+        this.initFilePicker($('#f-' + model.id + ' input[name="descriptions"]'), FilePickerType.SUBTITLES);
     }
 
     updateModelFromForm(form: any): void {

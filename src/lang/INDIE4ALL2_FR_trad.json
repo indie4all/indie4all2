@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Choisir un fichier",
+      "invalid-type": {
+        "audio": "Le fichier sélectionné n’est pas un fichier audio valide. Vous devez sélectionner un fichier audio.",
+        "image": "Le fichier sélectionné n’est pas une image valide. Vous devez sélectionner une image.",
+        "subtitles": "Le fichier sélectionné n’est pas un fichier de sous-titres valide. Vous devez sélectionner un fichier de sous-titres.",
+        "video": "Le fichier sélectionné n’est pas une vidéo valide. Vous devez sélectionner une vidéo."
+      },
+      "no-file-selected": "Aucun fichier sélectionné",
       "no-files": "Aucun fichier n’a été trouvé",
       "no-folders": "Aucun répertoire n’a été trouvé",
       "title": "Choisir un fichier dans le référentiel",

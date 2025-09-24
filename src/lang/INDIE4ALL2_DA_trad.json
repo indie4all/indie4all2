@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Vælg Filer",
+      "invalid-type": {
+        "audio": "Den valgte fil er ikke gyldig lyd. Du skal vælge en lydfil.",
+        "image": "Den valgte fil er ikke et gyldigt billede. Du skal vælge et billede.",
+        "subtitles": "Den valgte fil er ikke en gyldig undertekstfil. Du skal vælge en undertekstfil.",
+        "video": "Den valgte fil er ikke en gyldig video. Du skal vælge en video."
+      },
+      "no-file-selected": "Ingen filer valgt",
       "no-files": "Ingen filer fundet",
       "no-folders": "Ingen mapper fundet",
       "title": "Vælg en fil fra lageret",

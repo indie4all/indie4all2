@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Escollir arxiu",
+      "invalid-type": {
+        "audio": "L' arxiu seleccionat no és un àudio vàlid. Has de seleccionar un arxiu d'àudio.",
+        "image": "L' arxiu seleccionat no és una imatge vàlida. Has de seleccionar una imatge.",
+        "subtitles": "L' arxiu seleccionat no és un fitxer de subtítols vàlid. Has de seleccionar un fitxer de subtítols.",
+        "video": "L'arxiu seleccionat no és un vídeo vàlid. Has de seleccionar un vídeo."
+      },
+      "no-file-selected": "Cap arxiu seleccionat",
       "no-files": "No s'han trobat arxius",
       "no-folders": "No s'han trobat directoris",
       "title": "Escull un arxiu del repositori",

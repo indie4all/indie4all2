@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Roghnaigh Comhad",
+      "invalid-type": {
+        "audio": "Níl an comhad roghnaithe bailí fuaime. Ní mór duit comhad fuaime a roghnú.",
+        "image": "Ní íomhá bhailí é an comhad roghnaithe. Ní mór duit íomhá a roghnú.",
+        "subtitles": "Ní comhad fotheidil bailí é an comhad roghnaithe. Ní mór duit comhad fotheidil a roghnú.",
+        "video": "Ní físeán bailí é an comhad roghnaithe. Ní mór duit físeán a roghnú."
+      },
+      "no-file-selected": "Níl aon chomhad roghnaithe",
       "no-files": "Níor aimsíodh comhaid ar bith",
       "no-folders": "Níor aimsíodh aon eolairí",
       "title": "Roghnaigh comhad ón stór",

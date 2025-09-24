@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Válassza a Fájl lehetőséget",
+      "invalid-type": {
+        "audio": "A kiválasztott fájl nem érvényes hang. Ki kell választania egy hangfájlt.",
+        "image": "A kiválasztott fájl nem érvényes kép. Ki kell választania egy képet.",
+        "subtitles": "A kiválasztott fájl nem érvényes feliratfájl. Ki kell választania egy feliratfájlt.",
+        "video": "A kiválasztott fájl nem érvényes videó. Ki kell választania egy videót."
+      },
+      "no-file-selected": "Nincs kiválasztott fájl",
       "no-files": "Nem található fájl",
       "no-folders": "Nem található könyvtár",
       "title": "Válasszon egy fájlt az adattárból",

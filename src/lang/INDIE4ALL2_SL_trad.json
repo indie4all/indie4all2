@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Izberite Datoteka",
+      "invalid-type": {
+        "audio": "Izbrana datoteka ni veljaven zvok. Izbrati morate zvočno datoteko.",
+        "image": "Izbrana datoteka ni veljavna slika. Izbrati morate sliko.",
+        "subtitles": "Izbrana datoteka ni veljavna datoteka s podnapisi. Izbrati morate datoteko s podnapisi.",
+        "video": "Izbrana datoteka ni veljaven videoposnetek. Izbrati morate videoposnetek."
+      },
+      "no-file-selected": "Ni izbrana nobena datoteka",
       "no-files": "Ni najdenih datotek",
       "no-folders": "Ni najdenih imenikov",
       "title": "Izberite datoteko iz skladišča",

@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Valige Fail",
+      "invalid-type": {
+        "audio": "Valitud fail ei ole kehtiv heli. Peate valima helifaili.",
+        "image": "Valitud fail ei ole kehtiv pilt. Peate valima pildi.",
+        "subtitles": "Valitud fail ei ole kehtiv subtiitrite fail. Peate valima subtiitrite faili.",
+        "video": "Valitud fail ei ole kehtiv video. Peate valima video."
+      },
+      "no-file-selected": "Faile pole valitud",
       "no-files": "Faile ei leitud",
       "no-folders": "Katalooge ei leitud",
       "title": "Valige hoidlast fail",

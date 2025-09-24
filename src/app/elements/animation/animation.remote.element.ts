@@ -2,6 +2,7 @@ import './styles.scss';
 import { InputWidgetPiecesElementData, WidgetInitOptions } from '../../../types';
 import HasFilePickerElement from '../mixings/HasFilePickerElement';
 import AnimationElement from './animation.element';
+import { FilePickerType } from '../../services/file-picker/types';
 
 export default class AnimationRemoteElement extends HasFilePickerElement(AnimationElement) {
 
@@ -39,7 +40,7 @@ export default class AnimationRemoteElement extends HasFilePickerElement(Animati
                 self.loadImage(e.target.value);
         });
         this.data.image && self.loadImage(this.data.image);
-        this.initFilePicker($form.find('input[name="image"]'));
+        this.initFilePicker($form.find('input[name="image"]'), FilePickerType.IMAGE);
     }
 
     settingsClosed() {

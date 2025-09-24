@@ -1,9 +1,9 @@
 import { inject, injectable } from "inversify";
 import "./styles.scss";
-import "./types"
 import UtilsService from "../utils/utils.service";
 import I18nService from "../i18n/i18n.service";
 import BootstrapService from "../bootstrap/bootstrap.service";
+import { FilePickerBreadcrumb, FilePickerDrawOptions, FilePickerElement, FilePickerFile, FilePickerResponse, FilePickerType } from "./types";
 
 @injectable()
 export default class FilePickerService {
@@ -13,6 +13,7 @@ export default class FilePickerService {
     private currentPage: number = 0;
     private onSubmit: Function;
     private onHidden: Function;
+    private type: FilePickerType = FilePickerType.ALL;
 
     @inject(UtilsService) private utils: UtilsService;
     @inject(I18nService) private i18n: I18nService;
@@ -20,7 +21,10 @@ export default class FilePickerService {
 
     constructor() { }
 
-    init(repoURL: string) { this.repoURL = repoURL; }
+    init(repoURL: string, type: FilePickerType) { 
+        this.repoURL = repoURL; 
+        this.type = type;
+    }
 
     setOnSubmit(handler: Function) { this.onSubmit = handler; }
 
@@ -69,7 +73,7 @@ export default class FilePickerService {
                     status = video.status;
 
             }
-            return file({ name, id, thumbnail, type, url, status });
+            return file({ name, id, thumbnail, type, url, status, extension });
         }))).join("");
         content.innerHTML = html;
     }
@@ -161,7 +165,20 @@ export default class FilePickerService {
                 }
                 // The user clicks on the submit button
                 else if (e.target.closest('.btn-submit')) {
-                    const url = (modalElem.querySelector('.file-picker-entry.active') as HTMLElement).dataset.url;
+                    const element = modalElem.querySelector('.file-picker-entry.active') as HTMLElement;
+                    if (!element) {
+                        this.utils.notifyError(this.i18n.value("common.file-picker.no-file-selected"));
+                        return;
+                    }
+                    const url = element.dataset.url;
+                    const type = element.dataset.type;
+                    const extension = element.dataset.extension;
+                    if (!this.validateType(type, extension)) {
+                        this.utils.notifyError(
+                            this.i18n.value("common.file-picker.invalid-type." + this.type.toLowerCase()));
+                        return;
+                    }
+                    
                     modal.hide();
                     this.onSubmit(url);
                 }
@@ -179,5 +196,10 @@ export default class FilePickerService {
             await this.draw();
             modal.show();
         });
+    }
+
+    validateType(type: string, extension: string): boolean {
+        return (this.type === FilePickerType.SUBTITLES && extension === ".vtt") ||
+        this.type === type.toUpperCase() || this.type === FilePickerType.ALL;
     }
 }

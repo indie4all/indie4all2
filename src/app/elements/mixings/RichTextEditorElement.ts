@@ -1,6 +1,7 @@
 /* global $ */
 import Config from "../../../config";
 import ContainerManager from "../../../container.manager";
+import { FilePickerType } from "../../services/file-picker/types";
 import I18nService from "../../services/i18n/i18n.service";
 import HasFilePickerElement from "./HasFilePickerElement";
 import "./rich-text-editor-styles.scss";
@@ -62,7 +63,7 @@ export default function RichTextEditorMixin<TBase extends abstract new (...args:
                                         setTimeout(() => {
                                             const inputURL = document.querySelector('.tox-tinymce-aux .tox-control-wrap .tox-textfield') as HTMLInputElement;
                                             inputURL.closest('.tox-control-wrap').classList.add('file-picker');
-                                            this.initFilePicker($(inputURL), false);
+                                            this.initFilePicker($(inputURL), FilePickerType.ALL, false);
                                             inputURL.classList.remove('tox-textfield');
                                             inputURL.classList.add('form-control');
                                         }, 1);

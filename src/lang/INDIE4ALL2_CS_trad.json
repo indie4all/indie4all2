@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Vybrat soubor",
+      "invalid-type": {
+        "audio": "Vybraný soubor není platný zvuk. Musíte vybrat zvukový soubor.",
+        "image": "Vybraný soubor není platným obrazem. Musíte vybrat obraz.",
+        "subtitles": "Vybraný soubor není platným souborem s titulky. Musíte vybrat soubor s titulky.",
+        "video": "Vybraný soubor není platné video. Musíte vybrat video."
+      },
+      "no-file-selected": "Nebyly vybrány žádné soubory",
       "no-files": "Nebyly nalezeny žádné soubory",
       "no-folders": "Nebyly nalezeny žádné adresáře",
       "title": "Vyberte soubor z úložiště",

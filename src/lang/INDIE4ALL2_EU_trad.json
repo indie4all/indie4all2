@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Artxiboa aukeratu",
+      "invalid-type": {
+        "audio": "Aukeratutako artxiboa ez da baliozko audioa. Audio artxibo bat aukeratu behar duzu.",
+        "image": "Aukeratutako artxiboa ez da baliozko irudia. Irudi bat aukeratu behar duzu.",
+        "subtitles": "Aukeratutako artxiboa ez da baliozko azpitituluen fitxategi bat. Azpititulu-fitxategi bat aukeratu behar duzu.",
+        "video": "Aukeratutako artxiboa ez da baliozko bideo bat. Bideo bat aukeratu behar duzu."
+      },
+      "no-file-selected": "Hautatutako artxiborik ez",
       "no-files": "Ez zen artxiborik aurkitu",
       "no-folders": "Ez zen direktoriorik aurkitu",
       "title": "Aukeratu gordailuko artxibo bat",

@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Pasirinkite failą",
+      "invalid-type": {
+        "audio": "Pasirinktas failas yra neleistinas garsas. Turite pasirinkti garso failą.",
+        "image": "Pasirinktas failas yra neleistinas vaizdas. Turite pasirinkti vaizdą.",
+        "subtitles": "Pasirinktas failas nėra leistinas subtitrų failas. Turite pasirinkti subtitrų failą.",
+        "video": "Pasirinktas failas yra neleistinas vaizdo įrašas. Turite pasirinkti vaizdo įrašą."
+      },
+      "no-file-selected": "Nepasirinkta jokių failų",
       "no-files": "Failų nerasta",
       "no-folders": "Katalogų nerasta",
       "title": "Pasirinkite failą iš saugyklos",

@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Izvēlieties Fails",
+      "invalid-type": {
+        "audio": "Atlasītais fails nav derīgs audio. Jums jāizvēlas audio fails.",
+        "image": "Atlasītais fails nav derīgs attēls. Jums jāizvēlas attēls.",
+        "subtitles": "Atlasītais fails nav derīgs subtitru fails. Jums jāizvēlas subtitru fails.",
+        "video": "Atlasītais fails nav derīgs video. Jums ir jāatlasa videoklips."
+      },
+      "no-file-selected": "Nav atlasīts neviens fails",
       "no-files": "Nav atrasts neviens fails",
       "no-folders": "Nav atrasts neviens katalogs",
       "title": "Izvēlieties failu no repozitorija",

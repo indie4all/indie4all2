@@ -3,6 +3,7 @@ import "./styles.scss";
 import { InputWidgetSimpleImageData, WidgetInitOptions } from "../../../types";
 import HasFilePickerElement from "../mixings/HasFilePickerElement";
 import SimpleImageElement from "./simple-image.element";
+import { FilePickerType } from "../../services/file-picker/types";
 
 export default class SimpleImageRemoteElement extends HasFilePickerElement(SimpleImageElement) {
 
@@ -114,7 +115,7 @@ export default class SimpleImageRemoteElement extends HasFilePickerElement(Simpl
             }
         });
 
-        this.initFilePicker($iImg);
+        this.initFilePicker($iImg, FilePickerType.IMAGE);
     }
 
     updateModelFromForm(form: any): void {

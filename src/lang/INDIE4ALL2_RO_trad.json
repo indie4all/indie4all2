@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Alegeți fișierul",
+      "invalid-type": {
+        "audio": "Fișierul selectat nu este audio valid. Trebuie să selectați un fișier audio.",
+        "image": "Fișierul selectat nu este o imagine validă. Trebuie să selectați o imagine.",
+        "subtitles": "Fișierul selectat nu este un fișier de subtitrare valid. Trebuie să selectați un fișier de subtitrare.",
+        "video": "Fișierul selectat nu este un videoclip valid. Trebuie să selectați un videoclip."
+      },
+      "no-file-selected": "Nu sunt selectate fișiere",
       "no-files": "Nu s-au găsit fișiere",
       "no-folders": "Nu s-au găsit directoare",
       "title": "Alegeți un fișier din depozit",

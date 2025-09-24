@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Kies Bestand",
+      "invalid-type": {
+        "audio": "Het geselecteerde bestand is geen geldige audio. U moet een audiobestand selecteren.",
+        "image": "Het geselecteerde bestand is geen geldige afbeelding. U moet een afbeelding selecteren.",
+        "subtitles": "Het geselecteerde bestand is geen geldig ondertitelingsbestand. U moet een ondertitelingsbestand selecteren.",
+        "video": "Het geselecteerde bestand is geen geldige video. U moet een video selecteren."
+      },
+      "no-file-selected": "Geen bestanden geselecteerd",
       "no-files": "Geen bestanden gevonden",
       "no-folders": "Geen directory's gevonden",
       "title": "Kies een bestand uit de opslagplaats",

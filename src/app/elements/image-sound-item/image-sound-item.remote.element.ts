@@ -3,6 +3,7 @@ import "./styles.scss";
 import { InputWidgetImageAndSoundItemData } from "../../../types";
 import HasFilePickerElement from "../mixings/HasFilePickerElement";
 import ImageSoundItemElement from "./image-sound-item.element";
+import { FilePickerType } from "../../services/file-picker/types";
 
 export default class ImageSoundItemRemoteElement extends HasFilePickerElement(ImageSoundItemElement) {
 
@@ -62,9 +63,9 @@ export default class ImageSoundItemRemoteElement extends HasFilePickerElement(Im
             $form.find('.preview-error').toggleClass('d-none', emptySrc);
             $sectionPreview.toggleClass('d-none', true);
         });
-        this.initFilePicker($iImg);
-        this.initFilePicker($form.find('input[name="audio"]'));
-        this.initFilePicker($form.find('input[name="captions"]'));
+        this.initFilePicker($iImg, FilePickerType.IMAGE);
+        this.initFilePicker($form.find('input[name="audio"]'), FilePickerType.AUDIO);
+        this.initFilePicker($form.find('input[name="captions"]'), FilePickerType.SUBTITLES);
     }
 
     updateModelFromForm(form: any): void {

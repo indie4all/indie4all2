@@ -3,6 +3,7 @@ import "./styles.scss";
 import { InputWidgetSchemaItemData, WidgetInitOptions } from "../../../types";
 import HasFilePickerElement from "../mixings/HasFilePickerElement";
 import SchemaItemElement from "./schema-item.element";
+import { FilePickerType } from "../../services/file-picker/types";
 
 export default class SchemaItemRemoteElement extends HasFilePickerElement(SchemaItemElement) {
 
@@ -47,7 +48,7 @@ export default class SchemaItemRemoteElement extends HasFilePickerElement(Schema
             $form.find('.preview-error').toggleClass('d-none', emptySrc);
             $sectionPreview.toggleClass('d-none', true);
         });
-        this.initFilePicker($iImg);
+        this.initFilePicker($iImg, FilePickerType.IMAGE);
     }
 
     updateModelFromForm(form: any): void {

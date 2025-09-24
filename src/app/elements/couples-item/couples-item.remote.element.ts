@@ -3,6 +3,7 @@ import "./styles.scss";
 import { InputWidgetCouplesItemData, WidgetInitOptions } from "../../../types";
 import HasFilePickerElement from "../mixings/HasFilePickerElement";
 import CouplesItemElement from "./couples-item.element";
+import { FilePickerType } from "../../services/file-picker/types";
 
 export default class CouplesItemRemoteElement extends HasFilePickerElement(CouplesItemElement) {
 
@@ -53,7 +54,7 @@ export default class CouplesItemRemoteElement extends HasFilePickerElement(Coupl
             });
         });
 
-        $imgs.each(function () { self.initFilePicker($(this)); });
+        $imgs.each(function () { self.initFilePicker($(this), FilePickerType.IMAGE); });
 
         $editors.each(function (idx) {
             self.initTextEditor(self.data.couples[idx].text, `#f-${self.id} #text-${idx}-${self.id}`);

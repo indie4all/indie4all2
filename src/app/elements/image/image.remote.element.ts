@@ -3,6 +3,7 @@ import "./styles.scss";
 import { InputWidgetImageData, WidgetInitOptions } from "../../../types";
 import HasFilePickerElement from "../mixings/HasFilePickerElement";
 import ImageElement from "./image.element";
+import { FilePickerType } from "../../services/file-picker/types";
 
 export default class ImageRemoteElement extends HasFilePickerElement(ImageElement) {
 
@@ -57,7 +58,7 @@ export default class ImageRemoteElement extends HasFilePickerElement(ImageElemen
             $form.find('.preview-error').toggleClass('d-none', emptySrc);
             $sectionPreview.toggleClass('d-none', true);
         });
-        this.initFilePicker($iImg);
+        this.initFilePicker($iImg, FilePickerType.IMAGE);
     }
 
     updateModelFromForm(form: any): void {

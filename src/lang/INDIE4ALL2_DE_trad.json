@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Datei auswählen",
+      "invalid-type": {
+        "audio": "Bei der ausgewählten Datei handelt es sich nicht um gültiges Audio. Sie müssen eine Audiodatei auswählen.",
+        "image": "Bei der ausgewählten Datei handelt es sich nicht um ein gültiges Bild. Sie müssen ein Bild auswählen.",
+        "subtitles": "Bei der ausgewählten Datei handelt es sich nicht um eine gültige Untertiteldatei. Sie müssen eine Untertiteldatei auswählen.",
+        "video": "Bei der ausgewählten Datei handelt es sich nicht um ein gültiges Video. Sie müssen ein Video auswählen."
+      },
+      "no-file-selected": "Keine Dateien ausgewählt",
       "no-files": "Keine Dateien gefunden",
       "no-folders": "Keine Verzeichnisse gefunden",
       "title": "Wählen Sie eine Datei aus dem Repository aus",

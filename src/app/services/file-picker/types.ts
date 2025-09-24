@@ -1,6 +1,6 @@
 //enum FileType { IMAGE = "IMAGE", VIDEO = "VIDEO", AUDIO = "AUDIO", FILE = "FILE" }
 
-interface FilePickerResponse {
+export interface FilePickerResponse {
     "authorName": string,
     "authorizedScreens": string[],
     "elements": {
@@ -16,7 +16,7 @@ interface FilePickerResponse {
     "storageUsed": number
 }
 
-interface FilePickerElement {
+export interface FilePickerElement {
     "createdAt": string,
     "elementId": string,
     "elementType": string,
@@ -24,11 +24,11 @@ interface FilePickerElement {
     "extension"?: string
 }
 
-interface FilePickerDirectory extends FilePickerElement {
+export interface FilePickerDirectory extends FilePickerElement {
     "subFolders": string
 }
 
-interface FilePickerFile extends FilePickerElement {
+export interface FilePickerFile extends FilePickerElement {
     "endpointTranscoded": string,
     "extension": string,
     "license": string,
@@ -37,14 +37,16 @@ interface FilePickerFile extends FilePickerElement {
     "thumbnail": string
 }
 
-interface FilePickerBreadcrumb {
+export interface FilePickerBreadcrumb {
     name: string;
     id: string;
 }
 
-interface FilePickerDrawOptions {
+export interface FilePickerDrawOptions {
     files?: boolean;
     folders?: boolean;
     pages?: boolean;
     breadcrumbs?: boolean;
 }
+
+export enum FilePickerType { IMAGE = "IMAGE", VIDEO = "VIDEO", AUDIO = "AUDIO", FILE = "FILE", SUBTITLES = "SUBTITLES", ALL = "ALL" }

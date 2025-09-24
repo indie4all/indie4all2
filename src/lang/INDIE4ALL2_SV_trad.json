@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Välj fil",
+      "invalid-type": {
+        "audio": "Den valda filen är inte giltigt ljud. Du måste välja en ljudfil.",
+        "image": "Den valda filen är inte en giltig bild. Du måste välja en bild.",
+        "subtitles": "Den valda filen är inte en giltig undertextfil. Du måste välja en undertextfil.",
+        "video": "Den valda filen är inte en giltig video. Du måste välja en video."
+      },
+      "no-file-selected": "Inga filer har valts",
       "no-files": "Inga filer hittades",
       "no-folders": "Inga kataloger hittades",
       "title": "Välj en fil från databasen",

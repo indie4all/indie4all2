@@ -3,6 +3,7 @@ import "./styles.scss";
 import { InputWidgetButtonTextItemData, WidgetInitOptions } from "../../../types";
 import HasFilePickerElement from "../mixings/HasFilePickerElement";
 import ButtonTextItemElement from "./button-text-item.element";
+import { FilePickerType } from "../../services/file-picker/types";
 
 export default class ButtonTextItemRemoteElement extends HasFilePickerElement(ButtonTextItemElement) {
 
@@ -49,7 +50,7 @@ export default class ButtonTextItemRemoteElement extends HasFilePickerElement(Bu
             $sectionPreview.toggleClass('d-none', true);
         });
 
-        this.initFilePicker($iImg);
+        this.initFilePicker($iImg, FilePickerType.IMAGE);
     }
 
     updateModelFromForm(form: any): void {

@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Odabir datoteke",
+      "invalid-type": {
+        "audio": "Odabrana datoteka nije valjan zvuk. Morate odabrati audio datoteku.",
+        "image": "Odabrana datoteka nije valjana slika. Morate odabrati sliku.",
+        "subtitles": "Odabrana datoteka nije valjana datoteka titlova. Morate odabrati datoteku titlova.",
+        "video": "Odabrana datoteka nije valjani videozapis. Morate odabrati videozapis."
+      },
+      "no-file-selected": "Nisu odabrane datoteke",
       "no-files": "Nisu pronađene datoteke",
       "no-folders": "Nisu pronađeni direktoriji",
       "title": "Odaberite datoteku iz spremišta",

@@ -54,6 +54,13 @@
     },
     "file-picker": {
       "button": "Escoger archivo",
+      "invalid-type": {
+        "audio": "El archivo seleccionado no es un audio válido. Debes seleccionar un archivo de audio.",
+        "image": "El archivo seleccionado no es una imagen válida. Debes seleccionar una imagen.",
+        "subtitles": "El archivo seleccionado no es un fichero de subtítulos válido. Debes seleccionar un fichero de subtítulos.",
+        "video": "El archivo seleccionado no es un video válido. Debes seleccionar un video."
+      },
+      "no-file-selected": "Ningún archivo seleccionado",
       "no-files": "No se encontraron archivos",
       "no-folders": "No se encontraron directorios",
       "title": "Escoge un archivo del repositorio",

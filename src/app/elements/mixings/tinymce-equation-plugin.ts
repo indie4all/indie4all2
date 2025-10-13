@@ -28,6 +28,8 @@ const plugin = function (editor: Editor, url: string) {
      * @returns An object with the equation data, or null if there is no equation selected
     */
     const getSelectionIfEquation = (editor: Editor): EquationData => {
+        // [Fix] selection.getSel() can be null in some cases (Firefox)
+        if (!editor?.selection?.getSel()) return null;
         const selection = editor.selection.getNode().textContent;
         const currentCaretPos = editor.selection.getSel().focusOffset;
         for (let match of selection.matchAll(/\$([^$]*)\$/g)) {

@@ -2,6 +2,7 @@
 import template from "./template.hbs";
 import Element from "../element/element";
 import WidgetElement from "../widget/widget.element";
+import Config from "../../../config";
 
 export default abstract class ContainerElement extends WidgetElement {
 
@@ -21,7 +22,7 @@ export default abstract class ContainerElement extends WidgetElement {
             canEdit: constructor.editable,
             canDelete: constructor.deletable,
             canCopy: constructor.copyable,
-            canGenerate: constructor.generable,
+            canGenerate: !!Config.getAIURL() && constructor.generable,
             children,
             cssClass: this.utils.toKebabCase(constructor.name)
         });

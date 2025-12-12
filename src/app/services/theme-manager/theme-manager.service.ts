@@ -3,6 +3,7 @@ import CDigitalesTheme2 from "./CDigitalesTheme2.avif";
 import CDigitalesTheme3 from "./CDigitalesTheme3.avif";
 import CDigitalesTheme4 from "./CDigitalesTheme4.avif";
 import CDigitalesTheme5 from "./CDigitalesTheme5.avif";
+import CienciaAbiertaTheme from "./CienciaAbiertaTheme.avif";
 import DigCompEduTheme from "./DigCompEduTheme.avif";
 import theme1 from "./GeneralTheme1.avif";
 import theme2 from "./GeneralTheme2.avif";
@@ -36,6 +37,7 @@ export default class ThemeManagerService {
         "CDigitalesTheme3": { "color": "#d04a0b", "cover": CDigitalesTheme3 },
         "CDigitalesTheme4": { "color": "#33846e", "cover": CDigitalesTheme4 },
         "CDigitalesTheme5": { "color": "#ea1340", "cover": CDigitalesTheme5 },
+        "CienciaAbiertaTheme": { "color": "#0162b1", "cover": CienciaAbiertaTheme },
         "DigCompEduTheme": { "color": "#31942e", "cover": DigCompEduTheme },
         "GeneralTheme1": { "color": "#963E17", "cover": theme1 },
         "GeneralTheme2": { "color": "#532e1c", "cover": theme2 },

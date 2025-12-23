@@ -17,6 +17,7 @@
         "reasoning-effort-help": "Selecione o tempo de raciocínio que você deseja que o chatbot use para gerar a resposta. Um tempo maior pode produzir respostas mais detalhadas e precisas, mas também pode levar mais tempo para gerar.",
         "reasoning-effort-low": "Avançado",
         "reasoning-effort-minimal": "Padrão",
+        "references": "Referências:",
         "section": {
           "create": "Criar seção com IA"
         },

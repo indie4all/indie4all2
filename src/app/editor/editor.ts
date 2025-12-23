@@ -580,11 +580,13 @@ export default abstract class Editor {
         await this._loading.hide();
         if (isAIResponseError(response)) {
             this._aiprompt.explanation = this._i18n.value("errors.AI.sorry");
+            this._aiprompt.references = [];
             this._utils.notifyError(this._i18n.value("errors.AI." + (response.code || "sorry"), response.parameters));
             throw new Error(response.error);
         }
         const responseOK = response as AIResponseOK;
         this._aiprompt.explanation = responseOK.explanation;
+        this._aiprompt.references = responseOK.references;
         return responseOK.model;
     }
 

@@ -17,6 +17,7 @@
         "reasoning-effort-help": "Odaberite vrijeme obrazloženja koje želite da chatbot koristi za generiranje odgovora. Dulje vrijeme može proizvesti detaljnije i točnije odgovore, ali može potrajati i dulje za generiranje.",
         "reasoning-effort-low": "Napredan",
         "reasoning-effort-minimal": "Standard",
+        "references": "Reference:",
         "section": {
           "create": "Napravite odjeljak pomoću umjetne inteligencije"
         },

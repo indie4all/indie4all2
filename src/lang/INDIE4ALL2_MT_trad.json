@@ -17,6 +17,7 @@
         "reasoning-effort-help": "Agħżel il-ħin ta 'raġunament li tixtieq li ċ-chatbot juża biex jiġġenera t-tweġiba. Żmien itwal jista 'jipproduċi tweġibiet aktar dettaljati u preċiżi, iżda jista' wkoll jieħu aktar żmien biex jiġġenera.",
         "reasoning-effort-low": "Avvanzat",
         "reasoning-effort-minimal": "Standard",
+        "references": "Referenzi:",
         "section": {
           "create": "Oħloq taqsima bl-IA"
         },

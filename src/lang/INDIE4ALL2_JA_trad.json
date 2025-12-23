@@ -17,6 +17,7 @@
         "reasoning-effort-help": "チャットボットが応答を生成するために使用する推論時間を選択します。時間が長いほど、より詳細で正確な回答が得られますが、生成に時間がかかる場合もあります。",
         "reasoning-effort-low": "アドバンスド",
         "reasoning-effort-minimal": "標準",
+        "references": "参考文献:",
         "section": {
           "create": "AIでセクションを作成"
         },

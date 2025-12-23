@@ -17,6 +17,7 @@
         "reasoning-effort-help": "Vyberte čas zdôvodnenia, ktorý má chatbot použiť na vygenerovanie odpovede. Dlhší čas môže priniesť podrobnejšie a presnejšie odpovede, ale jeho generovanie môže trvať aj dlhšie.",
         "reasoning-effort-low": "Pokročilý",
         "reasoning-effort-minimal": "Štandard",
+        "references": "Referencie:",
         "section": {
           "create": "Vytvorte sekciu pomocou AI"
         },

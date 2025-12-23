@@ -17,6 +17,7 @@
         "reasoning-effort-help": "Valitse perusteluaika, jota haluat chatbotin käyttävän vastauksen luomiseen. Pidempi aika voi tuottaa yksityiskohtaisempia ja tarkempia vastauksia, mutta sen luominen voi myös kestää kauemmin.",
         "reasoning-effort-low": "Edistynyt",
         "reasoning-effort-minimal": "Standardi",
+        "references": "Lähteet:",
         "section": {
           "create": "Luo osio tekoälyllä"
         },

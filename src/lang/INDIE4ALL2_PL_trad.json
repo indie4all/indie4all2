@@ -17,6 +17,7 @@
         "reasoning-effort-help": "Wybierz czas rozumowania, który ma być używany przez chatbota do generowania odpowiedzi. Dłuższy czas może dać bardziej szczegółowe i dokładne odpowiedzi, ale może też zająć więcej czasu.",
         "reasoning-effort-low": "Zaawansowany",
         "reasoning-effort-minimal": "Norma",
+        "references": "Bibliografia:",
         "section": {
           "create": "Utwórz sekcję za pomocą sztucznej inteligencji"
         },

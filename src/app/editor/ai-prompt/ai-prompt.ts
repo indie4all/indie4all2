@@ -70,6 +70,7 @@ export default class AiPrompt {
         this.action = action;
         this.type = info.type;
         this.explanation = '';
+        this.references = [];
         this.query = '';
         this.input = '';
         this._select.refreshOptions({data: info.chatbots});
@@ -148,5 +149,24 @@ export default class AiPrompt {
     public set input(input: string) {
         const elem = this._htmlElem.querySelector('#ai-prompt') as HTMLInputElement;
         elem.value = input;
+    }
+
+    public get references(): string[] {
+        const refs = this._htmlElem.querySelectorAll('.ai-reference');
+        return Array.from(refs).map(ref => ref.textContent || '');
+    }
+
+    public set references(references: string[]) {
+        this._htmlElem.querySelector('#ai-prompt-references').classList.toggle('d-none', references.length === 0);
+        const elem = this._htmlElem.querySelector('#ai-references-list') as HTMLElement;
+        // Delete all ai-prompt-reference children
+        elem.innerHTML = '';
+        references.forEach(ref => {
+            const html = `
+            <li>
+              <span class="ai-reference badge bg-dark">${ref}</span>
+            </li>`;
+            elem.insertAdjacentHTML('beforeend', html);
+        });
     }
 }

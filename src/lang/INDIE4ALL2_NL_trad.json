@@ -17,6 +17,7 @@
         "reasoning-effort-help": "Selecteer de redeneertijd die u wilt dat de chatbot gebruikt om de reactie te genereren. Een langere tijd kan gedetailleerdere en nauwkeurigere antwoorden opleveren, maar het kan ook langer duren om te genereren.",
         "reasoning-effort-low": "Geavanceerd",
         "reasoning-effort-minimal": "Standaard",
+        "references": "Referenties:",
         "section": {
           "create": "Sectie maken met AI"
         },

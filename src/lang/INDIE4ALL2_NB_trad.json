@@ -17,6 +17,7 @@
         "reasoning-effort-help": "Velg resonnementtidspunktet du vil at chatboten skal bruke til å generere svaret. Lengre tid kan gi mer detaljerte og nøyaktige svar, men det kan også ta lengre tid å generere.",
         "reasoning-effort-low": "Avansert",
         "reasoning-effort-minimal": "Standard",
+        "references": "Referanser:",
         "section": {
           "create": "Opprett seksjon med AI"
         },

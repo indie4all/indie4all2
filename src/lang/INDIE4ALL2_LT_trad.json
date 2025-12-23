@@ -17,6 +17,7 @@
         "reasoning-effort-help": "Pasirinkite samprotavimo laiką, kurį pokalbių robotas naudos atsakymui generuoti. Ilgesnis laikas gali duoti išsamesnius ir tikslesnius atsakymus, tačiau generavimas taip pat gali užtrukti ilgiau.",
         "reasoning-effort-low": "Išplėstinė",
         "reasoning-effort-minimal": "Standartas",
+        "references": "Nuorodos:",
         "section": {
           "create": "Sukurkite skyrių naudodami AI"
         },

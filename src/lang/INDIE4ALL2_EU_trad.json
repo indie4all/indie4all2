@@ -17,6 +17,7 @@
         "reasoning-effort-help": "Aukeratu chatbotak erantzuna sortzeko erabili nahi duzun arrazoiketa-denbora. Denbora luzeago batek erantzun zehatzagoak eta zehatzagoak eragin ditzake, baina denbora gehiago behar da sortzeko.",
         "reasoning-effort-low": "Aurreratua",
         "reasoning-effort-minimal": "Estandarra",
+        "references": "Erreferentziak:",
         "section": {
           "create": "IArekin atala sortu"
         },

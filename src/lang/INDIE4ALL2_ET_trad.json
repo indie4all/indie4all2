@@ -17,6 +17,7 @@
         "reasoning-effort-help": "Valige arutlusaeg, mida soovite vestlusrobotil vastuse genereerimiseks kasutada. Pikem aeg võib anda üksikasjalikumaid ja täpsemaid vastuseid, kuid selle genereerimine võib võtta ka kauem aega.",
         "reasoning-effort-low": "Täpsem",
         "reasoning-effort-minimal": "Standard",
+        "references": "Viited:",
         "section": {
           "create": "Looge jaotis AI-ga"
         },

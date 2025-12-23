@@ -17,6 +17,7 @@
         "reasoning-effort-help": "Válassza ki azt az érvelési időt, amelyet a chatbot használni szeretne a válasz létrehozásához. A hosszabb idő részletesebb és pontosabb válaszokat eredményezhet, de a generálás is hosszabb időt vehet igénybe.",
         "reasoning-effort-low": "Haladó",
         "reasoning-effort-minimal": "Szabvány",
+        "references": "Hivatkozások:",
         "section": {
           "create": "Szakasz létrehozása mesterséges intelligenciával"
         },

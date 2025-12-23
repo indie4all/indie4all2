@@ -17,6 +17,7 @@
         "reasoning-effort-help": "Wählen Sie die Begründungszeit aus, die der Chatbot zur Generierung der Antwort verwenden soll. Eine längere Zeit kann zu detaillierteren und genaueren Antworten führen, aber es kann auch länger dauern, bis sie generiert werden.",
         "reasoning-effort-low": "Fortgeschritten",
         "reasoning-effort-minimal": "Norm",
+        "references": "Quellen:",
         "section": {
           "create": "Abschnitt mit KI erstellen"
         },

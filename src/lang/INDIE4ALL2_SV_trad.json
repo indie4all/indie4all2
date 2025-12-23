@@ -17,6 +17,7 @@
         "reasoning-effort-help": "Välj den resonemangstid du vill att chattroboten ska använda för att generera svaret. En längre tid kan ge mer detaljerade och korrekta svar, men det kan också ta längre tid att generera.",
         "reasoning-effort-low": "Avancerad",
         "reasoning-effort-minimal": "Standard",
+        "references": "Referenser:",
         "section": {
           "create": "Skapa avsnitt med AI"
         },

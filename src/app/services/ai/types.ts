@@ -3,6 +3,7 @@ export interface AIResponse {}
 export interface AIResponseOK extends AIResponse {
     explanation: string;
     model: AIResult;
+    references: string[];
 }
 
 export interface AIResponseError extends AIResponse {

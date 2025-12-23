@@ -17,6 +17,7 @@
         "reasoning-effort-help": "Izberite čas razmišljanja, ki ga želi chatbot uporabiti za ustvarjanje odgovora. Daljši čas lahko prinese podrobnejše in natančnejše odgovore, vendar lahko traja tudi dlje.",
         "reasoning-effort-low": "Napreden",
         "reasoning-effort-minimal": "Standard",
+        "references": "Viri:",
         "section": {
           "create": "Ustvarite razdelek z umetno inteligenco"
         },

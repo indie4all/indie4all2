@@ -17,6 +17,7 @@
         "reasoning-effort-help": "選擇你希望聊天機械人用嚟產生回應嘅推理時間。 時間越長，答案就越詳細，準確，但要花更長的時間。",
         "reasoning-effort-low": "高級",
         "reasoning-effort-minimal": "作準",
+        "references": "參考資料：",
         "section": {
           "create": "使用AI創建部分"
         },

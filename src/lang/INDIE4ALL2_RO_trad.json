@@ -17,6 +17,7 @@
         "reasoning-effort-help": "Selectați timpul de raționament pe care doriți să îl folosească chatbot-ul pentru a genera răspunsul. Un timp mai lung poate produce răspunsuri mai detaliate și mai precise, dar poate dura și mai mult pentru a genera.",
         "reasoning-effort-low": "Avansat",
         "reasoning-effort-minimal": "Standard",
+        "references": "Referințe:",
         "section": {
           "create": "Creați o secțiune cu AI"
         },
